@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,35 +24,44 @@ Qt::Gui::QGroupBox
 
 =over
 
-=item    QGroupBox(QWidget * parent = 0)
+=item   QGroupBox(QWidget * parent)
 
-=item    QGroupBox(QWidget * parent)
+=item   QGroupBox(QWidget * parent = 0)
 
-=item    QGroupBox(const QString & title, QWidget * parent = 0)
+=item   QGroupBox(const QString & title, QWidget * parent)
 
-=item    QGroupBox(const QString & title, QWidget * parent)
+=item   QGroupBox(const QString & title, QWidget * parent = 0)
 
-=item    ~QGroupBox()
+=item   ~QGroupBox()
 
-=item   bool isCheckable()
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   bool isChecked()
+=item  bool isCheckable()
 
-=item   bool isFlat()
+=item  bool isChecked()
 
-=item   QSize minimumSizeHint()
+=item  bool isFlat()
 
-=item   void setAlignment(int alignment)
+=item  QSize minimumSizeHint()
 
-=item   void setCheckable(bool checkable)
+=item  void setAlignment(int alignment)
 
-=item   void setChecked(bool checked)
+=item  void setCheckable(bool checkable)
 
-=item   void setFlat(bool flat)
+=item  void setChecked(bool checked)
 
-=item   void setTitle(const QString & title)
+=item  void setFlat(bool flat)
 
-=item   QString title()
+=item  void setTitle(const QString & title)
+
+=item  QString title()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

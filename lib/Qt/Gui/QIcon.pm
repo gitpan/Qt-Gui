@@ -7,19 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Normal() { 0 }
-sub Disabled() { 1 }
-sub Active() { 2 }
-sub Selected() { 3 }
-sub On() { 0 }
-sub Off() { 1 }
 
 
 1;
@@ -32,101 +23,124 @@ Qt::Gui::QIcon
 
 =over
 
-=item    QIcon()
+=item   QIcon()
 
-=item    QIcon(const QPixmap & pixmap)
+=item   QIcon(const QPixmap & pixmap)
 
-=item    QIcon(const QIcon & other)
+=item   QIcon(const QIcon & other)
 
-=item    QIcon(const QString & fileName)
+=item   QIcon(const QString & fileName)
 
-=item    QIcon(QIconEngine * engine)
+=item   QIcon(QIconEngine * engine)
 
-=item    QIcon(QIconEngineV2 * engine)
+=item   QIcon(QIconEngineV2 * engine)
 
-=item    ~QIcon()
+=item   ~QIcon()
 
-=item   QSize actualSize(const QSize & size, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  QSize actualSize(const QSize & size, QIcon::Mode mode, QIcon::State state)
 
-=item   QSize actualSize(const QSize & size, QIcon::Mode mode, QIcon::State state)
+=item  QSize actualSize(const QSize & size, QIcon::Mode mode, QIcon::State state = QIcon::Off)
 
-=item   QSize actualSize(const QSize & size, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+=item  QSize actualSize(const QSize & size, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   QSize actualSize(const QSize & size, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode, QIcon::State state)
 
-=item   void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode, QIcon::State state = QIcon::Off)
 
-=item   void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode, QIcon::State state)
+=item  void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+=item  void addFile(const QString & fileName, const QSize & size = QSize(), QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  void addPixmap(const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state)
 
-=item   void addFile(const QString & fileName, const QSize & size = QSize(), QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+=item  void addPixmap(const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state = QIcon::Off)
 
-=item   void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+=item  void addPixmap(const QPixmap & pixmap, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   void addPixmap(const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  qint64 cacheKey()
 
-=item   void addPixmap(const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state)
+=item  QIconPrivate * & data_ptr()
 
-=item   void addPixmap(const QPixmap & pixmap, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+=item  void detach()
 
-=item   void addPixmap(const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  static QIcon fromTheme(const QString & name, const QIcon & fallback)
 
-=item   qint64 cacheKey()
+=item  static QIcon fromTheme(const QString & name, const QIcon & fallback = QIcon())
 
-=item   QIconPrivate * & data_ptr()
+=item  static bool hasThemeIcon(const QString & name)
 
-=item   void detach()
+=item  bool isDetached()
 
-=item   static QIcon fromTheme(const QString & name, const QIcon & fallback = QIcon())
+=item  bool isNull()
 
-=item   static QIcon fromTheme(const QString & name, const QIcon & fallback)
+=item  QString name()
 
-=item   static bool hasThemeIcon(const QString & name)
+=item  QVariant operator QVariant()
 
-=item   bool isDetached()
+=item  QIcon & operator=(const QIcon & other)
 
-=item   bool isNull()
+=item  void paint(QPainter * painter, const QRect & rect, QFlags<Qt::AlignmentFlag> alignment, QIcon::Mode mode, QIcon::State state)
 
-=item   QVariant operator QVariant()
+=item  void paint(QPainter * painter, const QRect & rect, QFlags<Qt::AlignmentFlag> alignment, QIcon::Mode mode, QIcon::State state = QIcon::Off)
 
-=item   QIcon & operator=(const QIcon & other)
+=item  void paint(QPainter * painter, const QRect & rect, QFlags<Qt::AlignmentFlag> alignment, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   QPixmap pixmap(const QSize & size, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  void paint(QPainter * painter, const QRect & rect, QFlags<Qt::AlignmentFlag> alignment = Qt::AlignCenter, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   QPixmap pixmap(const QSize & size, QIcon::Mode mode, QIcon::State state)
+=item  void paint(QPainter * painter, int x, int y, int w, int h, QFlags<Qt::AlignmentFlag> alignment, QIcon::Mode mode, QIcon::State state)
 
-=item   QPixmap pixmap(const QSize & size, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+=item  void paint(QPainter * painter, int x, int y, int w, int h, QFlags<Qt::AlignmentFlag> alignment, QIcon::Mode mode, QIcon::State state = QIcon::Off)
 
-=item   QPixmap pixmap(const QSize & size, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  void paint(QPainter * painter, int x, int y, int w, int h, QFlags<Qt::AlignmentFlag> alignment, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   QPixmap pixmap(int extent, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  void paint(QPainter * painter, int x, int y, int w, int h, QFlags<Qt::AlignmentFlag> alignment = Qt::AlignCenter, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   QPixmap pixmap(int extent, QIcon::Mode mode, QIcon::State state)
+=item  QPixmap pixmap(const QSize & size, QIcon::Mode mode, QIcon::State state)
 
-=item   QPixmap pixmap(int extent, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+=item  QPixmap pixmap(const QSize & size, QIcon::Mode mode, QIcon::State state = QIcon::Off)
 
-=item   QPixmap pixmap(int extent, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  QPixmap pixmap(const QSize & size, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   QPixmap pixmap(int w, int h, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  QPixmap pixmap(int extent, QIcon::Mode mode, QIcon::State state)
 
-=item   QPixmap pixmap(int w, int h, QIcon::Mode mode, QIcon::State state)
+=item  QPixmap pixmap(int extent, QIcon::Mode mode, QIcon::State state = QIcon::Off)
 
-=item   QPixmap pixmap(int w, int h, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+=item  QPixmap pixmap(int extent, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   QPixmap pixmap(int w, int h, QIcon::Mode mode, QIcon::State state = QIcon::Off)
+=item  QPixmap pixmap(int w, int h, QIcon::Mode mode, QIcon::State state)
 
-=item   int serialNumber()
+=item  QPixmap pixmap(int w, int h, QIcon::Mode mode, QIcon::State state = QIcon::Off)
 
-=item   static void setThemeName(const QString & path)
+=item  QPixmap pixmap(int w, int h, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
-=item   static void setThemeSearchPaths(const QStringList & searchpath)
+=item  int serialNumber()
 
-=item   static QString themeName()
+=item  static void setThemeName(const QString & path)
 
-=item   static QStringList themeSearchPaths()
+=item  static void setThemeSearchPaths(const QStringList & searchpath)
+
+=item  static QString themeName()
+
+=item  static QStringList themeSearchPaths()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Normal
+
+=item Disabled
+
+=item Active
+
+=item Selected
+
+=item On
+
+=item Off
 
 
 =back

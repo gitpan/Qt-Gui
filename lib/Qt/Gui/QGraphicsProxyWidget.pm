@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
 
 
 1;
@@ -28,21 +24,36 @@ Qt::Gui::QGraphicsProxyWidget
 
 =over
 
-=item    ~QGraphicsProxyWidget()
+=item   QGraphicsProxyWidget(QGraphicsItem * parent, QFlags<Qt::WindowType> wFlags)
 
-=item   QGraphicsProxyWidget * createProxyForChildWidget(QWidget * child)
+=item   QGraphicsProxyWidget(QGraphicsItem * parent, QFlags<Qt::WindowType> wFlags = 0)
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
+=item   QGraphicsProxyWidget(QGraphicsItem * parent = 0, QFlags<Qt::WindowType> wFlags = 0)
 
-=item   void setGeometry(const QRectF & rect)
+=item   ~QGraphicsProxyWidget()
 
-=item   void setWidget(QWidget * widget)
+=item  QGraphicsProxyWidget * createProxyForChildWidget(QWidget * child)
 
-=item   QRectF subWidgetRect(const QWidget * widget)
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 
-=item   int type()
+=item  void setGeometry(const QRectF & rect)
 
-=item   QWidget * widget()
+=item  void setWidget(QWidget * widget)
+
+=item  QRectF subWidgetRect(const QWidget * widget)
+
+=item  int type()
+
+=item  QWidget * widget()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Type
 
 
 =back

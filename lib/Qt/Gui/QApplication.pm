@@ -7,19 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QCoreApplication/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Tty() { 0 }
-sub GuiClient() { 1 }
-sub GuiServer() { 2 }
-sub NormalColor() { 0 }
-sub CustomColor() { 1 }
-sub ManyColor() { 2 }
 
 
 1;
@@ -32,209 +24,224 @@ Qt::Gui::QApplication
 
 =over
 
-=item    QApplication(int & argc, char ** argv, int arg2 = 0x040602)
+=item   QApplication(int & argc, char ** argv, int arg2)
 
-=item    QApplication(int & argc, char ** argv, int arg2)
+=item   QApplication(int & argc, char ** argv, int arg2 = 0x040703)
 
-=item    QApplication(int & argc, char ** argv, bool GUIenabled, int arg3 = 0x040602)
+=item   QApplication(int & argc, char ** argv, bool GUIenabled, int arg3)
 
-=item    QApplication(int & argc, char ** argv, bool GUIenabled, int arg3)
+=item   QApplication(int & argc, char ** argv, bool GUIenabled, int arg3 = 0x040703)
 
-=item    QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3 = 0x040602)
+=item   QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3)
 
-=item    QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3)
+=item   QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3 = 0x040703)
 
-=item    QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3 = 0x040602)
+=item   QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3)
 
-=item    QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3)
+=item   QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3 = 0x040703)
 
-=item    QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap = 0, int arg3 = 0x040602)
+=item   QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap = 0, int arg3 = 0x040703)
 
-=item    QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3 = 0x040602)
+=item   QApplication(_XDisplay * dpy, unsigned long visual = 0, unsigned long cmap = 0, int arg3 = 0x040703)
 
-=item    QApplication(_XDisplay * dpy, unsigned long visual = 0, unsigned long cmap = 0, int arg3 = 0x040602)
+=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5)
 
-=item    QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap = 0, int arg3 = 0x040602)
+=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5 = 0x040703)
 
-=item    QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5 = 0x040602)
+=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap = 0, int arg5 = 0x040703)
 
-=item    QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5)
+=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual = 0, unsigned long cmap = 0, int arg5 = 0x040703)
 
-=item    QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap = 0, int arg5 = 0x040602)
+=item   ~QApplication()
 
-=item    QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5 = 0x040602)
+=item  static void aboutQt()
 
-=item    QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual = 0, unsigned long cmap = 0, int arg5 = 0x040602)
+=item  static QWidget * activeModalWidget()
 
-=item    QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap = 0, int arg5 = 0x040602)
+=item  static QWidget * activePopupWidget()
 
-=item    ~QApplication()
+=item  static QWidget * activeWindow()
 
-=item   static void aboutQt()
+=item  static void alert(QWidget * widget, int duration)
 
-=item   static QWidget * activeModalWidget()
+=item  static void alert(QWidget * widget, int duration = 0)
 
-=item   static QWidget * activePopupWidget()
+=item  bool autoSipEnabled()
 
-=item   static QWidget * activeWindow()
+=item  static void beep()
 
-=item   static void alert(QWidget * widget, int duration = 0)
+=item  static void changeOverrideCursor(const QCursor & arg0)
 
-=item   static void alert(QWidget * widget, int duration)
+=item  static QClipboard * clipboard()
 
-=item   bool autoSipEnabled()
+=item  static void closeAllWindows()
 
-=item   static void beep()
+=item  static int colorSpec()
 
-=item   static void changeOverrideCursor(const QCursor & arg0)
+=item  void commitData(QSessionManager & sm)
 
-=item   static QClipboard * clipboard()
+=item  static int cursorFlashTime()
 
-=item   static void closeAllWindows()
+=item  static QDesktopWidget * desktop()
 
-=item   static int colorSpec()
+=item  static bool desktopSettingsAware()
 
-=item   void commitData(QSessionManager & sm)
+=item  static int doubleClickInterval()
 
-=item   static int cursorFlashTime()
+=item  static int exec()
 
-=item   static QDesktopWidget * desktop()
+=item  static QWidget * focusWidget()
 
-=item   static bool desktopSettingsAware()
+=item  static QFont font()
 
-=item   static int doubleClickInterval()
+=item  static QFont font(const QWidget * arg0)
 
-=item   static int exec()
+=item  static QFont font(const char * className)
 
-=item   static QWidget * focusWidget()
+=item  static QFontMetrics fontMetrics()
 
-=item   static QFont font()
+=item  static QSize globalStrut()
 
-=item   static QFont font(const QWidget * arg0)
+=item  QInputContext * inputContext()
 
-=item   static QFont font(const char * className)
+=item  static bool isEffectEnabled(Qt::UIEffect arg0)
 
-=item   static QFontMetrics fontMetrics()
+=item  static bool isLeftToRight()
 
-=item   static QSize globalStrut()
+=item  static bool isRightToLeft()
 
-=item   QInputContext * inputContext()
+=item  bool isSessionRestored()
 
-=item   static bool isEffectEnabled(Qt::UIEffect arg0)
+=item  static Qt::LayoutDirection keyboardInputDirection()
 
-=item   static bool isLeftToRight()
+=item  static int keyboardInputInterval()
 
-=item   static bool isRightToLeft()
+=item  static QLocale keyboardInputLocale()
 
-=item   bool isSessionRestored()
+=item  static QFlags<Qt::KeyboardModifier> keyboardModifiers()
 
-=item   static Qt::LayoutDirection keyboardInputDirection()
+=item  static Qt::LayoutDirection layoutDirection()
 
-=item   static int keyboardInputInterval()
+=item  static QFlags<Qt::MouseButton> mouseButtons()
 
-=item   static QLocale keyboardInputLocale()
+=item  bool notify(QObject * arg0, QEvent * arg1)
 
-=item   static Qt::LayoutDirection layoutDirection()
+=item  static QCursor * overrideCursor()
 
-=item   bool notify(QObject * arg0, QEvent * arg1)
+=item  static QPalette palette()
 
-=item   static QCursor * overrideCursor()
+=item  static QPalette palette(const QWidget * arg0)
 
-=item   static QPalette palette()
+=item  static QPalette palette(const char * className)
 
-=item   static QPalette palette(const QWidget * arg0)
+=item  static bool quitOnLastWindowClosed()
 
-=item   static QPalette palette(const char * className)
+=item  static void restoreOverrideCursor()
 
-=item   static bool quitOnLastWindowClosed()
+=item  void saveState(QSessionManager & sm)
 
-=item   static void restoreOverrideCursor()
+=item  QString sessionId()
 
-=item   void saveState(QSessionManager & sm)
+=item  QString sessionKey()
 
-=item   QString sessionId()
+=item  static void setActiveWindow(QWidget * act)
 
-=item   QString sessionKey()
+=item  void setAutoSipEnabled(const bool enabled)
 
-=item   static void setActiveWindow(QWidget * act)
+=item  static void setColorSpec(int arg0)
 
-=item   void setAutoSipEnabled(const bool enabled)
+=item  static void setCursorFlashTime(int arg0)
 
-=item   static void setColorSpec(int arg0)
+=item  static void setDesktopSettingsAware(bool arg0)
 
-=item   static void setCursorFlashTime(int arg0)
+=item  static void setDoubleClickInterval(int arg0)
 
-=item   static void setDesktopSettingsAware(bool arg0)
+=item  static void setEffectEnabled(Qt::UIEffect arg0, bool enable)
 
-=item   static void setDoubleClickInterval(int arg0)
+=item  static void setEffectEnabled(Qt::UIEffect arg0, bool enable = true)
 
-=item   static void setEffectEnabled(Qt::UIEffect arg0, bool enable = true)
+=item  static void setFont(const QFont & arg0, const char * className)
 
-=item   static void setEffectEnabled(Qt::UIEffect arg0, bool enable)
+=item  static void setFont(const QFont & arg0, const char * className = 0)
 
-=item   static void setFont(const QFont & arg0, const char * className = 0)
+=item  static void setGlobalStrut(const QSize & arg0)
 
-=item   static void setFont(const QFont & arg0, const char * className)
+=item  static void setGraphicsSystem(const QString & arg0)
 
-=item   static void setGlobalStrut(const QSize & arg0)
+=item  void setInputContext(QInputContext * arg0)
 
-=item   static void setGraphicsSystem(const QString & arg0)
+=item  static void setKeyboardInputInterval(int arg0)
 
-=item   void setInputContext(QInputContext * arg0)
+=item  static void setLayoutDirection(Qt::LayoutDirection direction)
 
-=item   static void setKeyboardInputInterval(int arg0)
+=item  static void setOverrideCursor(const QCursor & arg0)
 
-=item   static void setLayoutDirection(Qt::LayoutDirection direction)
+=item  static void setPalette(const QPalette & arg0, const char * className)
 
-=item   static void setOverrideCursor(const QCursor & arg0)
+=item  static void setPalette(const QPalette & arg0, const char * className = 0)
 
-=item   static void setPalette(const QPalette & arg0, const char * className = 0)
+=item  static void setQuitOnLastWindowClosed(bool quit)
 
-=item   static void setPalette(const QPalette & arg0, const char * className)
+=item  static void setStartDragDistance(int l)
 
-=item   static void setQuitOnLastWindowClosed(bool quit)
+=item  static void setStartDragTime(int ms)
 
-=item   static void setStartDragDistance(int l)
+=item  static void setStyle(QStyle * arg0)
 
-=item   static void setStartDragTime(int ms)
+=item  static QStyle * setStyle(const QString & arg0)
 
-=item   static void setStyle(QStyle * arg0)
+=item  static void setWheelScrollLines(int arg0)
 
-=item   static QStyle * setStyle(const QString & arg0)
+=item  static void setWindowIcon(const QIcon & icon)
 
-=item   static void setWheelScrollLines(int arg0)
+=item  static int startDragDistance()
 
-=item   static void setWindowIcon(const QIcon & icon)
+=item  static int startDragTime()
 
-=item   static int startDragDistance()
+=item  static QStyle * style()
 
-=item   static int startDragTime()
+=item  QString styleSheet()
 
-=item   static QStyle * style()
+=item  static void syncX()
 
-=item   QString styleSheet()
+=item  static QWidget * topLevelAt(const QPoint & p)
 
-=item   static void syncX()
+=item  static QWidget * topLevelAt(int x, int y)
 
-=item   static QWidget * topLevelAt(const QPoint & p)
+=item  static QApplication::Type type()
 
-=item   static QWidget * topLevelAt(int x, int y)
+=item  static int wheelScrollLines()
 
-=item   static QApplication::Type type()
+=item  static QWidget * widgetAt(const QPoint & p)
 
-=item   static int wheelScrollLines()
+=item  static QWidget * widgetAt(int x, int y)
 
-=item   static QWidget * widgetAt(const QPoint & p)
+=item  static QIcon windowIcon()
 
-=item   static QWidget * widgetAt(int x, int y)
+=item  int x11ClientMessage(QWidget * arg0, _XEvent * arg1, bool passive_only)
 
-=item   static QIcon windowIcon()
+=item  bool x11EventFilter(_XEvent * arg0)
 
-=item   int x11ClientMessage(QWidget * arg0, _XEvent * arg1, bool passive_only)
+=item  int x11ProcessEvent(_XEvent * arg0)
 
-=item   bool x11EventFilter(_XEvent * arg0)
 
-=item   int x11ProcessEvent(_XEvent * arg0)
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Tty
+
+=item GuiClient
+
+=item GuiServer
+
+=item NormalColor
+
+=item CustomColor
+
+=item ManyColor
 
 
 =back

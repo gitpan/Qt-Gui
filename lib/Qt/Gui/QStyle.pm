@@ -7,563 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub State_None() { 0 }
-sub State_Enabled() { 1 }
-sub State_Raised() { 2 }
-sub State_Sunken() { 3 }
-sub State_Off() { 4 }
-sub State_NoChange() { 5 }
-sub State_On() { 6 }
-sub State_DownArrow() { 7 }
-sub State_Horizontal() { 8 }
-sub State_HasFocus() { 9 }
-sub State_Top() { 10 }
-sub State_Bottom() { 11 }
-sub State_FocusAtBorder() { 12 }
-sub State_AutoRaise() { 13 }
-sub State_MouseOver() { 14 }
-sub State_UpArrow() { 15 }
-sub State_Selected() { 16 }
-sub State_Active() { 17 }
-sub State_Window() { 18 }
-sub State_Open() { 19 }
-sub State_Children() { 20 }
-sub State_Item() { 21 }
-sub State_Sibling() { 22 }
-sub State_Editing() { 23 }
-sub State_KeyboardFocusChange() { 24 }
-sub State_ReadOnly() { 25 }
-sub State_Small() { 26 }
-sub State_Mini() { 27 }
-sub PE_Q3CheckListController() { 0 }
-sub PE_Q3CheckListExclusiveIndicator() { 1 }
-sub PE_Q3CheckListIndicator() { 2 }
-sub PE_Q3DockWindowSeparator() { 3 }
-sub PE_Q3Separator() { 4 }
-sub PE_Frame() { 5 }
-sub PE_FrameDefaultButton() { 6 }
-sub PE_FrameDockWidget() { 7 }
-sub PE_FrameFocusRect() { 8 }
-sub PE_FrameGroupBox() { 9 }
-sub PE_FrameLineEdit() { 10 }
-sub PE_FrameMenu() { 11 }
-sub PE_FrameStatusBar() { 12 }
-sub PE_FrameStatusBarItem() { 13 }
-sub PE_FrameTabWidget() { 14 }
-sub PE_FrameWindow() { 15 }
-sub PE_FrameButtonBevel() { 16 }
-sub PE_FrameButtonTool() { 17 }
-sub PE_FrameTabBarBase() { 18 }
-sub PE_PanelButtonCommand() { 19 }
-sub PE_PanelButtonBevel() { 20 }
-sub PE_PanelButtonTool() { 21 }
-sub PE_PanelMenuBar() { 22 }
-sub PE_PanelToolBar() { 23 }
-sub PE_PanelLineEdit() { 24 }
-sub PE_IndicatorArrowDown() { 25 }
-sub PE_IndicatorArrowLeft() { 26 }
-sub PE_IndicatorArrowRight() { 27 }
-sub PE_IndicatorArrowUp() { 28 }
-sub PE_IndicatorBranch() { 29 }
-sub PE_IndicatorButtonDropDown() { 30 }
-sub PE_IndicatorViewItemCheck() { 31 }
-sub PE_IndicatorItemViewItemCheck() { 32 }
-sub PE_IndicatorCheckBox() { 33 }
-sub PE_IndicatorDockWidgetResizeHandle() { 34 }
-sub PE_IndicatorHeaderArrow() { 35 }
-sub PE_IndicatorMenuCheckMark() { 36 }
-sub PE_IndicatorProgressChunk() { 37 }
-sub PE_IndicatorRadioButton() { 38 }
-sub PE_IndicatorSpinDown() { 39 }
-sub PE_IndicatorSpinMinus() { 40 }
-sub PE_IndicatorSpinPlus() { 41 }
-sub PE_IndicatorSpinUp() { 42 }
-sub PE_IndicatorToolBarHandle() { 43 }
-sub PE_IndicatorToolBarSeparator() { 44 }
-sub PE_PanelTipLabel() { 45 }
-sub PE_IndicatorTabTear() { 46 }
-sub PE_PanelScrollAreaCorner() { 47 }
-sub PE_Widget() { 48 }
-sub PE_IndicatorColumnViewArrow() { 49 }
-sub PE_IndicatorItemViewItemDrop() { 50 }
-sub PE_PanelItemViewItem() { 51 }
-sub PE_PanelItemViewRow() { 52 }
-sub PE_PanelStatusBar() { 53 }
-sub PE_IndicatorTabClose() { 54 }
-sub PE_PanelMenu() { 55 }
-sub PE_CustomBase() { 56 }
-sub CE_PushButton() { 0 }
-sub CE_PushButtonBevel() { 1 }
-sub CE_PushButtonLabel() { 2 }
-sub CE_CheckBox() { 3 }
-sub CE_CheckBoxLabel() { 4 }
-sub CE_RadioButton() { 5 }
-sub CE_RadioButtonLabel() { 6 }
-sub CE_TabBarTab() { 7 }
-sub CE_TabBarTabShape() { 8 }
-sub CE_TabBarTabLabel() { 9 }
-sub CE_ProgressBar() { 10 }
-sub CE_ProgressBarGroove() { 11 }
-sub CE_ProgressBarContents() { 12 }
-sub CE_ProgressBarLabel() { 13 }
-sub CE_MenuItem() { 14 }
-sub CE_MenuScroller() { 15 }
-sub CE_MenuVMargin() { 16 }
-sub CE_MenuHMargin() { 17 }
-sub CE_MenuTearoff() { 18 }
-sub CE_MenuEmptyArea() { 19 }
-sub CE_MenuBarItem() { 20 }
-sub CE_MenuBarEmptyArea() { 21 }
-sub CE_ToolButtonLabel() { 22 }
-sub CE_Header() { 23 }
-sub CE_HeaderSection() { 24 }
-sub CE_HeaderLabel() { 25 }
-sub CE_Q3DockWindowEmptyArea() { 26 }
-sub CE_ToolBoxTab() { 27 }
-sub CE_SizeGrip() { 28 }
-sub CE_Splitter() { 29 }
-sub CE_RubberBand() { 30 }
-sub CE_DockWidgetTitle() { 31 }
-sub CE_ScrollBarAddLine() { 32 }
-sub CE_ScrollBarSubLine() { 33 }
-sub CE_ScrollBarAddPage() { 34 }
-sub CE_ScrollBarSubPage() { 35 }
-sub CE_ScrollBarSlider() { 36 }
-sub CE_ScrollBarFirst() { 37 }
-sub CE_ScrollBarLast() { 38 }
-sub CE_FocusFrame() { 39 }
-sub CE_ComboBoxLabel() { 40 }
-sub CE_ToolBar() { 41 }
-sub CE_ToolBoxTabShape() { 42 }
-sub CE_ToolBoxTabLabel() { 43 }
-sub CE_HeaderEmptyArea() { 44 }
-sub CE_ColumnViewGrip() { 45 }
-sub CE_ItemViewItem() { 46 }
-sub CE_ShapedFrame() { 47 }
-sub CE_CustomBase() { 48 }
-sub SE_PushButtonContents() { 0 }
-sub SE_PushButtonFocusRect() { 1 }
-sub SE_CheckBoxIndicator() { 2 }
-sub SE_CheckBoxContents() { 3 }
-sub SE_CheckBoxFocusRect() { 4 }
-sub SE_CheckBoxClickRect() { 5 }
-sub SE_RadioButtonIndicator() { 6 }
-sub SE_RadioButtonContents() { 7 }
-sub SE_RadioButtonFocusRect() { 8 }
-sub SE_RadioButtonClickRect() { 9 }
-sub SE_ComboBoxFocusRect() { 10 }
-sub SE_SliderFocusRect() { 11 }
-sub SE_Q3DockWindowHandleRect() { 12 }
-sub SE_ProgressBarGroove() { 13 }
-sub SE_ProgressBarContents() { 14 }
-sub SE_ProgressBarLabel() { 15 }
-sub SE_DialogButtonAccept() { 16 }
-sub SE_DialogButtonReject() { 17 }
-sub SE_DialogButtonApply() { 18 }
-sub SE_DialogButtonHelp() { 19 }
-sub SE_DialogButtonAll() { 20 }
-sub SE_DialogButtonAbort() { 21 }
-sub SE_DialogButtonIgnore() { 22 }
-sub SE_DialogButtonRetry() { 23 }
-sub SE_DialogButtonCustom() { 24 }
-sub SE_ToolBoxTabContents() { 25 }
-sub SE_HeaderLabel() { 26 }
-sub SE_HeaderArrow() { 27 }
-sub SE_TabWidgetTabBar() { 28 }
-sub SE_TabWidgetTabPane() { 29 }
-sub SE_TabWidgetTabContents() { 30 }
-sub SE_TabWidgetLeftCorner() { 31 }
-sub SE_TabWidgetRightCorner() { 32 }
-sub SE_ViewItemCheckIndicator() { 33 }
-sub SE_ItemViewItemCheckIndicator() { 34 }
-sub SE_TabBarTearIndicator() { 35 }
-sub SE_TreeViewDisclosureItem() { 36 }
-sub SE_LineEditContents() { 37 }
-sub SE_FrameContents() { 38 }
-sub SE_DockWidgetCloseButton() { 39 }
-sub SE_DockWidgetFloatButton() { 40 }
-sub SE_DockWidgetTitleBarText() { 41 }
-sub SE_DockWidgetIcon() { 42 }
-sub SE_CheckBoxLayoutItem() { 43 }
-sub SE_ComboBoxLayoutItem() { 44 }
-sub SE_DateTimeEditLayoutItem() { 45 }
-sub SE_DialogButtonBoxLayoutItem() { 46 }
-sub SE_LabelLayoutItem() { 47 }
-sub SE_ProgressBarLayoutItem() { 48 }
-sub SE_PushButtonLayoutItem() { 49 }
-sub SE_RadioButtonLayoutItem() { 50 }
-sub SE_SliderLayoutItem() { 51 }
-sub SE_SpinBoxLayoutItem() { 52 }
-sub SE_ToolButtonLayoutItem() { 53 }
-sub SE_FrameLayoutItem() { 54 }
-sub SE_GroupBoxLayoutItem() { 55 }
-sub SE_TabWidgetLayoutItem() { 56 }
-sub SE_ItemViewItemDecoration() { 57 }
-sub SE_ItemViewItemText() { 58 }
-sub SE_ItemViewItemFocusRect() { 59 }
-sub SE_TabBarTabLeftButton() { 60 }
-sub SE_TabBarTabRightButton() { 61 }
-sub SE_TabBarTabText() { 62 }
-sub SE_ShapedFrameContents() { 63 }
-sub SE_ToolBarHandle() { 64 }
-sub SE_CustomBase() { 65 }
-sub CC_SpinBox() { 0 }
-sub CC_ComboBox() { 1 }
-sub CC_ScrollBar() { 2 }
-sub CC_Slider() { 3 }
-sub CC_ToolButton() { 4 }
-sub CC_TitleBar() { 5 }
-sub CC_Q3ListView() { 6 }
-sub CC_Dial() { 7 }
-sub CC_GroupBox() { 8 }
-sub CC_MdiControls() { 9 }
-sub CC_CustomBase() { 10 }
-sub SC_None() { 0 }
-sub SC_ScrollBarAddLine() { 1 }
-sub SC_ScrollBarSubLine() { 2 }
-sub SC_ScrollBarAddPage() { 3 }
-sub SC_ScrollBarSubPage() { 4 }
-sub SC_ScrollBarFirst() { 5 }
-sub SC_ScrollBarLast() { 6 }
-sub SC_ScrollBarSlider() { 7 }
-sub SC_ScrollBarGroove() { 8 }
-sub SC_SpinBoxUp() { 9 }
-sub SC_SpinBoxDown() { 10 }
-sub SC_SpinBoxFrame() { 11 }
-sub SC_SpinBoxEditField() { 12 }
-sub SC_ComboBoxFrame() { 13 }
-sub SC_ComboBoxEditField() { 14 }
-sub SC_ComboBoxArrow() { 15 }
-sub SC_ComboBoxListBoxPopup() { 16 }
-sub SC_SliderGroove() { 17 }
-sub SC_SliderHandle() { 18 }
-sub SC_SliderTickmarks() { 19 }
-sub SC_ToolButton() { 20 }
-sub SC_ToolButtonMenu() { 21 }
-sub SC_TitleBarSysMenu() { 22 }
-sub SC_TitleBarMinButton() { 23 }
-sub SC_TitleBarMaxButton() { 24 }
-sub SC_TitleBarCloseButton() { 25 }
-sub SC_TitleBarNormalButton() { 26 }
-sub SC_TitleBarShadeButton() { 27 }
-sub SC_TitleBarUnshadeButton() { 28 }
-sub SC_TitleBarContextHelpButton() { 29 }
-sub SC_TitleBarLabel() { 30 }
-sub SC_Q3ListView() { 31 }
-sub SC_Q3ListViewBranch() { 32 }
-sub SC_Q3ListViewExpand() { 33 }
-sub SC_DialGroove() { 34 }
-sub SC_DialHandle() { 35 }
-sub SC_DialTickmarks() { 36 }
-sub SC_GroupBoxCheckBox() { 37 }
-sub SC_GroupBoxLabel() { 38 }
-sub SC_GroupBoxContents() { 39 }
-sub SC_GroupBoxFrame() { 40 }
-sub SC_MdiMinButton() { 41 }
-sub SC_MdiNormalButton() { 42 }
-sub SC_MdiCloseButton() { 43 }
-sub SC_CustomBase() { 44 }
-sub SC_All() { 45 }
-sub PM_ButtonMargin() { 0 }
-sub PM_ButtonDefaultIndicator() { 1 }
-sub PM_MenuButtonIndicator() { 2 }
-sub PM_ButtonShiftHorizontal() { 3 }
-sub PM_ButtonShiftVertical() { 4 }
-sub PM_DefaultFrameWidth() { 5 }
-sub PM_SpinBoxFrameWidth() { 6 }
-sub PM_ComboBoxFrameWidth() { 7 }
-sub PM_MaximumDragDistance() { 8 }
-sub PM_ScrollBarExtent() { 9 }
-sub PM_ScrollBarSliderMin() { 10 }
-sub PM_SliderThickness() { 11 }
-sub PM_SliderControlThickness() { 12 }
-sub PM_SliderLength() { 13 }
-sub PM_SliderTickmarkOffset() { 14 }
-sub PM_SliderSpaceAvailable() { 15 }
-sub PM_DockWidgetSeparatorExtent() { 16 }
-sub PM_DockWidgetHandleExtent() { 17 }
-sub PM_DockWidgetFrameWidth() { 18 }
-sub PM_TabBarTabOverlap() { 19 }
-sub PM_TabBarTabHSpace() { 20 }
-sub PM_TabBarTabVSpace() { 21 }
-sub PM_TabBarBaseHeight() { 22 }
-sub PM_TabBarBaseOverlap() { 23 }
-sub PM_ProgressBarChunkWidth() { 24 }
-sub PM_SplitterWidth() { 25 }
-sub PM_TitleBarHeight() { 26 }
-sub PM_MenuScrollerHeight() { 27 }
-sub PM_MenuHMargin() { 28 }
-sub PM_MenuVMargin() { 29 }
-sub PM_MenuPanelWidth() { 30 }
-sub PM_MenuTearoffHeight() { 31 }
-sub PM_MenuDesktopFrameWidth() { 32 }
-sub PM_MenuBarPanelWidth() { 33 }
-sub PM_MenuBarItemSpacing() { 34 }
-sub PM_MenuBarVMargin() { 35 }
-sub PM_MenuBarHMargin() { 36 }
-sub PM_IndicatorWidth() { 37 }
-sub PM_IndicatorHeight() { 38 }
-sub PM_ExclusiveIndicatorWidth() { 39 }
-sub PM_ExclusiveIndicatorHeight() { 40 }
-sub PM_CheckListButtonSize() { 41 }
-sub PM_CheckListControllerSize() { 42 }
-sub PM_DialogButtonsSeparator() { 43 }
-sub PM_DialogButtonsButtonWidth() { 44 }
-sub PM_DialogButtonsButtonHeight() { 45 }
-sub PM_MdiSubWindowFrameWidth() { 46 }
-sub PM_MDIFrameWidth() { 47 }
-sub PM_MdiSubWindowMinimizedWidth() { 48 }
-sub PM_MDIMinimizedWidth() { 49 }
-sub PM_HeaderMargin() { 50 }
-sub PM_HeaderMarkSize() { 51 }
-sub PM_HeaderGripMargin() { 52 }
-sub PM_TabBarTabShiftHorizontal() { 53 }
-sub PM_TabBarTabShiftVertical() { 54 }
-sub PM_TabBarScrollButtonWidth() { 55 }
-sub PM_ToolBarFrameWidth() { 56 }
-sub PM_ToolBarHandleExtent() { 57 }
-sub PM_ToolBarItemSpacing() { 58 }
-sub PM_ToolBarItemMargin() { 59 }
-sub PM_ToolBarSeparatorExtent() { 60 }
-sub PM_ToolBarExtensionExtent() { 61 }
-sub PM_SpinBoxSliderHeight() { 62 }
-sub PM_DefaultTopLevelMargin() { 63 }
-sub PM_DefaultChildMargin() { 64 }
-sub PM_DefaultLayoutSpacing() { 65 }
-sub PM_ToolBarIconSize() { 66 }
-sub PM_ListViewIconSize() { 67 }
-sub PM_IconViewIconSize() { 68 }
-sub PM_SmallIconSize() { 69 }
-sub PM_LargeIconSize() { 70 }
-sub PM_FocusFrameVMargin() { 71 }
-sub PM_FocusFrameHMargin() { 72 }
-sub PM_ToolTipLabelFrameWidth() { 73 }
-sub PM_CheckBoxLabelSpacing() { 74 }
-sub PM_TabBarIconSize() { 75 }
-sub PM_SizeGripSize() { 76 }
-sub PM_DockWidgetTitleMargin() { 77 }
-sub PM_MessageBoxIconSize() { 78 }
-sub PM_ButtonIconSize() { 79 }
-sub PM_DockWidgetTitleBarButtonMargin() { 80 }
-sub PM_RadioButtonLabelSpacing() { 81 }
-sub PM_LayoutLeftMargin() { 82 }
-sub PM_LayoutTopMargin() { 83 }
-sub PM_LayoutRightMargin() { 84 }
-sub PM_LayoutBottomMargin() { 85 }
-sub PM_LayoutHorizontalSpacing() { 86 }
-sub PM_LayoutVerticalSpacing() { 87 }
-sub PM_TabBar_ScrollButtonOverlap() { 88 }
-sub PM_TextCursorWidth() { 89 }
-sub PM_TabCloseIndicatorWidth() { 90 }
-sub PM_TabCloseIndicatorHeight() { 91 }
-sub PM_ScrollView_ScrollBarSpacing() { 92 }
-sub PM_SubMenuOverlap() { 93 }
-sub PM_CustomBase() { 94 }
-sub CT_PushButton() { 0 }
-sub CT_CheckBox() { 1 }
-sub CT_RadioButton() { 2 }
-sub CT_ToolButton() { 3 }
-sub CT_ComboBox() { 4 }
-sub CT_Splitter() { 5 }
-sub CT_Q3DockWindow() { 6 }
-sub CT_ProgressBar() { 7 }
-sub CT_MenuItem() { 8 }
-sub CT_MenuBarItem() { 9 }
-sub CT_MenuBar() { 10 }
-sub CT_Menu() { 11 }
-sub CT_TabBarTab() { 12 }
-sub CT_Slider() { 13 }
-sub CT_ScrollBar() { 14 }
-sub CT_Q3Header() { 15 }
-sub CT_LineEdit() { 16 }
-sub CT_SpinBox() { 17 }
-sub CT_SizeGrip() { 18 }
-sub CT_TabWidget() { 19 }
-sub CT_DialogButtons() { 20 }
-sub CT_HeaderSection() { 21 }
-sub CT_GroupBox() { 22 }
-sub CT_MdiControls() { 23 }
-sub CT_ItemViewItem() { 24 }
-sub CT_CustomBase() { 25 }
-sub RSIP_OnMouseClickAndAlreadyFocused() { 0 }
-sub RSIP_OnMouseClick() { 1 }
-sub SH_EtchDisabledText() { 0 }
-sub SH_DitherDisabledText() { 1 }
-sub SH_ScrollBar_MiddleClickAbsolutePosition() { 2 }
-sub SH_ScrollBar_ScrollWhenPointerLeavesControl() { 3 }
-sub SH_TabBar_SelectMouseType() { 4 }
-sub SH_TabBar_Alignment() { 5 }
-sub SH_Header_ArrowAlignment() { 6 }
-sub SH_Slider_SnapToValue() { 7 }
-sub SH_Slider_SloppyKeyEvents() { 8 }
-sub SH_ProgressDialog_CenterCancelButton() { 9 }
-sub SH_ProgressDialog_TextLabelAlignment() { 10 }
-sub SH_PrintDialog_RightAlignButtons() { 11 }
-sub SH_MainWindow_SpaceBelowMenuBar() { 12 }
-sub SH_FontDialog_SelectAssociatedText() { 13 }
-sub SH_Menu_AllowActiveAndDisabled() { 14 }
-sub SH_Menu_SpaceActivatesItem() { 15 }
-sub SH_Menu_SubMenuPopupDelay() { 16 }
-sub SH_ScrollView_FrameOnlyAroundContents() { 17 }
-sub SH_MenuBar_AltKeyNavigation() { 18 }
-sub SH_ComboBox_ListMouseTracking() { 19 }
-sub SH_Menu_MouseTracking() { 20 }
-sub SH_MenuBar_MouseTracking() { 21 }
-sub SH_ItemView_ChangeHighlightOnFocus() { 22 }
-sub SH_Widget_ShareActivation() { 23 }
-sub SH_Workspace_FillSpaceOnMaximize() { 24 }
-sub SH_ComboBox_Popup() { 25 }
-sub SH_TitleBar_NoBorder() { 26 }
-sub SH_Slider_StopMouseOverSlider() { 27 }
-sub SH_ScrollBar_StopMouseOverSlider() { 28 }
-sub SH_BlinkCursorWhenTextSelected() { 29 }
-sub SH_RichText_FullWidthSelection() { 30 }
-sub SH_Menu_Scrollable() { 31 }
-sub SH_GroupBox_TextLabelVerticalAlignment() { 32 }
-sub SH_GroupBox_TextLabelColor() { 33 }
-sub SH_Menu_SloppySubMenus() { 34 }
-sub SH_Table_GridLineColor() { 35 }
-sub SH_LineEdit_PasswordCharacter() { 36 }
-sub SH_DialogButtons_DefaultButton() { 37 }
-sub SH_ToolBox_SelectedPageTitleBold() { 38 }
-sub SH_TabBar_PreferNoArrows() { 39 }
-sub SH_ScrollBar_LeftClickAbsolutePosition() { 40 }
-sub SH_Q3ListViewExpand_SelectMouseType() { 41 }
-sub SH_UnderlineShortcut() { 42 }
-sub SH_SpinBox_AnimateButton() { 43 }
-sub SH_SpinBox_KeyPressAutoRepeatRate() { 44 }
-sub SH_SpinBox_ClickAutoRepeatRate() { 45 }
-sub SH_Menu_FillScreenWithScroll() { 46 }
-sub SH_ToolTipLabel_Opacity() { 47 }
-sub SH_DrawMenuBarSeparator() { 48 }
-sub SH_TitleBar_ModifyNotification() { 49 }
-sub SH_Button_FocusPolicy() { 50 }
-sub SH_MenuBar_DismissOnSecondClick() { 51 }
-sub SH_MessageBox_UseBorderForButtonSpacing() { 52 }
-sub SH_TitleBar_AutoRaise() { 53 }
-sub SH_ToolButton_PopupDelay() { 54 }
-sub SH_FocusFrame_Mask() { 55 }
-sub SH_RubberBand_Mask() { 56 }
-sub SH_WindowFrame_Mask() { 57 }
-sub SH_SpinControls_DisableOnBounds() { 58 }
-sub SH_Dial_BackgroundRole() { 59 }
-sub SH_ComboBox_LayoutDirection() { 60 }
-sub SH_ItemView_EllipsisLocation() { 61 }
-sub SH_ItemView_ShowDecorationSelected() { 62 }
-sub SH_ItemView_ActivateItemOnSingleClick() { 63 }
-sub SH_ScrollBar_ContextMenu() { 64 }
-sub SH_ScrollBar_RollBetweenButtons() { 65 }
-sub SH_Slider_AbsoluteSetButtons() { 66 }
-sub SH_Slider_PageSetButtons() { 67 }
-sub SH_Menu_KeyboardSearch() { 68 }
-sub SH_TabBar_ElideMode() { 69 }
-sub SH_DialogButtonLayout() { 70 }
-sub SH_ComboBox_PopupFrameStyle() { 71 }
-sub SH_MessageBox_TextInteractionFlags() { 72 }
-sub SH_DialogButtonBox_ButtonsHaveIcons() { 73 }
-sub SH_SpellCheckUnderlineStyle() { 74 }
-sub SH_MessageBox_CenterButtons() { 75 }
-sub SH_Menu_SelectionWrap() { 76 }
-sub SH_ItemView_MovementWithoutUpdatingSelection() { 77 }
-sub SH_ToolTip_Mask() { 78 }
-sub SH_FocusFrame_AboveWidget() { 79 }
-sub SH_TextControl_FocusIndicatorTextCharFormat() { 80 }
-sub SH_WizardStyle() { 81 }
-sub SH_ItemView_ArrowKeysNavigateIntoChildren() { 82 }
-sub SH_Menu_Mask() { 83 }
-sub SH_Menu_FlashTriggeredItem() { 84 }
-sub SH_Menu_FadeOutOnHide() { 85 }
-sub SH_SpinBox_ClickAutoRepeatThreshold() { 86 }
-sub SH_ItemView_PaintAlternatingRowColorsForEmptyArea() { 87 }
-sub SH_FormLayoutWrapPolicy() { 88 }
-sub SH_TabWidget_DefaultTabPosition() { 89 }
-sub SH_ToolBar_Movable() { 90 }
-sub SH_FormLayoutFieldGrowthPolicy() { 91 }
-sub SH_FormLayoutFormAlignment() { 92 }
-sub SH_FormLayoutLabelAlignment() { 93 }
-sub SH_ItemView_DrawDelegateFrame() { 94 }
-sub SH_TabBar_CloseButtonPosition() { 95 }
-sub SH_DockWidget_ButtonsHaveFrame() { 96 }
-sub SH_ToolButtonStyle() { 97 }
-sub SH_RequestSoftwareInputPanel() { 98 }
-sub SH_CustomBase() { 99 }
-sub SP_TitleBarMenuButton() { 0 }
-sub SP_TitleBarMinButton() { 1 }
-sub SP_TitleBarMaxButton() { 2 }
-sub SP_TitleBarCloseButton() { 3 }
-sub SP_TitleBarNormalButton() { 4 }
-sub SP_TitleBarShadeButton() { 5 }
-sub SP_TitleBarUnshadeButton() { 6 }
-sub SP_TitleBarContextHelpButton() { 7 }
-sub SP_DockWidgetCloseButton() { 8 }
-sub SP_MessageBoxInformation() { 9 }
-sub SP_MessageBoxWarning() { 10 }
-sub SP_MessageBoxCritical() { 11 }
-sub SP_MessageBoxQuestion() { 12 }
-sub SP_DesktopIcon() { 13 }
-sub SP_TrashIcon() { 14 }
-sub SP_ComputerIcon() { 15 }
-sub SP_DriveFDIcon() { 16 }
-sub SP_DriveHDIcon() { 17 }
-sub SP_DriveCDIcon() { 18 }
-sub SP_DriveDVDIcon() { 19 }
-sub SP_DriveNetIcon() { 20 }
-sub SP_DirOpenIcon() { 21 }
-sub SP_DirClosedIcon() { 22 }
-sub SP_DirLinkIcon() { 23 }
-sub SP_FileIcon() { 24 }
-sub SP_FileLinkIcon() { 25 }
-sub SP_ToolBarHorizontalExtensionButton() { 26 }
-sub SP_ToolBarVerticalExtensionButton() { 27 }
-sub SP_FileDialogStart() { 28 }
-sub SP_FileDialogEnd() { 29 }
-sub SP_FileDialogToParent() { 30 }
-sub SP_FileDialogNewFolder() { 31 }
-sub SP_FileDialogDetailedView() { 32 }
-sub SP_FileDialogInfoView() { 33 }
-sub SP_FileDialogContentsView() { 34 }
-sub SP_FileDialogListView() { 35 }
-sub SP_FileDialogBack() { 36 }
-sub SP_DirIcon() { 37 }
-sub SP_DialogOkButton() { 38 }
-sub SP_DialogCancelButton() { 39 }
-sub SP_DialogHelpButton() { 40 }
-sub SP_DialogOpenButton() { 41 }
-sub SP_DialogSaveButton() { 42 }
-sub SP_DialogCloseButton() { 43 }
-sub SP_DialogApplyButton() { 44 }
-sub SP_DialogResetButton() { 45 }
-sub SP_DialogDiscardButton() { 46 }
-sub SP_DialogYesButton() { 47 }
-sub SP_DialogNoButton() { 48 }
-sub SP_ArrowUp() { 49 }
-sub SP_ArrowDown() { 50 }
-sub SP_ArrowLeft() { 51 }
-sub SP_ArrowRight() { 52 }
-sub SP_ArrowBack() { 53 }
-sub SP_ArrowForward() { 54 }
-sub SP_DirHomeIcon() { 55 }
-sub SP_CommandLink() { 56 }
-sub SP_VistaShield() { 57 }
-sub SP_BrowserReload() { 58 }
-sub SP_BrowserStop() { 59 }
-sub SP_MediaPlay() { 60 }
-sub SP_MediaStop() { 61 }
-sub SP_MediaPause() { 62 }
-sub SP_MediaSkipForward() { 63 }
-sub SP_MediaSkipBackward() { 64 }
-sub SP_MediaSeekForward() { 65 }
-sub SP_MediaSeekBackward() { 66 }
-sub SP_MediaVolume() { 67 }
-sub SP_MediaVolumeMuted() { 68 }
-sub SP_CustomBase() { 69 }
 
 
 1;
@@ -576,119 +24,1224 @@ Qt::Gui::QStyle
 
 =over
 
-=item    QStyle()
+=item   QStyle()
 
-=item    ~QStyle()
+=item   ~QStyle()
 
-=item   void drawComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget = 0)
+=item  static QRect alignedRect(Qt::LayoutDirection direction, QFlags<Qt::AlignmentFlag> alignment, const QSize & size, const QRect & rectangle)
 
-=item   void drawComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget)
+=item  int combinedLayoutSpacing(QFlags<QSizePolicy::ControlType> controls1, QFlags<QSizePolicy::ControlType> controls2, Qt::Orientation orientation, QStyleOption * option, QWidget * widget)
 
-=item   void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w = 0)
+=item  int combinedLayoutSpacing(QFlags<QSizePolicy::ControlType> controls1, QFlags<QSizePolicy::ControlType> controls2, Qt::Orientation orientation, QStyleOption * option, QWidget * widget = 0)
 
-=item   void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w)
+=item  int combinedLayoutSpacing(QFlags<QSizePolicy::ControlType> controls1, QFlags<QSizePolicy::ControlType> controls2, Qt::Orientation orientation, QStyleOption * option = 0, QWidget * widget = 0)
 
-=item   void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap)
+=item  void drawComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget)
 
-=item   void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole = QPalette::NoRole)
+=item  void drawComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget = 0)
 
-=item   void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole)
+=item  void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w)
 
-=item   void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w = 0)
+=item  void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w = 0)
 
-=item   void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w)
+=item  void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap)
 
-=item   QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt)
+=item  void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole)
 
-=item   QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget = 0)
+=item  void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole = QPalette::NoRole)
 
-=item   QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget)
+=item  void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w)
 
-=item   QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap)
+=item  void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w = 0)
 
-=item   QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text)
+=item  QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt)
 
-=item   int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget = 0)
+=item  QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget)
 
-=item   int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget)
+=item  QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget = 0)
 
-=item   int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option = 0, const QWidget * widget = 0)
+=item  QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap)
 
-=item   int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget = 0)
+=item  QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget = 0)
+=item  int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget)
+=item  int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget = 0)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option = 0, const QWidget * widget = 0)
+=item  int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option = 0, const QWidget * widget = 0)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget = 0)
+=item  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget)
 
-=item   void polish(QWidget * arg0)
+=item  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget = 0)
 
-=item   void polish(QApplication * arg0)
+=item  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option = 0, const QWidget * widget = 0)
 
-=item   void polish(QPalette & arg0)
+=item  void polish(QWidget * arg0)
 
-=item   const QStyle * proxy()
+=item  void polish(QApplication * arg0)
 
-=item   QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w = 0)
+=item  void polish(QPalette & arg0)
 
-=item   QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w)
+=item  const QStyle * proxy()
 
-=item   static int sliderPositionFromValue(int min, int max, int val, int space, bool upsideDown = false)
+=item  QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w)
 
-=item   static int sliderPositionFromValue(int min, int max, int val, int space, bool upsideDown)
+=item  QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w = 0)
 
-=item   static int sliderValueFromPosition(int min, int max, int pos, int space, bool upsideDown = false)
+=item  static int sliderPositionFromValue(int min, int max, int val, int space, bool upsideDown)
 
-=item   static int sliderValueFromPosition(int min, int max, int pos, int space, bool upsideDown)
+=item  static int sliderPositionFromValue(int min, int max, int val, int space, bool upsideDown = false)
 
-=item   QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget = 0)
+=item  static int sliderValueFromPosition(int min, int max, int pos, int space, bool upsideDown)
 
-=item   QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget)
+=item  static int sliderValueFromPosition(int min, int max, int pos, int space, bool upsideDown = false)
 
-=item   QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option = 0, const QWidget * widget = 0)
+=item  QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget)
 
-=item   QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget = 0)
+=item  QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget = 0)
 
-=item   QPalette standardPalette()
+=item  QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option = 0, const QWidget * widget = 0)
 
-=item   QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget = 0)
+=item  QPalette standardPalette()
 
-=item   QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget)
+=item  QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget)
 
-=item   QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt = 0, const QWidget * widget = 0)
+=item  QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget = 0)
 
-=item   QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget = 0)
+=item  QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt = 0, const QWidget * widget = 0)
 
-=item   int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData = 0)
+=item  int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData)
 
-=item   int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData)
+=item  int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData = 0)
 
-=item   int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
+=item  int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
 
-=item   int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData = 0)
+=item  int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt = 0, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
 
-=item   int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt = 0, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
+=item  QRect subControlRect(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget)
 
-=item   int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
+=item  QRect subControlRect(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget = 0)
 
-=item   QRect subControlRect(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget = 0)
+=item  QRect subElementRect(QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget)
 
-=item   QRect subControlRect(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget)
+=item  QRect subElementRect(QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget = 0)
 
-=item   QRect subElementRect(QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget = 0)
+=item  void unpolish(QWidget * arg0)
 
-=item   QRect subElementRect(QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget)
+=item  void unpolish(QApplication * arg0)
 
-=item   void unpolish(QWidget * arg0)
+=item  static QFlags<Qt::AlignmentFlag> visualAlignment(Qt::LayoutDirection direction, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void unpolish(QApplication * arg0)
+=item  static QPoint visualPos(Qt::LayoutDirection direction, const QRect & boundingRect, const QPoint & logicalPos)
 
-=item   static QPoint visualPos(Qt::LayoutDirection direction, const QRect & boundingRect, const QPoint & logicalPos)
+=item  static QRect visualRect(Qt::LayoutDirection direction, const QRect & boundingRect, const QRect & logicalRect)
 
-=item   static QRect visualRect(Qt::LayoutDirection direction, const QRect & boundingRect, const QRect & logicalRect)
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item State_None
+
+=item State_Enabled
+
+=item State_Raised
+
+=item State_Sunken
+
+=item State_Off
+
+=item State_NoChange
+
+=item State_On
+
+=item State_DownArrow
+
+=item State_Horizontal
+
+=item State_HasFocus
+
+=item State_Top
+
+=item State_Bottom
+
+=item State_FocusAtBorder
+
+=item State_AutoRaise
+
+=item State_MouseOver
+
+=item State_UpArrow
+
+=item State_Selected
+
+=item State_Active
+
+=item State_Window
+
+=item State_Open
+
+=item State_Children
+
+=item State_Item
+
+=item State_Sibling
+
+=item State_Editing
+
+=item State_KeyboardFocusChange
+
+=item State_ReadOnly
+
+=item State_Small
+
+=item State_Mini
+
+=item PE_Q3CheckListController
+
+=item PE_Q3CheckListExclusiveIndicator
+
+=item PE_Q3CheckListIndicator
+
+=item PE_Q3DockWindowSeparator
+
+=item PE_Q3Separator
+
+=item PE_Frame
+
+=item PE_FrameDefaultButton
+
+=item PE_FrameDockWidget
+
+=item PE_FrameFocusRect
+
+=item PE_FrameGroupBox
+
+=item PE_FrameLineEdit
+
+=item PE_FrameMenu
+
+=item PE_FrameStatusBar
+
+=item PE_FrameStatusBarItem
+
+=item PE_FrameTabWidget
+
+=item PE_FrameWindow
+
+=item PE_FrameButtonBevel
+
+=item PE_FrameButtonTool
+
+=item PE_FrameTabBarBase
+
+=item PE_PanelButtonCommand
+
+=item PE_PanelButtonBevel
+
+=item PE_PanelButtonTool
+
+=item PE_PanelMenuBar
+
+=item PE_PanelToolBar
+
+=item PE_PanelLineEdit
+
+=item PE_IndicatorArrowDown
+
+=item PE_IndicatorArrowLeft
+
+=item PE_IndicatorArrowRight
+
+=item PE_IndicatorArrowUp
+
+=item PE_IndicatorBranch
+
+=item PE_IndicatorButtonDropDown
+
+=item PE_IndicatorViewItemCheck
+
+=item PE_IndicatorItemViewItemCheck
+
+=item PE_IndicatorCheckBox
+
+=item PE_IndicatorDockWidgetResizeHandle
+
+=item PE_IndicatorHeaderArrow
+
+=item PE_IndicatorMenuCheckMark
+
+=item PE_IndicatorProgressChunk
+
+=item PE_IndicatorRadioButton
+
+=item PE_IndicatorSpinDown
+
+=item PE_IndicatorSpinMinus
+
+=item PE_IndicatorSpinPlus
+
+=item PE_IndicatorSpinUp
+
+=item PE_IndicatorToolBarHandle
+
+=item PE_IndicatorToolBarSeparator
+
+=item PE_PanelTipLabel
+
+=item PE_IndicatorTabTear
+
+=item PE_PanelScrollAreaCorner
+
+=item PE_Widget
+
+=item PE_IndicatorColumnViewArrow
+
+=item PE_IndicatorItemViewItemDrop
+
+=item PE_PanelItemViewItem
+
+=item PE_PanelItemViewRow
+
+=item PE_PanelStatusBar
+
+=item PE_IndicatorTabClose
+
+=item PE_PanelMenu
+
+=item PE_CustomBase
+
+=item CE_PushButton
+
+=item CE_PushButtonBevel
+
+=item CE_PushButtonLabel
+
+=item CE_CheckBox
+
+=item CE_CheckBoxLabel
+
+=item CE_RadioButton
+
+=item CE_RadioButtonLabel
+
+=item CE_TabBarTab
+
+=item CE_TabBarTabShape
+
+=item CE_TabBarTabLabel
+
+=item CE_ProgressBar
+
+=item CE_ProgressBarGroove
+
+=item CE_ProgressBarContents
+
+=item CE_ProgressBarLabel
+
+=item CE_MenuItem
+
+=item CE_MenuScroller
+
+=item CE_MenuVMargin
+
+=item CE_MenuHMargin
+
+=item CE_MenuTearoff
+
+=item CE_MenuEmptyArea
+
+=item CE_MenuBarItem
+
+=item CE_MenuBarEmptyArea
+
+=item CE_ToolButtonLabel
+
+=item CE_Header
+
+=item CE_HeaderSection
+
+=item CE_HeaderLabel
+
+=item CE_Q3DockWindowEmptyArea
+
+=item CE_ToolBoxTab
+
+=item CE_SizeGrip
+
+=item CE_Splitter
+
+=item CE_RubberBand
+
+=item CE_DockWidgetTitle
+
+=item CE_ScrollBarAddLine
+
+=item CE_ScrollBarSubLine
+
+=item CE_ScrollBarAddPage
+
+=item CE_ScrollBarSubPage
+
+=item CE_ScrollBarSlider
+
+=item CE_ScrollBarFirst
+
+=item CE_ScrollBarLast
+
+=item CE_FocusFrame
+
+=item CE_ComboBoxLabel
+
+=item CE_ToolBar
+
+=item CE_ToolBoxTabShape
+
+=item CE_ToolBoxTabLabel
+
+=item CE_HeaderEmptyArea
+
+=item CE_ColumnViewGrip
+
+=item CE_ItemViewItem
+
+=item CE_ShapedFrame
+
+=item CE_CustomBase
+
+=item SE_PushButtonContents
+
+=item SE_PushButtonFocusRect
+
+=item SE_CheckBoxIndicator
+
+=item SE_CheckBoxContents
+
+=item SE_CheckBoxFocusRect
+
+=item SE_CheckBoxClickRect
+
+=item SE_RadioButtonIndicator
+
+=item SE_RadioButtonContents
+
+=item SE_RadioButtonFocusRect
+
+=item SE_RadioButtonClickRect
+
+=item SE_ComboBoxFocusRect
+
+=item SE_SliderFocusRect
+
+=item SE_Q3DockWindowHandleRect
+
+=item SE_ProgressBarGroove
+
+=item SE_ProgressBarContents
+
+=item SE_ProgressBarLabel
+
+=item SE_DialogButtonAccept
+
+=item SE_DialogButtonReject
+
+=item SE_DialogButtonApply
+
+=item SE_DialogButtonHelp
+
+=item SE_DialogButtonAll
+
+=item SE_DialogButtonAbort
+
+=item SE_DialogButtonIgnore
+
+=item SE_DialogButtonRetry
+
+=item SE_DialogButtonCustom
+
+=item SE_ToolBoxTabContents
+
+=item SE_HeaderLabel
+
+=item SE_HeaderArrow
+
+=item SE_TabWidgetTabBar
+
+=item SE_TabWidgetTabPane
+
+=item SE_TabWidgetTabContents
+
+=item SE_TabWidgetLeftCorner
+
+=item SE_TabWidgetRightCorner
+
+=item SE_ViewItemCheckIndicator
+
+=item SE_ItemViewItemCheckIndicator
+
+=item SE_TabBarTearIndicator
+
+=item SE_TreeViewDisclosureItem
+
+=item SE_LineEditContents
+
+=item SE_FrameContents
+
+=item SE_DockWidgetCloseButton
+
+=item SE_DockWidgetFloatButton
+
+=item SE_DockWidgetTitleBarText
+
+=item SE_DockWidgetIcon
+
+=item SE_CheckBoxLayoutItem
+
+=item SE_ComboBoxLayoutItem
+
+=item SE_DateTimeEditLayoutItem
+
+=item SE_DialogButtonBoxLayoutItem
+
+=item SE_LabelLayoutItem
+
+=item SE_ProgressBarLayoutItem
+
+=item SE_PushButtonLayoutItem
+
+=item SE_RadioButtonLayoutItem
+
+=item SE_SliderLayoutItem
+
+=item SE_SpinBoxLayoutItem
+
+=item SE_ToolButtonLayoutItem
+
+=item SE_FrameLayoutItem
+
+=item SE_GroupBoxLayoutItem
+
+=item SE_TabWidgetLayoutItem
+
+=item SE_ItemViewItemDecoration
+
+=item SE_ItemViewItemText
+
+=item SE_ItemViewItemFocusRect
+
+=item SE_TabBarTabLeftButton
+
+=item SE_TabBarTabRightButton
+
+=item SE_TabBarTabText
+
+=item SE_ShapedFrameContents
+
+=item SE_ToolBarHandle
+
+=item SE_CustomBase
+
+=item CC_SpinBox
+
+=item CC_ComboBox
+
+=item CC_ScrollBar
+
+=item CC_Slider
+
+=item CC_ToolButton
+
+=item CC_TitleBar
+
+=item CC_Q3ListView
+
+=item CC_Dial
+
+=item CC_GroupBox
+
+=item CC_MdiControls
+
+=item CC_CustomBase
+
+=item SC_None
+
+=item SC_ScrollBarAddLine
+
+=item SC_ScrollBarSubLine
+
+=item SC_ScrollBarAddPage
+
+=item SC_ScrollBarSubPage
+
+=item SC_ScrollBarFirst
+
+=item SC_ScrollBarLast
+
+=item SC_ScrollBarSlider
+
+=item SC_ScrollBarGroove
+
+=item SC_SpinBoxUp
+
+=item SC_SpinBoxDown
+
+=item SC_SpinBoxFrame
+
+=item SC_SpinBoxEditField
+
+=item SC_ComboBoxFrame
+
+=item SC_ComboBoxEditField
+
+=item SC_ComboBoxArrow
+
+=item SC_ComboBoxListBoxPopup
+
+=item SC_SliderGroove
+
+=item SC_SliderHandle
+
+=item SC_SliderTickmarks
+
+=item SC_ToolButton
+
+=item SC_ToolButtonMenu
+
+=item SC_TitleBarSysMenu
+
+=item SC_TitleBarMinButton
+
+=item SC_TitleBarMaxButton
+
+=item SC_TitleBarCloseButton
+
+=item SC_TitleBarNormalButton
+
+=item SC_TitleBarShadeButton
+
+=item SC_TitleBarUnshadeButton
+
+=item SC_TitleBarContextHelpButton
+
+=item SC_TitleBarLabel
+
+=item SC_Q3ListView
+
+=item SC_Q3ListViewBranch
+
+=item SC_Q3ListViewExpand
+
+=item SC_DialGroove
+
+=item SC_DialHandle
+
+=item SC_DialTickmarks
+
+=item SC_GroupBoxCheckBox
+
+=item SC_GroupBoxLabel
+
+=item SC_GroupBoxContents
+
+=item SC_GroupBoxFrame
+
+=item SC_MdiMinButton
+
+=item SC_MdiNormalButton
+
+=item SC_MdiCloseButton
+
+=item SC_CustomBase
+
+=item SC_All
+
+=item PM_ButtonMargin
+
+=item PM_ButtonDefaultIndicator
+
+=item PM_MenuButtonIndicator
+
+=item PM_ButtonShiftHorizontal
+
+=item PM_ButtonShiftVertical
+
+=item PM_DefaultFrameWidth
+
+=item PM_SpinBoxFrameWidth
+
+=item PM_ComboBoxFrameWidth
+
+=item PM_MaximumDragDistance
+
+=item PM_ScrollBarExtent
+
+=item PM_ScrollBarSliderMin
+
+=item PM_SliderThickness
+
+=item PM_SliderControlThickness
+
+=item PM_SliderLength
+
+=item PM_SliderTickmarkOffset
+
+=item PM_SliderSpaceAvailable
+
+=item PM_DockWidgetSeparatorExtent
+
+=item PM_DockWidgetHandleExtent
+
+=item PM_DockWidgetFrameWidth
+
+=item PM_TabBarTabOverlap
+
+=item PM_TabBarTabHSpace
+
+=item PM_TabBarTabVSpace
+
+=item PM_TabBarBaseHeight
+
+=item PM_TabBarBaseOverlap
+
+=item PM_ProgressBarChunkWidth
+
+=item PM_SplitterWidth
+
+=item PM_TitleBarHeight
+
+=item PM_MenuScrollerHeight
+
+=item PM_MenuHMargin
+
+=item PM_MenuVMargin
+
+=item PM_MenuPanelWidth
+
+=item PM_MenuTearoffHeight
+
+=item PM_MenuDesktopFrameWidth
+
+=item PM_MenuBarPanelWidth
+
+=item PM_MenuBarItemSpacing
+
+=item PM_MenuBarVMargin
+
+=item PM_MenuBarHMargin
+
+=item PM_IndicatorWidth
+
+=item PM_IndicatorHeight
+
+=item PM_ExclusiveIndicatorWidth
+
+=item PM_ExclusiveIndicatorHeight
+
+=item PM_CheckListButtonSize
+
+=item PM_CheckListControllerSize
+
+=item PM_DialogButtonsSeparator
+
+=item PM_DialogButtonsButtonWidth
+
+=item PM_DialogButtonsButtonHeight
+
+=item PM_MdiSubWindowFrameWidth
+
+=item PM_MDIFrameWidth
+
+=item PM_MdiSubWindowMinimizedWidth
+
+=item PM_MDIMinimizedWidth
+
+=item PM_HeaderMargin
+
+=item PM_HeaderMarkSize
+
+=item PM_HeaderGripMargin
+
+=item PM_TabBarTabShiftHorizontal
+
+=item PM_TabBarTabShiftVertical
+
+=item PM_TabBarScrollButtonWidth
+
+=item PM_ToolBarFrameWidth
+
+=item PM_ToolBarHandleExtent
+
+=item PM_ToolBarItemSpacing
+
+=item PM_ToolBarItemMargin
+
+=item PM_ToolBarSeparatorExtent
+
+=item PM_ToolBarExtensionExtent
+
+=item PM_SpinBoxSliderHeight
+
+=item PM_DefaultTopLevelMargin
+
+=item PM_DefaultChildMargin
+
+=item PM_DefaultLayoutSpacing
+
+=item PM_ToolBarIconSize
+
+=item PM_ListViewIconSize
+
+=item PM_IconViewIconSize
+
+=item PM_SmallIconSize
+
+=item PM_LargeIconSize
+
+=item PM_FocusFrameVMargin
+
+=item PM_FocusFrameHMargin
+
+=item PM_ToolTipLabelFrameWidth
+
+=item PM_CheckBoxLabelSpacing
+
+=item PM_TabBarIconSize
+
+=item PM_SizeGripSize
+
+=item PM_DockWidgetTitleMargin
+
+=item PM_MessageBoxIconSize
+
+=item PM_ButtonIconSize
+
+=item PM_DockWidgetTitleBarButtonMargin
+
+=item PM_RadioButtonLabelSpacing
+
+=item PM_LayoutLeftMargin
+
+=item PM_LayoutTopMargin
+
+=item PM_LayoutRightMargin
+
+=item PM_LayoutBottomMargin
+
+=item PM_LayoutHorizontalSpacing
+
+=item PM_LayoutVerticalSpacing
+
+=item PM_TabBar_ScrollButtonOverlap
+
+=item PM_TextCursorWidth
+
+=item PM_TabCloseIndicatorWidth
+
+=item PM_TabCloseIndicatorHeight
+
+=item PM_ScrollView_ScrollBarSpacing
+
+=item PM_SubMenuOverlap
+
+=item PM_CustomBase
+
+=item CT_PushButton
+
+=item CT_CheckBox
+
+=item CT_RadioButton
+
+=item CT_ToolButton
+
+=item CT_ComboBox
+
+=item CT_Splitter
+
+=item CT_Q3DockWindow
+
+=item CT_ProgressBar
+
+=item CT_MenuItem
+
+=item CT_MenuBarItem
+
+=item CT_MenuBar
+
+=item CT_Menu
+
+=item CT_TabBarTab
+
+=item CT_Slider
+
+=item CT_ScrollBar
+
+=item CT_Q3Header
+
+=item CT_LineEdit
+
+=item CT_SpinBox
+
+=item CT_SizeGrip
+
+=item CT_TabWidget
+
+=item CT_DialogButtons
+
+=item CT_HeaderSection
+
+=item CT_GroupBox
+
+=item CT_MdiControls
+
+=item CT_ItemViewItem
+
+=item CT_CustomBase
+
+=item RSIP_OnMouseClickAndAlreadyFocused
+
+=item RSIP_OnMouseClick
+
+=item SH_EtchDisabledText
+
+=item SH_DitherDisabledText
+
+=item SH_ScrollBar_MiddleClickAbsolutePosition
+
+=item SH_ScrollBar_ScrollWhenPointerLeavesControl
+
+=item SH_TabBar_SelectMouseType
+
+=item SH_TabBar_Alignment
+
+=item SH_Header_ArrowAlignment
+
+=item SH_Slider_SnapToValue
+
+=item SH_Slider_SloppyKeyEvents
+
+=item SH_ProgressDialog_CenterCancelButton
+
+=item SH_ProgressDialog_TextLabelAlignment
+
+=item SH_PrintDialog_RightAlignButtons
+
+=item SH_MainWindow_SpaceBelowMenuBar
+
+=item SH_FontDialog_SelectAssociatedText
+
+=item SH_Menu_AllowActiveAndDisabled
+
+=item SH_Menu_SpaceActivatesItem
+
+=item SH_Menu_SubMenuPopupDelay
+
+=item SH_ScrollView_FrameOnlyAroundContents
+
+=item SH_MenuBar_AltKeyNavigation
+
+=item SH_ComboBox_ListMouseTracking
+
+=item SH_Menu_MouseTracking
+
+=item SH_MenuBar_MouseTracking
+
+=item SH_ItemView_ChangeHighlightOnFocus
+
+=item SH_Widget_ShareActivation
+
+=item SH_Workspace_FillSpaceOnMaximize
+
+=item SH_ComboBox_Popup
+
+=item SH_TitleBar_NoBorder
+
+=item SH_Slider_StopMouseOverSlider
+
+=item SH_ScrollBar_StopMouseOverSlider
+
+=item SH_BlinkCursorWhenTextSelected
+
+=item SH_RichText_FullWidthSelection
+
+=item SH_Menu_Scrollable
+
+=item SH_GroupBox_TextLabelVerticalAlignment
+
+=item SH_GroupBox_TextLabelColor
+
+=item SH_Menu_SloppySubMenus
+
+=item SH_Table_GridLineColor
+
+=item SH_LineEdit_PasswordCharacter
+
+=item SH_DialogButtons_DefaultButton
+
+=item SH_ToolBox_SelectedPageTitleBold
+
+=item SH_TabBar_PreferNoArrows
+
+=item SH_ScrollBar_LeftClickAbsolutePosition
+
+=item SH_Q3ListViewExpand_SelectMouseType
+
+=item SH_UnderlineShortcut
+
+=item SH_SpinBox_AnimateButton
+
+=item SH_SpinBox_KeyPressAutoRepeatRate
+
+=item SH_SpinBox_ClickAutoRepeatRate
+
+=item SH_Menu_FillScreenWithScroll
+
+=item SH_ToolTipLabel_Opacity
+
+=item SH_DrawMenuBarSeparator
+
+=item SH_TitleBar_ModifyNotification
+
+=item SH_Button_FocusPolicy
+
+=item SH_MenuBar_DismissOnSecondClick
+
+=item SH_MessageBox_UseBorderForButtonSpacing
+
+=item SH_TitleBar_AutoRaise
+
+=item SH_ToolButton_PopupDelay
+
+=item SH_FocusFrame_Mask
+
+=item SH_RubberBand_Mask
+
+=item SH_WindowFrame_Mask
+
+=item SH_SpinControls_DisableOnBounds
+
+=item SH_Dial_BackgroundRole
+
+=item SH_ComboBox_LayoutDirection
+
+=item SH_ItemView_EllipsisLocation
+
+=item SH_ItemView_ShowDecorationSelected
+
+=item SH_ItemView_ActivateItemOnSingleClick
+
+=item SH_ScrollBar_ContextMenu
+
+=item SH_ScrollBar_RollBetweenButtons
+
+=item SH_Slider_AbsoluteSetButtons
+
+=item SH_Slider_PageSetButtons
+
+=item SH_Menu_KeyboardSearch
+
+=item SH_TabBar_ElideMode
+
+=item SH_DialogButtonLayout
+
+=item SH_ComboBox_PopupFrameStyle
+
+=item SH_MessageBox_TextInteractionFlags
+
+=item SH_DialogButtonBox_ButtonsHaveIcons
+
+=item SH_SpellCheckUnderlineStyle
+
+=item SH_MessageBox_CenterButtons
+
+=item SH_Menu_SelectionWrap
+
+=item SH_ItemView_MovementWithoutUpdatingSelection
+
+=item SH_ToolTip_Mask
+
+=item SH_FocusFrame_AboveWidget
+
+=item SH_TextControl_FocusIndicatorTextCharFormat
+
+=item SH_WizardStyle
+
+=item SH_ItemView_ArrowKeysNavigateIntoChildren
+
+=item SH_Menu_Mask
+
+=item SH_Menu_FlashTriggeredItem
+
+=item SH_Menu_FadeOutOnHide
+
+=item SH_SpinBox_ClickAutoRepeatThreshold
+
+=item SH_ItemView_PaintAlternatingRowColorsForEmptyArea
+
+=item SH_FormLayoutWrapPolicy
+
+=item SH_TabWidget_DefaultTabPosition
+
+=item SH_ToolBar_Movable
+
+=item SH_FormLayoutFieldGrowthPolicy
+
+=item SH_FormLayoutFormAlignment
+
+=item SH_FormLayoutLabelAlignment
+
+=item SH_ItemView_DrawDelegateFrame
+
+=item SH_TabBar_CloseButtonPosition
+
+=item SH_DockWidget_ButtonsHaveFrame
+
+=item SH_ToolButtonStyle
+
+=item SH_RequestSoftwareInputPanel
+
+=item SH_CustomBase
+
+=item SP_TitleBarMenuButton
+
+=item SP_TitleBarMinButton
+
+=item SP_TitleBarMaxButton
+
+=item SP_TitleBarCloseButton
+
+=item SP_TitleBarNormalButton
+
+=item SP_TitleBarShadeButton
+
+=item SP_TitleBarUnshadeButton
+
+=item SP_TitleBarContextHelpButton
+
+=item SP_DockWidgetCloseButton
+
+=item SP_MessageBoxInformation
+
+=item SP_MessageBoxWarning
+
+=item SP_MessageBoxCritical
+
+=item SP_MessageBoxQuestion
+
+=item SP_DesktopIcon
+
+=item SP_TrashIcon
+
+=item SP_ComputerIcon
+
+=item SP_DriveFDIcon
+
+=item SP_DriveHDIcon
+
+=item SP_DriveCDIcon
+
+=item SP_DriveDVDIcon
+
+=item SP_DriveNetIcon
+
+=item SP_DirOpenIcon
+
+=item SP_DirClosedIcon
+
+=item SP_DirLinkIcon
+
+=item SP_FileIcon
+
+=item SP_FileLinkIcon
+
+=item SP_ToolBarHorizontalExtensionButton
+
+=item SP_ToolBarVerticalExtensionButton
+
+=item SP_FileDialogStart
+
+=item SP_FileDialogEnd
+
+=item SP_FileDialogToParent
+
+=item SP_FileDialogNewFolder
+
+=item SP_FileDialogDetailedView
+
+=item SP_FileDialogInfoView
+
+=item SP_FileDialogContentsView
+
+=item SP_FileDialogListView
+
+=item SP_FileDialogBack
+
+=item SP_DirIcon
+
+=item SP_DialogOkButton
+
+=item SP_DialogCancelButton
+
+=item SP_DialogHelpButton
+
+=item SP_DialogOpenButton
+
+=item SP_DialogSaveButton
+
+=item SP_DialogCloseButton
+
+=item SP_DialogApplyButton
+
+=item SP_DialogResetButton
+
+=item SP_DialogDiscardButton
+
+=item SP_DialogYesButton
+
+=item SP_DialogNoButton
+
+=item SP_ArrowUp
+
+=item SP_ArrowDown
+
+=item SP_ArrowLeft
+
+=item SP_ArrowRight
+
+=item SP_ArrowBack
+
+=item SP_ArrowForward
+
+=item SP_DirHomeIcon
+
+=item SP_CommandLink
+
+=item SP_VistaShield
+
+=item SP_BrowserReload
+
+=item SP_BrowserStop
+
+=item SP_MediaPlay
+
+=item SP_MediaStop
+
+=item SP_MediaPause
+
+=item SP_MediaSkipForward
+
+=item SP_MediaSkipBackward
+
+=item SP_MediaSeekForward
+
+=item SP_MediaSeekBackward
+
+=item SP_MediaVolume
+
+=item SP_MediaVolumeMuted
+
+=item SP_CustomBase
 
 
 =back

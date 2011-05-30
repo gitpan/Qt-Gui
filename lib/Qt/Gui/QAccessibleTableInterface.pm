@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAccessible2Interface/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAccessible2Interface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,55 +24,62 @@ Qt::Gui::QAccessibleTableInterface
 
 =over
 
-=item   QAccessibleInterface * accessibleAt(int row, int column)
+=item  QAccessibleInterface * accessibleAt(int row, int column)
 
-=item   QAccessibleInterface * caption()
+=item  QAccessibleInterface * caption()
 
-=item   void cellAtIndex(int index, int * row, int * column, int * rowSpan, int * columnSpan, bool * isSelected)
+=item  void cellAtIndex(int index, int * row, int * column, int * rowSpan, int * columnSpan, bool * isSelected)
 
-=item   int childIndex(int rowIndex, int columnIndex)
+=item  int childIndex(int rowIndex, int columnIndex)
 
-=item   int columnCount()
+=item  int columnCount()
 
-=item   QString columnDescription(int column)
+=item  QString columnDescription(int column)
 
-=item   QAccessibleInterface * columnHeader()
+=item  QAccessibleInterface * columnHeader()
 
-=item   int columnIndex(int childIndex)
+=item  int columnIndex(int childIndex)
 
-=item   int columnSpan(int row, int column)
+=item  int columnSpan(int row, int column)
 
-=item   bool isColumnSelected(int column)
+=item  bool isColumnSelected(int column)
 
-=item   bool isRowSelected(int row)
+=item  bool isRowSelected(int row)
 
-=item   bool isSelected(int row, int column)
+=item  bool isSelected(int row, int column)
 
-=item   QAccessible2Interface * qAccessibleTableCastHelper()
+=item  QAccessible2Interface * qAccessibleTableCastHelper()
 
-=item   int rowCount()
+=item  int rowCount()
 
-=item   QString rowDescription(int row)
+=item  QString rowDescription(int row)
 
-=item   QAccessibleInterface * rowHeader()
+=item  QAccessibleInterface * rowHeader()
 
-=item   int rowIndex(int childIndex)
+=item  int rowIndex(int childIndex)
 
-=item   int rowSpan(int row, int column)
+=item  int rowSpan(int row, int column)
 
-=item   void selectColumn(int column)
+=item  void selectColumn(int column)
 
-=item   void selectRow(int row)
+=item  void selectRow(int row)
 
-=item   int selectedColumnCount()
+=item  int selectedColumnCount()
 
-=item   int selectedRowCount()
+=item  int selectedRowCount()
 
-=item   QAccessibleInterface * summary()
+=item  QAccessibleInterface * summary()
 
-=item   void unselectColumn(int column)
+=item  void unselectColumn(int column)
 
-=item   void unselectRow(int row)
+=item  void unselectRow(int row)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

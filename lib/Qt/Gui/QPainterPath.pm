@@ -7,17 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub MoveToElement() { 0 }
-sub LineToElement() { 1 }
-sub CurveToElement() { 2 }
-sub CurveToDataElement() { 3 }
 
 
 1;
@@ -29,6 +22,21 @@ Qt::Gui::QPainterPath
 =head1 PUBLIC METHODS
 
 =over
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item MoveToElement
+
+=item LineToElement
+
+=item CurveToElement
+
+=item CurveToDataElement
 
 
 =back

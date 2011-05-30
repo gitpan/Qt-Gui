@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,33 +23,52 @@ Qt::Gui::QLayoutItem
 
 =over
 
-=item    ~QLayoutItem()
+=item   QLayoutItem(QFlags<Qt::AlignmentFlag> alignment)
 
-=item   QRect geometry()
+=item   QLayoutItem(QFlags<Qt::AlignmentFlag> alignment = 0)
 
-=item   bool hasHeightForWidth()
+=item   ~QLayoutItem()
 
-=item   int heightForWidth(int arg0)
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   void invalidate()
+=item  QFlags<QSizePolicy::ControlType> controlTypes()
 
-=item   bool isEmpty()
+=item  QFlags<Qt::Orientation> expandingDirections()
 
-=item   QLayout * layout()
+=item  QRect geometry()
 
-=item   QSize maximumSize()
+=item  bool hasHeightForWidth()
 
-=item   int minimumHeightForWidth(int arg0)
+=item  int heightForWidth(int arg0)
 
-=item   QSize minimumSize()
+=item  void invalidate()
 
-=item   void setGeometry(const QRect & arg0)
+=item  bool isEmpty()
 
-=item   QSize sizeHint()
+=item  QLayout * layout()
 
-=item   QSpacerItem * spacerItem()
+=item  QSize maximumSize()
 
-=item   QWidget * widget()
+=item  int minimumHeightForWidth(int arg0)
+
+=item  QSize minimumSize()
+
+=item  void setAlignment(QFlags<Qt::AlignmentFlag> a)
+
+=item  void setGeometry(const QRect & arg0)
+
+=item  QSize sizeHint()
+
+=item  QSpacerItem * spacerItem()
+
+=item  QWidget * widget()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

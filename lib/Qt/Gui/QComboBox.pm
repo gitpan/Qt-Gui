@@ -7,25 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoInsert() { 0 }
-sub InsertAtTop() { 1 }
-sub InsertAtCurrent() { 2 }
-sub InsertAtBottom() { 3 }
-sub InsertAfterCurrent() { 4 }
-sub InsertBeforeCurrent() { 5 }
-sub InsertAlphabetically() { 6 }
-sub AdjustToContents() { 0 }
-sub AdjustToContentsOnFirstShow() { 1 }
-sub AdjustToMinimumContentsLength() { 2 }
-sub AdjustToMinimumContentsLengthWithIcon() { 3 }
 
 
 1;
@@ -38,151 +24,190 @@ Qt::Gui::QComboBox
 
 =over
 
-=item    QComboBox(QWidget * parent = 0)
+=item   QComboBox(QWidget * parent)
 
-=item    QComboBox(QWidget * parent)
+=item   QComboBox(QWidget * parent = 0)
 
-=item    ~QComboBox()
+=item   ~QComboBox()
 
-=item   void addItem(const QString & text, const QVariant & userData = QVariant())
+=item  void addItem(const QString & text, const QVariant & userData)
 
-=item   void addItem(const QString & text, const QVariant & userData)
+=item  void addItem(const QString & text, const QVariant & userData = QVariant())
 
-=item   void addItem(const QIcon & icon, const QString & text, const QVariant & userData = QVariant())
+=item  void addItem(const QIcon & icon, const QString & text, const QVariant & userData)
 
-=item   void addItem(const QIcon & icon, const QString & text, const QVariant & userData)
+=item  void addItem(const QIcon & icon, const QString & text, const QVariant & userData = QVariant())
 
-=item   void addItems(const QStringList & texts)
+=item  void addItems(const QStringList & texts)
 
-=item   bool autoCompletion()
+=item  bool autoCompletion()
 
-=item   Qt::CaseSensitivity autoCompletionCaseSensitivity()
+=item  Qt::CaseSensitivity autoCompletionCaseSensitivity()
 
-=item   void clear()
+=item  void clear()
 
-=item   void clearEditText()
+=item  void clearEditText()
 
-=item   QCompleter * completer()
+=item  QCompleter * completer()
 
-=item   int count()
+=item  int count()
 
-=item   int currentIndex()
+=item  int currentIndex()
 
-=item   QString currentText()
+=item  QString currentText()
 
-=item   bool duplicatesEnabled()
+=item  bool duplicatesEnabled()
 
-=item   bool event(QEvent * event)
+=item  bool event(QEvent * event)
 
-=item   bool hasFrame()
+=item  int findData(const QVariant & data, int role, QFlags<Qt::MatchFlag> flags)
 
-=item   void hidePopup()
+=item  int findData(const QVariant & data, int role, QFlags<Qt::MatchFlag> flags = static_cast<Qt::MatchFlags>(Qt::MatchExactly|Qt::MatchCaseSensitive))
 
-=item   QSize iconSize()
+=item  int findData(const QVariant & data, int role = Qt::UserRole, QFlags<Qt::MatchFlag> flags = static_cast<Qt::MatchFlags>(Qt::MatchExactly|Qt::MatchCaseSensitive))
 
-=item   void insertItem(int index, const QString & text, const QVariant & userData = QVariant())
+=item  int findText(const QString & text, QFlags<Qt::MatchFlag> flags)
 
-=item   void insertItem(int index, const QString & text, const QVariant & userData)
+=item  int findText(const QString & text, QFlags<Qt::MatchFlag> flags = static_cast<Qt::MatchFlags>(Qt::MatchExactly|Qt::MatchCaseSensitive))
 
-=item   void insertItem(int index, const QIcon & icon, const QString & text, const QVariant & userData = QVariant())
+=item  bool hasFrame()
 
-=item   void insertItem(int index, const QIcon & icon, const QString & text, const QVariant & userData)
+=item  void hidePopup()
 
-=item   void insertItems(int index, const QStringList & texts)
+=item  QSize iconSize()
 
-=item   QComboBox::InsertPolicy insertPolicy()
+=item  void insertItem(int index, const QString & text, const QVariant & userData)
 
-=item   void insertSeparator(int index)
+=item  void insertItem(int index, const QString & text, const QVariant & userData = QVariant())
 
-=item   bool isEditable()
+=item  void insertItem(int index, const QIcon & icon, const QString & text, const QVariant & userData)
 
-=item   QVariant itemData(int index, int role = Qt::UserRole)
+=item  void insertItem(int index, const QIcon & icon, const QString & text, const QVariant & userData = QVariant())
 
-=item   QVariant itemData(int index, int role)
+=item  void insertItems(int index, const QStringList & texts)
 
-=item   QAbstractItemDelegate * itemDelegate()
+=item  QComboBox::InsertPolicy insertPolicy()
 
-=item   QIcon itemIcon(int index)
+=item  void insertSeparator(int index)
 
-=item   QString itemText(int index)
+=item  bool isEditable()
 
-=item   QLineEdit * lineEdit()
+=item  QVariant itemData(int index, int role)
 
-=item   int maxCount()
+=item  QVariant itemData(int index, int role = Qt::UserRole)
 
-=item   int maxVisibleItems()
+=item  QAbstractItemDelegate * itemDelegate()
 
-=item   int minimumContentsLength()
+=item  QIcon itemIcon(int index)
 
-=item   QSize minimumSizeHint()
+=item  QString itemText(int index)
 
-=item   QAbstractItemModel * model()
+=item  QLineEdit * lineEdit()
 
-=item   int modelColumn()
+=item  int maxCount()
 
-=item   void removeItem(int index)
+=item  int maxVisibleItems()
 
-=item   QModelIndex rootModelIndex()
+=item  int minimumContentsLength()
 
-=item   void setAutoCompletion(bool enable)
+=item  QSize minimumSizeHint()
 
-=item   void setAutoCompletionCaseSensitivity(Qt::CaseSensitivity sensitivity)
+=item  QAbstractItemModel * model()
 
-=item   void setCompleter(QCompleter * c)
+=item  int modelColumn()
 
-=item   void setCurrentIndex(int index)
+=item  void removeItem(int index)
 
-=item   void setDuplicatesEnabled(bool enable)
+=item  QModelIndex rootModelIndex()
 
-=item   void setEditText(const QString & text)
+=item  void setAutoCompletion(bool enable)
 
-=item   void setEditable(bool editable)
+=item  void setAutoCompletionCaseSensitivity(Qt::CaseSensitivity sensitivity)
 
-=item   void setFrame(bool arg0)
+=item  void setCompleter(QCompleter * c)
 
-=item   void setIconSize(const QSize & size)
+=item  void setCurrentIndex(int index)
 
-=item   void setInsertPolicy(QComboBox::InsertPolicy policy)
+=item  void setDuplicatesEnabled(bool enable)
 
-=item   void setItemData(int index, const QVariant & value, int role = Qt::UserRole)
+=item  void setEditText(const QString & text)
 
-=item   void setItemData(int index, const QVariant & value, int role)
+=item  void setEditable(bool editable)
 
-=item   void setItemDelegate(QAbstractItemDelegate * delegate)
+=item  void setFrame(bool arg0)
 
-=item   void setItemIcon(int index, const QIcon & icon)
+=item  void setIconSize(const QSize & size)
 
-=item   void setItemText(int index, const QString & text)
+=item  void setInsertPolicy(QComboBox::InsertPolicy policy)
 
-=item   void setLineEdit(QLineEdit * edit)
+=item  void setItemData(int index, const QVariant & value, int role)
 
-=item   void setMaxCount(int max)
+=item  void setItemData(int index, const QVariant & value, int role = Qt::UserRole)
 
-=item   void setMaxVisibleItems(int maxItems)
+=item  void setItemDelegate(QAbstractItemDelegate * delegate)
 
-=item   void setMinimumContentsLength(int characters)
+=item  void setItemIcon(int index, const QIcon & icon)
 
-=item   void setModel(QAbstractItemModel * model)
+=item  void setItemText(int index, const QString & text)
 
-=item   void setModelColumn(int visibleColumn)
+=item  void setLineEdit(QLineEdit * edit)
 
-=item   void setRootModelIndex(const QModelIndex & index)
+=item  void setMaxCount(int max)
 
-=item   void setSizeAdjustPolicy(QComboBox::SizeAdjustPolicy policy)
+=item  void setMaxVisibleItems(int maxItems)
 
-=item   void setValidator(const QValidator * v)
+=item  void setMinimumContentsLength(int characters)
 
-=item   void setView(QAbstractItemView * itemView)
+=item  void setModel(QAbstractItemModel * model)
 
-=item   void showPopup()
+=item  void setModelColumn(int visibleColumn)
 
-=item   QComboBox::SizeAdjustPolicy sizeAdjustPolicy()
+=item  void setRootModelIndex(const QModelIndex & index)
 
-=item   QSize sizeHint()
+=item  void setSizeAdjustPolicy(QComboBox::SizeAdjustPolicy policy)
 
-=item   const QValidator * validator()
+=item  void setValidator(const QValidator * v)
 
-=item   QAbstractItemView * view()
+=item  void setView(QAbstractItemView * itemView)
+
+=item  void showPopup()
+
+=item  QComboBox::SizeAdjustPolicy sizeAdjustPolicy()
+
+=item  QSize sizeHint()
+
+=item  const QValidator * validator()
+
+=item  QAbstractItemView * view()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoInsert
+
+=item InsertAtTop
+
+=item InsertAtCurrent
+
+=item InsertAtBottom
+
+=item InsertAfterCurrent
+
+=item InsertBeforeCurrent
+
+=item InsertAlphabetically
+
+=item AdjustToContents
+
+=item AdjustToContentsOnFirstShow
+
+=item AdjustToMinimumContentsLength
+
+=item AdjustToMinimumContentsLengthWithIcon
 
 
 =back

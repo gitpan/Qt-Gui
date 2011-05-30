@@ -7,18 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsItem/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub MaskShape() { 0 }
-sub BoundingRectShape() { 1 }
-sub HeuristicMaskShape() { 2 }
-sub Type() { 0 }
 
 
 1;
@@ -31,55 +24,66 @@ Qt::Gui::QGraphicsPixmapItem
 
 =over
 
-=item    QGraphicsPixmapItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsPixmapItem(QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsPixmapItem(QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsPixmapItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsPixmapItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   QGraphicsPixmapItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsPixmapItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   ~QGraphicsPixmapItem()
 
-=item    QGraphicsPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item  QRectF boundingRect()
 
-=item    ~QGraphicsPixmapItem()
+=item  bool contains(const QPointF & point)
 
-=item   QRectF boundingRect()
+=item  bool isObscuredBy(const QGraphicsItem * item)
 
-=item   bool contains(const QPointF & point)
+=item  QPointF offset()
 
-=item   bool isObscuredBy(const QGraphicsItem * item)
+=item  QPainterPath opaqueArea()
 
-=item   QPointF offset()
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 
-=item   QPainterPath opaqueArea()
+=item  QPixmap pixmap()
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
+=item  void setOffset(const QPointF & offset)
 
-=item   QPixmap pixmap()
+=item  void setOffset(qreal x, qreal y)
 
-=item   void setOffset(const QPointF & offset)
+=item  void setPixmap(const QPixmap & pixmap)
 
-=item   void setOffset(qreal x, qreal y)
+=item  void setShapeMode(QGraphicsPixmapItem::ShapeMode mode)
 
-=item   void setPixmap(const QPixmap & pixmap)
+=item  void setTransformationMode(Qt::TransformationMode mode)
 
-=item   void setShapeMode(QGraphicsPixmapItem::ShapeMode mode)
+=item  QPainterPath shape()
 
-=item   void setTransformationMode(Qt::TransformationMode mode)
+=item  QGraphicsPixmapItem::ShapeMode shapeMode()
 
-=item   QPainterPath shape()
+=item  Qt::TransformationMode transformationMode()
 
-=item   QGraphicsPixmapItem::ShapeMode shapeMode()
+=item  int type()
 
-=item   Qt::TransformationMode transformationMode()
 
-=item   int type()
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item MaskShape
+
+=item BoundingRectShape
+
+=item HeuristicMaskShape
+
+=item Type
 
 
 =back

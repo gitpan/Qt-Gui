@@ -27,32 +27,33 @@ QTextFrame::iterator *ret;
 QTextFrame::iterator * arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QTextFrame::iterator();
+        if (1) {
+      
+    ret = new QTextFrame::iterator();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFrame::iterator", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QTextFrame::iterator")) {
-        arg10 = reinterpret_cast<QTextFrame::iterator *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QTextFrame::iterator");
+      arg10 = reinterpret_cast<QTextFrame::iterator *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QTextFrame::iterator(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFrame::iterator", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -62,30 +63,39 @@ void
 QTextFrame::iterator::atEnd(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->atEnd();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QTextBlock currentBlock()
 void
 QTextFrame::iterator::currentBlock(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QTextBlock ret = THIS->currentBlock();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextBlock", (void *)new QTextBlock(ret));
     XSRETURN(1);
+    }
 
 ## QTextFrame * currentFrame()
 void
 QTextFrame::iterator::currentFrame(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QTextFrame * ret = THIS->currentFrame();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFrame", (void *)ret);
     XSRETURN(1);
+    }
 
 ## bool operator!=(const QTextFrame::iterator & o)
 void
@@ -94,14 +104,12 @@ PREINIT:
 QTextFrame::iterator * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QTextFrame::iterator")) {
-        arg00 = reinterpret_cast<QTextFrame::iterator *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTextFrame::iterator");
+      arg00 = reinterpret_cast<QTextFrame::iterator *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->operator!=(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QTextFrame::iterator & operator++()
 ## QTextFrame::iterator operator++(int arg0)
@@ -111,28 +119,33 @@ PREINIT:
 int arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        QTextFrame::iterator * ret = &THIS->operator++();
+        if (1) {
+      
+    QTextFrame::iterator * ret = &THIS->operator++();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFrame::iterator", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        arg10 = (int)SvIV(ST(1));
+        if (SvIOK(ST(1))) {
+      arg10 = (int)SvIV(ST(1));
     QTextFrame::iterator ret = THIS->operator++(arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFrame::iterator", (void *)new QTextFrame::iterator(ret));
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QTextFrame::iterator & operator--()
@@ -143,28 +156,33 @@ PREINIT:
 int arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        QTextFrame::iterator * ret = &THIS->operator--();
+        if (1) {
+      
+    QTextFrame::iterator * ret = &THIS->operator--();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFrame::iterator", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        arg10 = (int)SvIV(ST(1));
+        if (SvIOK(ST(1))) {
+      arg10 = (int)SvIV(ST(1));
     QTextFrame::iterator ret = THIS->operator--(arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFrame::iterator", (void *)new QTextFrame::iterator(ret));
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QTextFrame::iterator & operator=(const QTextFrame::iterator & o)
@@ -174,14 +192,12 @@ PREINIT:
 QTextFrame::iterator * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QTextFrame::iterator")) {
-        arg00 = reinterpret_cast<QTextFrame::iterator *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTextFrame::iterator");
+      arg00 = reinterpret_cast<QTextFrame::iterator *>(SvIV((SV*)SvRV(ST(1))));
     QTextFrame::iterator * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFrame::iterator", (void *)ret);
     XSRETURN(1);
+    }
 
 ## bool operator==(const QTextFrame::iterator & o)
 void
@@ -190,21 +206,22 @@ PREINIT:
 QTextFrame::iterator * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QTextFrame::iterator")) {
-        arg00 = reinterpret_cast<QTextFrame::iterator *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTextFrame::iterator");
+      arg00 = reinterpret_cast<QTextFrame::iterator *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->operator==(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QTextFrame * parentFrame()
 void
 QTextFrame::iterator::parentFrame(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QTextFrame * ret = THIS->parentFrame();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFrame", (void *)ret);
     XSRETURN(1);
+    }

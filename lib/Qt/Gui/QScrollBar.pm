@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractSlider/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractSlider/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,19 +24,26 @@ Qt::Gui::QScrollBar
 
 =over
 
-=item    QScrollBar(QWidget * parent = 0)
+=item   QScrollBar(QWidget * parent)
 
-=item    QScrollBar(QWidget * parent)
+=item   QScrollBar(QWidget * parent = 0)
 
-=item    QScrollBar(Qt::Orientation arg0, QWidget * parent = 0)
+=item   QScrollBar(Qt::Orientation arg0, QWidget * parent)
 
-=item    QScrollBar(Qt::Orientation arg0, QWidget * parent)
+=item   QScrollBar(Qt::Orientation arg0, QWidget * parent = 0)
 
-=item    ~QScrollBar()
+=item   ~QScrollBar()
 
-=item   bool event(QEvent * event)
+=item  bool event(QEvent * event)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

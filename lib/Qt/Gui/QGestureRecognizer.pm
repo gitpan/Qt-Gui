@@ -7,21 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Ignore() { 0 }
-sub MayBeGesture() { 1 }
-sub TriggerGesture() { 2 }
-sub FinishGesture() { 3 }
-sub CancelGesture() { 4 }
-sub ResultState_Mask() { 5 }
-sub ConsumeEventHint() { 6 }
-sub ResultHint_Mask() { 7 }
 
 
 1;
@@ -34,17 +23,42 @@ Qt::Gui::QGestureRecognizer
 
 =over
 
-=item    QGestureRecognizer()
+=item   QGestureRecognizer()
 
-=item    ~QGestureRecognizer()
+=item   ~QGestureRecognizer()
 
-=item   QGesture * create(QObject * target)
+=item  QGesture * create(QObject * target)
 
-=item   static Qt::GestureType registerRecognizer(QGestureRecognizer * recognizer)
+=item  QFlags<QGestureRecognizer::ResultFlag> recognize(QGesture * state, QObject * watched, QEvent * event)
 
-=item   void reset(QGesture * state)
+=item  static Qt::GestureType registerRecognizer(QGestureRecognizer * recognizer)
 
-=item   static void unregisterRecognizer(Qt::GestureType type)
+=item  void reset(QGesture * state)
+
+=item  static void unregisterRecognizer(Qt::GestureType type)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Ignore
+
+=item MayBeGesture
+
+=item TriggerGesture
+
+=item FinishGesture
+
+=item CancelGesture
+
+=item ResultState_Mask
+
+=item ConsumeEventHint
+
+=item ResultHint_Mask
 
 
 =back

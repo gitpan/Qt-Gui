@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QIconEngine/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QIconEngine/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub AvailableSizesHook() { 0 }
 
 
 1;
@@ -28,15 +24,28 @@ Qt::Gui::QIconEngineV2
 
 =over
 
-=item   QIconEngineV2 * clone()
+=item  QIconEngineV2 * clone()
 
-=item   QString key()
+=item  QString iconName()
 
-=item   bool read(QDataStream & in)
+=item  QString key()
 
-=item   void virtual_hook(int id, void * data)
+=item  bool read(QDataStream & in)
 
-=item   bool write(QDataStream & out)
+=item  void virtual_hook(int id, void * data)
+
+=item  bool write(QDataStream & out)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item AvailableSizesHook
+
+=item IconNameHook
 
 
 =back

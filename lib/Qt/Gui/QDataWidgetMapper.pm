@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub AutoSubmit() { 0 }
-sub ManualSubmit() { 1 }
 
 
 1;
@@ -28,63 +24,74 @@ Qt::Gui::QDataWidgetMapper
 
 =over
 
-=item    QDataWidgetMapper(QObject * parent = 0)
+=item   QDataWidgetMapper(QObject * parent)
 
-=item    QDataWidgetMapper(QObject * parent)
+=item   QDataWidgetMapper(QObject * parent = 0)
 
-=item    ~QDataWidgetMapper()
+=item   ~QDataWidgetMapper()
 
-=item   void addMapping(QWidget * widget, int section)
+=item  void addMapping(QWidget * widget, int section)
 
-=item   void addMapping(QWidget * widget, int section, const QByteArray & propertyName)
+=item  void addMapping(QWidget * widget, int section, const QByteArray & propertyName)
 
-=item   void clearMapping()
+=item  void clearMapping()
 
-=item   int currentIndex()
+=item  int currentIndex()
 
-=item   QAbstractItemDelegate * itemDelegate()
+=item  QAbstractItemDelegate * itemDelegate()
 
-=item   QByteArray mappedPropertyName(QWidget * widget)
+=item  QByteArray mappedPropertyName(QWidget * widget)
 
-=item   int mappedSection(QWidget * widget)
+=item  int mappedSection(QWidget * widget)
 
-=item   QWidget * mappedWidgetAt(int section)
+=item  QWidget * mappedWidgetAt(int section)
 
-=item   QAbstractItemModel * model()
+=item  QAbstractItemModel * model()
 
-=item   Qt::Orientation orientation()
+=item  Qt::Orientation orientation()
 
-=item   void removeMapping(QWidget * widget)
+=item  void removeMapping(QWidget * widget)
 
-=item   void revert()
+=item  void revert()
 
-=item   QModelIndex rootIndex()
+=item  QModelIndex rootIndex()
 
-=item   void setCurrentIndex(int index)
+=item  void setCurrentIndex(int index)
 
-=item   void setCurrentModelIndex(const QModelIndex & index)
+=item  void setCurrentModelIndex(const QModelIndex & index)
 
-=item   void setItemDelegate(QAbstractItemDelegate * delegate)
+=item  void setItemDelegate(QAbstractItemDelegate * delegate)
 
-=item   void setModel(QAbstractItemModel * model)
+=item  void setModel(QAbstractItemModel * model)
 
-=item   void setOrientation(Qt::Orientation aOrientation)
+=item  void setOrientation(Qt::Orientation aOrientation)
 
-=item   void setRootIndex(const QModelIndex & index)
+=item  void setRootIndex(const QModelIndex & index)
 
-=item   void setSubmitPolicy(QDataWidgetMapper::SubmitPolicy policy)
+=item  void setSubmitPolicy(QDataWidgetMapper::SubmitPolicy policy)
 
-=item   bool submit()
+=item  bool submit()
 
-=item   QDataWidgetMapper::SubmitPolicy submitPolicy()
+=item  QDataWidgetMapper::SubmitPolicy submitPolicy()
 
-=item   void toFirst()
+=item  void toFirst()
 
-=item   void toLast()
+=item  void toLast()
 
-=item   void toNext()
+=item  void toNext()
 
-=item   void toPrevious()
+=item  void toPrevious()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item AutoSubmit
+
+=item ManualSubmit
 
 
 =back

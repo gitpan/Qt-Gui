@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,25 +23,32 @@ Qt::Gui::QToolTip
 
 =over
 
-=item   static QFont font()
+=item  static QFont font()
 
-=item   static void hideText()
+=item  static void hideText()
 
-=item   static bool isVisible()
+=item  static bool isVisible()
 
-=item   static QPalette palette()
+=item  static QPalette palette()
 
-=item   static void setFont(const QFont & arg0)
+=item  static void setFont(const QFont & arg0)
 
-=item   static void setPalette(const QPalette & arg0)
+=item  static void setPalette(const QPalette & arg0)
 
-=item   static void showText(const QPoint & pos, const QString & text, QWidget * w = 0)
+=item  static void showText(const QPoint & pos, const QString & text, QWidget * w)
 
-=item   static void showText(const QPoint & pos, const QString & text, QWidget * w)
+=item  static void showText(const QPoint & pos, const QString & text, QWidget * w = 0)
 
-=item   static void showText(const QPoint & pos, const QString & text, QWidget * w, const QRect & rect)
+=item  static void showText(const QPoint & pos, const QString & text, QWidget * w, const QRect & rect)
 
-=item   static QString text()
+=item  static QString text()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

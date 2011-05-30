@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub TopToBottom() { 0 }
-sub BottomToTop() { 1 }
 
 
 1;
@@ -29,51 +24,70 @@ Qt::Gui::QProgressBar
 
 =over
 
-=item    QProgressBar(QWidget * parent = 0)
+=item   QProgressBar(QWidget * parent)
 
-=item    QProgressBar(QWidget * parent)
+=item   QProgressBar(QWidget * parent = 0)
 
-=item   QString format()
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   bool invertedAppearance()
+=item  QString format()
 
-=item   bool isTextVisible()
+=item  bool invertedAppearance()
 
-=item   int maximum()
+=item  bool invertedAppearance()
 
-=item   int minimum()
+=item  bool isTextVisible()
 
-=item   QSize minimumSizeHint()
+=item  int maximum()
 
-=item   Qt::Orientation orientation()
+=item  int minimum()
 
-=item   void reset()
+=item  QSize minimumSizeHint()
 
-=item   void setFormat(const QString & format)
+=item  Qt::Orientation orientation()
 
-=item   void setInvertedAppearance(bool invert)
+=item  void reset()
 
-=item   void setMaximum(int maximum)
+=item  void setAlignment(QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setMinimum(int minimum)
+=item  void setFormat(const QString & format)
 
-=item   void setOrientation(Qt::Orientation arg0)
+=item  void setInvertedAppearance(bool invert)
 
-=item   void setRange(int minimum, int maximum)
+=item  void setMaximum(int maximum)
 
-=item   void setTextDirection(QProgressBar::Direction textDirection)
+=item  void setMinimum(int minimum)
 
-=item   void setTextVisible(bool visible)
+=item  void setOrientation(Qt::Orientation arg0)
 
-=item   void setValue(int value)
+=item  void setRange(int minimum, int maximum)
 
-=item   QSize sizeHint()
+=item  void setTextDirection(QProgressBar::Direction textDirection)
 
-=item   QString text()
+=item  void setTextVisible(bool visible)
 
-=item   QProgressBar::Direction textDirection()
+=item  void setValue(int value)
 
-=item   int value()
+=item  QSize sizeHint()
+
+=item  QString text()
+
+=item  QProgressBar::Direction textDirection()
+
+=item  QProgressBar::Direction textDirection()
+
+=item  int value()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item TopToBottom
+
+=item BottomToTop
 
 
 =back

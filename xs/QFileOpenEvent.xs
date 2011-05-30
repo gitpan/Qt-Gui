@@ -28,24 +28,29 @@ QString * arg00;
 QUrl * arg10;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+        if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QFileOpenEvent(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QFileOpenEvent", (void *)ret);
     XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QUrl")) {
+      arg10 = reinterpret_cast<QUrl *>(SvIV((SV*)SvRV(ST(1))));
+    ret = new QFileOpenEvent(*arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QFileOpenEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QFileOpenEvent()
@@ -60,17 +65,23 @@ void
 QFileOpenEvent::file(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->file();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## QUrl url()
 void
 QFileOpenEvent::url(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QUrl ret = THIS->url();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QUrl(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QUrl", (void *)new QUrl(ret));
     XSRETURN(1);
+    }

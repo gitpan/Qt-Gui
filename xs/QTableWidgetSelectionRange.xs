@@ -32,44 +32,49 @@ int arg22;
 int arg23;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QTableWidgetSelectionRange();
+        if (1) {
+      
+    ret = new QTableWidgetSelectionRange();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTableWidgetSelectionRange", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QTableWidgetSelectionRange")) {
-        arg10 = reinterpret_cast<QTableWidgetSelectionRange *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QTableWidgetSelectionRange");
+      arg10 = reinterpret_cast<QTableWidgetSelectionRange *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QTableWidgetSelectionRange(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTableWidgetSelectionRange", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 5:
+      case 5:
       {
-        arg20 = (int)SvIV(ST(1));
-    arg21 = (int)SvIV(ST(2));
-    arg22 = (int)SvIV(ST(3));
-    arg23 = (int)SvIV(ST(4));
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4))) {
+      arg20 = (int)SvIV(ST(1));
+      arg21 = (int)SvIV(ST(2));
+      arg22 = (int)SvIV(ST(3));
+      arg23 = (int)SvIV(ST(4));
     ret = new QTableWidgetSelectionRange(arg20, arg21, arg22, arg23);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTableWidgetSelectionRange", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QTableWidgetSelectionRange()
@@ -84,57 +89,75 @@ void
 QTableWidgetSelectionRange::bottomRow(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->bottomRow();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int columnCount()
 void
 QTableWidgetSelectionRange::columnCount(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->columnCount();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int leftColumn()
 void
 QTableWidgetSelectionRange::leftColumn(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->leftColumn();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int rightColumn()
 void
 QTableWidgetSelectionRange::rightColumn(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->rightColumn();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int rowCount()
 void
 QTableWidgetSelectionRange::rowCount(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->rowCount();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int topRow()
 void
 QTableWidgetSelectionRange::topRow(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->topRow();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }

@@ -18,55 +18,70 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QDateEdit(QWidget * parent = 0)
 ##  QDateEdit(QWidget * parent)
-##  QDateEdit(const QDate & date, QWidget * parent = 0)
+##  QDateEdit(QWidget * parent = 0)
 ##  QDateEdit(const QDate & date, QWidget * parent)
+##  QDateEdit(const QDate & date, QWidget * parent = 0)
   void
 QDateEdit::new(...)
 PREINIT:
 QDateEdit *ret;
-QWidget * arg00 = 0;
-QWidget * arg10;
+QWidget * arg00;
+QWidget * arg10 = 0;
 QDate * arg20;
-QWidget * arg21 = 0;
+QWidget * arg21;
 QDate * arg30;
-QWidget * arg31;
+QWidget * arg31 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
-        break;
-      }
-    case 2:
-      {
-        if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        if (1) {
+      
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 3:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg30 = reinterpret_cast<QDate *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg30 is not of type ");
-    if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
-        arg31 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg31 is not of type Qt::Gui::QWidget");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QDate")) {
+      arg30 = reinterpret_cast<QDate *>(SvIV((SV*)SvRV(ST(1))));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QDate") && (sv_derived_from(ST(2), "Qt::Gui::QWidget") || ST(2) == &PL_sv_undef)) {
+      arg20 = reinterpret_cast<QDate *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
+        arg21 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg21 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }

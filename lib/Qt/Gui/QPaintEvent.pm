@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +24,22 @@ Qt::Gui::QPaintEvent
 
 =over
 
-=item    QPaintEvent(const QRegion & paintRegion)
+=item   QPaintEvent(const QRegion & paintRegion)
 
-=item    QPaintEvent(const QRect & paintRect)
+=item   QPaintEvent(const QRect & paintRect)
 
-=item    ~QPaintEvent()
+=item   ~QPaintEvent()
 
-=item   const QRect & rect()
+=item  const QRect & rect()
 
-=item   const QRegion & region()
+=item  const QRegion & region()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

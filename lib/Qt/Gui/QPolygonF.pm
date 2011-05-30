@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,39 +23,46 @@ Qt::Gui::QPolygonF
 
 =over
 
-=item    QPolygonF()
+=item   QPolygonF()
 
-=item    QPolygonF(int size)
+=item   QPolygonF(int size)
 
-=item    QPolygonF(const QPolygonF & a)
+=item   QPolygonF(const QPolygonF & a)
 
-=item    QPolygonF(const QRectF & r)
+=item   QPolygonF(const QRectF & r)
 
-=item    QPolygonF(const QPolygon & a)
+=item   QPolygonF(const QPolygon & a)
 
-=item    ~QPolygonF()
+=item   ~QPolygonF()
 
-=item   QRectF boundingRect()
+=item  QRectF boundingRect()
 
-=item   bool containsPoint(const QPointF & pt, Qt::FillRule fillRule)
+=item  bool containsPoint(const QPointF & pt, Qt::FillRule fillRule)
 
-=item   QPolygonF intersected(const QPolygonF & r)
+=item  QPolygonF intersected(const QPolygonF & r)
 
-=item   bool isClosed()
+=item  bool isClosed()
 
-=item   QPolygonF subtracted(const QPolygonF & r)
+=item  QPolygonF subtracted(const QPolygonF & r)
 
-=item   QPolygon toPolygon()
+=item  QPolygon toPolygon()
 
-=item   void translate(const QPointF & offset)
+=item  void translate(const QPointF & offset)
 
-=item   void translate(qreal dx, qreal dy)
+=item  void translate(qreal dx, qreal dy)
 
-=item   QPolygonF translated(const QPointF & offset)
+=item  QPolygonF translated(const QPointF & offset)
 
-=item   QPolygonF translated(qreal dx, qreal dy)
+=item  QPolygonF translated(qreal dx, qreal dy)
 
-=item   QPolygonF united(const QPolygonF & r)
+=item  QPolygonF united(const QPolygonF & r)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

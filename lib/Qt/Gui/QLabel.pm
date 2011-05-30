@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QFrame/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QFrame/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,63 +24,98 @@ Qt::Gui::QLabel
 
 =over
 
-=item    ~QLabel()
+=item   QLabel(QWidget * parent, QFlags<Qt::WindowType> f)
 
-=item   QWidget * buddy()
+=item   QLabel(QWidget * parent, QFlags<Qt::WindowType> f = 0)
 
-=item   void clear()
+=item   QLabel(QWidget * parent = 0, QFlags<Qt::WindowType> f = 0)
 
-=item   bool hasScaledContents()
+=item   QLabel(const QString & text, QWidget * parent, QFlags<Qt::WindowType> f)
 
-=item   int heightForWidth(int arg0)
+=item   QLabel(const QString & text, QWidget * parent, QFlags<Qt::WindowType> f = 0)
 
-=item   int indent()
+=item   QLabel(const QString & text, QWidget * parent = 0, QFlags<Qt::WindowType> f = 0)
 
-=item   int margin()
+=item   ~QLabel()
 
-=item   QSize minimumSizeHint()
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   QMovie * movie()
+=item  QWidget * buddy()
 
-=item   bool openExternalLinks()
+=item  void clear()
 
-=item   const QPicture * picture()
+=item  bool hasScaledContents()
 
-=item   const QPixmap * pixmap()
+=item  bool hasSelectedText()
 
-=item   void setBuddy(QWidget * arg0)
+=item  int heightForWidth(int arg0)
 
-=item   void setIndent(int arg0)
+=item  int indent()
 
-=item   void setMargin(int arg0)
+=item  int margin()
 
-=item   void setMovie(QMovie * movie)
+=item  QSize minimumSizeHint()
 
-=item   void setNum(int arg0)
+=item  QMovie * movie()
 
-=item   void setNum(double arg0)
+=item  bool openExternalLinks()
 
-=item   void setOpenExternalLinks(bool open)
+=item  const QPicture * picture()
 
-=item   void setPicture(const QPicture & arg0)
+=item  const QPixmap * pixmap()
 
-=item   void setPixmap(const QPixmap & arg0)
+=item  QString selectedText()
 
-=item   void setScaledContents(bool arg0)
+=item  int selectionStart()
 
-=item   void setText(const QString & arg0)
+=item  void setAlignment(QFlags<Qt::AlignmentFlag> arg0)
 
-=item   void setTextFormat(Qt::TextFormat arg0)
+=item  void setBuddy(QWidget * arg0)
 
-=item   void setWordWrap(bool on)
+=item  void setIndent(int arg0)
 
-=item   QSize sizeHint()
+=item  void setMargin(int arg0)
 
-=item   QString text()
+=item  void setMovie(QMovie * movie)
 
-=item   Qt::TextFormat textFormat()
+=item  void setNum(int arg0)
 
-=item   bool wordWrap()
+=item  void setNum(double arg0)
+
+=item  void setOpenExternalLinks(bool open)
+
+=item  void setPicture(const QPicture & arg0)
+
+=item  void setPixmap(const QPixmap & arg0)
+
+=item  void setScaledContents(bool arg0)
+
+=item  void setSelection(int arg0, int arg1)
+
+=item  void setText(const QString & arg0)
+
+=item  void setTextFormat(Qt::TextFormat arg0)
+
+=item  void setTextInteractionFlags(QFlags<Qt::TextInteractionFlag> flags)
+
+=item  void setWordWrap(bool on)
+
+=item  QSize sizeHint()
+
+=item  QString text()
+
+=item  Qt::TextFormat textFormat()
+
+=item  QFlags<Qt::TextInteractionFlag> textInteractionFlags()
+
+=item  bool wordWrap()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

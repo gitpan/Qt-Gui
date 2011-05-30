@@ -25,12 +25,17 @@ PREINIT:
 QWidgetItemV2 *ret;
 QWidget * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
 
 ##  ~QWidgetItemV2()
 void
@@ -45,38 +50,49 @@ QWidgetItemV2::heightForWidth(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     int ret = THIS->heightForWidth(arg00);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QSize maximumSize()
 void
 QWidgetItemV2::maximumSize(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSize ret = THIS->maximumSize();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }
 
 ## QSize minimumSize()
 void
 QWidgetItemV2::minimumSize(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSize ret = THIS->minimumSize();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }
 
 ## QSize sizeHint()
 void
 QWidgetItemV2::sizeHint(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSize ret = THIS->sizeHint();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }

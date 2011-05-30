@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,13 +24,20 @@ Qt::Gui::QHoverEvent
 
 =over
 
-=item    QHoverEvent(QHoverEvent::Type type, const QPoint & pos, const QPoint & oldPos)
+=item   QHoverEvent(QHoverEvent::Type type, const QPoint & pos, const QPoint & oldPos)
 
-=item    ~QHoverEvent()
+=item   ~QHoverEvent()
 
-=item   const QPoint & oldPos()
+=item  const QPoint & oldPos()
 
-=item   const QPoint & pos()
+=item  const QPoint & pos()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractButton/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractButton/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub DelayedPopup() { 0 }
-sub MenuButtonPopup() { 1 }
-sub InstantPopup() { 2 }
 
 
 1;
@@ -30,41 +24,54 @@ Qt::Gui::QToolButton
 
 =over
 
-=item    QToolButton(QWidget * parent = 0)
+=item   QToolButton(QWidget * parent)
 
-=item    QToolButton(QWidget * parent)
+=item   QToolButton(QWidget * parent = 0)
 
-=item    ~QToolButton()
+=item   ~QToolButton()
 
-=item   Qt::ArrowType arrowType()
+=item  Qt::ArrowType arrowType()
 
-=item   bool autoRaise()
+=item  bool autoRaise()
 
-=item   QAction * defaultAction()
+=item  QAction * defaultAction()
 
-=item   QMenu * menu()
+=item  QMenu * menu()
 
-=item   QSize minimumSizeHint()
+=item  QSize minimumSizeHint()
 
-=item   QToolButton::ToolButtonPopupMode popupMode()
+=item  QToolButton::ToolButtonPopupMode popupMode()
 
-=item   void setArrowType(Qt::ArrowType type)
+=item  void setArrowType(Qt::ArrowType type)
 
-=item   void setAutoRaise(bool enable)
+=item  void setAutoRaise(bool enable)
 
-=item   void setDefaultAction(QAction * arg0)
+=item  void setDefaultAction(QAction * arg0)
 
-=item   void setMenu(QMenu * menu)
+=item  void setMenu(QMenu * menu)
 
-=item   void setPopupMode(QToolButton::ToolButtonPopupMode mode)
+=item  void setPopupMode(QToolButton::ToolButtonPopupMode mode)
 
-=item   void setToolButtonStyle(Qt::ToolButtonStyle style)
+=item  void setToolButtonStyle(Qt::ToolButtonStyle style)
 
-=item   void showMenu()
+=item  void showMenu()
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   Qt::ToolButtonStyle toolButtonStyle()
+=item  Qt::ToolButtonStyle toolButtonStyle()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item DelayedPopup
+
+=item MenuButtonPopup
+
+=item InstantPopup
 
 
 =back

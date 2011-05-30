@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDragMoveEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDragMoveEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,7 +24,16 @@ Qt::Gui::QDragEnterEvent
 
 =over
 
-=item    ~QDragEnterEvent()
+=item   QDragEnterEvent(const QPoint & pos, QFlags<Qt::DropAction> actions, const QMimeData * data, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers)
+
+=item   ~QDragEnterEvent()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

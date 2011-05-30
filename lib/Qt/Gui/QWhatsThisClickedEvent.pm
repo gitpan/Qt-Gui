@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,11 +24,18 @@ Qt::Gui::QWhatsThisClickedEvent
 
 =over
 
-=item    QWhatsThisClickedEvent(const QString & href)
+=item   QWhatsThisClickedEvent(const QString & href)
 
-=item    ~QWhatsThisClickedEvent()
+=item   ~QWhatsThisClickedEvent()
 
-=item   QString href()
+=item  QString href()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

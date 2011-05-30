@@ -7,23 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextFormat/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextFormat/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub ListDisc() { 0 }
-sub ListCircle() { 1 }
-sub ListSquare() { 2 }
-sub ListDecimal() { 3 }
-sub ListLowerAlpha() { 4 }
-sub ListUpperAlpha() { 5 }
-sub ListLowerRoman() { 6 }
-sub ListUpperRoman() { 7 }
-sub ListStyleUndefined() { 8 }
 
 
 1;
@@ -36,17 +24,42 @@ Qt::Gui::QTextListFormat
 
 =over
 
-=item    QTextListFormat()
+=item   QTextListFormat()
 
-=item   int indent()
+=item  int indent()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   void setIndent(int indent)
+=item  void setIndent(int indent)
 
-=item   void setStyle(QTextListFormat::Style style)
+=item  void setStyle(QTextListFormat::Style style)
 
-=item   QTextListFormat::Style style()
+=item  QTextListFormat::Style style()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item ListDisc
+
+=item ListCircle
+
+=item ListSquare
+
+=item ListDecimal
+
+=item ListLowerAlpha
+
+=item ListUpperAlpha
+
+=item ListLowerRoman
+
+=item ListUpperRoman
+
+=item ListStyleUndefined
 
 
 =back

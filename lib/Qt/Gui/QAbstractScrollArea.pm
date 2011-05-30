@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QFrame/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QFrame/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,41 +24,50 @@ Qt::Gui::QAbstractScrollArea
 
 =over
 
-=item    QAbstractScrollArea(QWidget * parent = 0)
+=item   QAbstractScrollArea(QWidget * parent)
 
-=item    QAbstractScrollArea(QWidget * parent)
+=item   QAbstractScrollArea(QWidget * parent = 0)
 
-=item    ~QAbstractScrollArea()
+=item   ~QAbstractScrollArea()
 
-=item   QWidget * cornerWidget()
+=item  void addScrollBarWidget(QWidget * widget, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   QScrollBar * horizontalScrollBar()
+=item  QWidget * cornerWidget()
 
-=item   Qt::ScrollBarPolicy horizontalScrollBarPolicy()
+=item  QScrollBar * horizontalScrollBar()
 
-=item   QSize maximumViewportSize()
+=item  Qt::ScrollBarPolicy horizontalScrollBarPolicy()
 
-=item   QSize minimumSizeHint()
+=item  QSize maximumViewportSize()
 
-=item   void setCornerWidget(QWidget * widget)
+=item  QSize minimumSizeHint()
 
-=item   void setHorizontalScrollBar(QScrollBar * scrollbar)
+=item  void setCornerWidget(QWidget * widget)
 
-=item   void setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy arg0)
+=item  void setHorizontalScrollBar(QScrollBar * scrollbar)
 
-=item   void setVerticalScrollBar(QScrollBar * scrollbar)
+=item  void setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy arg0)
 
-=item   void setVerticalScrollBarPolicy(Qt::ScrollBarPolicy arg0)
+=item  void setVerticalScrollBar(QScrollBar * scrollbar)
 
-=item   void setViewport(QWidget * widget)
+=item  void setVerticalScrollBarPolicy(Qt::ScrollBarPolicy arg0)
 
-=item   QSize sizeHint()
+=item  void setViewport(QWidget * widget)
 
-=item   QScrollBar * verticalScrollBar()
+=item  QSize sizeHint()
 
-=item   Qt::ScrollBarPolicy verticalScrollBarPolicy()
+=item  QScrollBar * verticalScrollBar()
 
-=item   QWidget * viewport()
+=item  Qt::ScrollBarPolicy verticalScrollBarPolicy()
+
+=item  QWidget * viewport()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

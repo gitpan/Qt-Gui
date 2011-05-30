@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,19 +23,26 @@ Qt::Gui::QItemEditorFactory
 
 =over
 
-=item    QItemEditorFactory()
+=item   QItemEditorFactory()
 
-=item    ~QItemEditorFactory()
+=item   ~QItemEditorFactory()
 
-=item   QWidget * createEditor(QVariant::Type type, QWidget * parent)
+=item  QWidget * createEditor(QVariant::Type type, QWidget * parent)
 
-=item   static const QItemEditorFactory * defaultFactory()
+=item  static const QItemEditorFactory * defaultFactory()
 
-=item   void registerEditor(QVariant::Type type, QItemEditorCreatorBase * creator)
+=item  void registerEditor(QVariant::Type type, QItemEditorCreatorBase * creator)
 
-=item   static void setDefaultFactory(QItemEditorFactory * factory)
+=item  static void setDefaultFactory(QItemEditorFactory * factory)
 
-=item   QByteArray valuePropertyName(QVariant::Type type)
+=item  QByteArray valuePropertyName(QVariant::Type type)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

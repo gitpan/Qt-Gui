@@ -7,26 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub SliderNoAction() { 0 }
-sub SliderSingleStepAdd() { 1 }
-sub SliderSingleStepSub() { 2 }
-sub SliderPageStepAdd() { 3 }
-sub SliderPageStepSub() { 4 }
-sub SliderToMinimum() { 5 }
-sub SliderToMaximum() { 6 }
-sub SliderMove() { 7 }
-sub SliderRangeChange() { 0 }
-sub SliderOrientationChange() { 1 }
-sub SliderStepsChange() { 2 }
-sub SliderValueChange() { 3 }
 
 
 1;
@@ -39,59 +24,82 @@ Qt::Gui::QAbstractSlider
 
 =over
 
-=item    QAbstractSlider(QWidget * parent = 0)
+=item   QAbstractSlider(QWidget * parent)
 
-=item    QAbstractSlider(QWidget * parent)
+=item   QAbstractSlider(QWidget * parent = 0)
 
-=item    ~QAbstractSlider()
+=item   ~QAbstractSlider()
 
-=item   bool hasTracking()
+=item  bool hasTracking()
 
-=item   bool invertedAppearance()
+=item  bool invertedAppearance()
 
-=item   bool invertedControls()
+=item  bool invertedControls()
 
-=item   bool isSliderDown()
+=item  bool isSliderDown()
 
-=item   int maximum()
+=item  int maximum()
 
-=item   int minimum()
+=item  int minimum()
 
-=item   Qt::Orientation orientation()
+=item  Qt::Orientation orientation()
 
-=item   int pageStep()
+=item  int pageStep()
 
-=item   void setInvertedAppearance(bool arg0)
+=item  void setInvertedAppearance(bool arg0)
 
-=item   void setInvertedControls(bool arg0)
+=item  void setInvertedControls(bool arg0)
 
-=item   void setMaximum(int arg0)
+=item  void setMaximum(int arg0)
 
-=item   void setMinimum(int arg0)
+=item  void setMinimum(int arg0)
 
-=item   void setOrientation(Qt::Orientation arg0)
+=item  void setOrientation(Qt::Orientation arg0)
 
-=item   void setPageStep(int arg0)
+=item  void setPageStep(int arg0)
 
-=item   void setRange(int min, int max)
+=item  void setRange(int min, int max)
 
-=item   void setSingleStep(int arg0)
+=item  void setSingleStep(int arg0)
 
-=item   void setSliderDown(bool arg0)
+=item  void setSliderDown(bool arg0)
 
-=item   void setSliderPosition(int arg0)
+=item  void setSliderPosition(int arg0)
 
-=item   void setTracking(bool enable)
+=item  void setTracking(bool enable)
 
-=item   void setValue(int arg0)
+=item  void setValue(int arg0)
 
-=item   int singleStep()
+=item  int singleStep()
 
-=item   int sliderPosition()
+=item  int sliderPosition()
 
-=item   void triggerAction(QAbstractSlider::SliderAction action)
+=item  void triggerAction(QAbstractSlider::SliderAction action)
 
-=item   int value()
+=item  int value()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item SliderNoAction
+
+=item SliderSingleStepAdd
+
+=item SliderSingleStepSub
+
+=item SliderPageStepAdd
+
+=item SliderPageStepSub
+
+=item SliderToMinimum
+
+=item SliderToMaximum
+
+=item SliderMove
 
 
 =back

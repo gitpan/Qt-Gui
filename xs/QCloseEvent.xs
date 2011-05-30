@@ -24,10 +24,13 @@ QCloseEvent::new(...)
 PREINIT:
 QCloseEvent *ret;
 PPCODE:
+    if (1) {
+      
     ret = new QCloseEvent();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QCloseEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QCloseEvent()
 void

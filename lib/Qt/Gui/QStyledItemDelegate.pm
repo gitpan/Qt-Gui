@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractItemDelegate/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractItemDelegate/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,29 +24,36 @@ Qt::Gui::QStyledItemDelegate
 
 =over
 
-=item    QStyledItemDelegate(QObject * parent = 0)
+=item   QStyledItemDelegate(QObject * parent)
 
-=item    QStyledItemDelegate(QObject * parent)
+=item   QStyledItemDelegate(QObject * parent = 0)
 
-=item    ~QStyledItemDelegate()
+=item   ~QStyledItemDelegate()
 
-=item   QWidget * createEditor(QWidget * parent, const QStyleOptionViewItem & option, const QModelIndex & index)
+=item  QWidget * createEditor(QWidget * parent, const QStyleOptionViewItem & option, const QModelIndex & index)
 
-=item   QString displayText(const QVariant & value, const QLocale & locale)
+=item  QString displayText(const QVariant & value, const QLocale & locale)
 
-=item   QItemEditorFactory * itemEditorFactory()
+=item  QItemEditorFactory * itemEditorFactory()
 
-=item   void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index)
+=item  void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index)
 
-=item   void setEditorData(QWidget * editor, const QModelIndex & index)
+=item  void setEditorData(QWidget * editor, const QModelIndex & index)
 
-=item   void setItemEditorFactory(QItemEditorFactory * factory)
+=item  void setItemEditorFactory(QItemEditorFactory * factory)
 
-=item   void setModelData(QWidget * editor, QAbstractItemModel * model, const QModelIndex & index)
+=item  void setModelData(QWidget * editor, QAbstractItemModel * model, const QModelIndex & index)
 
-=item   QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index)
+=item  QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index)
 
-=item   void updateEditorGeometry(QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & index)
+=item  void updateEditorGeometry(QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & index)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractItemModel/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QAbstractItemModel/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,51 +24,84 @@ Qt::Gui::QProxyModel
 
 =over
 
-=item    QProxyModel(QObject * parent = 0)
+=item   QProxyModel(QObject * parent)
 
-=item    QProxyModel(QObject * parent)
+=item   QProxyModel(QObject * parent = 0)
 
-=item    ~QProxyModel()
+=item   ~QProxyModel()
 
-=item   int columnCount(const QModelIndex & parent)
+=item  int columnCount(const QModelIndex & parent)
 
-=item   QVariant data(const QModelIndex & index, int role)
+=item  int columnCount(const QModelIndex & parent = QModelIndex())
 
-=item   bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
+=item  QVariant data(const QModelIndex & index, int role)
 
-=item   void fetchMore(const QModelIndex & parent)
+=item  QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
 
-=item   bool hasChildren(const QModelIndex & parent)
+=item  bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
 
-=item   QVariant headerData(int section, Qt::Orientation orientation, int role)
+=item  void fetchMore(const QModelIndex & parent)
 
-=item   QModelIndex index(int row, int column, const QModelIndex & parent)
+=item  QFlags<Qt::ItemFlag> flags(const QModelIndex & index)
 
-=item   bool insertColumns(int column, int count, const QModelIndex & parent)
+=item  bool hasChildren(const QModelIndex & parent)
 
-=item   bool insertRows(int row, int count, const QModelIndex & parent)
+=item  bool hasChildren(const QModelIndex & parent = QModelIndex())
 
-=item   QStringList mimeTypes()
+=item  QVariant headerData(int section, Qt::Orientation orientation, int role)
 
-=item   QAbstractItemModel * model()
+=item  QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)
 
-=item   QModelIndex parent(const QModelIndex & child)
+=item  QModelIndex index(int row, int column, const QModelIndex & parent)
 
-=item   void revert()
+=item  QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex())
 
-=item   int rowCount(const QModelIndex & parent)
+=item  bool insertColumns(int column, int count, const QModelIndex & parent)
 
-=item   bool setData(const QModelIndex & index, const QVariant & value, int role)
+=item  bool insertColumns(int column, int count, const QModelIndex & parent = QModelIndex())
 
-=item   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)
+=item  bool insertRows(int row, int count, const QModelIndex & parent)
 
-=item   void setModel(QAbstractItemModel * model)
+=item  bool insertRows(int row, int count, const QModelIndex & parent = QModelIndex())
 
-=item   void sort(int column, Qt::SortOrder order)
+=item  QStringList mimeTypes()
 
-=item   QSize span(const QModelIndex & index)
+=item  QAbstractItemModel * model()
 
-=item   bool submit()
+=item  QModelIndex parent(const QModelIndex & child)
+
+=item  void revert()
+
+=item  int rowCount(const QModelIndex & parent)
+
+=item  int rowCount(const QModelIndex & parent = QModelIndex())
+
+=item  bool setData(const QModelIndex & index, const QVariant & value, int role)
+
+=item  bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole)
+
+=item  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)
+
+=item  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole)
+
+=item  void setModel(QAbstractItemModel * model)
+
+=item  void sort(int column, Qt::SortOrder order)
+
+=item  void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)
+
+=item  QSize span(const QModelIndex & index)
+
+=item  bool submit()
+
+=item  QFlags<Qt::DropAction> supportedDropActions()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

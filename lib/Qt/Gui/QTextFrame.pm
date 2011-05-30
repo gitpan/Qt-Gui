@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextObject/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,27 +24,34 @@ Qt::Gui::QTextFrame
 
 =over
 
-=item    QTextFrame(QTextDocument * doc)
+=item   QTextFrame(QTextDocument * doc)
 
-=item    ~QTextFrame()
+=item   ~QTextFrame()
 
-=item   QTextCursor firstCursorPosition()
+=item  QTextCursor firstCursorPosition()
 
-=item   int firstPosition()
+=item  int firstPosition()
 
-=item   QTextFrameFormat frameFormat()
+=item  QTextFrameFormat frameFormat()
 
-=item   QTextCursor lastCursorPosition()
+=item  QTextCursor lastCursorPosition()
 
-=item   int lastPosition()
+=item  int lastPosition()
 
-=item   QTextFrameLayoutData * layoutData()
+=item  QTextFrameLayoutData * layoutData()
 
-=item   QTextFrame * parentFrame()
+=item  QTextFrame * parentFrame()
 
-=item   void setFrameFormat(const QTextFrameFormat & format)
+=item  void setFrameFormat(const QTextFrameFormat & format)
 
-=item   void setLayoutData(QTextFrameLayoutData * data)
+=item  void setLayoutData(QTextFrameLayoutData * data)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

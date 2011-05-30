@@ -159,6 +159,7 @@
 #include "QtGui/qstackedlayout.h"
 #include "QtGui/qstackedwidget.h"
 #include "QtGui/qstandarditemmodel.h"
+#include "QtGui/qstatictext.h"
 #include "QtGui/qstatusbar.h"
 #include "QtGui/qstringlistmodel.h"
 #include "QtGui/qstyle.h"
@@ -205,8 +206,7 @@
 #include "QtGui/qwidgetaction.h"
 #include "QtGui/qwizard.h"
 #include "QtGui/qworkspace.h"
-#include "QtGui/qx11embed_x11.h"
-#include "QtGui/qx11info_x11.h"
+#include "QtGui/qwsembedwidget.h"
 
 #include "EXTERN.h"
 #include "perl.h"
@@ -216,17 +216,17 @@
 #undef do_open
 #undef do_close
 
-typedef const char * const * T_ARRAY_XPM;
-typedef const QStyleOptionGraphicsItem * T_ARRAY_OPTIONS;
+typedef char * const * T_ARRAY_XPM;
+typedef QStyleOptionGraphicsItem * T_ARRAY_OPTIONS;
 typedef QGraphicsItem ** T_ARRAY_ITEMS;
-typedef const QStyleOptionGraphicsItem * T_ARRAY_OPTIONS;
+typedef QStyleOptionGraphicsItem * T_ARRAY_OPTIONS;
 typedef QGraphicsItem ** T_ARRAY_ITEMS;
 typedef void (*T_FPOINTER_PICTURE_IO_HANDLER_QPICTURE)(QPictureIO *);
 typedef bool (*T_FPOINTER_QINTERNALCALLBACK_QNAMESPACE)(void **);
 typedef void (*T_FPOINTER_ROOTOBJECTHANDLER_QACCESSIBLE)(QObject*);
 typedef void (*T_FPOINTER_UPDATEHANDLER_QACCESSIBLE)(QObject*,int who,QAccessible::Event reason);
 typedef QAccessibleInterface * (*T_FPOINTER_INTERFACEFACTORY_QACCESSIBLE)(const QString &key,QObject*);
-typedef const char * const * T_ARRAY_XPM;
+typedef char * const * T_ARRAY_XPM;
 
 MODULE = Qt		PACKAGE = Qt
 PROTOTYPES: DISABLE
@@ -247,15 +247,15 @@ INCLUDE:		xs/QAccessible.xs
 INCLUDE:		xs/QAccessible2Interface.xs
 INCLUDE:		xs/QAccessibleActionInterface.xs
 INCLUDE:		xs/QAccessibleApplication.xs
-INCLUDE:		xs/QAccessibleBridgeFactoryInterface.xs
+INCLUDE:		xs/QAccessibleBridgePlugin.xs
 INCLUDE:		xs/QAccessibleEditableTextInterface.xs
 INCLUDE:		xs/QAccessibleEvent.xs
-INCLUDE:		xs/QAccessibleFactoryInterface.xs
 INCLUDE:		xs/QAccessibleImageInterface.xs
 INCLUDE:		xs/QAccessibleInterface.xs
 INCLUDE:		xs/QAccessibleInterfaceEx.xs
 INCLUDE:		xs/QAccessibleObject.xs
 INCLUDE:		xs/QAccessibleObjectEx.xs
+INCLUDE:		xs/QAccessiblePlugin.xs
 INCLUDE:		xs/QAccessibleSimpleEditableTextInterface.xs
 INCLUDE:		xs/QAccessibleTableInterface.xs
 INCLUDE:		xs/QAccessibleTextInterface.xs
@@ -340,6 +340,7 @@ INCLUDE:		xs/QGraphicsLayout.xs
 INCLUDE:		xs/QGraphicsLayoutItem.xs
 INCLUDE:		xs/QGraphicsLinearLayout.xs
 INCLUDE:		xs/QGraphicsLineItem.xs
+INCLUDE:		xs/QGraphicsObject.xs
 INCLUDE:		xs/QGraphicsOpacityEffect.xs
 INCLUDE:		xs/QGraphicsPathItem.xs
 INCLUDE:		xs/QGraphicsPixmapItem.xs
@@ -373,18 +374,18 @@ INCLUDE:		xs/QHoverEvent.xs
 INCLUDE:		xs/QIcon.xs
 INCLUDE:		xs/QIconDragEvent.xs
 INCLUDE:		xs/QIconEngine.xs
-INCLUDE:		xs/QIconEngineFactoryInterface.xs
-INCLUDE:		xs/QIconEngineFactoryInterfaceV2.xs
+INCLUDE:		xs/QIconEnginePlugin.xs
+INCLUDE:		xs/QIconEnginePluginV2.xs
 INCLUDE:		xs/QIconEngineV2.xs
 INCLUDE:		xs/QImage.xs
 INCLUDE:		xs/QImageIOHandler.xs
-INCLUDE:		xs/QImageIOHandlerFactoryInterface.xs
+INCLUDE:		xs/QImageIOPlugin.xs
 INCLUDE:		xs/QImageReader.xs
 INCLUDE:		xs/QImageTextKeyLang.xs
 INCLUDE:		xs/QImageWriter.xs
 INCLUDE:		xs/QInputContext.xs
 INCLUDE:		xs/QInputContextFactory.xs
-INCLUDE:		xs/QInputContextFactoryInterface.xs
+INCLUDE:		xs/QInputContextPlugin.xs
 INCLUDE:		xs/QInputDialog.xs
 INCLUDE:		xs/QInputEvent.xs
 INCLUDE:		xs/QInputMethodEvent.xs
@@ -433,7 +434,7 @@ INCLUDE:		xs/QPalette.xs
 INCLUDE:		xs/QPanGesture.xs
 INCLUDE:		xs/QPen.xs
 INCLUDE:		xs/QPicture.xs
-INCLUDE:		xs/QPictureFormatInterface.xs
+INCLUDE:		xs/QPictureFormatPlugin.xs
 INCLUDE:		xs/QPictureIO.xs
 INCLUDE:		xs/QPinchGesture.xs
 INCLUDE:		xs/QPixmap.xs
@@ -480,13 +481,13 @@ INCLUDE:		xs/QStackedLayout.xs
 INCLUDE:		xs/QStackedWidget.xs
 INCLUDE:		xs/QStandardItem.xs
 INCLUDE:		xs/QStandardItemModel.xs
+INCLUDE:		xs/QStaticText.xs
 INCLUDE:		xs/QStatusBar.xs
 INCLUDE:		xs/QStatusTipEvent.xs
 INCLUDE:		xs/QStringListModel.xs
 INCLUDE:		xs/QStyle.xs
 INCLUDE:		xs/QStyledItemDelegate.xs
 INCLUDE:		xs/QStyleFactory.xs
-INCLUDE:		xs/QStyleFactoryInterface.xs
 INCLUDE:		xs/QStyleHintReturn.xs
 INCLUDE:		xs/QStyleHintReturnMask.xs
 INCLUDE:		xs/QStyleHintReturnVariant.xs
@@ -529,6 +530,7 @@ INCLUDE:		xs/QStyleOptionViewItem.xs
 INCLUDE:		xs/QStyleOptionViewItemV2.xs
 INCLUDE:		xs/QStyleOptionViewItemV3.xs
 INCLUDE:		xs/QStyleOptionViewItemV4.xs
+INCLUDE:		xs/QStylePlugin.xs
 INCLUDE:		xs/QSwipeGesture.xs
 INCLUDE:		xs/QSyntaxHighlighter.xs
 INCLUDE:		xs/QSystemTrayIcon.xs
@@ -569,7 +571,6 @@ INCLUDE:		xs/QTextListFormat.xs
 INCLUDE:		xs/QTextObject.xs
 INCLUDE:		xs/QTextObjectInterface.xs
 INCLUDE:		xs/QTextOption.xs
-INCLUDE:		xs/QTextOption__Tab.xs
 INCLUDE:		xs/QTextTable.xs
 INCLUDE:		xs/QTextTableCell.xs
 INCLUDE:		xs/QTextTableCellFormat.xs
@@ -608,6 +609,4 @@ INCLUDE:		xs/QWindowStateChangeEvent.xs
 INCLUDE:		xs/QWizard.xs
 INCLUDE:		xs/QWizardPage.xs
 INCLUDE:		xs/QWorkspace.xs
-INCLUDE:		xs/QX11EmbedContainer.xs
-INCLUDE:		xs/QX11EmbedWidget.xs
-INCLUDE:		xs/QX11Info.xs
+INCLUDE:		xs/QWSEmbedWidget.xs

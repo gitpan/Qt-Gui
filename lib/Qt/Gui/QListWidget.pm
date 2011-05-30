@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QListView/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QListView/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,81 +24,92 @@ Qt::Gui::QListWidget
 
 =over
 
-=item    QListWidget(QWidget * parent = 0)
+=item   QListWidget(QWidget * parent)
 
-=item    QListWidget(QWidget * parent)
+=item   QListWidget(QWidget * parent = 0)
 
-=item    ~QListWidget()
+=item   ~QListWidget()
 
-=item   void addItem(const QString & label)
+=item  void addItem(const QString & label)
 
-=item   void addItem(QListWidgetItem * item)
+=item  void addItem(QListWidgetItem * item)
 
-=item   void addItems(const QStringList & labels)
+=item  void addItems(const QStringList & labels)
 
-=item   void clear()
+=item  void clear()
 
-=item   void closePersistentEditor(QListWidgetItem * item)
+=item  void closePersistentEditor(QListWidgetItem * item)
 
-=item   int count()
+=item  int count()
 
-=item   QListWidgetItem * currentItem()
+=item  QListWidgetItem * currentItem()
 
-=item   int currentRow()
+=item  int currentRow()
 
-=item   void dropEvent(QDropEvent * event)
+=item  void dropEvent(QDropEvent * event)
 
-=item   void editItem(QListWidgetItem * item)
+=item  void editItem(QListWidgetItem * item)
 
-=item   void insertItem(int row, QListWidgetItem * item)
+=item  void insertItem(int row, QListWidgetItem * item)
 
-=item   void insertItem(int row, const QString & label)
+=item  void insertItem(int row, const QString & label)
 
-=item   void insertItems(int row, const QStringList & labels)
+=item  void insertItems(int row, const QStringList & labels)
 
-=item   bool isItemHidden(const QListWidgetItem * item)
+=item  bool isItemHidden(const QListWidgetItem * item)
 
-=item   bool isItemSelected(const QListWidgetItem * item)
+=item  bool isItemSelected(const QListWidgetItem * item)
 
-=item   bool isSortingEnabled()
+=item  bool isSortingEnabled()
 
-=item   QListWidgetItem * item(int row)
+=item  QListWidgetItem * item(int row)
 
-=item   QListWidgetItem * itemAt(const QPoint & p)
+=item  QListWidgetItem * itemAt(const QPoint & p)
 
-=item   QListWidgetItem * itemAt(int x, int y)
+=item  QListWidgetItem * itemAt(int x, int y)
 
-=item   QWidget * itemWidget(QListWidgetItem * item)
+=item  QWidget * itemWidget(QListWidgetItem * item)
 
-=item   void openPersistentEditor(QListWidgetItem * item)
+=item  void openPersistentEditor(QListWidgetItem * item)
 
-=item   void removeItemWidget(QListWidgetItem * item)
+=item  void removeItemWidget(QListWidgetItem * item)
 
-=item   int row(const QListWidgetItem * item)
+=item  int row(const QListWidgetItem * item)
 
-=item   void scrollToItem(const QListWidgetItem * item, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+=item  void scrollToItem(const QListWidgetItem * item, QAbstractItemView::ScrollHint hint)
 
-=item   void scrollToItem(const QListWidgetItem * item, QAbstractItemView::ScrollHint hint)
+=item  void scrollToItem(const QListWidgetItem * item, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 
-=item   void setCurrentItem(QListWidgetItem * item)
+=item  void setCurrentItem(QListWidgetItem * item)
 
-=item   void setCurrentRow(int row)
+=item  void setCurrentItem(QListWidgetItem * item, QFlags<QItemSelectionModel::SelectionFlag> command)
 
-=item   void setItemHidden(const QListWidgetItem * item, bool hide)
+=item  void setCurrentRow(int row)
 
-=item   void setItemSelected(const QListWidgetItem * item, bool select)
+=item  void setCurrentRow(int row, QFlags<QItemSelectionModel::SelectionFlag> command)
 
-=item   void setItemWidget(QListWidgetItem * item, QWidget * widget)
+=item  void setItemHidden(const QListWidgetItem * item, bool hide)
 
-=item   void setSortingEnabled(bool enable)
+=item  void setItemSelected(const QListWidgetItem * item, bool select)
 
-=item   void sortItems(Qt::SortOrder order = Qt::AscendingOrder)
+=item  void setItemWidget(QListWidgetItem * item, QWidget * widget)
 
-=item   void sortItems(Qt::SortOrder order)
+=item  void setSortingEnabled(bool enable)
 
-=item   QListWidgetItem * takeItem(int row)
+=item  void sortItems(Qt::SortOrder order)
 
-=item   QRect visualItemRect(const QListWidgetItem * item)
+=item  void sortItems(Qt::SortOrder order = Qt::AscendingOrder)
+
+=item  QListWidgetItem * takeItem(int row)
+
+=item  QRect visualItemRect(const QListWidgetItem * item)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

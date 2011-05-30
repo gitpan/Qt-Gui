@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QInputEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QInputEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,25 +24,50 @@ Qt::Gui::QKeyEvent
 
 =over
 
-=item    ~QKeyEvent()
+=item   QKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, const QString & text, bool autorep, ushort count)
 
-=item   int count()
+=item   QKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, const QString & text, bool autorep, ushort count = 1)
 
-=item   bool hasExtendedInfo()
+=item   QKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, const QString & text, bool autorep = false, ushort count = 1)
 
-=item   bool isAutoRepeat()
+=item   QKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, const QString & text = QString(), bool autorep = false, ushort count = 1)
 
-=item   int key()
+=item   ~QKeyEvent()
 
-=item   bool matches(QKeySequence::StandardKey key)
+=item  int count()
 
-=item   quint32 nativeModifiers()
+=item  static QKeyEvent * createExtendedKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString & text, bool autorep, ushort count)
 
-=item   quint32 nativeScanCode()
+=item  static QKeyEvent * createExtendedKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString & text, bool autorep, ushort count = 1)
 
-=item   quint32 nativeVirtualKey()
+=item  static QKeyEvent * createExtendedKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString & text, bool autorep = false, ushort count = 1)
 
-=item   QString text()
+=item  static QKeyEvent * createExtendedKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString & text = QString(), bool autorep = false, ushort count = 1)
+
+=item  bool hasExtendedInfo()
+
+=item  bool isAutoRepeat()
+
+=item  int key()
+
+=item  bool matches(QKeySequence::StandardKey key)
+
+=item  QFlags<Qt::KeyboardModifier> modifiers()
+
+=item  quint32 nativeModifiers()
+
+=item  quint32 nativeScanCode()
+
+=item  quint32 nativeVirtualKey()
+
+=item  QString text()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

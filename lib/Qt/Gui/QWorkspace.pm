@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub CreationOrder() { 0 }
-sub StackingOrder() { 1 }
 
 
 1;
@@ -29,39 +24,54 @@ Qt::Gui::QWorkspace
 
 =over
 
-=item    QWorkspace(QWidget * parent = 0)
+=item   QWorkspace(QWidget * parent)
 
-=item    QWorkspace(QWidget * parent)
+=item   QWorkspace(QWidget * parent = 0)
 
-=item    ~QWorkspace()
+=item   ~QWorkspace()
 
-=item   void activateNextWindow()
+=item  void activateNextWindow()
 
-=item   void activatePreviousWindow()
+=item  void activatePreviousWindow()
 
-=item   QWidget * activeWindow()
+=item  QWidget * activeWindow()
 
-=item   void arrangeIcons()
+=item  QWidget * addWindow(QWidget * w, QFlags<Qt::WindowType> flags)
 
-=item   QBrush background()
+=item  QWidget * addWindow(QWidget * w, QFlags<Qt::WindowType> flags = 0)
 
-=item   void cascade()
+=item  void arrangeIcons()
 
-=item   void closeActiveWindow()
+=item  QBrush background()
 
-=item   void closeAllWindows()
+=item  void cascade()
 
-=item   bool scrollBarsEnabled()
+=item  void closeActiveWindow()
 
-=item   void setActiveWindow(QWidget * w)
+=item  void closeAllWindows()
 
-=item   void setBackground(const QBrush & background)
+=item  bool scrollBarsEnabled()
 
-=item   void setScrollBarsEnabled(bool enable)
+=item  void setActiveWindow(QWidget * w)
 
-=item   QSize sizeHint()
+=item  void setBackground(const QBrush & background)
 
-=item   void tile()
+=item  void setScrollBarsEnabled(bool enable)
+
+=item  QSize sizeHint()
+
+=item  void tile()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item CreationOrder
+
+=item StackingOrder
 
 
 =back

@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractGraphicsShapeItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractGraphicsShapeItem/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
 
 
 1;
@@ -28,47 +24,52 @@ Qt::Gui::QGraphicsPolygonItem
 
 =over
 
-=item    QGraphicsPolygonItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsPolygonItem(QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsPolygonItem(QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsPolygonItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsPolygonItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   QGraphicsPolygonItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsPolygonItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsPolygonItem(const QPolygonF & polygon, QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsPolygonItem(const QPolygonF & polygon, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsPolygonItem(const QPolygonF & polygon, QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsPolygonItem(const QPolygonF & polygon, QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsPolygonItem(const QPolygonF & polygon, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsPolygonItem(const QPolygonF & polygon, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   ~QGraphicsPolygonItem()
 
-=item    QGraphicsPolygonItem(const QPolygonF & polygon, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item  QRectF boundingRect()
 
-=item    ~QGraphicsPolygonItem()
+=item  bool contains(const QPointF & point)
 
-=item   QRectF boundingRect()
+=item  Qt::FillRule fillRule()
 
-=item   bool contains(const QPointF & point)
+=item  bool isObscuredBy(const QGraphicsItem * item)
 
-=item   Qt::FillRule fillRule()
+=item  QPainterPath opaqueArea()
 
-=item   bool isObscuredBy(const QGraphicsItem * item)
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 
-=item   QPainterPath opaqueArea()
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
+=item  QPolygonF polygon()
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
+=item  void setFillRule(Qt::FillRule rule)
 
-=item   QPolygonF polygon()
+=item  void setPolygon(const QPolygonF & polygon)
 
-=item   void setFillRule(Qt::FillRule rule)
+=item  QPainterPath shape()
 
-=item   void setPolygon(const QPolygonF & polygon)
+=item  int type()
 
-=item   QPainterPath shape()
 
-=item   int type()
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Type
 
 
 =back

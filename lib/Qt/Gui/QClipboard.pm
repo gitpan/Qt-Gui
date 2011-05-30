@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Clipboard() { 0 }
-sub Selection() { 1 }
-sub FindBuffer() { 2 }
-sub LastMode() { 3 }
 
 
 1;
@@ -30,55 +24,70 @@ Qt::Gui::QClipboard
 
 =over
 
-=item   void clear(QClipboard::Mode mode = QClipboard::Clipboard)
+=item  void clear(QClipboard::Mode mode)
 
-=item   void clear(QClipboard::Mode mode)
+=item  void clear(QClipboard::Mode mode = QClipboard::Clipboard)
 
-=item   QImage image(QClipboard::Mode mode = QClipboard::Clipboard)
+=item  QImage image(QClipboard::Mode mode)
 
-=item   QImage image(QClipboard::Mode mode)
+=item  QImage image(QClipboard::Mode mode = QClipboard::Clipboard)
 
-=item   const QMimeData * mimeData(QClipboard::Mode mode = QClipboard::Clipboard)
+=item  const QMimeData * mimeData(QClipboard::Mode mode)
 
-=item   const QMimeData * mimeData(QClipboard::Mode mode)
+=item  const QMimeData * mimeData(QClipboard::Mode mode = QClipboard::Clipboard)
 
-=item   bool ownsClipboard()
+=item  bool ownsClipboard()
 
-=item   bool ownsFindBuffer()
+=item  bool ownsFindBuffer()
 
-=item   bool ownsSelection()
+=item  bool ownsSelection()
 
-=item   QPixmap pixmap(QClipboard::Mode mode = QClipboard::Clipboard)
+=item  QPixmap pixmap(QClipboard::Mode mode)
 
-=item   QPixmap pixmap(QClipboard::Mode mode)
+=item  QPixmap pixmap(QClipboard::Mode mode = QClipboard::Clipboard)
 
-=item   void setImage(const QImage & arg0, QClipboard::Mode mode = QClipboard::Clipboard)
+=item  void setImage(const QImage & arg0, QClipboard::Mode mode)
 
-=item   void setImage(const QImage & arg0, QClipboard::Mode mode)
+=item  void setImage(const QImage & arg0, QClipboard::Mode mode = QClipboard::Clipboard)
 
-=item   void setMimeData(QMimeData * data, QClipboard::Mode mode = QClipboard::Clipboard)
+=item  void setMimeData(QMimeData * data, QClipboard::Mode mode)
 
-=item   void setMimeData(QMimeData * data, QClipboard::Mode mode)
+=item  void setMimeData(QMimeData * data, QClipboard::Mode mode = QClipboard::Clipboard)
 
-=item   void setPixmap(const QPixmap & arg0, QClipboard::Mode mode = QClipboard::Clipboard)
+=item  void setPixmap(const QPixmap & arg0, QClipboard::Mode mode)
 
-=item   void setPixmap(const QPixmap & arg0, QClipboard::Mode mode)
+=item  void setPixmap(const QPixmap & arg0, QClipboard::Mode mode = QClipboard::Clipboard)
 
-=item   void setText(const QString & arg0, QClipboard::Mode mode = QClipboard::Clipboard)
+=item  void setText(const QString & arg0, QClipboard::Mode mode)
 
-=item   void setText(const QString & arg0, QClipboard::Mode mode)
+=item  void setText(const QString & arg0, QClipboard::Mode mode = QClipboard::Clipboard)
 
-=item   bool supportsFindBuffer()
+=item  bool supportsFindBuffer()
 
-=item   bool supportsSelection()
+=item  bool supportsSelection()
 
-=item   QString text(QClipboard::Mode mode = QClipboard::Clipboard)
+=item  QString text(QClipboard::Mode mode)
 
-=item   QString text(QClipboard::Mode mode)
+=item  QString text(QClipboard::Mode mode = QClipboard::Clipboard)
 
-=item   QString text(QString & subtype, QClipboard::Mode mode = QClipboard::Clipboard)
+=item  QString text(QString & subtype, QClipboard::Mode mode)
 
-=item   QString text(QString & subtype, QClipboard::Mode mode)
+=item  QString text(QString & subtype, QClipboard::Mode mode = QClipboard::Clipboard)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Clipboard
+
+=item Selection
+
+=item FindBuffer
+
+=item LastMode
 
 
 =back

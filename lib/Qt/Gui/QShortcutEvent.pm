@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,23 +24,30 @@ Qt::Gui::QShortcutEvent
 
 =over
 
-=item    QShortcutEvent(const QKeySequence & key, int id, bool ambiguous = false)
+=item   QShortcutEvent(const QKeySequence & key, int id, bool ambiguous)
 
-=item    QShortcutEvent(const QKeySequence & key, int id, bool ambiguous)
+=item   QShortcutEvent(const QKeySequence & key, int id, bool ambiguous = false)
 
-=item    ~QShortcutEvent()
+=item   ~QShortcutEvent()
 
-=item   bool isAmbiguous()
+=item  bool isAmbiguous()
 
-=item   bool isAmbiguous()
+=item  bool isAmbiguous()
 
-=item   const QKeySequence & key()
+=item  const QKeySequence & key()
 
-=item   const QKeySequence & key()
+=item  const QKeySequence & key()
 
-=item   int shortcutId()
+=item  int shortcutId()
 
-=item   int shortcutId()
+=item  int shortcutId()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

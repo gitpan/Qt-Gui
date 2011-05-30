@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsItem/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,27 +24,32 @@ Qt::Gui::QAbstractGraphicsShapeItem
 
 =over
 
-=item    QAbstractGraphicsShapeItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QAbstractGraphicsShapeItem(QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QAbstractGraphicsShapeItem(QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QAbstractGraphicsShapeItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QAbstractGraphicsShapeItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   QAbstractGraphicsShapeItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QAbstractGraphicsShapeItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   ~QAbstractGraphicsShapeItem()
 
-=item    ~QAbstractGraphicsShapeItem()
+=item  QBrush brush()
 
-=item   QBrush brush()
+=item  bool isObscuredBy(const QGraphicsItem * item)
 
-=item   bool isObscuredBy(const QGraphicsItem * item)
+=item  QPainterPath opaqueArea()
 
-=item   QPainterPath opaqueArea()
+=item  QPen pen()
 
-=item   QPen pen()
+=item  void setBrush(const QBrush & brush)
 
-=item   void setBrush(const QBrush & brush)
+=item  void setPen(const QPen & pen)
 
-=item   void setPen(const QPen & pen)
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

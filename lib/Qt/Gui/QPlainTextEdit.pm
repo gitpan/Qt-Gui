@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractScrollArea/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractScrollArea/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoWrap() { 0 }
-sub WidgetWidth() { 1 }
 
 
 1;
@@ -29,125 +24,146 @@ Qt::Gui::QPlainTextEdit
 
 =over
 
-=item    QPlainTextEdit(QWidget * parent = 0)
+=item   QPlainTextEdit(QWidget * parent)
 
-=item    QPlainTextEdit(QWidget * parent)
+=item   QPlainTextEdit(QWidget * parent = 0)
 
-=item    QPlainTextEdit(const QString & text, QWidget * parent = 0)
+=item   QPlainTextEdit(const QString & text, QWidget * parent)
 
-=item    QPlainTextEdit(const QString & text, QWidget * parent)
+=item   QPlainTextEdit(const QString & text, QWidget * parent = 0)
 
-=item    ~QPlainTextEdit()
+=item   ~QPlainTextEdit()
 
-=item   void appendHtml(const QString & html)
+=item  QString anchorAt(const QPoint & pos)
 
-=item   void appendPlainText(const QString & text)
+=item  void appendHtml(const QString & html)
 
-=item   bool backgroundVisible()
+=item  void appendPlainText(const QString & text)
 
-=item   int blockCount()
+=item  bool backgroundVisible()
 
-=item   bool canPaste()
+=item  int blockCount()
 
-=item   void centerCursor()
+=item  bool canPaste()
 
-=item   bool centerOnScroll()
+=item  void centerCursor()
 
-=item   void clear()
+=item  bool centerOnScroll()
 
-=item   void copy()
+=item  void clear()
 
-=item   QMenu * createStandardContextMenu()
+=item  void copy()
 
-=item   QTextCharFormat currentCharFormat()
+=item  QMenu * createStandardContextMenu()
 
-=item   QTextCursor cursorForPosition(const QPoint & pos)
+=item  QTextCharFormat currentCharFormat()
 
-=item   QRect cursorRect()
+=item  QTextCursor cursorForPosition(const QPoint & pos)
 
-=item   QRect cursorRect(const QTextCursor & cursor)
+=item  QRect cursorRect()
 
-=item   int cursorWidth()
+=item  QRect cursorRect(const QTextCursor & cursor)
 
-=item   void cut()
+=item  int cursorWidth()
 
-=item   QTextDocument * document()
+=item  void cut()
 
-=item   QString documentTitle()
+=item  QTextDocument * document()
 
-=item   void ensureCursorVisible()
+=item  QString documentTitle()
 
-=item   void insertPlainText(const QString & text)
+=item  void ensureCursorVisible()
 
-=item   bool isReadOnly()
+=item  bool find(const QString & exp, QFlags<QTextDocument::FindFlag> options)
 
-=item   bool isUndoRedoEnabled()
+=item  bool find(const QString & exp, QFlags<QTextDocument::FindFlag> options = 0)
 
-=item   QPlainTextEdit::LineWrapMode lineWrapMode()
+=item  void insertPlainText(const QString & text)
 
-=item   QVariant loadResource(int type, const QUrl & name)
+=item  bool isReadOnly()
 
-=item   int maximumBlockCount()
+=item  bool isUndoRedoEnabled()
 
-=item   void mergeCurrentCharFormat(const QTextCharFormat & modifier)
+=item  QPlainTextEdit::LineWrapMode lineWrapMode()
 
-=item   void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode = QTextCursor::MoveAnchor)
+=item  QVariant loadResource(int type, const QUrl & name)
 
-=item   void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode)
+=item  int maximumBlockCount()
 
-=item   bool overwriteMode()
+=item  void mergeCurrentCharFormat(const QTextCharFormat & modifier)
 
-=item   void paste()
+=item  void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode)
 
-=item   void print(QPrinter * printer)
+=item  void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode = QTextCursor::MoveAnchor)
 
-=item   void redo()
+=item  bool overwriteMode()
 
-=item   void selectAll()
+=item  void paste()
 
-=item   void setBackgroundVisible(bool visible)
+=item  void print(QPrinter * printer)
 
-=item   void setCenterOnScroll(bool enabled)
+=item  void redo()
 
-=item   void setCurrentCharFormat(const QTextCharFormat & format)
+=item  void selectAll()
 
-=item   void setCursorWidth(int width)
+=item  void setBackgroundVisible(bool visible)
 
-=item   void setDocument(QTextDocument * document)
+=item  void setCenterOnScroll(bool enabled)
 
-=item   void setDocumentTitle(const QString & title)
+=item  void setCurrentCharFormat(const QTextCharFormat & format)
 
-=item   void setLineWrapMode(QPlainTextEdit::LineWrapMode mode)
+=item  void setCursorWidth(int width)
 
-=item   void setMaximumBlockCount(int maximum)
+=item  void setDocument(QTextDocument * document)
 
-=item   void setOverwriteMode(bool overwrite)
+=item  void setDocumentTitle(const QString & title)
 
-=item   void setPlainText(const QString & text)
+=item  void setLineWrapMode(QPlainTextEdit::LineWrapMode mode)
 
-=item   void setReadOnly(bool ro)
+=item  void setMaximumBlockCount(int maximum)
 
-=item   void setTabChangesFocus(bool b)
+=item  void setOverwriteMode(bool overwrite)
 
-=item   void setTabStopWidth(int width)
+=item  void setPlainText(const QString & text)
 
-=item   void setTextCursor(const QTextCursor & cursor)
+=item  void setReadOnly(bool ro)
 
-=item   void setUndoRedoEnabled(bool enable)
+=item  void setTabChangesFocus(bool b)
 
-=item   void setWordWrapMode(QTextOption::WrapMode policy)
+=item  void setTabStopWidth(int width)
 
-=item   bool tabChangesFocus()
+=item  void setTextCursor(const QTextCursor & cursor)
 
-=item   int tabStopWidth()
+=item  void setTextInteractionFlags(QFlags<Qt::TextInteractionFlag> flags)
 
-=item   QTextCursor textCursor()
+=item  void setUndoRedoEnabled(bool enable)
 
-=item   QString toPlainText()
+=item  void setWordWrapMode(QTextOption::WrapMode policy)
 
-=item   void undo()
+=item  bool tabChangesFocus()
 
-=item   QTextOption::WrapMode wordWrapMode()
+=item  int tabStopWidth()
+
+=item  QTextCursor textCursor()
+
+=item  QFlags<Qt::TextInteractionFlag> textInteractionFlags()
+
+=item  QString toPlainText()
+
+=item  void undo()
+
+=item  QTextOption::WrapMode wordWrapMode()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoWrap
+
+=item WidgetWidth
 
 
 =back

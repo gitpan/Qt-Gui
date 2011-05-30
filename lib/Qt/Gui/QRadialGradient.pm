@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGradient/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGradient/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,31 +24,38 @@ Qt::Gui::QRadialGradient
 
 =over
 
-=item    QRadialGradient()
+=item   QRadialGradient()
 
-=item    QRadialGradient(const QPointF & center, qreal radius)
+=item   QRadialGradient(const QPointF & center, qreal radius)
 
-=item    QRadialGradient(const QPointF & center, qreal radius, const QPointF & focalPoint)
+=item   QRadialGradient(const QPointF & center, qreal radius, const QPointF & focalPoint)
 
-=item    QRadialGradient(qreal cx, qreal cy, qreal radius)
+=item   QRadialGradient(qreal cx, qreal cy, qreal radius)
 
-=item    QRadialGradient(qreal cx, qreal cy, qreal radius, qreal fx, qreal fy)
+=item   QRadialGradient(qreal cx, qreal cy, qreal radius, qreal fx, qreal fy)
 
-=item   QPointF center()
+=item  QPointF center()
 
-=item   QPointF focalPoint()
+=item  QPointF focalPoint()
 
-=item   qreal radius()
+=item  qreal radius()
 
-=item   void setCenter(const QPointF & center)
+=item  void setCenter(const QPointF & center)
 
-=item   void setCenter(qreal x, qreal y)
+=item  void setCenter(qreal x, qreal y)
 
-=item   void setFocalPoint(const QPointF & focalPoint)
+=item  void setFocalPoint(const QPointF & focalPoint)
 
-=item   void setFocalPoint(qreal x, qreal y)
+=item  void setFocalPoint(qreal x, qreal y)
 
-=item   void setRadius(qreal radius)
+=item  void setRadius(qreal radius)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

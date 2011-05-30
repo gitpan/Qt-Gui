@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsEffect/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsEffect/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub PerformanceHint() { 0 }
-sub QualityHint() { 1 }
-sub AnimationHint() { 2 }
 
 
 1;
@@ -30,17 +24,34 @@ Qt::Gui::QGraphicsBlurEffect
 
 =over
 
-=item    QGraphicsBlurEffect(QObject * parent = 0)
+=item   QGraphicsBlurEffect(QObject * parent)
 
-=item    QGraphicsBlurEffect(QObject * parent)
+=item   QGraphicsBlurEffect(QObject * parent = 0)
 
-=item    ~QGraphicsBlurEffect()
+=item   ~QGraphicsBlurEffect()
 
-=item   qreal blurRadius()
+=item  QFlags<QGraphicsBlurEffect::BlurHint> blurHints()
 
-=item   QRectF boundingRectFor(const QRectF & rect)
+=item  qreal blurRadius()
 
-=item   void setBlurRadius(qreal blurRadius)
+=item  QRectF boundingRectFor(const QRectF & rect)
+
+=item  void setBlurHints(QFlags<QGraphicsBlurEffect::BlurHint> hints)
+
+=item  void setBlurRadius(qreal blurRadius)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item PerformanceHint
+
+=item QualityHint
+
+=item AnimationHint
 
 
 =back

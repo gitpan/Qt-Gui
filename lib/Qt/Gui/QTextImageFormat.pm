@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextCharFormat/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextCharFormat/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,21 +24,28 @@ Qt::Gui::QTextImageFormat
 
 =over
 
-=item    QTextImageFormat()
+=item   QTextImageFormat()
 
-=item   qreal height()
+=item  qreal height()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   QString name()
+=item  QString name()
 
-=item   void setHeight(qreal height)
+=item  void setHeight(qreal height)
 
-=item   void setName(const QString & name)
+=item  void setName(const QString & name)
 
-=item   void setWidth(qreal width)
+=item  void setWidth(qreal width)
 
-=item   qreal width()
+=item  qreal width()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

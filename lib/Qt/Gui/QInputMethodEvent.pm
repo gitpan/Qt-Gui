@@ -7,18 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub TextFormat() { 0 }
-sub Cursor() { 1 }
-sub Language() { 2 }
-sub Ruby() { 3 }
-sub Selection() { 4 }
 
 
 1;
@@ -30,6 +23,23 @@ Qt::Gui::QInputMethodEvent
 =head1 PUBLIC METHODS
 
 =over
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item TextFormat
+
+=item Cursor
+
+=item Language
+
+=item Ruby
+
+=item Selection
 
 
 =back

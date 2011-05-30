@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractItemModel/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QAbstractItemModel/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,41 +24,50 @@ Qt::Gui::QAbstractProxyModel
 
 =over
 
-=item    QAbstractProxyModel(QObject * parent = 0)
+=item   QAbstractProxyModel(QObject * parent)
 
-=item    QAbstractProxyModel(QObject * parent)
+=item   QAbstractProxyModel(QObject * parent = 0)
 
-=item    ~QAbstractProxyModel()
+=item   ~QAbstractProxyModel()
 
-=item   QVariant data(const QModelIndex & proxyIndex, int role = Qt::DisplayRole)
+=item  QVariant data(const QModelIndex & proxyIndex, int role)
 
-=item   QVariant data(const QModelIndex & proxyIndex, int role)
+=item  QVariant data(const QModelIndex & proxyIndex, int role = Qt::DisplayRole)
 
-=item   QVariant headerData(int section, Qt::Orientation orientation, int role)
+=item  QFlags<Qt::ItemFlag> flags(const QModelIndex & index)
 
-=item   QModelIndex mapFromSource(const QModelIndex & sourceIndex)
+=item  QVariant headerData(int section, Qt::Orientation orientation, int role)
 
-=item   QItemSelection mapSelectionFromSource(const QItemSelection & selection)
+=item  QModelIndex mapFromSource(const QModelIndex & sourceIndex)
 
-=item   QItemSelection mapSelectionToSource(const QItemSelection & selection)
+=item  QItemSelection mapSelectionFromSource(const QItemSelection & selection)
 
-=item   QModelIndex mapToSource(const QModelIndex & proxyIndex)
+=item  QItemSelection mapSelectionToSource(const QItemSelection & selection)
 
-=item   void revert()
+=item  QModelIndex mapToSource(const QModelIndex & proxyIndex)
 
-=item   bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole)
+=item  void revert()
 
-=item   bool setData(const QModelIndex & index, const QVariant & value, int role)
+=item  bool setData(const QModelIndex & index, const QVariant & value, int role)
 
-=item   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole)
+=item  bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole)
 
-=item   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)
+=item  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)
 
-=item   void setSourceModel(QAbstractItemModel * sourceModel)
+=item  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole)
 
-=item   QAbstractItemModel * sourceModel()
+=item  void setSourceModel(QAbstractItemModel * sourceModel)
 
-=item   bool submit()
+=item  QAbstractItemModel * sourceModel()
+
+=item  bool submit()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

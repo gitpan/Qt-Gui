@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,13 +24,20 @@ Qt::Gui::QResizeEvent
 
 =over
 
-=item    QResizeEvent(const QSize & size, const QSize & oldSize)
+=item   QResizeEvent(const QSize & size, const QSize & oldSize)
 
-=item    ~QResizeEvent()
+=item   ~QResizeEvent()
 
-=item   const QSize & oldSize()
+=item  const QSize & oldSize()
 
-=item   const QSize & size()
+=item  const QSize & size()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,27 +24,44 @@ Qt::Gui::QDrag
 
 =over
 
-=item    QDrag(QWidget * dragSource)
+=item   QDrag(QWidget * dragSource)
 
-=item    ~QDrag()
+=item   ~QDrag()
 
-=item   QPoint hotSpot()
+=item  Qt::DropAction exec(QFlags<Qt::DropAction> supportedActions)
 
-=item   QMimeData * mimeData()
+=item  Qt::DropAction exec(QFlags<Qt::DropAction> supportedActions = Qt::MoveAction)
 
-=item   QPixmap pixmap()
+=item  Qt::DropAction exec(QFlags<Qt::DropAction> supportedActions, Qt::DropAction defaultAction)
 
-=item   void setDragCursor(const QPixmap & cursor, Qt::DropAction action)
+=item  QPoint hotSpot()
 
-=item   void setHotSpot(const QPoint & hotspot)
+=item  QMimeData * mimeData()
 
-=item   void setMimeData(QMimeData * data)
+=item  QPixmap pixmap()
 
-=item   void setPixmap(const QPixmap & arg0)
+=item  void setDragCursor(const QPixmap & cursor, Qt::DropAction action)
 
-=item   QWidget * source()
+=item  void setHotSpot(const QPoint & hotspot)
 
-=item   QWidget * target()
+=item  void setMimeData(QMimeData * data)
+
+=item  void setPixmap(const QPixmap & arg0)
+
+=item  QWidget * source()
+
+=item  Qt::DropAction start(QFlags<Qt::DropAction> supportedActions)
+
+=item  Qt::DropAction start(QFlags<Qt::DropAction> supportedActions = Qt::CopyAction)
+
+=item  QWidget * target()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub RestartIfRunning() { 0 }
-sub RestartAnyway() { 1 }
-sub RestartImmediately() { 2 }
-sub RestartNever() { 3 }
 
 
 1;
@@ -30,39 +24,54 @@ Qt::Gui::QSessionManager
 
 =over
 
-=item   bool allowsErrorInteraction()
+=item  bool allowsErrorInteraction()
 
-=item   bool allowsInteraction()
+=item  bool allowsInteraction()
 
-=item   void cancel()
+=item  void cancel()
 
-=item   QStringList discardCommand()
+=item  QStringList discardCommand()
 
-=item   void * handle()
+=item  void * handle()
 
-=item   bool isPhase2()
+=item  bool isPhase2()
 
-=item   void release()
+=item  void release()
 
-=item   void requestPhase2()
+=item  void requestPhase2()
 
-=item   QStringList restartCommand()
+=item  QStringList restartCommand()
 
-=item   QSessionManager::RestartHint restartHint()
+=item  QSessionManager::RestartHint restartHint()
 
-=item   QString sessionId()
+=item  QString sessionId()
 
-=item   QString sessionKey()
+=item  QString sessionKey()
 
-=item   void setDiscardCommand(const QStringList & arg0)
+=item  void setDiscardCommand(const QStringList & arg0)
 
-=item   void setManagerProperty(const QString & name, const QString & value)
+=item  void setManagerProperty(const QString & name, const QString & value)
 
-=item   void setManagerProperty(const QString & name, const QStringList & value)
+=item  void setManagerProperty(const QString & name, const QStringList & value)
 
-=item   void setRestartCommand(const QStringList & arg0)
+=item  void setRestartCommand(const QStringList & arg0)
 
-=item   void setRestartHint(QSessionManager::RestartHint arg0)
+=item  void setRestartHint(QSessionManager::RestartHint arg0)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item RestartIfRunning
+
+=item RestartAnyway
+
+=item RestartImmediately
+
+=item RestartNever
 
 
 =back

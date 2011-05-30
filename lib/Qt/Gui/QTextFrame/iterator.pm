@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,31 +23,38 @@ Qt::Gui::QTextFrame::iterator
 
 =over
 
-=item    QTextFrame::iterator()
+=item   QTextFrame::iterator()
 
-=item    QTextFrame::iterator(const QTextFrame::iterator & o)
+=item   QTextFrame::iterator(const QTextFrame::iterator & o)
 
-=item   bool atEnd()
+=item  bool atEnd()
 
-=item   QTextBlock currentBlock()
+=item  QTextBlock currentBlock()
 
-=item   QTextFrame * currentFrame()
+=item  QTextFrame * currentFrame()
 
-=item   bool operator!=(const QTextFrame::iterator & o)
+=item  bool operator!=(const QTextFrame::iterator & o)
 
-=item   QTextFrame::iterator & operator++()
+=item  QTextFrame::iterator & operator++()
 
-=item   QTextFrame::iterator operator++(int arg0)
+=item  QTextFrame::iterator operator++(int arg0)
 
-=item   QTextFrame::iterator & operator--()
+=item  QTextFrame::iterator & operator--()
 
-=item   QTextFrame::iterator operator--(int arg0)
+=item  QTextFrame::iterator operator--(int arg0)
 
-=item   QTextFrame::iterator & operator=(const QTextFrame::iterator & o)
+=item  QTextFrame::iterator & operator=(const QTextFrame::iterator & o)
 
-=item   bool operator==(const QTextFrame::iterator & o)
+=item  bool operator==(const QTextFrame::iterator & o)
 
-=item   QTextFrame * parentFrame()
+=item  QTextFrame * parentFrame()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

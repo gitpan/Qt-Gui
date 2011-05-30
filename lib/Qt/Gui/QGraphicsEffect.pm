@@ -7,20 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub SourceAttached() { 0 }
-sub SourceDetached() { 1 }
-sub SourceBoundingRectChanged() { 2 }
-sub SourceInvalidated() { 3 }
-sub NoPad() { 0 }
-sub PadToTransparentBorder() { 1 }
-sub PadToEffectiveBoundingRect() { 2 }
 
 
 1;
@@ -33,23 +24,44 @@ Qt::Gui::QGraphicsEffect
 
 =over
 
-=item    QGraphicsEffect(QObject * parent = 0)
+=item   QGraphicsEffect(QObject * parent)
 
-=item    QGraphicsEffect(QObject * parent)
+=item   QGraphicsEffect(QObject * parent = 0)
 
-=item    ~QGraphicsEffect()
+=item   ~QGraphicsEffect()
 
-=item   QRectF boundingRect()
+=item  QRectF boundingRect()
 
-=item   QRectF boundingRectFor(const QRectF & sourceRect)
+=item  QRectF boundingRectFor(const QRectF & sourceRect)
 
-=item   bool isEnabled()
+=item  bool isEnabled()
 
-=item   void setEnabled(bool enable)
+=item  void setEnabled(bool enable)
 
-=item   QGraphicsEffectSource * source()
+=item  QGraphicsEffectSource * source()
 
-=item   void update()
+=item  void update()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item SourceAttached
+
+=item SourceDetached
+
+=item SourceBoundingRectChanged
+
+=item SourceInvalidated
+
+=item NoPad
+
+=item PadToTransparentBorder
+
+=item PadToEffectiveBoundingRect
 
 
 =back

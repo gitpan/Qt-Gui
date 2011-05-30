@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,49 +23,58 @@ Qt::Gui::QItemSelectionRange
 
 =over
 
-=item    QItemSelectionRange()
+=item   QItemSelectionRange()
 
-=item    QItemSelectionRange(const QItemSelectionRange & other)
+=item   QItemSelectionRange(const QItemSelectionRange & other)
 
-=item    QItemSelectionRange(const QModelIndex & index)
+=item   QItemSelectionRange(const QModelIndex & index)
 
-=item    QItemSelectionRange(const QModelIndex & topLeft, const QModelIndex & bottomRight)
+=item   QItemSelectionRange(const QModelIndex & topLeft, const QModelIndex & bottomRight)
 
-=item   int bottom()
+=item  int bottom()
 
-=item   QModelIndex bottomRight()
+=item  QModelIndex bottomRight()
 
-=item   bool contains(const QModelIndex & index)
+=item  bool contains(const QModelIndex & index)
 
-=item   bool contains(int row, int column, const QModelIndex & parentIndex)
+=item  bool contains(int row, int column, const QModelIndex & parentIndex)
 
-=item   int height()
+=item  int height()
 
-=item   QItemSelectionRange intersect(const QItemSelectionRange & other)
+=item  QItemSelectionRange intersect(const QItemSelectionRange & other)
 
-=item   QItemSelectionRange intersected(const QItemSelectionRange & other)
+=item  QItemSelectionRange intersected(const QItemSelectionRange & other)
 
-=item   bool intersects(const QItemSelectionRange & other)
+=item  bool intersects(const QItemSelectionRange & other)
 
-=item   bool isValid()
+=item  bool isEmpty()
 
-=item   int left()
+=item  bool isValid()
 
-=item   const QAbstractItemModel * model()
+=item  int left()
 
-=item   bool operator!=(const QItemSelectionRange & other)
+=item  const QAbstractItemModel * model()
 
-=item   bool operator==(const QItemSelectionRange & other)
+=item  bool operator!=(const QItemSelectionRange & other)
 
-=item   QModelIndex parent()
+=item  bool operator==(const QItemSelectionRange & other)
 
-=item   int right()
+=item  QModelIndex parent()
 
-=item   int top()
+=item  int right()
 
-=item   QModelIndex topLeft()
+=item  int top()
 
-=item   int width()
+=item  QModelIndex topLeft()
+
+=item  int width()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,11 +24,18 @@ Qt::Gui::QClipboardEvent
 
 =over
 
-=item    QClipboardEvent(QEventPrivate * data)
+=item   QClipboardEvent(QEventPrivate * data)
 
-=item    ~QClipboardEvent()
+=item   ~QClipboardEvent()
 
-=item   QEventPrivate * data()
+=item  QEventPrivate * data()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

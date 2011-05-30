@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,13 +24,20 @@ Qt::Gui::QUnixPrintWidget
 
 =over
 
-=item    QUnixPrintWidget(QPrinter * printer, QWidget * parent = 0)
+=item   QUnixPrintWidget(QPrinter * printer, QWidget * parent)
 
-=item    QUnixPrintWidget(QPrinter * printer, QWidget * parent)
+=item   QUnixPrintWidget(QPrinter * printer, QWidget * parent = 0)
 
-=item    ~QUnixPrintWidget()
+=item   ~QUnixPrintWidget()
 
-=item   void updatePrinter()
+=item  void updatePrinter()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

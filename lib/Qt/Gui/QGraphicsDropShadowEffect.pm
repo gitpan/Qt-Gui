@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsEffect/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsEffect/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,37 +24,44 @@ Qt::Gui::QGraphicsDropShadowEffect
 
 =over
 
-=item    QGraphicsDropShadowEffect(QObject * parent = 0)
+=item   QGraphicsDropShadowEffect(QObject * parent)
 
-=item    QGraphicsDropShadowEffect(QObject * parent)
+=item   QGraphicsDropShadowEffect(QObject * parent = 0)
 
-=item    ~QGraphicsDropShadowEffect()
+=item   ~QGraphicsDropShadowEffect()
 
-=item   qreal blurRadius()
+=item  qreal blurRadius()
 
-=item   QRectF boundingRectFor(const QRectF & rect)
+=item  QRectF boundingRectFor(const QRectF & rect)
 
-=item   QColor color()
+=item  QColor color()
 
-=item   QPointF offset()
+=item  QPointF offset()
 
-=item   void setBlurRadius(qreal blurRadius)
+=item  void setBlurRadius(qreal blurRadius)
 
-=item   void setColor(const QColor & color)
+=item  void setColor(const QColor & color)
 
-=item   void setOffset(const QPointF & ofs)
+=item  void setOffset(const QPointF & ofs)
 
-=item   void setOffset(qreal d)
+=item  void setOffset(qreal d)
 
-=item   void setOffset(qreal dx, qreal dy)
+=item  void setOffset(qreal dx, qreal dy)
 
-=item   void setXOffset(qreal dx)
+=item  void setXOffset(qreal dx)
 
-=item   void setYOffset(qreal dy)
+=item  void setYOffset(qreal dy)
 
-=item   qreal xOffset()
+=item  qreal xOffset()
 
-=item   qreal yOffset()
+=item  qreal yOffset()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

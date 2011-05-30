@@ -25,12 +25,17 @@ PREINIT:
 QAbstractTextDocumentLayout *ret;
 QTextDocument * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QTextDocument")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QTextDocument") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QTextDocument")) {
         arg00 = reinterpret_cast<QTextDocument *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTextDocument");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
 
 ##  ~QAbstractTextDocumentLayout()
 void

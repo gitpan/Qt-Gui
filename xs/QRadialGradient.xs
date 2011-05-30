@@ -42,65 +42,75 @@ qreal arg43;
 qreal arg44;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QRadialGradient();
+        if (1) {
+      
+    ret = new QRadialGradient();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QRadialGradient", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 3:
+      case 3:
       {
-        if (sv_isa(ST(1), "")) {
-        arg10 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type ");
-    arg11 = (double)SvNV(ST(2));
+        if (sv_isa(ST(1), "Qt::Core::QPointF") && SvNOK(ST(2))) {
+      arg10 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
+      arg11 = (double)SvNV(ST(2));
     ret = new QRadialGradient(*arg10, arg11);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QRadialGradient", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 4:
+      case 4:
       {
-        if (sv_isa(ST(1), "")) {
-        arg20 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg20 is not of type ");
-    arg21 = (double)SvNV(ST(2));
-    if (sv_isa(ST(3), "")) {
-        arg22 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg22 is not of type ");
+        if (sv_isa(ST(1), "Qt::Core::QPointF") && SvNOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QPointF")) {
+      arg20 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
+      arg21 = (double)SvNV(ST(2));
+      arg22 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(3))));
     ret = new QRadialGradient(*arg20, arg21, *arg22);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QRadialGradient", (void *)ret);
     XSRETURN(1);
+    }
+        else if (SvNOK(ST(1)) && SvNOK(ST(2)) && SvNOK(ST(3))) {
+      arg30 = (double)SvNV(ST(1));
+      arg31 = (double)SvNV(ST(2));
+      arg32 = (double)SvNV(ST(3));
+    ret = new QRadialGradient(arg30, arg31, arg32);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QRadialGradient", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 6:
+      case 6:
       {
-        arg40 = (double)SvNV(ST(1));
-    arg41 = (double)SvNV(ST(2));
-    arg42 = (double)SvNV(ST(3));
-    arg43 = (double)SvNV(ST(4));
-    arg44 = (double)SvNV(ST(5));
+        if (SvNOK(ST(1)) && SvNOK(ST(2)) && SvNOK(ST(3)) && SvNOK(ST(4)) && SvNOK(ST(5))) {
+      arg40 = (double)SvNV(ST(1));
+      arg41 = (double)SvNV(ST(2));
+      arg42 = (double)SvNV(ST(3));
+      arg43 = (double)SvNV(ST(4));
+      arg44 = (double)SvNV(ST(5));
     ret = new QRadialGradient(arg40, arg41, arg42, arg43, arg44);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QRadialGradient", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -110,30 +120,39 @@ void
 QRadialGradient::center(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QPointF ret = THIS->center();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QPointF(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QPointF", (void *)new QPointF(ret));
     XSRETURN(1);
+    }
 
 ## QPointF focalPoint()
 void
 QRadialGradient::focalPoint(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QPointF ret = THIS->focalPoint();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QPointF(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QPointF", (void *)new QPointF(ret));
     XSRETURN(1);
+    }
 
 ## qreal radius()
 void
 QRadialGradient::radius(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     qreal ret = THIS->radius();
     ST(0) = sv_newmortal();
     sv_setnv(ST(0), (double)ret);
     XSRETURN(1);
+    }
 
 ## void setCenter(const QPointF & center)
 ## void setCenter(qreal x, qreal y)
@@ -145,30 +164,32 @@ qreal arg10;
 qreal arg11;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+        if (sv_isa(ST(1), "Qt::Core::QPointF")) {
+      arg00 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setCenter(*arg00);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 3:
+      case 3:
       {
-        arg10 = (double)SvNV(ST(1));
-    arg11 = (double)SvNV(ST(2));
+        if (SvNOK(ST(1)) && SvNOK(ST(2))) {
+      arg10 = (double)SvNV(ST(1));
+      arg11 = (double)SvNV(ST(2));
     (void)THIS->setCenter(arg10, arg11);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void setFocalPoint(const QPointF & focalPoint)
@@ -181,30 +202,32 @@ qreal arg10;
 qreal arg11;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+        if (sv_isa(ST(1), "Qt::Core::QPointF")) {
+      arg00 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setFocalPoint(*arg00);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 3:
+      case 3:
       {
-        arg10 = (double)SvNV(ST(1));
-    arg11 = (double)SvNV(ST(2));
+        if (SvNOK(ST(1)) && SvNOK(ST(2))) {
+      arg10 = (double)SvNV(ST(1));
+      arg11 = (double)SvNV(ST(2));
     (void)THIS->setFocalPoint(arg10, arg11);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void setRadius(qreal radius)
@@ -213,6 +236,8 @@ QRadialGradient::setRadius(...)
 PREINIT:
 qreal arg00;
 PPCODE:
-    arg00 = (double)SvNV(ST(1));
+    if (SvNOK(ST(1))) {
+      arg00 = (double)SvNV(ST(1));
     (void)THIS->setRadius(arg00);
     XSRETURN(0);
+    }

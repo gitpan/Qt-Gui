@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QInputEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QInputEvent/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Mouse() { 0 }
-sub Keyboard() { 1 }
-sub Other() { 2 }
 
 
 1;
@@ -30,25 +24,40 @@ Qt::Gui::QContextMenuEvent
 
 =over
 
-=item    QContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint & pos)
+=item   QContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint & pos)
 
-=item    QContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint & pos, const QPoint & globalPos)
+=item   QContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint & pos, const QPoint & globalPos)
 
-=item    ~QContextMenuEvent()
+=item   QContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint & pos, const QPoint & globalPos, QFlags<Qt::KeyboardModifier> modifiers)
 
-=item   const QPoint & globalPos()
+=item   ~QContextMenuEvent()
 
-=item   int globalX()
+=item  const QPoint & globalPos()
 
-=item   int globalY()
+=item  int globalX()
 
-=item   const QPoint & pos()
+=item  int globalY()
 
-=item   QContextMenuEvent::Reason reason()
+=item  const QPoint & pos()
 
-=item   int x()
+=item  QContextMenuEvent::Reason reason()
 
-=item   int y()
+=item  int x()
+
+=item  int y()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Mouse
+
+=item Keyboard
+
+=item Other
 
 
 =back

@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractSlider/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractSlider/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,29 +24,36 @@ Qt::Gui::QDial
 
 =over
 
-=item    QDial(QWidget * parent = 0)
+=item   QDial(QWidget * parent)
 
-=item    QDial(QWidget * parent)
+=item   QDial(QWidget * parent = 0)
 
-=item    ~QDial()
+=item   ~QDial()
 
-=item   QSize minimumSizeHint()
+=item  QSize minimumSizeHint()
 
-=item   int notchSize()
+=item  int notchSize()
 
-=item   qreal notchTarget()
+=item  qreal notchTarget()
 
-=item   bool notchesVisible()
+=item  bool notchesVisible()
 
-=item   void setNotchTarget(double target)
+=item  void setNotchTarget(double target)
 
-=item   void setNotchesVisible(bool visible)
+=item  void setNotchesVisible(bool visible)
 
-=item   void setWrapping(bool on)
+=item  void setWrapping(bool on)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   bool wrapping()
+=item  bool wrapping()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

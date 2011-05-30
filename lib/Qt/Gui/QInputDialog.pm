@@ -7,19 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoButtons() { 0 }
-sub UseListViewForComboBoxItems() { 1 }
-sub TextInput() { 0 }
-sub IntInput() { 1 }
-sub DoubleInput() { 2 }
 
 
 1;
@@ -32,91 +24,180 @@ Qt::Gui::QInputDialog
 
 =over
 
-=item    ~QInputDialog()
+=item   QInputDialog(QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   QString cancelButtonText()
+=item   QInputDialog(QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   QStringList comboBoxItems()
+=item   QInputDialog(QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void done(int result)
+=item   ~QInputDialog()
 
-=item   int doubleDecimals()
+=item  QString cancelButtonText()
 
-=item   double doubleMaximum()
+=item  QStringList comboBoxItems()
 
-=item   double doubleMinimum()
+=item  void done(int result)
 
-=item   double doubleValue()
+=item  int doubleDecimals()
 
-=item   QInputDialog::InputMode inputMode()
+=item  double doubleMaximum()
 
-=item   int intMaximum()
+=item  double doubleMinimum()
 
-=item   int intMinimum()
+=item  double doubleValue()
 
-=item   int intStep()
+=item  static double getDouble(QWidget * parent, const QString & title, const QString & label, double value, double minValue, double maxValue, int decimals, bool * ok, QFlags<Qt::WindowType> flags)
 
-=item   int intValue()
+=item  static double getDouble(QWidget * parent, const QString & title, const QString & label, double value, double minValue, double maxValue, int decimals, bool * ok, QFlags<Qt::WindowType> flags = 0)
 
-=item   bool isComboBoxEditable()
+=item  static double getDouble(QWidget * parent, const QString & title, const QString & label, double value, double minValue, double maxValue, int decimals, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   QString labelText()
+=item  static double getDouble(QWidget * parent, const QString & title, const QString & label, double value, double minValue, double maxValue, int decimals = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   QSize minimumSizeHint()
+=item  static double getDouble(QWidget * parent, const QString & title, const QString & label, double value, double minValue, double maxValue = 2147483647, int decimals = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   QString okButtonText()
+=item  static double getDouble(QWidget * parent, const QString & title, const QString & label, double value, double minValue = -2147483647, double maxValue = 2147483647, int decimals = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void open(QObject * receiver, const char * member)
+=item  static double getDouble(QWidget * parent, const QString & title, const QString & label, double value = 0, double minValue = -2147483647, double maxValue = 2147483647, int decimals = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setCancelButtonText(const QString & text)
+=item  static int getInt(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue, int step, bool * ok, QFlags<Qt::WindowType> flags)
 
-=item   void setComboBoxEditable(bool editable)
+=item  static int getInt(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue, int step, bool * ok, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setComboBoxItems(const QStringList & items)
+=item  static int getInt(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue, int step, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setDoubleDecimals(int decimals)
+=item  static int getInt(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue, int step = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setDoubleMaximum(double max)
+=item  static int getInt(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue = 2147483647, int step = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setDoubleMinimum(double min)
+=item  static int getInt(QWidget * parent, const QString & title, const QString & label, int value, int minValue = -2147483647, int maxValue = 2147483647, int step = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setDoubleRange(double min, double max)
+=item  static int getInt(QWidget * parent, const QString & title, const QString & label, int value = 0, int minValue = -2147483647, int maxValue = 2147483647, int step = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setDoubleValue(double value)
+=item  static int getInteger(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue, int step, bool * ok, QFlags<Qt::WindowType> flags)
 
-=item   void setInputMode(QInputDialog::InputMode mode)
+=item  static int getInteger(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue, int step, bool * ok, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setIntMaximum(int max)
+=item  static int getInteger(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue, int step, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setIntMinimum(int min)
+=item  static int getInteger(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue, int step = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setIntRange(int min, int max)
+=item  static int getInteger(QWidget * parent, const QString & title, const QString & label, int value, int minValue, int maxValue = 2147483647, int step = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setIntStep(int step)
+=item  static int getInteger(QWidget * parent, const QString & title, const QString & label, int value, int minValue = -2147483647, int maxValue = 2147483647, int step = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setIntValue(int value)
+=item  static int getInteger(QWidget * parent, const QString & title, const QString & label, int value = 0, int minValue = -2147483647, int maxValue = 2147483647, int step = 1, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setLabelText(const QString & text)
+=item  static QString getItem(QWidget * parent, const QString & title, const QString & label, const QStringList & items, int current, bool editable, bool * ok, QFlags<Qt::WindowType> flags)
 
-=item   void setOkButtonText(const QString & text)
+=item  static QString getItem(QWidget * parent, const QString & title, const QString & label, const QStringList & items, int current, bool editable, bool * ok, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setOption(QInputDialog::InputDialogOption option, bool on = true)
+=item  static QString getItem(QWidget * parent, const QString & title, const QString & label, const QStringList & items, int current, bool editable, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setOption(QInputDialog::InputDialogOption option, bool on)
+=item  static QString getItem(QWidget * parent, const QString & title, const QString & label, const QStringList & items, int current, bool editable = true, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setTextEchoMode(QLineEdit::EchoMode mode)
+=item  static QString getItem(QWidget * parent, const QString & title, const QString & label, const QStringList & items, int current = 0, bool editable = true, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setTextValue(const QString & text)
+=item  static QString getText(QWidget * parent, const QString & title, const QString & label, QLineEdit::EchoMode echo, const QString & text, bool * ok, QFlags<Qt::WindowType> flags)
 
-=item   void setVisible(bool visible)
+=item  static QString getText(QWidget * parent, const QString & title, const QString & label, QLineEdit::EchoMode echo, const QString & text, bool * ok, QFlags<Qt::WindowType> flags = 0)
 
-=item   QSize sizeHint()
+=item  static QString getText(QWidget * parent, const QString & title, const QString & label, QLineEdit::EchoMode echo, const QString & text, bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   bool testOption(QInputDialog::InputDialogOption option)
+=item  static QString getText(QWidget * parent, const QString & title, const QString & label, QLineEdit::EchoMode echo, const QString & text = QString(), bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   QLineEdit::EchoMode textEchoMode()
+=item  static QString getText(QWidget * parent, const QString & title, const QString & label, QLineEdit::EchoMode echo = QLineEdit::Normal, const QString & text = QString(), bool * ok = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   QString textValue()
+=item  QInputDialog::InputMode inputMode()
+
+=item  int intMaximum()
+
+=item  int intMinimum()
+
+=item  int intStep()
+
+=item  int intValue()
+
+=item  bool isComboBoxEditable()
+
+=item  QString labelText()
+
+=item  QSize minimumSizeHint()
+
+=item  QString okButtonText()
+
+=item  void open(QObject * receiver, const char * member)
+
+=item  QFlags<QInputDialog::InputDialogOption> options()
+
+=item  void setCancelButtonText(const QString & text)
+
+=item  void setComboBoxEditable(bool editable)
+
+=item  void setComboBoxItems(const QStringList & items)
+
+=item  void setDoubleDecimals(int decimals)
+
+=item  void setDoubleMaximum(double max)
+
+=item  void setDoubleMinimum(double min)
+
+=item  void setDoubleRange(double min, double max)
+
+=item  void setDoubleValue(double value)
+
+=item  void setInputMode(QInputDialog::InputMode mode)
+
+=item  void setIntMaximum(int max)
+
+=item  void setIntMinimum(int min)
+
+=item  void setIntRange(int min, int max)
+
+=item  void setIntStep(int step)
+
+=item  void setIntValue(int value)
+
+=item  void setLabelText(const QString & text)
+
+=item  void setOkButtonText(const QString & text)
+
+=item  void setOption(QInputDialog::InputDialogOption option, bool on)
+
+=item  void setOption(QInputDialog::InputDialogOption option, bool on = true)
+
+=item  void setOptions(QFlags<QInputDialog::InputDialogOption> options)
+
+=item  void setTextEchoMode(QLineEdit::EchoMode mode)
+
+=item  void setTextValue(const QString & text)
+
+=item  void setVisible(bool visible)
+
+=item  QSize sizeHint()
+
+=item  bool testOption(QInputDialog::InputDialogOption option)
+
+=item  QLineEdit::EchoMode textEchoMode()
+
+=item  QString textValue()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoButtons
+
+=item UseListViewForComboBoxItems
+
+=item TextInput
+
+=item IntInput
+
+=item DoubleInput
 
 
 =back

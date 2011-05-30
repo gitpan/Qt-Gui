@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsItem/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
 
 
 1;
@@ -28,31 +24,38 @@ Qt::Gui::QGraphicsItemGroup
 
 =over
 
-=item    QGraphicsItemGroup(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsItemGroup(QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsItemGroup(QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsItemGroup(QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsItemGroup(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   QGraphicsItemGroup(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsItemGroup(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   ~QGraphicsItemGroup()
 
-=item    ~QGraphicsItemGroup()
+=item  void addToGroup(QGraphicsItem * item)
 
-=item   void addToGroup(QGraphicsItem * item)
+=item  QRectF boundingRect()
 
-=item   QRectF boundingRect()
+=item  bool isObscuredBy(const QGraphicsItem * item)
 
-=item   bool isObscuredBy(const QGraphicsItem * item)
+=item  QPainterPath opaqueArea()
 
-=item   QPainterPath opaqueArea()
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
+=item  void removeFromGroup(QGraphicsItem * item)
 
-=item   void removeFromGroup(QGraphicsItem * item)
+=item  int type()
 
-=item   int type()
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Type
 
 
 =back

@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsSceneEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsSceneEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,51 +24,66 @@ Qt::Gui::QGraphicsSceneMouseEvent
 
 =over
 
-=item    QGraphicsSceneMouseEvent(QGraphicsSceneMouseEvent::Type type = QGraphicsSceneMouseEvent::None)
+=item   QGraphicsSceneMouseEvent(QGraphicsSceneMouseEvent::Type type)
 
-=item    QGraphicsSceneMouseEvent(QGraphicsSceneMouseEvent::Type type)
+=item   QGraphicsSceneMouseEvent(QGraphicsSceneMouseEvent::Type type = QGraphicsSceneMouseEvent::None)
 
-=item    ~QGraphicsSceneMouseEvent()
+=item   ~QGraphicsSceneMouseEvent()
 
-=item   Qt::MouseButton button()
+=item  Qt::MouseButton button()
 
-=item   QPointF buttonDownPos(Qt::MouseButton button)
+=item  QPointF buttonDownPos(Qt::MouseButton button)
 
-=item   QPointF buttonDownScenePos(Qt::MouseButton button)
+=item  QPointF buttonDownScenePos(Qt::MouseButton button)
 
-=item   QPoint buttonDownScreenPos(Qt::MouseButton button)
+=item  QPoint buttonDownScreenPos(Qt::MouseButton button)
 
-=item   QPointF lastPos()
+=item  QFlags<Qt::MouseButton> buttons()
 
-=item   QPointF lastScenePos()
+=item  QPointF lastPos()
 
-=item   QPoint lastScreenPos()
+=item  QPointF lastScenePos()
 
-=item   QPointF pos()
+=item  QPoint lastScreenPos()
 
-=item   QPointF scenePos()
+=item  QFlags<Qt::KeyboardModifier> modifiers()
 
-=item   QPoint screenPos()
+=item  QPointF pos()
 
-=item   void setButton(Qt::MouseButton button)
+=item  QPointF scenePos()
 
-=item   void setButtonDownPos(Qt::MouseButton button, const QPointF & pos)
+=item  QPoint screenPos()
 
-=item   void setButtonDownScenePos(Qt::MouseButton button, const QPointF & pos)
+=item  void setButton(Qt::MouseButton button)
 
-=item   void setButtonDownScreenPos(Qt::MouseButton button, const QPoint & pos)
+=item  void setButtonDownPos(Qt::MouseButton button, const QPointF & pos)
 
-=item   void setLastPos(const QPointF & pos)
+=item  void setButtonDownScenePos(Qt::MouseButton button, const QPointF & pos)
 
-=item   void setLastScenePos(const QPointF & pos)
+=item  void setButtonDownScreenPos(Qt::MouseButton button, const QPoint & pos)
 
-=item   void setLastScreenPos(const QPoint & pos)
+=item  void setButtons(QFlags<Qt::MouseButton> buttons)
 
-=item   void setPos(const QPointF & pos)
+=item  void setLastPos(const QPointF & pos)
 
-=item   void setScenePos(const QPointF & pos)
+=item  void setLastScenePos(const QPointF & pos)
 
-=item   void setScreenPos(const QPoint & pos)
+=item  void setLastScreenPos(const QPoint & pos)
+
+=item  void setModifiers(QFlags<Qt::KeyboardModifier> modifiers)
+
+=item  void setPos(const QPointF & pos)
+
+=item  void setScenePos(const QPointF & pos)
+
+=item  void setScreenPos(const QPoint & pos)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

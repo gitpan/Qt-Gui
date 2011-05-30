@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,35 +23,42 @@ Qt::Gui::QTextInlineObject
 
 =over
 
-=item    QTextInlineObject()
+=item   QTextInlineObject()
 
-=item    QTextInlineObject(int i, QTextEngine * e)
+=item   QTextInlineObject(int i, QTextEngine * e)
 
-=item   qreal ascent()
+=item  qreal ascent()
 
-=item   qreal descent()
+=item  qreal descent()
 
-=item   QTextFormat format()
+=item  QTextFormat format()
 
-=item   int formatIndex()
+=item  int formatIndex()
 
-=item   qreal height()
+=item  qreal height()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   QRectF rect()
+=item  QRectF rect()
 
-=item   void setAscent(qreal a)
+=item  void setAscent(qreal a)
 
-=item   void setDescent(qreal d)
+=item  void setDescent(qreal d)
 
-=item   void setWidth(qreal w)
+=item  void setWidth(qreal w)
 
-=item   Qt::LayoutDirection textDirection()
+=item  Qt::LayoutDirection textDirection()
 
-=item   int textPosition()
+=item  int textPosition()
 
-=item   qreal width()
+=item  qreal width()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

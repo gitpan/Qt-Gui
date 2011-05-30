@@ -7,25 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractItemView/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractItemView/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Static() { 0 }
-sub Free() { 1 }
-sub Snap() { 2 }
-sub LeftToRight() { 0 }
-sub TopToBottom() { 1 }
-sub Fixed() { 0 }
-sub Adjust() { 1 }
-sub SinglePass() { 0 }
-sub Batched() { 1 }
-sub ListMode() { 0 }
-sub IconMode() { 1 }
 
 
 1;
@@ -38,83 +24,112 @@ Qt::Gui::QListView
 
 =over
 
-=item    QListView(QWidget * parent = 0)
+=item   QListView(QWidget * parent)
 
-=item    QListView(QWidget * parent)
+=item   QListView(QWidget * parent = 0)
 
-=item    ~QListView()
+=item   ~QListView()
 
-=item   int batchSize()
+=item  int batchSize()
 
-=item   void clearPropertyFlags()
+=item  void clearPropertyFlags()
 
-=item   void doItemsLayout()
+=item  void doItemsLayout()
 
-=item   QListView::Flow flow()
+=item  QListView::Flow flow()
 
-=item   QSize gridSize()
+=item  QSize gridSize()
 
-=item   QModelIndex indexAt(const QPoint & p)
+=item  QModelIndex indexAt(const QPoint & p)
 
-=item   bool isRowHidden(int row)
+=item  bool isRowHidden(int row)
 
-=item   bool isSelectionRectVisible()
+=item  bool isSelectionRectVisible()
 
-=item   bool isWrapping()
+=item  bool isWrapping()
 
-=item   QListView::LayoutMode layoutMode()
+=item  QListView::LayoutMode layoutMode()
 
-=item   int modelColumn()
+=item  int modelColumn()
 
-=item   QListView::Movement movement()
+=item  QListView::Movement movement()
 
-=item   void reset()
+=item  void reset()
 
-=item   QListView::ResizeMode resizeMode()
+=item  QListView::ResizeMode resizeMode()
 
-=item   void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+=item  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint)
 
-=item   void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint)
+=item  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 
-=item   void setBatchSize(int batchSize)
+=item  void setBatchSize(int batchSize)
 
-=item   void setFlow(QListView::Flow flow)
+=item  void setFlow(QListView::Flow flow)
 
-=item   void setGridSize(const QSize & size)
+=item  void setGridSize(const QSize & size)
 
-=item   void setLayoutMode(QListView::LayoutMode mode)
+=item  void setLayoutMode(QListView::LayoutMode mode)
 
-=item   void setModelColumn(int column)
+=item  void setModelColumn(int column)
 
-=item   void setMovement(QListView::Movement movement)
+=item  void setMovement(QListView::Movement movement)
 
-=item   void setResizeMode(QListView::ResizeMode mode)
+=item  void setResizeMode(QListView::ResizeMode mode)
 
-=item   void setRootIndex(const QModelIndex & index)
+=item  void setRootIndex(const QModelIndex & index)
 
-=item   void setRowHidden(int row, bool hide)
+=item  void setRowHidden(int row, bool hide)
 
-=item   void setSelectionRectVisible(bool show)
+=item  void setSelectionRectVisible(bool show)
 
-=item   void setSpacing(int space)
+=item  void setSpacing(int space)
 
-=item   void setUniformItemSizes(bool enable)
+=item  void setUniformItemSizes(bool enable)
 
-=item   void setViewMode(QListView::ViewMode mode)
+=item  void setViewMode(QListView::ViewMode mode)
 
-=item   void setWordWrap(bool on)
+=item  void setWordWrap(bool on)
 
-=item   void setWrapping(bool enable)
+=item  void setWrapping(bool enable)
 
-=item   int spacing()
+=item  int spacing()
 
-=item   bool uniformItemSizes()
+=item  bool uniformItemSizes()
 
-=item   QListView::ViewMode viewMode()
+=item  QListView::ViewMode viewMode()
 
-=item   QRect visualRect(const QModelIndex & index)
+=item  QRect visualRect(const QModelIndex & index)
 
-=item   bool wordWrap()
+=item  bool wordWrap()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Static
+
+=item Free
+
+=item Snap
+
+=item LeftToRight
+
+=item TopToBottom
+
+=item Fixed
+
+=item Adjust
+
+=item SinglePass
+
+=item Batched
+
+=item ListMode
+
+=item IconMode
 
 
 =back

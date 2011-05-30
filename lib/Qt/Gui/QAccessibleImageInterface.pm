@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAccessible2Interface/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAccessible2Interface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,13 +24,20 @@ Qt::Gui::QAccessibleImageInterface
 
 =over
 
-=item   QString imageDescription()
+=item  QString imageDescription()
 
-=item   QRect imagePosition(QAccessible2::CoordinateType coordType)
+=item  QRect imagePosition(QAccessible2::CoordinateType coordType)
 
-=item   QSize imageSize()
+=item  QSize imageSize()
 
-=item   QAccessible2Interface * qAccessibleImageCastHelper()
+=item  QAccessible2Interface * qAccessibleImageCastHelper()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

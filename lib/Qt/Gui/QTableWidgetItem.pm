@@ -7,15 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
-sub UserType() { 1 }
 
 
 1;
@@ -28,99 +23,114 @@ Qt::Gui::QTableWidgetItem
 
 =over
 
-=item    QTableWidgetItem(int type = QTableWidgetItem::Type)
+=item   QTableWidgetItem(int type)
 
-=item    QTableWidgetItem(int type)
+=item   QTableWidgetItem(int type = QTableWidgetItem::Type)
 
-=item    QTableWidgetItem(const QTableWidgetItem & other)
+=item   QTableWidgetItem(const QTableWidgetItem & other)
 
-=item    QTableWidgetItem(const QString & text, int type = QTableWidgetItem::Type)
+=item   QTableWidgetItem(const QString & text, int type)
 
-=item    QTableWidgetItem(const QString & text, int type)
+=item   QTableWidgetItem(const QString & text, int type = QTableWidgetItem::Type)
 
-=item    QTableWidgetItem(const QIcon & icon, const QString & text, int type = QTableWidgetItem::Type)
+=item   QTableWidgetItem(const QIcon & icon, const QString & text, int type)
 
-=item    QTableWidgetItem(const QIcon & icon, const QString & text, int type)
+=item   QTableWidgetItem(const QIcon & icon, const QString & text, int type = QTableWidgetItem::Type)
 
-=item    ~QTableWidgetItem()
+=item   ~QTableWidgetItem()
 
-=item   QBrush background()
+=item  QBrush background()
 
-=item   QColor backgroundColor()
+=item  QColor backgroundColor()
 
-=item   Qt::CheckState checkState()
+=item  Qt::CheckState checkState()
 
-=item   QTableWidgetItem * clone()
+=item  QTableWidgetItem * clone()
 
-=item   int column()
+=item  int column()
 
-=item   QVariant data(int role)
+=item  QVariant data(int role)
 
-=item   QFont font()
+=item  QFlags<Qt::ItemFlag> flags()
 
-=item   QBrush foreground()
+=item  QFont font()
 
-=item   QIcon icon()
+=item  QBrush foreground()
 
-=item   bool isSelected()
+=item  QIcon icon()
 
-=item   bool operator<(const QTableWidgetItem & other)
+=item  bool isSelected()
 
-=item   QTableWidgetItem & operator=(const QTableWidgetItem & other)
+=item  bool operator<(const QTableWidgetItem & other)
 
-=item   void read(QDataStream & in)
+=item  QTableWidgetItem & operator=(const QTableWidgetItem & other)
 
-=item   int row()
+=item  void read(QDataStream & in)
 
-=item   void setBackground(const QBrush & brush)
+=item  int row()
 
-=item   void setBackgroundColor(const QColor & color)
+=item  void setBackground(const QBrush & brush)
 
-=item   void setCheckState(Qt::CheckState state)
+=item  void setBackgroundColor(const QColor & color)
 
-=item   void setData(int role, const QVariant & value)
+=item  void setCheckState(Qt::CheckState state)
 
-=item   void setFont(const QFont & font)
+=item  void setData(int role, const QVariant & value)
 
-=item   void setForeground(const QBrush & brush)
+=item  void setFlags(QFlags<Qt::ItemFlag> flags)
 
-=item   void setIcon(const QIcon & icon)
+=item  void setFont(const QFont & font)
 
-=item   void setSelected(bool select)
+=item  void setForeground(const QBrush & brush)
 
-=item   void setSizeHint(const QSize & size)
+=item  void setIcon(const QIcon & icon)
 
-=item   void setStatusTip(const QString & statusTip)
+=item  void setSelected(bool select)
 
-=item   void setText(const QString & text)
+=item  void setSizeHint(const QSize & size)
 
-=item   void setTextAlignment(int alignment)
+=item  void setStatusTip(const QString & statusTip)
 
-=item   void setTextColor(const QColor & color)
+=item  void setText(const QString & text)
 
-=item   void setToolTip(const QString & toolTip)
+=item  void setTextAlignment(int alignment)
 
-=item   void setWhatsThis(const QString & whatsThis)
+=item  void setTextColor(const QColor & color)
 
-=item   QSize sizeHint()
+=item  void setToolTip(const QString & toolTip)
 
-=item   QString statusTip()
+=item  void setWhatsThis(const QString & whatsThis)
 
-=item   QTableWidget * tableWidget()
+=item  QSize sizeHint()
 
-=item   QString text()
+=item  QString statusTip()
 
-=item   int textAlignment()
+=item  QTableWidget * tableWidget()
 
-=item   QColor textColor()
+=item  QString text()
 
-=item   QString toolTip()
+=item  int textAlignment()
 
-=item   int type()
+=item  QColor textColor()
 
-=item   QString whatsThis()
+=item  QString toolTip()
 
-=item   void write(QDataStream & out)
+=item  int type()
+
+=item  QString whatsThis()
+
+=item  void write(QDataStream & out)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Type
+
+=item UserType
 
 
 =back

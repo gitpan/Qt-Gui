@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,17 +23,24 @@ Qt::Gui::QPixmapCache::Key
 
 =over
 
-=item    QPixmapCache::Key()
+=item   QPixmapCache::Key()
 
-=item    QPixmapCache::Key(const QPixmapCache::Key & other)
+=item   QPixmapCache::Key(const QPixmapCache::Key & other)
 
-=item    ~Key()
+=item   ~Key()
 
-=item   bool operator!=(const QPixmapCache::Key & key)
+=item  bool operator!=(const QPixmapCache::Key & key)
 
-=item   QPixmapCache::Key & operator=(const QPixmapCache::Key & other)
+=item  QPixmapCache::Key & operator=(const QPixmapCache::Key & other)
 
-=item   bool operator==(const QPixmapCache::Key & key)
+=item  bool operator==(const QPixmapCache::Key & key)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

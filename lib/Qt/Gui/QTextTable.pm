@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextFrame/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextFrame/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,47 +24,54 @@ Qt::Gui::QTextTable
 
 =over
 
-=item    QTextTable(QTextDocument * doc)
+=item   QTextTable(QTextDocument * doc)
 
-=item    ~QTextTable()
+=item   ~QTextTable()
 
-=item   void appendColumns(int count)
+=item  void appendColumns(int count)
 
-=item   void appendRows(int count)
+=item  void appendRows(int count)
 
-=item   QTextTableCell cellAt(int position)
+=item  QTextTableCell cellAt(int position)
 
-=item   QTextTableCell cellAt(const QTextCursor & c)
+=item  QTextTableCell cellAt(const QTextCursor & c)
 
-=item   QTextTableCell cellAt(int row, int col)
+=item  QTextTableCell cellAt(int row, int col)
 
-=item   int columns()
+=item  int columns()
 
-=item   QTextTableFormat format()
+=item  QTextTableFormat format()
 
-=item   void insertColumns(int pos, int num)
+=item  void insertColumns(int pos, int num)
 
-=item   void insertRows(int pos, int num)
+=item  void insertRows(int pos, int num)
 
-=item   void mergeCells(const QTextCursor & cursor)
+=item  void mergeCells(const QTextCursor & cursor)
 
-=item   void mergeCells(int row, int col, int numRows, int numCols)
+=item  void mergeCells(int row, int col, int numRows, int numCols)
 
-=item   void removeColumns(int pos, int num)
+=item  void removeColumns(int pos, int num)
 
-=item   void removeRows(int pos, int num)
+=item  void removeRows(int pos, int num)
 
-=item   void resize(int rows, int cols)
+=item  void resize(int rows, int cols)
 
-=item   QTextCursor rowEnd(const QTextCursor & c)
+=item  QTextCursor rowEnd(const QTextCursor & c)
 
-=item   QTextCursor rowStart(const QTextCursor & c)
+=item  QTextCursor rowStart(const QTextCursor & c)
 
-=item   int rows()
+=item  int rows()
 
-=item   void setFormat(const QTextTableFormat & format)
+=item  void setFormat(const QTextTableFormat & format)
 
-=item   void splitCell(int row, int col, int numRows, int numCols)
+=item  void splitCell(int row, int col, int numRows, int numCols)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

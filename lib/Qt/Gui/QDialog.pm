@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Rejected() { 0 }
-sub Accepted() { 1 }
 
 
 1;
@@ -29,43 +24,60 @@ Qt::Gui::QDialog
 
 =over
 
-=item    ~QDialog()
+=item   QDialog(QWidget * parent, QFlags<Qt::WindowType> f)
 
-=item   void accept()
+=item   QDialog(QWidget * parent, QFlags<Qt::WindowType> f = 0)
 
-=item   void done(int arg0)
+=item   QDialog(QWidget * parent = 0, QFlags<Qt::WindowType> f = 0)
 
-=item   int exec()
+=item   ~QDialog()
 
-=item   QWidget * extension()
+=item  void accept()
 
-=item   bool isSizeGripEnabled()
+=item  void done(int arg0)
 
-=item   QSize minimumSizeHint()
+=item  int exec()
 
-=item   void open()
+=item  QWidget * extension()
 
-=item   Qt::Orientation orientation()
+=item  bool isSizeGripEnabled()
 
-=item   void reject()
+=item  QSize minimumSizeHint()
 
-=item   int result()
+=item  void open()
 
-=item   void setExtension(QWidget * extension)
+=item  Qt::Orientation orientation()
 
-=item   void setModal(bool modal)
+=item  void reject()
 
-=item   void setOrientation(Qt::Orientation orientation)
+=item  int result()
 
-=item   void setResult(int r)
+=item  void setExtension(QWidget * extension)
 
-=item   void setSizeGripEnabled(bool arg0)
+=item  void setModal(bool modal)
 
-=item   void setVisible(bool visible)
+=item  void setOrientation(Qt::Orientation orientation)
 
-=item   void showExtension(bool arg0)
+=item  void setResult(int r)
 
-=item   QSize sizeHint()
+=item  void setSizeGripEnabled(bool arg0)
+
+=item  void setVisible(bool visible)
+
+=item  void showExtension(bool arg0)
+
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Rejected
+
+=item Accepted
 
 
 =back

@@ -7,22 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Unknown() { 0 }
-sub Context() { 1 }
-sub DoubleClick() { 2 }
-sub Trigger() { 3 }
-sub MiddleClick() { 4 }
-sub NoIcon() { 0 }
-sub Information() { 1 }
-sub Warning() { 2 }
-sub Critical() { 3 }
 
 
 1;
@@ -35,49 +24,72 @@ Qt::Gui::QSystemTrayIcon
 
 =over
 
-=item    QSystemTrayIcon(QObject * parent = 0)
+=item   QSystemTrayIcon(QObject * parent)
 
-=item    QSystemTrayIcon(QObject * parent)
+=item   QSystemTrayIcon(QObject * parent = 0)
 
-=item    QSystemTrayIcon(const QIcon & icon, QObject * parent = 0)
+=item   QSystemTrayIcon(const QIcon & icon, QObject * parent)
 
-=item    QSystemTrayIcon(const QIcon & icon, QObject * parent)
+=item   QSystemTrayIcon(const QIcon & icon, QObject * parent = 0)
 
-=item    ~QSystemTrayIcon()
+=item   ~QSystemTrayIcon()
 
-=item   QMenu * contextMenu()
+=item  QMenu * contextMenu()
 
-=item   QRect geometry()
+=item  QRect geometry()
 
-=item   void hide()
+=item  void hide()
 
-=item   QIcon icon()
+=item  QIcon icon()
 
-=item   static bool isSystemTrayAvailable()
+=item  static bool isSystemTrayAvailable()
 
-=item   bool isVisible()
+=item  bool isVisible()
 
-=item   void setContextMenu(QMenu * menu)
+=item  void setContextMenu(QMenu * menu)
 
-=item   void setIcon(const QIcon & icon)
+=item  void setIcon(const QIcon & icon)
 
-=item   void setToolTip(const QString & tip)
+=item  void setToolTip(const QString & tip)
 
-=item   void setVisible(bool visible)
+=item  void setVisible(bool visible)
 
-=item   void show()
+=item  void show()
 
-=item   void showMessage(const QString & title, const QString & msg, QSystemTrayIcon::MessageIcon icon, int msecs = 10000)
+=item  void showMessage(const QString & title, const QString & msg, QSystemTrayIcon::MessageIcon icon, int msecs)
 
-=item   void showMessage(const QString & title, const QString & msg, QSystemTrayIcon::MessageIcon icon, int msecs)
+=item  void showMessage(const QString & title, const QString & msg, QSystemTrayIcon::MessageIcon icon, int msecs = 10000)
 
-=item   void showMessage(const QString & title, const QString & msg, QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::Information, int msecs = 10000)
+=item  void showMessage(const QString & title, const QString & msg, QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::Information, int msecs = 10000)
 
-=item   void showMessage(const QString & title, const QString & msg, QSystemTrayIcon::MessageIcon icon, int msecs = 10000)
+=item  static bool supportsMessages()
 
-=item   static bool supportsMessages()
+=item  QString toolTip()
 
-=item   QString toolTip()
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Unknown
+
+=item Context
+
+=item DoubleClick
+
+=item Trigger
+
+=item MiddleClick
+
+=item NoIcon
+
+=item Information
+
+=item Warning
+
+=item Critical
 
 
 =back

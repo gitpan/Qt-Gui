@@ -7,19 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub BspTreeIndex() { 0 }
-sub NoIndex() { 1 }
-sub ItemLayer() { 0 }
-sub BackgroundLayer() { 1 }
-sub ForegroundLayer() { 2 }
-sub AllLayers() { 3 }
 
 
 1;
@@ -32,211 +24,228 @@ Qt::Gui::QGraphicsScene
 
 =over
 
-=item    QGraphicsScene(QObject * parent = 0)
+=item   QGraphicsScene(QObject * parent)
 
-=item    QGraphicsScene(QObject * parent)
+=item   QGraphicsScene(QObject * parent = 0)
 
-=item    QGraphicsScene(const QRectF & sceneRect, QObject * parent = 0)
+=item   QGraphicsScene(const QRectF & sceneRect, QObject * parent)
 
-=item    QGraphicsScene(const QRectF & sceneRect, QObject * parent)
+=item   QGraphicsScene(const QRectF & sceneRect, QObject * parent = 0)
 
-=item    QGraphicsScene(qreal x, qreal y, qreal width, qreal height, QObject * parent = 0)
+=item   QGraphicsScene(qreal x, qreal y, qreal width, qreal height, QObject * parent)
 
-=item    QGraphicsScene(qreal x, qreal y, qreal width, qreal height, QObject * parent)
+=item   QGraphicsScene(qreal x, qreal y, qreal width, qreal height, QObject * parent = 0)
 
-=item    ~QGraphicsScene()
+=item   ~QGraphicsScene()
 
-=item   QGraphicsItem * activePanel()
+=item  QGraphicsItem * activePanel()
 
-=item   QGraphicsWidget * activeWindow()
+=item  QGraphicsWidget * activeWindow()
 
-=item   QGraphicsEllipseItem * addEllipse(const QRectF & rect, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsEllipseItem * addEllipse(const QRectF & rect, const QPen & pen, const QBrush & brush)
 
-=item   QGraphicsEllipseItem * addEllipse(const QRectF & rect, const QPen & pen, const QBrush & brush)
+=item  QGraphicsEllipseItem * addEllipse(const QRectF & rect, const QPen & pen, const QBrush & brush = QBrush())
 
-=item   QGraphicsEllipseItem * addEllipse(const QRectF & rect, const QPen & pen = QPen(), const QBrush & brush = QBrush())
+=item  QGraphicsEllipseItem * addEllipse(const QRectF & rect, const QPen & pen = QPen(), const QBrush & brush = QBrush())
 
-=item   QGraphicsEllipseItem * addEllipse(const QRectF & rect, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsEllipseItem * addEllipse(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush)
 
-=item   QGraphicsEllipseItem * addEllipse(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsEllipseItem * addEllipse(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush = QBrush())
 
-=item   QGraphicsEllipseItem * addEllipse(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush)
+=item  QGraphicsEllipseItem * addEllipse(qreal x, qreal y, qreal w, qreal h, const QPen & pen = QPen(), const QBrush & brush = QBrush())
 
-=item   QGraphicsEllipseItem * addEllipse(qreal x, qreal y, qreal w, qreal h, const QPen & pen = QPen(), const QBrush & brush = QBrush())
+=item  void addItem(QGraphicsItem * item)
 
-=item   QGraphicsEllipseItem * addEllipse(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsLineItem * addLine(const QLineF & line, const QPen & pen)
 
-=item   void addItem(QGraphicsItem * item)
+=item  QGraphicsLineItem * addLine(const QLineF & line, const QPen & pen = QPen())
 
-=item   QGraphicsLineItem * addLine(const QLineF & line, const QPen & pen = QPen())
+=item  QGraphicsLineItem * addLine(qreal x1, qreal y1, qreal x2, qreal y2, const QPen & pen)
 
-=item   QGraphicsLineItem * addLine(const QLineF & line, const QPen & pen)
+=item  QGraphicsLineItem * addLine(qreal x1, qreal y1, qreal x2, qreal y2, const QPen & pen = QPen())
 
-=item   QGraphicsLineItem * addLine(qreal x1, qreal y1, qreal x2, qreal y2, const QPen & pen = QPen())
+=item  QGraphicsPathItem * addPath(const QPainterPath & path, const QPen & pen, const QBrush & brush)
 
-=item   QGraphicsLineItem * addLine(qreal x1, qreal y1, qreal x2, qreal y2, const QPen & pen)
+=item  QGraphicsPathItem * addPath(const QPainterPath & path, const QPen & pen, const QBrush & brush = QBrush())
 
-=item   QGraphicsPathItem * addPath(const QPainterPath & path, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsPathItem * addPath(const QPainterPath & path, const QPen & pen = QPen(), const QBrush & brush = QBrush())
 
-=item   QGraphicsPathItem * addPath(const QPainterPath & path, const QPen & pen, const QBrush & brush)
+=item  QGraphicsPixmapItem * addPixmap(const QPixmap & pixmap)
 
-=item   QGraphicsPathItem * addPath(const QPainterPath & path, const QPen & pen = QPen(), const QBrush & brush = QBrush())
+=item  QGraphicsPolygonItem * addPolygon(const QPolygonF & polygon, const QPen & pen, const QBrush & brush)
 
-=item   QGraphicsPathItem * addPath(const QPainterPath & path, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsPolygonItem * addPolygon(const QPolygonF & polygon, const QPen & pen, const QBrush & brush = QBrush())
 
-=item   QGraphicsPixmapItem * addPixmap(const QPixmap & pixmap)
+=item  QGraphicsPolygonItem * addPolygon(const QPolygonF & polygon, const QPen & pen = QPen(), const QBrush & brush = QBrush())
 
-=item   QGraphicsPolygonItem * addPolygon(const QPolygonF & polygon, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsRectItem * addRect(const QRectF & rect, const QPen & pen, const QBrush & brush)
 
-=item   QGraphicsPolygonItem * addPolygon(const QPolygonF & polygon, const QPen & pen, const QBrush & brush)
+=item  QGraphicsRectItem * addRect(const QRectF & rect, const QPen & pen, const QBrush & brush = QBrush())
 
-=item   QGraphicsPolygonItem * addPolygon(const QPolygonF & polygon, const QPen & pen = QPen(), const QBrush & brush = QBrush())
+=item  QGraphicsRectItem * addRect(const QRectF & rect, const QPen & pen = QPen(), const QBrush & brush = QBrush())
 
-=item   QGraphicsPolygonItem * addPolygon(const QPolygonF & polygon, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsRectItem * addRect(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush)
 
-=item   QGraphicsRectItem * addRect(const QRectF & rect, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsRectItem * addRect(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush = QBrush())
 
-=item   QGraphicsRectItem * addRect(const QRectF & rect, const QPen & pen, const QBrush & brush)
+=item  QGraphicsRectItem * addRect(qreal x, qreal y, qreal w, qreal h, const QPen & pen = QPen(), const QBrush & brush = QBrush())
 
-=item   QGraphicsRectItem * addRect(const QRectF & rect, const QPen & pen = QPen(), const QBrush & brush = QBrush())
+=item  QGraphicsSimpleTextItem * addSimpleText(const QString & text, const QFont & font)
 
-=item   QGraphicsRectItem * addRect(const QRectF & rect, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsSimpleTextItem * addSimpleText(const QString & text, const QFont & font = QFont())
 
-=item   QGraphicsRectItem * addRect(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsTextItem * addText(const QString & text, const QFont & font)
 
-=item   QGraphicsRectItem * addRect(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush)
+=item  QGraphicsTextItem * addText(const QString & text, const QFont & font = QFont())
 
-=item   QGraphicsRectItem * addRect(qreal x, qreal y, qreal w, qreal h, const QPen & pen = QPen(), const QBrush & brush = QBrush())
+=item  QGraphicsProxyWidget * addWidget(QWidget * widget, QFlags<Qt::WindowType> wFlags)
 
-=item   QGraphicsRectItem * addRect(qreal x, qreal y, qreal w, qreal h, const QPen & pen, const QBrush & brush = QBrush())
+=item  QGraphicsProxyWidget * addWidget(QWidget * widget, QFlags<Qt::WindowType> wFlags = 0)
 
-=item   QGraphicsSimpleTextItem * addSimpleText(const QString & text, const QFont & font = QFont())
+=item  void advance()
 
-=item   QGraphicsSimpleTextItem * addSimpleText(const QString & text, const QFont & font)
+=item  QBrush backgroundBrush()
 
-=item   QGraphicsTextItem * addText(const QString & text, const QFont & font = QFont())
+=item  int bspTreeDepth()
 
-=item   QGraphicsTextItem * addText(const QString & text, const QFont & font)
+=item  void clear()
 
-=item   void advance()
+=item  void clearFocus()
 
-=item   QBrush backgroundBrush()
+=item  void clearSelection()
 
-=item   int bspTreeDepth()
+=item  void destroyItemGroup(QGraphicsItemGroup * group)
 
-=item   void clear()
+=item  QGraphicsItem * focusItem()
 
-=item   void clearFocus()
+=item  QFont font()
 
-=item   void clearSelection()
+=item  QBrush foregroundBrush()
 
-=item   void destroyItemGroup(QGraphicsItemGroup * group)
+=item  bool hasFocus()
 
-=item   QGraphicsItem * focusItem()
+=item  qreal height()
 
-=item   QFont font()
+=item  QVariant inputMethodQuery(Qt::InputMethodQuery query)
 
-=item   QBrush foregroundBrush()
+=item  void invalidate(const QRectF & rect, QFlags<QGraphicsScene::SceneLayer> layers)
 
-=item   bool hasFocus()
+=item  void invalidate(const QRectF & rect, QFlags<QGraphicsScene::SceneLayer> layers = QGraphicsScene::AllLayers)
 
-=item   qreal height()
+=item  void invalidate(const QRectF & rect = QRectF(), QFlags<QGraphicsScene::SceneLayer> layers = QGraphicsScene::AllLayers)
 
-=item   QVariant inputMethodQuery(Qt::InputMethodQuery query)
+=item  void invalidate(qreal x, qreal y, qreal w, qreal h, QFlags<QGraphicsScene::SceneLayer> layers)
 
-=item   bool isActive()
+=item  void invalidate(qreal x, qreal y, qreal w, qreal h, QFlags<QGraphicsScene::SceneLayer> layers = QGraphicsScene::AllLayers)
 
-=item   bool isSortCacheEnabled()
+=item  bool isActive()
 
-=item   QGraphicsItem * itemAt(const QPointF & pos)
+=item  bool isSortCacheEnabled()
 
-=item   QGraphicsItem * itemAt(const QPointF & pos, const QTransform & deviceTransform)
+=item  QGraphicsItem * itemAt(const QPointF & pos)
 
-=item   QGraphicsItem * itemAt(qreal x, qreal y)
+=item  QGraphicsItem * itemAt(const QPointF & pos, const QTransform & deviceTransform)
 
-=item   QGraphicsItem * itemAt(qreal x, qreal y, const QTransform & deviceTransform)
+=item  QGraphicsItem * itemAt(qreal x, qreal y)
 
-=item   QGraphicsScene::ItemIndexMethod itemIndexMethod()
+=item  QGraphicsItem * itemAt(qreal x, qreal y, const QTransform & deviceTransform)
 
-=item   QRectF itemsBoundingRect()
+=item  QGraphicsScene::ItemIndexMethod itemIndexMethod()
 
-=item   QGraphicsItem * mouseGrabberItem()
+=item  QRectF itemsBoundingRect()
 
-=item   QPalette palette()
+=item  QGraphicsItem * mouseGrabberItem()
 
-=item   void removeItem(QGraphicsItem * item)
+=item  QPalette palette()
 
-=item   void render(QPainter * painter, const QRectF & target, const QRectF & source, Qt::AspectRatioMode aspectRatioMode = Qt::KeepAspectRatio)
+=item  void removeItem(QGraphicsItem * item)
 
-=item   void render(QPainter * painter, const QRectF & target, const QRectF & source, Qt::AspectRatioMode aspectRatioMode)
+=item  void render(QPainter * painter, const QRectF & target, const QRectF & source, Qt::AspectRatioMode aspectRatioMode)
 
-=item   void render(QPainter * painter, const QRectF & target, const QRectF & source = QRectF(), Qt::AspectRatioMode aspectRatioMode = Qt::KeepAspectRatio)
+=item  void render(QPainter * painter, const QRectF & target, const QRectF & source, Qt::AspectRatioMode aspectRatioMode = Qt::KeepAspectRatio)
 
-=item   void render(QPainter * painter, const QRectF & target, const QRectF & source, Qt::AspectRatioMode aspectRatioMode = Qt::KeepAspectRatio)
+=item  void render(QPainter * painter, const QRectF & target, const QRectF & source = QRectF(), Qt::AspectRatioMode aspectRatioMode = Qt::KeepAspectRatio)
 
-=item   void render(QPainter * painter, const QRectF & target = QRectF(), const QRectF & source = QRectF(), Qt::AspectRatioMode aspectRatioMode = Qt::KeepAspectRatio)
+=item  void render(QPainter * painter, const QRectF & target = QRectF(), const QRectF & source = QRectF(), Qt::AspectRatioMode aspectRatioMode = Qt::KeepAspectRatio)
 
-=item   void render(QPainter * painter, const QRectF & target, const QRectF & source = QRectF(), Qt::AspectRatioMode aspectRatioMode = Qt::KeepAspectRatio)
+=item  QRectF sceneRect()
 
-=item   QRectF sceneRect()
+=item  QPainterPath selectionArea()
 
-=item   QPainterPath selectionArea()
+=item  bool sendEvent(QGraphicsItem * item, QEvent * event)
 
-=item   bool sendEvent(QGraphicsItem * item, QEvent * event)
+=item  void setActivePanel(QGraphicsItem * item)
 
-=item   void setActivePanel(QGraphicsItem * item)
+=item  void setActiveWindow(QGraphicsWidget * widget)
 
-=item   void setActiveWindow(QGraphicsWidget * widget)
+=item  void setBackgroundBrush(const QBrush & brush)
 
-=item   void setBackgroundBrush(const QBrush & brush)
+=item  void setBspTreeDepth(int depth)
 
-=item   void setBspTreeDepth(int depth)
+=item  void setFocus(Qt::FocusReason focusReason)
 
-=item   void setFocus(Qt::FocusReason focusReason = Qt::OtherFocusReason)
+=item  void setFocus(Qt::FocusReason focusReason = Qt::OtherFocusReason)
 
-=item   void setFocus(Qt::FocusReason focusReason)
+=item  void setFocusItem(QGraphicsItem * item, Qt::FocusReason focusReason)
 
-=item   void setFocusItem(QGraphicsItem * item, Qt::FocusReason focusReason = Qt::OtherFocusReason)
+=item  void setFocusItem(QGraphicsItem * item, Qt::FocusReason focusReason = Qt::OtherFocusReason)
 
-=item   void setFocusItem(QGraphicsItem * item, Qt::FocusReason focusReason)
+=item  void setFont(const QFont & font)
 
-=item   void setFont(const QFont & font)
+=item  void setForegroundBrush(const QBrush & brush)
 
-=item   void setForegroundBrush(const QBrush & brush)
+=item  void setItemIndexMethod(QGraphicsScene::ItemIndexMethod method)
 
-=item   void setItemIndexMethod(QGraphicsScene::ItemIndexMethod method)
+=item  void setPalette(const QPalette & palette)
 
-=item   void setPalette(const QPalette & palette)
+=item  void setSceneRect(const QRectF & rect)
 
-=item   void setSceneRect(const QRectF & rect)
+=item  void setSceneRect(qreal x, qreal y, qreal w, qreal h)
 
-=item   void setSceneRect(qreal x, qreal y, qreal w, qreal h)
+=item  void setSelectionArea(const QPainterPath & path)
 
-=item   void setSelectionArea(const QPainterPath & path)
+=item  void setSelectionArea(const QPainterPath & path, const QTransform & deviceTransform)
 
-=item   void setSelectionArea(const QPainterPath & path, const QTransform & deviceTransform)
+=item  void setSelectionArea(const QPainterPath & path, Qt::ItemSelectionMode mode)
 
-=item   void setSelectionArea(const QPainterPath & path, Qt::ItemSelectionMode mode)
+=item  void setSelectionArea(const QPainterPath & path, Qt::ItemSelectionMode mode, const QTransform & deviceTransform)
 
-=item   void setSelectionArea(const QPainterPath & path, Qt::ItemSelectionMode mode, const QTransform & deviceTransform)
+=item  void setSortCacheEnabled(bool enabled)
 
-=item   void setSortCacheEnabled(bool enabled)
+=item  void setStickyFocus(bool enabled)
 
-=item   void setStickyFocus(bool enabled)
+=item  void setStyle(QStyle * style)
 
-=item   void setStyle(QStyle * style)
+=item  bool stickyFocus()
 
-=item   bool stickyFocus()
+=item  QStyle * style()
 
-=item   QStyle * style()
+=item  void update(const QRectF & rect)
 
-=item   void update(const QRectF & rect = QRectF())
+=item  void update(const QRectF & rect = QRectF())
 
-=item   void update(const QRectF & rect)
+=item  void update(qreal x, qreal y, qreal w, qreal h)
 
-=item   void update(qreal x, qreal y, qreal w, qreal h)
+=item  qreal width()
 
-=item   qreal width()
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item BspTreeIndex
+
+=item NoIndex
+
+=item ItemLayer
+
+=item BackgroundLayer
+
+=item ForegroundLayer
+
+=item AllLayers
 
 
 =back

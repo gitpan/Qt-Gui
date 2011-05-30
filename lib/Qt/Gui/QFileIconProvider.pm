@@ -7,20 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Computer() { 0 }
-sub Desktop() { 1 }
-sub Trashcan() { 2 }
-sub Network() { 3 }
-sub Drive() { 4 }
-sub Folder() { 5 }
-sub File() { 6 }
 
 
 1;
@@ -33,15 +23,36 @@ Qt::Gui::QFileIconProvider
 
 =over
 
-=item    QFileIconProvider()
+=item   QFileIconProvider()
 
-=item    ~QFileIconProvider()
+=item   ~QFileIconProvider()
 
-=item   QIcon icon(QFileIconProvider::IconType type)
+=item  QIcon icon(QFileIconProvider::IconType type)
 
-=item   QIcon icon(const QFileInfo & info)
+=item  QIcon icon(const QFileInfo & info)
 
-=item   QString type(const QFileInfo & info)
+=item  QString type(const QFileInfo & info)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Computer
+
+=item Desktop
+
+=item Trashcan
+
+=item Network
+
+=item Drive
+
+=item Folder
+
+=item File
 
 
 =back

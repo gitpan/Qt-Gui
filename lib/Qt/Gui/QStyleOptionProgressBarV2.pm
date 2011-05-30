@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QStyleOptionProgressBar/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QStyleOptionProgressBar/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
-sub Version() { 0 }
 
 
 1;
@@ -29,13 +24,24 @@ Qt::Gui::QStyleOptionProgressBarV2
 
 =over
 
-=item    QStyleOptionProgressBarV2()
+=item   QStyleOptionProgressBarV2()
 
-=item    QStyleOptionProgressBarV2(const QStyleOptionProgressBar & other)
+=item   QStyleOptionProgressBarV2(const QStyleOptionProgressBar & other)
 
-=item    QStyleOptionProgressBarV2(const QStyleOptionProgressBarV2 & other)
+=item   QStyleOptionProgressBarV2(const QStyleOptionProgressBarV2 & other)
 
-=item   QStyleOptionProgressBarV2 & operator=(const QStyleOptionProgressBar & other)
+=item  QStyleOptionProgressBarV2 & operator=(const QStyleOptionProgressBar & other)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Type
+
+=item Version
 
 
 =back

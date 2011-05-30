@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,25 +23,32 @@ Qt::Gui::QTextBlock::iterator
 
 =over
 
-=item    QTextBlock::iterator()
+=item   QTextBlock::iterator()
 
-=item    QTextBlock::iterator(const QTextBlock::iterator & o)
+=item   QTextBlock::iterator(const QTextBlock::iterator & o)
 
-=item   bool atEnd()
+=item  bool atEnd()
 
-=item   QTextFragment fragment()
+=item  QTextFragment fragment()
 
-=item   bool operator!=(const QTextBlock::iterator & o)
+=item  bool operator!=(const QTextBlock::iterator & o)
 
-=item   QTextBlock::iterator & operator++()
+=item  QTextBlock::iterator & operator++()
 
-=item   QTextBlock::iterator operator++(int arg0)
+=item  QTextBlock::iterator operator++(int arg0)
 
-=item   QTextBlock::iterator & operator--()
+=item  QTextBlock::iterator & operator--()
 
-=item   QTextBlock::iterator operator--(int arg0)
+=item  QTextBlock::iterator operator--(int arg0)
 
-=item   bool operator==(const QTextBlock::iterator & o)
+=item  bool operator==(const QTextBlock::iterator & o)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

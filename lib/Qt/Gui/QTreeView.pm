@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractItemView/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractItemView/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,131 +24,138 @@ Qt::Gui::QTreeView
 
 =over
 
-=item    QTreeView(QWidget * parent = 0)
+=item   QTreeView(QWidget * parent)
 
-=item    QTreeView(QWidget * parent)
+=item   QTreeView(QWidget * parent = 0)
 
-=item    ~QTreeView()
+=item   ~QTreeView()
 
-=item   bool allColumnsShowFocus()
+=item  bool allColumnsShowFocus()
 
-=item   int autoExpandDelay()
+=item  int autoExpandDelay()
 
-=item   void collapse(const QModelIndex & index)
+=item  void collapse(const QModelIndex & index)
 
-=item   void collapseAll()
+=item  void collapseAll()
 
-=item   int columnAt(int x)
+=item  int columnAt(int x)
 
-=item   int columnViewportPosition(int column)
+=item  int columnViewportPosition(int column)
 
-=item   int columnWidth(int column)
+=item  int columnWidth(int column)
 
-=item   void dataChanged(const QModelIndex & topLeft, const QModelIndex & bottomRight)
+=item  void dataChanged(const QModelIndex & topLeft, const QModelIndex & bottomRight)
 
-=item   void doItemsLayout()
+=item  void doItemsLayout()
 
-=item   void expand(const QModelIndex & index)
+=item  void expand(const QModelIndex & index)
 
-=item   void expandAll()
+=item  void expandAll()
 
-=item   void expandToDepth(int depth)
+=item  void expandToDepth(int depth)
 
-=item   bool expandsOnDoubleClick()
+=item  bool expandsOnDoubleClick()
 
-=item   QHeaderView * header()
+=item  QHeaderView * header()
 
-=item   void hideColumn(int column)
+=item  void hideColumn(int column)
 
-=item   int indentation()
+=item  int indentation()
 
-=item   QModelIndex indexAbove(const QModelIndex & index)
+=item  QModelIndex indexAbove(const QModelIndex & index)
 
-=item   QModelIndex indexAt(const QPoint & p)
+=item  QModelIndex indexAt(const QPoint & p)
 
-=item   QModelIndex indexBelow(const QModelIndex & index)
+=item  QModelIndex indexBelow(const QModelIndex & index)
 
-=item   bool isAnimated()
+=item  bool isAnimated()
 
-=item   bool isColumnHidden(int column)
+=item  bool isColumnHidden(int column)
 
-=item   bool isExpanded(const QModelIndex & index)
+=item  bool isExpanded(const QModelIndex & index)
 
-=item   bool isFirstColumnSpanned(int row, const QModelIndex & parent)
+=item  bool isFirstColumnSpanned(int row, const QModelIndex & parent)
 
-=item   bool isHeaderHidden()
+=item  bool isHeaderHidden()
 
-=item   bool isRowHidden(int row, const QModelIndex & parent)
+=item  bool isRowHidden(int row, const QModelIndex & parent)
 
-=item   bool isSortingEnabled()
+=item  bool isSortingEnabled()
 
-=item   bool itemsExpandable()
+=item  bool itemsExpandable()
 
-=item   void keyboardSearch(const QString & search)
+=item  void keyboardSearch(const QString & search)
 
-=item   void reset()
+=item  void reset()
 
-=item   void resizeColumnToContents(int column)
+=item  void resizeColumnToContents(int column)
 
-=item   bool rootIsDecorated()
+=item  bool rootIsDecorated()
 
-=item   void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+=item  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint)
 
-=item   void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint)
+=item  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 
-=item   void selectAll()
+=item  void selectAll()
 
-=item   void setAllColumnsShowFocus(bool enable)
+=item  void setAllColumnsShowFocus(bool enable)
 
-=item   void setAnimated(bool enable)
+=item  void setAnimated(bool enable)
 
-=item   void setAutoExpandDelay(int delay)
+=item  void setAutoExpandDelay(int delay)
 
-=item   void setColumnHidden(int column, bool hide)
+=item  void setColumnHidden(int column, bool hide)
 
-=item   void setColumnWidth(int column, int width)
+=item  void setColumnWidth(int column, int width)
 
-=item   void setExpanded(const QModelIndex & index, bool expand)
+=item  void setExpanded(const QModelIndex & index, bool expand)
 
-=item   void setExpandsOnDoubleClick(bool enable)
+=item  void setExpandsOnDoubleClick(bool enable)
 
-=item   void setFirstColumnSpanned(int row, const QModelIndex & parent, bool span)
+=item  void setFirstColumnSpanned(int row, const QModelIndex & parent, bool span)
 
-=item   void setHeader(QHeaderView * header)
+=item  void setHeader(QHeaderView * header)
 
-=item   void setHeaderHidden(bool hide)
+=item  void setHeaderHidden(bool hide)
 
-=item   void setIndentation(int i)
+=item  void setIndentation(int i)
 
-=item   void setItemsExpandable(bool enable)
+=item  void setItemsExpandable(bool enable)
 
-=item   void setModel(QAbstractItemModel * model)
+=item  void setModel(QAbstractItemModel * model)
 
-=item   void setRootIndex(const QModelIndex & index)
+=item  void setRootIndex(const QModelIndex & index)
 
-=item   void setRootIsDecorated(bool show)
+=item  void setRootIsDecorated(bool show)
 
-=item   void setRowHidden(int row, const QModelIndex & parent, bool hide)
+=item  void setRowHidden(int row, const QModelIndex & parent, bool hide)
 
-=item   void setSelectionModel(QItemSelectionModel * selectionModel)
+=item  void setSelectionModel(QItemSelectionModel * selectionModel)
 
-=item   void setSortingEnabled(bool enable)
+=item  void setSortingEnabled(bool enable)
 
-=item   void setUniformRowHeights(bool uniform)
+=item  void setUniformRowHeights(bool uniform)
 
-=item   void setWordWrap(bool on)
+=item  void setWordWrap(bool on)
 
-=item   void showColumn(int column)
+=item  void showColumn(int column)
 
-=item   void sortByColumn(int column)
+=item  void sortByColumn(int column)
 
-=item   void sortByColumn(int column, Qt::SortOrder order)
+=item  void sortByColumn(int column, Qt::SortOrder order)
 
-=item   bool uniformRowHeights()
+=item  bool uniformRowHeights()
 
-=item   QRect visualRect(const QModelIndex & index)
+=item  QRect visualRect(const QModelIndex & index)
 
-=item   bool wordWrap()
+=item  bool wordWrap()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

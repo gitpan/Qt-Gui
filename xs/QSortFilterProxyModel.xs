@@ -18,36 +18,44 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QSortFilterProxyModel(QObject * parent = 0)
 ##  QSortFilterProxyModel(QObject * parent)
+##  QSortFilterProxyModel(QObject * parent = 0)
   void
 QSortFilterProxyModel::new(...)
 PREINIT:
 QSortFilterProxyModel *ret;
-QObject * arg00 = 0;
-QObject * arg10;
+QObject * arg00;
+QObject * arg10 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
+        if (1) {
+      
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_derived_from(ST(1), "")) {
-        arg10 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Core::QObject") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Core::QObject")) {
+        arg00 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg10 is not of type ");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QObject");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QSortFilterProxyModel()
@@ -64,14 +72,12 @@ PREINIT:
 QModelIndex * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     QModelIndex ret = THIS->buddy(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QModelIndex", (void *)new QModelIndex(ret));
     XSRETURN(1);
+    }
 
 ## bool canFetchMore(const QModelIndex & parent)
 void
@@ -80,104 +86,104 @@ PREINIT:
 QModelIndex * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->canFetchMore(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## void clear()
 void
 QSortFilterProxyModel::clear(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->clear();
     XSRETURN(0);
+    }
 
-## int columnCount(const QModelIndex & parent = QModelIndex())
 ## int columnCount(const QModelIndex & parent)
+## int columnCount(const QModelIndex & parent = QModelIndex())
 void
 QSortFilterProxyModel::columnCount(...)
 PREINIT:
-const QModelIndex & arg00_ = QModelIndex();
-QModelIndex * arg00 = const_cast<QModelIndex *>(&arg00_);
-QModelIndex * arg10;
+QModelIndex * arg00;
+const QModelIndex & arg10_ = QModelIndex();
+QModelIndex * arg10 = const_cast<QModelIndex *>(&arg10_);
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        int ret = THIS->columnCount(*arg00);
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
-    XSRETURN(1);
-        break;
-      }
-    case 2:
-      {
-        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg10 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Core::QModelIndex");
+        if (1) {
+      
     int ret = THIS->columnCount(*arg10);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
         break;
       }
-    default:
+      case 2:
       {
+        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+    int ret = THIS->columnCount(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
 ## QVariant data(const QModelIndex & index, int role)
+## QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
 void
 QSortFilterProxyModel::data(...)
 PREINIT:
 QModelIndex * arg00;
-int arg01 = Qt::DisplayRole;
+int arg01;
 QModelIndex * arg10;
-int arg11;
+int arg11 = Qt::DisplayRole;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
-    QVariant ret = THIS->data(*arg00, arg01);
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
-    XSRETURN(1);
-        break;
-      }
-    case 3:
-      {
-        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg10 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Core::QModelIndex");
-    arg11 = (int)SvIV(ST(2));
+      arg10 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     QVariant ret = THIS->data(*arg10, arg11);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QModelIndex") && SvIOK(ST(2))) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = (int)SvIV(ST(2));
+    QVariant ret = THIS->data(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
@@ -190,54 +196,37 @@ int arg02;
 int arg03;
 QModelIndex * arg04;
 PPCODE:
-    if (sv_derived_from(ST(1), "")) {
+    if ((sv_derived_from(ST(1), "Qt::Core::QMimeData") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4)) && sv_isa(ST(5), "Qt::Core::QModelIndex")) {
+      if (sv_derived_from(ST(1), "Qt::Core::QMimeData")) {
         arg00 = reinterpret_cast<QMimeData *>(SvIV((SV*)SvRV(ST(1))));
     }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg01 = Qt::CopyAction;
-      break;
-    case 1:
-      arg01 = Qt::MoveAction;
-      break;
-    case 2:
-      arg01 = Qt::LinkAction;
-      break;
-    case 3:
-      arg01 = Qt::ActionMask;
-      break;
-    case 4:
-      arg01 = Qt::TargetMoveAction;
-      break;
-    case 5:
-      arg01 = Qt::IgnoreAction;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::DropAction passed in");
-    }
-    arg02 = (int)SvIV(ST(3));
-    arg03 = (int)SvIV(ST(4));
-    if (sv_isa(ST(5), "Qt::Core::QModelIndex")) {
-        arg04 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(5))));
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg04 is not of type Qt::Core::QModelIndex");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QMimeData");
+      arg01 = (Qt::DropAction)SvIV(ST(2));
+      arg02 = (int)SvIV(ST(3));
+      arg03 = (int)SvIV(ST(4));
+      arg04 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(5))));
     bool ret = THIS->dropMimeData(arg00, arg01, arg02, arg03, *arg04);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool dynamicSortFilter()
 void
 QSortFilterProxyModel::dynamicSortFilter(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->dynamicSortFilter();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## void fetchMore(const QModelIndex & parent)
 void
@@ -246,286 +235,305 @@ PREINIT:
 QModelIndex * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->fetchMore(*arg00);
     XSRETURN(0);
+    }
 
 ## Qt::CaseSensitivity filterCaseSensitivity()
 void
 QSortFilterProxyModel::filterCaseSensitivity(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     Qt::CaseSensitivity ret = THIS->filterCaseSensitivity();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int filterKeyColumn()
 void
 QSortFilterProxyModel::filterKeyColumn(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->filterKeyColumn();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QRegExp filterRegExp()
 void
 QSortFilterProxyModel::filterRegExp(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QRegExp ret = THIS->filterRegExp();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QRegExp(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QRegExp", (void *)new QRegExp(ret));
     XSRETURN(1);
+    }
 
 ## int filterRole()
 void
 QSortFilterProxyModel::filterRole(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->filterRole();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
-## bool hasChildren(const QModelIndex & parent = QModelIndex())
+## QFlags<Qt::ItemFlag> flags(const QModelIndex & index)
+void
+QSortFilterProxyModel::flags(...)
+PREINIT:
+QModelIndex * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+    QFlags<Qt::ItemFlag> ret = THIS->flags(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+
 ## bool hasChildren(const QModelIndex & parent)
+## bool hasChildren(const QModelIndex & parent = QModelIndex())
 void
 QSortFilterProxyModel::hasChildren(...)
 PREINIT:
-const QModelIndex & arg00_ = QModelIndex();
-QModelIndex * arg00 = const_cast<QModelIndex *>(&arg00_);
-QModelIndex * arg10;
+QModelIndex * arg00;
+const QModelIndex & arg10_ = QModelIndex();
+QModelIndex * arg10 = const_cast<QModelIndex *>(&arg10_);
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        bool ret = THIS->hasChildren(*arg00);
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-        break;
-      }
-    case 2:
-      {
-        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg10 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Core::QModelIndex");
+        if (1) {
+      
     bool ret = THIS->hasChildren(*arg10);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
         break;
       }
-    default:
+      case 2:
       {
+        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+    bool ret = THIS->hasChildren(*arg00);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)
 ## QVariant headerData(int section, Qt::Orientation orientation, int role)
+## QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)
 void
 QSortFilterProxyModel::headerData(...)
 PREINIT:
 int arg00;
 Qt::Orientation arg01;
-int arg02 = Qt::DisplayRole;
+int arg02;
 int arg10;
 Qt::Orientation arg11;
-int arg12;
+int arg12 = Qt::DisplayRole;
 PPCODE:
     switch(items) {
-    case 3:
+      case 3:
       {
-        arg00 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg01 = Qt::Horizontal;
-      break;
-    case 1:
-      arg01 = Qt::Vertical;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::Orientation passed in");
-    }
-    QVariant ret = THIS->headerData(arg00, arg01, arg02);
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
-    XSRETURN(1);
-        break;
-      }
-    case 4:
-      {
-        arg10 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg11 = Qt::Horizontal;
-      break;
-    case 1:
-      arg11 = Qt::Vertical;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::Orientation passed in");
-    }
-    arg12 = (int)SvIV(ST(3));
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (Qt::Orientation)SvIV(ST(2));
     QVariant ret = THIS->headerData(arg10, arg11, arg12);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (Qt::Orientation)SvIV(ST(2));
+      arg02 = (int)SvIV(ST(3));
+    QVariant ret = THIS->headerData(arg00, arg01, arg02);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex())
 ## QModelIndex index(int row, int column, const QModelIndex & parent)
+## QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex())
 void
 QSortFilterProxyModel::index(...)
 PREINIT:
 int arg00;
 int arg01;
-const QModelIndex & arg02_ = QModelIndex();
-QModelIndex * arg02 = const_cast<QModelIndex *>(&arg02_);
+QModelIndex * arg02;
 int arg10;
 int arg11;
-QModelIndex * arg12;
+const QModelIndex & arg12_ = QModelIndex();
+QModelIndex * arg12 = const_cast<QModelIndex *>(&arg12_);
 PPCODE:
     switch(items) {
-    case 3:
+      case 3:
       {
-        arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
-    QModelIndex ret = THIS->index(arg00, arg01, *arg02);
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Core::QModelIndex", (void *)new QModelIndex(ret));
-    XSRETURN(1);
-        break;
-      }
-    case 4:
-      {
-        arg10 = (int)SvIV(ST(1));
-    arg11 = (int)SvIV(ST(2));
-    if (sv_isa(ST(3), "Qt::Core::QModelIndex")) {
-        arg12 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg12 is not of type Qt::Core::QModelIndex");
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
     QModelIndex ret = THIS->index(arg10, arg11, *arg12);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QModelIndex", (void *)new QModelIndex(ret));
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QModelIndex")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
+    QModelIndex ret = THIS->index(arg00, arg01, *arg02);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Core::QModelIndex", (void *)new QModelIndex(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## bool insertColumns(int column, int count, const QModelIndex & parent = QModelIndex())
 ## bool insertColumns(int column, int count, const QModelIndex & parent)
+## bool insertColumns(int column, int count, const QModelIndex & parent = QModelIndex())
 void
 QSortFilterProxyModel::insertColumns(...)
 PREINIT:
 int arg00;
 int arg01;
-const QModelIndex & arg02_ = QModelIndex();
-QModelIndex * arg02 = const_cast<QModelIndex *>(&arg02_);
+QModelIndex * arg02;
 int arg10;
 int arg11;
-QModelIndex * arg12;
+const QModelIndex & arg12_ = QModelIndex();
+QModelIndex * arg12 = const_cast<QModelIndex *>(&arg12_);
 PPCODE:
     switch(items) {
-    case 3:
+      case 3:
       {
-        arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
-    bool ret = THIS->insertColumns(arg00, arg01, *arg02);
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-        break;
-      }
-    case 4:
-      {
-        arg10 = (int)SvIV(ST(1));
-    arg11 = (int)SvIV(ST(2));
-    if (sv_isa(ST(3), "Qt::Core::QModelIndex")) {
-        arg12 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg12 is not of type Qt::Core::QModelIndex");
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
     bool ret = THIS->insertColumns(arg10, arg11, *arg12);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QModelIndex")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
+    bool ret = THIS->insertColumns(arg00, arg01, *arg02);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## bool insertRows(int row, int count, const QModelIndex & parent = QModelIndex())
 ## bool insertRows(int row, int count, const QModelIndex & parent)
+## bool insertRows(int row, int count, const QModelIndex & parent = QModelIndex())
 void
 QSortFilterProxyModel::insertRows(...)
 PREINIT:
 int arg00;
 int arg01;
-const QModelIndex & arg02_ = QModelIndex();
-QModelIndex * arg02 = const_cast<QModelIndex *>(&arg02_);
+QModelIndex * arg02;
 int arg10;
 int arg11;
-QModelIndex * arg12;
+const QModelIndex & arg12_ = QModelIndex();
+QModelIndex * arg12 = const_cast<QModelIndex *>(&arg12_);
 PPCODE:
     switch(items) {
-    case 3:
+      case 3:
       {
-        arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
-    bool ret = THIS->insertRows(arg00, arg01, *arg02);
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-        break;
-      }
-    case 4:
-      {
-        arg10 = (int)SvIV(ST(1));
-    arg11 = (int)SvIV(ST(2));
-    if (sv_isa(ST(3), "Qt::Core::QModelIndex")) {
-        arg12 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg12 is not of type Qt::Core::QModelIndex");
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
     bool ret = THIS->insertRows(arg10, arg11, *arg12);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QModelIndex")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
+    bool ret = THIS->insertRows(arg00, arg01, *arg02);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void invalidate()
@@ -533,18 +541,24 @@ void
 QSortFilterProxyModel::invalidate(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->invalidate();
     XSRETURN(0);
+    }
 
 ## bool isSortLocaleAware()
 void
 QSortFilterProxyModel::isSortLocaleAware(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isSortLocaleAware();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QModelIndex mapFromSource(const QModelIndex & sourceIndex)
 void
@@ -553,14 +567,12 @@ PREINIT:
 QModelIndex * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     QModelIndex ret = THIS->mapFromSource(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QModelIndex", (void *)new QModelIndex(ret));
     XSRETURN(1);
+    }
 
 ## QItemSelection mapSelectionFromSource(const QItemSelection & sourceSelection)
 void
@@ -569,14 +581,12 @@ PREINIT:
 QItemSelection * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QItemSelection")) {
-        arg00 = reinterpret_cast<QItemSelection *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QItemSelection");
+      arg00 = reinterpret_cast<QItemSelection *>(SvIV((SV*)SvRV(ST(1))));
     QItemSelection ret = THIS->mapSelectionFromSource(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QItemSelection", (void *)new QItemSelection(ret));
     XSRETURN(1);
+    }
 
 ## QItemSelection mapSelectionToSource(const QItemSelection & proxySelection)
 void
@@ -585,14 +595,12 @@ PREINIT:
 QItemSelection * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QItemSelection")) {
-        arg00 = reinterpret_cast<QItemSelection *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QItemSelection");
+      arg00 = reinterpret_cast<QItemSelection *>(SvIV((SV*)SvRV(ST(1))));
     QItemSelection ret = THIS->mapSelectionToSource(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QItemSelection", (void *)new QItemSelection(ret));
     XSRETURN(1);
+    }
 
 ## QModelIndex mapToSource(const QModelIndex & proxyIndex)
 void
@@ -601,24 +609,25 @@ PREINIT:
 QModelIndex * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     QModelIndex ret = THIS->mapToSource(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QModelIndex", (void *)new QModelIndex(ret));
     XSRETURN(1);
+    }
 
 ## QStringList mimeTypes()
 void
 QSortFilterProxyModel::mimeTypes(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QStringList ret = THIS->mimeTypes();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QStringList(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QStringList", (void *)new QStringList(ret));
     XSRETURN(1);
+    }
 
 ## QModelIndex parent(const QModelIndex & child)
 void
@@ -627,200 +636,193 @@ PREINIT:
 QModelIndex * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     QModelIndex ret = THIS->parent(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QModelIndex", (void *)new QModelIndex(ret));
     XSRETURN(1);
+    }
 
-## bool removeColumns(int column, int count, const QModelIndex & parent = QModelIndex())
 ## bool removeColumns(int column, int count, const QModelIndex & parent)
+## bool removeColumns(int column, int count, const QModelIndex & parent = QModelIndex())
 void
 QSortFilterProxyModel::removeColumns(...)
 PREINIT:
 int arg00;
 int arg01;
-const QModelIndex & arg02_ = QModelIndex();
-QModelIndex * arg02 = const_cast<QModelIndex *>(&arg02_);
+QModelIndex * arg02;
 int arg10;
 int arg11;
-QModelIndex * arg12;
+const QModelIndex & arg12_ = QModelIndex();
+QModelIndex * arg12 = const_cast<QModelIndex *>(&arg12_);
 PPCODE:
     switch(items) {
-    case 3:
+      case 3:
       {
-        arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
-    bool ret = THIS->removeColumns(arg00, arg01, *arg02);
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-        break;
-      }
-    case 4:
-      {
-        arg10 = (int)SvIV(ST(1));
-    arg11 = (int)SvIV(ST(2));
-    if (sv_isa(ST(3), "Qt::Core::QModelIndex")) {
-        arg12 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg12 is not of type Qt::Core::QModelIndex");
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
     bool ret = THIS->removeColumns(arg10, arg11, *arg12);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QModelIndex")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
+    bool ret = THIS->removeColumns(arg00, arg01, *arg02);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## bool removeRows(int row, int count, const QModelIndex & parent = QModelIndex())
 ## bool removeRows(int row, int count, const QModelIndex & parent)
+## bool removeRows(int row, int count, const QModelIndex & parent = QModelIndex())
 void
 QSortFilterProxyModel::removeRows(...)
 PREINIT:
 int arg00;
 int arg01;
-const QModelIndex & arg02_ = QModelIndex();
-QModelIndex * arg02 = const_cast<QModelIndex *>(&arg02_);
+QModelIndex * arg02;
 int arg10;
 int arg11;
-QModelIndex * arg12;
+const QModelIndex & arg12_ = QModelIndex();
+QModelIndex * arg12 = const_cast<QModelIndex *>(&arg12_);
 PPCODE:
     switch(items) {
-    case 3:
+      case 3:
       {
-        arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
-    bool ret = THIS->removeRows(arg00, arg01, *arg02);
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-        break;
-      }
-    case 4:
-      {
-        arg10 = (int)SvIV(ST(1));
-    arg11 = (int)SvIV(ST(2));
-    if (sv_isa(ST(3), "Qt::Core::QModelIndex")) {
-        arg12 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg12 is not of type Qt::Core::QModelIndex");
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
     bool ret = THIS->removeRows(arg10, arg11, *arg12);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QModelIndex")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
+    bool ret = THIS->removeRows(arg00, arg01, *arg02);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## int rowCount(const QModelIndex & parent = QModelIndex())
 ## int rowCount(const QModelIndex & parent)
+## int rowCount(const QModelIndex & parent = QModelIndex())
 void
 QSortFilterProxyModel::rowCount(...)
 PREINIT:
-const QModelIndex & arg00_ = QModelIndex();
-QModelIndex * arg00 = const_cast<QModelIndex *>(&arg00_);
-QModelIndex * arg10;
+QModelIndex * arg00;
+const QModelIndex & arg10_ = QModelIndex();
+QModelIndex * arg10 = const_cast<QModelIndex *>(&arg10_);
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        int ret = THIS->rowCount(*arg00);
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
-    XSRETURN(1);
-        break;
-      }
-    case 2:
-      {
-        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg10 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Core::QModelIndex");
+        if (1) {
+      
     int ret = THIS->rowCount(*arg10);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
         break;
       }
-    default:
+      case 2:
       {
+        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+    int ret = THIS->rowCount(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole)
 ## bool setData(const QModelIndex & index, const QVariant & value, int role)
+## bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole)
 void
 QSortFilterProxyModel::setData(...)
 PREINIT:
 QModelIndex * arg00;
 QVariant * arg01;
-int arg02 = Qt::EditRole;
+int arg02;
 QModelIndex * arg10;
 QVariant * arg11;
-int arg12;
+int arg12 = Qt::EditRole;
 PPCODE:
     switch(items) {
-    case 3:
+      case 3:
       {
-        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
-    if (sv_isa(ST(2), "")) {
-        arg01 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type ");
-    bool ret = THIS->setData(*arg00, *arg01, arg02);
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-        break;
-      }
-    case 4:
-      {
-        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg10 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Core::QModelIndex");
-    if (sv_isa(ST(2), "")) {
-        arg11 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg11 is not of type ");
-    arg12 = (int)SvIV(ST(3));
+        if (sv_isa(ST(1), "Qt::Core::QModelIndex") && sv_isa(ST(2), "Qt::Core::QVariant")) {
+      arg10 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+      arg11 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(2))));
     bool ret = THIS->setData(*arg10, *arg11, arg12);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (sv_isa(ST(1), "Qt::Core::QModelIndex") && sv_isa(ST(2), "Qt::Core::QVariant") && SvIOK(ST(3))) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = (int)SvIV(ST(3));
+    bool ret = THIS->setData(*arg00, *arg01, arg02);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void setDynamicSortFilter(bool enable)
@@ -829,9 +831,11 @@ QSortFilterProxyModel::setDynamicSortFilter(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setDynamicSortFilter(arg00);
     XSRETURN(0);
+    }
 
 ## void setFilterCaseSensitivity(Qt::CaseSensitivity cs)
 void
@@ -839,18 +843,11 @@ QSortFilterProxyModel::setFilterCaseSensitivity(...)
 PREINIT:
 Qt::CaseSensitivity arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = Qt::CaseInsensitive;
-      break;
-    case 1:
-      arg00 = Qt::CaseSensitive;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::CaseSensitivity passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (Qt::CaseSensitivity)SvIV(ST(1));
     (void)THIS->setFilterCaseSensitivity(arg00);
     XSRETURN(0);
+    }
 
 ## void setFilterFixedString(const QString & pattern)
 void
@@ -858,13 +855,11 @@ QSortFilterProxyModel::setFilterFixedString(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setFilterFixedString(*arg00);
     XSRETURN(0);
+    }
 
 ## void setFilterKeyColumn(int column)
 void
@@ -872,9 +867,11 @@ QSortFilterProxyModel::setFilterKeyColumn(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->setFilterKeyColumn(arg00);
     XSRETURN(0);
+    }
 
 ## void setFilterRegExp(const QString & pattern)
 ## void setFilterRegExp(const QRegExp & regExp)
@@ -885,22 +882,25 @@ QString * arg00;
 QRegExp * arg10;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+        if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setFilterRegExp(*arg00);
     XSRETURN(0);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QRegExp")) {
+      arg10 = reinterpret_cast<QRegExp *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setFilterRegExp(*arg10);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void setFilterRole(int role)
@@ -909,9 +909,11 @@ QSortFilterProxyModel::setFilterRole(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->setFilterRole(arg00);
     XSRETURN(0);
+    }
 
 ## void setFilterWildcard(const QString & pattern)
 void
@@ -919,83 +921,61 @@ QSortFilterProxyModel::setFilterWildcard(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setFilterWildcard(*arg00);
     XSRETURN(0);
+    }
 
-## bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole)
 ## bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)
+## bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole)
 void
 QSortFilterProxyModel::setHeaderData(...)
 PREINIT:
 int arg00;
 Qt::Orientation arg01;
 QVariant * arg02;
-int arg03 = Qt::EditRole;
+int arg03;
 int arg10;
 Qt::Orientation arg11;
 QVariant * arg12;
-int arg13;
+int arg13 = Qt::EditRole;
 PPCODE:
     switch(items) {
-    case 4:
+      case 4:
       {
-        arg00 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg01 = Qt::Horizontal;
-      break;
-    case 1:
-      arg01 = Qt::Vertical;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::Orientation passed in");
-    }
-    if (sv_isa(ST(3), "")) {
-        arg02 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type ");
-    bool ret = THIS->setHeaderData(arg00, arg01, *arg02, arg03);
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-        break;
-      }
-    case 5:
-      {
-        arg10 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg11 = Qt::Horizontal;
-      break;
-    case 1:
-      arg11 = Qt::Vertical;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::Orientation passed in");
-    }
-    if (sv_isa(ST(3), "")) {
-        arg12 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg12 is not of type ");
-    arg13 = (int)SvIV(ST(4));
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QVariant")) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (Qt::Orientation)SvIV(ST(2));
+      arg12 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(3))));
     bool ret = THIS->setHeaderData(arg10, arg11, *arg12, arg13);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 5:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QVariant") && SvIOK(ST(4))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (Qt::Orientation)SvIV(ST(2));
+      arg02 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(3))));
+      arg03 = (int)SvIV(ST(4));
+    bool ret = THIS->setHeaderData(arg00, arg01, *arg02, arg03);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void setSortCaseSensitivity(Qt::CaseSensitivity cs)
@@ -1004,18 +984,11 @@ QSortFilterProxyModel::setSortCaseSensitivity(...)
 PREINIT:
 Qt::CaseSensitivity arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = Qt::CaseInsensitive;
-      break;
-    case 1:
-      arg00 = Qt::CaseSensitive;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::CaseSensitivity passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (Qt::CaseSensitivity)SvIV(ST(1));
     (void)THIS->setSortCaseSensitivity(arg00);
     XSRETURN(0);
+    }
 
 ## void setSortLocaleAware(bool on)
 void
@@ -1023,9 +996,11 @@ QSortFilterProxyModel::setSortLocaleAware(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setSortLocaleAware(arg00);
     XSRETURN(0);
+    }
 
 ## void setSortRole(int role)
 void
@@ -1033,9 +1008,11 @@ QSortFilterProxyModel::setSortRole(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->setSortRole(arg00);
     XSRETURN(0);
+    }
 
 ## void setSourceModel(QAbstractItemModel * sourceModel)
 void
@@ -1043,54 +1020,56 @@ QSortFilterProxyModel::setSourceModel(...)
 PREINIT:
 QAbstractItemModel * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Core::QAbstractItemModel")) {
+    if ((sv_derived_from(ST(1), "Qt::Core::QAbstractItemModel") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Core::QAbstractItemModel")) {
         arg00 = reinterpret_cast<QAbstractItemModel *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QAbstractItemModel");
     (void)THIS->setSourceModel(arg00);
     XSRETURN(0);
+    }
 
-## void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)
 ## void sort(int column, Qt::SortOrder order)
+## void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)
 void
 QSortFilterProxyModel::sort(...)
 PREINIT:
 int arg00;
-Qt::SortOrder arg01 = Qt::AscendingOrder;
+Qt::SortOrder arg01;
 int arg10;
-Qt::SortOrder arg11;
+Qt::SortOrder arg11 = Qt::AscendingOrder;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        arg00 = (int)SvIV(ST(1));
-    (void)THIS->sort(arg00, arg01);
-    XSRETURN(0);
-        break;
-      }
-    case 3:
-      {
-        arg10 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg11 = Qt::AscendingOrder;
-      break;
-    case 1:
-      arg11 = Qt::DescendingOrder;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::SortOrder passed in");
-    }
+        if (SvIOK(ST(1))) {
+      arg10 = (int)SvIV(ST(1));
     (void)THIS->sort(arg10, arg11);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (Qt::SortOrder)SvIV(ST(2));
+    (void)THIS->sort(arg00, arg01);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## Qt::CaseSensitivity sortCaseSensitivity()
@@ -1098,40 +1077,52 @@ void
 QSortFilterProxyModel::sortCaseSensitivity(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     Qt::CaseSensitivity ret = THIS->sortCaseSensitivity();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int sortColumn()
 void
 QSortFilterProxyModel::sortColumn(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->sortColumn();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## Qt::SortOrder sortOrder()
 void
 QSortFilterProxyModel::sortOrder(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     Qt::SortOrder ret = THIS->sortOrder();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int sortRole()
 void
 QSortFilterProxyModel::sortRole(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->sortRole();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QSize span(const QModelIndex & index)
 void
@@ -1140,11 +1131,22 @@ PREINIT:
 QModelIndex * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     QSize ret = THIS->span(*arg00);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }
+
+## QFlags<Qt::DropAction> supportedDropActions()
+void
+QSortFilterProxyModel::supportedDropActions(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QFlags<Qt::DropAction> ret = THIS->supportedDropActions();
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }

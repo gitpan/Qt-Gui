@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QPushButton/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QPushButton/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,21 +24,28 @@ Qt::Gui::QCommandLinkButton
 
 =over
 
-=item    QCommandLinkButton(QWidget * parent = 0)
+=item   QCommandLinkButton(QWidget * parent)
 
-=item    QCommandLinkButton(QWidget * parent)
+=item   QCommandLinkButton(QWidget * parent = 0)
 
-=item    QCommandLinkButton(const QString & text, QWidget * parent = 0)
+=item   QCommandLinkButton(const QString & text, QWidget * parent)
 
-=item    QCommandLinkButton(const QString & text, QWidget * parent)
+=item   QCommandLinkButton(const QString & text, QWidget * parent = 0)
 
-=item    QCommandLinkButton(const QString & text, const QString & description, QWidget * parent = 0)
+=item   QCommandLinkButton(const QString & text, const QString & description, QWidget * parent)
 
-=item    QCommandLinkButton(const QString & text, const QString & description, QWidget * parent)
+=item   QCommandLinkButton(const QString & text, const QString & description, QWidget * parent = 0)
 
-=item   QString description()
+=item  QString description()
 
-=item   void setDescription(const QString & description)
+=item  void setDescription(const QString & description)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

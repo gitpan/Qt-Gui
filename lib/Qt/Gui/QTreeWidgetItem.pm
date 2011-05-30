@@ -7,18 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
-sub UserType() { 1 }
-sub ShowIndicator() { 0 }
-sub DontShowIndicator() { 1 }
-sub DontShowIndicatorWhenChildless() { 2 }
 
 
 1;
@@ -31,155 +23,176 @@ Qt::Gui::QTreeWidgetItem
 
 =over
 
-=item    QTreeWidgetItem(int type = QTreeWidgetItem::Type)
+=item   QTreeWidgetItem(int type)
 
-=item    QTreeWidgetItem(int type)
+=item   QTreeWidgetItem(int type = QTreeWidgetItem::Type)
 
-=item    QTreeWidgetItem(const QTreeWidgetItem & other)
+=item   QTreeWidgetItem(const QTreeWidgetItem & other)
 
-=item    QTreeWidgetItem(const QStringList & strings, int type = QTreeWidgetItem::Type)
+=item   QTreeWidgetItem(const QStringList & strings, int type)
 
-=item    QTreeWidgetItem(const QStringList & strings, int type)
+=item   QTreeWidgetItem(const QStringList & strings, int type = QTreeWidgetItem::Type)
 
-=item    QTreeWidgetItem(QTreeWidget * view, int type = QTreeWidgetItem::Type)
+=item   QTreeWidgetItem(QTreeWidget * view, int type)
 
-=item    QTreeWidgetItem(QTreeWidget * view, int type)
+=item   QTreeWidgetItem(QTreeWidget * view, int type = QTreeWidgetItem::Type)
 
-=item    QTreeWidgetItem(QTreeWidgetItem * parent, int type = QTreeWidgetItem::Type)
+=item   QTreeWidgetItem(QTreeWidgetItem * parent, int type)
 
-=item    QTreeWidgetItem(QTreeWidgetItem * parent, int type)
+=item   QTreeWidgetItem(QTreeWidgetItem * parent, int type = QTreeWidgetItem::Type)
 
-=item    QTreeWidgetItem(QTreeWidget * view, const QStringList & strings, int type = QTreeWidgetItem::Type)
+=item   QTreeWidgetItem(QTreeWidget * view, const QStringList & strings, int type)
 
-=item    QTreeWidgetItem(QTreeWidget * view, const QStringList & strings, int type)
+=item   QTreeWidgetItem(QTreeWidget * view, const QStringList & strings, int type = QTreeWidgetItem::Type)
 
-=item    QTreeWidgetItem(QTreeWidget * view, QTreeWidgetItem * after, int type = QTreeWidgetItem::Type)
+=item   QTreeWidgetItem(QTreeWidget * view, QTreeWidgetItem * after, int type)
 
-=item    QTreeWidgetItem(QTreeWidget * view, QTreeWidgetItem * after, int type)
+=item   QTreeWidgetItem(QTreeWidget * view, QTreeWidgetItem * after, int type = QTreeWidgetItem::Type)
 
-=item    QTreeWidgetItem(QTreeWidgetItem * parent, const QStringList & strings, int type = QTreeWidgetItem::Type)
+=item   QTreeWidgetItem(QTreeWidgetItem * parent, const QStringList & strings, int type)
 
-=item    QTreeWidgetItem(QTreeWidgetItem * parent, const QStringList & strings, int type)
+=item   QTreeWidgetItem(QTreeWidgetItem * parent, const QStringList & strings, int type = QTreeWidgetItem::Type)
 
-=item    QTreeWidgetItem(QTreeWidgetItem * parent, QTreeWidgetItem * after, int type = QTreeWidgetItem::Type)
+=item   QTreeWidgetItem(QTreeWidgetItem * parent, QTreeWidgetItem * after, int type)
 
-=item    QTreeWidgetItem(QTreeWidgetItem * parent, QTreeWidgetItem * after, int type)
+=item   QTreeWidgetItem(QTreeWidgetItem * parent, QTreeWidgetItem * after, int type = QTreeWidgetItem::Type)
 
-=item    ~QTreeWidgetItem()
+=item   ~QTreeWidgetItem()
 
-=item   void addChild(QTreeWidgetItem * child)
+=item  void addChild(QTreeWidgetItem * child)
 
-=item   QBrush background(int column)
+=item  QBrush background(int column)
 
-=item   QColor backgroundColor(int column)
+=item  QColor backgroundColor(int column)
 
-=item   Qt::CheckState checkState(int column)
+=item  Qt::CheckState checkState(int column)
 
-=item   QTreeWidgetItem * child(int index)
+=item  QTreeWidgetItem * child(int index)
 
-=item   int childCount()
+=item  int childCount()
 
-=item   QTreeWidgetItem::ChildIndicatorPolicy childIndicatorPolicy()
+=item  QTreeWidgetItem::ChildIndicatorPolicy childIndicatorPolicy()
 
-=item   QTreeWidgetItem * clone()
+=item  QTreeWidgetItem * clone()
 
-=item   int columnCount()
+=item  int columnCount()
 
-=item   QVariant data(int column, int role)
+=item  QVariant data(int column, int role)
 
-=item   QFont font(int column)
+=item  QFlags<Qt::ItemFlag> flags()
 
-=item   QBrush foreground(int column)
+=item  QFont font(int column)
 
-=item   QIcon icon(int column)
+=item  QBrush foreground(int column)
 
-=item   int indexOfChild(QTreeWidgetItem * child)
+=item  QIcon icon(int column)
 
-=item   void insertChild(int index, QTreeWidgetItem * child)
+=item  int indexOfChild(QTreeWidgetItem * child)
 
-=item   bool isDisabled()
+=item  void insertChild(int index, QTreeWidgetItem * child)
 
-=item   bool isExpanded()
+=item  bool isDisabled()
 
-=item   bool isFirstColumnSpanned()
+=item  bool isExpanded()
 
-=item   bool isHidden()
+=item  bool isFirstColumnSpanned()
 
-=item   bool isSelected()
+=item  bool isHidden()
 
-=item   bool operator<(const QTreeWidgetItem & other)
+=item  bool isSelected()
 
-=item   QTreeWidgetItem & operator=(const QTreeWidgetItem & other)
+=item  bool operator<(const QTreeWidgetItem & other)
 
-=item   QTreeWidgetItem * parent()
+=item  QTreeWidgetItem & operator=(const QTreeWidgetItem & other)
 
-=item   void read(QDataStream & in)
+=item  QTreeWidgetItem * parent()
 
-=item   void removeChild(QTreeWidgetItem * child)
+=item  void read(QDataStream & in)
 
-=item   void setBackground(int column, const QBrush & brush)
+=item  void removeChild(QTreeWidgetItem * child)
 
-=item   void setBackgroundColor(int column, const QColor & color)
+=item  void setBackground(int column, const QBrush & brush)
 
-=item   void setCheckState(int column, Qt::CheckState state)
+=item  void setBackgroundColor(int column, const QColor & color)
 
-=item   void setChildIndicatorPolicy(QTreeWidgetItem::ChildIndicatorPolicy policy)
+=item  void setCheckState(int column, Qt::CheckState state)
 
-=item   void setData(int column, int role, const QVariant & value)
+=item  void setChildIndicatorPolicy(QTreeWidgetItem::ChildIndicatorPolicy policy)
 
-=item   void setDisabled(bool disabled)
+=item  void setData(int column, int role, const QVariant & value)
 
-=item   void setExpanded(bool expand)
+=item  void setDisabled(bool disabled)
 
-=item   void setFirstColumnSpanned(bool span)
+=item  void setExpanded(bool expand)
 
-=item   void setFont(int column, const QFont & font)
+=item  void setFirstColumnSpanned(bool span)
 
-=item   void setForeground(int column, const QBrush & brush)
+=item  void setFlags(QFlags<Qt::ItemFlag> flags)
 
-=item   void setHidden(bool hide)
+=item  void setFont(int column, const QFont & font)
 
-=item   void setIcon(int column, const QIcon & icon)
+=item  void setForeground(int column, const QBrush & brush)
 
-=item   void setSelected(bool select)
+=item  void setHidden(bool hide)
 
-=item   void setSizeHint(int column, const QSize & size)
+=item  void setIcon(int column, const QIcon & icon)
 
-=item   void setStatusTip(int column, const QString & statusTip)
+=item  void setSelected(bool select)
 
-=item   void setText(int column, const QString & text)
+=item  void setSizeHint(int column, const QSize & size)
 
-=item   void setTextAlignment(int column, int alignment)
+=item  void setStatusTip(int column, const QString & statusTip)
 
-=item   void setTextColor(int column, const QColor & color)
+=item  void setText(int column, const QString & text)
 
-=item   void setToolTip(int column, const QString & toolTip)
+=item  void setTextAlignment(int column, int alignment)
 
-=item   void setWhatsThis(int column, const QString & whatsThis)
+=item  void setTextColor(int column, const QColor & color)
 
-=item   QSize sizeHint(int column)
+=item  void setToolTip(int column, const QString & toolTip)
 
-=item   void sortChildren(int column, Qt::SortOrder order)
+=item  void setWhatsThis(int column, const QString & whatsThis)
 
-=item   QString statusTip(int column)
+=item  QSize sizeHint(int column)
 
-=item   QTreeWidgetItem * takeChild(int index)
+=item  void sortChildren(int column, Qt::SortOrder order)
 
-=item   QString text(int column)
+=item  QString statusTip(int column)
 
-=item   int textAlignment(int column)
+=item  QTreeWidgetItem * takeChild(int index)
 
-=item   QColor textColor(int column)
+=item  QString text(int column)
 
-=item   QString toolTip(int column)
+=item  int textAlignment(int column)
 
-=item   QTreeWidget * treeWidget()
+=item  QColor textColor(int column)
 
-=item   int type()
+=item  QString toolTip(int column)
 
-=item   QString whatsThis(int column)
+=item  QTreeWidget * treeWidget()
 
-=item   void write(QDataStream & out)
+=item  int type()
+
+=item  QString whatsThis(int column)
+
+=item  void write(QDataStream & out)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Type
+
+=item UserType
+
+=item ShowIndicator
+
+=item DontShowIndicator
+
+=item DontShowIndicatorWhenChildless
 
 
 =back

@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QLayout/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QLayout/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub StackOne() { 0 }
-sub StackAll() { 1 }
 
 
 1;
@@ -29,45 +24,56 @@ Qt::Gui::QStackedLayout
 
 =over
 
-=item    QStackedLayout()
+=item   QStackedLayout()
 
-=item    QStackedLayout(QWidget * parent)
+=item   QStackedLayout(QWidget * parent)
 
-=item    QStackedLayout(QLayout * parentLayout)
+=item   QStackedLayout(QLayout * parentLayout)
 
-=item    ~QStackedLayout()
+=item   ~QStackedLayout()
 
-=item   void addItem(QLayoutItem * item)
+=item  void addItem(QLayoutItem * item)
 
-=item   int addWidget(QWidget * w)
+=item  int addWidget(QWidget * w)
 
-=item   int count()
+=item  int count()
 
-=item   int currentIndex()
+=item  int currentIndex()
 
-=item   QWidget * currentWidget()
+=item  QWidget * currentWidget()
 
-=item   int insertWidget(int index, QWidget * w)
+=item  int insertWidget(int index, QWidget * w)
 
-=item   QLayoutItem * itemAt(int arg0)
+=item  QLayoutItem * itemAt(int arg0)
 
-=item   QSize minimumSize()
+=item  QSize minimumSize()
 
-=item   void setCurrentIndex(int index)
+=item  void setCurrentIndex(int index)
 
-=item   void setCurrentWidget(QWidget * w)
+=item  void setCurrentWidget(QWidget * w)
 
-=item   void setGeometry(const QRect & rect)
+=item  void setGeometry(const QRect & rect)
 
-=item   void setStackingMode(QStackedLayout::StackingMode stackingMode)
+=item  void setStackingMode(QStackedLayout::StackingMode stackingMode)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   QStackedLayout::StackingMode stackingMode()
+=item  QStackedLayout::StackingMode stackingMode()
 
-=item   QLayoutItem * takeAt(int arg0)
+=item  QLayoutItem * takeAt(int arg0)
 
-=item   QWidget * widget(int arg0)
+=item  QWidget * widget(int arg0)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item StackOne
+
+=item StackAll
 
 
 =back

@@ -18,36 +18,44 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QGraphicsEffect(QObject * parent = 0)
 ##  QGraphicsEffect(QObject * parent)
+##  QGraphicsEffect(QObject * parent = 0)
   void
 QGraphicsEffect::new(...)
 PREINIT:
 QGraphicsEffect *ret;
-QObject * arg00 = 0;
-QObject * arg10;
+QObject * arg00;
+QObject * arg10 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
+        if (1) {
+      
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_derived_from(ST(1), "")) {
-        arg10 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Core::QObject") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Core::QObject")) {
+        arg00 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg10 is not of type ");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QObject");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QGraphicsEffect()
@@ -62,10 +70,13 @@ void
 QGraphicsEffect::boundingRect(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QRectF ret = THIS->boundingRect();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QRectF(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QRectF", (void *)new QRectF(ret));
     XSRETURN(1);
+    }
 
 ## QRectF boundingRectFor(const QRectF & sourceRect)
 void
@@ -73,25 +84,26 @@ QGraphicsEffect::boundingRectFor(...)
 PREINIT:
 QRectF * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QRectF")) {
+      arg00 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(1))));
     QRectF ret = THIS->boundingRectFor(*arg00);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QRectF(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QRectF", (void *)new QRectF(ret));
     XSRETURN(1);
+    }
 
 ## bool isEnabled()
 void
 QGraphicsEffect::isEnabled(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isEnabled();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## void setEnabled(bool enable)
 void
@@ -99,24 +111,102 @@ QGraphicsEffect::setEnabled(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setEnabled(arg00);
     XSRETURN(0);
+    }
 
 ## QGraphicsEffectSource * source()
 void
 QGraphicsEffect::source(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QGraphicsEffectSource * ret = THIS->source();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "", (void *)ret);
     XSRETURN(1);
+    }
 
 ## void update()
 void
 QGraphicsEffect::update(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->update();
     XSRETURN(0);
+    }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# ChangeFlag::SourceAttached
+void
+SourceAttached()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QGraphicsEffect::SourceAttached);
+    XSRETURN(1);
+
+
+# ChangeFlag::SourceDetached
+void
+SourceDetached()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QGraphicsEffect::SourceDetached);
+    XSRETURN(1);
+
+
+# ChangeFlag::SourceBoundingRectChanged
+void
+SourceBoundingRectChanged()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QGraphicsEffect::SourceBoundingRectChanged);
+    XSRETURN(1);
+
+
+# ChangeFlag::SourceInvalidated
+void
+SourceInvalidated()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QGraphicsEffect::SourceInvalidated);
+    XSRETURN(1);
+
+
+# PixmapPadMode::NoPad
+void
+NoPad()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QGraphicsEffect::NoPad);
+    XSRETURN(1);
+
+
+# PixmapPadMode::PadToTransparentBorder
+void
+PadToTransparentBorder()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QGraphicsEffect::PadToTransparentBorder);
+    XSRETURN(1);
+
+
+# PixmapPadMode::PadToEffectiveBoundingRect
+void
+PadToEffectiveBoundingRect()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QGraphicsEffect::PadToEffectiveBoundingRect);
+    XSRETURN(1);

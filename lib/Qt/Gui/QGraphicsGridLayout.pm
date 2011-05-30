@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsLayout/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsLayout/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,85 +24,112 @@ Qt::Gui::QGraphicsGridLayout
 
 =over
 
-=item    QGraphicsGridLayout(QGraphicsLayoutItem * parent = 0)
+=item   QGraphicsGridLayout(QGraphicsLayoutItem * parent)
 
-=item    QGraphicsGridLayout(QGraphicsLayoutItem * parent)
+=item   QGraphicsGridLayout(QGraphicsLayoutItem * parent = 0)
 
-=item    ~QGraphicsGridLayout()
+=item   ~QGraphicsGridLayout()
 
-=item   int columnCount()
+=item  void addItem(QGraphicsLayoutItem * item, int row, int column, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   qreal columnMaximumWidth(int column)
+=item  void addItem(QGraphicsLayoutItem * item, int row, int column, QFlags<Qt::AlignmentFlag> alignment = 0)
 
-=item   qreal columnMinimumWidth(int column)
+=item  void addItem(QGraphicsLayoutItem * item, int row, int column, int rowSpan, int columnSpan, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   qreal columnPreferredWidth(int column)
+=item  void addItem(QGraphicsLayoutItem * item, int row, int column, int rowSpan, int columnSpan, QFlags<Qt::AlignmentFlag> alignment = 0)
 
-=item   qreal columnSpacing(int column)
+=item  QFlags<Qt::AlignmentFlag> alignment(QGraphicsLayoutItem * item)
 
-=item   int columnStretchFactor(int column)
+=item  QFlags<Qt::AlignmentFlag> columnAlignment(int column)
 
-=item   int count()
+=item  int columnCount()
 
-=item   qreal horizontalSpacing()
+=item  qreal columnMaximumWidth(int column)
 
-=item   void invalidate()
+=item  qreal columnMinimumWidth(int column)
 
-=item   QGraphicsLayoutItem * itemAt(int index)
+=item  qreal columnPreferredWidth(int column)
 
-=item   QGraphicsLayoutItem * itemAt(int row, int column)
+=item  qreal columnSpacing(int column)
 
-=item   void removeAt(int index)
+=item  int columnStretchFactor(int column)
 
-=item   int rowCount()
+=item  int count()
 
-=item   qreal rowMaximumHeight(int row)
+=item  qreal horizontalSpacing()
 
-=item   qreal rowMinimumHeight(int row)
+=item  void invalidate()
 
-=item   qreal rowPreferredHeight(int row)
+=item  QGraphicsLayoutItem * itemAt(int index)
 
-=item   qreal rowSpacing(int row)
+=item  QGraphicsLayoutItem * itemAt(int row, int column)
 
-=item   int rowStretchFactor(int row)
+=item  void removeAt(int index)
 
-=item   void setColumnFixedWidth(int column, qreal width)
+=item  QFlags<Qt::AlignmentFlag> rowAlignment(int row)
 
-=item   void setColumnMaximumWidth(int column, qreal width)
+=item  int rowCount()
 
-=item   void setColumnMinimumWidth(int column, qreal width)
+=item  qreal rowMaximumHeight(int row)
 
-=item   void setColumnPreferredWidth(int column, qreal width)
+=item  qreal rowMinimumHeight(int row)
 
-=item   void setColumnSpacing(int column, qreal spacing)
+=item  qreal rowPreferredHeight(int row)
 
-=item   void setColumnStretchFactor(int column, int stretch)
+=item  qreal rowSpacing(int row)
 
-=item   void setGeometry(const QRectF & rect)
+=item  int rowStretchFactor(int row)
 
-=item   void setHorizontalSpacing(qreal spacing)
+=item  void setAlignment(QGraphicsLayoutItem * item, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setRowFixedHeight(int row, qreal height)
+=item  void setColumnAlignment(int column, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setRowMaximumHeight(int row, qreal height)
+=item  void setColumnFixedWidth(int column, qreal width)
 
-=item   void setRowMinimumHeight(int row, qreal height)
+=item  void setColumnMaximumWidth(int column, qreal width)
 
-=item   void setRowPreferredHeight(int row, qreal height)
+=item  void setColumnMinimumWidth(int column, qreal width)
 
-=item   void setRowSpacing(int row, qreal spacing)
+=item  void setColumnPreferredWidth(int column, qreal width)
 
-=item   void setRowStretchFactor(int row, int stretch)
+=item  void setColumnSpacing(int column, qreal spacing)
 
-=item   void setSpacing(qreal spacing)
+=item  void setColumnStretchFactor(int column, int stretch)
 
-=item   void setVerticalSpacing(qreal spacing)
+=item  void setGeometry(const QRectF & rect)
 
-=item   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint = QSizeF())
+=item  void setHorizontalSpacing(qreal spacing)
 
-=item   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint)
+=item  void setRowAlignment(int row, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   qreal verticalSpacing()
+=item  void setRowFixedHeight(int row, qreal height)
+
+=item  void setRowMaximumHeight(int row, qreal height)
+
+=item  void setRowMinimumHeight(int row, qreal height)
+
+=item  void setRowPreferredHeight(int row, qreal height)
+
+=item  void setRowSpacing(int row, qreal spacing)
+
+=item  void setRowStretchFactor(int row, int stretch)
+
+=item  void setSpacing(qreal spacing)
+
+=item  void setVerticalSpacing(qreal spacing)
+
+=item  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint)
+
+=item  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint = QSizeF())
+
+=item  qreal verticalSpacing()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

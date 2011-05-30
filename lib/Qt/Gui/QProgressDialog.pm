@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,55 +24,74 @@ Qt::Gui::QProgressDialog
 
 =over
 
-=item    ~QProgressDialog()
+=item   QProgressDialog(QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   bool autoClose()
+=item   QProgressDialog(QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   bool autoReset()
+=item   QProgressDialog(QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void cancel()
+=item   QProgressDialog(const QString & labelText, const QString & cancelButtonText, int minimum, int maximum, QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   QString labelText()
+=item   QProgressDialog(const QString & labelText, const QString & cancelButtonText, int minimum, int maximum, QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   int maximum()
+=item   QProgressDialog(const QString & labelText, const QString & cancelButtonText, int minimum, int maximum, QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   int minimum()
+=item   ~QProgressDialog()
 
-=item   int minimumDuration()
+=item  bool autoClose()
 
-=item   void open(QObject * receiver, const char * member)
+=item  bool autoReset()
 
-=item   void reset()
+=item  void cancel()
 
-=item   void setAutoClose(bool close)
+=item  QString labelText()
 
-=item   void setAutoReset(bool reset)
+=item  int maximum()
 
-=item   void setBar(QProgressBar * bar)
+=item  int minimum()
 
-=item   void setCancelButton(QPushButton * button)
+=item  int minimumDuration()
 
-=item   void setCancelButtonText(const QString & text)
+=item  void open(QObject * receiver, const char * member)
 
-=item   void setLabel(QLabel * label)
+=item  void reset()
 
-=item   void setLabelText(const QString & text)
+=item  void setAutoClose(bool close)
 
-=item   void setMaximum(int maximum)
+=item  void setAutoReset(bool reset)
 
-=item   void setMinimum(int minimum)
+=item  void setBar(QProgressBar * bar)
 
-=item   void setMinimumDuration(int ms)
+=item  void setCancelButton(QPushButton * button)
 
-=item   void setRange(int minimum, int maximum)
+=item  void setCancelButtonText(const QString & text)
 
-=item   void setValue(int progress)
+=item  void setLabel(QLabel * label)
 
-=item   QSize sizeHint()
+=item  void setLabelText(const QString & text)
 
-=item   int value()
+=item  void setMaximum(int maximum)
 
-=item   bool wasCanceled()
+=item  void setMinimum(int minimum)
+
+=item  void setMinimumDuration(int ms)
+
+=item  void setRange(int minimum, int maximum)
+
+=item  void setValue(int progress)
+
+=item  QSize sizeHint()
+
+=item  int value()
+
+=item  bool wasCanceled()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

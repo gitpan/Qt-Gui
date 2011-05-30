@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsSceneEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsSceneEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,24 @@ Qt::Gui::QGraphicsSceneResizeEvent
 
 =over
 
-=item    QGraphicsSceneResizeEvent()
+=item   QGraphicsSceneResizeEvent()
 
-=item    ~QGraphicsSceneResizeEvent()
+=item   ~QGraphicsSceneResizeEvent()
 
-=item   QSizeF newSize()
+=item  QSizeF newSize()
 
-=item   QSizeF oldSize()
+=item  QSizeF oldSize()
 
-=item   void setNewSize(const QSizeF & size)
+=item  void setNewSize(const QSizeF & size)
 
-=item   void setOldSize(const QSizeF & size)
+=item  void setOldSize(const QSizeF & size)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

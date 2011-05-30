@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsSceneEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsSceneEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,24 @@ Qt::Gui::QGraphicsSceneMoveEvent
 
 =over
 
-=item    QGraphicsSceneMoveEvent()
+=item   QGraphicsSceneMoveEvent()
 
-=item    ~QGraphicsSceneMoveEvent()
+=item   ~QGraphicsSceneMoveEvent()
 
-=item   QPointF newPos()
+=item  QPointF newPos()
 
-=item   QPointF oldPos()
+=item  QPointF oldPos()
 
-=item   void setNewPos(const QPointF & pos)
+=item  void setNewPos(const QPointF & pos)
 
-=item   void setOldPos(const QPointF & pos)
+=item  void setOldPos(const QPointF & pos)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

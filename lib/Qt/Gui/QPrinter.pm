@@ -7,91 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QPaintDevice/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QPaintDevice/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub ScreenResolution() { 0 }
-sub PrinterResolution() { 1 }
-sub HighResolution() { 2 }
-sub Portrait() { 0 }
-sub Landscape() { 1 }
-sub A4() { 0 }
-sub B5() { 1 }
-sub Letter() { 2 }
-sub Legal() { 3 }
-sub Executive() { 4 }
-sub A0() { 5 }
-sub A1() { 6 }
-sub A2() { 7 }
-sub A3() { 8 }
-sub A5() { 9 }
-sub A6() { 10 }
-sub A7() { 11 }
-sub A8() { 12 }
-sub A9() { 13 }
-sub B0() { 14 }
-sub B1() { 15 }
-sub B10() { 16 }
-sub B2() { 17 }
-sub B3() { 18 }
-sub B4() { 19 }
-sub B6() { 20 }
-sub B7() { 21 }
-sub B8() { 22 }
-sub B9() { 23 }
-sub C5E() { 24 }
-sub Comm10E() { 25 }
-sub DLE() { 26 }
-sub Folio() { 27 }
-sub Ledger() { 28 }
-sub Tabloid() { 29 }
-sub Custom() { 30 }
-sub NPageSize() { 31 }
-sub NPaperSize() { 32 }
-sub FirstPageFirst() { 0 }
-sub LastPageFirst() { 1 }
-sub GrayScale() { 0 }
-sub Color() { 1 }
-sub OnlyOne() { 0 }
-sub Lower() { 1 }
-sub Middle() { 2 }
-sub Manual() { 3 }
-sub Envelope() { 4 }
-sub EnvelopeManual() { 5 }
-sub Auto() { 6 }
-sub Tractor() { 7 }
-sub SmallFormat() { 8 }
-sub LargeFormat() { 9 }
-sub LargeCapacity() { 10 }
-sub Cassette() { 11 }
-sub FormSource() { 12 }
-sub MaxPageSource() { 13 }
-sub Idle() { 0 }
-sub Active() { 1 }
-sub Aborted() { 2 }
-sub Error() { 3 }
-sub NativeFormat() { 0 }
-sub PdfFormat() { 1 }
-sub PostScriptFormat() { 2 }
-sub AllPages() { 0 }
-sub Selection() { 1 }
-sub PageRange() { 2 }
-sub Millimeter() { 0 }
-sub Point() { 1 }
-sub Inch() { 2 }
-sub Pica() { 3 }
-sub Didot() { 4 }
-sub Cicero() { 5 }
-sub DevicePixel() { 6 }
-sub DuplexNone() { 0 }
-sub DuplexAuto() { 1 }
-sub DuplexLongSide() { 2 }
-sub DuplexShortSide() { 3 }
 
 
 1;
@@ -104,137 +24,306 @@ Qt::Gui::QPrinter
 
 =over
 
-=item    QPrinter(QPrinter::PrinterMode mode = QPrinter::ScreenResolution)
+=item   QPrinter(QPrinter::PrinterMode mode)
 
-=item    QPrinter(QPrinter::PrinterMode mode)
+=item   QPrinter(QPrinter::PrinterMode mode = QPrinter::ScreenResolution)
 
-=item    QPrinter(const QPrinterInfo & printer, QPrinter::PrinterMode mode = QPrinter::ScreenResolution)
+=item   QPrinter(const QPrinterInfo & printer, QPrinter::PrinterMode mode)
 
-=item    QPrinter(const QPrinterInfo & printer, QPrinter::PrinterMode mode)
+=item   QPrinter(const QPrinterInfo & printer, QPrinter::PrinterMode mode = QPrinter::ScreenResolution)
 
-=item    ~QPrinter()
+=item   ~QPrinter()
 
-=item   bool abort()
+=item  bool abort()
 
-=item   int actualNumCopies()
+=item  int actualNumCopies()
 
-=item   bool collateCopies()
+=item  bool collateCopies()
 
-=item   QPrinter::ColorMode colorMode()
+=item  QPrinter::ColorMode colorMode()
 
-=item   QString creator()
+=item  int copyCount()
 
-=item   int devType()
+=item  QString creator()
 
-=item   QString docName()
+=item  int devType()
 
-=item   bool doubleSidedPrinting()
+=item  QString docName()
 
-=item   QPrinter::DuplexMode duplex()
+=item  bool doubleSidedPrinting()
 
-=item   bool fontEmbeddingEnabled()
+=item  QPrinter::DuplexMode duplex()
 
-=item   int fromPage()
+=item  bool fontEmbeddingEnabled()
 
-=item   bool fullPage()
+=item  int fromPage()
 
-=item   void getPageMargins(qreal * left, qreal * top, qreal * right, qreal * bottom, QPrinter::Unit unit)
+=item  bool fullPage()
 
-=item   bool isValid()
+=item  void getPageMargins(qreal * left, qreal * top, qreal * right, qreal * bottom, QPrinter::Unit unit)
 
-=item   bool newPage()
+=item  bool isValid()
 
-=item   int numCopies()
+=item  bool newPage()
 
-=item   QPrinter::Orientation orientation()
+=item  int numCopies()
 
-=item   QString outputFileName()
+=item  QPrinter::Orientation orientation()
 
-=item   QPrinter::OutputFormat outputFormat()
+=item  QString outputFileName()
 
-=item   QPrinter::PageOrder pageOrder()
+=item  QPrinter::OutputFormat outputFormat()
 
-=item   QRect pageRect()
+=item  QPrinter::PageOrder pageOrder()
 
-=item   QRectF pageRect(QPrinter::Unit arg0)
+=item  QRect pageRect()
 
-=item   QPrinter::PageSize pageSize()
+=item  QRectF pageRect(QPrinter::Unit arg0)
 
-=item   QPaintEngine * paintEngine()
+=item  QPrinter::PageSize pageSize()
 
-=item   QRect paperRect()
+=item  QPaintEngine * paintEngine()
 
-=item   QRectF paperRect(QPrinter::Unit arg0)
+=item  QRect paperRect()
 
-=item   QPrinter::PageSize paperSize()
+=item  QRectF paperRect(QPrinter::Unit arg0)
 
-=item   QSizeF paperSize(QPrinter::Unit unit)
+=item  QPrinter::PageSize paperSize()
 
-=item   QPrinter::PaperSource paperSource()
+=item  QSizeF paperSize(QPrinter::Unit unit)
 
-=item   QPrintEngine * printEngine()
+=item  QPrinter::PaperSource paperSource()
 
-=item   QString printProgram()
+=item  QPrintEngine * printEngine()
 
-=item   QPrinter::PrintRange printRange()
+=item  QString printProgram()
 
-=item   QString printerName()
+=item  QPrinter::PrintRange printRange()
 
-=item   QString printerSelectionOption()
+=item  QString printerName()
 
-=item   QPrinter::PrinterState printerState()
+=item  QString printerSelectionOption()
 
-=item   int resolution()
+=item  QPrinter::PrinterState printerState()
 
-=item   void setCollateCopies(bool collate)
+=item  int resolution()
 
-=item   void setColorMode(QPrinter::ColorMode arg0)
+=item  void setCollateCopies(bool collate)
 
-=item   void setCreator(const QString & arg0)
+=item  void setColorMode(QPrinter::ColorMode arg0)
 
-=item   void setDocName(const QString & arg0)
+=item  void setCopyCount(int arg0)
 
-=item   void setDoubleSidedPrinting(bool enable)
+=item  void setCreator(const QString & arg0)
 
-=item   void setDuplex(QPrinter::DuplexMode duplex)
+=item  void setDocName(const QString & arg0)
 
-=item   void setFontEmbeddingEnabled(bool enable)
+=item  void setDoubleSidedPrinting(bool enable)
 
-=item   void setFromTo(int fromPage, int toPage)
+=item  void setDuplex(QPrinter::DuplexMode duplex)
 
-=item   void setFullPage(bool arg0)
+=item  void setFontEmbeddingEnabled(bool enable)
 
-=item   void setNumCopies(int arg0)
+=item  void setFromTo(int fromPage, int toPage)
 
-=item   void setOrientation(QPrinter::Orientation arg0)
+=item  void setFullPage(bool arg0)
 
-=item   void setOutputFileName(const QString & arg0)
+=item  void setNumCopies(int arg0)
 
-=item   void setOutputFormat(QPrinter::OutputFormat format)
+=item  void setOrientation(QPrinter::Orientation arg0)
 
-=item   void setPageMargins(qreal left, qreal top, qreal right, qreal bottom, QPrinter::Unit unit)
+=item  void setOutputFileName(const QString & arg0)
 
-=item   void setPageOrder(QPrinter::PageOrder arg0)
+=item  void setOutputFormat(QPrinter::OutputFormat format)
 
-=item   void setPageSize(QPrinter::PageSize arg0)
+=item  void setPageMargins(qreal left, qreal top, qreal right, qreal bottom, QPrinter::Unit unit)
 
-=item   void setPaperSize(QPrinter::PageSize arg0)
+=item  void setPageOrder(QPrinter::PageOrder arg0)
 
-=item   void setPaperSize(const QSizeF & paperSize, QPrinter::Unit unit)
+=item  void setPageSize(QPrinter::PageSize arg0)
 
-=item   void setPaperSource(QPrinter::PaperSource arg0)
+=item  void setPaperSize(QPrinter::PageSize arg0)
 
-=item   void setPrintProgram(const QString & arg0)
+=item  void setPaperSize(const QSizeF & paperSize, QPrinter::Unit unit)
 
-=item   void setPrintRange(QPrinter::PrintRange range)
+=item  void setPaperSource(QPrinter::PaperSource arg0)
 
-=item   void setPrinterName(const QString & arg0)
+=item  void setPrintProgram(const QString & arg0)
 
-=item   void setPrinterSelectionOption(const QString & arg0)
+=item  void setPrintRange(QPrinter::PrintRange range)
 
-=item   void setResolution(int arg0)
+=item  void setPrinterName(const QString & arg0)
 
-=item   int toPage()
+=item  void setPrinterSelectionOption(const QString & arg0)
+
+=item  void setResolution(int arg0)
+
+=item  bool supportsMultipleCopies()
+
+=item  int toPage()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item ScreenResolution
+
+=item PrinterResolution
+
+=item HighResolution
+
+=item Portrait
+
+=item Landscape
+
+=item A4
+
+=item B5
+
+=item Letter
+
+=item Legal
+
+=item Executive
+
+=item A0
+
+=item A1
+
+=item A2
+
+=item A3
+
+=item A5
+
+=item A6
+
+=item A7
+
+=item A8
+
+=item A9
+
+=item B0
+
+=item B1
+
+=item B10
+
+=item B2
+
+=item B3
+
+=item B4
+
+=item B6
+
+=item B7
+
+=item B8
+
+=item B9
+
+=item C5E
+
+=item Comm10E
+
+=item DLE
+
+=item Folio
+
+=item Ledger
+
+=item Tabloid
+
+=item Custom
+
+=item NPageSize
+
+=item NPaperSize
+
+=item FirstPageFirst
+
+=item LastPageFirst
+
+=item GrayScale
+
+=item Color
+
+=item OnlyOne
+
+=item Lower
+
+=item Middle
+
+=item Manual
+
+=item Envelope
+
+=item EnvelopeManual
+
+=item Auto
+
+=item Tractor
+
+=item SmallFormat
+
+=item LargeFormat
+
+=item LargeCapacity
+
+=item Cassette
+
+=item FormSource
+
+=item MaxPageSource
+
+=item Idle
+
+=item Active
+
+=item Aborted
+
+=item Error
+
+=item NativeFormat
+
+=item PdfFormat
+
+=item PostScriptFormat
+
+=item AllPages
+
+=item Selection
+
+=item PageRange
+
+=item CurrentPage
+
+=item Millimeter
+
+=item Point
+
+=item Inch
+
+=item Pica
+
+=item Didot
+
+=item Cicero
+
+=item DevicePixel
+
+=item DuplexNone
+
+=item DuplexAuto
+
+=item DuplexLongSide
+
+=item DuplexShortSide
 
 
 =back

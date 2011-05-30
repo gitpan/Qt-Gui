@@ -7,19 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QComboBox/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QComboBox/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub AllFonts() { 0 }
-sub ScalableFonts() { 1 }
-sub NonScalableFonts() { 2 }
-sub MonospacedFonts() { 3 }
-sub ProportionalFonts() { 4 }
 
 
 1;
@@ -32,21 +24,42 @@ Qt::Gui::QFontComboBox
 
 =over
 
-=item    QFontComboBox(QWidget * parent = 0)
+=item   QFontComboBox(QWidget * parent)
 
-=item    QFontComboBox(QWidget * parent)
+=item   QFontComboBox(QWidget * parent = 0)
 
-=item    ~QFontComboBox()
+=item   ~QFontComboBox()
 
-=item   QFont currentFont()
+=item  QFont currentFont()
 
-=item   void setCurrentFont(const QFont & f)
+=item  QFlags<QFontComboBox::FontFilter> fontFilters()
 
-=item   void setWritingSystem(QFontDatabase::WritingSystem arg0)
+=item  void setCurrentFont(const QFont & f)
 
-=item   QSize sizeHint()
+=item  void setFontFilters(QFlags<QFontComboBox::FontFilter> filters)
 
-=item   QFontDatabase::WritingSystem writingSystem()
+=item  void setWritingSystem(QFontDatabase::WritingSystem arg0)
+
+=item  QSize sizeHint()
+
+=item  QFontDatabase::WritingSystem writingSystem()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item AllFonts
+
+=item ScalableFonts
+
+=item NonScalableFonts
+
+=item MonospacedFonts
+
+=item ProportionalFonts
 
 
 =back

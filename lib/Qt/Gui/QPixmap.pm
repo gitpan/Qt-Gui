@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QPaintDevice/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QPaintDevice/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub ImplicitlyShared() { 0 }
-sub ExplicitlyShared() { 1 }
 
 
 1;
@@ -29,199 +24,226 @@ Qt::Gui::QPixmap
 
 =over
 
-=item    QPixmap()
+=item   QPixmap()
 
-=item    QPixmap(QPixmapData * data)
+=item   QPixmap(QPixmapData * data)
 
-=item    QPixmap(const QSize & arg0)
+=item   QPixmap(const QSize & arg0)
 
-=item    QPixmap(T_ARRAY_XPM const char * const * T_ARRAY_XPM)
+=item   QPixmap(T_ARRAY_XPM const char * const * T_ARRAY_XPM)
 
-=item    QPixmap(const QPixmap & arg0)
+=item   QPixmap(const QPixmap & arg0)
 
-=item    QPixmap(int w, int h)
+=item   QPixmap(int w, int h)
 
-=item    ~QPixmap()
+=item   QPixmap(const QString & fileName, const char * format, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   QPixmap alphaChannel()
+=item   QPixmap(const QString & fileName, const char * format, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   qint64 cacheKey()
+=item   QPixmap(const QString & fileName, const char * format = 0, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   QPixmap copy(const QRect & rect = QRect())
+=item   ~QPixmap()
 
-=item   QPixmap copy(const QRect & rect)
+=item  QPixmap alphaChannel()
 
-=item   QPixmap copy(int x, int y, int width, int height)
+=item  qint64 cacheKey()
 
-=item   QBitmap createHeuristicMask(bool clipTight = true)
+=item  bool convertFromImage(const QImage & img, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   QBitmap createHeuristicMask(bool clipTight)
+=item  bool convertFromImage(const QImage & img, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   QBitmap createMaskFromColor(const QColor & maskColor)
+=item  QPixmap copy(const QRect & rect)
 
-=item   QBitmap createMaskFromColor(const QColor & maskColor, Qt::MaskMode mode)
+=item  QPixmap copy(const QRect & rect = QRect())
 
-=item   static int defaultDepth()
+=item  QPixmap copy(int x, int y, int width, int height)
 
-=item   int depth()
+=item  QBitmap createHeuristicMask(bool clipTight)
 
-=item   void detach()
+=item  QBitmap createHeuristicMask(bool clipTight = true)
 
-=item   int devType()
+=item  QBitmap createMaskFromColor(const QColor & maskColor)
 
-=item   void fill(const QColor & fillColor = Qt::white)
+=item  QBitmap createMaskFromColor(const QColor & maskColor, Qt::MaskMode mode)
 
-=item   void fill(const QColor & fillColor)
+=item  static int defaultDepth()
 
-=item   void fill(const QWidget * widget, const QPoint & ofs)
+=item  int depth()
 
-=item   void fill(const QWidget * widget, int xofs, int yofs)
+=item  void detach()
 
-=item   static QPixmap fromX11Pixmap(unsigned long pixmap, QPixmap::ShareMode mode = QPixmap::ImplicitlyShared)
+=item  int devType()
 
-=item   static QPixmap fromX11Pixmap(unsigned long pixmap, QPixmap::ShareMode mode)
+=item  void fill(const QColor & fillColor)
 
-=item   static QPixmap grabWidget(QWidget * widget, const QRect & rect)
+=item  void fill(const QColor & fillColor = Qt::white)
 
-=item   static QPixmap grabWidget(QWidget * widget, int x, int y, int w, int h = -1)
+=item  void fill(const QWidget * widget, const QPoint & ofs)
 
-=item   static QPixmap grabWidget(QWidget * widget, int x, int y, int w, int h)
+=item  void fill(const QWidget * widget, int xofs, int yofs)
 
-=item   static QPixmap grabWidget(QWidget * widget, int x, int y, int w = -1, int h = -1)
+=item  static QPixmap fromImage(const QImage & image, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   static QPixmap grabWidget(QWidget * widget, int x, int y, int w, int h = -1)
+=item  static QPixmap fromImage(const QImage & image, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   static QPixmap grabWidget(QWidget * widget, int x, int y = 0, int w = -1, int h = -1)
+=item  static QPixmap fromImageReader(QImageReader * imageReader, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   static QPixmap grabWidget(QWidget * widget, int x, int y, int w = -1, int h = -1)
+=item  static QPixmap fromImageReader(QImageReader * imageReader, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   static QPixmap grabWidget(QWidget * widget, int x = 0, int y = 0, int w = -1, int h = -1)
+=item  static QPixmap fromX11Pixmap(unsigned long pixmap, QPixmap::ShareMode mode)
 
-=item   static QPixmap grabWidget(QWidget * widget, int x, int y = 0, int w = -1, int h = -1)
+=item  static QPixmap fromX11Pixmap(unsigned long pixmap, QPixmap::ShareMode mode = QPixmap::ImplicitlyShared)
 
-=item   static QPixmap grabWindow(unsigned long arg0, int x, int y, int w, int h = -1)
+=item  static QPixmap grabWidget(QWidget * widget, const QRect & rect)
 
-=item   static QPixmap grabWindow(unsigned long arg0, int x, int y, int w, int h)
+=item  static QPixmap grabWidget(QWidget * widget, int x, int y, int w, int h)
 
-=item   static QPixmap grabWindow(unsigned long arg0, int x, int y, int w = -1, int h = -1)
+=item  static QPixmap grabWidget(QWidget * widget, int x, int y, int w, int h = -1)
 
-=item   static QPixmap grabWindow(unsigned long arg0, int x, int y, int w, int h = -1)
+=item  static QPixmap grabWidget(QWidget * widget, int x, int y, int w = -1, int h = -1)
 
-=item   static QPixmap grabWindow(unsigned long arg0, int x, int y = 0, int w = -1, int h = -1)
+=item  static QPixmap grabWidget(QWidget * widget, int x, int y = 0, int w = -1, int h = -1)
 
-=item   static QPixmap grabWindow(unsigned long arg0, int x, int y, int w = -1, int h = -1)
+=item  static QPixmap grabWidget(QWidget * widget, int x = 0, int y = 0, int w = -1, int h = -1)
 
-=item   static QPixmap grabWindow(unsigned long arg0, int x = 0, int y = 0, int w = -1, int h = -1)
+=item  static QPixmap grabWindow(unsigned long arg0, int x, int y, int w, int h)
 
-=item   static QPixmap grabWindow(unsigned long arg0, int x, int y = 0, int w = -1, int h = -1)
+=item  static QPixmap grabWindow(unsigned long arg0, int x, int y, int w, int h = -1)
 
-=item   unsigned long handle()
+=item  static QPixmap grabWindow(unsigned long arg0, int x, int y, int w = -1, int h = -1)
 
-=item   bool hasAlpha()
+=item  static QPixmap grabWindow(unsigned long arg0, int x, int y = 0, int w = -1, int h = -1)
 
-=item   bool hasAlphaChannel()
+=item  static QPixmap grabWindow(unsigned long arg0, int x = 0, int y = 0, int w = -1, int h = -1)
 
-=item   int height()
+=item  unsigned long handle()
 
-=item   bool isDetached()
+=item  bool hasAlpha()
 
-=item   bool isNull()
+=item  bool hasAlphaChannel()
 
-=item   bool isQBitmap()
+=item  int height()
 
-=item   QBitmap mask()
+=item  bool isDetached()
 
-=item   QVariant operator QVariant()
+=item  bool isNull()
 
-=item   bool operator!()
+=item  bool isQBitmap()
 
-=item   QPixmap & operator=(const QPixmap & arg0)
+=item  bool load(const QString & fileName, const char * format, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   QPaintEngine * paintEngine()
+=item  bool load(const QString & fileName, const char * format, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   QPixmapData * pixmapData()
+=item  bool load(const QString & fileName, const char * format = 0, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   QRect rect()
+=item  bool loadFromData(const QByteArray & data, const char * format, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   bool save(const QString & fileName, const char * format, int quality = -1)
+=item  bool loadFromData(const QByteArray & data, const char * format, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   bool save(const QString & fileName, const char * format, int quality)
+=item  bool loadFromData(const QByteArray & data, const char * format = 0, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   bool save(const QString & fileName, const char * format = 0, int quality = -1)
+=item  bool loadFromData(const uchar * buf, uint len, const char * format, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   bool save(const QString & fileName, const char * format, int quality = -1)
+=item  bool loadFromData(const uchar * buf, uint len, const char * format, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   bool save(QIODevice * device, const char * format, int quality = -1)
+=item  bool loadFromData(const uchar * buf, uint len, const char * format = 0, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   bool save(QIODevice * device, const char * format, int quality)
+=item  QBitmap mask()
 
-=item   bool save(QIODevice * device, const char * format = 0, int quality = -1)
+=item  QVariant operator QVariant()
 
-=item   bool save(QIODevice * device, const char * format, int quality = -1)
+=item  bool operator!()
 
-=item   QPixmap scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QPixmap & operator=(const QPixmap & arg0)
 
-=item   QPixmap scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode)
+=item  QPaintEngine * paintEngine()
 
-=item   QPixmap scaled(const QSize & s, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QPixmapData * pixmapData()
 
-=item   QPixmap scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QRect rect()
 
-=item   QPixmap scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  bool save(const QString & fileName, const char * format, int quality)
 
-=item   QPixmap scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode)
+=item  bool save(const QString & fileName, const char * format, int quality = -1)
 
-=item   QPixmap scaled(int w, int h, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  bool save(const QString & fileName, const char * format = 0, int quality = -1)
 
-=item   QPixmap scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  bool save(QIODevice * device, const char * format, int quality)
 
-=item   QPixmap scaledToHeight(int h, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  bool save(QIODevice * device, const char * format, int quality = -1)
 
-=item   QPixmap scaledToHeight(int h, Qt::TransformationMode mode)
+=item  bool save(QIODevice * device, const char * format = 0, int quality = -1)
 
-=item   QPixmap scaledToWidth(int w, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QPixmap scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode)
 
-=item   QPixmap scaledToWidth(int w, Qt::TransformationMode mode)
+=item  QPixmap scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   void scroll(int dx, int dy, const QRect & rect, QRegion * exposed = 0)
+=item  QPixmap scaled(const QSize & s, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   void scroll(int dx, int dy, const QRect & rect, QRegion * exposed)
+=item  QPixmap scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode)
 
-=item   void scroll(int dx, int dy, int x, int y, int width, int height, QRegion * exposed = 0)
+=item  QPixmap scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   void scroll(int dx, int dy, int x, int y, int width, int height, QRegion * exposed)
+=item  QPixmap scaled(int w, int h, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   int serialNumber()
+=item  QPixmap scaledToHeight(int h, Qt::TransformationMode mode)
 
-=item   void setAlphaChannel(const QPixmap & arg0)
+=item  QPixmap scaledToHeight(int h, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   void setMask(const QBitmap & arg0)
+=item  QPixmap scaledToWidth(int w, Qt::TransformationMode mode)
 
-=item   QSize size()
+=item  QPixmap scaledToWidth(int w, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   QImage toImage()
+=item  void scroll(int dx, int dy, const QRect & rect, QRegion * exposed)
 
-=item   QPixmap transformed(const QMatrix & arg0, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  void scroll(int dx, int dy, const QRect & rect, QRegion * exposed = 0)
 
-=item   QPixmap transformed(const QMatrix & arg0, Qt::TransformationMode mode)
+=item  void scroll(int dx, int dy, int x, int y, int width, int height, QRegion * exposed)
 
-=item   QPixmap transformed(const QTransform & arg0, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  void scroll(int dx, int dy, int x, int y, int width, int height, QRegion * exposed = 0)
 
-=item   QPixmap transformed(const QTransform & arg0, Qt::TransformationMode mode)
+=item  int serialNumber()
 
-=item   static QMatrix trueMatrix(const QMatrix & m, int w, int h)
+=item  void setAlphaChannel(const QPixmap & arg0)
 
-=item   static QTransform trueMatrix(const QTransform & m, int w, int h)
+=item  void setMask(const QBitmap & arg0)
 
-=item   int width()
+=item  QSize size()
 
-=item   const QX11Info & x11Info()
+=item  QImage toImage()
 
-=item   unsigned long x11PictureHandle()
+=item  QPixmap transformed(const QMatrix & arg0, Qt::TransformationMode mode)
 
-=item   static int x11SetDefaultScreen(int screen)
+=item  QPixmap transformed(const QMatrix & arg0, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   void x11SetScreen(int screen)
+=item  QPixmap transformed(const QTransform & arg0, Qt::TransformationMode mode)
+
+=item  QPixmap transformed(const QTransform & arg0, Qt::TransformationMode mode = Qt::FastTransformation)
+
+=item  static QMatrix trueMatrix(const QMatrix & m, int w, int h)
+
+=item  static QTransform trueMatrix(const QTransform & m, int w, int h)
+
+=item  int width()
+
+=item  const QX11Info & x11Info()
+
+=item  unsigned long x11PictureHandle()
+
+=item  static int x11SetDefaultScreen(int screen)
+
+=item  void x11SetScreen(int screen)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item ImplicitlyShared
+
+=item ExplicitlyShared
 
 
 =back

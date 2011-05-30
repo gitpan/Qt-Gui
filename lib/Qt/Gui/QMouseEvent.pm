@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QInputEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QInputEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,25 +24,40 @@ Qt::Gui::QMouseEvent
 
 =over
 
-=item    ~QMouseEvent()
+=item   QMouseEvent(QMouseEvent::Type type, const QPoint & pos, Qt::MouseButton button, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers)
 
-=item   Qt::MouseButton button()
+=item   QMouseEvent(QMouseEvent::Type type, const QPoint & pos, const QPoint & globalPos, Qt::MouseButton button, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers)
 
-=item   const QPoint & globalPos()
+=item   ~QMouseEvent()
 
-=item   int globalX()
+=item  Qt::MouseButton button()
 
-=item   int globalY()
+=item  QFlags<Qt::MouseButton> buttons()
 
-=item   bool hasExtendedInfo()
+=item  static QMouseEvent * createExtendedMouseEvent(QMouseEvent::Type type, const QPointF & pos, const QPoint & globalPos, Qt::MouseButton button, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers)
 
-=item   const QPoint & pos()
+=item  const QPoint & globalPos()
 
-=item   QPointF posF()
+=item  int globalX()
 
-=item   int x()
+=item  int globalY()
 
-=item   int y()
+=item  bool hasExtendedInfo()
+
+=item  const QPoint & pos()
+
+=item  QPointF posF()
+
+=item  int x()
+
+=item  int y()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

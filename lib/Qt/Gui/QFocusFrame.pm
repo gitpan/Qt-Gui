@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,15 +24,22 @@ Qt::Gui::QFocusFrame
 
 =over
 
-=item    QFocusFrame(QWidget * parent = 0)
+=item   QFocusFrame(QWidget * parent)
 
-=item    QFocusFrame(QWidget * parent)
+=item   QFocusFrame(QWidget * parent = 0)
 
-=item    ~QFocusFrame()
+=item   ~QFocusFrame()
 
-=item   void setWidget(QWidget * widget)
+=item  void setWidget(QWidget * widget)
 
-=item   QWidget * widget()
+=item  QWidget * widget()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

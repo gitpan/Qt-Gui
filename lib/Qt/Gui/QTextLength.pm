@@ -7,16 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub VariableLength() { 0 }
-sub FixedLength() { 1 }
-sub PercentageLength() { 2 }
 
 
 1;
@@ -29,21 +23,34 @@ Qt::Gui::QTextLength
 
 =over
 
-=item    QTextLength()
+=item   QTextLength()
 
-=item    QTextLength(QTextLength::Type type, qreal value)
+=item   QTextLength(QTextLength::Type type, qreal value)
 
-=item   QVariant operator QVariant()
+=item  QVariant operator QVariant()
 
-=item   bool operator!=(const QTextLength & other)
+=item  bool operator!=(const QTextLength & other)
 
-=item   bool operator==(const QTextLength & other)
+=item  bool operator==(const QTextLength & other)
 
-=item   qreal rawValue()
+=item  qreal rawValue()
 
-=item   QTextLength::Type type()
+=item  QTextLength::Type type()
 
-=item   qreal value(qreal maximumLength)
+=item  qreal value(qreal maximumLength)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item VariableLength
+
+=item FixedLength
+
+=item PercentageLength
 
 
 =back

@@ -7,21 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractScrollArea/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractScrollArea/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoWrap() { 0 }
-sub WidgetWidth() { 1 }
-sub FixedPixelWidth() { 2 }
-sub FixedColumnWidth() { 3 }
-sub AutoNone() { 0 }
-sub AutoBulletList() { 1 }
-sub AutoAll() { 2 }
 
 
 1;
@@ -34,169 +24,206 @@ Qt::Gui::QTextEdit
 
 =over
 
-=item    QTextEdit(QWidget * parent = 0)
+=item   QTextEdit(QWidget * parent)
 
-=item    QTextEdit(QWidget * parent)
+=item   QTextEdit(QWidget * parent = 0)
 
-=item    QTextEdit(const QString & text, QWidget * parent = 0)
+=item   QTextEdit(const QString & text, QWidget * parent)
 
-=item    QTextEdit(const QString & text, QWidget * parent)
+=item   QTextEdit(const QString & text, QWidget * parent = 0)
 
-=item    ~QTextEdit()
+=item   ~QTextEdit()
 
-=item   bool acceptRichText()
+=item  bool acceptRichText()
 
-=item   QString anchorAt(const QPoint & pos)
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   void append(const QString & text)
+=item  QString anchorAt(const QPoint & pos)
 
-=item   bool canPaste()
+=item  void append(const QString & text)
 
-=item   void clear()
+=item  QFlags<QTextEdit::AutoFormattingFlag> autoFormatting()
 
-=item   void copy()
+=item  bool canPaste()
 
-=item   QMenu * createStandardContextMenu()
+=item  void clear()
 
-=item   QMenu * createStandardContextMenu(const QPoint & position)
+=item  void copy()
 
-=item   QTextCharFormat currentCharFormat()
+=item  QMenu * createStandardContextMenu()
 
-=item   QFont currentFont()
+=item  QMenu * createStandardContextMenu(const QPoint & position)
 
-=item   QTextCursor cursorForPosition(const QPoint & pos)
+=item  QTextCharFormat currentCharFormat()
 
-=item   QRect cursorRect()
+=item  QFont currentFont()
 
-=item   QRect cursorRect(const QTextCursor & cursor)
+=item  QTextCursor cursorForPosition(const QPoint & pos)
 
-=item   int cursorWidth()
+=item  QRect cursorRect()
 
-=item   void cut()
+=item  QRect cursorRect(const QTextCursor & cursor)
 
-=item   QTextDocument * document()
+=item  int cursorWidth()
 
-=item   QString documentTitle()
+=item  void cut()
 
-=item   void ensureCursorVisible()
+=item  QTextDocument * document()
 
-=item   QString fontFamily()
+=item  QString documentTitle()
 
-=item   bool fontItalic()
+=item  void ensureCursorVisible()
 
-=item   qreal fontPointSize()
+=item  bool find(const QString & exp, QFlags<QTextDocument::FindFlag> options)
 
-=item   bool fontUnderline()
+=item  bool find(const QString & exp, QFlags<QTextDocument::FindFlag> options = 0)
 
-=item   int fontWeight()
+=item  QString fontFamily()
 
-=item   void insertHtml(const QString & text)
+=item  bool fontItalic()
 
-=item   void insertPlainText(const QString & text)
+=item  qreal fontPointSize()
 
-=item   bool isReadOnly()
+=item  bool fontUnderline()
 
-=item   bool isUndoRedoEnabled()
+=item  int fontWeight()
 
-=item   int lineWrapColumnOrWidth()
+=item  void insertHtml(const QString & text)
 
-=item   QTextEdit::LineWrapMode lineWrapMode()
+=item  void insertPlainText(const QString & text)
 
-=item   QVariant loadResource(int type, const QUrl & name)
+=item  bool isReadOnly()
 
-=item   void mergeCurrentCharFormat(const QTextCharFormat & modifier)
+=item  bool isUndoRedoEnabled()
 
-=item   void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode = QTextCursor::MoveAnchor)
+=item  int lineWrapColumnOrWidth()
 
-=item   void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode)
+=item  QTextEdit::LineWrapMode lineWrapMode()
 
-=item   bool overwriteMode()
+=item  QVariant loadResource(int type, const QUrl & name)
 
-=item   void paste()
+=item  void mergeCurrentCharFormat(const QTextCharFormat & modifier)
 
-=item   void print(QPrinter * printer)
+=item  void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode)
 
-=item   void redo()
+=item  void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode = QTextCursor::MoveAnchor)
 
-=item   void scrollToAnchor(const QString & name)
+=item  bool overwriteMode()
 
-=item   void selectAll()
+=item  void paste()
 
-=item   void setAcceptRichText(bool accept)
+=item  void print(QPrinter * printer)
 
-=item   void setCurrentCharFormat(const QTextCharFormat & format)
+=item  void redo()
 
-=item   void setCurrentFont(const QFont & f)
+=item  void scrollToAnchor(const QString & name)
 
-=item   void setCursorWidth(int width)
+=item  void selectAll()
 
-=item   void setDocument(QTextDocument * document)
+=item  void setAcceptRichText(bool accept)
 
-=item   void setDocumentTitle(const QString & title)
+=item  void setAlignment(QFlags<Qt::AlignmentFlag> a)
 
-=item   void setFontFamily(const QString & fontFamily)
+=item  void setAutoFormatting(QFlags<QTextEdit::AutoFormattingFlag> features)
 
-=item   void setFontItalic(bool b)
+=item  void setCurrentCharFormat(const QTextCharFormat & format)
 
-=item   void setFontPointSize(qreal s)
+=item  void setCurrentFont(const QFont & f)
 
-=item   void setFontUnderline(bool b)
+=item  void setCursorWidth(int width)
 
-=item   void setFontWeight(int w)
+=item  void setDocument(QTextDocument * document)
 
-=item   void setHtml(const QString & text)
+=item  void setDocumentTitle(const QString & title)
 
-=item   void setLineWrapColumnOrWidth(int w)
+=item  void setFontFamily(const QString & fontFamily)
 
-=item   void setLineWrapMode(QTextEdit::LineWrapMode mode)
+=item  void setFontItalic(bool b)
 
-=item   void setOverwriteMode(bool overwrite)
+=item  void setFontPointSize(qreal s)
 
-=item   void setPlainText(const QString & text)
+=item  void setFontUnderline(bool b)
 
-=item   void setReadOnly(bool ro)
+=item  void setFontWeight(int w)
 
-=item   void setTabChangesFocus(bool b)
+=item  void setHtml(const QString & text)
 
-=item   void setTabStopWidth(int width)
+=item  void setLineWrapColumnOrWidth(int w)
 
-=item   void setText(const QString & text)
+=item  void setLineWrapMode(QTextEdit::LineWrapMode mode)
 
-=item   void setTextBackgroundColor(const QColor & c)
+=item  void setOverwriteMode(bool overwrite)
 
-=item   void setTextColor(const QColor & c)
+=item  void setPlainText(const QString & text)
 
-=item   void setTextCursor(const QTextCursor & cursor)
+=item  void setReadOnly(bool ro)
 
-=item   void setUndoRedoEnabled(bool enable)
+=item  void setTabChangesFocus(bool b)
 
-=item   void setWordWrapMode(QTextOption::WrapMode policy)
+=item  void setTabStopWidth(int width)
 
-=item   bool tabChangesFocus()
+=item  void setText(const QString & text)
 
-=item   int tabStopWidth()
+=item  void setTextBackgroundColor(const QColor & c)
 
-=item   QColor textBackgroundColor()
+=item  void setTextColor(const QColor & c)
 
-=item   QColor textColor()
+=item  void setTextCursor(const QTextCursor & cursor)
 
-=item   QTextCursor textCursor()
+=item  void setTextInteractionFlags(QFlags<Qt::TextInteractionFlag> flags)
 
-=item   QString toHtml()
+=item  void setUndoRedoEnabled(bool enable)
 
-=item   QString toPlainText()
+=item  void setWordWrapMode(QTextOption::WrapMode policy)
 
-=item   void undo()
+=item  bool tabChangesFocus()
 
-=item   QTextOption::WrapMode wordWrapMode()
+=item  int tabStopWidth()
 
-=item   void zoomIn(int range = 1)
+=item  QColor textBackgroundColor()
 
-=item   void zoomIn(int range)
+=item  QColor textColor()
 
-=item   void zoomOut(int range = 1)
+=item  QTextCursor textCursor()
 
-=item   void zoomOut(int range)
+=item  QFlags<Qt::TextInteractionFlag> textInteractionFlags()
+
+=item  QString toHtml()
+
+=item  QString toPlainText()
+
+=item  void undo()
+
+=item  QTextOption::WrapMode wordWrapMode()
+
+=item  void zoomIn(int range)
+
+=item  void zoomIn(int range = 1)
+
+=item  void zoomOut(int range)
+
+=item  void zoomOut(int range = 1)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoWrap
+
+=item WidgetWidth
+
+=item FixedPixelWidth
+
+=item FixedColumnWidth
+
+=item AutoNone
+
+=item AutoBulletList
+
+=item AutoAll
 
 
 =back

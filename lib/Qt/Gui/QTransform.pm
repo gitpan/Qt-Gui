@@ -7,19 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub TxNone() { 0 }
-sub TxTranslate() { 1 }
-sub TxScale() { 2 }
-sub TxRotate() { 3 }
-sub TxShear() { 4 }
-sub TxProject() { 5 }
 
 
 1;
@@ -32,141 +23,160 @@ Qt::Gui::QTransform
 
 =over
 
-=item    QTransform()
+=item   QTransform()
 
-=item    QTransform(Qt::Initialization arg0)
+=item   QTransform(Qt::Initialization arg0)
 
-=item    QTransform(const QMatrix & mtx)
+=item   QTransform(const QMatrix & mtx)
 
-=item    QTransform(qreal h11, qreal h12, qreal h21, qreal h22, qreal dx, qreal dy)
+=item   QTransform(qreal h11, qreal h12, qreal h21, qreal h22, qreal dx, qreal dy)
 
-=item    QTransform(qreal h11, qreal h12, qreal h13, qreal h21, qreal h22, qreal h23, qreal h31, qreal h32, qreal h33 = 1.0)
+=item   QTransform(qreal h11, qreal h12, qreal h13, qreal h21, qreal h22, qreal h23, qreal h31, qreal h32, qreal h33)
 
-=item    QTransform(qreal h11, qreal h12, qreal h13, qreal h21, qreal h22, qreal h23, qreal h31, qreal h32, qreal h33)
+=item   QTransform(qreal h11, qreal h12, qreal h13, qreal h21, qreal h22, qreal h23, qreal h31, qreal h32, qreal h33 = 1.0)
 
-=item   QTransform adjoint()
+=item  QTransform adjoint()
 
-=item   qreal det()
+=item  qreal det()
 
-=item   qreal determinant()
+=item  qreal determinant()
 
-=item   qreal dx()
+=item  qreal dx()
 
-=item   qreal dy()
+=item  qreal dy()
 
-=item   static QTransform fromScale(qreal dx, qreal dy)
+=item  static QTransform fromScale(qreal dx, qreal dy)
 
-=item   static QTransform fromTranslate(qreal dx, qreal dy)
+=item  static QTransform fromTranslate(qreal dx, qreal dy)
 
-=item   QTransform inverted(bool * invertible = 0)
+=item  QTransform inverted(bool * invertible)
 
-=item   QTransform inverted(bool * invertible)
+=item  QTransform inverted(bool * invertible = 0)
 
-=item   bool isAffine()
+=item  bool isAffine()
 
-=item   bool isIdentity()
+=item  bool isIdentity()
 
-=item   bool isInvertible()
+=item  bool isInvertible()
 
-=item   bool isRotating()
+=item  bool isRotating()
 
-=item   bool isScaling()
+=item  bool isScaling()
 
-=item   bool isTranslating()
+=item  bool isTranslating()
 
-=item   qreal m11()
+=item  qreal m11()
 
-=item   qreal m12()
+=item  qreal m12()
 
-=item   qreal m13()
+=item  qreal m13()
 
-=item   qreal m21()
+=item  qreal m21()
 
-=item   qreal m22()
+=item  qreal m22()
 
-=item   qreal m23()
+=item  qreal m23()
 
-=item   qreal m31()
+=item  qreal m31()
 
-=item   qreal m32()
+=item  qreal m32()
 
-=item   qreal m33()
+=item  qreal m33()
 
-=item   QPoint map(const QPoint & p)
+=item  QPoint map(const QPoint & p)
 
-=item   QPointF map(const QPointF & p)
+=item  QPointF map(const QPointF & p)
 
-=item   QLine map(const QLine & l)
+=item  QLine map(const QLine & l)
 
-=item   QLineF map(const QLineF & l)
+=item  QLineF map(const QLineF & l)
 
-=item   QPolygonF map(const QPolygonF & a)
+=item  QPolygonF map(const QPolygonF & a)
 
-=item   QPolygon map(const QPolygon & a)
+=item  QPolygon map(const QPolygon & a)
 
-=item   QRegion map(const QRegion & r)
+=item  QRegion map(const QRegion & r)
 
-=item   QPainterPath map(const QPainterPath & p)
+=item  QPainterPath map(const QPainterPath & p)
 
-=item   void map(int x, int y, int * tx, int * ty)
+=item  void map(int x, int y, int * tx, int * ty)
 
-=item   void map(qreal x, qreal y, qreal * tx, qreal * ty)
+=item  void map(qreal x, qreal y, qreal * tx, qreal * ty)
 
-=item   QRect mapRect(const QRect & arg0)
+=item  QRect mapRect(const QRect & arg0)
 
-=item   QRectF mapRect(const QRectF & arg0)
+=item  QRectF mapRect(const QRectF & arg0)
 
-=item   QPolygon mapToPolygon(const QRect & r)
+=item  QPolygon mapToPolygon(const QRect & r)
 
-=item   QVariant operator QVariant()
+=item  QVariant operator QVariant()
 
-=item   bool operator!=(const QTransform & arg0)
+=item  bool operator!=(const QTransform & arg0)
 
-=item   QTransform operator*(const QTransform & o)
+=item  QTransform operator*(const QTransform & o)
 
-=item   QTransform & operator*=(const QTransform & arg0)
+=item  QTransform & operator*=(const QTransform & arg0)
 
-=item   QTransform & operator*=(qreal div)
+=item  QTransform & operator*=(qreal div)
 
-=item   QTransform & operator+=(qreal div)
+=item  QTransform & operator+=(qreal div)
 
-=item   QTransform & operator-=(qreal div)
+=item  QTransform & operator-=(qreal div)
 
-=item   QTransform & operator/=(qreal div)
+=item  QTransform & operator/=(qreal div)
 
-=item   QTransform & operator=(const QTransform & arg0)
+=item  QTransform & operator=(const QTransform & arg0)
 
-=item   bool operator==(const QTransform & arg0)
+=item  bool operator==(const QTransform & arg0)
 
-=item   static bool quadToQuad(const QPolygonF & one, const QPolygonF & two, QTransform & result)
+=item  static bool quadToQuad(const QPolygonF & one, const QPolygonF & two, QTransform & result)
 
-=item   static bool quadToSquare(const QPolygonF & quad, QTransform & result)
+=item  static bool quadToSquare(const QPolygonF & quad, QTransform & result)
 
-=item   void reset()
+=item  void reset()
 
-=item   QTransform & rotate(qreal a, Qt::Axis axis = Qt::ZAxis)
+=item  QTransform & rotate(qreal a, Qt::Axis axis)
 
-=item   QTransform & rotate(qreal a, Qt::Axis axis)
+=item  QTransform & rotate(qreal a, Qt::Axis axis = Qt::ZAxis)
 
-=item   QTransform & rotateRadians(qreal a, Qt::Axis axis = Qt::ZAxis)
+=item  QTransform & rotateRadians(qreal a, Qt::Axis axis)
 
-=item   QTransform & rotateRadians(qreal a, Qt::Axis axis)
+=item  QTransform & rotateRadians(qreal a, Qt::Axis axis = Qt::ZAxis)
 
-=item   QTransform & scale(qreal sx, qreal sy)
+=item  QTransform & scale(qreal sx, qreal sy)
 
-=item   void setMatrix(qreal m11, qreal m12, qreal m13, qreal m21, qreal m22, qreal m23, qreal m31, qreal m32, qreal m33)
+=item  void setMatrix(qreal m11, qreal m12, qreal m13, qreal m21, qreal m22, qreal m23, qreal m31, qreal m32, qreal m33)
 
-=item   QTransform & shear(qreal sh, qreal sv)
+=item  QTransform & shear(qreal sh, qreal sv)
 
-=item   static bool squareToQuad(const QPolygonF & square, QTransform & result)
+=item  static bool squareToQuad(const QPolygonF & square, QTransform & result)
 
-=item   const QMatrix & toAffine()
+=item  const QMatrix & toAffine()
 
-=item   QTransform & translate(qreal dx, qreal dy)
+=item  QTransform & translate(qreal dx, qreal dy)
 
-=item   QTransform transposed()
+=item  QTransform transposed()
 
-=item   QTransform::TransformationType type()
+=item  QTransform::TransformationType type()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item TxNone
+
+=item TxTranslate
+
+=item TxScale
+
+=item TxRotate
+
+=item TxShear
+
+=item TxProject
 
 
 =back

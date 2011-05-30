@@ -7,44 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub SO_Default() { 0 }
-sub SO_FocusRect() { 1 }
-sub SO_Button() { 2 }
-sub SO_Tab() { 3 }
-sub SO_MenuItem() { 4 }
-sub SO_Frame() { 5 }
-sub SO_ProgressBar() { 6 }
-sub SO_ToolBox() { 7 }
-sub SO_Header() { 8 }
-sub SO_Q3DockWindow() { 9 }
-sub SO_DockWidget() { 10 }
-sub SO_Q3ListViewItem() { 11 }
-sub SO_ViewItem() { 12 }
-sub SO_TabWidgetFrame() { 13 }
-sub SO_TabBarBase() { 14 }
-sub SO_RubberBand() { 15 }
-sub SO_ToolBar() { 16 }
-sub SO_GraphicsItem() { 17 }
-sub SO_Complex() { 18 }
-sub SO_Slider() { 19 }
-sub SO_SpinBox() { 20 }
-sub SO_ToolButton() { 21 }
-sub SO_ComboBox() { 22 }
-sub SO_Q3ListView() { 23 }
-sub SO_TitleBar() { 24 }
-sub SO_GroupBox() { 25 }
-sub SO_SizeGrip() { 26 }
-sub SO_CustomBase() { 27 }
-sub SO_ComplexCustomBase() { 28 }
-sub Type() { 0 }
-sub Version() { 0 }
 
 
 1;
@@ -57,23 +23,90 @@ Qt::Gui::QStyleOption
 
 =over
 
-=item    QStyleOption(const QStyleOption & other)
+=item   QStyleOption(const QStyleOption & other)
 
-=item    QStyleOption(int version, int type = QStyleOption::SO_Default)
+=item   QStyleOption(int version, int type)
 
-=item    QStyleOption(int version, int type)
+=item   QStyleOption(int version, int type = QStyleOption::SO_Default)
 
-=item    QStyleOption(int version = QStyleOption::Version, int type = QStyleOption::SO_Default)
+=item   QStyleOption(int version = QStyleOption::Version, int type = QStyleOption::SO_Default)
 
-=item    QStyleOption(int version, int type = QStyleOption::SO_Default)
+=item   ~QStyleOption()
 
-=item    ~QStyleOption()
+=item  void init(const QWidget * w)
 
-=item   void init(const QWidget * w)
+=item  void initFrom(const QWidget * w)
 
-=item   void initFrom(const QWidget * w)
+=item  QStyleOption & operator=(const QStyleOption & other)
 
-=item   QStyleOption & operator=(const QStyleOption & other)
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item SO_Default
+
+=item SO_FocusRect
+
+=item SO_Button
+
+=item SO_Tab
+
+=item SO_MenuItem
+
+=item SO_Frame
+
+=item SO_ProgressBar
+
+=item SO_ToolBox
+
+=item SO_Header
+
+=item SO_Q3DockWindow
+
+=item SO_DockWidget
+
+=item SO_Q3ListViewItem
+
+=item SO_ViewItem
+
+=item SO_TabWidgetFrame
+
+=item SO_TabBarBase
+
+=item SO_RubberBand
+
+=item SO_ToolBar
+
+=item SO_GraphicsItem
+
+=item SO_Complex
+
+=item SO_Slider
+
+=item SO_SpinBox
+
+=item SO_ToolButton
+
+=item SO_ComboBox
+
+=item SO_Q3ListView
+
+=item SO_TitleBar
+
+=item SO_GroupBox
+
+=item SO_SizeGrip
+
+=item SO_CustomBase
+
+=item SO_ComplexCustomBase
+
+=item Type
+
+=item Version
 
 
 =back

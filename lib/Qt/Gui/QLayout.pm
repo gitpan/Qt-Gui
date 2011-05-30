@@ -7,20 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QLayoutItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject Qt::Gui::QLayoutItem/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub SetDefaultConstraint() { 0 }
-sub SetNoConstraint() { 1 }
-sub SetMinimumSize() { 2 }
-sub SetFixedSize() { 3 }
-sub SetMaximumSize() { 4 }
-sub SetMinAndMaxSize() { 5 }
 
 
 1;
@@ -33,87 +24,112 @@ Qt::Gui::QLayout
 
 =over
 
-=item    QLayout()
+=item   QLayout()
 
-=item    QLayout(QWidget * parent)
+=item   QLayout(QWidget * parent)
 
-=item    ~QLayout()
+=item   ~QLayout()
 
-=item   bool activate()
+=item  bool activate()
 
-=item   void addItem(QLayoutItem * arg0)
+=item  void addItem(QLayoutItem * arg0)
 
-=item   void addWidget(QWidget * w)
+=item  void addWidget(QWidget * w)
 
-=item   static QSize closestAcceptableSize(const QWidget * w, const QSize & s)
+=item  static QSize closestAcceptableSize(const QWidget * w, const QSize & s)
 
-=item   QMargins contentsMargins()
+=item  QMargins contentsMargins()
 
-=item   QRect contentsRect()
+=item  QRect contentsRect()
 
-=item   int count()
+=item  int count()
 
-=item   QRect geometry()
+=item  QFlags<Qt::Orientation> expandingDirections()
 
-=item   void getContentsMargins(int * left, int * top, int * right, int * bottom)
+=item  QRect geometry()
 
-=item   int indexOf(QWidget * arg0)
+=item  void getContentsMargins(int * left, int * top, int * right, int * bottom)
 
-=item   void invalidate()
+=item  int indexOf(QWidget * arg0)
 
-=item   bool isEmpty()
+=item  void invalidate()
 
-=item   bool isEnabled()
+=item  bool isEmpty()
 
-=item   QLayoutItem * itemAt(int index)
+=item  bool isEnabled()
 
-=item   QLayout * layout()
+=item  QLayoutItem * itemAt(int index)
 
-=item   int margin()
+=item  QLayout * layout()
 
-=item   QSize maximumSize()
+=item  int margin()
 
-=item   QWidget * menuBar()
+=item  QSize maximumSize()
 
-=item   QSize minimumSize()
+=item  QWidget * menuBar()
 
-=item   QWidget * parentWidget()
+=item  QSize minimumSize()
 
-=item   void removeItem(QLayoutItem * arg0)
+=item  QWidget * parentWidget()
 
-=item   void removeWidget(QWidget * w)
+=item  void removeItem(QLayoutItem * arg0)
 
-=item   void setContentsMargins(const QMargins & margins)
+=item  void removeWidget(QWidget * w)
 
-=item   void setContentsMargins(int left, int top, int right, int bottom)
+=item  bool setAlignment(QWidget * w, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setEnabled(bool arg0)
+=item  bool setAlignment(QLayout * l, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setGeometry(const QRect & arg0)
+=item  void setContentsMargins(const QMargins & margins)
 
-=item   void setMargin(int arg0)
+=item  void setContentsMargins(int left, int top, int right, int bottom)
 
-=item   void setMenuBar(QWidget * w)
+=item  void setEnabled(bool arg0)
 
-=item   void setSizeConstraint(QLayout::SizeConstraint arg0)
+=item  void setGeometry(const QRect & arg0)
 
-=item   void setSpacing(int arg0)
+=item  void setMargin(int arg0)
 
-=item   QLayout::SizeConstraint sizeConstraint()
+=item  void setMenuBar(QWidget * w)
 
-=item   int spacing()
+=item  void setSizeConstraint(QLayout::SizeConstraint arg0)
 
-=item   QLayoutItem * takeAt(int index)
+=item  void setSpacing(int arg0)
 
-=item   int totalHeightForWidth(int w)
+=item  QLayout::SizeConstraint sizeConstraint()
 
-=item   QSize totalMaximumSize()
+=item  int spacing()
 
-=item   QSize totalMinimumSize()
+=item  QLayoutItem * takeAt(int index)
 
-=item   QSize totalSizeHint()
+=item  int totalHeightForWidth(int w)
 
-=item   void update()
+=item  QSize totalMaximumSize()
+
+=item  QSize totalMinimumSize()
+
+=item  QSize totalSizeHint()
+
+=item  void update()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item SetDefaultConstraint
+
+=item SetNoConstraint
+
+=item SetMinimumSize
+
+=item SetFixedSize
+
+=item SetMaximumSize
+
+=item SetMinAndMaxSize
 
 
 =back

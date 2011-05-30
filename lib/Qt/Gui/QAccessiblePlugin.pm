@@ -1,34 +1,45 @@
-package Qt::Gui::QPictureFormatInterface;
+package Qt::Gui::QAccessiblePlugin;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QPictureFormatInterface
-# file     : QtGui/qpictureformatplugin.h
+# classname: QAccessiblePlugin
+# file     : QtGui/qaccessibleplugin.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject Qt::Gui::QAccessibleFactoryInterface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
 
 =head1 NAME
 
-Qt::Gui::QPictureFormatInterface
+Qt::Gui::QAccessiblePlugin
 
 =head1 PUBLIC METHODS
 
 =over
 
-=item   bool installIOHandler(const QString & arg0)
+=item   QAccessiblePlugin(QObject * parent)
 
-=item   bool loadPicture(const QString & format, const QString & filename, QPicture * arg2)
+=item   QAccessiblePlugin(QObject * parent = 0)
 
-=item   bool savePicture(const QString & format, const QString & filename, const QPicture & arg2)
+=item   ~QAccessiblePlugin()
+
+=item  QAccessibleInterface * create(const QString & key, QObject * object)
+
+=item  QStringList keys()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,43 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Active() { 0 }
-sub Disabled() { 1 }
-sub Inactive() { 2 }
-sub NColorGroups() { 3 }
-sub Current() { 4 }
-sub All() { 5 }
-sub Normal() { 6 }
-sub WindowText() { 0 }
-sub Button() { 1 }
-sub Light() { 2 }
-sub Midlight() { 3 }
-sub Dark() { 4 }
-sub Mid() { 5 }
-sub Text() { 6 }
-sub BrightText() { 7 }
-sub ButtonText() { 8 }
-sub Base() { 9 }
-sub Window() { 10 }
-sub Shadow() { 11 }
-sub Highlight() { 12 }
-sub HighlightedText() { 13 }
-sub Link() { 14 }
-sub LinkVisited() { 15 }
-sub AlternateBase() { 16 }
-sub NoRole() { 17 }
-sub ToolTipBase() { 18 }
-sub ToolTipText() { 19 }
-sub NColorRoles() { 20 }
-sub Foreground() { 21 }
-sub Background() { 22 }
 
 
 1;
@@ -56,109 +23,176 @@ Qt::Gui::QPalette
 
 =over
 
-=item    QPalette()
+=item   QPalette()
 
-=item    QPalette(const QColor & button)
+=item   QPalette(const QColor & button)
 
-=item    QPalette(Qt::GlobalColor button)
+=item   QPalette(Qt::GlobalColor button)
 
-=item    QPalette(const QPalette & palette)
+=item   QPalette(const QPalette & palette)
 
-=item    QPalette(const QColor & button, const QColor & window)
+=item   QPalette(const QColor & button, const QColor & window)
 
-=item    QPalette(const QColor & windowText, const QColor & window, const QColor & light, const QColor & dark, const QColor & mid, const QColor & text, const QColor & base)
+=item   QPalette(const QColor & windowText, const QColor & window, const QColor & light, const QColor & dark, const QColor & mid, const QColor & text, const QColor & base)
 
-=item    QPalette(const QBrush & windowText, const QBrush & button, const QBrush & light, const QBrush & dark, const QBrush & mid, const QBrush & text, const QBrush & bright_text, const QBrush & base, const QBrush & window)
+=item   QPalette(const QBrush & windowText, const QBrush & button, const QBrush & light, const QBrush & dark, const QBrush & mid, const QBrush & text, const QBrush & bright_text, const QBrush & base, const QBrush & window)
 
-=item    ~QPalette()
+=item   ~QPalette()
 
-=item   const QBrush & alternateBase()
+=item  const QBrush & alternateBase()
 
-=item   const QBrush & background()
+=item  const QBrush & background()
 
-=item   const QBrush & base()
+=item  const QBrush & base()
 
-=item   const QBrush & brightText()
+=item  const QBrush & brightText()
 
-=item   const QBrush & brush(QPalette::ColorRole cr)
+=item  const QBrush & brush(QPalette::ColorRole cr)
 
-=item   const QBrush & brush(QPalette::ColorGroup cg, QPalette::ColorRole cr)
+=item  const QBrush & brush(QPalette::ColorGroup cg, QPalette::ColorRole cr)
 
-=item   const QBrush & button()
+=item  const QBrush & button()
 
-=item   const QBrush & buttonText()
+=item  const QBrush & buttonText()
 
-=item   qint64 cacheKey()
+=item  qint64 cacheKey()
 
-=item   const QColor & color(QPalette::ColorRole cr)
+=item  const QColor & color(QPalette::ColorRole cr)
 
-=item   const QColor & color(QPalette::ColorGroup cg, QPalette::ColorRole cr)
+=item  const QColor & color(QPalette::ColorGroup cg, QPalette::ColorRole cr)
 
-=item   QPalette::ColorGroup currentColorGroup()
+=item  QPalette::ColorGroup currentColorGroup()
 
-=item   const QBrush & dark()
+=item  const QBrush & dark()
 
-=item   const QBrush & foreground()
+=item  const QBrush & foreground()
 
-=item   const QBrush & highlight()
+=item  const QBrush & highlight()
 
-=item   const QBrush & highlightedText()
+=item  const QBrush & highlightedText()
 
-=item   bool isBrushSet(QPalette::ColorGroup cg, QPalette::ColorRole cr)
+=item  bool isBrushSet(QPalette::ColorGroup cg, QPalette::ColorRole cr)
 
-=item   bool isCopyOf(const QPalette & p)
+=item  bool isCopyOf(const QPalette & p)
 
-=item   bool isEqual(QPalette::ColorGroup cr1, QPalette::ColorGroup cr2)
+=item  bool isEqual(QPalette::ColorGroup cr1, QPalette::ColorGroup cr2)
 
-=item   const QBrush & light()
+=item  const QBrush & light()
 
-=item   const QBrush & link()
+=item  const QBrush & link()
 
-=item   const QBrush & linkVisited()
+=item  const QBrush & linkVisited()
 
-=item   const QBrush & mid()
+=item  const QBrush & mid()
 
-=item   const QBrush & midlight()
+=item  const QBrush & midlight()
 
-=item   QVariant operator QVariant()
+=item  QVariant operator QVariant()
 
-=item   bool operator!=(const QPalette & p)
+=item  bool operator!=(const QPalette & p)
 
-=item   QPalette & operator=(const QPalette & palette)
+=item  QPalette & operator=(const QPalette & palette)
 
-=item   bool operator==(const QPalette & p)
+=item  bool operator==(const QPalette & p)
 
-=item   uint resolve()
+=item  uint resolve()
 
-=item   QPalette resolve(const QPalette & arg0)
+=item  QPalette resolve(const QPalette & arg0)
 
-=item   void resolve(uint mask)
+=item  void resolve(uint mask)
 
-=item   int serialNumber()
+=item  int serialNumber()
 
-=item   void setBrush(QPalette::ColorRole cr, const QBrush & brush)
+=item  void setBrush(QPalette::ColorRole cr, const QBrush & brush)
 
-=item   void setBrush(QPalette::ColorGroup cg, QPalette::ColorRole cr, const QBrush & brush)
+=item  void setBrush(QPalette::ColorGroup cg, QPalette::ColorRole cr, const QBrush & brush)
 
-=item   void setColor(QPalette::ColorRole cr, const QColor & color)
+=item  void setColor(QPalette::ColorRole cr, const QColor & color)
 
-=item   void setColor(QPalette::ColorGroup cg, QPalette::ColorRole cr, const QColor & color)
+=item  void setColor(QPalette::ColorGroup cg, QPalette::ColorRole cr, const QColor & color)
 
-=item   void setColorGroup(QPalette::ColorGroup cr, const QBrush & windowText, const QBrush & button, const QBrush & light, const QBrush & dark, const QBrush & mid, const QBrush & text, const QBrush & bright_text, const QBrush & base, const QBrush & window)
+=item  void setColorGroup(QPalette::ColorGroup cr, const QBrush & windowText, const QBrush & button, const QBrush & light, const QBrush & dark, const QBrush & mid, const QBrush & text, const QBrush & bright_text, const QBrush & base, const QBrush & window)
 
-=item   void setCurrentColorGroup(QPalette::ColorGroup cg)
+=item  void setCurrentColorGroup(QPalette::ColorGroup cg)
 
-=item   const QBrush & shadow()
+=item  const QBrush & shadow()
 
-=item   const QBrush & text()
+=item  const QBrush & text()
 
-=item   const QBrush & toolTipBase()
+=item  const QBrush & toolTipBase()
 
-=item   const QBrush & toolTipText()
+=item  const QBrush & toolTipText()
 
-=item   const QBrush & window()
+=item  const QBrush & window()
 
-=item   const QBrush & windowText()
+=item  const QBrush & windowText()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Active
+
+=item Disabled
+
+=item Inactive
+
+=item NColorGroups
+
+=item Current
+
+=item All
+
+=item Normal
+
+=item WindowText
+
+=item Button
+
+=item Light
+
+=item Midlight
+
+=item Dark
+
+=item Mid
+
+=item Text
+
+=item BrightText
+
+=item ButtonText
+
+=item Base
+
+=item Window
+
+=item Shadow
+
+=item Highlight
+
+=item HighlightedText
+
+=item Link
+
+=item LinkVisited
+
+=item AlternateBase
+
+=item NoRole
+
+=item ToolTipBase
+
+=item ToolTipText
+
+=item NColorRoles
+
+=item Foreground
+
+=item Background
 
 
 =back

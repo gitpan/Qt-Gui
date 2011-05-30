@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,31 +24,38 @@ Qt::Gui::QGestureEvent
 
 =over
 
-=item    ~QGestureEvent()
+=item   ~QGestureEvent()
 
-=item   void accept(QGesture * arg0)
+=item  void accept(QGesture * arg0)
 
-=item   void accept(Qt::GestureType arg0)
+=item  void accept(Qt::GestureType arg0)
 
-=item   QGesture * gesture(Qt::GestureType type)
+=item  QGesture * gesture(Qt::GestureType type)
 
-=item   void ignore(QGesture * arg0)
+=item  void ignore(QGesture * arg0)
 
-=item   void ignore(Qt::GestureType arg0)
+=item  void ignore(Qt::GestureType arg0)
 
-=item   bool isAccepted(QGesture * arg0)
+=item  bool isAccepted(QGesture * arg0)
 
-=item   bool isAccepted(Qt::GestureType arg0)
+=item  bool isAccepted(Qt::GestureType arg0)
 
-=item   QPointF mapToGraphicsScene(const QPointF & gesturePoint)
+=item  QPointF mapToGraphicsScene(const QPointF & gesturePoint)
 
-=item   void setAccepted(QGesture * arg0, bool arg1)
+=item  void setAccepted(QGesture * arg0, bool arg1)
 
-=item   void setAccepted(Qt::GestureType arg0, bool arg1)
+=item  void setAccepted(Qt::GestureType arg0, bool arg1)
 
-=item   void setWidget(QWidget * widget)
+=item  void setWidget(QWidget * widget)
 
-=item   QWidget * widget()
+=item  QWidget * widget()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

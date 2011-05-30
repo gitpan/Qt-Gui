@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QCommonStyle/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QCommonStyle/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,85 +24,86 @@ Qt::Gui::QProxyStyle
 
 =over
 
-=item    QProxyStyle(QStyle * baseStyle = 0)
+=item   QProxyStyle(QStyle * baseStyle)
 
-=item    QProxyStyle(QStyle * baseStyle)
+=item   QProxyStyle(QStyle * baseStyle = 0)
 
-=item    ~QProxyStyle()
+=item   ~QProxyStyle()
 
-=item   QStyle * baseStyle()
+=item  QStyle * baseStyle()
 
-=item   void drawComplexControl(QStyle::ComplexControl control, const QStyleOptionComplex * option, QPainter * painter, const QWidget * widget = 0)
+=item  void drawComplexControl(QStyle::ComplexControl control, const QStyleOptionComplex * option, QPainter * painter, const QWidget * widget)
 
-=item   void drawComplexControl(QStyle::ComplexControl control, const QStyleOptionComplex * option, QPainter * painter, const QWidget * widget)
+=item  void drawComplexControl(QStyle::ComplexControl control, const QStyleOptionComplex * option, QPainter * painter, const QWidget * widget = 0)
 
-=item   void drawControl(QStyle::ControlElement element, const QStyleOption * option, QPainter * painter, const QWidget * widget = 0)
+=item  void drawControl(QStyle::ControlElement element, const QStyleOption * option, QPainter * painter, const QWidget * widget)
 
-=item   void drawControl(QStyle::ControlElement element, const QStyleOption * option, QPainter * painter, const QWidget * widget)
+=item  void drawControl(QStyle::ControlElement element, const QStyleOption * option, QPainter * painter, const QWidget * widget = 0)
 
-=item   void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap)
+=item  void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap)
 
-=item   void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole = QPalette::NoRole)
+=item  void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole)
 
-=item   void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole)
+=item  void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole = QPalette::NoRole)
 
-=item   void drawPrimitive(QStyle::PrimitiveElement element, const QStyleOption * option, QPainter * painter, const QWidget * widget = 0)
+=item  void drawPrimitive(QStyle::PrimitiveElement element, const QStyleOption * option, QPainter * painter, const QWidget * widget)
 
-=item   void drawPrimitive(QStyle::PrimitiveElement element, const QStyleOption * option, QPainter * painter, const QWidget * widget)
+=item  void drawPrimitive(QStyle::PrimitiveElement element, const QStyleOption * option, QPainter * painter, const QWidget * widget = 0)
 
-=item   QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt)
+=item  QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt)
 
-=item   QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl control, const QStyleOptionComplex * option, const QPoint & pos, const QWidget * widget = 0)
+=item  QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl control, const QStyleOptionComplex * option, const QPoint & pos, const QWidget * widget)
 
-=item   QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl control, const QStyleOptionComplex * option, const QPoint & pos, const QWidget * widget)
+=item  QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl control, const QStyleOptionComplex * option, const QPoint & pos, const QWidget * widget = 0)
 
-=item   QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap)
+=item  QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap)
 
-=item   QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text)
+=item  QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget = 0)
+=item  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget)
+=item  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget = 0)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option = 0, const QWidget * widget = 0)
+=item  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option = 0, const QWidget * widget = 0)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget = 0)
+=item  void polish(QWidget * widget)
 
-=item   void polish(QWidget * widget)
+=item  void polish(QPalette & pal)
 
-=item   void polish(QPalette & pal)
+=item  void polish(QApplication * app)
 
-=item   void polish(QApplication * app)
+=item  void setBaseStyle(QStyle * style)
 
-=item   void setBaseStyle(QStyle * style)
+=item  QSize sizeFromContents(QStyle::ContentsType type, const QStyleOption * option, const QSize & size, const QWidget * widget)
 
-=item   QSize sizeFromContents(QStyle::ContentsType type, const QStyleOption * option, const QSize & size, const QWidget * widget)
+=item  QPalette standardPalette()
 
-=item   QPalette standardPalette()
+=item  QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget)
 
-=item   QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget = 0)
+=item  QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget = 0)
 
-=item   QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget)
+=item  int styleHint(QStyle::StyleHint hint, const QStyleOption * option, const QWidget * widget, QStyleHintReturn * returnData)
 
-=item   int styleHint(QStyle::StyleHint hint, const QStyleOption * option, const QWidget * widget, QStyleHintReturn * returnData = 0)
+=item  int styleHint(QStyle::StyleHint hint, const QStyleOption * option, const QWidget * widget, QStyleHintReturn * returnData = 0)
 
-=item   int styleHint(QStyle::StyleHint hint, const QStyleOption * option, const QWidget * widget, QStyleHintReturn * returnData)
+=item  int styleHint(QStyle::StyleHint hint, const QStyleOption * option, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
 
-=item   int styleHint(QStyle::StyleHint hint, const QStyleOption * option, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
+=item  int styleHint(QStyle::StyleHint hint, const QStyleOption * option = 0, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
 
-=item   int styleHint(QStyle::StyleHint hint, const QStyleOption * option, const QWidget * widget, QStyleHintReturn * returnData = 0)
+=item  QRect subControlRect(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget)
 
-=item   int styleHint(QStyle::StyleHint hint, const QStyleOption * option = 0, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
+=item  QRect subElementRect(QStyle::SubElement element, const QStyleOption * option, const QWidget * widget)
 
-=item   int styleHint(QStyle::StyleHint hint, const QStyleOption * option, const QWidget * widget = 0, QStyleHintReturn * returnData = 0)
+=item  void unpolish(QWidget * widget)
 
-=item   QRect subControlRect(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget)
+=item  void unpolish(QApplication * app)
 
-=item   QRect subElementRect(QStyle::SubElement element, const QStyleOption * option, const QWidget * widget)
 
-=item   void unpolish(QWidget * widget)
+=back
 
-=item   void unpolish(QApplication * app)
+=head1 ENUM VALUES
+
+=over
 
 
 =back

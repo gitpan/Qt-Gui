@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +23,24 @@ Qt::Gui::QItemSelection
 
 =over
 
-=item    QItemSelection()
+=item   QItemSelection()
 
-=item    QItemSelection(const QModelIndex & topLeft, const QModelIndex & bottomRight)
+=item   QItemSelection(const QModelIndex & topLeft, const QModelIndex & bottomRight)
 
-=item   bool contains(const QModelIndex & index)
+=item  bool contains(const QModelIndex & index)
 
-=item   void select(const QModelIndex & topLeft, const QModelIndex & bottomRight)
+=item  void merge(const QItemSelection & other, QFlags<QItemSelectionModel::SelectionFlag> command)
 
-=item   static void split(const QItemSelectionRange & range, const QItemSelectionRange & other, QItemSelection * result)
+=item  void select(const QModelIndex & topLeft, const QModelIndex & bottomRight)
+
+=item  static void split(const QItemSelectionRange & range, const QItemSelectionRange & other, QItemSelection * result)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

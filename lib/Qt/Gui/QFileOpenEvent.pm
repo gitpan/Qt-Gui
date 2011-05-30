@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +24,22 @@ Qt::Gui::QFileOpenEvent
 
 =over
 
-=item    QFileOpenEvent(const QString & file)
+=item   QFileOpenEvent(const QString & file)
 
-=item    QFileOpenEvent(const QUrl & url)
+=item   QFileOpenEvent(const QUrl & url)
 
-=item    ~QFileOpenEvent()
+=item   ~QFileOpenEvent()
 
-=item   QString file()
+=item  QString file()
 
-=item   QUrl url()
+=item  QUrl url()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

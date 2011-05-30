@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,9 +23,16 @@ Qt::Gui::QStyleFactory
 
 =over
 
-=item   static QStyle * create(const QString & arg0)
+=item  static QStyle * create(const QString & arg0)
 
-=item   static QStringList keys()
+=item  static QStringList keys()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

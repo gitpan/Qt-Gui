@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub ShowAlphaChannel() { 0 }
-sub NoButtons() { 1 }
-sub DontUseNativeDialog() { 2 }
 
 
 1;
@@ -30,59 +24,74 @@ Qt::Gui::QColorDialog
 
 =over
 
-=item    QColorDialog(QWidget * parent = 0)
+=item   QColorDialog(QWidget * parent)
 
-=item    QColorDialog(QWidget * parent)
+=item   QColorDialog(QWidget * parent = 0)
 
-=item    QColorDialog(const QColor & initial, QWidget * parent = 0)
+=item   QColorDialog(const QColor & initial, QWidget * parent)
 
-=item    QColorDialog(const QColor & initial, QWidget * parent)
+=item   QColorDialog(const QColor & initial, QWidget * parent = 0)
 
-=item    ~QColorDialog()
+=item   ~QColorDialog()
 
-=item   QColor currentColor()
+=item  QColor currentColor()
 
-=item   static unsigned int customColor(int index)
+=item  static unsigned int customColor(int index)
 
-=item   static int customCount()
+=item  static int customCount()
 
-=item   static QColor getColor(const QColor & initial, QWidget * parent = 0)
+=item  static QColor getColor(const QColor & initial, QWidget * parent)
 
-=item   static QColor getColor(const QColor & initial, QWidget * parent)
+=item  static QColor getColor(const QColor & initial, QWidget * parent = 0)
 
-=item   static QColor getColor(const QColor & initial = Qt::white, QWidget * parent = 0)
+=item  static QColor getColor(const QColor & initial = Qt::white, QWidget * parent = 0)
 
-=item   static QColor getColor(const QColor & initial, QWidget * parent = 0)
+=item  static QColor getColor(const QColor & initial, QWidget * parent, const QString & title, QFlags<QColorDialog::ColorDialogOption> options)
 
-=item   static unsigned int getRgba(unsigned int rgba, bool * ok, QWidget * parent = 0)
+=item  static QColor getColor(const QColor & initial, QWidget * parent, const QString & title, QFlags<QColorDialog::ColorDialogOption> options = 0)
 
-=item   static unsigned int getRgba(unsigned int rgba, bool * ok, QWidget * parent)
+=item  static unsigned int getRgba(unsigned int rgba, bool * ok, QWidget * parent)
 
-=item   static unsigned int getRgba(unsigned int rgba, bool * ok = 0, QWidget * parent = 0)
+=item  static unsigned int getRgba(unsigned int rgba, bool * ok, QWidget * parent = 0)
 
-=item   static unsigned int getRgba(unsigned int rgba, bool * ok, QWidget * parent = 0)
+=item  static unsigned int getRgba(unsigned int rgba, bool * ok = 0, QWidget * parent = 0)
 
-=item   static unsigned int getRgba(unsigned int rgba = 0xffffffff, bool * ok = 0, QWidget * parent = 0)
+=item  static unsigned int getRgba(unsigned int rgba = 0xffffffff, bool * ok = 0, QWidget * parent = 0)
 
-=item   static unsigned int getRgba(unsigned int rgba, bool * ok = 0, QWidget * parent = 0)
+=item  void open(QObject * receiver, const char * member)
 
-=item   void open(QObject * receiver, const char * member)
+=item  QFlags<QColorDialog::ColorDialogOption> options()
 
-=item   QColor selectedColor()
+=item  QColor selectedColor()
 
-=item   void setCurrentColor(const QColor & color)
+=item  void setCurrentColor(const QColor & color)
 
-=item   static void setCustomColor(int index, unsigned int color)
+=item  static void setCustomColor(int index, unsigned int color)
 
-=item   void setOption(QColorDialog::ColorDialogOption option, bool on = true)
+=item  void setOption(QColorDialog::ColorDialogOption option, bool on)
 
-=item   void setOption(QColorDialog::ColorDialogOption option, bool on)
+=item  void setOption(QColorDialog::ColorDialogOption option, bool on = true)
 
-=item   static void setStandardColor(int index, unsigned int color)
+=item  void setOptions(QFlags<QColorDialog::ColorDialogOption> options)
 
-=item   void setVisible(bool visible)
+=item  static void setStandardColor(int index, unsigned int color)
 
-=item   bool testOption(QColorDialog::ColorDialogOption option)
+=item  void setVisible(bool visible)
+
+=item  bool testOption(QColorDialog::ColorDialogOption option)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item ShowAlphaChannel
+
+=item NoButtons
+
+=item DontUseNativeDialog
 
 
 =back

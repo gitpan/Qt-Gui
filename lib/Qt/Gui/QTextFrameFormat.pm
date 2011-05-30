@@ -7,28 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextFormat/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextFormat/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub InFlow() { 0 }
-sub FloatLeft() { 1 }
-sub FloatRight() { 2 }
-sub BorderStyle_None() { 0 }
-sub BorderStyle_Dotted() { 1 }
-sub BorderStyle_Dashed() { 2 }
-sub BorderStyle_Solid() { 3 }
-sub BorderStyle_Double() { 4 }
-sub BorderStyle_DotDash() { 5 }
-sub BorderStyle_DotDotDash() { 6 }
-sub BorderStyle_Groove() { 7 }
-sub BorderStyle_Ridge() { 8 }
-sub BorderStyle_Inset() { 9 }
-sub BorderStyle_Outset() { 10 }
 
 
 1;
@@ -41,61 +24,100 @@ Qt::Gui::QTextFrameFormat
 
 =over
 
-=item    QTextFrameFormat()
+=item   QTextFrameFormat()
 
-=item   qreal border()
+=item  qreal border()
 
-=item   QBrush borderBrush()
+=item  QBrush borderBrush()
 
-=item   QTextFrameFormat::BorderStyle borderStyle()
+=item  QTextFrameFormat::BorderStyle borderStyle()
 
-=item   qreal bottomMargin()
+=item  qreal bottomMargin()
 
-=item   QTextLength height()
+=item  QTextLength height()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   qreal leftMargin()
+=item  qreal leftMargin()
 
-=item   qreal margin()
+=item  qreal margin()
 
-=item   qreal padding()
+=item  qreal padding()
 
-=item   QTextFrameFormat::Position position()
+=item  QFlags<QTextFormat::PageBreakFlag> pageBreakPolicy()
 
-=item   qreal rightMargin()
+=item  QTextFrameFormat::Position position()
 
-=item   void setBorder(qreal border)
+=item  qreal rightMargin()
 
-=item   void setBorderBrush(const QBrush & brush)
+=item  void setBorder(qreal border)
 
-=item   void setBorderStyle(QTextFrameFormat::BorderStyle style)
+=item  void setBorderBrush(const QBrush & brush)
 
-=item   void setBottomMargin(qreal margin)
+=item  void setBorderStyle(QTextFrameFormat::BorderStyle style)
 
-=item   void setHeight(qreal height)
+=item  void setBottomMargin(qreal margin)
 
-=item   void setHeight(const QTextLength & height)
+=item  void setHeight(qreal height)
 
-=item   void setLeftMargin(qreal margin)
+=item  void setHeight(const QTextLength & height)
 
-=item   void setMargin(qreal margin)
+=item  void setLeftMargin(qreal margin)
 
-=item   void setPadding(qreal padding)
+=item  void setMargin(qreal margin)
 
-=item   void setPosition(QTextFrameFormat::Position f)
+=item  void setPadding(qreal padding)
 
-=item   void setRightMargin(qreal margin)
+=item  void setPageBreakPolicy(QFlags<QTextFormat::PageBreakFlag> flags)
 
-=item   void setTopMargin(qreal margin)
+=item  void setPosition(QTextFrameFormat::Position f)
 
-=item   void setWidth(qreal width)
+=item  void setRightMargin(qreal margin)
 
-=item   void setWidth(const QTextLength & length)
+=item  void setTopMargin(qreal margin)
 
-=item   qreal topMargin()
+=item  void setWidth(qreal width)
 
-=item   QTextLength width()
+=item  void setWidth(const QTextLength & length)
+
+=item  qreal topMargin()
+
+=item  QTextLength width()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item InFlow
+
+=item FloatLeft
+
+=item FloatRight
+
+=item BorderStyle_None
+
+=item BorderStyle_Dotted
+
+=item BorderStyle_Dashed
+
+=item BorderStyle_Solid
+
+=item BorderStyle_Double
+
+=item BorderStyle_DotDash
+
+=item BorderStyle_DotDotDash
+
+=item BorderStyle_Groove
+
+=item BorderStyle_Ridge
+
+=item BorderStyle_Inset
+
+=item BorderStyle_Outset
 
 
 =back

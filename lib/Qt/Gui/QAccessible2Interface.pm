@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,7 +23,14 @@ Qt::Gui::QAccessible2Interface
 
 =over
 
-=item    ~QAccessible2Interface()
+=item   ~QAccessible2Interface()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

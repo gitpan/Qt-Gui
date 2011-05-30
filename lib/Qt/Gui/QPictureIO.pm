@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,59 +23,66 @@ Qt::Gui::QPictureIO
 
 =over
 
-=item    QPictureIO()
+=item   QPictureIO()
 
-=item    QPictureIO(QIODevice * ioDevice, const char * format)
+=item   QPictureIO(QIODevice * ioDevice, const char * format)
 
-=item    QPictureIO(const QString & fileName, const char * format)
+=item   QPictureIO(const QString & fileName, const char * format)
 
-=item    ~QPictureIO()
+=item   ~QPictureIO()
 
-=item   static void defineIOHandler(const char * format, const char * header, const char * flags, T_FPOINTER_PICTURE_IO_HANDLER_QPICTURE read_picture, T_FPOINTER_PICTURE_IO_HANDLER_QPICTURE write_picture)
+=item  static void defineIOHandler(const char * format, const char * header, const char * flags, T_FPOINTER_PICTURE_IO_HANDLER_QPICTURE read_picture, T_FPOINTER_PICTURE_IO_HANDLER_QPICTURE write_picture)
 
-=item   QString description()
+=item  QString description()
 
-=item   QString fileName()
+=item  QString fileName()
 
-=item   const char * format()
+=item  const char * format()
 
-=item   float gamma()
+=item  float gamma()
 
-=item   QIODevice * ioDevice()
+=item  QIODevice * ioDevice()
 
-=item   const char * parameters()
+=item  const char * parameters()
 
-=item   const QPicture & picture()
+=item  const QPicture & picture()
 
-=item   static QByteArray pictureFormat(const QString & fileName)
+=item  static QByteArray pictureFormat(const QString & fileName)
 
-=item   static QByteArray pictureFormat(QIODevice * arg0)
+=item  static QByteArray pictureFormat(QIODevice * arg0)
 
-=item   int quality()
+=item  int quality()
 
-=item   bool read()
+=item  bool read()
 
-=item   void setDescription(const QString & arg0)
+=item  void setDescription(const QString & arg0)
 
-=item   void setFileName(const QString & arg0)
+=item  void setFileName(const QString & arg0)
 
-=item   void setFormat(const char * arg0)
+=item  void setFormat(const char * arg0)
 
-=item   void setGamma(float arg0)
+=item  void setGamma(float arg0)
 
-=item   void setIODevice(QIODevice * arg0)
+=item  void setIODevice(QIODevice * arg0)
 
-=item   void setParameters(const char * arg0)
+=item  void setParameters(const char * arg0)
 
-=item   void setPicture(const QPicture & arg0)
+=item  void setPicture(const QPicture & arg0)
 
-=item   void setQuality(int arg0)
+=item  void setQuality(int arg0)
 
-=item   void setStatus(int arg0)
+=item  void setStatus(int arg0)
 
-=item   int status()
+=item  int status()
 
-=item   bool write()
+=item  bool write()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

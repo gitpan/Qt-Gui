@@ -7,13 +7,12 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 require XSLoader;
 XSLoader::load('Qt::Gui', $VERSION);
 
 # FIXME: operator overload
-
 
 
 1;
@@ -23,6 +22,13 @@ XSLoader::load('Qt::Gui', $VERSION);
 Qt::Gui
 
 =head1 PUBLIC METHODS
+
+=over
+
+
+=back
+
+=head1 ENUM VALUES
 
 =over
 

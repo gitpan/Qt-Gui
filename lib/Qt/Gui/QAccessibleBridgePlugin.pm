@@ -1,30 +1,45 @@
-package Qt::Gui::QAccessibleBridgeFactoryInterface;
+package Qt::Gui::QAccessibleBridgePlugin;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QAccessibleBridgeFactoryInterface
+# classname: QAccessibleBridgePlugin
 # file     : QtGui/qaccessiblebridge.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject Qt::Gui::QAccessibleBridgeFactoryInterface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
 
 =head1 NAME
 
-Qt::Gui::QAccessibleBridgeFactoryInterface
+Qt::Gui::QAccessibleBridgePlugin
 
 =head1 PUBLIC METHODS
 
 =over
 
-=item   QAccessibleBridge * create(const QString & name)
+=item   QAccessibleBridgePlugin(QObject * parent)
+
+=item   QAccessibleBridgePlugin(QObject * parent = 0)
+
+=item   ~QAccessibleBridgePlugin()
+
+=item  QAccessibleBridge * create(const QString & key)
+
+=item  QStringList keys()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

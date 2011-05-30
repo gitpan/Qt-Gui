@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAccessible/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAccessible/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,59 +24,68 @@ Qt::Gui::QAccessibleInterface
 
 =over
 
-=item    ~QAccessibleInterface()
+=item   ~QAccessibleInterface()
 
-=item   QAccessibleActionInterface * actionInterface()
+=item  QAccessibleActionInterface * actionInterface()
 
-=item   QString actionText(int action, QAccessible::Text t, int child)
+=item  QString actionText(int action, QAccessible::Text t, int child)
 
-=item   QColor backgroundColor()
+=item  QColor backgroundColor()
 
-=item   int childAt(int x, int y)
+=item  int childAt(int x, int y)
 
-=item   int childCount()
+=item  int childCount()
 
-=item   bool doAction(int action, int child, const QVariantList & params = QVariantList())
+=item  bool doAction(int action, int child, const QVariantList & params)
 
-=item   bool doAction(int action, int child, const QVariantList & params)
+=item  bool doAction(int action, int child, const QVariantList & params = QVariantList())
 
-=item   QAccessibleEditableTextInterface * editableTextInterface()
+=item  QAccessibleEditableTextInterface * editableTextInterface()
 
-=item   QColor foregroundColor()
+=item  QColor foregroundColor()
 
-=item   QAccessibleImageInterface * imageInterface()
+=item  QAccessibleImageInterface * imageInterface()
 
-=item   int indexOfChild(const QAccessibleInterface * arg0)
+=item  int indexOfChild(const QAccessibleInterface * arg0)
 
-=item   QVariant invokeMethod(QAccessible::Method method, int child, const QVariantList & params = QVariantList())
+=item  QVariant invokeMethod(QAccessible::Method method, int child, const QVariantList & params)
 
-=item   QVariant invokeMethod(QAccessible::Method method, int child, const QVariantList & params)
+=item  QVariant invokeMethod(QAccessible::Method method, int child, const QVariantList & params = QVariantList())
 
-=item   QVariant invokeMethod(QAccessible::Method method, int child = 0, const QVariantList & params = QVariantList())
+=item  QVariant invokeMethod(QAccessible::Method method, int child = 0, const QVariantList & params = QVariantList())
 
-=item   QVariant invokeMethod(QAccessible::Method method, int child, const QVariantList & params = QVariantList())
+=item  bool isValid()
 
-=item   bool isValid()
+=item  int navigate(QAccessible::RelationFlag relation, int index, QAccessibleInterface ** iface)
 
-=item   int navigate(QAccessible::RelationFlag relation, int index, QAccessibleInterface ** iface)
+=item  QObject * object()
 
-=item   QObject * object()
+=item  QRect rect(int child)
 
-=item   QRect rect(int child)
+=item  QFlags<QAccessible::RelationFlag> relationTo(int child, const QAccessibleInterface * other, int otherChild)
 
-=item   QAccessible::Role role(int child)
+=item  QAccessible::Role role(int child)
 
-=item   void setText(QAccessible::Text t, int child, const QString & text)
+=item  void setText(QAccessible::Text t, int child, const QString & text)
 
-=item   QAccessibleTableInterface * tableInterface()
+=item  QFlags<QAccessible::StateFlag> state(int child)
 
-=item   QString text(QAccessible::Text t, int child)
+=item  QAccessibleTableInterface * tableInterface()
 
-=item   QAccessibleTextInterface * textInterface()
+=item  QString text(QAccessible::Text t, int child)
 
-=item   int userActionCount(int child)
+=item  QAccessibleTextInterface * textInterface()
 
-=item   QAccessibleValueInterface * valueInterface()
+=item  int userActionCount(int child)
+
+=item  QAccessibleValueInterface * valueInterface()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

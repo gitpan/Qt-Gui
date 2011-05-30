@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,13 +24,20 @@ Qt::Gui::QAccessibleEvent
 
 =over
 
-=item    QAccessibleEvent(QAccessibleEvent::Type type, int child)
+=item   QAccessibleEvent(QAccessibleEvent::Type type, int child)
 
-=item   int child()
+=item  int child()
 
-=item   void setValue(const QString & aText)
+=item  void setValue(const QString & aText)
 
-=item   QString value()
+=item  QString value()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

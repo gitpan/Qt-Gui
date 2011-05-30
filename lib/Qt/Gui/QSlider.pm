@@ -7,20 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractSlider/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractSlider/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoTicks() { 0 }
-sub TicksAbove() { 1 }
-sub TicksLeft() { 2 }
-sub TicksBelow() { 3 }
-sub TicksRight() { 4 }
-sub TicksBothSides() { 5 }
 
 
 1;
@@ -33,29 +24,48 @@ Qt::Gui::QSlider
 
 =over
 
-=item    QSlider(QWidget * parent = 0)
+=item   QSlider(QWidget * parent)
 
-=item    QSlider(QWidget * parent)
+=item   QSlider(QWidget * parent = 0)
 
-=item    QSlider(Qt::Orientation orientation, QWidget * parent = 0)
+=item   QSlider(Qt::Orientation orientation, QWidget * parent)
 
-=item    QSlider(Qt::Orientation orientation, QWidget * parent)
+=item   QSlider(Qt::Orientation orientation, QWidget * parent = 0)
 
-=item    ~QSlider()
+=item   ~QSlider()
 
-=item   bool event(QEvent * event)
+=item  bool event(QEvent * event)
 
-=item   QSize minimumSizeHint()
+=item  QSize minimumSizeHint()
 
-=item   void setTickInterval(int ti)
+=item  void setTickInterval(int ti)
 
-=item   void setTickPosition(QSlider::TickPosition position)
+=item  void setTickPosition(QSlider::TickPosition position)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   int tickInterval()
+=item  int tickInterval()
 
-=item   QSlider::TickPosition tickPosition()
+=item  QSlider::TickPosition tickPosition()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoTicks
+
+=item TicksAbove
+
+=item TicksLeft
+
+=item TicksBelow
+
+=item TicksRight
+
+=item TicksBothSides
 
 
 =back

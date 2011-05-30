@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +23,22 @@ Qt::Gui::QInputContextFactory
 
 =over
 
-=item   static QInputContext * create(const QString & key, QObject * parent)
+=item  static QInputContext * create(const QString & key, QObject * parent)
 
-=item   static QString description(const QString & key)
+=item  static QString description(const QString & key)
 
-=item   static QString displayName(const QString & key)
+=item  static QString displayName(const QString & key)
 
-=item   static QStringList keys()
+=item  static QStringList keys()
 
-=item   static QStringList languages(const QString & key)
+=item  static QStringList languages(const QString & key)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

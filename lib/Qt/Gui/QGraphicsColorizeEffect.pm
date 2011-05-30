@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsEffect/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsEffect/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,19 +24,26 @@ Qt::Gui::QGraphicsColorizeEffect
 
 =over
 
-=item    QGraphicsColorizeEffect(QObject * parent = 0)
+=item   QGraphicsColorizeEffect(QObject * parent)
 
-=item    QGraphicsColorizeEffect(QObject * parent)
+=item   QGraphicsColorizeEffect(QObject * parent = 0)
 
-=item    ~QGraphicsColorizeEffect()
+=item   ~QGraphicsColorizeEffect()
 
-=item   QColor color()
+=item  QColor color()
 
-=item   void setColor(const QColor & c)
+=item  void setColor(const QColor & c)
 
-=item   void setStrength(qreal strength)
+=item  void setStrength(qreal strength)
 
-=item   qreal strength()
+=item  qreal strength()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

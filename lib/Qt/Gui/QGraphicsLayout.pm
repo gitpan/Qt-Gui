@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsLayoutItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsLayoutItem/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,31 +24,38 @@ Qt::Gui::QGraphicsLayout
 
 =over
 
-=item    QGraphicsLayout(QGraphicsLayoutItem * parent = 0)
+=item   QGraphicsLayout(QGraphicsLayoutItem * parent)
 
-=item    QGraphicsLayout(QGraphicsLayoutItem * parent)
+=item   QGraphicsLayout(QGraphicsLayoutItem * parent = 0)
 
-=item    ~QGraphicsLayout()
+=item   ~QGraphicsLayout()
 
-=item   void activate()
+=item  void activate()
 
-=item   int count()
+=item  int count()
 
-=item   void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom)
+=item  void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom)
 
-=item   void invalidate()
+=item  void invalidate()
 
-=item   bool isActivated()
+=item  bool isActivated()
 
-=item   QGraphicsLayoutItem * itemAt(int i)
+=item  QGraphicsLayoutItem * itemAt(int i)
 
-=item   void removeAt(int index)
+=item  void removeAt(int index)
 
-=item   void setContentsMargins(qreal left, qreal top, qreal right, qreal bottom)
+=item  void setContentsMargins(qreal left, qreal top, qreal right, qreal bottom)
 
-=item   void updateGeometry()
+=item  void updateGeometry()
 
-=item   void widgetEvent(QEvent * e)
+=item  void widgetEvent(QEvent * e)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGradient/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGradient/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,21 +24,28 @@ Qt::Gui::QConicalGradient
 
 =over
 
-=item    QConicalGradient()
+=item   QConicalGradient()
 
-=item    QConicalGradient(const QPointF & center, qreal startAngle)
+=item   QConicalGradient(const QPointF & center, qreal startAngle)
 
-=item    QConicalGradient(qreal cx, qreal cy, qreal startAngle)
+=item   QConicalGradient(qreal cx, qreal cy, qreal startAngle)
 
-=item   qreal angle()
+=item  qreal angle()
 
-=item   QPointF center()
+=item  QPointF center()
 
-=item   void setAngle(qreal angle)
+=item  void setAngle(qreal angle)
 
-=item   void setCenter(const QPointF & center)
+=item  void setCenter(const QPointF & center)
 
-=item   void setCenter(qreal x, qreal y)
+=item  void setCenter(qreal x, qreal y)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -18,36 +18,44 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QFocusFrame(QWidget * parent = 0)
 ##  QFocusFrame(QWidget * parent)
+##  QFocusFrame(QWidget * parent = 0)
   void
 QFocusFrame::new(...)
 PREINIT:
 QFocusFrame *ret;
-QWidget * arg00 = 0;
-QWidget * arg10;
+QWidget * arg00;
+QWidget * arg10 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
+        if (1) {
+      
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QFocusFrame()
@@ -63,20 +71,28 @@ QFocusFrame::setWidget(...)
 PREINIT:
 QWidget * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     (void)THIS->setWidget(arg00);
     XSRETURN(0);
+    }
 
 ## QWidget * widget()
 void
 QFocusFrame::widget(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QWidget * ret = THIS->widget();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
     XSRETURN(1);
+    }

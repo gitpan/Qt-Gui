@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,24 @@ Qt::Gui::QErrorMessage
 
 =over
 
-=item    QErrorMessage(QWidget * parent = 0)
+=item   QErrorMessage(QWidget * parent)
 
-=item    QErrorMessage(QWidget * parent)
+=item   QErrorMessage(QWidget * parent = 0)
 
-=item    ~QErrorMessage()
+=item   ~QErrorMessage()
 
-=item   static QErrorMessage * qtHandler()
+=item  static QErrorMessage * qtHandler()
 
-=item   void showMessage(const QString & message)
+=item  void showMessage(const QString & message)
 
-=item   void showMessage(const QString & message, const QString & type)
+=item  void showMessage(const QString & message, const QString & type)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

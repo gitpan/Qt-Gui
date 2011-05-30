@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,61 +24,68 @@ Qt::Gui::QMenuBar
 
 =over
 
-=item    QMenuBar(QWidget * parent = 0)
+=item   QMenuBar(QWidget * parent)
 
-=item    QMenuBar(QWidget * parent)
+=item   QMenuBar(QWidget * parent = 0)
 
-=item    ~QMenuBar()
+=item   ~QMenuBar()
 
-=item   QAction * actionAt(const QPoint & arg0)
+=item  QAction * actionAt(const QPoint & arg0)
 
-=item   QRect actionGeometry(QAction * arg0)
+=item  QRect actionGeometry(QAction * arg0)
 
-=item   QAction * activeAction()
+=item  QAction * activeAction()
 
-=item   QAction * addAction(const QString & text)
+=item  QAction * addAction(const QString & text)
 
-=item   QAction * addAction(const QString & text, const QObject * receiver, const char * member)
+=item  QAction * addAction(const QString & text, const QObject * receiver, const char * member)
 
-=item   QAction * addMenu(QMenu * menu)
+=item  QAction * addMenu(QMenu * menu)
 
-=item   QMenu * addMenu(const QString & title)
+=item  QMenu * addMenu(const QString & title)
 
-=item   QMenu * addMenu(const QIcon & icon, const QString & title)
+=item  QMenu * addMenu(const QIcon & icon, const QString & title)
 
-=item   QAction * addSeparator()
+=item  QAction * addSeparator()
 
-=item   void clear()
+=item  void clear()
 
-=item   QWidget * cornerWidget(Qt::Corner corner = Qt::TopRightCorner)
+=item  QWidget * cornerWidget(Qt::Corner corner)
 
-=item   QWidget * cornerWidget(Qt::Corner corner)
+=item  QWidget * cornerWidget(Qt::Corner corner = Qt::TopRightCorner)
 
-=item   int heightForWidth(int arg0)
+=item  int heightForWidth(int arg0)
 
-=item   QAction * insertMenu(QAction * before, QMenu * menu)
+=item  QAction * insertMenu(QAction * before, QMenu * menu)
 
-=item   QAction * insertSeparator(QAction * before)
+=item  QAction * insertSeparator(QAction * before)
 
-=item   bool isDefaultUp()
+=item  bool isDefaultUp()
 
-=item   bool isNativeMenuBar()
+=item  bool isNativeMenuBar()
 
-=item   QSize minimumSizeHint()
+=item  QSize minimumSizeHint()
 
-=item   void setActiveAction(QAction * action)
+=item  void setActiveAction(QAction * action)
 
-=item   void setCornerWidget(QWidget * w, Qt::Corner corner = Qt::TopRightCorner)
+=item  void setCornerWidget(QWidget * w, Qt::Corner corner)
 
-=item   void setCornerWidget(QWidget * w, Qt::Corner corner)
+=item  void setCornerWidget(QWidget * w, Qt::Corner corner = Qt::TopRightCorner)
 
-=item   void setDefaultUp(bool arg0)
+=item  void setDefaultUp(bool arg0)
 
-=item   void setNativeMenuBar(bool nativeMenuBar)
+=item  void setNativeMenuBar(bool nativeMenuBar)
 
-=item   void setVisible(bool visible)
+=item  void setVisible(bool visible)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

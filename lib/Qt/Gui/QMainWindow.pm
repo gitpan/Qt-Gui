@@ -7,19 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub AnimatedDocks() { 0 }
-sub AllowNestedDocks() { 1 }
-sub AllowTabbedDocks() { 2 }
-sub ForceTabbedDocks() { 3 }
-sub VerticalTabs() { 4 }
 
 
 1;
@@ -32,105 +24,134 @@ Qt::Gui::QMainWindow
 
 =over
 
-=item    ~QMainWindow()
+=item   QMainWindow(QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   void addDockWidget(Qt::DockWidgetArea area, QDockWidget * dockwidget)
+=item   QMainWindow(QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   void addDockWidget(Qt::DockWidgetArea area, QDockWidget * dockwidget, Qt::Orientation orientation)
+=item   QMainWindow(QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void addToolBar(QToolBar * toolbar)
+=item   ~QMainWindow()
 
-=item   QToolBar * addToolBar(const QString & title)
+=item  void addDockWidget(Qt::DockWidgetArea area, QDockWidget * dockwidget)
 
-=item   void addToolBar(Qt::ToolBarArea area, QToolBar * toolbar)
+=item  void addDockWidget(Qt::DockWidgetArea area, QDockWidget * dockwidget, Qt::Orientation orientation)
 
-=item   void addToolBarBreak(Qt::ToolBarArea area = Qt::TopToolBarArea)
+=item  void addToolBar(QToolBar * toolbar)
 
-=item   void addToolBarBreak(Qt::ToolBarArea area)
+=item  QToolBar * addToolBar(const QString & title)
 
-=item   QWidget * centralWidget()
+=item  void addToolBar(Qt::ToolBarArea area, QToolBar * toolbar)
 
-=item   Qt::DockWidgetArea corner(Qt::Corner corner)
+=item  void addToolBarBreak(Qt::ToolBarArea area)
 
-=item   QMenu * createPopupMenu()
+=item  void addToolBarBreak(Qt::ToolBarArea area = Qt::TopToolBarArea)
 
-=item   Qt::DockWidgetArea dockWidgetArea(QDockWidget * dockwidget)
+=item  QWidget * centralWidget()
 
-=item   bool documentMode()
+=item  Qt::DockWidgetArea corner(Qt::Corner corner)
 
-=item   QSize iconSize()
+=item  QMenu * createPopupMenu()
 
-=item   void insertToolBar(QToolBar * before, QToolBar * toolbar)
+=item  QFlags<QMainWindow::DockOption> dockOptions()
 
-=item   void insertToolBarBreak(QToolBar * before)
+=item  Qt::DockWidgetArea dockWidgetArea(QDockWidget * dockwidget)
 
-=item   bool isAnimated()
+=item  bool documentMode()
 
-=item   bool isDockNestingEnabled()
+=item  QSize iconSize()
 
-=item   bool isSeparator(const QPoint & pos)
+=item  void insertToolBar(QToolBar * before, QToolBar * toolbar)
 
-=item   QMenuBar * menuBar()
+=item  void insertToolBarBreak(QToolBar * before)
 
-=item   QWidget * menuWidget()
+=item  bool isAnimated()
 
-=item   void removeDockWidget(QDockWidget * dockwidget)
+=item  bool isDockNestingEnabled()
 
-=item   void removeToolBar(QToolBar * toolbar)
+=item  bool isSeparator(const QPoint & pos)
 
-=item   void removeToolBarBreak(QToolBar * before)
+=item  QMenuBar * menuBar()
 
-=item   bool restoreDockWidget(QDockWidget * dockwidget)
+=item  QWidget * menuWidget()
 
-=item   bool restoreState(const QByteArray & state, int version = 0)
+=item  void removeDockWidget(QDockWidget * dockwidget)
 
-=item   bool restoreState(const QByteArray & state, int version)
+=item  void removeToolBar(QToolBar * toolbar)
 
-=item   QByteArray saveState(int version = 0)
+=item  void removeToolBarBreak(QToolBar * before)
 
-=item   QByteArray saveState(int version)
+=item  bool restoreDockWidget(QDockWidget * dockwidget)
 
-=item   void setAnimated(bool enabled)
+=item  bool restoreState(const QByteArray & state, int version)
 
-=item   void setCentralWidget(QWidget * widget)
+=item  bool restoreState(const QByteArray & state, int version = 0)
 
-=item   void setCorner(Qt::Corner corner, Qt::DockWidgetArea area)
+=item  QByteArray saveState(int version)
 
-=item   void setDockNestingEnabled(bool enabled)
+=item  QByteArray saveState(int version = 0)
 
-=item   void setDocumentMode(bool enabled)
+=item  void setAnimated(bool enabled)
 
-=item   void setIconSize(const QSize & iconSize)
+=item  void setCentralWidget(QWidget * widget)
 
-=item   void setMenuBar(QMenuBar * menubar)
+=item  void setCorner(Qt::Corner corner, Qt::DockWidgetArea area)
 
-=item   void setMenuWidget(QWidget * menubar)
+=item  void setDockNestingEnabled(bool enabled)
 
-=item   void setStatusBar(QStatusBar * statusbar)
+=item  void setDockOptions(QFlags<QMainWindow::DockOption> options)
 
-=item   void setTabShape(QTabWidget::TabShape tabShape)
+=item  void setDocumentMode(bool enabled)
 
-=item   void setToolButtonStyle(Qt::ToolButtonStyle toolButtonStyle)
+=item  void setIconSize(const QSize & iconSize)
 
-=item   void setUnifiedTitleAndToolBarOnMac(bool set)
+=item  void setMenuBar(QMenuBar * menubar)
 
-=item   void splitDockWidget(QDockWidget * after, QDockWidget * dockwidget, Qt::Orientation orientation)
+=item  void setMenuWidget(QWidget * menubar)
 
-=item   QStatusBar * statusBar()
+=item  void setStatusBar(QStatusBar * statusbar)
 
-=item   QTabWidget::TabPosition tabPosition(Qt::DockWidgetArea area)
+=item  void setTabPosition(QFlags<Qt::DockWidgetArea> areas, QTabWidget::TabPosition tabPosition)
 
-=item   QTabWidget::TabShape tabShape()
+=item  void setTabShape(QTabWidget::TabShape tabShape)
 
-=item   void tabifyDockWidget(QDockWidget * first, QDockWidget * second)
+=item  void setToolButtonStyle(Qt::ToolButtonStyle toolButtonStyle)
 
-=item   Qt::ToolBarArea toolBarArea(QToolBar * toolbar)
+=item  void setUnifiedTitleAndToolBarOnMac(bool set)
 
-=item   bool toolBarBreak(QToolBar * toolbar)
+=item  void splitDockWidget(QDockWidget * after, QDockWidget * dockwidget, Qt::Orientation orientation)
 
-=item   Qt::ToolButtonStyle toolButtonStyle()
+=item  QStatusBar * statusBar()
 
-=item   bool unifiedTitleAndToolBarOnMac()
+=item  QTabWidget::TabPosition tabPosition(Qt::DockWidgetArea area)
+
+=item  QTabWidget::TabShape tabShape()
+
+=item  void tabifyDockWidget(QDockWidget * first, QDockWidget * second)
+
+=item  Qt::ToolBarArea toolBarArea(QToolBar * toolbar)
+
+=item  bool toolBarBreak(QToolBar * toolbar)
+
+=item  Qt::ToolButtonStyle toolButtonStyle()
+
+=item  bool unifiedTitleAndToolBarOnMac()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item AnimatedDocks
+
+=item AllowNestedDocks
+
+=item AllowTabbedDocks
+
+=item ForceTabbedDocks
+
+=item VerticalTabs
 
 
 =back

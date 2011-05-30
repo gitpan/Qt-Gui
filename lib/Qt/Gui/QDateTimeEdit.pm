@@ -7,25 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractSpinBox/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractSpinBox/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoSection() { 0 }
-sub AmPmSection() { 1 }
-sub MSecSection() { 2 }
-sub SecondSection() { 3 }
-sub MinuteSection() { 4 }
-sub HourSection() { 5 }
-sub DaySection() { 6 }
-sub MonthSection() { 7 }
-sub YearSection() { 8 }
-sub TimeSections_Mask() { 9 }
-sub DateSections_Mask() { 10 }
 
 
 1;
@@ -38,115 +24,146 @@ Qt::Gui::QDateTimeEdit
 
 =over
 
-=item    QDateTimeEdit(QWidget * parent = 0)
+=item   QDateTimeEdit(QWidget * parent)
 
-=item    QDateTimeEdit(QWidget * parent)
+=item   QDateTimeEdit(QWidget * parent = 0)
 
-=item    QDateTimeEdit(const QDateTime & dt, QWidget * parent = 0)
+=item   QDateTimeEdit(const QDateTime & dt, QWidget * parent)
 
-=item    QDateTimeEdit(const QDateTime & dt, QWidget * parent)
+=item   QDateTimeEdit(const QDateTime & dt, QWidget * parent = 0)
 
-=item    QDateTimeEdit(const QDate & d, QWidget * parent = 0)
+=item   QDateTimeEdit(const QDate & d, QWidget * parent)
 
-=item    QDateTimeEdit(const QDate & d, QWidget * parent)
+=item   QDateTimeEdit(const QDate & d, QWidget * parent = 0)
 
-=item    QDateTimeEdit(const QTime & t, QWidget * parent = 0)
+=item   QDateTimeEdit(const QTime & t, QWidget * parent)
 
-=item    QDateTimeEdit(const QTime & t, QWidget * parent)
+=item   QDateTimeEdit(const QTime & t, QWidget * parent = 0)
 
-=item   bool calendarPopup()
+=item  bool calendarPopup()
 
-=item   QCalendarWidget * calendarWidget()
+=item  QCalendarWidget * calendarWidget()
 
-=item   void clear()
+=item  void clear()
 
-=item   void clearMaximumDate()
+=item  void clearMaximumDate()
 
-=item   void clearMaximumDateTime()
+=item  void clearMaximumDateTime()
 
-=item   void clearMaximumTime()
+=item  void clearMaximumTime()
 
-=item   void clearMinimumDate()
+=item  void clearMinimumDate()
 
-=item   void clearMinimumDateTime()
+=item  void clearMinimumDateTime()
 
-=item   void clearMinimumTime()
+=item  void clearMinimumTime()
 
-=item   QDateTimeEdit::Section currentSection()
+=item  QDateTimeEdit::Section currentSection()
 
-=item   int currentSectionIndex()
+=item  int currentSectionIndex()
 
-=item   QDate date()
+=item  QDate date()
 
-=item   QDateTime dateTime()
+=item  QDateTime dateTime()
 
-=item   QString displayFormat()
+=item  QString displayFormat()
 
-=item   bool event(QEvent * event)
+=item  QFlags<QDateTimeEdit::Section> displayedSections()
 
-=item   QDate maximumDate()
+=item  bool event(QEvent * event)
 
-=item   QDateTime maximumDateTime()
+=item  QDate maximumDate()
 
-=item   QTime maximumTime()
+=item  QDateTime maximumDateTime()
 
-=item   QDate minimumDate()
+=item  QTime maximumTime()
 
-=item   QDateTime minimumDateTime()
+=item  QDate minimumDate()
 
-=item   QTime minimumTime()
+=item  QDateTime minimumDateTime()
 
-=item   QDateTimeEdit::Section sectionAt(int index)
+=item  QTime minimumTime()
 
-=item   int sectionCount()
+=item  QDateTimeEdit::Section sectionAt(int index)
 
-=item   QString sectionText(QDateTimeEdit::Section section)
+=item  int sectionCount()
 
-=item   void setCalendarPopup(bool enable)
+=item  QString sectionText(QDateTimeEdit::Section section)
 
-=item   void setCalendarWidget(QCalendarWidget * calendarWidget)
+=item  void setCalendarPopup(bool enable)
 
-=item   void setCurrentSection(QDateTimeEdit::Section section)
+=item  void setCalendarWidget(QCalendarWidget * calendarWidget)
 
-=item   void setCurrentSectionIndex(int index)
+=item  void setCurrentSection(QDateTimeEdit::Section section)
 
-=item   void setDate(const QDate & date)
+=item  void setCurrentSectionIndex(int index)
 
-=item   void setDateRange(const QDate & min, const QDate & max)
+=item  void setDate(const QDate & date)
 
-=item   void setDateTime(const QDateTime & dateTime)
+=item  void setDateRange(const QDate & min, const QDate & max)
 
-=item   void setDateTimeRange(const QDateTime & min, const QDateTime & max)
+=item  void setDateTime(const QDateTime & dateTime)
 
-=item   void setDisplayFormat(const QString & format)
+=item  void setDateTimeRange(const QDateTime & min, const QDateTime & max)
 
-=item   void setMaximumDate(const QDate & max)
+=item  void setDisplayFormat(const QString & format)
 
-=item   void setMaximumDateTime(const QDateTime & dt)
+=item  void setMaximumDate(const QDate & max)
 
-=item   void setMaximumTime(const QTime & max)
+=item  void setMaximumDateTime(const QDateTime & dt)
 
-=item   void setMinimumDate(const QDate & min)
+=item  void setMaximumTime(const QTime & max)
 
-=item   void setMinimumDateTime(const QDateTime & dt)
+=item  void setMinimumDate(const QDate & min)
 
-=item   void setMinimumTime(const QTime & min)
+=item  void setMinimumDateTime(const QDateTime & dt)
 
-=item   void setSelectedSection(QDateTimeEdit::Section section)
+=item  void setMinimumTime(const QTime & min)
 
-=item   void setTime(const QTime & time)
+=item  void setSelectedSection(QDateTimeEdit::Section section)
 
-=item   void setTimeRange(const QTime & min, const QTime & max)
+=item  void setTime(const QTime & time)
 
-=item   void setTimeSpec(Qt::TimeSpec spec)
+=item  void setTimeRange(const QTime & min, const QTime & max)
 
-=item   QSize sizeHint()
+=item  void setTimeSpec(Qt::TimeSpec spec)
 
-=item   void stepBy(int steps)
+=item  QSize sizeHint()
 
-=item   QTime time()
+=item  void stepBy(int steps)
 
-=item   Qt::TimeSpec timeSpec()
+=item  QTime time()
+
+=item  Qt::TimeSpec timeSpec()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoSection
+
+=item AmPmSection
+
+=item MSecSection
+
+=item SecondSection
+
+=item MinuteSection
+
+=item HourSection
+
+=item DaySection
+
+=item MonthSection
+
+=item YearSection
+
+=item TimeSections_Mask
+
+=item DateSections_Mask
 
 
 =back

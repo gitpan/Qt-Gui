@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QMimeSource/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent Qt::Gui::QMimeSource/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,29 +24,46 @@ Qt::Gui::QDropEvent
 
 =over
 
-=item    ~QDropEvent()
+=item   QDropEvent(const QPoint & pos, QFlags<Qt::DropAction> actions, const QMimeData * data, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers, QDropEvent::Type type)
 
-=item   void acceptProposedAction()
+=item   QDropEvent(const QPoint & pos, QFlags<Qt::DropAction> actions, const QMimeData * data, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers, QDropEvent::Type type = QDropEvent::Drop)
 
-=item   Qt::DropAction dropAction()
+=item   ~QDropEvent()
 
-=item   QByteArray encodedData(const char * arg0)
+=item  void acceptProposedAction()
 
-=item   const char * format(int n = 0)
+=item  Qt::DropAction dropAction()
 
-=item   const char * format(int n)
+=item  QByteArray encodedData(const char * arg0)
 
-=item   const QMimeData * mimeData()
+=item  const char * format(int n)
 
-=item   const QPoint & pos()
+=item  const char * format(int n = 0)
 
-=item   Qt::DropAction proposedAction()
+=item  QFlags<Qt::KeyboardModifier> keyboardModifiers()
 
-=item   bool provides(const char * arg0)
+=item  const QMimeData * mimeData()
 
-=item   void setDropAction(Qt::DropAction action)
+=item  QFlags<Qt::MouseButton> mouseButtons()
 
-=item   QWidget * source()
+=item  const QPoint & pos()
+
+=item  QFlags<Qt::DropAction> possibleActions()
+
+=item  Qt::DropAction proposedAction()
+
+=item  bool provides(const char * arg0)
+
+=item  void setDropAction(Qt::DropAction action)
+
+=item  QWidget * source()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

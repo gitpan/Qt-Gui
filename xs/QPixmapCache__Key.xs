@@ -27,32 +27,33 @@ QPixmapCache::Key *ret;
 QPixmapCache::Key * arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QPixmapCache::Key();
+        if (1) {
+      
+    ret = new QPixmapCache::Key();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPixmapCache::Key", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QPixmapCache::Key")) {
-        arg10 = reinterpret_cast<QPixmapCache::Key *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QPixmapCache::Key");
+      arg10 = reinterpret_cast<QPixmapCache::Key *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QPixmapCache::Key(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPixmapCache::Key", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~Key()
@@ -69,14 +70,12 @@ PREINIT:
 QPixmapCache::Key * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QPixmapCache::Key")) {
-        arg00 = reinterpret_cast<QPixmapCache::Key *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPixmapCache::Key");
+      arg00 = reinterpret_cast<QPixmapCache::Key *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->operator!=(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QPixmapCache::Key & operator=(const QPixmapCache::Key & other)
 void
@@ -85,14 +84,12 @@ PREINIT:
 QPixmapCache::Key * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QPixmapCache::Key")) {
-        arg00 = reinterpret_cast<QPixmapCache::Key *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPixmapCache::Key");
+      arg00 = reinterpret_cast<QPixmapCache::Key *>(SvIV((SV*)SvRV(ST(1))));
     QPixmapCache::Key * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPixmapCache::Key", (void *)ret);
     XSRETURN(1);
+    }
 
 ## bool operator==(const QPixmapCache::Key & key)
 void
@@ -101,11 +98,9 @@ PREINIT:
 QPixmapCache::Key * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QPixmapCache::Key")) {
-        arg00 = reinterpret_cast<QPixmapCache::Key *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPixmapCache::Key");
+      arg00 = reinterpret_cast<QPixmapCache::Key *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->operator==(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }

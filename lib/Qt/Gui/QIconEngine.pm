@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,17 +23,24 @@ Qt::Gui::QIconEngine
 
 =over
 
-=item    ~QIconEngine()
+=item   ~QIconEngine()
 
-=item   QSize actualSize(const QSize & size, QIcon::Mode mode, QIcon::State state)
+=item  QSize actualSize(const QSize & size, QIcon::Mode mode, QIcon::State state)
 
-=item   void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode, QIcon::State state)
+=item  void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode, QIcon::State state)
 
-=item   void addPixmap(const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state)
+=item  void addPixmap(const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state)
 
-=item   void paint(QPainter * painter, const QRect & rect, QIcon::Mode mode, QIcon::State state)
+=item  void paint(QPainter * painter, const QRect & rect, QIcon::Mode mode, QIcon::State state)
 
-=item   QPixmap pixmap(const QSize & size, QIcon::Mode mode, QIcon::State state)
+=item  QPixmap pixmap(const QSize & size, QIcon::Mode mode, QIcon::State state)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

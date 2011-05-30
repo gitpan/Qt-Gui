@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,25 +23,32 @@ Qt::Gui::QTableWidgetSelectionRange
 
 =over
 
-=item    QTableWidgetSelectionRange()
+=item   QTableWidgetSelectionRange()
 
-=item    QTableWidgetSelectionRange(const QTableWidgetSelectionRange & other)
+=item   QTableWidgetSelectionRange(const QTableWidgetSelectionRange & other)
 
-=item    QTableWidgetSelectionRange(int top, int left, int bottom, int right)
+=item   QTableWidgetSelectionRange(int top, int left, int bottom, int right)
 
-=item    ~QTableWidgetSelectionRange()
+=item   ~QTableWidgetSelectionRange()
 
-=item   int bottomRow()
+=item  int bottomRow()
 
-=item   int columnCount()
+=item  int columnCount()
 
-=item   int leftColumn()
+=item  int leftColumn()
 
-=item   int rightColumn()
+=item  int rightColumn()
 
-=item   int rowCount()
+=item  int rowCount()
 
-=item   int topRow()
+=item  int topRow()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

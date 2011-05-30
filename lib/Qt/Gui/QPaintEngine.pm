@@ -7,69 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub PrimitiveTransform() { 0 }
-sub PatternTransform() { 1 }
-sub PixmapTransform() { 2 }
-sub PatternBrush() { 3 }
-sub LinearGradientFill() { 4 }
-sub RadialGradientFill() { 5 }
-sub ConicalGradientFill() { 6 }
-sub AlphaBlend() { 7 }
-sub PorterDuff() { 8 }
-sub PainterPaths() { 9 }
-sub Antialiasing() { 10 }
-sub BrushStroke() { 11 }
-sub ConstantOpacity() { 12 }
-sub MaskedBrush() { 13 }
-sub PerspectiveTransform() { 14 }
-sub BlendModes() { 15 }
-sub ObjectBoundingModeGradients() { 16 }
-sub RasterOpModes() { 17 }
-sub PaintOutsidePaintEvent() { 18 }
-sub AllFeatures() { 19 }
-sub DirtyPen() { 0 }
-sub DirtyBrush() { 1 }
-sub DirtyBrushOrigin() { 2 }
-sub DirtyFont() { 3 }
-sub DirtyBackground() { 4 }
-sub DirtyBackgroundMode() { 5 }
-sub DirtyTransform() { 6 }
-sub DirtyClipRegion() { 7 }
-sub DirtyClipPath() { 8 }
-sub DirtyHints() { 9 }
-sub DirtyCompositionMode() { 10 }
-sub DirtyClipEnabled() { 11 }
-sub DirtyOpacity() { 12 }
-sub AllDirty() { 13 }
-sub OddEvenMode() { 0 }
-sub WindingMode() { 1 }
-sub ConvexMode() { 2 }
-sub PolylineMode() { 3 }
-sub X11() { 0 }
-sub Windows() { 1 }
-sub QuickDraw() { 2 }
-sub CoreGraphics() { 3 }
-sub MacPrinter() { 4 }
-sub QWindowSystem() { 5 }
-sub PostScript() { 6 }
-sub OpenGL() { 7 }
-sub Picture() { 8 }
-sub SVG() { 9 }
-sub Raster() { 10 }
-sub Direct3D() { 11 }
-sub Pdf() { 12 }
-sub OpenVG() { 13 }
-sub OpenGL2() { 14 }
-sub PaintBuffer() { 15 }
-sub User() { 16 }
-sub MaxUser() { 17 }
 
 
 1;
@@ -82,69 +23,204 @@ Qt::Gui::QPaintEngine
 
 =over
 
-=item    ~QPaintEngine()
+=item   QPaintEngine(QFlags<QPaintEngine::PaintEngineFeature> features)
 
-=item   bool begin(QPaintDevice * pdev)
+=item   QPaintEngine(QFlags<QPaintEngine::PaintEngineFeature> features = 0)
 
-=item   QPoint coordinateOffset()
+=item   ~QPaintEngine()
 
-=item   void drawEllipse(const QRectF & r)
+=item  bool begin(QPaintDevice * pdev)
 
-=item   void drawEllipse(const QRect & r)
+=item  void clearDirty(QFlags<QPaintEngine::DirtyFlag> df)
 
-=item   void drawLines(const QLine * lines, int lineCount)
+=item  QPoint coordinateOffset()
 
-=item   void drawLines(const QLineF * lines, int lineCount)
+=item  void drawEllipse(const QRectF & r)
 
-=item   void drawPath(const QPainterPath & path)
+=item  void drawEllipse(const QRect & r)
 
-=item   void drawPixmap(const QRectF & r, const QPixmap & pm, const QRectF & sr)
+=item  void drawImage(const QRectF & r, const QImage & pm, const QRectF & sr, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   void drawPoints(const QPointF * points, int pointCount)
+=item  void drawImage(const QRectF & r, const QImage & pm, const QRectF & sr, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   void drawPoints(const QPoint * points, int pointCount)
+=item  void drawLines(const QLine * lines, int lineCount)
 
-=item   void drawPolygon(const QPointF * points, int pointCount, QPaintEngine::PolygonDrawMode mode)
+=item  void drawLines(const QLineF * lines, int lineCount)
 
-=item   void drawPolygon(const QPoint * points, int pointCount, QPaintEngine::PolygonDrawMode mode)
+=item  void drawPath(const QPainterPath & path)
 
-=item   void drawRects(const QRect * rects, int rectCount)
+=item  void drawPixmap(const QRectF & r, const QPixmap & pm, const QRectF & sr)
 
-=item   void drawRects(const QRectF * rects, int rectCount)
+=item  void drawPoints(const QPointF * points, int pointCount)
 
-=item   void drawTextItem(const QPointF & p, const QTextItem & textItem)
+=item  void drawPoints(const QPoint * points, int pointCount)
 
-=item   void drawTiledPixmap(const QRectF & r, const QPixmap & pixmap, const QPointF & s)
+=item  void drawPolygon(const QPointF * points, int pointCount, QPaintEngine::PolygonDrawMode mode)
 
-=item   bool end()
+=item  void drawPolygon(const QPoint * points, int pointCount, QPaintEngine::PolygonDrawMode mode)
 
-=item   void fix_neg_rect(int * x, int * y, int * w, int * h)
+=item  void drawRects(const QRect * rects, int rectCount)
 
-=item   bool isActive()
+=item  void drawRects(const QRectF * rects, int rectCount)
 
-=item   bool isExtended()
+=item  void drawTextItem(const QPointF & p, const QTextItem & textItem)
 
-=item   QPaintDevice * paintDevice()
+=item  void drawTiledPixmap(const QRectF & r, const QPixmap & pixmap, const QPointF & s)
 
-=item   QPainter * painter()
+=item  bool end()
 
-=item   void setActive(bool newState)
+=item  void fix_neg_rect(int * x, int * y, int * w, int * h)
 
-=item   void setPaintDevice(QPaintDevice * device)
+=item  bool hasFeature(QFlags<QPaintEngine::PaintEngineFeature> feature)
 
-=item   void setSystemClip(const QRegion & baseClip)
+=item  bool isActive()
 
-=item   void setSystemRect(const QRect & rect)
+=item  bool isExtended()
 
-=item   void syncState()
+=item  QPaintDevice * paintDevice()
 
-=item   QRegion systemClip()
+=item  QPainter * painter()
 
-=item   QRect systemRect()
+=item  void setActive(bool newState)
 
-=item   QPaintEngine::Type type()
+=item  void setDirty(QFlags<QPaintEngine::DirtyFlag> df)
 
-=item   void updateState(const QPaintEngineState & state)
+=item  void setPaintDevice(QPaintDevice * device)
+
+=item  void setSystemClip(const QRegion & baseClip)
+
+=item  void setSystemRect(const QRect & rect)
+
+=item  void syncState()
+
+=item  QRegion systemClip()
+
+=item  QRect systemRect()
+
+=item  bool testDirty(QFlags<QPaintEngine::DirtyFlag> df)
+
+=item  QPaintEngine::Type type()
+
+=item  void updateState(const QPaintEngineState & state)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item PrimitiveTransform
+
+=item PatternTransform
+
+=item PixmapTransform
+
+=item PatternBrush
+
+=item LinearGradientFill
+
+=item RadialGradientFill
+
+=item ConicalGradientFill
+
+=item AlphaBlend
+
+=item PorterDuff
+
+=item PainterPaths
+
+=item Antialiasing
+
+=item BrushStroke
+
+=item ConstantOpacity
+
+=item MaskedBrush
+
+=item PerspectiveTransform
+
+=item BlendModes
+
+=item ObjectBoundingModeGradients
+
+=item RasterOpModes
+
+=item PaintOutsidePaintEvent
+
+=item AllFeatures
+
+=item DirtyPen
+
+=item DirtyBrush
+
+=item DirtyBrushOrigin
+
+=item DirtyFont
+
+=item DirtyBackground
+
+=item DirtyBackgroundMode
+
+=item DirtyTransform
+
+=item DirtyClipRegion
+
+=item DirtyClipPath
+
+=item DirtyHints
+
+=item DirtyCompositionMode
+
+=item DirtyClipEnabled
+
+=item DirtyOpacity
+
+=item AllDirty
+
+=item OddEvenMode
+
+=item WindingMode
+
+=item ConvexMode
+
+=item PolylineMode
+
+=item X11
+
+=item Windows
+
+=item QuickDraw
+
+=item CoreGraphics
+
+=item MacPrinter
+
+=item QWindowSystem
+
+=item PostScript
+
+=item OpenGL
+
+=item Picture
+
+=item SVG
+
+=item Raster
+
+=item Direct3D
+
+=item Pdf
+
+=item OpenVG
+
+=item OpenGL2
+
+=item PaintBuffer
+
+=item User
+
+=item MaxUser
 
 
 =back

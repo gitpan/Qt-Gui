@@ -7,17 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Leading() { 0 }
-sub Trailing() { 1 }
-sub CursorBetweenCharacters() { 0 }
-sub CursorOnCharacter() { 1 }
 
 
 1;
@@ -30,65 +23,82 @@ Qt::Gui::QTextLine
 
 =over
 
-=item    QTextLine()
+=item   QTextLine()
 
-=item   qreal ascent()
+=item  qreal ascent()
 
-=item   qreal cursorToX(int * cursorPos, QTextLine::Edge edge = QTextLine::Leading)
+=item  qreal cursorToX(int * cursorPos, QTextLine::Edge edge)
 
-=item   qreal cursorToX(int * cursorPos, QTextLine::Edge edge)
+=item  qreal cursorToX(int * cursorPos, QTextLine::Edge edge = QTextLine::Leading)
 
-=item   qreal cursorToX(int cursorPos, QTextLine::Edge edge = QTextLine::Leading)
+=item  qreal cursorToX(int cursorPos, QTextLine::Edge edge)
 
-=item   qreal cursorToX(int cursorPos, QTextLine::Edge edge)
+=item  qreal cursorToX(int cursorPos, QTextLine::Edge edge = QTextLine::Leading)
 
-=item   qreal descent()
+=item  qreal descent()
 
-=item   void draw(QPainter * p, const QPointF & point, const QTextLayout::FormatRange * selection = 0)
+=item  void draw(QPainter * p, const QPointF & point, const QTextLayout::FormatRange * selection)
 
-=item   void draw(QPainter * p, const QPointF & point, const QTextLayout::FormatRange * selection)
+=item  void draw(QPainter * p, const QPointF & point, const QTextLayout::FormatRange * selection = 0)
 
-=item   qreal height()
+=item  qreal height()
 
-=item   bool isValid()
+=item  qreal horizontalAdvance()
 
-=item   qreal leading()
+=item  bool isValid()
 
-=item   bool leadingIncluded()
+=item  qreal leading()
 
-=item   int lineNumber()
+=item  bool leadingIncluded()
 
-=item   QRectF naturalTextRect()
+=item  int lineNumber()
 
-=item   qreal naturalTextWidth()
+=item  QRectF naturalTextRect()
 
-=item   QPointF position()
+=item  qreal naturalTextWidth()
 
-=item   QRectF rect()
+=item  QPointF position()
 
-=item   void setLeadingIncluded(bool included)
+=item  QRectF rect()
 
-=item   void setLineWidth(qreal width)
+=item  void setLeadingIncluded(bool included)
 
-=item   void setNumColumns(int columns)
+=item  void setLineWidth(qreal width)
 
-=item   void setNumColumns(int columns, qreal alignmentWidth)
+=item  void setNumColumns(int columns)
 
-=item   void setPosition(const QPointF & pos)
+=item  void setNumColumns(int columns, qreal alignmentWidth)
 
-=item   int textLength()
+=item  void setPosition(const QPointF & pos)
 
-=item   int textStart()
+=item  int textLength()
 
-=item   qreal width()
+=item  int textStart()
 
-=item   qreal x()
+=item  qreal width()
 
-=item   int xToCursor(qreal x, QTextLine::CursorPosition arg1 = QTextLine::CursorBetweenCharacters)
+=item  qreal x()
 
-=item   int xToCursor(qreal x, QTextLine::CursorPosition arg1)
+=item  int xToCursor(qreal x, QTextLine::CursorPosition arg1)
 
-=item   qreal y()
+=item  int xToCursor(qreal x, QTextLine::CursorPosition arg1 = QTextLine::CursorBetweenCharacters)
+
+=item  qreal y()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Leading
+
+=item Trailing
+
+=item CursorBetweenCharacters
+
+=item CursorOnCharacter
 
 
 =back

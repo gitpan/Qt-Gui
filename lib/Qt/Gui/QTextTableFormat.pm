@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextFrameFormat/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextFrameFormat/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,27 +24,38 @@ Qt::Gui::QTextTableFormat
 
 =over
 
-=item    QTextTableFormat()
+=item   QTextTableFormat()
 
-=item   qreal cellPadding()
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   qreal cellSpacing()
+=item  qreal cellPadding()
 
-=item   void clearColumnWidthConstraints()
+=item  qreal cellSpacing()
 
-=item   int columns()
+=item  void clearColumnWidthConstraints()
 
-=item   int headerRowCount()
+=item  int columns()
 
-=item   bool isValid()
+=item  int headerRowCount()
 
-=item   void setCellPadding(qreal padding)
+=item  bool isValid()
 
-=item   void setCellSpacing(qreal spacing)
+=item  void setAlignment(QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setColumns(int columns)
+=item  void setCellPadding(qreal padding)
 
-=item   void setHeaderRowCount(int count)
+=item  void setCellSpacing(qreal spacing)
+
+=item  void setColumns(int columns)
+
+=item  void setHeaderRowCount(int count)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

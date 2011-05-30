@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGesture/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGesture/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,13 +24,20 @@ Qt::Gui::QTapGesture
 
 =over
 
-=item    QTapGesture(QObject * parent = 0)
+=item   QTapGesture(QObject * parent)
 
-=item    QTapGesture(QObject * parent)
+=item   QTapGesture(QObject * parent = 0)
 
-=item   QPointF position()
+=item  QPointF position()
 
-=item   void setPosition(const QPointF & pos)
+=item  void setPosition(const QPointF & pos)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

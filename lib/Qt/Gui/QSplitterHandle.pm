@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,24 @@ Qt::Gui::QSplitterHandle
 
 =over
 
-=item    QSplitterHandle(Qt::Orientation o, QSplitter * parent)
+=item   QSplitterHandle(Qt::Orientation o, QSplitter * parent)
 
-=item   bool opaqueResize()
+=item  bool opaqueResize()
 
-=item   Qt::Orientation orientation()
+=item  Qt::Orientation orientation()
 
-=item   void setOrientation(Qt::Orientation o)
+=item  void setOrientation(Qt::Orientation o)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   QSplitter * splitter()
+=item  QSplitter * splitter()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

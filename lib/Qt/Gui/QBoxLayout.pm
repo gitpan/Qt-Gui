@@ -7,20 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QLayout/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QLayout/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub LeftToRight() { 0 }
-sub RightToLeft() { 1 }
-sub TopToBottom() { 2 }
-sub BottomToTop() { 3 }
-sub Down() { 4 }
-sub Up() { 5 }
 
 
 1;
@@ -33,77 +24,110 @@ Qt::Gui::QBoxLayout
 
 =over
 
-=item    QBoxLayout(QBoxLayout::Direction arg0, QWidget * parent = 0)
+=item   QBoxLayout(QBoxLayout::Direction arg0, QWidget * parent)
 
-=item    QBoxLayout(QBoxLayout::Direction arg0, QWidget * parent)
+=item   QBoxLayout(QBoxLayout::Direction arg0, QWidget * parent = 0)
 
-=item    ~QBoxLayout()
+=item   ~QBoxLayout()
 
-=item   void addItem(QLayoutItem * arg0)
+=item  void addItem(QLayoutItem * arg0)
 
-=item   void addLayout(QLayout * layout, int stretch = 0)
+=item  void addLayout(QLayout * layout, int stretch)
 
-=item   void addLayout(QLayout * layout, int stretch)
+=item  void addLayout(QLayout * layout, int stretch = 0)
 
-=item   void addSpacerItem(QSpacerItem * spacerItem)
+=item  void addSpacerItem(QSpacerItem * spacerItem)
 
-=item   void addSpacing(int size)
+=item  void addSpacing(int size)
 
-=item   void addStretch(int stretch = 0)
+=item  void addStretch(int stretch)
 
-=item   void addStretch(int stretch)
+=item  void addStretch(int stretch = 0)
 
-=item   void addStrut(int arg0)
+=item  void addStrut(int arg0)
 
-=item   int count()
+=item  void addWidget(QWidget * arg0, int stretch, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   QBoxLayout::Direction direction()
+=item  void addWidget(QWidget * arg0, int stretch, QFlags<Qt::AlignmentFlag> alignment = 0)
 
-=item   bool hasHeightForWidth()
+=item  void addWidget(QWidget * arg0, int stretch = 0, QFlags<Qt::AlignmentFlag> alignment = 0)
 
-=item   int heightForWidth(int arg0)
+=item  int count()
 
-=item   void insertLayout(int index, QLayout * layout, int stretch = 0)
+=item  QBoxLayout::Direction direction()
 
-=item   void insertLayout(int index, QLayout * layout, int stretch)
+=item  QFlags<Qt::Orientation> expandingDirections()
 
-=item   void insertSpacerItem(int index, QSpacerItem * spacerItem)
+=item  bool hasHeightForWidth()
 
-=item   void insertSpacing(int index, int size)
+=item  int heightForWidth(int arg0)
 
-=item   void insertStretch(int index, int stretch = 0)
+=item  void insertLayout(int index, QLayout * layout, int stretch)
 
-=item   void insertStretch(int index, int stretch)
+=item  void insertLayout(int index, QLayout * layout, int stretch = 0)
 
-=item   void invalidate()
+=item  void insertSpacerItem(int index, QSpacerItem * spacerItem)
 
-=item   QLayoutItem * itemAt(int arg0)
+=item  void insertSpacing(int index, int size)
 
-=item   QSize maximumSize()
+=item  void insertStretch(int index, int stretch)
 
-=item   int minimumHeightForWidth(int arg0)
+=item  void insertStretch(int index, int stretch = 0)
 
-=item   QSize minimumSize()
+=item  void insertWidget(int index, QWidget * widget, int stretch, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setDirection(QBoxLayout::Direction arg0)
+=item  void insertWidget(int index, QWidget * widget, int stretch, QFlags<Qt::AlignmentFlag> alignment = 0)
 
-=item   void setGeometry(const QRect & arg0)
+=item  void insertWidget(int index, QWidget * widget, int stretch = 0, QFlags<Qt::AlignmentFlag> alignment = 0)
 
-=item   void setSpacing(int spacing)
+=item  void invalidate()
 
-=item   void setStretch(int index, int stretch)
+=item  QLayoutItem * itemAt(int arg0)
 
-=item   bool setStretchFactor(QWidget * w, int stretch)
+=item  QSize maximumSize()
 
-=item   bool setStretchFactor(QLayout * l, int stretch)
+=item  int minimumHeightForWidth(int arg0)
 
-=item   QSize sizeHint()
+=item  QSize minimumSize()
 
-=item   int spacing()
+=item  void setDirection(QBoxLayout::Direction arg0)
 
-=item   int stretch(int index)
+=item  void setGeometry(const QRect & arg0)
 
-=item   QLayoutItem * takeAt(int arg0)
+=item  void setSpacing(int spacing)
+
+=item  void setStretch(int index, int stretch)
+
+=item  bool setStretchFactor(QWidget * w, int stretch)
+
+=item  bool setStretchFactor(QLayout * l, int stretch)
+
+=item  QSize sizeHint()
+
+=item  int spacing()
+
+=item  int stretch(int index)
+
+=item  QLayoutItem * takeAt(int arg0)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item LeftToRight
+
+=item RightToLeft
+
+=item TopToBottom
+
+=item BottomToTop
+
+=item Down
+
+=item Up
 
 
 =back

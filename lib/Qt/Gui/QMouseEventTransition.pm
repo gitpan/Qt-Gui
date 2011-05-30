@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEventTransition/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,23 +24,34 @@ Qt::Gui::QMouseEventTransition
 
 =over
 
-=item    QMouseEventTransition(QState * sourceState = 0)
+=item   QMouseEventTransition(QState * sourceState)
 
-=item    QMouseEventTransition(QState * sourceState)
+=item   QMouseEventTransition(QState * sourceState = 0)
 
-=item    QMouseEventTransition(QObject * object, QEvent::Type type, Qt::MouseButton button, QState * sourceState = 0)
+=item   QMouseEventTransition(QObject * object, QEvent::Type type, Qt::MouseButton button, QState * sourceState)
 
-=item    QMouseEventTransition(QObject * object, QEvent::Type type, Qt::MouseButton button, QState * sourceState)
+=item   QMouseEventTransition(QObject * object, QEvent::Type type, Qt::MouseButton button, QState * sourceState = 0)
 
-=item    ~QMouseEventTransition()
+=item   ~QMouseEventTransition()
 
-=item   Qt::MouseButton button()
+=item  Qt::MouseButton button()
 
-=item   QPainterPath hitTestPath()
+=item  QPainterPath hitTestPath()
 
-=item   void setButton(Qt::MouseButton button)
+=item  QFlags<Qt::KeyboardModifier> modifierMask()
 
-=item   void setHitTestPath(const QPainterPath & path)
+=item  void setButton(Qt::MouseButton button)
+
+=item  void setHitTestPath(const QPainterPath & path)
+
+=item  void setModifierMask(QFlags<Qt::KeyboardModifier> modifiers)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

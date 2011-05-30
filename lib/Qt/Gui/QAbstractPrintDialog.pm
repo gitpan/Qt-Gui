@@ -7,24 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub AllPages() { 0 }
-sub Selection() { 1 }
-sub PageRange() { 2 }
-sub None() { 0 }
-sub PrintToFile() { 1 }
-sub PrintSelection() { 2 }
-sub PrintPageRange() { 3 }
-sub PrintShowPageSize() { 4 }
-sub PrintCollateCopies() { 5 }
-sub DontUseSheet() { 6 }
 
 
 1;
@@ -37,35 +24,70 @@ Qt::Gui::QAbstractPrintDialog
 
 =over
 
-=item    QAbstractPrintDialog(QPrinter * printer, QWidget * parent = 0)
+=item   QAbstractPrintDialog(QPrinter * printer, QWidget * parent)
 
-=item    QAbstractPrintDialog(QPrinter * printer, QWidget * parent)
+=item   QAbstractPrintDialog(QPrinter * printer, QWidget * parent = 0)
 
-=item    ~QAbstractPrintDialog()
+=item   ~QAbstractPrintDialog()
 
-=item   void addEnabledOption(QAbstractPrintDialog::PrintDialogOption option)
+=item  void addEnabledOption(QAbstractPrintDialog::PrintDialogOption option)
 
-=item   int exec()
+=item  QFlags<QAbstractPrintDialog::PrintDialogOption> enabledOptions()
 
-=item   int fromPage()
+=item  int exec()
 
-=item   bool isOptionEnabled(QAbstractPrintDialog::PrintDialogOption option)
+=item  int fromPage()
 
-=item   int maxPage()
+=item  bool isOptionEnabled(QAbstractPrintDialog::PrintDialogOption option)
 
-=item   int minPage()
+=item  int maxPage()
 
-=item   QAbstractPrintDialog::PrintRange printRange()
+=item  int minPage()
 
-=item   QPrinter * printer()
+=item  QAbstractPrintDialog::PrintRange printRange()
 
-=item   void setFromTo(int fromPage, int toPage)
+=item  QPrinter * printer()
 
-=item   void setMinMax(int min, int max)
+=item  void setEnabledOptions(QFlags<QAbstractPrintDialog::PrintDialogOption> options)
 
-=item   void setPrintRange(QAbstractPrintDialog::PrintRange range)
+=item  void setFromTo(int fromPage, int toPage)
 
-=item   int toPage()
+=item  void setMinMax(int min, int max)
+
+=item  void setPrintRange(QAbstractPrintDialog::PrintRange range)
+
+=item  int toPage()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item AllPages
+
+=item Selection
+
+=item PageRange
+
+=item CurrentPage
+
+=item None
+
+=item PrintToFile
+
+=item PrintSelection
+
+=item PrintPageRange
+
+=item PrintShowPageSize
+
+=item PrintCollateCopies
+
+=item DontUseSheet
+
+=item PrintCurrentPage
 
 
 =back

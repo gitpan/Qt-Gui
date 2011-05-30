@@ -29,32 +29,40 @@ QStyleOptionFrameV3 * arg10;
 QStyleOptionFrame * arg20;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QStyleOptionFrameV3();
+        if (1) {
+      
+    ret = new QStyleOptionFrameV3();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionFrameV3", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QStyleOptionFrameV3")) {
-        arg10 = reinterpret_cast<QStyleOptionFrameV3 *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QStyleOptionFrameV3");
+      arg10 = reinterpret_cast<QStyleOptionFrameV3 *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QStyleOptionFrameV3(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionFrameV3", (void *)ret);
     XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QStyleOptionFrame")) {
+      arg20 = reinterpret_cast<QStyleOptionFrame *>(SvIV((SV*)SvRV(ST(1))));
+    ret = new QStyleOptionFrameV3(*arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionFrameV3", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -66,11 +74,25 @@ PREINIT:
 QStyleOptionFrame * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QStyleOptionFrame")) {
-        arg00 = reinterpret_cast<QStyleOptionFrame *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QStyleOptionFrame");
+      arg00 = reinterpret_cast<QStyleOptionFrame *>(SvIV((SV*)SvRV(ST(1))));
     QStyleOptionFrameV3 * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionFrameV3", (void *)ret);
+    XSRETURN(1);
+    }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# StyleOptionVersion::Version
+void
+Version()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QStyleOptionFrameV3::Version);
     XSRETURN(1);

@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +23,22 @@ Qt::Gui::QImageTextKeyLang
 
 =over
 
-=item    QImageTextKeyLang()
+=item   QImageTextKeyLang()
 
-=item    QImageTextKeyLang(const char * k, const char * l)
+=item   QImageTextKeyLang(const char * k, const char * l)
 
-=item   bool operator!=(const QImageTextKeyLang & other)
+=item  bool operator!=(const QImageTextKeyLang & other)
 
-=item   bool operator<(const QImageTextKeyLang & other)
+=item  bool operator<(const QImageTextKeyLang & other)
 
-=item   bool operator==(const QImageTextKeyLang & other)
+=item  bool operator==(const QImageTextKeyLang & other)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

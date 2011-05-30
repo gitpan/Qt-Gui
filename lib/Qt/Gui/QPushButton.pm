@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractButton/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractButton/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,41 +24,48 @@ Qt::Gui::QPushButton
 
 =over
 
-=item    QPushButton(QWidget * parent = 0)
+=item   QPushButton(QWidget * parent)
 
-=item    QPushButton(QWidget * parent)
+=item   QPushButton(QWidget * parent = 0)
 
-=item    QPushButton(const QString & text, QWidget * parent = 0)
+=item   QPushButton(const QString & text, QWidget * parent)
 
-=item    QPushButton(const QString & text, QWidget * parent)
+=item   QPushButton(const QString & text, QWidget * parent = 0)
 
-=item    QPushButton(const QIcon & icon, const QString & text, QWidget * parent = 0)
+=item   QPushButton(const QIcon & icon, const QString & text, QWidget * parent)
 
-=item    QPushButton(const QIcon & icon, const QString & text, QWidget * parent)
+=item   QPushButton(const QIcon & icon, const QString & text, QWidget * parent = 0)
 
-=item    ~QPushButton()
+=item   ~QPushButton()
 
-=item   bool autoDefault()
+=item  bool autoDefault()
 
-=item   bool isDefault()
+=item  bool isDefault()
 
-=item   bool isFlat()
+=item  bool isFlat()
 
-=item   QMenu * menu()
+=item  QMenu * menu()
 
-=item   QSize minimumSizeHint()
+=item  QSize minimumSizeHint()
 
-=item   void setAutoDefault(bool arg0)
+=item  void setAutoDefault(bool arg0)
 
-=item   void setDefault(bool arg0)
+=item  void setDefault(bool arg0)
 
-=item   void setFlat(bool arg0)
+=item  void setFlat(bool arg0)
 
-=item   void setMenu(QMenu * menu)
+=item  void setMenu(QMenu * menu)
 
-=item   void showMenu()
+=item  void showMenu()
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

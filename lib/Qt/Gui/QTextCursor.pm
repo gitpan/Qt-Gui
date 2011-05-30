@@ -7,44 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub MoveAnchor() { 0 }
-sub KeepAnchor() { 1 }
-sub NoMove() { 0 }
-sub Start() { 1 }
-sub Up() { 2 }
-sub StartOfLine() { 3 }
-sub StartOfBlock() { 4 }
-sub StartOfWord() { 5 }
-sub PreviousBlock() { 6 }
-sub PreviousCharacter() { 7 }
-sub PreviousWord() { 8 }
-sub Left() { 9 }
-sub WordLeft() { 10 }
-sub End() { 11 }
-sub Down() { 12 }
-sub EndOfLine() { 13 }
-sub EndOfWord() { 14 }
-sub EndOfBlock() { 15 }
-sub NextBlock() { 16 }
-sub NextCharacter() { 17 }
-sub NextWord() { 18 }
-sub Right() { 19 }
-sub WordRight() { 20 }
-sub NextCell() { 21 }
-sub PreviousCell() { 22 }
-sub NextRow() { 23 }
-sub PreviousRow() { 24 }
-sub WordUnderCursor() { 0 }
-sub LineUnderCursor() { 1 }
-sub BlockUnderCursor() { 2 }
-sub Document() { 3 }
 
 
 1;
@@ -57,167 +23,244 @@ Qt::Gui::QTextCursor
 
 =over
 
-=item    QTextCursor()
+=item   QTextCursor()
 
-=item    QTextCursor(QTextDocument * document)
+=item   QTextCursor(QTextDocument * document)
 
-=item    QTextCursor(QTextFrame * frame)
+=item   QTextCursor(QTextFrame * frame)
 
-=item    QTextCursor(const QTextBlock & block)
+=item   QTextCursor(const QTextBlock & block)
 
-=item    QTextCursor(QTextCursorPrivate * d)
+=item   QTextCursor(QTextCursorPrivate * d)
 
-=item    QTextCursor(const QTextCursor & cursor)
+=item   QTextCursor(const QTextCursor & cursor)
 
-=item    QTextCursor(QTextDocumentPrivate * p, int pos)
+=item   QTextCursor(QTextDocumentPrivate * p, int pos)
 
-=item    ~QTextCursor()
+=item   ~QTextCursor()
 
-=item   int anchor()
+=item  int anchor()
 
-=item   bool atBlockEnd()
+=item  bool atBlockEnd()
 
-=item   bool atBlockStart()
+=item  bool atBlockStart()
 
-=item   bool atEnd()
+=item  bool atEnd()
 
-=item   bool atStart()
+=item  bool atStart()
 
-=item   void beginEditBlock()
+=item  void beginEditBlock()
 
-=item   QTextBlock block()
+=item  QTextBlock block()
 
-=item   QTextCharFormat blockCharFormat()
+=item  QTextCharFormat blockCharFormat()
 
-=item   QTextBlockFormat blockFormat()
+=item  QTextBlockFormat blockFormat()
 
-=item   int blockNumber()
+=item  int blockNumber()
 
-=item   QTextCharFormat charFormat()
+=item  QTextCharFormat charFormat()
 
-=item   void clearSelection()
+=item  void clearSelection()
 
-=item   int columnNumber()
+=item  int columnNumber()
 
-=item   QTextList * createList(const QTextListFormat & format)
+=item  QTextList * createList(const QTextListFormat & format)
 
-=item   QTextList * createList(QTextListFormat::Style style)
+=item  QTextList * createList(QTextListFormat::Style style)
 
-=item   QTextFrame * currentFrame()
+=item  QTextFrame * currentFrame()
 
-=item   QTextList * currentList()
+=item  QTextList * currentList()
 
-=item   QTextTable * currentTable()
+=item  QTextTable * currentTable()
 
-=item   void deleteChar()
+=item  void deleteChar()
 
-=item   void deletePreviousChar()
+=item  void deletePreviousChar()
 
-=item   QTextDocument * document()
+=item  QTextDocument * document()
 
-=item   void endEditBlock()
+=item  void endEditBlock()
 
-=item   bool hasComplexSelection()
+=item  bool hasComplexSelection()
 
-=item   bool hasSelection()
+=item  bool hasSelection()
 
-=item   void insertBlock()
+=item  void insertBlock()
 
-=item   void insertBlock(const QTextBlockFormat & format)
+=item  void insertBlock(const QTextBlockFormat & format)
 
-=item   void insertBlock(const QTextBlockFormat & format, const QTextCharFormat & charFormat)
+=item  void insertBlock(const QTextBlockFormat & format, const QTextCharFormat & charFormat)
 
-=item   void insertFragment(const QTextDocumentFragment & fragment)
+=item  void insertFragment(const QTextDocumentFragment & fragment)
 
-=item   QTextFrame * insertFrame(const QTextFrameFormat & format)
+=item  QTextFrame * insertFrame(const QTextFrameFormat & format)
 
-=item   void insertHtml(const QString & html)
+=item  void insertHtml(const QString & html)
 
-=item   void insertImage(const QTextImageFormat & format)
+=item  void insertImage(const QTextImageFormat & format)
 
-=item   void insertImage(const QString & name)
+=item  void insertImage(const QString & name)
 
-=item   void insertImage(const QTextImageFormat & format, QTextFrameFormat::Position alignment)
+=item  void insertImage(const QTextImageFormat & format, QTextFrameFormat::Position alignment)
 
-=item   void insertImage(const QImage & image, const QString & name = QString())
+=item  void insertImage(const QImage & image, const QString & name)
 
-=item   void insertImage(const QImage & image, const QString & name)
+=item  void insertImage(const QImage & image, const QString & name = QString())
 
-=item   QTextList * insertList(const QTextListFormat & format)
+=item  QTextList * insertList(const QTextListFormat & format)
 
-=item   QTextList * insertList(QTextListFormat::Style style)
+=item  QTextList * insertList(QTextListFormat::Style style)
 
-=item   QTextTable * insertTable(int rows, int cols)
+=item  QTextTable * insertTable(int rows, int cols)
 
-=item   QTextTable * insertTable(int rows, int cols, const QTextTableFormat & format)
+=item  QTextTable * insertTable(int rows, int cols, const QTextTableFormat & format)
 
-=item   void insertText(const QString & text)
+=item  void insertText(const QString & text)
 
-=item   void insertText(const QString & text, const QTextCharFormat & format)
+=item  void insertText(const QString & text, const QTextCharFormat & format)
 
-=item   bool isCopyOf(const QTextCursor & other)
+=item  bool isCopyOf(const QTextCursor & other)
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   void joinPreviousEditBlock()
+=item  void joinPreviousEditBlock()
 
-=item   void mergeBlockCharFormat(const QTextCharFormat & modifier)
+=item  bool keepPositionOnInsert()
 
-=item   void mergeBlockFormat(const QTextBlockFormat & modifier)
+=item  void mergeBlockCharFormat(const QTextCharFormat & modifier)
 
-=item   void mergeCharFormat(const QTextCharFormat & modifier)
+=item  void mergeBlockFormat(const QTextBlockFormat & modifier)
 
-=item   bool movePosition(QTextCursor::MoveOperation op, QTextCursor::MoveMode arg1, int n = 1)
+=item  void mergeCharFormat(const QTextCharFormat & modifier)
 
-=item   bool movePosition(QTextCursor::MoveOperation op, QTextCursor::MoveMode arg1, int n)
+=item  bool movePosition(QTextCursor::MoveOperation op, QTextCursor::MoveMode arg1, int n)
 
-=item   bool movePosition(QTextCursor::MoveOperation op, QTextCursor::MoveMode arg1 = QTextCursor::MoveAnchor, int n = 1)
+=item  bool movePosition(QTextCursor::MoveOperation op, QTextCursor::MoveMode arg1, int n = 1)
 
-=item   bool movePosition(QTextCursor::MoveOperation op, QTextCursor::MoveMode arg1, int n = 1)
+=item  bool movePosition(QTextCursor::MoveOperation op, QTextCursor::MoveMode arg1 = QTextCursor::MoveAnchor, int n = 1)
 
-=item   bool operator!=(const QTextCursor & rhs)
+=item  bool operator!=(const QTextCursor & rhs)
 
-=item   bool operator<(const QTextCursor & rhs)
+=item  bool operator<(const QTextCursor & rhs)
 
-=item   bool operator<=(const QTextCursor & rhs)
+=item  bool operator<=(const QTextCursor & rhs)
 
-=item   QTextCursor & operator=(const QTextCursor & other)
+=item  QTextCursor & operator=(const QTextCursor & other)
 
-=item   bool operator==(const QTextCursor & rhs)
+=item  bool operator==(const QTextCursor & rhs)
 
-=item   bool operator>(const QTextCursor & rhs)
+=item  bool operator>(const QTextCursor & rhs)
 
-=item   bool operator>=(const QTextCursor & rhs)
+=item  bool operator>=(const QTextCursor & rhs)
 
-=item   int position()
+=item  int position()
 
-=item   void removeSelectedText()
+=item  int positionInBlock()
 
-=item   void select(QTextCursor::SelectionType selection)
+=item  void removeSelectedText()
 
-=item   void selectedTableCells(int * firstRow, int * numRows, int * firstColumn, int * numColumns)
+=item  void select(QTextCursor::SelectionType selection)
 
-=item   QString selectedText()
+=item  void selectedTableCells(int * firstRow, int * numRows, int * firstColumn, int * numColumns)
 
-=item   QTextDocumentFragment selection()
+=item  QString selectedText()
 
-=item   int selectionEnd()
+=item  QTextDocumentFragment selection()
 
-=item   int selectionStart()
+=item  int selectionEnd()
 
-=item   void setBlockCharFormat(const QTextCharFormat & format)
+=item  int selectionStart()
 
-=item   void setBlockFormat(const QTextBlockFormat & format)
+=item  void setBlockCharFormat(const QTextCharFormat & format)
 
-=item   void setCharFormat(const QTextCharFormat & format)
+=item  void setBlockFormat(const QTextBlockFormat & format)
 
-=item   void setPosition(int pos, QTextCursor::MoveMode mode = QTextCursor::MoveAnchor)
+=item  void setCharFormat(const QTextCharFormat & format)
 
-=item   void setPosition(int pos, QTextCursor::MoveMode mode)
+=item  void setKeepPositionOnInsert(bool b)
 
-=item   void setVisualNavigation(bool b)
+=item  void setPosition(int pos, QTextCursor::MoveMode mode)
 
-=item   bool visualNavigation()
+=item  void setPosition(int pos, QTextCursor::MoveMode mode = QTextCursor::MoveAnchor)
+
+=item  void setVerticalMovementX(int x)
+
+=item  void setVisualNavigation(bool b)
+
+=item  int verticalMovementX()
+
+=item  bool visualNavigation()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item MoveAnchor
+
+=item KeepAnchor
+
+=item NoMove
+
+=item Start
+
+=item Up
+
+=item StartOfLine
+
+=item StartOfBlock
+
+=item StartOfWord
+
+=item PreviousBlock
+
+=item PreviousCharacter
+
+=item PreviousWord
+
+=item Left
+
+=item WordLeft
+
+=item End
+
+=item Down
+
+=item EndOfLine
+
+=item EndOfWord
+
+=item EndOfBlock
+
+=item NextBlock
+
+=item NextCharacter
+
+=item NextWord
+
+=item Right
+
+=item WordRight
+
+=item NextCell
+
+=item PreviousCell
+
+=item NextRow
+
+=item PreviousRow
+
+=item WordUnderCursor
+
+=item LineUnderCursor
+
+=item BlockUnderCursor
+
+=item Document
 
 
 =back

@@ -33,8 +33,12 @@ QItemEditorCreatorBase::createWidget(...)
 PREINIT:
 QWidget * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
@@ -42,13 +46,17 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QByteArray valuePropertyName()
 void
 QItemEditorCreatorBase::valuePropertyName(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QByteArray ret = THIS->valuePropertyName();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QByteArray(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QByteArray", (void *)new QByteArray(ret));
     XSRETURN(1);
+    }

@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsSceneEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsSceneEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,41 +24,60 @@ Qt::Gui::QGraphicsSceneDragDropEvent
 
 =over
 
-=item    QGraphicsSceneDragDropEvent(QGraphicsSceneDragDropEvent::Type type = QGraphicsSceneDragDropEvent::None)
+=item   QGraphicsSceneDragDropEvent(QGraphicsSceneDragDropEvent::Type type)
 
-=item    QGraphicsSceneDragDropEvent(QGraphicsSceneDragDropEvent::Type type)
+=item   QGraphicsSceneDragDropEvent(QGraphicsSceneDragDropEvent::Type type = QGraphicsSceneDragDropEvent::None)
 
-=item    ~QGraphicsSceneDragDropEvent()
+=item   ~QGraphicsSceneDragDropEvent()
 
-=item   void acceptProposedAction()
+=item  void acceptProposedAction()
 
-=item   Qt::DropAction dropAction()
+=item  QFlags<Qt::MouseButton> buttons()
 
-=item   const QMimeData * mimeData()
+=item  Qt::DropAction dropAction()
 
-=item   QPointF pos()
+=item  const QMimeData * mimeData()
 
-=item   Qt::DropAction proposedAction()
+=item  QFlags<Qt::KeyboardModifier> modifiers()
 
-=item   QPointF scenePos()
+=item  QPointF pos()
 
-=item   QPoint screenPos()
+=item  QFlags<Qt::DropAction> possibleActions()
 
-=item   void setDropAction(Qt::DropAction action)
+=item  Qt::DropAction proposedAction()
 
-=item   void setMimeData(const QMimeData * data)
+=item  QPointF scenePos()
 
-=item   void setPos(const QPointF & pos)
+=item  QPoint screenPos()
 
-=item   void setProposedAction(Qt::DropAction action)
+=item  void setButtons(QFlags<Qt::MouseButton> buttons)
 
-=item   void setScenePos(const QPointF & pos)
+=item  void setDropAction(Qt::DropAction action)
 
-=item   void setScreenPos(const QPoint & pos)
+=item  void setMimeData(const QMimeData * data)
 
-=item   void setSource(QWidget * source)
+=item  void setModifiers(QFlags<Qt::KeyboardModifier> modifiers)
 
-=item   QWidget * source()
+=item  void setPos(const QPointF & pos)
+
+=item  void setPossibleActions(QFlags<Qt::DropAction> actions)
+
+=item  void setProposedAction(Qt::DropAction action)
+
+=item  void setScenePos(const QPointF & pos)
+
+=item  void setScreenPos(const QPoint & pos)
+
+=item  void setSource(QWidget * source)
+
+=item  QWidget * source()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

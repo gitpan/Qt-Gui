@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextEdit/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextEdit/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,51 +24,58 @@ Qt::Gui::QTextBrowser
 
 =over
 
-=item    QTextBrowser(QWidget * parent = 0)
+=item   QTextBrowser(QWidget * parent)
 
-=item    QTextBrowser(QWidget * parent)
+=item   QTextBrowser(QWidget * parent = 0)
 
-=item    ~QTextBrowser()
+=item   ~QTextBrowser()
 
-=item   void backward()
+=item  void backward()
 
-=item   int backwardHistoryCount()
+=item  int backwardHistoryCount()
 
-=item   void clearHistory()
+=item  void clearHistory()
 
-=item   void forward()
+=item  void forward()
 
-=item   int forwardHistoryCount()
+=item  int forwardHistoryCount()
 
-=item   QString historyTitle(int arg0)
+=item  QString historyTitle(int arg0)
 
-=item   QUrl historyUrl(int arg0)
+=item  QUrl historyUrl(int arg0)
 
-=item   void home()
+=item  void home()
 
-=item   bool isBackwardAvailable()
+=item  bool isBackwardAvailable()
 
-=item   bool isForwardAvailable()
+=item  bool isForwardAvailable()
 
-=item   QVariant loadResource(int type, const QUrl & name)
+=item  QVariant loadResource(int type, const QUrl & name)
 
-=item   bool openExternalLinks()
+=item  bool openExternalLinks()
 
-=item   bool openLinks()
+=item  bool openLinks()
 
-=item   void reload()
+=item  void reload()
 
-=item   QStringList searchPaths()
+=item  QStringList searchPaths()
 
-=item   void setOpenExternalLinks(bool open)
+=item  void setOpenExternalLinks(bool open)
 
-=item   void setOpenLinks(bool open)
+=item  void setOpenLinks(bool open)
 
-=item   void setSearchPaths(const QStringList & paths)
+=item  void setSearchPaths(const QStringList & paths)
 
-=item   void setSource(const QUrl & name)
+=item  void setSource(const QUrl & name)
 
-=item   QUrl source()
+=item  QUrl source()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

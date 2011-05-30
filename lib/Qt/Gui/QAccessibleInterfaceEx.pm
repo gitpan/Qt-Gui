@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAccessibleInterface/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAccessibleInterface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,11 +24,18 @@ Qt::Gui::QAccessibleInterfaceEx
 
 =over
 
-=item   QAccessible2Interface * interface_cast(QAccessible2::InterfaceType arg0)
+=item  QAccessible2Interface * interface_cast(QAccessible2::InterfaceType arg0)
 
-=item   QVariant invokeMethodEx(QAccessible::Method method, int child, const QVariantList & params)
+=item  QVariant invokeMethodEx(QAccessible::Method method, int child, const QVariantList & params)
 
-=item   QVariant virtual_hook(const QVariant & data)
+=item  QVariant virtual_hook(const QVariant & data)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

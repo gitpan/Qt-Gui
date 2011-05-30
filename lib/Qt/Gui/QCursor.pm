@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,57 +23,60 @@ Qt::Gui::QCursor
 
 =over
 
-=item    QCursor()
+=item   QCursor()
 
-=item    QCursor(Qt::CursorShape shape)
+=item   QCursor(Qt::CursorShape shape)
 
-=item    QCursor(const QCursor & cursor)
+=item   QCursor(const QCursor & cursor)
 
-=item    QCursor(unsigned long cursor)
+=item   QCursor(unsigned long cursor)
 
-=item    QCursor(const QPixmap & pixmap, int hotX, int hotY = -1)
+=item   QCursor(const QPixmap & pixmap, int hotX, int hotY)
 
-=item    QCursor(const QPixmap & pixmap, int hotX, int hotY)
+=item   QCursor(const QPixmap & pixmap, int hotX, int hotY = -1)
 
-=item    QCursor(const QPixmap & pixmap, int hotX = -1, int hotY = -1)
+=item   QCursor(const QPixmap & pixmap, int hotX = -1, int hotY = -1)
 
-=item    QCursor(const QPixmap & pixmap, int hotX, int hotY = -1)
+=item   QCursor(const QBitmap & bitmap, const QBitmap & mask, int hotX, int hotY)
 
-=item    QCursor(const QBitmap & bitmap, const QBitmap & mask, int hotX, int hotY = -1)
+=item   QCursor(const QBitmap & bitmap, const QBitmap & mask, int hotX, int hotY = -1)
 
-=item    QCursor(const QBitmap & bitmap, const QBitmap & mask, int hotX, int hotY)
+=item   QCursor(const QBitmap & bitmap, const QBitmap & mask, int hotX = -1, int hotY = -1)
 
-=item    QCursor(const QBitmap & bitmap, const QBitmap & mask, int hotX = -1, int hotY = -1)
+=item   ~QCursor()
 
-=item    QCursor(const QBitmap & bitmap, const QBitmap & mask, int hotX, int hotY = -1)
+=item  const QBitmap * bitmap()
 
-=item    ~QCursor()
+=item  unsigned long handle()
 
-=item   const QBitmap * bitmap()
+=item  QPoint hotSpot()
 
-=item   unsigned long handle()
+=item  const QBitmap * mask()
 
-=item   QPoint hotSpot()
+=item  QVariant operator QVariant()
 
-=item   const QBitmap * mask()
+=item  QCursor & operator=(const QCursor & cursor)
 
-=item   QVariant operator QVariant()
+=item  QPixmap pixmap()
 
-=item   QCursor & operator=(const QCursor & cursor)
+=item  static QPoint pos()
 
-=item   QPixmap pixmap()
+=item  static void setPos(const QPoint & p)
 
-=item   static QPoint pos()
+=item  static void setPos(int x, int y)
 
-=item   static void setPos(const QPoint & p)
+=item  void setShape(Qt::CursorShape newShape)
 
-=item   static void setPos(int x, int y)
+=item  Qt::CursorShape shape()
 
-=item   void setShape(Qt::CursorShape newShape)
+=item  static int x11Screen()
 
-=item   Qt::CursorShape shape()
 
-=item   static int x11Screen()
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

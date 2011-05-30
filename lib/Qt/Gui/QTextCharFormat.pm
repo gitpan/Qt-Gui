@@ -7,28 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextFormat/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextFormat/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub AlignNormal() { 0 }
-sub AlignSuperScript() { 1 }
-sub AlignSubScript() { 2 }
-sub AlignMiddle() { 3 }
-sub AlignTop() { 4 }
-sub AlignBottom() { 5 }
-sub NoUnderline() { 0 }
-sub SingleUnderline() { 1 }
-sub DashUnderline() { 2 }
-sub DotLine() { 3 }
-sub DashDotLine() { 4 }
-sub DashDotDotLine() { 5 }
-sub WaveUnderline() { 6 }
-sub SpellCheckUnderline() { 7 }
 
 
 1;
@@ -41,115 +24,150 @@ Qt::Gui::QTextCharFormat
 
 =over
 
-=item    QTextCharFormat()
+=item   QTextCharFormat()
 
-=item   QString anchorHref()
+=item  QString anchorHref()
 
-=item   QString anchorName()
+=item  QString anchorName()
 
-=item   QStringList anchorNames()
+=item  QStringList anchorNames()
 
-=item   QFont font()
+=item  QFont font()
 
-=item   QFont::Capitalization fontCapitalization()
+=item  QFont::Capitalization fontCapitalization()
 
-=item   QString fontFamily()
+=item  QString fontFamily()
 
-=item   bool fontFixedPitch()
+=item  bool fontFixedPitch()
 
-=item   bool fontItalic()
+=item  bool fontItalic()
 
-=item   bool fontKerning()
+=item  bool fontKerning()
 
-=item   qreal fontLetterSpacing()
+=item  qreal fontLetterSpacing()
 
-=item   bool fontOverline()
+=item  bool fontOverline()
 
-=item   qreal fontPointSize()
+=item  qreal fontPointSize()
 
-=item   bool fontStrikeOut()
+=item  bool fontStrikeOut()
 
-=item   QFont::StyleHint fontStyleHint()
+=item  QFont::StyleHint fontStyleHint()
 
-=item   QFont::StyleStrategy fontStyleStrategy()
+=item  QFont::StyleStrategy fontStyleStrategy()
 
-=item   bool fontUnderline()
+=item  bool fontUnderline()
 
-=item   int fontWeight()
+=item  int fontWeight()
 
-=item   qreal fontWordSpacing()
+=item  qreal fontWordSpacing()
 
-=item   bool isAnchor()
+=item  bool isAnchor()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   void setAnchor(bool anchor)
+=item  void setAnchor(bool anchor)
 
-=item   void setAnchorHref(const QString & value)
+=item  void setAnchorHref(const QString & value)
 
-=item   void setAnchorName(const QString & name)
+=item  void setAnchorName(const QString & name)
 
-=item   void setAnchorNames(const QStringList & names)
+=item  void setAnchorNames(const QStringList & names)
 
-=item   void setFont(const QFont & font)
+=item  void setFont(const QFont & font)
 
-=item   void setFontCapitalization(QFont::Capitalization capitalization)
+=item  void setFontCapitalization(QFont::Capitalization capitalization)
 
-=item   void setFontFamily(const QString & family)
+=item  void setFontFamily(const QString & family)
 
-=item   void setFontFixedPitch(bool fixedPitch)
+=item  void setFontFixedPitch(bool fixedPitch)
 
-=item   void setFontItalic(bool italic)
+=item  void setFontItalic(bool italic)
 
-=item   void setFontKerning(bool enable)
+=item  void setFontKerning(bool enable)
 
-=item   void setFontLetterSpacing(qreal spacing)
+=item  void setFontLetterSpacing(qreal spacing)
 
-=item   void setFontOverline(bool overline)
+=item  void setFontOverline(bool overline)
 
-=item   void setFontPointSize(qreal size)
+=item  void setFontPointSize(qreal size)
 
-=item   void setFontStrikeOut(bool strikeOut)
+=item  void setFontStrikeOut(bool strikeOut)
 
-=item   void setFontStyleHint(QFont::StyleHint hint, QFont::StyleStrategy strategy = QFont::PreferDefault)
+=item  void setFontStyleHint(QFont::StyleHint hint, QFont::StyleStrategy strategy)
 
-=item   void setFontStyleHint(QFont::StyleHint hint, QFont::StyleStrategy strategy)
+=item  void setFontStyleHint(QFont::StyleHint hint, QFont::StyleStrategy strategy = QFont::PreferDefault)
 
-=item   void setFontStyleStrategy(QFont::StyleStrategy strategy)
+=item  void setFontStyleStrategy(QFont::StyleStrategy strategy)
 
-=item   void setFontUnderline(bool underline)
+=item  void setFontUnderline(bool underline)
 
-=item   void setFontWeight(int weight)
+=item  void setFontWeight(int weight)
 
-=item   void setFontWordSpacing(qreal spacing)
+=item  void setFontWordSpacing(qreal spacing)
 
-=item   void setTableCellColumnSpan(int tableCellColumnSpan)
+=item  void setTableCellColumnSpan(int tableCellColumnSpan)
 
-=item   void setTableCellRowSpan(int tableCellRowSpan)
+=item  void setTableCellRowSpan(int tableCellRowSpan)
 
-=item   void setTextOutline(const QPen & pen)
+=item  void setTextOutline(const QPen & pen)
 
-=item   void setToolTip(const QString & tip)
+=item  void setToolTip(const QString & tip)
 
-=item   void setUnderlineColor(const QColor & color)
+=item  void setUnderlineColor(const QColor & color)
 
-=item   void setUnderlineStyle(QTextCharFormat::UnderlineStyle style)
+=item  void setUnderlineStyle(QTextCharFormat::UnderlineStyle style)
 
-=item   void setVerticalAlignment(QTextCharFormat::VerticalAlignment alignment)
+=item  void setVerticalAlignment(QTextCharFormat::VerticalAlignment alignment)
 
-=item   int tableCellColumnSpan()
+=item  int tableCellColumnSpan()
 
-=item   int tableCellRowSpan()
+=item  int tableCellRowSpan()
 
-=item   QPen textOutline()
+=item  QPen textOutline()
 
-=item   QString toolTip()
+=item  QString toolTip()
 
-=item   QColor underlineColor()
+=item  QColor underlineColor()
 
-=item   QTextCharFormat::UnderlineStyle underlineStyle()
+=item  QTextCharFormat::UnderlineStyle underlineStyle()
 
-=item   QTextCharFormat::VerticalAlignment verticalAlignment()
+=item  QTextCharFormat::VerticalAlignment verticalAlignment()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item AlignNormal
+
+=item AlignSuperScript
+
+=item AlignSubScript
+
+=item AlignMiddle
+
+=item AlignTop
+
+=item AlignBottom
+
+=item NoUnderline
+
+=item SingleUnderline
+
+=item DashUnderline
+
+=item DotLine
+
+=item DashDotLine
+
+=item DashDotDotLine
+
+=item WaveUnderline
+
+=item SpellCheckUnderline
 
 
 =back

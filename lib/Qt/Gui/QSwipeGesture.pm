@@ -7,19 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGesture/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGesture/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoDirection() { 0 }
-sub Left() { 1 }
-sub Right() { 2 }
-sub Up() { 3 }
-sub Down() { 4 }
 
 
 1;
@@ -32,17 +24,34 @@ Qt::Gui::QSwipeGesture
 
 =over
 
-=item    QSwipeGesture(QObject * parent = 0)
+=item   QSwipeGesture(QObject * parent)
 
-=item    QSwipeGesture(QObject * parent)
+=item   QSwipeGesture(QObject * parent = 0)
 
-=item   QSwipeGesture::SwipeDirection horizontalDirection()
+=item  QSwipeGesture::SwipeDirection horizontalDirection()
 
-=item   void setSwipeAngle(qreal value)
+=item  void setSwipeAngle(qreal value)
 
-=item   qreal swipeAngle()
+=item  qreal swipeAngle()
 
-=item   QSwipeGesture::SwipeDirection verticalDirection()
+=item  QSwipeGesture::SwipeDirection verticalDirection()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoDirection
+
+=item Left
+
+=item Right
+
+=item Up
+
+=item Down
 
 
 =back

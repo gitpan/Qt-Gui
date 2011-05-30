@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEventTransition/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,19 +24,30 @@ Qt::Gui::QKeyEventTransition
 
 =over
 
-=item    QKeyEventTransition(QState * sourceState = 0)
+=item   QKeyEventTransition(QState * sourceState)
 
-=item    QKeyEventTransition(QState * sourceState)
+=item   QKeyEventTransition(QState * sourceState = 0)
 
-=item    QKeyEventTransition(QObject * object, QEvent::Type type, int key, QState * sourceState = 0)
+=item   QKeyEventTransition(QObject * object, QEvent::Type type, int key, QState * sourceState)
 
-=item    QKeyEventTransition(QObject * object, QEvent::Type type, int key, QState * sourceState)
+=item   QKeyEventTransition(QObject * object, QEvent::Type type, int key, QState * sourceState = 0)
 
-=item    ~QKeyEventTransition()
+=item   ~QKeyEventTransition()
 
-=item   int key()
+=item  int key()
 
-=item   void setKey(int key)
+=item  QFlags<Qt::KeyboardModifier> modifierMask()
+
+=item  void setKey(int key)
+
+=item  void setModifierMask(QFlags<Qt::KeyboardModifier> modifiers)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

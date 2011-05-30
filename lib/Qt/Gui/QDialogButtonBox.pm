@@ -7,50 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub InvalidRole() { 0 }
-sub AcceptRole() { 1 }
-sub RejectRole() { 2 }
-sub DestructiveRole() { 3 }
-sub ActionRole() { 4 }
-sub HelpRole() { 5 }
-sub YesRole() { 6 }
-sub NoRole() { 7 }
-sub ResetRole() { 8 }
-sub ApplyRole() { 9 }
-sub NRoles() { 10 }
-sub NoButton() { 0 }
-sub Ok() { 1 }
-sub Save() { 2 }
-sub SaveAll() { 3 }
-sub Open() { 4 }
-sub Yes() { 5 }
-sub YesToAll() { 6 }
-sub No() { 7 }
-sub NoToAll() { 8 }
-sub Abort() { 9 }
-sub Retry() { 10 }
-sub Ignore() { 11 }
-sub Close() { 12 }
-sub Cancel() { 13 }
-sub Discard() { 14 }
-sub Help() { 15 }
-sub Apply() { 16 }
-sub Reset() { 17 }
-sub RestoreDefaults() { 18 }
-sub FirstButton() { 19 }
-sub LastButton() { 20 }
-sub WinLayout() { 0 }
-sub MacLayout() { 1 }
-sub KdeLayout() { 2 }
-sub GnomeLayout() { 3 }
 
 
 1;
@@ -63,39 +24,128 @@ Qt::Gui::QDialogButtonBox
 
 =over
 
-=item    QDialogButtonBox(QWidget * parent = 0)
+=item   QDialogButtonBox(QWidget * parent)
 
-=item    QDialogButtonBox(QWidget * parent)
+=item   QDialogButtonBox(QWidget * parent = 0)
 
-=item    QDialogButtonBox(Qt::Orientation orientation, QWidget * parent = 0)
+=item   QDialogButtonBox(Qt::Orientation orientation, QWidget * parent)
 
-=item    QDialogButtonBox(Qt::Orientation orientation, QWidget * parent)
+=item   QDialogButtonBox(Qt::Orientation orientation, QWidget * parent = 0)
 
-=item    ~QDialogButtonBox()
+=item   QDialogButtonBox(QFlags<QDialogButtonBox::StandardButton> buttons, Qt::Orientation orientation, QWidget * parent)
 
-=item   QPushButton * addButton(QDialogButtonBox::StandardButton button)
+=item   QDialogButtonBox(QFlags<QDialogButtonBox::StandardButton> buttons, Qt::Orientation orientation, QWidget * parent = 0)
 
-=item   void addButton(QAbstractButton * button, QDialogButtonBox::ButtonRole role)
+=item   QDialogButtonBox(QFlags<QDialogButtonBox::StandardButton> buttons, Qt::Orientation orientation = Qt::Horizontal, QWidget * parent = 0)
 
-=item   QPushButton * addButton(const QString & text, QDialogButtonBox::ButtonRole role)
+=item   ~QDialogButtonBox()
 
-=item   QPushButton * button(QDialogButtonBox::StandardButton which)
+=item  QPushButton * addButton(QDialogButtonBox::StandardButton button)
 
-=item   QDialogButtonBox::ButtonRole buttonRole(QAbstractButton * button)
+=item  void addButton(QAbstractButton * button, QDialogButtonBox::ButtonRole role)
 
-=item   bool centerButtons()
+=item  QPushButton * addButton(const QString & text, QDialogButtonBox::ButtonRole role)
 
-=item   void clear()
+=item  QPushButton * button(QDialogButtonBox::StandardButton which)
 
-=item   Qt::Orientation orientation()
+=item  QDialogButtonBox::ButtonRole buttonRole(QAbstractButton * button)
 
-=item   void removeButton(QAbstractButton * button)
+=item  bool centerButtons()
 
-=item   void setCenterButtons(bool center)
+=item  void clear()
 
-=item   void setOrientation(Qt::Orientation orientation)
+=item  Qt::Orientation orientation()
 
-=item   QDialogButtonBox::StandardButton standardButton(QAbstractButton * button)
+=item  void removeButton(QAbstractButton * button)
+
+=item  void setCenterButtons(bool center)
+
+=item  void setOrientation(Qt::Orientation orientation)
+
+=item  void setStandardButtons(QFlags<QDialogButtonBox::StandardButton> buttons)
+
+=item  QDialogButtonBox::StandardButton standardButton(QAbstractButton * button)
+
+=item  QFlags<QDialogButtonBox::StandardButton> standardButtons()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item InvalidRole
+
+=item AcceptRole
+
+=item RejectRole
+
+=item DestructiveRole
+
+=item ActionRole
+
+=item HelpRole
+
+=item YesRole
+
+=item NoRole
+
+=item ResetRole
+
+=item ApplyRole
+
+=item NRoles
+
+=item NoButton
+
+=item Ok
+
+=item Save
+
+=item SaveAll
+
+=item Open
+
+=item Yes
+
+=item YesToAll
+
+=item No
+
+=item NoToAll
+
+=item Abort
+
+=item Retry
+
+=item Ignore
+
+=item Close
+
+=item Cancel
+
+=item Discard
+
+=item Help
+
+=item Apply
+
+=item Reset
+
+=item RestoreDefaults
+
+=item FirstButton
+
+=item LastButton
+
+=item WinLayout
+
+=item MacLayout
+
+=item KdeLayout
+
+=item GnomeLayout
 
 
 =back

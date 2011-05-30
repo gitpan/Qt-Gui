@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,89 +23,94 @@ Qt::Gui::QGraphicsLayoutItem
 
 =over
 
-=item    QGraphicsLayoutItem(QGraphicsLayoutItem * parent, bool isLayout = false)
+=item   QGraphicsLayoutItem(QGraphicsLayoutItem * parent, bool isLayout)
 
-=item    QGraphicsLayoutItem(QGraphicsLayoutItem * parent, bool isLayout)
+=item   QGraphicsLayoutItem(QGraphicsLayoutItem * parent, bool isLayout = false)
 
-=item    QGraphicsLayoutItem(QGraphicsLayoutItem * parent = 0, bool isLayout = false)
+=item   QGraphicsLayoutItem(QGraphicsLayoutItem * parent = 0, bool isLayout = false)
 
-=item    QGraphicsLayoutItem(QGraphicsLayoutItem * parent, bool isLayout = false)
+=item   ~QGraphicsLayoutItem()
 
-=item    ~QGraphicsLayoutItem()
+=item  QRectF contentsRect()
 
-=item   QRectF contentsRect()
+=item  QSizeF effectiveSizeHint(Qt::SizeHint which, const QSizeF & constraint)
 
-=item   QSizeF effectiveSizeHint(Qt::SizeHint which, const QSizeF & constraint = QSizeF())
+=item  QSizeF effectiveSizeHint(Qt::SizeHint which, const QSizeF & constraint = QSizeF())
 
-=item   QSizeF effectiveSizeHint(Qt::SizeHint which, const QSizeF & constraint)
+=item  QRectF geometry()
 
-=item   QRectF geometry()
+=item  void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom)
 
-=item   void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom)
+=item  QGraphicsItem * graphicsItem()
 
-=item   QGraphicsItem * graphicsItem()
+=item  bool isLayout()
 
-=item   bool isLayout()
+=item  qreal maximumHeight()
 
-=item   qreal maximumHeight()
+=item  QSizeF maximumSize()
 
-=item   QSizeF maximumSize()
+=item  qreal maximumWidth()
 
-=item   qreal maximumWidth()
+=item  qreal minimumHeight()
 
-=item   qreal minimumHeight()
+=item  QSizeF minimumSize()
 
-=item   QSizeF minimumSize()
+=item  qreal minimumWidth()
 
-=item   qreal minimumWidth()
+=item  bool ownedByLayout()
 
-=item   bool ownedByLayout()
+=item  QGraphicsLayoutItem * parentLayoutItem()
 
-=item   QGraphicsLayoutItem * parentLayoutItem()
+=item  qreal preferredHeight()
 
-=item   qreal preferredHeight()
+=item  QSizeF preferredSize()
 
-=item   QSizeF preferredSize()
+=item  qreal preferredWidth()
 
-=item   qreal preferredWidth()
+=item  void setGeometry(const QRectF & rect)
 
-=item   void setGeometry(const QRectF & rect)
+=item  void setMaximumHeight(qreal height)
 
-=item   void setMaximumHeight(qreal height)
+=item  void setMaximumSize(const QSizeF & size)
 
-=item   void setMaximumSize(const QSizeF & size)
+=item  void setMaximumSize(qreal w, qreal h)
 
-=item   void setMaximumSize(qreal w, qreal h)
+=item  void setMaximumWidth(qreal width)
 
-=item   void setMaximumWidth(qreal width)
+=item  void setMinimumHeight(qreal height)
 
-=item   void setMinimumHeight(qreal height)
+=item  void setMinimumSize(const QSizeF & size)
 
-=item   void setMinimumSize(const QSizeF & size)
+=item  void setMinimumSize(qreal w, qreal h)
 
-=item   void setMinimumSize(qreal w, qreal h)
+=item  void setMinimumWidth(qreal width)
 
-=item   void setMinimumWidth(qreal width)
+=item  void setParentLayoutItem(QGraphicsLayoutItem * parent)
 
-=item   void setParentLayoutItem(QGraphicsLayoutItem * parent)
+=item  void setPreferredHeight(qreal height)
 
-=item   void setPreferredHeight(qreal height)
+=item  void setPreferredSize(const QSizeF & size)
 
-=item   void setPreferredSize(const QSizeF & size)
+=item  void setPreferredSize(qreal w, qreal h)
 
-=item   void setPreferredSize(qreal w, qreal h)
+=item  void setPreferredWidth(qreal width)
 
-=item   void setPreferredWidth(qreal width)
+=item  void setSizePolicy(const QSizePolicy & policy)
 
-=item   void setSizePolicy(const QSizePolicy & policy)
+=item  void setSizePolicy(QSizePolicy::Policy hPolicy, QSizePolicy::Policy vPolicy, QSizePolicy::ControlType controlType)
 
-=item   void setSizePolicy(QSizePolicy::Policy hPolicy, QSizePolicy::Policy vPolicy, QSizePolicy::ControlType controlType = QSizePolicy::DefaultType)
+=item  void setSizePolicy(QSizePolicy::Policy hPolicy, QSizePolicy::Policy vPolicy, QSizePolicy::ControlType controlType = QSizePolicy::DefaultType)
 
-=item   void setSizePolicy(QSizePolicy::Policy hPolicy, QSizePolicy::Policy vPolicy, QSizePolicy::ControlType controlType)
+=item  QSizePolicy sizePolicy()
 
-=item   QSizePolicy sizePolicy()
+=item  void updateGeometry()
 
-=item   void updateGeometry()
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

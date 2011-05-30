@@ -7,28 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Size() { 0 }
-sub ClipRect() { 1 }
-sub Description() { 2 }
-sub ScaledClipRect() { 3 }
-sub ScaledSize() { 4 }
-sub CompressionRatio() { 5 }
-sub Gamma() { 6 }
-sub Quality() { 7 }
-sub Name() { 8 }
-sub SubType() { 9 }
-sub IncrementalReading() { 10 }
-sub Endianness() { 11 }
-sub Animation() { 12 }
-sub BackgroundColor() { 13 }
-sub ImageFormat() { 14 }
 
 
 1;
@@ -41,47 +23,84 @@ Qt::Gui::QImageIOHandler
 
 =over
 
-=item    QImageIOHandler()
+=item   QImageIOHandler()
 
-=item    ~QImageIOHandler()
+=item   ~QImageIOHandler()
 
-=item   bool canRead()
+=item  bool canRead()
 
-=item   int currentImageNumber()
+=item  int currentImageNumber()
 
-=item   QRect currentImageRect()
+=item  QRect currentImageRect()
 
-=item   QIODevice * device()
+=item  QIODevice * device()
 
-=item   QByteArray format()
+=item  QByteArray format()
 
-=item   int imageCount()
+=item  int imageCount()
 
-=item   bool jumpToImage(int imageNumber)
+=item  bool jumpToImage(int imageNumber)
 
-=item   bool jumpToNextImage()
+=item  bool jumpToNextImage()
 
-=item   int loopCount()
+=item  int loopCount()
 
-=item   QByteArray name()
+=item  QByteArray name()
 
-=item   int nextImageDelay()
+=item  int nextImageDelay()
 
-=item   QVariant option(QImageIOHandler::ImageOption option)
+=item  QVariant option(QImageIOHandler::ImageOption option)
 
-=item   bool read(QImage * image)
+=item  bool read(QImage * image)
 
-=item   void setDevice(QIODevice * device)
+=item  void setDevice(QIODevice * device)
 
-=item   void setFormat(const QByteArray & format)
+=item  void setFormat(const QByteArray & format)
 
-=item   void setFormat(const QByteArray & format)
+=item  void setFormat(const QByteArray & format)
 
-=item   void setOption(QImageIOHandler::ImageOption option, const QVariant & value)
+=item  void setOption(QImageIOHandler::ImageOption option, const QVariant & value)
 
-=item   bool supportsOption(QImageIOHandler::ImageOption option)
+=item  bool supportsOption(QImageIOHandler::ImageOption option)
 
-=item   bool write(const QImage & image)
+=item  bool write(const QImage & image)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Size
+
+=item ClipRect
+
+=item Description
+
+=item ScaledClipRect
+
+=item ScaledSize
+
+=item CompressionRatio
+
+=item Gamma
+
+=item Quality
+
+=item Name
+
+=item SubType
+
+=item IncrementalReading
+
+=item Endianness
+
+=item Animation
+
+=item BackgroundColor
+
+=item ImageFormat
 
 
 =back

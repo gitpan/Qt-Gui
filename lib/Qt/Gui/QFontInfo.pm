@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,43 +23,50 @@ Qt::Gui::QFontInfo
 
 =over
 
-=item    QFontInfo(const QFont & arg0)
+=item   QFontInfo(const QFont & arg0)
 
-=item    QFontInfo(const QFontInfo & arg0)
+=item   QFontInfo(const QFontInfo & arg0)
 
-=item    ~QFontInfo()
+=item   ~QFontInfo()
 
-=item   bool bold()
+=item  bool bold()
 
-=item   bool exactMatch()
+=item  bool exactMatch()
 
-=item   QString family()
+=item  QString family()
 
-=item   bool fixedPitch()
+=item  bool fixedPitch()
 
-=item   bool italic()
+=item  bool italic()
 
-=item   QFontInfo & operator=(const QFontInfo & arg0)
+=item  QFontInfo & operator=(const QFontInfo & arg0)
 
-=item   bool overline()
+=item  bool overline()
 
-=item   int pixelSize()
+=item  int pixelSize()
 
-=item   int pointSize()
+=item  int pointSize()
 
-=item   qreal pointSizeF()
+=item  qreal pointSizeF()
 
-=item   bool rawMode()
+=item  bool rawMode()
 
-=item   bool strikeOut()
+=item  bool strikeOut()
 
-=item   QFont::Style style()
+=item  QFont::Style style()
 
-=item   QFont::StyleHint styleHint()
+=item  QFont::StyleHint styleHint()
 
-=item   bool underline()
+=item  bool underline()
 
-=item   int weight()
+=item  int weight()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -32,40 +32,52 @@ void
 QAccessibleValueInterface::currentValue(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QVariant ret = THIS->currentValue();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
     XSRETURN(1);
+    }
 
 ## QVariant maximumValue()
 void
 QAccessibleValueInterface::maximumValue(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QVariant ret = THIS->maximumValue();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
     XSRETURN(1);
+    }
 
 ## QVariant minimumValue()
 void
 QAccessibleValueInterface::minimumValue(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QVariant ret = THIS->minimumValue();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
     XSRETURN(1);
+    }
 
 ## QAccessible2Interface * qAccessibleValueCastHelper()
 void
 QAccessibleValueInterface::qAccessibleValueCastHelper(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QAccessible2Interface * ret = THIS->qAccessibleValueCastHelper();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAccessible2Interface", (void *)ret);
     XSRETURN(1);
+    }
 
 ## void setCurrentValue(const QVariant & value)
 void
@@ -73,10 +85,8 @@ QAccessibleValueInterface::setCurrentValue(...)
 PREINIT:
 QVariant * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QVariant")) {
+      arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setCurrentValue(*arg00);
     XSRETURN(0);
+    }

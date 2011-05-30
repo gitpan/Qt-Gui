@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QStyleOptionFrame/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QStyleOptionFrame/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Version() { 0 }
-sub None() { 0 }
-sub Flat() { 1 }
 
 
 1;
@@ -30,13 +24,26 @@ Qt::Gui::QStyleOptionFrameV2
 
 =over
 
-=item    QStyleOptionFrameV2()
+=item   QStyleOptionFrameV2()
 
-=item    QStyleOptionFrameV2(const QStyleOptionFrameV2 & other)
+=item   QStyleOptionFrameV2(const QStyleOptionFrameV2 & other)
 
-=item    QStyleOptionFrameV2(const QStyleOptionFrame & other)
+=item   QStyleOptionFrameV2(const QStyleOptionFrame & other)
 
-=item   QStyleOptionFrameV2 & operator=(const QStyleOptionFrame & other)
+=item  QStyleOptionFrameV2 & operator=(const QStyleOptionFrame & other)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Version
+
+=item None
+
+=item Flat
 
 
 =back

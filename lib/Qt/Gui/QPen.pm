@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,81 +23,84 @@ Qt::Gui::QPen
 
 =over
 
-=item    QPen()
+=item   QPen()
 
-=item    QPen(Qt::PenStyle arg0)
+=item   QPen(Qt::PenStyle arg0)
 
-=item    QPen(const QColor & color)
+=item   QPen(const QColor & color)
 
-=item    QPen(const QPen & pen)
+=item   QPen(const QPen & pen)
 
-=item    QPen(const QBrush & brush, qreal width, Qt::PenStyle s, Qt::PenCapStyle c, Qt::PenJoinStyle j = Qt::BevelJoin)
+=item   QPen(const QBrush & brush, qreal width, Qt::PenStyle s, Qt::PenCapStyle c, Qt::PenJoinStyle j)
 
-=item    QPen(const QBrush & brush, qreal width, Qt::PenStyle s, Qt::PenCapStyle c, Qt::PenJoinStyle j)
+=item   QPen(const QBrush & brush, qreal width, Qt::PenStyle s, Qt::PenCapStyle c, Qt::PenJoinStyle j = Qt::BevelJoin)
 
-=item    QPen(const QBrush & brush, qreal width, Qt::PenStyle s, Qt::PenCapStyle c = Qt::SquareCap, Qt::PenJoinStyle j = Qt::BevelJoin)
+=item   QPen(const QBrush & brush, qreal width, Qt::PenStyle s, Qt::PenCapStyle c = Qt::SquareCap, Qt::PenJoinStyle j = Qt::BevelJoin)
 
-=item    QPen(const QBrush & brush, qreal width, Qt::PenStyle s, Qt::PenCapStyle c, Qt::PenJoinStyle j = Qt::BevelJoin)
+=item   QPen(const QBrush & brush, qreal width, Qt::PenStyle s = Qt::SolidLine, Qt::PenCapStyle c = Qt::SquareCap, Qt::PenJoinStyle j = Qt::BevelJoin)
 
-=item    QPen(const QBrush & brush, qreal width, Qt::PenStyle s = Qt::SolidLine, Qt::PenCapStyle c = Qt::SquareCap, Qt::PenJoinStyle j = Qt::BevelJoin)
+=item   ~QPen()
 
-=item    QPen(const QBrush & brush, qreal width, Qt::PenStyle s, Qt::PenCapStyle c = Qt::SquareCap, Qt::PenJoinStyle j = Qt::BevelJoin)
+=item  QBrush brush()
 
-=item    ~QPen()
+=item  Qt::PenCapStyle capStyle()
 
-=item   QBrush brush()
+=item  QColor color()
 
-=item   Qt::PenCapStyle capStyle()
+=item  qreal dashOffset()
 
-=item   QColor color()
+=item  QPenPrivate * & data_ptr()
 
-=item   qreal dashOffset()
+=item  bool isCosmetic()
 
-=item   QPenPrivate * & data_ptr()
+=item  bool isDetached()
 
-=item   bool isCosmetic()
+=item  bool isSolid()
 
-=item   bool isDetached()
+=item  Qt::PenJoinStyle joinStyle()
 
-=item   bool isSolid()
+=item  qreal miterLimit()
 
-=item   Qt::PenJoinStyle joinStyle()
+=item  QVariant operator QVariant()
 
-=item   qreal miterLimit()
+=item  bool operator!=(const QPen & p)
 
-=item   QVariant operator QVariant()
+=item  QPen & operator=(const QPen & pen)
 
-=item   bool operator!=(const QPen & p)
+=item  bool operator==(const QPen & p)
 
-=item   QPen & operator=(const QPen & pen)
+=item  void setBrush(const QBrush & brush)
 
-=item   bool operator==(const QPen & p)
+=item  void setCapStyle(Qt::PenCapStyle pcs)
 
-=item   void setBrush(const QBrush & brush)
+=item  void setColor(const QColor & color)
 
-=item   void setCapStyle(Qt::PenCapStyle pcs)
+=item  void setCosmetic(bool cosmetic)
 
-=item   void setColor(const QColor & color)
+=item  void setDashOffset(qreal doffset)
 
-=item   void setCosmetic(bool cosmetic)
+=item  void setJoinStyle(Qt::PenJoinStyle pcs)
 
-=item   void setDashOffset(qreal doffset)
+=item  void setMiterLimit(qreal limit)
 
-=item   void setJoinStyle(Qt::PenJoinStyle pcs)
+=item  void setStyle(Qt::PenStyle arg0)
 
-=item   void setMiterLimit(qreal limit)
+=item  void setWidth(int width)
 
-=item   void setStyle(Qt::PenStyle arg0)
+=item  void setWidthF(qreal width)
 
-=item   void setWidth(int width)
+=item  Qt::PenStyle style()
 
-=item   void setWidthF(qreal width)
+=item  int width()
 
-=item   Qt::PenStyle style()
+=item  qreal widthF()
 
-=item   int width()
 
-=item   qreal widthF()
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

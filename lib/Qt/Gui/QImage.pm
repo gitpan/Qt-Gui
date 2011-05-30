@@ -7,33 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QPaintDevice/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QPaintDevice/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub InvertRgb() { 0 }
-sub InvertRgba() { 1 }
-sub Format_Invalid() { 0 }
-sub Format_Mono() { 1 }
-sub Format_MonoLSB() { 2 }
-sub Format_Indexed8() { 3 }
-sub Format_RGB32() { 4 }
-sub Format_ARGB32() { 5 }
-sub Format_ARGB32_Premultiplied() { 6 }
-sub Format_RGB16() { 7 }
-sub Format_ARGB8565_Premultiplied() { 8 }
-sub Format_RGB666() { 9 }
-sub Format_ARGB6666_Premultiplied() { 10 }
-sub Format_RGB555() { 11 }
-sub Format_ARGB8555_Premultiplied() { 12 }
-sub Format_RGB888() { 13 }
-sub Format_RGB444() { 14 }
-sub Format_ARGB4444_Premultiplied() { 15 }
-sub NImageFormats() { 16 }
 
 
 1;
@@ -46,255 +24,304 @@ Qt::Gui::QImage
 
 =over
 
-=item    QImage()
+=item   QImage()
 
-=item    QImage(T_ARRAY_XPM const char * const * T_ARRAY_XPM)
+=item   QImage(T_ARRAY_XPM const char * const * T_ARRAY_XPM)
 
-=item    QImage(const QImage & arg0)
+=item   QImage(const QImage & arg0)
 
-=item    QImage(const QSize & size, QImage::Format format)
+=item   QImage(const QSize & size, QImage::Format format)
 
-=item    QImage(const QString & fileName, const char * format = 0)
+=item   QImage(const QString & fileName, const char * format)
 
-=item    QImage(const QString & fileName, const char * format)
+=item   QImage(const QString & fileName, const char * format = 0)
 
-=item    QImage(const char * fileName, const char * format = 0)
+=item   QImage(const char * fileName, const char * format)
 
-=item    QImage(const char * fileName, const char * format)
+=item   QImage(const char * fileName, const char * format = 0)
 
-=item    QImage(int width, int height, QImage::Format format)
+=item   QImage(int width, int height, QImage::Format format)
 
-=item    QImage(uchar * data, int width, int height, QImage::Format format)
+=item   QImage(uchar * data, int width, int height, QImage::Format format)
 
-=item    QImage(const uchar * data, int width, int height, QImage::Format format)
+=item   QImage(const uchar * data, int width, int height, QImage::Format format)
 
-=item    QImage(uchar * data, int width, int height, int bytesPerLine, QImage::Format format)
+=item   QImage(uchar * data, int width, int height, int bytesPerLine, QImage::Format format)
 
-=item    QImage(const uchar * data, int width, int height, int bytesPerLine, QImage::Format format)
+=item   QImage(const uchar * data, int width, int height, int bytesPerLine, QImage::Format format)
 
-=item    ~QImage()
+=item   ~QImage()
 
-=item   bool allGray()
+=item  bool allGray()
 
-=item   QImage alphaChannel()
+=item  QImage alphaChannel()
 
-=item   uchar * bits()
+=item  int bitPlaneCount()
 
-=item   const uchar * bits()
+=item  uchar * bits()
 
-=item   int byteCount()
+=item  const uchar * bits()
 
-=item   int bytesPerLine()
+=item  int byteCount()
 
-=item   qint64 cacheKey()
+=item  int bytesPerLine()
 
-=item   unsigned int color(int i)
+=item  qint64 cacheKey()
 
-=item   int colorCount()
+=item  unsigned int color(int i)
 
-=item   QImage copy(const QRect & rect = QRect())
+=item  int colorCount()
 
-=item   QImage copy(const QRect & rect)
+=item  const uchar * constBits()
 
-=item   QImage copy(int x, int y, int w, int h)
+=item  const uchar * constScanLine(int arg0)
 
-=item   QImage createHeuristicMask(bool clipTight = true)
+=item  QImage convertToFormat(QImage::Format f, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   QImage createHeuristicMask(bool clipTight)
+=item  QImage convertToFormat(QImage::Format f, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   QImage createMaskFromColor(unsigned int color, Qt::MaskMode mode = Qt::MaskInColor)
+=item  QImage copy(const QRect & rect)
 
-=item   QImage createMaskFromColor(unsigned int color, Qt::MaskMode mode)
+=item  QImage copy(const QRect & rect = QRect())
 
-=item   QImageData * & data_ptr()
+=item  QImage copy(int x, int y, int w, int h)
 
-=item   int depth()
+=item  QImage createAlphaMask(QFlags<Qt::ImageConversionFlag> flags)
 
-=item   void detach()
+=item  QImage createAlphaMask(QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   int devType()
+=item  QImage createHeuristicMask(bool clipTight)
 
-=item   int dotsPerMeterX()
+=item  QImage createHeuristicMask(bool clipTight = true)
 
-=item   int dotsPerMeterY()
+=item  QImage createMaskFromColor(unsigned int color, Qt::MaskMode mode)
 
-=item   void fill(uint pixel)
+=item  QImage createMaskFromColor(unsigned int color, Qt::MaskMode mode = Qt::MaskInColor)
 
-=item   QImage::Format format()
+=item  QImageData * & data_ptr()
 
-=item   static QImage fromData(const QByteArray & data, const char * format = 0)
+=item  int depth()
 
-=item   static QImage fromData(const QByteArray & data, const char * format)
+=item  void detach()
 
-=item   static QImage fromData(const uchar * data, int size, const char * format = 0)
+=item  int devType()
 
-=item   static QImage fromData(const uchar * data, int size, const char * format)
+=item  int dotsPerMeterX()
 
-=item   bool hasAlphaChannel()
+=item  int dotsPerMeterY()
 
-=item   int height()
+=item  void fill(uint pixel)
 
-=item   void invertPixels(QImage::InvertMode arg0 = QImage::InvertRgb)
+=item  QImage::Format format()
 
-=item   void invertPixels(QImage::InvertMode arg0)
+=item  static QImage fromData(const QByteArray & data, const char * format)
 
-=item   bool isDetached()
+=item  static QImage fromData(const QByteArray & data, const char * format = 0)
 
-=item   bool isGrayscale()
+=item  static QImage fromData(const uchar * data, int size, const char * format)
 
-=item   bool isNull()
+=item  static QImage fromData(const uchar * data, int size, const char * format = 0)
 
-=item   bool load(QIODevice * device, const char * format)
+=item  bool hasAlphaChannel()
 
-=item   bool load(const QString & fileName, const char * format = 0)
+=item  int height()
 
-=item   bool load(const QString & fileName, const char * format)
+=item  void invertPixels(QImage::InvertMode arg0)
 
-=item   bool loadFromData(const QByteArray & data, const char * aformat = 0)
+=item  void invertPixels(QImage::InvertMode arg0 = QImage::InvertRgb)
 
-=item   bool loadFromData(const QByteArray & data, const char * aformat)
+=item  bool isDetached()
 
-=item   bool loadFromData(const uchar * buf, int len, const char * format = 0)
+=item  bool isGrayscale()
 
-=item   bool loadFromData(const uchar * buf, int len, const char * format)
+=item  bool isNull()
 
-=item   QImage mirrored(bool horizontally, bool vertically = true)
+=item  bool load(QIODevice * device, const char * format)
 
-=item   QImage mirrored(bool horizontally, bool vertically)
+=item  bool load(const QString & fileName, const char * format)
 
-=item   QImage mirrored(bool horizontally = false, bool vertically = true)
+=item  bool load(const QString & fileName, const char * format = 0)
 
-=item   QImage mirrored(bool horizontally, bool vertically = true)
+=item  bool loadFromData(const QByteArray & data, const char * aformat)
 
-=item   int numBytes()
+=item  bool loadFromData(const QByteArray & data, const char * aformat = 0)
 
-=item   int numColors()
+=item  bool loadFromData(const uchar * buf, int len, const char * format)
 
-=item   QPoint offset()
+=item  bool loadFromData(const uchar * buf, int len, const char * format = 0)
 
-=item   QVariant operator QVariant()
+=item  QImage mirrored(bool horizontally, bool vertically)
 
-=item   bool operator!=(const QImage & arg0)
+=item  QImage mirrored(bool horizontally, bool vertically = true)
 
-=item   QImage & operator=(const QImage & arg0)
+=item  QImage mirrored(bool horizontally = false, bool vertically = true)
 
-=item   bool operator==(const QImage & arg0)
+=item  int numBytes()
 
-=item   QPaintEngine * paintEngine()
+=item  int numColors()
 
-=item   unsigned int pixel(const QPoint & pt)
+=item  QPoint offset()
 
-=item   unsigned int pixel(int x, int y)
+=item  QVariant operator QVariant()
 
-=item   int pixelIndex(const QPoint & pt)
+=item  bool operator!=(const QImage & arg0)
 
-=item   int pixelIndex(int x, int y)
+=item  QImage & operator=(const QImage & arg0)
 
-=item   QRect rect()
+=item  bool operator==(const QImage & arg0)
 
-=item   QImage rgbSwapped()
+=item  QPaintEngine * paintEngine()
 
-=item   bool save(const QString & fileName, const char * format, int quality = -1)
+=item  unsigned int pixel(const QPoint & pt)
 
-=item   bool save(const QString & fileName, const char * format, int quality)
+=item  unsigned int pixel(int x, int y)
 
-=item   bool save(const QString & fileName, const char * format = 0, int quality = -1)
+=item  int pixelIndex(const QPoint & pt)
 
-=item   bool save(const QString & fileName, const char * format, int quality = -1)
+=item  int pixelIndex(int x, int y)
 
-=item   bool save(QIODevice * device, const char * format, int quality = -1)
+=item  QRect rect()
 
-=item   bool save(QIODevice * device, const char * format, int quality)
+=item  QImage rgbSwapped()
 
-=item   bool save(QIODevice * device, const char * format = 0, int quality = -1)
+=item  bool save(const QString & fileName, const char * format, int quality)
 
-=item   bool save(QIODevice * device, const char * format, int quality = -1)
+=item  bool save(const QString & fileName, const char * format, int quality = -1)
 
-=item   QImage scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  bool save(const QString & fileName, const char * format = 0, int quality = -1)
 
-=item   QImage scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode)
+=item  bool save(QIODevice * device, const char * format, int quality)
 
-=item   QImage scaled(const QSize & s, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  bool save(QIODevice * device, const char * format, int quality = -1)
 
-=item   QImage scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  bool save(QIODevice * device, const char * format = 0, int quality = -1)
 
-=item   QImage scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QImage scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode)
 
-=item   QImage scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode)
+=item  QImage scaled(const QSize & s, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   QImage scaled(int w, int h, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QImage scaled(const QSize & s, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   QImage scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QImage scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode)
 
-=item   QImage scaledToHeight(int h, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QImage scaled(int w, int h, Qt::AspectRatioMode aspectMode, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   QImage scaledToHeight(int h, Qt::TransformationMode mode)
+=item  QImage scaled(int w, int h, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   QImage scaledToWidth(int w, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QImage scaledToHeight(int h, Qt::TransformationMode mode)
 
-=item   QImage scaledToWidth(int w, Qt::TransformationMode mode)
+=item  QImage scaledToHeight(int h, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   uchar * scanLine(int arg0)
+=item  QImage scaledToWidth(int w, Qt::TransformationMode mode)
 
-=item   const uchar * scanLine(int arg0)
+=item  QImage scaledToWidth(int w, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   int serialNumber()
+=item  uchar * scanLine(int arg0)
 
-=item   void setAlphaChannel(const QImage & alphaChannel)
+=item  const uchar * scanLine(int arg0)
 
-=item   void setColor(int i, unsigned int c)
+=item  int serialNumber()
 
-=item   void setColorCount(int arg0)
+=item  void setAlphaChannel(const QImage & alphaChannel)
 
-=item   void setDotsPerMeterX(int arg0)
+=item  void setColor(int i, unsigned int c)
 
-=item   void setDotsPerMeterY(int arg0)
+=item  void setColorCount(int arg0)
 
-=item   void setNumColors(int arg0)
+=item  void setDotsPerMeterX(int arg0)
 
-=item   void setOffset(const QPoint & arg0)
+=item  void setDotsPerMeterY(int arg0)
 
-=item   void setPixel(const QPoint & pt, uint index_or_rgb)
+=item  void setNumColors(int arg0)
 
-=item   void setPixel(int x, int y, uint index_or_rgb)
+=item  void setOffset(const QPoint & arg0)
 
-=item   void setText(const QString & key, const QString & value)
+=item  void setPixel(const QPoint & pt, uint index_or_rgb)
 
-=item   void setText(const char * key, const char * lang, const QString & arg2)
+=item  void setPixel(int x, int y, uint index_or_rgb)
 
-=item   QSize size()
+=item  void setText(const QString & key, const QString & value)
 
-=item   QString text(const QString & key = QString())
+=item  void setText(const char * key, const char * lang, const QString & arg2)
 
-=item   QString text(const QString & key)
+=item  QSize size()
 
-=item   QString text(const QImageTextKeyLang & arg0)
+=item  QString text(const QString & key)
 
-=item   QString text(const char * key, const char * lang = 0)
+=item  QString text(const QString & key = QString())
 
-=item   QString text(const char * key, const char * lang)
+=item  QString text(const QImageTextKeyLang & arg0)
 
-=item   QStringList textKeys()
+=item  QString text(const char * key, const char * lang)
 
-=item   QStringList textLanguages()
+=item  QString text(const char * key, const char * lang = 0)
 
-=item   QImage transformed(const QMatrix & matrix, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QStringList textKeys()
 
-=item   QImage transformed(const QMatrix & matrix, Qt::TransformationMode mode)
+=item  QStringList textLanguages()
 
-=item   QImage transformed(const QTransform & matrix, Qt::TransformationMode mode = Qt::FastTransformation)
+=item  QImage transformed(const QMatrix & matrix, Qt::TransformationMode mode)
 
-=item   QImage transformed(const QTransform & matrix, Qt::TransformationMode mode)
+=item  QImage transformed(const QMatrix & matrix, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   static QMatrix trueMatrix(const QMatrix & arg0, int w, int h)
+=item  QImage transformed(const QTransform & matrix, Qt::TransformationMode mode)
 
-=item   static QTransform trueMatrix(const QTransform & arg0, int w, int h)
+=item  QImage transformed(const QTransform & matrix, Qt::TransformationMode mode = Qt::FastTransformation)
 
-=item   bool valid(const QPoint & pt)
+=item  static QMatrix trueMatrix(const QMatrix & arg0, int w, int h)
 
-=item   bool valid(int x, int y)
+=item  static QTransform trueMatrix(const QTransform & arg0, int w, int h)
 
-=item   int width()
+=item  bool valid(const QPoint & pt)
+
+=item  bool valid(int x, int y)
+
+=item  int width()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item InvertRgb
+
+=item InvertRgba
+
+=item Format_Invalid
+
+=item Format_Mono
+
+=item Format_MonoLSB
+
+=item Format_Indexed8
+
+=item Format_RGB32
+
+=item Format_ARGB32
+
+=item Format_ARGB32_Premultiplied
+
+=item Format_RGB16
+
+=item Format_ARGB8565_Premultiplied
+
+=item Format_RGB666
+
+=item Format_ARGB6666_Premultiplied
+
+=item Format_RGB555
+
+=item Format_ARGB8555_Premultiplied
+
+=item Format_RGB888
+
+=item Format_RGB444
+
+=item Format_ARGB4444_Premultiplied
+
+=item NImageFormats
 
 
 =back

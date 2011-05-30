@@ -24,10 +24,13 @@ QDragLeaveEvent::new(...)
 PREINIT:
 QDragLeaveEvent *ret;
 PPCODE:
+    if (1) {
+      
     ret = new QDragLeaveEvent();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QDragLeaveEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QDragLeaveEvent()
 void

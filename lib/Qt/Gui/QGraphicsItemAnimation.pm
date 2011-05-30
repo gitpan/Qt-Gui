@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,53 +24,60 @@ Qt::Gui::QGraphicsItemAnimation
 
 =over
 
-=item    QGraphicsItemAnimation(QObject * parent = 0)
+=item   QGraphicsItemAnimation(QObject * parent)
 
-=item    QGraphicsItemAnimation(QObject * parent)
+=item   QGraphicsItemAnimation(QObject * parent = 0)
 
-=item    ~QGraphicsItemAnimation()
+=item   ~QGraphicsItemAnimation()
 
-=item   void clear()
+=item  void clear()
 
-=item   qreal horizontalScaleAt(qreal step)
+=item  qreal horizontalScaleAt(qreal step)
 
-=item   qreal horizontalShearAt(qreal step)
+=item  qreal horizontalShearAt(qreal step)
 
-=item   QGraphicsItem * item()
+=item  QGraphicsItem * item()
 
-=item   QMatrix matrixAt(qreal step)
+=item  QMatrix matrixAt(qreal step)
 
-=item   QPointF posAt(qreal step)
+=item  QPointF posAt(qreal step)
 
-=item   void reset()
+=item  void reset()
 
-=item   qreal rotationAt(qreal step)
+=item  qreal rotationAt(qreal step)
 
-=item   void setItem(QGraphicsItem * item)
+=item  void setItem(QGraphicsItem * item)
 
-=item   void setPosAt(qreal step, const QPointF & pos)
+=item  void setPosAt(qreal step, const QPointF & pos)
 
-=item   void setRotationAt(qreal step, qreal angle)
+=item  void setRotationAt(qreal step, qreal angle)
 
-=item   void setScaleAt(qreal step, qreal sx, qreal sy)
+=item  void setScaleAt(qreal step, qreal sx, qreal sy)
 
-=item   void setShearAt(qreal step, qreal sh, qreal sv)
+=item  void setShearAt(qreal step, qreal sh, qreal sv)
 
-=item   void setStep(qreal x)
+=item  void setStep(qreal x)
 
-=item   void setTimeLine(QTimeLine * timeLine)
+=item  void setTimeLine(QTimeLine * timeLine)
 
-=item   void setTranslationAt(qreal step, qreal dx, qreal dy)
+=item  void setTranslationAt(qreal step, qreal dx, qreal dy)
 
-=item   QTimeLine * timeLine()
+=item  QTimeLine * timeLine()
 
-=item   qreal verticalScaleAt(qreal step)
+=item  qreal verticalScaleAt(qreal step)
 
-=item   qreal verticalShearAt(qreal step)
+=item  qreal verticalShearAt(qreal step)
 
-=item   qreal xTranslationAt(qreal step)
+=item  qreal xTranslationAt(qreal step)
 
-=item   qreal yTranslationAt(qreal step)
+=item  qreal yTranslationAt(qreal step)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

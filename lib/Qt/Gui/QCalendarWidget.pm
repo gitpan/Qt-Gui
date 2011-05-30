@@ -7,22 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoHorizontalHeader() { 0 }
-sub SingleLetterDayNames() { 1 }
-sub ShortDayNames() { 2 }
-sub LongDayNames() { 3 }
-sub NoVerticalHeader() { 0 }
-sub ISOWeekNumbers() { 1 }
-sub NoSelection() { 0 }
-sub SingleSelection() { 1 }
 
 
 1;
@@ -35,95 +24,118 @@ Qt::Gui::QCalendarWidget
 
 =over
 
-=item    QCalendarWidget(QWidget * parent = 0)
+=item   QCalendarWidget(QWidget * parent)
 
-=item    QCalendarWidget(QWidget * parent)
+=item   QCalendarWidget(QWidget * parent = 0)
 
-=item    ~QCalendarWidget()
+=item   ~QCalendarWidget()
 
-=item   int dateEditAcceptDelay()
+=item  int dateEditAcceptDelay()
 
-=item   QTextCharFormat dateTextFormat(const QDate & date)
+=item  QTextCharFormat dateTextFormat(const QDate & date)
 
-=item   Qt::DayOfWeek firstDayOfWeek()
+=item  Qt::DayOfWeek firstDayOfWeek()
 
-=item   QTextCharFormat headerTextFormat()
+=item  QTextCharFormat headerTextFormat()
 
-=item   QCalendarWidget::HorizontalHeaderFormat horizontalHeaderFormat()
+=item  QCalendarWidget::HorizontalHeaderFormat horizontalHeaderFormat()
 
-=item   bool isDateEditEnabled()
+=item  bool isDateEditEnabled()
 
-=item   bool isGridVisible()
+=item  bool isGridVisible()
 
-=item   bool isHeaderVisible()
+=item  bool isHeaderVisible()
 
-=item   bool isNavigationBarVisible()
+=item  bool isNavigationBarVisible()
 
-=item   QDate maximumDate()
+=item  QDate maximumDate()
 
-=item   QDate minimumDate()
+=item  QDate minimumDate()
 
-=item   QSize minimumSizeHint()
+=item  QSize minimumSizeHint()
 
-=item   int monthShown()
+=item  int monthShown()
 
-=item   QDate selectedDate()
+=item  QDate selectedDate()
 
-=item   QCalendarWidget::SelectionMode selectionMode()
+=item  QCalendarWidget::SelectionMode selectionMode()
 
-=item   void setCurrentPage(int year, int month)
+=item  void setCurrentPage(int year, int month)
 
-=item   void setDateEditAcceptDelay(int delay)
+=item  void setDateEditAcceptDelay(int delay)
 
-=item   void setDateEditEnabled(bool enable)
+=item  void setDateEditEnabled(bool enable)
 
-=item   void setDateRange(const QDate & min, const QDate & max)
+=item  void setDateRange(const QDate & min, const QDate & max)
 
-=item   void setDateTextFormat(const QDate & date, const QTextCharFormat & format)
+=item  void setDateTextFormat(const QDate & date, const QTextCharFormat & format)
 
-=item   void setFirstDayOfWeek(Qt::DayOfWeek dayOfWeek)
+=item  void setFirstDayOfWeek(Qt::DayOfWeek dayOfWeek)
 
-=item   void setGridVisible(bool show)
+=item  void setGridVisible(bool show)
 
-=item   void setHeaderTextFormat(const QTextCharFormat & format)
+=item  void setHeaderTextFormat(const QTextCharFormat & format)
 
-=item   void setHeaderVisible(bool show)
+=item  void setHeaderVisible(bool show)
 
-=item   void setHorizontalHeaderFormat(QCalendarWidget::HorizontalHeaderFormat format)
+=item  void setHorizontalHeaderFormat(QCalendarWidget::HorizontalHeaderFormat format)
 
-=item   void setMaximumDate(const QDate & date)
+=item  void setMaximumDate(const QDate & date)
 
-=item   void setMinimumDate(const QDate & date)
+=item  void setMinimumDate(const QDate & date)
 
-=item   void setNavigationBarVisible(bool visible)
+=item  void setNavigationBarVisible(bool visible)
 
-=item   void setSelectedDate(const QDate & date)
+=item  void setSelectedDate(const QDate & date)
 
-=item   void setSelectionMode(QCalendarWidget::SelectionMode mode)
+=item  void setSelectionMode(QCalendarWidget::SelectionMode mode)
 
-=item   void setVerticalHeaderFormat(QCalendarWidget::VerticalHeaderFormat format)
+=item  void setVerticalHeaderFormat(QCalendarWidget::VerticalHeaderFormat format)
 
-=item   void setWeekdayTextFormat(Qt::DayOfWeek dayOfWeek, const QTextCharFormat & format)
+=item  void setWeekdayTextFormat(Qt::DayOfWeek dayOfWeek, const QTextCharFormat & format)
 
-=item   void showNextMonth()
+=item  void showNextMonth()
 
-=item   void showNextYear()
+=item  void showNextYear()
 
-=item   void showPreviousMonth()
+=item  void showPreviousMonth()
 
-=item   void showPreviousYear()
+=item  void showPreviousYear()
 
-=item   void showSelectedDate()
+=item  void showSelectedDate()
 
-=item   void showToday()
+=item  void showToday()
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   QCalendarWidget::VerticalHeaderFormat verticalHeaderFormat()
+=item  QCalendarWidget::VerticalHeaderFormat verticalHeaderFormat()
 
-=item   QTextCharFormat weekdayTextFormat(Qt::DayOfWeek dayOfWeek)
+=item  QTextCharFormat weekdayTextFormat(Qt::DayOfWeek dayOfWeek)
 
-=item   int yearShown()
+=item  int yearShown()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoHorizontalHeader
+
+=item SingleLetterDayNames
+
+=item ShortDayNames
+
+=item LongDayNames
+
+=item NoVerticalHeader
+
+=item ISOWeekNumbers
+
+=item NoSelection
+
+=item SingleSelection
 
 
 =back

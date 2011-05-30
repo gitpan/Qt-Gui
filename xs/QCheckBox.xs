@@ -18,57 +18,72 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QCheckBox(QWidget * parent = 0)
 ##  QCheckBox(QWidget * parent)
-##  QCheckBox(const QString & text, QWidget * parent = 0)
+##  QCheckBox(QWidget * parent = 0)
 ##  QCheckBox(const QString & text, QWidget * parent)
+##  QCheckBox(const QString & text, QWidget * parent = 0)
   void
 QCheckBox::new(...)
 PREINIT:
 QCheckBox *ret;
-QWidget * arg00 = 0;
-QWidget * arg10;
+QWidget * arg00;
+QWidget * arg10 = 0;
 QString * arg20;
-QWidget * arg21 = 0;
+QWidget * arg21;
 QString * arg30;
-QWidget * arg31;
+QWidget * arg31 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
-        break;
-      }
-    case 2:
-      {
-        if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        if (1) {
+      
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 3:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg30 is not of type ");
-    if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
-        arg31 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg31 is not of type Qt::Gui::QWidget");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QString") && (sv_derived_from(ST(2), "Qt::Gui::QWidget") || ST(2) == &PL_sv_undef)) {
+      arg20 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
+        arg21 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg21 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -78,20 +93,26 @@ void
 QCheckBox::checkState(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     Qt::CheckState ret = THIS->checkState();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## bool isTristate()
 void
 QCheckBox::isTristate(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isTristate();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## void setCheckState(Qt::CheckState state)
 void
@@ -99,49 +120,44 @@ QCheckBox::setCheckState(...)
 PREINIT:
 Qt::CheckState arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = Qt::Unchecked;
-      break;
-    case 1:
-      arg00 = Qt::PartiallyChecked;
-      break;
-    case 2:
-      arg00 = Qt::Checked;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::CheckState passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (Qt::CheckState)SvIV(ST(1));
     (void)THIS->setCheckState(arg00);
     XSRETURN(0);
+    }
 
-## void setTristate(bool y = true)
 ## void setTristate(bool y)
+## void setTristate(bool y = true)
 void
 QCheckBox::setTristate(...)
 PREINIT:
-bool arg00 = true;
-bool arg10;
+bool arg00;
+bool arg10 = true;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->setTristate(arg00);
-    XSRETURN(0);
-        break;
-      }
-    case 2:
-      {
-        arg10 = (bool)SvTRUE(ST(1));
+        if (1) {
+      
     (void)THIS->setTristate(arg10);
     XSRETURN(0);
+    }
         break;
       }
-    default:
+      case 2:
       {
+        if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
+    (void)THIS->setTristate(arg00);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QSize sizeHint()
@@ -149,7 +165,10 @@ void
 QCheckBox::sizeHint(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSize ret = THIS->sizeHint();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }

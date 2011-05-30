@@ -24,10 +24,13 @@ QGraphicsSceneResizeEvent::new(...)
 PREINIT:
 QGraphicsSceneResizeEvent *ret;
 PPCODE:
+    if (1) {
+      
     ret = new QGraphicsSceneResizeEvent();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QGraphicsSceneResizeEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QGraphicsSceneResizeEvent()
 void
@@ -41,20 +44,26 @@ void
 QGraphicsSceneResizeEvent::newSize(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSizeF ret = THIS->newSize();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSizeF(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSizeF", (void *)new QSizeF(ret));
     XSRETURN(1);
+    }
 
 ## QSizeF oldSize()
 void
 QGraphicsSceneResizeEvent::oldSize(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSizeF ret = THIS->oldSize();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSizeF(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSizeF", (void *)new QSizeF(ret));
     XSRETURN(1);
+    }
 
 ## void setNewSize(const QSizeF & size)
 void
@@ -62,13 +71,11 @@ QGraphicsSceneResizeEvent::setNewSize(...)
 PREINIT:
 QSizeF * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QSizeF *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QSizeF")) {
+      arg00 = reinterpret_cast<QSizeF *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setNewSize(*arg00);
     XSRETURN(0);
+    }
 
 ## void setOldSize(const QSizeF & size)
 void
@@ -76,10 +83,8 @@ QGraphicsSceneResizeEvent::setOldSize(...)
 PREINIT:
 QSizeF * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QSizeF *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QSizeF")) {
+      arg00 = reinterpret_cast<QSizeF *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setOldSize(*arg00);
     XSRETURN(0);
+    }

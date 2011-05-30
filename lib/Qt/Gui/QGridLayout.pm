@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QLayout/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QLayout/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,79 +24,112 @@ Qt::Gui::QGridLayout
 
 =over
 
-=item    QGridLayout()
+=item   QGridLayout()
 
-=item    QGridLayout(QWidget * parent)
+=item   QGridLayout(QWidget * parent)
 
-=item    ~QGridLayout()
+=item   ~QGridLayout()
 
-=item   void addWidget(QWidget * w)
+=item  void addItem(QLayoutItem * item, int row, int column, int rowSpan, int columnSpan, QFlags<Qt::AlignmentFlag> arg5)
 
-=item   QRect cellRect(int row, int column)
+=item  void addItem(QLayoutItem * item, int row, int column, int rowSpan, int columnSpan, QFlags<Qt::AlignmentFlag> arg5 = 0)
 
-=item   int columnCount()
+=item  void addItem(QLayoutItem * item, int row, int column, int rowSpan, int columnSpan = 1, QFlags<Qt::AlignmentFlag> arg5 = 0)
 
-=item   int columnMinimumWidth(int column)
+=item  void addItem(QLayoutItem * item, int row, int column, int rowSpan = 1, int columnSpan = 1, QFlags<Qt::AlignmentFlag> arg5 = 0)
 
-=item   int columnStretch(int column)
+=item  void addLayout(QLayout * arg0, int row, int column, QFlags<Qt::AlignmentFlag> arg3)
 
-=item   int count()
+=item  void addLayout(QLayout * arg0, int row, int column, QFlags<Qt::AlignmentFlag> arg3 = 0)
 
-=item   void getItemPosition(int idx, int * row, int * column, int * rowSpan, int * columnSpan)
+=item  void addLayout(QLayout * arg0, int row, int column, int rowSpan, int columnSpan, QFlags<Qt::AlignmentFlag> arg5)
 
-=item   bool hasHeightForWidth()
+=item  void addLayout(QLayout * arg0, int row, int column, int rowSpan, int columnSpan, QFlags<Qt::AlignmentFlag> arg5 = 0)
 
-=item   int heightForWidth(int arg0)
+=item  void addWidget(QWidget * w)
 
-=item   int horizontalSpacing()
+=item  void addWidget(QWidget * arg0, int row, int column, QFlags<Qt::AlignmentFlag> arg3)
 
-=item   void invalidate()
+=item  void addWidget(QWidget * arg0, int row, int column, QFlags<Qt::AlignmentFlag> arg3 = 0)
 
-=item   QLayoutItem * itemAt(int index)
+=item  void addWidget(QWidget * arg0, int row, int column, int rowSpan, int columnSpan, QFlags<Qt::AlignmentFlag> arg5)
 
-=item   QLayoutItem * itemAtPosition(int row, int column)
+=item  void addWidget(QWidget * arg0, int row, int column, int rowSpan, int columnSpan, QFlags<Qt::AlignmentFlag> arg5 = 0)
 
-=item   QSize maximumSize()
+=item  QRect cellRect(int row, int column)
 
-=item   int minimumHeightForWidth(int arg0)
+=item  int columnCount()
 
-=item   QSize minimumSize()
+=item  int columnMinimumWidth(int column)
 
-=item   Qt::Corner originCorner()
+=item  int columnStretch(int column)
 
-=item   int rowCount()
+=item  int count()
 
-=item   int rowMinimumHeight(int row)
+=item  QFlags<Qt::Orientation> expandingDirections()
 
-=item   int rowStretch(int row)
+=item  void getItemPosition(int idx, int * row, int * column, int * rowSpan, int * columnSpan)
 
-=item   void setColumnMinimumWidth(int column, int minSize)
+=item  bool hasHeightForWidth()
 
-=item   void setColumnStretch(int column, int stretch)
+=item  int heightForWidth(int arg0)
 
-=item   void setDefaultPositioning(int n, Qt::Orientation orient)
+=item  int horizontalSpacing()
 
-=item   void setGeometry(const QRect & arg0)
+=item  void invalidate()
 
-=item   void setHorizontalSpacing(int spacing)
+=item  QLayoutItem * itemAt(int index)
 
-=item   void setOriginCorner(Qt::Corner arg0)
+=item  QLayoutItem * itemAtPosition(int row, int column)
 
-=item   void setRowMinimumHeight(int row, int minSize)
+=item  QSize maximumSize()
 
-=item   void setRowStretch(int row, int stretch)
+=item  int minimumHeightForWidth(int arg0)
 
-=item   void setSpacing(int spacing)
+=item  QSize minimumSize()
 
-=item   void setVerticalSpacing(int spacing)
+=item  Qt::Corner originCorner()
 
-=item   QSize sizeHint()
+=item  int rowCount()
 
-=item   int spacing()
+=item  int rowMinimumHeight(int row)
 
-=item   QLayoutItem * takeAt(int index)
+=item  int rowStretch(int row)
 
-=item   int verticalSpacing()
+=item  void setColumnMinimumWidth(int column, int minSize)
+
+=item  void setColumnStretch(int column, int stretch)
+
+=item  void setDefaultPositioning(int n, Qt::Orientation orient)
+
+=item  void setGeometry(const QRect & arg0)
+
+=item  void setHorizontalSpacing(int spacing)
+
+=item  void setOriginCorner(Qt::Corner arg0)
+
+=item  void setRowMinimumHeight(int row, int minSize)
+
+=item  void setRowStretch(int row, int stretch)
+
+=item  void setSpacing(int spacing)
+
+=item  void setVerticalSpacing(int spacing)
+
+=item  QSize sizeHint()
+
+=item  int spacing()
+
+=item  QLayoutItem * takeAt(int index)
+
+=item  int verticalSpacing()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QValidator/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QValidator/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub StandardNotation() { 0 }
-sub ScientificNotation() { 1 }
 
 
 1;
@@ -29,33 +24,46 @@ Qt::Gui::QDoubleValidator
 
 =over
 
-=item    QDoubleValidator(QObject * parent)
+=item   QDoubleValidator(QObject * parent)
 
-=item    QDoubleValidator(double bottom, double top, int decimals, QObject * parent)
+=item   QDoubleValidator(QObject * parent = 0)
 
-=item    ~QDoubleValidator()
+=item   QDoubleValidator(double bottom, double top, int decimals, QObject * parent)
 
-=item   double bottom()
+=item   ~QDoubleValidator()
 
-=item   int decimals()
+=item  double bottom()
 
-=item   QDoubleValidator::Notation notation()
+=item  int decimals()
 
-=item   void setBottom(double arg0)
+=item  QDoubleValidator::Notation notation()
 
-=item   void setDecimals(int arg0)
+=item  void setBottom(double arg0)
 
-=item   void setNotation(QDoubleValidator::Notation arg0)
+=item  void setDecimals(int arg0)
 
-=item   void setRange(double bottom, double top, int decimals = 0)
+=item  void setNotation(QDoubleValidator::Notation arg0)
 
-=item   void setRange(double bottom, double top, int decimals)
+=item  void setRange(double bottom, double top, int decimals)
 
-=item   void setTop(double arg0)
+=item  void setRange(double bottom, double top, int decimals = 0)
 
-=item   double top()
+=item  void setTop(double arg0)
 
-=item   QValidator::State validate(QString & arg0, int & arg1)
+=item  double top()
+
+=item  QValidator::State validate(QString & arg0, int & arg1)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item StandardNotation
+
+=item ScientificNotation
 
 
 =back

@@ -7,22 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub StepNone() { 0 }
-sub StepUpEnabled() { 1 }
-sub StepDownEnabled() { 2 }
-sub UpDownArrows() { 0 }
-sub PlusMinus() { 1 }
-sub NoButtons() { 2 }
-sub CorrectToPreviousValue() { 0 }
-sub CorrectToNearestValue() { 1 }
 
 
 1;
@@ -35,71 +24,98 @@ Qt::Gui::QAbstractSpinBox
 
 =over
 
-=item    QAbstractSpinBox(QWidget * parent = 0)
+=item   QAbstractSpinBox(QWidget * parent)
 
-=item    QAbstractSpinBox(QWidget * parent)
+=item   QAbstractSpinBox(QWidget * parent = 0)
 
-=item    ~QAbstractSpinBox()
+=item   ~QAbstractSpinBox()
 
-=item   QAbstractSpinBox::ButtonSymbols buttonSymbols()
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   void clear()
+=item  QAbstractSpinBox::ButtonSymbols buttonSymbols()
 
-=item   QAbstractSpinBox::CorrectionMode correctionMode()
+=item  void clear()
 
-=item   bool event(QEvent * event)
+=item  QAbstractSpinBox::CorrectionMode correctionMode()
 
-=item   void fixup(QString & input)
+=item  bool event(QEvent * event)
 
-=item   bool hasAcceptableInput()
+=item  void fixup(QString & input)
 
-=item   bool hasFrame()
+=item  bool hasAcceptableInput()
 
-=item   QVariant inputMethodQuery(Qt::InputMethodQuery arg0)
+=item  bool hasFrame()
 
-=item   void interpretText()
+=item  QVariant inputMethodQuery(Qt::InputMethodQuery arg0)
 
-=item   bool isAccelerated()
+=item  void interpretText()
 
-=item   bool isReadOnly()
+=item  bool isAccelerated()
 
-=item   bool keyboardTracking()
+=item  bool isReadOnly()
 
-=item   QSize minimumSizeHint()
+=item  bool keyboardTracking()
 
-=item   void selectAll()
+=item  QSize minimumSizeHint()
 
-=item   void setAccelerated(bool on)
+=item  void selectAll()
 
-=item   void setButtonSymbols(QAbstractSpinBox::ButtonSymbols bs)
+=item  void setAccelerated(bool on)
 
-=item   void setCorrectionMode(QAbstractSpinBox::CorrectionMode cm)
+=item  void setAlignment(QFlags<Qt::AlignmentFlag> flag)
 
-=item   void setFrame(bool arg0)
+=item  void setButtonSymbols(QAbstractSpinBox::ButtonSymbols bs)
 
-=item   void setKeyboardTracking(bool kt)
+=item  void setCorrectionMode(QAbstractSpinBox::CorrectionMode cm)
 
-=item   void setReadOnly(bool r)
+=item  void setFrame(bool arg0)
 
-=item   void setSpecialValueText(const QString & txt)
+=item  void setKeyboardTracking(bool kt)
 
-=item   void setWrapping(bool w)
+=item  void setReadOnly(bool r)
 
-=item   QSize sizeHint()
+=item  void setSpecialValueText(const QString & txt)
 
-=item   QString specialValueText()
+=item  void setWrapping(bool w)
 
-=item   void stepBy(int steps)
+=item  QSize sizeHint()
 
-=item   void stepDown()
+=item  QString specialValueText()
 
-=item   void stepUp()
+=item  void stepBy(int steps)
 
-=item   QString text()
+=item  void stepDown()
 
-=item   QValidator::State validate(QString & input, int & pos)
+=item  void stepUp()
 
-=item   bool wrapping()
+=item  QString text()
+
+=item  QValidator::State validate(QString & input, int & pos)
+
+=item  bool wrapping()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item StepNone
+
+=item StepUpEnabled
+
+=item StepDownEnabled
+
+=item UpDownArrows
+
+=item PlusMinus
+
+=item NoButtons
+
+=item CorrectToPreviousValue
+
+=item CorrectToNearestValue
 
 
 =back

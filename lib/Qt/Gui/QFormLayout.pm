@@ -7,23 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QLayout/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QLayout/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub FieldsStayAtSizeHint() { 0 }
-sub ExpandingFieldsGrow() { 1 }
-sub AllNonFixedFieldsGrow() { 2 }
-sub DontWrapRows() { 0 }
-sub WrapLongRows() { 1 }
-sub WrapAllRows() { 2 }
-sub LabelRole() { 0 }
-sub FieldRole() { 1 }
-sub SpanningRole() { 2 }
 
 
 1;
@@ -36,95 +24,130 @@ Qt::Gui::QFormLayout
 
 =over
 
-=item    QFormLayout(QWidget * parent = 0)
+=item   QFormLayout(QWidget * parent)
 
-=item    QFormLayout(QWidget * parent)
+=item   QFormLayout(QWidget * parent = 0)
 
-=item    ~QFormLayout()
+=item   ~QFormLayout()
 
-=item   void addItem(QLayoutItem * item)
+=item  void addItem(QLayoutItem * item)
 
-=item   void addRow(QWidget * widget)
+=item  void addRow(QWidget * widget)
 
-=item   void addRow(QLayout * layout)
+=item  void addRow(QLayout * layout)
 
-=item   void addRow(QWidget * label, QWidget * field)
+=item  void addRow(QWidget * label, QWidget * field)
 
-=item   void addRow(QWidget * label, QLayout * field)
+=item  void addRow(QWidget * label, QLayout * field)
 
-=item   void addRow(const QString & labelText, QWidget * field)
+=item  void addRow(const QString & labelText, QWidget * field)
 
-=item   void addRow(const QString & labelText, QLayout * field)
+=item  void addRow(const QString & labelText, QLayout * field)
 
-=item   int count()
+=item  int count()
 
-=item   QFormLayout::FieldGrowthPolicy fieldGrowthPolicy()
+=item  QFlags<Qt::Orientation> expandingDirections()
 
-=item   void getItemPosition(int index, int * rowPtr, QFormLayout::ItemRole * rolePtr)
+=item  QFormLayout::FieldGrowthPolicy fieldGrowthPolicy()
 
-=item   void getLayoutPosition(QLayout * layout, int * rowPtr, QFormLayout::ItemRole * rolePtr)
+=item  QFlags<Qt::AlignmentFlag> formAlignment()
 
-=item   void getWidgetPosition(QWidget * widget, int * rowPtr, QFormLayout::ItemRole * rolePtr)
+=item  void getItemPosition(int index, int * rowPtr, QFormLayout::ItemRole * rolePtr)
 
-=item   bool hasHeightForWidth()
+=item  void getLayoutPosition(QLayout * layout, int * rowPtr, QFormLayout::ItemRole * rolePtr)
 
-=item   int heightForWidth(int width)
+=item  void getWidgetPosition(QWidget * widget, int * rowPtr, QFormLayout::ItemRole * rolePtr)
 
-=item   int horizontalSpacing()
+=item  bool hasHeightForWidth()
 
-=item   void insertRow(int row, QWidget * widget)
+=item  int heightForWidth(int width)
 
-=item   void insertRow(int row, QLayout * layout)
+=item  int horizontalSpacing()
 
-=item   void insertRow(int row, QWidget * label, QWidget * field)
+=item  void insertRow(int row, QWidget * widget)
 
-=item   void insertRow(int row, QWidget * label, QLayout * field)
+=item  void insertRow(int row, QLayout * layout)
 
-=item   void insertRow(int row, const QString & labelText, QWidget * field)
+=item  void insertRow(int row, QWidget * label, QWidget * field)
 
-=item   void insertRow(int row, const QString & labelText, QLayout * field)
+=item  void insertRow(int row, QWidget * label, QLayout * field)
 
-=item   void invalidate()
+=item  void insertRow(int row, const QString & labelText, QWidget * field)
 
-=item   QLayoutItem * itemAt(int index)
+=item  void insertRow(int row, const QString & labelText, QLayout * field)
 
-=item   QLayoutItem * itemAt(int row, QFormLayout::ItemRole role)
+=item  void invalidate()
 
-=item   QWidget * labelForField(QWidget * field)
+=item  QLayoutItem * itemAt(int index)
 
-=item   QWidget * labelForField(QLayout * field)
+=item  QLayoutItem * itemAt(int row, QFormLayout::ItemRole role)
 
-=item   QSize minimumSize()
+=item  QFlags<Qt::AlignmentFlag> labelAlignment()
 
-=item   int rowCount()
+=item  QWidget * labelForField(QWidget * field)
 
-=item   QFormLayout::RowWrapPolicy rowWrapPolicy()
+=item  QWidget * labelForField(QLayout * field)
 
-=item   void setFieldGrowthPolicy(QFormLayout::FieldGrowthPolicy policy)
+=item  QSize minimumSize()
 
-=item   void setGeometry(const QRect & rect)
+=item  int rowCount()
 
-=item   void setHorizontalSpacing(int spacing)
+=item  QFormLayout::RowWrapPolicy rowWrapPolicy()
 
-=item   void setItem(int row, QFormLayout::ItemRole role, QLayoutItem * item)
+=item  void setFieldGrowthPolicy(QFormLayout::FieldGrowthPolicy policy)
 
-=item   void setLayout(int row, QFormLayout::ItemRole role, QLayout * layout)
+=item  void setFormAlignment(QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setRowWrapPolicy(QFormLayout::RowWrapPolicy policy)
+=item  void setGeometry(const QRect & rect)
 
-=item   void setSpacing(int arg0)
+=item  void setHorizontalSpacing(int spacing)
 
-=item   void setVerticalSpacing(int spacing)
+=item  void setItem(int row, QFormLayout::ItemRole role, QLayoutItem * item)
 
-=item   void setWidget(int row, QFormLayout::ItemRole role, QWidget * widget)
+=item  void setLabelAlignment(QFlags<Qt::AlignmentFlag> alignment)
 
-=item   QSize sizeHint()
+=item  void setLayout(int row, QFormLayout::ItemRole role, QLayout * layout)
 
-=item   int spacing()
+=item  void setRowWrapPolicy(QFormLayout::RowWrapPolicy policy)
 
-=item   QLayoutItem * takeAt(int index)
+=item  void setSpacing(int arg0)
 
-=item   int verticalSpacing()
+=item  void setVerticalSpacing(int spacing)
+
+=item  void setWidget(int row, QFormLayout::ItemRole role, QWidget * widget)
+
+=item  QSize sizeHint()
+
+=item  int spacing()
+
+=item  QLayoutItem * takeAt(int index)
+
+=item  int verticalSpacing()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item FieldsStayAtSizeHint
+
+=item ExpandingFieldsGrow
+
+=item AllNonFixedFieldsGrow
+
+=item DontWrapRows
+
+=item WrapLongRows
+
+=item WrapAllRows
+
+=item LabelRole
+
+=item FieldRole
+
+=item SpanningRole
 
 
 =back

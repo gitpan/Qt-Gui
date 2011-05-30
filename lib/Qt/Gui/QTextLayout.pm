@@ -7,15 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub SkipCharacters() { 0 }
-sub SkipWords() { 1 }
 
 
 1;
@@ -28,83 +23,94 @@ Qt::Gui::QTextLayout
 
 =over
 
-=item    QTextLayout()
+=item   QTextLayout()
 
-=item    QTextLayout(const QString & text)
+=item   QTextLayout(const QString & text)
 
-=item    QTextLayout(const QTextBlock & b)
+=item   QTextLayout(const QTextBlock & b)
 
-=item    QTextLayout(const QString & text, const QFont & font, QPaintDevice * paintdevice = 0)
+=item   QTextLayout(const QString & text, const QFont & font, QPaintDevice * paintdevice)
 
-=item    QTextLayout(const QString & text, const QFont & font, QPaintDevice * paintdevice)
+=item   QTextLayout(const QString & text, const QFont & font, QPaintDevice * paintdevice = 0)
 
-=item    ~QTextLayout()
+=item   ~QTextLayout()
 
-=item   void beginLayout()
+=item  void beginLayout()
 
-=item   QRectF boundingRect()
+=item  QRectF boundingRect()
 
-=item   bool cacheEnabled()
+=item  bool cacheEnabled()
 
-=item   void clearAdditionalFormats()
+=item  void clearAdditionalFormats()
 
-=item   void clearLayout()
+=item  void clearLayout()
 
-=item   QTextLine createLine()
+=item  QTextLine createLine()
 
-=item   void drawCursor(QPainter * p, const QPointF & pos, int cursorPosition)
+=item  void drawCursor(QPainter * p, const QPointF & pos, int cursorPosition)
 
-=item   void drawCursor(QPainter * p, const QPointF & pos, int cursorPosition, int width)
+=item  void drawCursor(QPainter * p, const QPointF & pos, int cursorPosition, int width)
 
-=item   void endLayout()
+=item  void endLayout()
 
-=item   QTextEngine * engine()
+=item  QTextEngine * engine()
 
-=item   QFont font()
+=item  QFont font()
 
-=item   bool isValidCursorPosition(int pos)
+=item  bool isValidCursorPosition(int pos)
 
-=item   QTextLine lineAt(int i)
+=item  QTextLine lineAt(int i)
 
-=item   int lineCount()
+=item  int lineCount()
 
-=item   QTextLine lineForTextPosition(int pos)
+=item  QTextLine lineForTextPosition(int pos)
 
-=item   qreal maximumWidth()
+=item  qreal maximumWidth()
 
-=item   qreal minimumWidth()
+=item  qreal minimumWidth()
 
-=item   int nextCursorPosition(int oldPos, QTextLayout::CursorMode mode = QTextLayout::SkipCharacters)
+=item  int nextCursorPosition(int oldPos, QTextLayout::CursorMode mode)
 
-=item   int nextCursorPosition(int oldPos, QTextLayout::CursorMode mode)
+=item  int nextCursorPosition(int oldPos, QTextLayout::CursorMode mode = QTextLayout::SkipCharacters)
 
-=item   QPointF position()
+=item  QPointF position()
 
-=item   int preeditAreaPosition()
+=item  int preeditAreaPosition()
 
-=item   QString preeditAreaText()
+=item  QString preeditAreaText()
 
-=item   int previousCursorPosition(int oldPos, QTextLayout::CursorMode mode = QTextLayout::SkipCharacters)
+=item  int previousCursorPosition(int oldPos, QTextLayout::CursorMode mode)
 
-=item   int previousCursorPosition(int oldPos, QTextLayout::CursorMode mode)
+=item  int previousCursorPosition(int oldPos, QTextLayout::CursorMode mode = QTextLayout::SkipCharacters)
 
-=item   void setCacheEnabled(bool enable)
+=item  void setCacheEnabled(bool enable)
 
-=item   void setFlags(int flags)
+=item  void setFlags(int flags)
 
-=item   void setFont(const QFont & f)
+=item  void setFont(const QFont & f)
 
-=item   void setPosition(const QPointF & p)
+=item  void setPosition(const QPointF & p)
 
-=item   void setPreeditArea(int position, const QString & text)
+=item  void setPreeditArea(int position, const QString & text)
 
-=item   void setText(const QString & string)
+=item  void setText(const QString & string)
 
-=item   void setTextOption(const QTextOption & option)
+=item  void setTextOption(const QTextOption & option)
 
-=item   QString text()
+=item  QString text()
 
-=item   QTextOption textOption()
+=item  QTextOption textOption()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item SkipCharacters
+
+=item SkipWords
 
 
 =back

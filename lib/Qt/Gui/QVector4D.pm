@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,73 +23,80 @@ Qt::Gui::QVector4D
 
 =over
 
-=item    QVector4D()
+=item   QVector4D()
 
-=item    QVector4D(const QPoint & point)
+=item   QVector4D(const QPoint & point)
 
-=item    QVector4D(const QPointF & point)
+=item   QVector4D(const QPointF & point)
 
-=item    QVector4D(const QVector2D & vector)
+=item   QVector4D(const QVector2D & vector)
 
-=item    QVector4D(const QVector3D & vector)
+=item   QVector4D(const QVector3D & vector)
 
-=item    QVector4D(const QVector3D & vector, qreal wpos)
+=item   QVector4D(const QVector3D & vector, qreal wpos)
 
-=item    QVector4D(const QVector2D & vector, qreal zpos, qreal wpos)
+=item   QVector4D(const QVector2D & vector, qreal zpos, qreal wpos)
 
-=item    QVector4D(qreal xpos, qreal ypos, qreal zpos, qreal wpos)
+=item   QVector4D(qreal xpos, qreal ypos, qreal zpos, qreal wpos)
 
-=item   static qreal dotProduct(const QVector4D & v1, const QVector4D & v2)
+=item  static qreal dotProduct(const QVector4D & v1, const QVector4D & v2)
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   qreal length()
+=item  qreal length()
 
-=item   qreal lengthSquared()
+=item  qreal lengthSquared()
 
-=item   void normalize()
+=item  void normalize()
 
-=item   QVector4D normalized()
+=item  QVector4D normalized()
 
-=item   QVariant operator QVariant()
+=item  QVariant operator QVariant()
 
-=item   QVector4D & operator*=(qreal factor)
+=item  QVector4D & operator*=(qreal factor)
 
-=item   QVector4D & operator*=(const QVector4D & vector)
+=item  QVector4D & operator*=(const QVector4D & vector)
 
-=item   QVector4D & operator+=(const QVector4D & vector)
+=item  QVector4D & operator+=(const QVector4D & vector)
 
-=item   QVector4D & operator-=(const QVector4D & vector)
+=item  QVector4D & operator-=(const QVector4D & vector)
 
-=item   QVector4D & operator/=(qreal divisor)
+=item  QVector4D & operator/=(qreal divisor)
 
-=item   void setW(qreal w)
+=item  void setW(qreal w)
 
-=item   void setX(qreal x)
+=item  void setX(qreal x)
 
-=item   void setY(qreal y)
+=item  void setY(qreal y)
 
-=item   void setZ(qreal z)
+=item  void setZ(qreal z)
 
-=item   QPoint toPoint()
+=item  QPoint toPoint()
 
-=item   QPointF toPointF()
+=item  QPointF toPointF()
 
-=item   QVector2D toVector2D()
+=item  QVector2D toVector2D()
 
-=item   QVector2D toVector2DAffine()
+=item  QVector2D toVector2DAffine()
 
-=item   QVector3D toVector3D()
+=item  QVector3D toVector3D()
 
-=item   QVector3D toVector3DAffine()
+=item  QVector3D toVector3DAffine()
 
-=item   qreal w()
+=item  qreal w()
 
-=item   qreal x()
+=item  qreal x()
 
-=item   qreal y()
+=item  qreal y()
 
-=item   qreal z()
+=item  qreal z()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

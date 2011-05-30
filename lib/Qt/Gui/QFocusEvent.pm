@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,19 +24,26 @@ Qt::Gui::QFocusEvent
 
 =over
 
-=item    QFocusEvent(QFocusEvent::Type type, Qt::FocusReason reason = Qt::OtherFocusReason)
+=item   QFocusEvent(QFocusEvent::Type type, Qt::FocusReason reason)
 
-=item    QFocusEvent(QFocusEvent::Type type, Qt::FocusReason reason)
+=item   QFocusEvent(QFocusEvent::Type type, Qt::FocusReason reason = Qt::OtherFocusReason)
 
-=item    ~QFocusEvent()
+=item   ~QFocusEvent()
 
-=item   bool gotFocus()
+=item  bool gotFocus()
 
-=item   bool lostFocus()
+=item  bool lostFocus()
 
-=item   Qt::FocusReason reason()
+=item  Qt::FocusReason reason()
 
-=item   Qt::FocusReason reason()
+=item  Qt::FocusReason reason()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

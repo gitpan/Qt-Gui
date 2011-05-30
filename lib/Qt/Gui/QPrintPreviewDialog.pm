@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,15 +24,34 @@ Qt::Gui::QPrintPreviewDialog
 
 =over
 
-=item    ~QPrintPreviewDialog()
+=item   QPrintPreviewDialog(QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   void done(int result)
+=item   QPrintPreviewDialog(QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   void open(QObject * receiver, const char * member)
+=item   QPrintPreviewDialog(QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   QPrinter * printer()
+=item   QPrintPreviewDialog(QPrinter * printer, QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   void setVisible(bool visible)
+=item   QPrintPreviewDialog(QPrinter * printer, QWidget * parent, QFlags<Qt::WindowType> flags = 0)
+
+=item   QPrintPreviewDialog(QPrinter * printer, QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
+
+=item   ~QPrintPreviewDialog()
+
+=item  void done(int result)
+
+=item  void open(QObject * receiver, const char * member)
+
+=item  QPrinter * printer()
+
+=item  void setVisible(bool visible)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

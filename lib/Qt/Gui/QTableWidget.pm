@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTableView/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTableView/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,115 +24,126 @@ Qt::Gui::QTableWidget
 
 =over
 
-=item    QTableWidget(QWidget * parent = 0)
+=item   QTableWidget(QWidget * parent)
 
-=item    QTableWidget(QWidget * parent)
+=item   QTableWidget(QWidget * parent = 0)
 
-=item    QTableWidget(int rows, int columns, QWidget * parent = 0)
+=item   QTableWidget(int rows, int columns, QWidget * parent)
 
-=item    QTableWidget(int rows, int columns, QWidget * parent)
+=item   QTableWidget(int rows, int columns, QWidget * parent = 0)
 
-=item    ~QTableWidget()
+=item   ~QTableWidget()
 
-=item   QWidget * cellWidget(int row, int column)
+=item  QWidget * cellWidget(int row, int column)
 
-=item   void clear()
+=item  void clear()
 
-=item   void clearContents()
+=item  void clearContents()
 
-=item   void closePersistentEditor(QTableWidgetItem * item)
+=item  void closePersistentEditor(QTableWidgetItem * item)
 
-=item   int column(const QTableWidgetItem * item)
+=item  int column(const QTableWidgetItem * item)
 
-=item   int columnCount()
+=item  int columnCount()
 
-=item   int currentColumn()
+=item  int currentColumn()
 
-=item   QTableWidgetItem * currentItem()
+=item  QTableWidgetItem * currentItem()
 
-=item   int currentRow()
+=item  int currentRow()
 
-=item   void editItem(QTableWidgetItem * item)
+=item  void editItem(QTableWidgetItem * item)
 
-=item   QTableWidgetItem * horizontalHeaderItem(int column)
+=item  QTableWidgetItem * horizontalHeaderItem(int column)
 
-=item   void insertColumn(int column)
+=item  void insertColumn(int column)
 
-=item   void insertRow(int row)
+=item  void insertRow(int row)
 
-=item   bool isItemSelected(const QTableWidgetItem * item)
+=item  bool isItemSelected(const QTableWidgetItem * item)
 
-=item   bool isSortingEnabled()
+=item  bool isSortingEnabled()
 
-=item   QTableWidgetItem * item(int row, int column)
+=item  QTableWidgetItem * item(int row, int column)
 
-=item   QTableWidgetItem * itemAt(const QPoint & p)
+=item  QTableWidgetItem * itemAt(const QPoint & p)
 
-=item   QTableWidgetItem * itemAt(int x, int y)
+=item  QTableWidgetItem * itemAt(int x, int y)
 
-=item   const QTableWidgetItem * itemPrototype()
+=item  const QTableWidgetItem * itemPrototype()
 
-=item   void openPersistentEditor(QTableWidgetItem * item)
+=item  void openPersistentEditor(QTableWidgetItem * item)
 
-=item   void removeCellWidget(int row, int column)
+=item  void removeCellWidget(int row, int column)
 
-=item   void removeColumn(int column)
+=item  void removeColumn(int column)
 
-=item   void removeRow(int row)
+=item  void removeRow(int row)
 
-=item   int row(const QTableWidgetItem * item)
+=item  int row(const QTableWidgetItem * item)
 
-=item   int rowCount()
+=item  int rowCount()
 
-=item   void scrollToItem(const QTableWidgetItem * item, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+=item  void scrollToItem(const QTableWidgetItem * item, QAbstractItemView::ScrollHint hint)
 
-=item   void scrollToItem(const QTableWidgetItem * item, QAbstractItemView::ScrollHint hint)
+=item  void scrollToItem(const QTableWidgetItem * item, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 
-=item   void setCellWidget(int row, int column, QWidget * widget)
+=item  void setCellWidget(int row, int column, QWidget * widget)
 
-=item   void setColumnCount(int columns)
+=item  void setColumnCount(int columns)
 
-=item   void setCurrentCell(int row, int column)
+=item  void setCurrentCell(int row, int column)
 
-=item   void setCurrentItem(QTableWidgetItem * item)
+=item  void setCurrentCell(int row, int column, QFlags<QItemSelectionModel::SelectionFlag> command)
 
-=item   void setHorizontalHeaderItem(int column, QTableWidgetItem * item)
+=item  void setCurrentItem(QTableWidgetItem * item)
 
-=item   void setHorizontalHeaderLabels(const QStringList & labels)
+=item  void setCurrentItem(QTableWidgetItem * item, QFlags<QItemSelectionModel::SelectionFlag> command)
 
-=item   void setItem(int row, int column, QTableWidgetItem * item)
+=item  void setHorizontalHeaderItem(int column, QTableWidgetItem * item)
 
-=item   void setItemPrototype(const QTableWidgetItem * item)
+=item  void setHorizontalHeaderLabels(const QStringList & labels)
 
-=item   void setItemSelected(const QTableWidgetItem * item, bool select)
+=item  void setItem(int row, int column, QTableWidgetItem * item)
 
-=item   void setRangeSelected(const QTableWidgetSelectionRange & range, bool select)
+=item  void setItemPrototype(const QTableWidgetItem * item)
 
-=item   void setRowCount(int rows)
+=item  void setItemSelected(const QTableWidgetItem * item, bool select)
 
-=item   void setSortingEnabled(bool enable)
+=item  void setRangeSelected(const QTableWidgetSelectionRange & range, bool select)
 
-=item   void setVerticalHeaderItem(int row, QTableWidgetItem * item)
+=item  void setRowCount(int rows)
 
-=item   void setVerticalHeaderLabels(const QStringList & labels)
+=item  void setSortingEnabled(bool enable)
 
-=item   void sortItems(int column, Qt::SortOrder order = Qt::AscendingOrder)
+=item  void setVerticalHeaderItem(int row, QTableWidgetItem * item)
 
-=item   void sortItems(int column, Qt::SortOrder order)
+=item  void setVerticalHeaderLabels(const QStringList & labels)
 
-=item   QTableWidgetItem * takeHorizontalHeaderItem(int column)
+=item  void sortItems(int column, Qt::SortOrder order)
 
-=item   QTableWidgetItem * takeItem(int row, int column)
+=item  void sortItems(int column, Qt::SortOrder order = Qt::AscendingOrder)
 
-=item   QTableWidgetItem * takeVerticalHeaderItem(int row)
+=item  QTableWidgetItem * takeHorizontalHeaderItem(int column)
 
-=item   QTableWidgetItem * verticalHeaderItem(int row)
+=item  QTableWidgetItem * takeItem(int row, int column)
 
-=item   int visualColumn(int logicalColumn)
+=item  QTableWidgetItem * takeVerticalHeaderItem(int row)
 
-=item   QRect visualItemRect(const QTableWidgetItem * item)
+=item  QTableWidgetItem * verticalHeaderItem(int row)
 
-=item   int visualRow(int logicalRow)
+=item  int visualColumn(int logicalColumn)
+
+=item  QRect visualItemRect(const QTableWidgetItem * item)
+
+=item  int visualRow(int logicalRow)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

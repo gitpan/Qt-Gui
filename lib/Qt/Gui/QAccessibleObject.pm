@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAccessibleInterface/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAccessibleInterface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,21 +24,28 @@ Qt::Gui::QAccessibleObject
 
 =over
 
-=item    QAccessibleObject(QObject * object)
+=item   QAccessibleObject(QObject * object)
 
-=item   QString actionText(int action, QAccessible::Text t, int child)
+=item  QString actionText(int action, QAccessible::Text t, int child)
 
-=item   bool doAction(int action, int child, const QVariantList & params)
+=item  bool doAction(int action, int child, const QVariantList & params)
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   QObject * object()
+=item  QObject * object()
 
-=item   QRect rect(int child)
+=item  QRect rect(int child)
 
-=item   void setText(QAccessible::Text t, int child, const QString & text)
+=item  void setText(QAccessible::Text t, int child, const QString & text)
 
-=item   int userActionCount(int child)
+=item  int userActionCount(int child)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

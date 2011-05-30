@@ -1,30 +1,41 @@
-package Qt::Gui::QStyleFactoryInterface;
+package Qt::Gui::QWSEmbedWidget;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QStyleFactoryInterface
-# file     : QtGui/qstyleplugin.h
+# classname: QWSEmbedWidget
+# file     : QtGui/qwsembedwidget.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
 
 =head1 NAME
 
-Qt::Gui::QStyleFactoryInterface
+Qt::Gui::QWSEmbedWidget
 
 =head1 PUBLIC METHODS
 
 =over
 
-=item   QStyle * create(const QString & key)
+=item   QWSEmbedWidget(unsigned long winId, QWidget * parent)
+
+=item   QWSEmbedWidget(unsigned long winId, QWidget * parent = 0)
+
+=item   ~QWSEmbedWidget()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

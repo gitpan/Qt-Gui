@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,23 +23,30 @@ Qt::Gui::QPrinterInfo
 
 =over
 
-=item    QPrinterInfo()
+=item   QPrinterInfo()
 
-=item    QPrinterInfo(const QPrinterInfo & src)
+=item   QPrinterInfo(const QPrinterInfo & src)
 
-=item    QPrinterInfo(const QPrinter & printer)
+=item   QPrinterInfo(const QPrinter & printer)
 
-=item    ~QPrinterInfo()
+=item   ~QPrinterInfo()
 
-=item   static QPrinterInfo defaultPrinter()
+=item  static QPrinterInfo defaultPrinter()
 
-=item   bool isDefault()
+=item  bool isDefault()
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   QPrinterInfo & operator=(const QPrinterInfo & src)
+=item  QPrinterInfo & operator=(const QPrinterInfo & src)
 
-=item   QString printerName()
+=item  QString printerName()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

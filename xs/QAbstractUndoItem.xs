@@ -32,13 +32,19 @@ void
 QAbstractUndoItem::redo(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->redo();
     XSRETURN(0);
+    }
 
 ## void undo()
 void
 QAbstractUndoItem::undo(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->undo();
     XSRETURN(0);
+    }

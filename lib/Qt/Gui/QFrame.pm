@@ -7,26 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoFrame() { 0 }
-sub Box() { 1 }
-sub Panel() { 2 }
-sub WinPanel() { 3 }
-sub HLine() { 4 }
-sub VLine() { 5 }
-sub StyledPanel() { 6 }
-sub Plain() { 0 }
-sub Raised() { 1 }
-sub Sunken() { 2 }
-sub Shadow_Mask() { 0 }
-sub Shape_Mask() { 1 }
 
 
 1;
@@ -39,35 +24,72 @@ Qt::Gui::QFrame
 
 =over
 
-=item    ~QFrame()
+=item   QFrame(QWidget * parent, QFlags<Qt::WindowType> f)
 
-=item   QRect frameRect()
+=item   QFrame(QWidget * parent, QFlags<Qt::WindowType> f = 0)
 
-=item   QFrame::Shadow frameShadow()
+=item   QFrame(QWidget * parent = 0, QFlags<Qt::WindowType> f = 0)
 
-=item   QFrame::Shape frameShape()
+=item   ~QFrame()
 
-=item   int frameStyle()
+=item  QRect frameRect()
 
-=item   int frameWidth()
+=item  QFrame::Shadow frameShadow()
 
-=item   int lineWidth()
+=item  QFrame::Shape frameShape()
 
-=item   int midLineWidth()
+=item  int frameStyle()
 
-=item   void setFrameRect(const QRect & arg0)
+=item  int frameWidth()
 
-=item   void setFrameShadow(QFrame::Shadow arg0)
+=item  int lineWidth()
 
-=item   void setFrameShape(QFrame::Shape arg0)
+=item  int midLineWidth()
 
-=item   void setFrameStyle(int arg0)
+=item  void setFrameRect(const QRect & arg0)
 
-=item   void setLineWidth(int arg0)
+=item  void setFrameShadow(QFrame::Shadow arg0)
 
-=item   void setMidLineWidth(int arg0)
+=item  void setFrameShape(QFrame::Shape arg0)
 
-=item   QSize sizeHint()
+=item  void setFrameStyle(int arg0)
+
+=item  void setLineWidth(int arg0)
+
+=item  void setMidLineWidth(int arg0)
+
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoFrame
+
+=item Box
+
+=item Panel
+
+=item WinPanel
+
+=item HLine
+
+=item VLine
+
+=item StyledPanel
+
+=item Plain
+
+=item Raised
+
+=item Sunken
+
+=item Shadow_Mask
+
+=item Shape_Mask
 
 
 =back

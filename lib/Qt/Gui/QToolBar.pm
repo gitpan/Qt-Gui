@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,67 +24,78 @@ Qt::Gui::QToolBar
 
 =over
 
-=item    QToolBar(QWidget * parent = 0)
+=item   QToolBar(QWidget * parent)
 
-=item    QToolBar(QWidget * parent)
+=item   QToolBar(QWidget * parent = 0)
 
-=item    QToolBar(const QString & title, QWidget * parent = 0)
+=item   QToolBar(const QString & title, QWidget * parent)
 
-=item    QToolBar(const QString & title, QWidget * parent)
+=item   QToolBar(const QString & title, QWidget * parent = 0)
 
-=item    ~QToolBar()
+=item   ~QToolBar()
 
-=item   QAction * actionAt(const QPoint & p)
+=item  QAction * actionAt(const QPoint & p)
 
-=item   QAction * actionAt(int x, int y)
+=item  QAction * actionAt(int x, int y)
 
-=item   QRect actionGeometry(QAction * action)
+=item  QRect actionGeometry(QAction * action)
 
-=item   QAction * addAction(const QString & text)
+=item  QAction * addAction(const QString & text)
 
-=item   QAction * addAction(const QIcon & icon, const QString & text)
+=item  QAction * addAction(const QIcon & icon, const QString & text)
 
-=item   QAction * addAction(const QString & text, const QObject * receiver, const char * member)
+=item  QAction * addAction(const QString & text, const QObject * receiver, const char * member)
 
-=item   QAction * addAction(const QIcon & icon, const QString & text, const QObject * receiver, const char * member)
+=item  QAction * addAction(const QIcon & icon, const QString & text, const QObject * receiver, const char * member)
 
-=item   QAction * addSeparator()
+=item  QAction * addSeparator()
 
-=item   QAction * addWidget(QWidget * widget)
+=item  QAction * addWidget(QWidget * widget)
 
-=item   void clear()
+=item  QFlags<Qt::ToolBarArea> allowedAreas()
 
-=item   QSize iconSize()
+=item  void clear()
 
-=item   QAction * insertSeparator(QAction * before)
+=item  QSize iconSize()
 
-=item   QAction * insertWidget(QAction * before, QWidget * widget)
+=item  QAction * insertSeparator(QAction * before)
 
-=item   bool isAreaAllowed(Qt::ToolBarArea area)
+=item  QAction * insertWidget(QAction * before, QWidget * widget)
 
-=item   bool isFloatable()
+=item  bool isAreaAllowed(Qt::ToolBarArea area)
 
-=item   bool isFloating()
+=item  bool isFloatable()
 
-=item   bool isMovable()
+=item  bool isFloating()
 
-=item   Qt::Orientation orientation()
+=item  bool isMovable()
 
-=item   void setFloatable(bool floatable)
+=item  Qt::Orientation orientation()
 
-=item   void setIconSize(const QSize & iconSize)
+=item  void setAllowedAreas(QFlags<Qt::ToolBarArea> areas)
 
-=item   void setMovable(bool movable)
+=item  void setFloatable(bool floatable)
 
-=item   void setOrientation(Qt::Orientation orientation)
+=item  void setIconSize(const QSize & iconSize)
 
-=item   void setToolButtonStyle(Qt::ToolButtonStyle toolButtonStyle)
+=item  void setMovable(bool movable)
 
-=item   QAction * toggleViewAction()
+=item  void setOrientation(Qt::Orientation orientation)
 
-=item   Qt::ToolButtonStyle toolButtonStyle()
+=item  void setToolButtonStyle(Qt::ToolButtonStyle toolButtonStyle)
 
-=item   QWidget * widgetForAction(QAction * action)
+=item  QAction * toggleViewAction()
+
+=item  Qt::ToolButtonStyle toolButtonStyle()
+
+=item  QWidget * widgetForAction(QAction * action)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

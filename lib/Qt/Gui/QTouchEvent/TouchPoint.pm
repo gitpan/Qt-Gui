@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,87 +23,96 @@ Qt::Gui::QTouchEvent::TouchPoint
 
 =over
 
-=item    QTouchEvent::TouchPoint(int id = -1)
+=item   QTouchEvent::TouchPoint(int id)
 
-=item    QTouchEvent::TouchPoint(int id)
+=item   QTouchEvent::TouchPoint(int id = -1)
 
-=item    QTouchEvent::TouchPoint(const QTouchEvent::TouchPoint & other)
+=item   QTouchEvent::TouchPoint(const QTouchEvent::TouchPoint & other)
 
-=item    ~TouchPoint()
+=item   ~TouchPoint()
 
-=item   int id()
+=item  int id()
 
-=item   bool isPrimary()
+=item  bool isPrimary()
 
-=item   QPointF lastNormalizedPos()
+=item  QPointF lastNormalizedPos()
 
-=item   QPointF lastPos()
+=item  QPointF lastPos()
 
-=item   QPointF lastScenePos()
+=item  QPointF lastScenePos()
 
-=item   QPointF lastScreenPos()
+=item  QPointF lastScreenPos()
 
-=item   QPointF normalizedPos()
+=item  QPointF normalizedPos()
 
-=item   QTouchEvent::TouchPoint & operator=(const QTouchEvent::TouchPoint & other)
+=item  QTouchEvent::TouchPoint & operator=(const QTouchEvent::TouchPoint & other)
 
-=item   QPointF pos()
+=item  QPointF pos()
 
-=item   qreal pressure()
+=item  qreal pressure()
 
-=item   QRectF rect()
+=item  QRectF rect()
 
-=item   QPointF scenePos()
+=item  QPointF scenePos()
 
-=item   QRectF sceneRect()
+=item  QRectF sceneRect()
 
-=item   QPointF screenPos()
+=item  QPointF screenPos()
 
-=item   QRectF screenRect()
+=item  QRectF screenRect()
 
-=item   void setId(int id)
+=item  void setId(int id)
 
-=item   void setLastNormalizedPos(const QPointF & lastNormalizedPos)
+=item  void setLastNormalizedPos(const QPointF & lastNormalizedPos)
 
-=item   void setLastPos(const QPointF & lastPos)
+=item  void setLastPos(const QPointF & lastPos)
 
-=item   void setLastScenePos(const QPointF & lastScenePos)
+=item  void setLastScenePos(const QPointF & lastScenePos)
 
-=item   void setLastScreenPos(const QPointF & lastScreenPos)
+=item  void setLastScreenPos(const QPointF & lastScreenPos)
 
-=item   void setNormalizedPos(const QPointF & normalizedPos)
+=item  void setNormalizedPos(const QPointF & normalizedPos)
 
-=item   void setPos(const QPointF & pos)
+=item  void setPos(const QPointF & pos)
 
-=item   void setPressure(qreal pressure)
+=item  void setPressure(qreal pressure)
 
-=item   void setRect(const QRectF & rect)
+=item  void setRect(const QRectF & rect)
 
-=item   void setScenePos(const QPointF & scenePos)
+=item  void setScenePos(const QPointF & scenePos)
 
-=item   void setSceneRect(const QRectF & sceneRect)
+=item  void setSceneRect(const QRectF & sceneRect)
 
-=item   void setScreenPos(const QPointF & screenPos)
+=item  void setScreenPos(const QPointF & screenPos)
 
-=item   void setScreenRect(const QRectF & screenRect)
+=item  void setScreenRect(const QRectF & screenRect)
 
-=item   void setStartNormalizedPos(const QPointF & startNormalizedPos)
+=item  void setStartNormalizedPos(const QPointF & startNormalizedPos)
 
-=item   void setStartPos(const QPointF & startPos)
+=item  void setStartPos(const QPointF & startPos)
 
-=item   void setStartScenePos(const QPointF & startScenePos)
+=item  void setStartScenePos(const QPointF & startScenePos)
 
-=item   void setStartScreenPos(const QPointF & startScreenPos)
+=item  void setStartScreenPos(const QPointF & startScreenPos)
 
-=item   QPointF startNormalizedPos()
+=item  void setState(QFlags<Qt::TouchPointState> state)
 
-=item   QPointF startPos()
+=item  QPointF startNormalizedPos()
 
-=item   QPointF startScenePos()
+=item  QPointF startPos()
 
-=item   QPointF startScreenPos()
+=item  QPointF startScenePos()
 
-=item   Qt::TouchPointState state()
+=item  QPointF startScreenPos()
+
+=item  Qt::TouchPointState state()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

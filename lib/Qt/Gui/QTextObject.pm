@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +24,22 @@ Qt::Gui::QTextObject
 
 =over
 
-=item   QTextDocumentPrivate * docHandle()
+=item  QTextDocumentPrivate * docHandle()
 
-=item   QTextDocument * document()
+=item  QTextDocument * document()
 
-=item   QTextFormat format()
+=item  QTextFormat format()
 
-=item   int formatIndex()
+=item  int formatIndex()
 
-=item   int objectIndex()
+=item  int objectIndex()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,18 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub UnknownError() { 0 }
-sub FileNotFoundError() { 1 }
-sub DeviceError() { 2 }
-sub UnsupportedFormatError() { 3 }
-sub InvalidDataError() { 4 }
 
 
 1;
@@ -31,97 +23,114 @@ Qt::Gui::QImageReader
 
 =over
 
-=item    QImageReader()
+=item   QImageReader()
 
-=item    QImageReader(QIODevice * device, const QByteArray & format = QByteArray())
+=item   QImageReader(QIODevice * device, const QByteArray & format)
 
-=item    QImageReader(QIODevice * device, const QByteArray & format)
+=item   QImageReader(QIODevice * device, const QByteArray & format = QByteArray())
 
-=item    QImageReader(const QString & fileName, const QByteArray & format = QByteArray())
+=item   QImageReader(const QString & fileName, const QByteArray & format)
 
-=item    QImageReader(const QString & fileName, const QByteArray & format)
+=item   QImageReader(const QString & fileName, const QByteArray & format = QByteArray())
 
-=item    ~QImageReader()
+=item   ~QImageReader()
 
-=item   bool autoDetectImageFormat()
+=item  bool autoDetectImageFormat()
 
-=item   QColor backgroundColor()
+=item  QColor backgroundColor()
 
-=item   bool canRead()
+=item  bool canRead()
 
-=item   QRect clipRect()
+=item  QRect clipRect()
 
-=item   int currentImageNumber()
+=item  int currentImageNumber()
 
-=item   QRect currentImageRect()
+=item  QRect currentImageRect()
 
-=item   bool decideFormatFromContent()
+=item  bool decideFormatFromContent()
 
-=item   QIODevice * device()
+=item  QIODevice * device()
 
-=item   QImageReader::ImageReaderError error()
+=item  QImageReader::ImageReaderError error()
 
-=item   QString errorString()
+=item  QString errorString()
 
-=item   QString fileName()
+=item  QString fileName()
 
-=item   QByteArray format()
+=item  QByteArray format()
 
-=item   int imageCount()
+=item  int imageCount()
 
-=item   QImage::Format imageFormat()
+=item  QImage::Format imageFormat()
 
-=item   static QByteArray imageFormat(const QString & fileName)
+=item  static QByteArray imageFormat(const QString & fileName)
 
-=item   static QByteArray imageFormat(QIODevice * device)
+=item  static QByteArray imageFormat(QIODevice * device)
 
-=item   bool jumpToImage(int imageNumber)
+=item  bool jumpToImage(int imageNumber)
 
-=item   bool jumpToNextImage()
+=item  bool jumpToNextImage()
 
-=item   int loopCount()
+=item  int loopCount()
 
-=item   int nextImageDelay()
+=item  int nextImageDelay()
 
-=item   int quality()
+=item  int quality()
 
-=item   QImage read()
+=item  QImage read()
 
-=item   bool read(QImage * image)
+=item  bool read(QImage * image)
 
-=item   QRect scaledClipRect()
+=item  QRect scaledClipRect()
 
-=item   QSize scaledSize()
+=item  QSize scaledSize()
 
-=item   void setAutoDetectImageFormat(bool enabled)
+=item  void setAutoDetectImageFormat(bool enabled)
 
-=item   void setBackgroundColor(const QColor & color)
+=item  void setBackgroundColor(const QColor & color)
 
-=item   void setClipRect(const QRect & rect)
+=item  void setClipRect(const QRect & rect)
 
-=item   void setDecideFormatFromContent(bool ignored)
+=item  void setDecideFormatFromContent(bool ignored)
 
-=item   void setDevice(QIODevice * device)
+=item  void setDevice(QIODevice * device)
 
-=item   void setFileName(const QString & fileName)
+=item  void setFileName(const QString & fileName)
 
-=item   void setFormat(const QByteArray & format)
+=item  void setFormat(const QByteArray & format)
 
-=item   void setQuality(int quality)
+=item  void setQuality(int quality)
 
-=item   void setScaledClipRect(const QRect & rect)
+=item  void setScaledClipRect(const QRect & rect)
 
-=item   void setScaledSize(const QSize & size)
+=item  void setScaledSize(const QSize & size)
 
-=item   QSize size()
+=item  QSize size()
 
-=item   bool supportsAnimation()
+=item  bool supportsAnimation()
 
-=item   bool supportsOption(QImageIOHandler::ImageOption option)
+=item  bool supportsOption(QImageIOHandler::ImageOption option)
 
-=item   QString text(const QString & key)
+=item  QString text(const QString & key)
 
-=item   QStringList textKeys()
+=item  QStringList textKeys()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item UnknownError
+
+=item FileNotFoundError
+
+=item DeviceError
+
+=item UnsupportedFormatError
+
+=item InvalidDataError
 
 
 =back

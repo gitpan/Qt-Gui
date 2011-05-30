@@ -34,10 +34,12 @@ PREINIT:
 int arg00;
 int arg01;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
+    if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
     (void)THIS->addSelection(arg00, arg01);
     XSRETURN(0);
+    }
 
 ## QString attributes(int offset, int * startOffset, int * endOffset)
 void
@@ -47,29 +49,34 @@ int arg00;
 int * arg01;
 int * arg02;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    {
+    if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg00 = (int)SvIV(ST(1));
+      {
         int tmp = static_cast<int>(SvIV(ST(2)));
         arg01 = &tmp;
     }
-    {
+      {
         int tmp = static_cast<int>(SvIV(ST(3)));
         arg02 = &tmp;
     }
     QString ret = THIS->attributes(arg00, arg01, arg02);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## int characterCount()
 void
 QAccessibleTextInterface::characterCount(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->characterCount();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QRect characterRect(int offset, QAccessible2::CoordinateType coordType)
 void
@@ -78,31 +85,27 @@ PREINIT:
 int arg00;
 QAccessible2::CoordinateType arg01;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg01 = QAccessible2::RelativeToScreen;
-      break;
-    case 1:
-      arg01 = QAccessible2::RelativeToParent;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAccessible2::CoordinateType passed in");
-    }
+    if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (QAccessible2::CoordinateType)SvIV(ST(2));
     QRect ret = THIS->characterRect(arg00, arg01);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QRect(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QRect", (void *)new QRect(ret));
     XSRETURN(1);
+    }
 
 ## int cursorPosition()
 void
 QAccessibleTextInterface::cursorPosition(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->cursorPosition();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int offsetAtPoint(const QPoint & point, QAccessible2::CoordinateType coordType)
 void
@@ -111,35 +114,27 @@ PREINIT:
 QPoint * arg00;
 QAccessible2::CoordinateType arg01;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg01 = QAccessible2::RelativeToScreen;
-      break;
-    case 1:
-      arg01 = QAccessible2::RelativeToParent;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAccessible2::CoordinateType passed in");
-    }
+    if (sv_isa(ST(1), "Qt::Core::QPoint") && SvIOK(ST(2))) {
+      arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = (QAccessible2::CoordinateType)SvIV(ST(2));
     int ret = THIS->offsetAtPoint(*arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QAccessible2Interface * qAccessibleTextCastHelper()
 void
 QAccessibleTextInterface::qAccessibleTextCastHelper(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QAccessible2Interface * ret = THIS->qAccessibleTextCastHelper();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAccessible2Interface", (void *)ret);
     XSRETURN(1);
+    }
 
 ## void removeSelection(int selectionIndex)
 void
@@ -147,9 +142,11 @@ QAccessibleTextInterface::removeSelection(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->removeSelection(arg00);
     XSRETURN(0);
+    }
 
 ## void scrollToSubstring(int startIndex, int endIndex)
 void
@@ -158,10 +155,12 @@ PREINIT:
 int arg00;
 int arg01;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
+    if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
     (void)THIS->scrollToSubstring(arg00, arg01);
     XSRETURN(0);
+    }
 
 ## void selection(int selectionIndex, int * startOffset, int * endOffset)
 void
@@ -171,27 +170,32 @@ int arg00;
 int * arg01;
 int * arg02;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    {
+    if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg00 = (int)SvIV(ST(1));
+      {
         int tmp = static_cast<int>(SvIV(ST(2)));
         arg01 = &tmp;
     }
-    {
+      {
         int tmp = static_cast<int>(SvIV(ST(3)));
         arg02 = &tmp;
     }
     (void)THIS->selection(arg00, arg01, arg02);
     XSRETURN(0);
+    }
 
 ## int selectionCount()
 void
 QAccessibleTextInterface::selectionCount(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->selectionCount();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## void setCursorPosition(int position)
 void
@@ -199,9 +203,11 @@ QAccessibleTextInterface::setCursorPosition(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->setCursorPosition(arg00);
     XSRETURN(0);
+    }
 
 ## void setSelection(int selectionIndex, int startOffset, int endOffset)
 void
@@ -211,11 +217,13 @@ int arg00;
 int arg01;
 int arg02;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
-    arg02 = (int)SvIV(ST(3));
+    if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = (int)SvIV(ST(3));
     (void)THIS->setSelection(arg00, arg01, arg02);
     XSRETURN(0);
+    }
 
 ## QString text(int startOffset, int endOffset)
 void
@@ -224,12 +232,14 @@ PREINIT:
 int arg00;
 int arg01;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
+    if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
     QString ret = THIS->text(arg00, arg01);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## QString textAfterOffset(int offset, QAccessible2::BoundaryType boundaryType, int * startOffset, int * endOffset)
 void
@@ -240,41 +250,22 @@ QAccessible2::BoundaryType arg01;
 int * arg02;
 int * arg03;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg01 = QAccessible2::CharBoundary;
-      break;
-    case 1:
-      arg01 = QAccessible2::WordBoundary;
-      break;
-    case 2:
-      arg01 = QAccessible2::SentenceBoundary;
-      break;
-    case 3:
-      arg01 = QAccessible2::ParagraphBoundary;
-      break;
-    case 4:
-      arg01 = QAccessible2::LineBoundary;
-      break;
-    case 5:
-      arg01 = QAccessible2::NoBoundary;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAccessible2::BoundaryType passed in");
-    }
-    {
+    if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (QAccessible2::BoundaryType)SvIV(ST(2));
+      {
         int tmp = static_cast<int>(SvIV(ST(3)));
         arg02 = &tmp;
     }
-    {
+      {
         int tmp = static_cast<int>(SvIV(ST(4)));
         arg03 = &tmp;
     }
     QString ret = THIS->textAfterOffset(arg00, arg01, arg02, arg03);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## QString textAtOffset(int offset, QAccessible2::BoundaryType boundaryType, int * startOffset, int * endOffset)
 void
@@ -285,41 +276,22 @@ QAccessible2::BoundaryType arg01;
 int * arg02;
 int * arg03;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg01 = QAccessible2::CharBoundary;
-      break;
-    case 1:
-      arg01 = QAccessible2::WordBoundary;
-      break;
-    case 2:
-      arg01 = QAccessible2::SentenceBoundary;
-      break;
-    case 3:
-      arg01 = QAccessible2::ParagraphBoundary;
-      break;
-    case 4:
-      arg01 = QAccessible2::LineBoundary;
-      break;
-    case 5:
-      arg01 = QAccessible2::NoBoundary;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAccessible2::BoundaryType passed in");
-    }
-    {
+    if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (QAccessible2::BoundaryType)SvIV(ST(2));
+      {
         int tmp = static_cast<int>(SvIV(ST(3)));
         arg02 = &tmp;
     }
-    {
+      {
         int tmp = static_cast<int>(SvIV(ST(4)));
         arg03 = &tmp;
     }
     QString ret = THIS->textAtOffset(arg00, arg01, arg02, arg03);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## QString textBeforeOffset(int offset, QAccessible2::BoundaryType boundaryType, int * startOffset, int * endOffset)
 void
@@ -330,38 +302,19 @@ QAccessible2::BoundaryType arg01;
 int * arg02;
 int * arg03;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg01 = QAccessible2::CharBoundary;
-      break;
-    case 1:
-      arg01 = QAccessible2::WordBoundary;
-      break;
-    case 2:
-      arg01 = QAccessible2::SentenceBoundary;
-      break;
-    case 3:
-      arg01 = QAccessible2::ParagraphBoundary;
-      break;
-    case 4:
-      arg01 = QAccessible2::LineBoundary;
-      break;
-    case 5:
-      arg01 = QAccessible2::NoBoundary;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAccessible2::BoundaryType passed in");
-    }
-    {
+    if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (QAccessible2::BoundaryType)SvIV(ST(2));
+      {
         int tmp = static_cast<int>(SvIV(ST(3)));
         arg02 = &tmp;
     }
-    {
+      {
         int tmp = static_cast<int>(SvIV(ST(4)));
         arg03 = &tmp;
     }
     QString ret = THIS->textBeforeOffset(arg00, arg01, arg02, arg03);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }

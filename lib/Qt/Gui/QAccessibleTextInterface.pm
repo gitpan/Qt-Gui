@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAccessible2Interface/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAccessible2Interface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,41 +24,48 @@ Qt::Gui::QAccessibleTextInterface
 
 =over
 
-=item    ~QAccessibleTextInterface()
+=item   ~QAccessibleTextInterface()
 
-=item   void addSelection(int startOffset, int endOffset)
+=item  void addSelection(int startOffset, int endOffset)
 
-=item   QString attributes(int offset, int * startOffset, int * endOffset)
+=item  QString attributes(int offset, int * startOffset, int * endOffset)
 
-=item   int characterCount()
+=item  int characterCount()
 
-=item   QRect characterRect(int offset, QAccessible2::CoordinateType coordType)
+=item  QRect characterRect(int offset, QAccessible2::CoordinateType coordType)
 
-=item   int cursorPosition()
+=item  int cursorPosition()
 
-=item   int offsetAtPoint(const QPoint & point, QAccessible2::CoordinateType coordType)
+=item  int offsetAtPoint(const QPoint & point, QAccessible2::CoordinateType coordType)
 
-=item   QAccessible2Interface * qAccessibleTextCastHelper()
+=item  QAccessible2Interface * qAccessibleTextCastHelper()
 
-=item   void removeSelection(int selectionIndex)
+=item  void removeSelection(int selectionIndex)
 
-=item   void scrollToSubstring(int startIndex, int endIndex)
+=item  void scrollToSubstring(int startIndex, int endIndex)
 
-=item   void selection(int selectionIndex, int * startOffset, int * endOffset)
+=item  void selection(int selectionIndex, int * startOffset, int * endOffset)
 
-=item   int selectionCount()
+=item  int selectionCount()
 
-=item   void setCursorPosition(int position)
+=item  void setCursorPosition(int position)
 
-=item   void setSelection(int selectionIndex, int startOffset, int endOffset)
+=item  void setSelection(int selectionIndex, int startOffset, int endOffset)
 
-=item   QString text(int startOffset, int endOffset)
+=item  QString text(int startOffset, int endOffset)
 
-=item   QString textAfterOffset(int offset, QAccessible2::BoundaryType boundaryType, int * startOffset, int * endOffset)
+=item  QString textAfterOffset(int offset, QAccessible2::BoundaryType boundaryType, int * startOffset, int * endOffset)
 
-=item   QString textAtOffset(int offset, QAccessible2::BoundaryType boundaryType, int * startOffset, int * endOffset)
+=item  QString textAtOffset(int offset, QAccessible2::BoundaryType boundaryType, int * startOffset, int * endOffset)
 
-=item   QString textBeforeOffset(int offset, QAccessible2::BoundaryType boundaryType, int * startOffset, int * endOffset)
+=item  QString textBeforeOffset(int offset, QAccessible2::BoundaryType boundaryType, int * startOffset, int * endOffset)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

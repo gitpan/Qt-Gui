@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAccessible2Interface/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAccessible2Interface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,24 @@ Qt::Gui::QAccessibleValueInterface
 
 =over
 
-=item    ~QAccessibleValueInterface()
+=item   ~QAccessibleValueInterface()
 
-=item   QVariant currentValue()
+=item  QVariant currentValue()
 
-=item   QVariant maximumValue()
+=item  QVariant maximumValue()
 
-=item   QVariant minimumValue()
+=item  QVariant minimumValue()
 
-=item   QAccessible2Interface * qAccessibleValueCastHelper()
+=item  QAccessible2Interface * qAccessibleValueCastHelper()
 
-=item   void setCurrentValue(const QVariant & value)
+=item  void setCurrentValue(const QVariant & value)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

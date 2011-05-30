@@ -26,20 +26,14 @@ QResizeEvent *ret;
 QSize * arg00;
 QSize * arg01;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    if (sv_isa(ST(2), "")) {
-        arg01 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QSize") && sv_isa(ST(2), "Qt::Core::QSize")) {
+      arg00 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(2))));
     ret = new QResizeEvent(*arg00, *arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QResizeEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QResizeEvent()
 void
@@ -53,17 +47,23 @@ void
 QResizeEvent::oldSize(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     const QSize * ret = &THIS->oldSize();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)ret);
     XSRETURN(1);
+    }
 
 ## const QSize & size()
 void
 QResizeEvent::size(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     const QSize * ret = &THIS->size();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)ret);
     XSRETURN(1);
+    }

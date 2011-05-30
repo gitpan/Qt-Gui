@@ -25,15 +25,20 @@ PREINIT:
 QWidgetAction *ret;
 QObject * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "")) {
+    if ((sv_derived_from(ST(1), "Qt::Core::QObject") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Core::QObject")) {
         arg00 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(1))));
     }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
+    }
     else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QObject");
     ret = new QWidgetAction(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidgetAction", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QWidgetAction()
 void
@@ -47,10 +52,13 @@ void
 QWidgetAction::defaultWidget(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QWidget * ret = THIS->defaultWidget();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
     XSRETURN(1);
+    }
 
 ## void releaseWidget(QWidget * widget)
 void
@@ -58,13 +66,18 @@ QWidgetAction::releaseWidget(...)
 PREINIT:
 QWidget * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     (void)THIS->releaseWidget(arg00);
     XSRETURN(0);
+    }
 
 ## QWidget * requestWidget(QWidget * parent)
 void
@@ -72,8 +85,12 @@ QWidgetAction::requestWidget(...)
 PREINIT:
 QWidget * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
@@ -81,6 +98,7 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
     XSRETURN(1);
+    }
 
 ## void setDefaultWidget(QWidget * w)
 void
@@ -88,10 +106,15 @@ QWidgetAction::setDefaultWidget(...)
 PREINIT:
 QWidget * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     (void)THIS->setDefaultWidget(arg00);
     XSRETURN(0);
+    }

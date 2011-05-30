@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextBlockGroup/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextBlockGroup/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,29 +24,36 @@ Qt::Gui::QTextList
 
 =over
 
-=item    QTextList(QTextDocument * doc)
+=item   QTextList(QTextDocument * doc)
 
-=item    ~QTextList()
+=item   ~QTextList()
 
-=item   void add(const QTextBlock & block)
+=item  void add(const QTextBlock & block)
 
-=item   int count()
+=item  int count()
 
-=item   QTextListFormat format()
+=item  QTextListFormat format()
 
-=item   bool isEmpty()
+=item  bool isEmpty()
 
-=item   QTextBlock item(int i)
+=item  QTextBlock item(int i)
 
-=item   int itemNumber(const QTextBlock & arg0)
+=item  int itemNumber(const QTextBlock & arg0)
 
-=item   QString itemText(const QTextBlock & arg0)
+=item  QString itemText(const QTextBlock & arg0)
 
-=item   void remove(const QTextBlock & arg0)
+=item  void remove(const QTextBlock & arg0)
 
-=item   void removeItem(int i)
+=item  void removeItem(int i)
 
-=item   void setFormat(const QTextListFormat & format)
+=item  void setFormat(const QTextListFormat & format)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

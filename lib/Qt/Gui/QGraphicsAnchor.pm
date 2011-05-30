@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,17 +24,24 @@ Qt::Gui::QGraphicsAnchor
 
 =over
 
-=item    ~QGraphicsAnchor()
+=item   ~QGraphicsAnchor()
 
-=item   void setSizePolicy(QSizePolicy::Policy policy)
+=item  void setSizePolicy(QSizePolicy::Policy policy)
 
-=item   void setSpacing(qreal spacing)
+=item  void setSpacing(qreal spacing)
 
-=item   QSizePolicy::Policy sizePolicy()
+=item  QSizePolicy::Policy sizePolicy()
 
-=item   qreal spacing()
+=item  qreal spacing()
 
-=item   void unsetSpacing()
+=item  void unsetSpacing()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

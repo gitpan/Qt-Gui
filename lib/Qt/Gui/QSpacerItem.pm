@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QLayoutItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QLayoutItem/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,35 +24,40 @@ Qt::Gui::QSpacerItem
 
 =over
 
-=item    QSpacerItem(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData = QSizePolicy::Minimum)
+=item   QSpacerItem(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData)
 
-=item    QSpacerItem(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData)
+=item   QSpacerItem(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData = QSizePolicy::Minimum)
 
-=item    QSpacerItem(int w, int h, QSizePolicy::Policy hData = QSizePolicy::Minimum, QSizePolicy::Policy vData = QSizePolicy::Minimum)
+=item   QSpacerItem(int w, int h, QSizePolicy::Policy hData = QSizePolicy::Minimum, QSizePolicy::Policy vData = QSizePolicy::Minimum)
 
-=item    QSpacerItem(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData = QSizePolicy::Minimum)
+=item  void changeSize(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData)
 
-=item   void changeSize(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData = QSizePolicy::Minimum)
+=item  void changeSize(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData = QSizePolicy::Minimum)
 
-=item   void changeSize(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData)
+=item  void changeSize(int w, int h, QSizePolicy::Policy hData = QSizePolicy::Minimum, QSizePolicy::Policy vData = QSizePolicy::Minimum)
 
-=item   void changeSize(int w, int h, QSizePolicy::Policy hData = QSizePolicy::Minimum, QSizePolicy::Policy vData = QSizePolicy::Minimum)
+=item  QFlags<Qt::Orientation> expandingDirections()
 
-=item   void changeSize(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData = QSizePolicy::Minimum)
+=item  QRect geometry()
 
-=item   QRect geometry()
+=item  bool isEmpty()
 
-=item   bool isEmpty()
+=item  QSize maximumSize()
 
-=item   QSize maximumSize()
+=item  QSize minimumSize()
 
-=item   QSize minimumSize()
+=item  void setGeometry(const QRect & arg0)
 
-=item   void setGeometry(const QRect & arg0)
+=item  QSize sizeHint()
 
-=item   QSize sizeHint()
+=item  QSpacerItem * spacerItem()
 
-=item   QSpacerItem * spacerItem()
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

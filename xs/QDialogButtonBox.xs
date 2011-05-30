@@ -18,62 +18,112 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QDialogButtonBox(QWidget * parent = 0)
 ##  QDialogButtonBox(QWidget * parent)
-##  QDialogButtonBox(Qt::Orientation orientation, QWidget * parent = 0)
+##  QDialogButtonBox(QWidget * parent = 0)
 ##  QDialogButtonBox(Qt::Orientation orientation, QWidget * parent)
+##  QDialogButtonBox(Qt::Orientation orientation, QWidget * parent = 0)
+##  QDialogButtonBox(QFlags<QDialogButtonBox::StandardButton> buttons, Qt::Orientation orientation, QWidget * parent)
+##  QDialogButtonBox(QFlags<QDialogButtonBox::StandardButton> buttons, Qt::Orientation orientation, QWidget * parent = 0)
+##  QDialogButtonBox(QFlags<QDialogButtonBox::StandardButton> buttons, Qt::Orientation orientation = Qt::Horizontal, QWidget * parent = 0)
   void
 QDialogButtonBox::new(...)
 PREINIT:
 QDialogButtonBox *ret;
-QWidget * arg00 = 0;
-QWidget * arg10;
+QWidget * arg00;
+QWidget * arg10 = 0;
 Qt::Orientation arg20;
-QWidget * arg21 = 0;
+QWidget * arg21;
 Qt::Orientation arg30;
-QWidget * arg31;
+QWidget * arg31 = 0;
+QFlags<QDialogButtonBox::StandardButton> arg40;
+Qt::Orientation arg41;
+QWidget * arg42;
+QFlags<QDialogButtonBox::StandardButton> arg50;
+Qt::Orientation arg51;
+QWidget * arg52 = 0;
+QFlags<QDialogButtonBox::StandardButton> arg60;
+Qt::Orientation arg61 = Qt::Horizontal;
+QWidget * arg62 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
+        if (1) {
+      
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        else if (SvIOK(ST(1))) {
+      arg30 = (Qt::Orientation)SvIV(ST(1));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        else if (SvIOK(ST(1))) {
+      arg60 = QFlags<QDialogButtonBox::StandardButton>((int)SvIV(ST(1)));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 3:
+      case 3:
       {
-        switch(SvIV(ST(1))) {
-    case 0:
-      arg30 = Qt::Horizontal;
-      break;
-    case 1:
-      arg30 = Qt::Vertical;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::Orientation passed in");
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QWidget") || ST(2) == &PL_sv_undef)) {
+      arg20 = (Qt::Orientation)SvIV(ST(1));
+      if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
+        arg21 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
     }
-    if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
-        arg31 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
+    else if (ST(2) == &PL_sv_undef) {
+        arg21 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg31 is not of type Qt::Gui::QWidget");
+        Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        else if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg50 = QFlags<QDialogButtonBox::StandardButton>((int)SvIV(ST(1)));
+      arg51 = (Qt::Orientation)SvIV(ST(2));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef)) {
+      arg40 = QFlags<QDialogButtonBox::StandardButton>((int)SvIV(ST(1)));
+      arg41 = (Qt::Orientation)SvIV(ST(2));
+      if (sv_derived_from(ST(3), "Qt::Gui::QWidget")) {
+        arg42 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(3))));
+    }
+    else if (ST(3) == &PL_sv_undef) {
+        arg42 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg42 is not of type Qt::Gui::QWidget");
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QDialogButtonBox()
@@ -96,128 +146,49 @@ QString * arg20;
 QDialogButtonBox::ButtonRole arg21;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QDialogButtonBox::NoButton;
-      break;
-    case 1:
-      arg00 = QDialogButtonBox::Ok;
-      break;
-    case 2:
-      arg00 = QDialogButtonBox::Save;
-      break;
-    case 3:
-      arg00 = QDialogButtonBox::SaveAll;
-      break;
-    case 4:
-      arg00 = QDialogButtonBox::Open;
-      break;
-    case 5:
-      arg00 = QDialogButtonBox::Yes;
-      break;
-    case 6:
-      arg00 = QDialogButtonBox::YesToAll;
-      break;
-    case 7:
-      arg00 = QDialogButtonBox::No;
-      break;
-    case 8:
-      arg00 = QDialogButtonBox::NoToAll;
-      break;
-    case 9:
-      arg00 = QDialogButtonBox::Abort;
-      break;
-    case 10:
-      arg00 = QDialogButtonBox::Retry;
-      break;
-    case 11:
-      arg00 = QDialogButtonBox::Ignore;
-      break;
-    case 12:
-      arg00 = QDialogButtonBox::Close;
-      break;
-    case 13:
-      arg00 = QDialogButtonBox::Cancel;
-      break;
-    case 14:
-      arg00 = QDialogButtonBox::Discard;
-      break;
-    case 15:
-      arg00 = QDialogButtonBox::Help;
-      break;
-    case 16:
-      arg00 = QDialogButtonBox::Apply;
-      break;
-    case 17:
-      arg00 = QDialogButtonBox::Reset;
-      break;
-    case 18:
-      arg00 = QDialogButtonBox::RestoreDefaults;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QDialogButtonBox::StandardButton passed in");
-    }
+        if (SvIOK(ST(1))) {
+      arg00 = (QDialogButtonBox::StandardButton)SvIV(ST(1));
     QPushButton * ret = THIS->addButton(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPushButton", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 3:
+      case 3:
       {
-        if (sv_derived_from(ST(1), "Qt::Gui::QAbstractButton")) {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QAbstractButton") || ST(1) == &PL_sv_undef) && SvIOK(ST(2))) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAbstractButton")) {
         arg10 = reinterpret_cast<QAbstractButton *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg10 = 0;
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QAbstractButton");
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg11 = QDialogButtonBox::InvalidRole;
-      break;
-    case 1:
-      arg11 = QDialogButtonBox::AcceptRole;
-      break;
-    case 2:
-      arg11 = QDialogButtonBox::RejectRole;
-      break;
-    case 3:
-      arg11 = QDialogButtonBox::DestructiveRole;
-      break;
-    case 4:
-      arg11 = QDialogButtonBox::ActionRole;
-      break;
-    case 5:
-      arg11 = QDialogButtonBox::HelpRole;
-      break;
-    case 6:
-      arg11 = QDialogButtonBox::YesRole;
-      break;
-    case 7:
-      arg11 = QDialogButtonBox::NoRole;
-      break;
-    case 8:
-      arg11 = QDialogButtonBox::ResetRole;
-      break;
-    case 9:
-      arg11 = QDialogButtonBox::ApplyRole;
-      break;
-    case 10:
-      arg11 = QDialogButtonBox::NRoles;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QDialogButtonBox::ButtonRole passed in");
-    }
+      arg11 = (QDialogButtonBox::ButtonRole)SvIV(ST(2));
     (void)THIS->addButton(arg10, arg11);
     XSRETURN(0);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2))) {
+      arg20 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg21 = (QDialogButtonBox::ButtonRole)SvIV(ST(2));
+    QPushButton * ret = THIS->addButton(*arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPushButton", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QPushButton * button(QDialogButtonBox::StandardButton which)
@@ -226,71 +197,13 @@ QDialogButtonBox::button(...)
 PREINIT:
 QDialogButtonBox::StandardButton arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QDialogButtonBox::NoButton;
-      break;
-    case 1:
-      arg00 = QDialogButtonBox::Ok;
-      break;
-    case 2:
-      arg00 = QDialogButtonBox::Save;
-      break;
-    case 3:
-      arg00 = QDialogButtonBox::SaveAll;
-      break;
-    case 4:
-      arg00 = QDialogButtonBox::Open;
-      break;
-    case 5:
-      arg00 = QDialogButtonBox::Yes;
-      break;
-    case 6:
-      arg00 = QDialogButtonBox::YesToAll;
-      break;
-    case 7:
-      arg00 = QDialogButtonBox::No;
-      break;
-    case 8:
-      arg00 = QDialogButtonBox::NoToAll;
-      break;
-    case 9:
-      arg00 = QDialogButtonBox::Abort;
-      break;
-    case 10:
-      arg00 = QDialogButtonBox::Retry;
-      break;
-    case 11:
-      arg00 = QDialogButtonBox::Ignore;
-      break;
-    case 12:
-      arg00 = QDialogButtonBox::Close;
-      break;
-    case 13:
-      arg00 = QDialogButtonBox::Cancel;
-      break;
-    case 14:
-      arg00 = QDialogButtonBox::Discard;
-      break;
-    case 15:
-      arg00 = QDialogButtonBox::Help;
-      break;
-    case 16:
-      arg00 = QDialogButtonBox::Apply;
-      break;
-    case 17:
-      arg00 = QDialogButtonBox::Reset;
-      break;
-    case 18:
-      arg00 = QDialogButtonBox::RestoreDefaults;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QDialogButtonBox::StandardButton passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QDialogButtonBox::StandardButton)SvIV(ST(1));
     QPushButton * ret = THIS->button(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPushButton", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QDialogButtonBox::ButtonRole buttonRole(QAbstractButton * button)
 void
@@ -298,8 +211,12 @@ QDialogButtonBox::buttonRole(...)
 PREINIT:
 QAbstractButton * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QAbstractButton")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAbstractButton") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAbstractButton")) {
         arg00 = reinterpret_cast<QAbstractButton *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAbstractButton");
@@ -307,34 +224,44 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## bool centerButtons()
 void
 QDialogButtonBox::centerButtons(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->centerButtons();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## void clear()
 void
 QDialogButtonBox::clear(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->clear();
     XSRETURN(0);
+    }
 
 ## Qt::Orientation orientation()
 void
 QDialogButtonBox::orientation(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     Qt::Orientation ret = THIS->orientation();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## void removeButton(QAbstractButton * button)
 void
@@ -342,13 +269,18 @@ QDialogButtonBox::removeButton(...)
 PREINIT:
 QAbstractButton * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QAbstractButton")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAbstractButton") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAbstractButton")) {
         arg00 = reinterpret_cast<QAbstractButton *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAbstractButton");
     (void)THIS->removeButton(arg00);
     XSRETURN(0);
+    }
 
 ## void setCenterButtons(bool center)
 void
@@ -356,9 +288,11 @@ QDialogButtonBox::setCenterButtons(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setCenterButtons(arg00);
     XSRETURN(0);
+    }
 
 ## void setOrientation(Qt::Orientation orientation)
 void
@@ -366,18 +300,23 @@ QDialogButtonBox::setOrientation(...)
 PREINIT:
 Qt::Orientation arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = Qt::Horizontal;
-      break;
-    case 1:
-      arg00 = Qt::Vertical;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::Orientation passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (Qt::Orientation)SvIV(ST(1));
     (void)THIS->setOrientation(arg00);
     XSRETURN(0);
+    }
+
+## void setStandardButtons(QFlags<QDialogButtonBox::StandardButton> buttons)
+void
+QDialogButtonBox::setStandardButtons(...)
+PREINIT:
+QFlags<QDialogButtonBox::StandardButton> arg00;
+PPCODE:
+    if (SvIOK(ST(1))) {
+      arg00 = QFlags<QDialogButtonBox::StandardButton>((int)SvIV(ST(1)));
+    (void)THIS->setStandardButtons(arg00);
+    XSRETURN(0);
+    }
 
 ## QDialogButtonBox::StandardButton standardButton(QAbstractButton * button)
 void
@@ -385,12 +324,361 @@ QDialogButtonBox::standardButton(...)
 PREINIT:
 QAbstractButton * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QAbstractButton")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAbstractButton") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAbstractButton")) {
         arg00 = reinterpret_cast<QAbstractButton *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAbstractButton");
     QDialogButtonBox::StandardButton ret = THIS->standardButton(arg00);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+
+## QFlags<QDialogButtonBox::StandardButton> standardButtons()
+void
+QDialogButtonBox::standardButtons(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QFlags<QDialogButtonBox::StandardButton> ret = THIS->standardButtons();
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# ButtonRole::InvalidRole
+void
+InvalidRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::InvalidRole);
+    XSRETURN(1);
+
+
+# ButtonRole::AcceptRole
+void
+AcceptRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::AcceptRole);
+    XSRETURN(1);
+
+
+# ButtonRole::RejectRole
+void
+RejectRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::RejectRole);
+    XSRETURN(1);
+
+
+# ButtonRole::DestructiveRole
+void
+DestructiveRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::DestructiveRole);
+    XSRETURN(1);
+
+
+# ButtonRole::ActionRole
+void
+ActionRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::ActionRole);
+    XSRETURN(1);
+
+
+# ButtonRole::HelpRole
+void
+HelpRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::HelpRole);
+    XSRETURN(1);
+
+
+# ButtonRole::YesRole
+void
+YesRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::YesRole);
+    XSRETURN(1);
+
+
+# ButtonRole::NoRole
+void
+NoRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::NoRole);
+    XSRETURN(1);
+
+
+# ButtonRole::ResetRole
+void
+ResetRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::ResetRole);
+    XSRETURN(1);
+
+
+# ButtonRole::ApplyRole
+void
+ApplyRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::ApplyRole);
+    XSRETURN(1);
+
+
+# ButtonRole::NRoles
+void
+NRoles()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::NRoles);
+    XSRETURN(1);
+
+
+# StandardButton::NoButton
+void
+NoButton()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::NoButton);
+    XSRETURN(1);
+
+
+# StandardButton::Ok
+void
+Ok()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Ok);
+    XSRETURN(1);
+
+
+# StandardButton::Save
+void
+Save()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Save);
+    XSRETURN(1);
+
+
+# StandardButton::SaveAll
+void
+SaveAll()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::SaveAll);
+    XSRETURN(1);
+
+
+# StandardButton::Open
+void
+Open()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Open);
+    XSRETURN(1);
+
+
+# StandardButton::Yes
+void
+Yes()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Yes);
+    XSRETURN(1);
+
+
+# StandardButton::YesToAll
+void
+YesToAll()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::YesToAll);
+    XSRETURN(1);
+
+
+# StandardButton::No
+void
+No()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::No);
+    XSRETURN(1);
+
+
+# StandardButton::NoToAll
+void
+NoToAll()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::NoToAll);
+    XSRETURN(1);
+
+
+# StandardButton::Abort
+void
+Abort()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Abort);
+    XSRETURN(1);
+
+
+# StandardButton::Retry
+void
+Retry()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Retry);
+    XSRETURN(1);
+
+
+# StandardButton::Ignore
+void
+Ignore()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Ignore);
+    XSRETURN(1);
+
+
+# StandardButton::Close
+void
+Close()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Close);
+    XSRETURN(1);
+
+
+# StandardButton::Cancel
+void
+Cancel()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Cancel);
+    XSRETURN(1);
+
+
+# StandardButton::Discard
+void
+Discard()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Discard);
+    XSRETURN(1);
+
+
+# StandardButton::Help
+void
+Help()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Help);
+    XSRETURN(1);
+
+
+# StandardButton::Apply
+void
+Apply()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Apply);
+    XSRETURN(1);
+
+
+# StandardButton::Reset
+void
+Reset()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::Reset);
+    XSRETURN(1);
+
+
+# StandardButton::RestoreDefaults
+void
+RestoreDefaults()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::RestoreDefaults);
+    XSRETURN(1);
+
+
+# StandardButton::FirstButton
+void
+FirstButton()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::FirstButton);
+    XSRETURN(1);
+
+
+# StandardButton::LastButton
+void
+LastButton()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::LastButton);
+    XSRETURN(1);
+
+
+# ButtonLayout::WinLayout
+void
+WinLayout()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::WinLayout);
+    XSRETURN(1);
+
+
+# ButtonLayout::MacLayout
+void
+MacLayout()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::MacLayout);
+    XSRETURN(1);
+
+
+# ButtonLayout::KdeLayout
+void
+KdeLayout()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::KdeLayout);
+    XSRETURN(1);
+
+
+# ButtonLayout::GnomeLayout
+void
+GnomeLayout()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialogButtonBox::GnomeLayout);
     XSRETURN(1);

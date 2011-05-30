@@ -7,29 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoRole() { 0 }
-sub TextHeuristicRole() { 1 }
-sub ApplicationSpecificRole() { 2 }
-sub AboutQtRole() { 3 }
-sub AboutRole() { 4 }
-sub PreferencesRole() { 5 }
-sub QuitRole() { 6 }
-sub NoSoftKey() { 0 }
-sub PositiveSoftKey() { 1 }
-sub NegativeSoftKey() { 2 }
-sub SelectSoftKey() { 3 }
-sub LowPriority() { 0 }
-sub NormalPriority() { 1 }
-sub HighPriority() { 2 }
-sub Trigger() { 0 }
-sub Hover() { 1 }
 
 
 1;
@@ -42,119 +24,158 @@ Qt::Gui::QAction
 
 =over
 
-=item    QAction(QObject * parent)
+=item   QAction(QObject * parent)
 
-=item    QAction(const QString & text, QObject * parent)
+=item   QAction(const QString & text, QObject * parent)
 
-=item    QAction(const QIcon & icon, const QString & text, QObject * parent)
+=item   QAction(const QIcon & icon, const QString & text, QObject * parent)
 
-=item    ~QAction()
+=item   ~QAction()
 
-=item   QActionGroup * actionGroup()
+=item  QActionGroup * actionGroup()
 
-=item   void activate(QAction::ActionEvent event)
+=item  void activate(QAction::ActionEvent event)
 
-=item   bool autoRepeat()
+=item  bool autoRepeat()
 
-=item   QVariant data()
+=item  QVariant data()
 
-=item   QFont font()
+=item  QFont font()
 
-=item   void hover()
+=item  void hover()
 
-=item   QIcon icon()
+=item  QIcon icon()
 
-=item   QString iconText()
+=item  QString iconText()
 
-=item   bool isCheckable()
+=item  bool isCheckable()
 
-=item   bool isChecked()
+=item  bool isChecked()
 
-=item   bool isEnabled()
+=item  bool isEnabled()
 
-=item   bool isIconVisibleInMenu()
+=item  bool isIconVisibleInMenu()
 
-=item   bool isSeparator()
+=item  bool isSeparator()
 
-=item   bool isVisible()
+=item  bool isVisible()
 
-=item   QMenu * menu()
+=item  QMenu * menu()
 
-=item   QAction::MenuRole menuRole()
+=item  QAction::MenuRole menuRole()
 
-=item   QWidget * parentWidget()
+=item  QWidget * parentWidget()
 
-=item   QAction::Priority priority()
+=item  QAction::Priority priority()
 
-=item   void setActionGroup(QActionGroup * group)
+=item  void setActionGroup(QActionGroup * group)
 
-=item   void setAutoRepeat(bool arg0)
+=item  void setAutoRepeat(bool arg0)
 
-=item   void setCheckable(bool arg0)
+=item  void setCheckable(bool arg0)
 
-=item   void setChecked(bool arg0)
+=item  void setChecked(bool arg0)
 
-=item   void setData(const QVariant & var)
+=item  void setData(const QVariant & var)
 
-=item   void setDisabled(bool b)
+=item  void setDisabled(bool b)
 
-=item   void setEnabled(bool arg0)
+=item  void setEnabled(bool arg0)
 
-=item   void setFont(const QFont & font)
+=item  void setFont(const QFont & font)
 
-=item   void setIcon(const QIcon & icon)
+=item  void setIcon(const QIcon & icon)
 
-=item   void setIconText(const QString & text)
+=item  void setIconText(const QString & text)
 
-=item   void setIconVisibleInMenu(bool visible)
+=item  void setIconVisibleInMenu(bool visible)
 
-=item   void setMenu(QMenu * menu)
+=item  void setMenu(QMenu * menu)
 
-=item   void setMenuRole(QAction::MenuRole menuRole)
+=item  void setMenuRole(QAction::MenuRole menuRole)
 
-=item   void setPriority(QAction::Priority priority)
+=item  void setPriority(QAction::Priority priority)
 
-=item   void setSeparator(bool b)
+=item  void setSeparator(bool b)
 
-=item   void setShortcut(const QKeySequence & shortcut)
+=item  void setShortcut(const QKeySequence & shortcut)
 
-=item   void setShortcutContext(Qt::ShortcutContext context)
+=item  void setShortcutContext(Qt::ShortcutContext context)
 
-=item   void setShortcuts(QKeySequence::StandardKey arg0)
+=item  void setShortcuts(QKeySequence::StandardKey arg0)
 
-=item   void setSoftKeyRole(QAction::SoftKeyRole softKeyRole)
+=item  void setSoftKeyRole(QAction::SoftKeyRole softKeyRole)
 
-=item   void setStatusTip(const QString & statusTip)
+=item  void setStatusTip(const QString & statusTip)
 
-=item   void setText(const QString & text)
+=item  void setText(const QString & text)
 
-=item   void setToolTip(const QString & tip)
+=item  void setToolTip(const QString & tip)
 
-=item   void setVisible(bool arg0)
+=item  void setVisible(bool arg0)
 
-=item   void setWhatsThis(const QString & what)
+=item  void setWhatsThis(const QString & what)
 
-=item   QKeySequence shortcut()
+=item  QKeySequence shortcut()
 
-=item   Qt::ShortcutContext shortcutContext()
+=item  Qt::ShortcutContext shortcutContext()
 
-=item   bool showStatusText(QWidget * widget = 0)
+=item  bool showStatusText(QWidget * widget)
 
-=item   bool showStatusText(QWidget * widget)
+=item  bool showStatusText(QWidget * widget = 0)
 
-=item   QAction::SoftKeyRole softKeyRole()
+=item  QAction::SoftKeyRole softKeyRole()
 
-=item   QString statusTip()
+=item  QString statusTip()
 
-=item   QString text()
+=item  QString text()
 
-=item   void toggle()
+=item  void toggle()
 
-=item   QString toolTip()
+=item  QString toolTip()
 
-=item   void trigger()
+=item  void trigger()
 
-=item   QString whatsThis()
+=item  QString whatsThis()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoRole
+
+=item TextHeuristicRole
+
+=item ApplicationSpecificRole
+
+=item AboutQtRole
+
+=item AboutRole
+
+=item PreferencesRole
+
+=item QuitRole
+
+=item NoSoftKey
+
+=item PositiveSoftKey
+
+=item NegativeSoftKey
+
+=item SelectSoftKey
+
+=item LowPriority
+
+=item NormalPriority
+
+=item HighPriority
+
+=item Trigger
+
+=item Hover
 
 
 =back

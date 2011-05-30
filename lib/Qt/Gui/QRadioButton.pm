@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractButton/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractButton/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,15 +24,22 @@ Qt::Gui::QRadioButton
 
 =over
 
-=item    QRadioButton(QWidget * parent = 0)
+=item   QRadioButton(QWidget * parent)
 
-=item    QRadioButton(QWidget * parent)
+=item   QRadioButton(QWidget * parent = 0)
 
-=item    QRadioButton(const QString & text, QWidget * parent = 0)
+=item   QRadioButton(const QString & text, QWidget * parent)
 
-=item    QRadioButton(const QString & text, QWidget * parent)
+=item   QRadioButton(const QString & text, QWidget * parent = 0)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

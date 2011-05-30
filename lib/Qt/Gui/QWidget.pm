@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QPaintDevice/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject Qt::Gui::QPaintDevice/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub DrawWindowBackground() { 0 }
-sub DrawChildren() { 1 }
-sub IgnoreMask() { 2 }
 
 
 1;
@@ -30,469 +24,526 @@ Qt::Gui::QWidget
 
 =over
 
-=item    ~QWidget()
+=item   QWidget(QWidget * parent, QFlags<Qt::WindowType> f)
 
-=item   bool acceptDrops()
+=item   QWidget(QWidget * parent, QFlags<Qt::WindowType> f = 0)
 
-=item   QString accessibleDescription()
+=item   QWidget(QWidget * parent = 0, QFlags<Qt::WindowType> f = 0)
 
-=item   QString accessibleName()
+=item   ~QWidget()
 
-=item   void activateWindow()
+=item  bool acceptDrops()
 
-=item   void addAction(QAction * action)
+=item  QString accessibleDescription()
 
-=item   void adjustSize()
+=item  QString accessibleName()
 
-=item   bool autoFillBackground()
+=item  void activateWindow()
 
-=item   QPalette::ColorRole backgroundRole()
+=item  void addAction(QAction * action)
 
-=item   QSize baseSize()
+=item  void adjustSize()
 
-=item   QWidget * childAt(const QPoint & p)
+=item  bool autoFillBackground()
 
-=item   QWidget * childAt(int x, int y)
+=item  QPalette::ColorRole backgroundRole()
 
-=item   QRect childrenRect()
+=item  QSize baseSize()
 
-=item   QRegion childrenRegion()
+=item  QWidget * childAt(const QPoint & p)
 
-=item   void clearFocus()
+=item  QWidget * childAt(int x, int y)
 
-=item   void clearMask()
+=item  QRect childrenRect()
 
-=item   bool close()
+=item  QRegion childrenRegion()
 
-=item   QMargins contentsMargins()
+=item  void clearFocus()
 
-=item   QRect contentsRect()
+=item  void clearMask()
 
-=item   Qt::ContextMenuPolicy contextMenuPolicy()
+=item  bool close()
 
-=item   void createWinId()
+=item  QMargins contentsMargins()
 
-=item   QCursor cursor()
+=item  QRect contentsRect()
 
-=item   int devType()
+=item  Qt::ContextMenuPolicy contextMenuPolicy()
 
-=item   unsigned long effectiveWinId()
+=item  void createWinId()
 
-=item   void ensurePolished()
+=item  QCursor cursor()
 
-=item   static QWidget * find(unsigned long arg0)
+=item  int devType()
 
-=item   Qt::FocusPolicy focusPolicy()
+=item  unsigned long effectiveWinId()
 
-=item   QWidget * focusProxy()
+=item  void ensurePolished()
 
-=item   QWidget * focusWidget()
+=item  static QWidget * find(unsigned long arg0)
 
-=item   const QFont & font()
+=item  Qt::FocusPolicy focusPolicy()
 
-=item   QFontInfo fontInfo()
+=item  QWidget * focusProxy()
 
-=item   QFontMetrics fontMetrics()
+=item  QWidget * focusWidget()
 
-=item   QPalette::ColorRole foregroundRole()
+=item  const QFont & font()
 
-=item   QRect frameGeometry()
+=item  QFontInfo fontInfo()
 
-=item   QSize frameSize()
+=item  QFontMetrics fontMetrics()
 
-=item   const QRect & geometry()
+=item  QPalette::ColorRole foregroundRole()
 
-=item   void getContentsMargins(int * left, int * top, int * right, int * bottom)
+=item  QRect frameGeometry()
 
-=item   void grabKeyboard()
+=item  QSize frameSize()
 
-=item   void grabMouse()
+=item  const QRect & geometry()
 
-=item   void grabMouse(const QCursor & arg0)
+=item  void getContentsMargins(int * left, int * top, int * right, int * bottom)
 
-=item   int grabShortcut(const QKeySequence & key, Qt::ShortcutContext context = Qt::WindowShortcut)
+=item  void grabGesture(Qt::GestureType type, QFlags<Qt::GestureFlag> flags)
 
-=item   int grabShortcut(const QKeySequence & key, Qt::ShortcutContext context)
+=item  void grabGesture(Qt::GestureType type, QFlags<Qt::GestureFlag> flags = Qt::GestureFlags())
 
-=item   QGraphicsEffect * graphicsEffect()
+=item  void grabKeyboard()
 
-=item   QGraphicsProxyWidget * graphicsProxyWidget()
+=item  void grabMouse()
 
-=item   unsigned long handle()
+=item  void grabMouse(const QCursor & arg0)
 
-=item   bool hasFocus()
+=item  int grabShortcut(const QKeySequence & key, Qt::ShortcutContext context)
 
-=item   bool hasMouseTracking()
+=item  int grabShortcut(const QKeySequence & key, Qt::ShortcutContext context = Qt::WindowShortcut)
 
-=item   int height()
+=item  QGraphicsEffect * graphicsEffect()
 
-=item   int heightForWidth(int arg0)
+=item  QGraphicsProxyWidget * graphicsProxyWidget()
 
-=item   void hide()
+=item  unsigned long handle()
 
-=item   QInputContext * inputContext()
+=item  bool hasFocus()
 
-=item   QVariant inputMethodQuery(Qt::InputMethodQuery arg0)
+=item  bool hasMouseTracking()
 
-=item   void insertAction(QAction * before, QAction * action)
+=item  int height()
 
-=item   unsigned long internalWinId()
+=item  int heightForWidth(int arg0)
 
-=item   bool isActiveWindow()
+=item  void hide()
 
-=item   bool isAncestorOf(const QWidget * child)
+=item  QInputContext * inputContext()
 
-=item   bool isEnabled()
+=item  QFlags<Qt::InputMethodHint> inputMethodHints()
 
-=item   bool isEnabledTo(QWidget * arg0)
+=item  QVariant inputMethodQuery(Qt::InputMethodQuery arg0)
 
-=item   bool isEnabledToTLW()
+=item  void insertAction(QAction * before, QAction * action)
 
-=item   bool isFullScreen()
+=item  unsigned long internalWinId()
 
-=item   bool isHidden()
+=item  bool isActiveWindow()
 
-=item   bool isLeftToRight()
+=item  bool isAncestorOf(const QWidget * child)
 
-=item   bool isMaximized()
+=item  bool isEnabled()
 
-=item   bool isMinimized()
+=item  bool isEnabledTo(QWidget * arg0)
 
-=item   bool isModal()
+=item  bool isEnabledToTLW()
 
-=item   bool isRightToLeft()
+=item  bool isFullScreen()
 
-=item   bool isTopLevel()
+=item  bool isHidden()
 
-=item   bool isVisible()
+=item  bool isLeftToRight()
 
-=item   bool isVisibleTo(QWidget * arg0)
+=item  bool isMaximized()
 
-=item   bool isWindow()
+=item  bool isMinimized()
 
-=item   bool isWindowModified()
+=item  bool isModal()
 
-=item   static QWidget * keyboardGrabber()
+=item  bool isRightToLeft()
 
-=item   QLayout * layout()
+=item  bool isTopLevel()
 
-=item   Qt::LayoutDirection layoutDirection()
+=item  bool isVisible()
 
-=item   QLocale locale()
+=item  bool isVisibleTo(QWidget * arg0)
 
-=item   void lower()
+=item  bool isWindow()
 
-=item   QPoint mapFrom(QWidget * arg0, const QPoint & arg1)
+=item  bool isWindowModified()
 
-=item   QPoint mapFromGlobal(const QPoint & arg0)
+=item  static QWidget * keyboardGrabber()
 
-=item   QPoint mapFromParent(const QPoint & arg0)
+=item  QLayout * layout()
 
-=item   QPoint mapTo(QWidget * arg0, const QPoint & arg1)
+=item  Qt::LayoutDirection layoutDirection()
 
-=item   QPoint mapToGlobal(const QPoint & arg0)
+=item  QLocale locale()
 
-=item   QPoint mapToParent(const QPoint & arg0)
+=item  void lower()
 
-=item   QRegion mask()
+=item  QPoint mapFrom(QWidget * arg0, const QPoint & arg1)
 
-=item   int maximumHeight()
+=item  QPoint mapFromGlobal(const QPoint & arg0)
 
-=item   QSize maximumSize()
+=item  QPoint mapFromParent(const QPoint & arg0)
 
-=item   int maximumWidth()
+=item  QPoint mapTo(QWidget * arg0, const QPoint & arg1)
 
-=item   int minimumHeight()
+=item  QPoint mapToGlobal(const QPoint & arg0)
 
-=item   QSize minimumSize()
+=item  QPoint mapToParent(const QPoint & arg0)
 
-=item   QSize minimumSizeHint()
+=item  QRegion mask()
 
-=item   int minimumWidth()
+=item  int maximumHeight()
 
-=item   static QWidget * mouseGrabber()
+=item  QSize maximumSize()
 
-=item   void move(const QPoint & arg0)
+=item  int maximumWidth()
 
-=item   void move(int x, int y)
+=item  int minimumHeight()
 
-=item   QWidget * nativeParentWidget()
+=item  QSize minimumSize()
 
-=item   QWidget * nextInFocusChain()
+=item  QSize minimumSizeHint()
 
-=item   QRect normalGeometry()
+=item  int minimumWidth()
 
-=item   QPaintEngine * paintEngine()
+=item  static QWidget * mouseGrabber()
 
-=item   const QPalette & palette()
+=item  void move(const QPoint & arg0)
 
-=item   QWidget * parentWidget()
+=item  void move(int x, int y)
 
-=item   QPoint pos()
+=item  QWidget * nativeParentWidget()
 
-=item   QWidget * previousInFocusChain()
+=item  QWidget * nextInFocusChain()
 
-=item   void raise()
+=item  QRect normalGeometry()
 
-=item   QRect rect()
+=item  void overrideWindowFlags(QFlags<Qt::WindowType> type)
 
-=item   void releaseKeyboard()
+=item  void overrideWindowState(QFlags<Qt::WindowState> state)
 
-=item   void releaseMouse()
+=item  QPaintEngine * paintEngine()
 
-=item   void releaseShortcut(int id)
+=item  const QPalette & palette()
 
-=item   void removeAction(QAction * action)
+=item  QWidget * parentWidget()
 
-=item   void repaint()
+=item  QPoint pos()
 
-=item   void repaint(const QRect & arg0)
+=item  QWidget * previousInFocusChain()
 
-=item   void repaint(const QRegion & arg0)
+=item  void raise()
 
-=item   void repaint(int x, int y, int w, int h)
+=item  QRect rect()
 
-=item   void resize(const QSize & arg0)
+=item  void releaseKeyboard()
 
-=item   void resize(int w, int h)
+=item  void releaseMouse()
 
-=item   bool restoreGeometry(const QByteArray & geometry)
+=item  void releaseShortcut(int id)
 
-=item   QByteArray saveGeometry()
+=item  void removeAction(QAction * action)
 
-=item   void scroll(int dx, int dy)
+=item  void render(QPaintDevice * target, const QPoint & targetOffset, const QRegion & sourceRegion, QFlags<QWidget::RenderFlag> renderFlags)
 
-=item   void scroll(int dx, int dy, const QRect & arg2)
+=item  void render(QPaintDevice * target, const QPoint & targetOffset, const QRegion & sourceRegion, QFlags<QWidget::RenderFlag> renderFlags = QWidget::RenderFlags(QWidget::DrawWindowBackground | QWidget::DrawChildren))
 
-=item   void setAcceptDrops(bool on)
+=item  void render(QPaintDevice * target, const QPoint & targetOffset, const QRegion & sourceRegion = QRegion(), QFlags<QWidget::RenderFlag> renderFlags = QWidget::RenderFlags(QWidget::DrawWindowBackground | QWidget::DrawChildren))
 
-=item   void setAccessibleDescription(const QString & description)
+=item  void render(QPaintDevice * target, const QPoint & targetOffset = QPoint(), const QRegion & sourceRegion = QRegion(), QFlags<QWidget::RenderFlag> renderFlags = QWidget::RenderFlags(QWidget::DrawWindowBackground | QWidget::DrawChildren))
 
-=item   void setAccessibleName(const QString & name)
+=item  void render(QPainter * painter, const QPoint & targetOffset, const QRegion & sourceRegion, QFlags<QWidget::RenderFlag> renderFlags)
 
-=item   void setAttribute(Qt::WidgetAttribute arg0, bool on = true)
+=item  void render(QPainter * painter, const QPoint & targetOffset, const QRegion & sourceRegion, QFlags<QWidget::RenderFlag> renderFlags = QWidget::RenderFlags(QWidget::DrawWindowBackground | QWidget::DrawChildren))
 
-=item   void setAttribute(Qt::WidgetAttribute arg0, bool on)
+=item  void render(QPainter * painter, const QPoint & targetOffset, const QRegion & sourceRegion = QRegion(), QFlags<QWidget::RenderFlag> renderFlags = QWidget::RenderFlags(QWidget::DrawWindowBackground | QWidget::DrawChildren))
 
-=item   void setAutoFillBackground(bool enabled)
+=item  void render(QPainter * painter, const QPoint & targetOffset = QPoint(), const QRegion & sourceRegion = QRegion(), QFlags<QWidget::RenderFlag> renderFlags = QWidget::RenderFlags(QWidget::DrawWindowBackground | QWidget::DrawChildren))
 
-=item   void setBackgroundRole(QPalette::ColorRole arg0)
+=item  void repaint()
 
-=item   void setBaseSize(const QSize & arg0)
+=item  void repaint(const QRect & arg0)
 
-=item   void setBaseSize(int basew, int baseh)
+=item  void repaint(const QRegion & arg0)
 
-=item   void setContentsMargins(const QMargins & margins)
+=item  void repaint(int x, int y, int w, int h)
 
-=item   void setContentsMargins(int left, int top, int right, int bottom)
+=item  void resize(const QSize & arg0)
 
-=item   void setContextMenuPolicy(Qt::ContextMenuPolicy policy)
+=item  void resize(int w, int h)
 
-=item   void setCursor(const QCursor & arg0)
+=item  bool restoreGeometry(const QByteArray & geometry)
 
-=item   void setDisabled(bool arg0)
+=item  QByteArray saveGeometry()
 
-=item   void setEnabled(bool arg0)
+=item  void scroll(int dx, int dy)
 
-=item   void setFixedHeight(int h)
+=item  void scroll(int dx, int dy, const QRect & arg2)
 
-=item   void setFixedSize(const QSize & arg0)
+=item  void setAcceptDrops(bool on)
 
-=item   void setFixedSize(int w, int h)
+=item  void setAccessibleDescription(const QString & description)
 
-=item   void setFixedWidth(int w)
+=item  void setAccessibleName(const QString & name)
 
-=item   void setFocus()
+=item  void setAttribute(Qt::WidgetAttribute arg0, bool on)
 
-=item   void setFocus(Qt::FocusReason reason)
+=item  void setAttribute(Qt::WidgetAttribute arg0, bool on = true)
 
-=item   void setFocusPolicy(Qt::FocusPolicy policy)
+=item  void setAutoFillBackground(bool enabled)
 
-=item   void setFocusProxy(QWidget * arg0)
+=item  void setBackgroundRole(QPalette::ColorRole arg0)
 
-=item   void setFont(const QFont & arg0)
+=item  void setBaseSize(const QSize & arg0)
 
-=item   void setForegroundRole(QPalette::ColorRole arg0)
+=item  void setBaseSize(int basew, int baseh)
 
-=item   void setGeometry(const QRect & arg0)
+=item  void setContentsMargins(const QMargins & margins)
 
-=item   void setGeometry(int x, int y, int w, int h)
+=item  void setContentsMargins(int left, int top, int right, int bottom)
 
-=item   void setGraphicsEffect(QGraphicsEffect * effect)
+=item  void setContextMenuPolicy(Qt::ContextMenuPolicy policy)
 
-=item   void setHidden(bool hidden)
+=item  void setCursor(const QCursor & arg0)
 
-=item   void setInputContext(QInputContext * arg0)
+=item  void setDisabled(bool arg0)
 
-=item   void setLayout(QLayout * arg0)
+=item  void setEnabled(bool arg0)
 
-=item   void setLayoutDirection(Qt::LayoutDirection direction)
+=item  void setFixedHeight(int h)
 
-=item   void setLocale(const QLocale & locale)
+=item  void setFixedSize(const QSize & arg0)
 
-=item   void setMask(const QBitmap & arg0)
+=item  void setFixedSize(int w, int h)
 
-=item   void setMask(const QRegion & arg0)
+=item  void setFixedWidth(int w)
 
-=item   void setMaximumHeight(int maxh)
+=item  void setFocus()
 
-=item   void setMaximumSize(const QSize & arg0)
+=item  void setFocus(Qt::FocusReason reason)
 
-=item   void setMaximumSize(int maxw, int maxh)
+=item  void setFocusPolicy(Qt::FocusPolicy policy)
 
-=item   void setMaximumWidth(int maxw)
+=item  void setFocusProxy(QWidget * arg0)
 
-=item   void setMinimumHeight(int minh)
+=item  void setFont(const QFont & arg0)
 
-=item   void setMinimumSize(const QSize & arg0)
+=item  void setForegroundRole(QPalette::ColorRole arg0)
 
-=item   void setMinimumSize(int minw, int minh)
+=item  void setGeometry(const QRect & arg0)
 
-=item   void setMinimumWidth(int minw)
+=item  void setGeometry(int x, int y, int w, int h)
 
-=item   void setMouseTracking(bool enable)
+=item  void setGraphicsEffect(QGraphicsEffect * effect)
 
-=item   void setPalette(const QPalette & arg0)
+=item  void setHidden(bool hidden)
 
-=item   void setParent(QWidget * parent)
+=item  void setInputContext(QInputContext * arg0)
 
-=item   void setShortcutAutoRepeat(int id, bool enable = true)
+=item  void setInputMethodHints(QFlags<Qt::InputMethodHint> hints)
 
-=item   void setShortcutAutoRepeat(int id, bool enable)
+=item  void setLayout(QLayout * arg0)
 
-=item   void setShortcutEnabled(int id, bool enable = true)
+=item  void setLayoutDirection(Qt::LayoutDirection direction)
 
-=item   void setShortcutEnabled(int id, bool enable)
+=item  void setLocale(const QLocale & locale)
 
-=item   void setShown(bool shown)
+=item  void setMask(const QBitmap & arg0)
 
-=item   void setSizeIncrement(const QSize & arg0)
+=item  void setMask(const QRegion & arg0)
 
-=item   void setSizeIncrement(int w, int h)
+=item  void setMaximumHeight(int maxh)
 
-=item   void setSizePolicy(QSizePolicy arg0)
+=item  void setMaximumSize(const QSize & arg0)
 
-=item   void setSizePolicy(QSizePolicy::Policy horizontal, QSizePolicy::Policy vertical)
+=item  void setMaximumSize(int maxw, int maxh)
 
-=item   void setStatusTip(const QString & arg0)
+=item  void setMaximumWidth(int maxw)
 
-=item   void setStyle(QStyle * arg0)
+=item  void setMinimumHeight(int minh)
 
-=item   static void setTabOrder(QWidget * arg0, QWidget * arg1)
+=item  void setMinimumSize(const QSize & arg0)
 
-=item   void setToolTip(const QString & arg0)
+=item  void setMinimumSize(int minw, int minh)
 
-=item   void setUpdatesEnabled(bool enable)
+=item  void setMinimumWidth(int minw)
 
-=item   void setVisible(bool visible)
+=item  void setMouseTracking(bool enable)
 
-=item   void setWhatsThis(const QString & arg0)
+=item  void setPalette(const QPalette & arg0)
 
-=item   void setWindowFilePath(const QString & filePath)
+=item  void setParent(QWidget * parent)
 
-=item   void setWindowIcon(const QIcon & icon)
+=item  void setParent(QWidget * parent, QFlags<Qt::WindowType> f)
 
-=item   void setWindowIconText(const QString & arg0)
+=item  void setShortcutAutoRepeat(int id, bool enable)
 
-=item   void setWindowModality(Qt::WindowModality windowModality)
+=item  void setShortcutAutoRepeat(int id, bool enable = true)
 
-=item   void setWindowModified(bool arg0)
+=item  void setShortcutEnabled(int id, bool enable)
 
-=item   void setWindowOpacity(qreal level)
+=item  void setShortcutEnabled(int id, bool enable = true)
 
-=item   void setWindowRole(const QString & arg0)
+=item  void setShown(bool shown)
 
-=item   void setWindowSurface(QWindowSurface * surface)
+=item  void setSizeIncrement(const QSize & arg0)
 
-=item   void setWindowTitle(const QString & arg0)
+=item  void setSizeIncrement(int w, int h)
 
-=item   void show()
+=item  void setSizePolicy(QSizePolicy arg0)
 
-=item   void showFullScreen()
+=item  void setSizePolicy(QSizePolicy::Policy horizontal, QSizePolicy::Policy vertical)
 
-=item   void showMaximized()
+=item  void setStatusTip(const QString & arg0)
 
-=item   void showMinimized()
+=item  void setStyle(QStyle * arg0)
 
-=item   void showNormal()
+=item  static void setTabOrder(QWidget * arg0, QWidget * arg1)
 
-=item   QSize size()
+=item  void setToolTip(const QString & arg0)
 
-=item   QSize sizeHint()
+=item  void setUpdatesEnabled(bool enable)
 
-=item   QSize sizeIncrement()
+=item  void setVisible(bool visible)
 
-=item   QSizePolicy sizePolicy()
+=item  void setWhatsThis(const QString & arg0)
 
-=item   void stackUnder(QWidget * arg0)
+=item  void setWindowFilePath(const QString & filePath)
 
-=item   QString statusTip()
+=item  void setWindowFlags(QFlags<Qt::WindowType> type)
 
-=item   QStyle * style()
+=item  void setWindowIcon(const QIcon & icon)
 
-=item   bool testAttribute(Qt::WidgetAttribute arg0)
+=item  void setWindowIconText(const QString & arg0)
 
-=item   QString toolTip()
+=item  void setWindowModality(Qt::WindowModality windowModality)
 
-=item   QWidget * topLevelWidget()
+=item  void setWindowModified(bool arg0)
 
-=item   bool underMouse()
+=item  void setWindowOpacity(qreal level)
 
-=item   void ungrabGesture(Qt::GestureType type)
+=item  void setWindowRole(const QString & arg0)
 
-=item   void unsetCursor()
+=item  void setWindowState(QFlags<Qt::WindowState> state)
 
-=item   void unsetLayoutDirection()
+=item  void setWindowSurface(QWindowSurface * surface)
 
-=item   void unsetLocale()
+=item  void setWindowTitle(const QString & arg0)
 
-=item   void update()
+=item  void show()
 
-=item   void update(const QRect & arg0)
+=item  void showFullScreen()
 
-=item   void update(const QRegion & arg0)
+=item  void showMaximized()
 
-=item   void update(int x, int y, int w, int h)
+=item  void showMinimized()
 
-=item   void updateGeometry()
+=item  void showNormal()
 
-=item   bool updatesEnabled()
+=item  QSize size()
 
-=item   QRegion visibleRegion()
+=item  QSize sizeHint()
 
-=item   QString whatsThis()
+=item  QSize sizeIncrement()
 
-=item   int width()
+=item  QSizePolicy sizePolicy()
 
-=item   unsigned long winId()
+=item  void stackUnder(QWidget * arg0)
 
-=item   QWidget * window()
+=item  QString statusTip()
 
-=item   QString windowFilePath()
+=item  QStyle * style()
 
-=item   QIcon windowIcon()
+=item  bool testAttribute(Qt::WidgetAttribute arg0)
 
-=item   QString windowIconText()
+=item  QString toolTip()
 
-=item   Qt::WindowModality windowModality()
+=item  QWidget * topLevelWidget()
 
-=item   qreal windowOpacity()
+=item  bool underMouse()
 
-=item   QString windowRole()
+=item  void ungrabGesture(Qt::GestureType type)
 
-=item   QWindowSurface * windowSurface()
+=item  void unsetCursor()
 
-=item   QString windowTitle()
+=item  void unsetLayoutDirection()
 
-=item   Qt::WindowType windowType()
+=item  void unsetLocale()
 
-=item   int x()
+=item  void update()
 
-=item   const QX11Info & x11Info()
+=item  void update(const QRect & arg0)
 
-=item   unsigned long x11PictureHandle()
+=item  void update(const QRegion & arg0)
 
-=item   int y()
+=item  void update(int x, int y, int w, int h)
+
+=item  void updateGeometry()
+
+=item  bool updatesEnabled()
+
+=item  QRegion visibleRegion()
+
+=item  QString whatsThis()
+
+=item  int width()
+
+=item  unsigned long winId()
+
+=item  QWidget * window()
+
+=item  QString windowFilePath()
+
+=item  QFlags<Qt::WindowType> windowFlags()
+
+=item  QIcon windowIcon()
+
+=item  QString windowIconText()
+
+=item  Qt::WindowModality windowModality()
+
+=item  qreal windowOpacity()
+
+=item  QString windowRole()
+
+=item  QFlags<Qt::WindowState> windowState()
+
+=item  QWindowSurface * windowSurface()
+
+=item  QString windowTitle()
+
+=item  Qt::WindowType windowType()
+
+=item  int x()
+
+=item  const QX11Info & x11Info()
+
+=item  unsigned long x11PictureHandle()
+
+=item  int y()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item DrawWindowBackground
+
+=item DrawChildren
+
+=item IgnoreMask
 
 
 =back

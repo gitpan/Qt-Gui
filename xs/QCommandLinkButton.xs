@@ -18,85 +18,104 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QCommandLinkButton(QWidget * parent = 0)
 ##  QCommandLinkButton(QWidget * parent)
-##  QCommandLinkButton(const QString & text, QWidget * parent = 0)
+##  QCommandLinkButton(QWidget * parent = 0)
 ##  QCommandLinkButton(const QString & text, QWidget * parent)
-##  QCommandLinkButton(const QString & text, const QString & description, QWidget * parent = 0)
+##  QCommandLinkButton(const QString & text, QWidget * parent = 0)
 ##  QCommandLinkButton(const QString & text, const QString & description, QWidget * parent)
+##  QCommandLinkButton(const QString & text, const QString & description, QWidget * parent = 0)
   void
 QCommandLinkButton::new(...)
 PREINIT:
 QCommandLinkButton *ret;
-QWidget * arg00 = 0;
-QWidget * arg10;
+QWidget * arg00;
+QWidget * arg10 = 0;
 QString * arg20;
-QWidget * arg21 = 0;
+QWidget * arg21;
 QString * arg30;
-QWidget * arg31;
+QWidget * arg31 = 0;
 QString * arg40;
 QString * arg41;
-QWidget * arg42 = 0;
+QWidget * arg42;
 QString * arg50;
 QString * arg51;
-QWidget * arg52;
+QWidget * arg52 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
-        break;
-      }
-    case 2:
-      {
-        if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        if (1) {
+      
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 3:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg30 is not of type ");
-    if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
-        arg31 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg31 is not of type Qt::Gui::QWidget");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     Perl_croak(aTHX_ "Trying to create abstract class object");
-        break;
-      }
-    case 4:
-      {
-        if (sv_isa(ST(1), "")) {
-        arg50 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     }
-    else
-        Perl_croak(aTHX_ "arg50 is not of type ");
-    if (sv_isa(ST(2), "")) {
-        arg51 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg51 is not of type ");
-    if (sv_derived_from(ST(3), "Qt::Gui::QWidget")) {
-        arg52 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg52 is not of type Qt::Gui::QWidget");
+        else if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QString") && (sv_derived_from(ST(2), "Qt::Gui::QWidget") || ST(2) == &PL_sv_undef)) {
+      arg20 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
+        arg21 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg21 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Core::QString")) {
+      arg50 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg51 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 4:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Core::QString") && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef)) {
+      arg40 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg41 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+      if (sv_derived_from(ST(3), "Qt::Gui::QWidget")) {
+        arg42 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(3))));
+    }
+    else if (ST(3) == &PL_sv_undef) {
+        arg42 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg42 is not of type Qt::Gui::QWidget");
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -106,10 +125,13 @@ void
 QCommandLinkButton::description(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->description();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## void setDescription(const QString & description)
 void
@@ -117,10 +139,8 @@ QCommandLinkButton::setDescription(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setDescription(*arg00);
     XSRETURN(0);
+    }

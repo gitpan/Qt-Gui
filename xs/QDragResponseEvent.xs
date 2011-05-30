@@ -25,11 +25,13 @@ PREINIT:
 QDragResponseEvent *ret;
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     ret = new QDragResponseEvent(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QDragResponseEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QDragResponseEvent()
 void
@@ -43,7 +45,10 @@ void
 QDragResponseEvent::dragAccepted(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->dragAccepted();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }

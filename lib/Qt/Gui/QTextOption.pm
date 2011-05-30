@@ -7,27 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub LeftTab() { 0 }
-sub RightTab() { 1 }
-sub CenterTab() { 2 }
-sub DelimiterTab() { 3 }
-sub NoWrap() { 0 }
-sub WordWrap() { 1 }
-sub ManualWrap() { 2 }
-sub WrapAnywhere() { 3 }
-sub WrapAtWordBoundaryOrAnywhere() { 4 }
-sub ShowTabsAndSpaces() { 0 }
-sub ShowLineAndParagraphSeparators() { 1 }
-sub AddSpaceForLineAndParagraphSeparators() { 2 }
-sub SuppressColors() { 3 }
-sub IncludeTrailingSpaces() { 4 }
 
 
 1;
@@ -39,6 +22,41 @@ Qt::Gui::QTextOption
 =head1 PUBLIC METHODS
 
 =over
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item LeftTab
+
+=item RightTab
+
+=item CenterTab
+
+=item DelimiterTab
+
+=item NoWrap
+
+=item WordWrap
+
+=item ManualWrap
+
+=item WrapAnywhere
+
+=item WrapAtWordBoundaryOrAnywhere
+
+=item ShowTabsAndSpaces
+
+=item ShowLineAndParagraphSeparators
+
+=item AddSpaceForLineAndParagraphSeparators
+
+=item SuppressColors
+
+=item IncludeTrailingSpaces
 
 
 =back

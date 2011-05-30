@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,25 +24,42 @@ Qt::Gui::QSplashScreen
 
 =over
 
-=item    ~QSplashScreen()
+=item   QSplashScreen(const QPixmap & pixmap, QFlags<Qt::WindowType> f)
 
-=item   void clearMessage()
+=item   QSplashScreen(const QPixmap & pixmap, QFlags<Qt::WindowType> f = 0)
 
-=item   void finish(QWidget * w)
+=item   QSplashScreen(const QPixmap & pixmap = QPixmap(), QFlags<Qt::WindowType> f = 0)
 
-=item   const QPixmap pixmap()
+=item   QSplashScreen(QWidget * parent, const QPixmap & pixmap, QFlags<Qt::WindowType> f)
 
-=item   void repaint()
+=item   QSplashScreen(QWidget * parent, const QPixmap & pixmap, QFlags<Qt::WindowType> f = 0)
 
-=item   void setPixmap(const QPixmap & pixmap)
+=item   QSplashScreen(QWidget * parent, const QPixmap & pixmap = QPixmap(), QFlags<Qt::WindowType> f = 0)
 
-=item   void showMessage(const QString & message, int alignment, const QColor & color = Qt::black)
+=item   ~QSplashScreen()
 
-=item   void showMessage(const QString & message, int alignment, const QColor & color)
+=item  void clearMessage()
 
-=item   void showMessage(const QString & message, int alignment = Qt::AlignLeft, const QColor & color = Qt::black)
+=item  void finish(QWidget * w)
 
-=item   void showMessage(const QString & message, int alignment, const QColor & color = Qt::black)
+=item  const QPixmap pixmap()
+
+=item  void repaint()
+
+=item  void setPixmap(const QPixmap & pixmap)
+
+=item  void showMessage(const QString & message, int alignment, const QColor & color)
+
+=item  void showMessage(const QString & message, int alignment, const QColor & color = Qt::black)
+
+=item  void showMessage(const QString & message, int alignment = Qt::AlignLeft, const QColor & color = Qt::black)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -1,30 +1,45 @@
-package Qt::Gui::QIconEngineFactoryInterface;
+package Qt::Gui::QStylePlugin;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QIconEngineFactoryInterface
-# file     : QtGui/qiconengineplugin.h
+# classname: QStylePlugin
+# file     : QtGui/qstyleplugin.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject Qt::Gui::QStyleFactoryInterface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
 
 =head1 NAME
 
-Qt::Gui::QIconEngineFactoryInterface
+Qt::Gui::QStylePlugin
 
 =head1 PUBLIC METHODS
 
 =over
 
-=item   QIconEngine * create(const QString & filename)
+=item   QStylePlugin(QObject * parent)
+
+=item   QStylePlugin(QObject * parent = 0)
+
+=item   ~QStylePlugin()
+
+=item  QStyle * create(const QString & key)
+
+=item  QStringList keys()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

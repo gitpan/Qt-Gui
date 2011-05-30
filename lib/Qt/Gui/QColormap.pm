@@ -7,16 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Direct() { 0 }
-sub Indexed() { 1 }
-sub Gray() { 2 }
 
 
 1;
@@ -29,29 +23,42 @@ Qt::Gui::QColormap
 
 =over
 
-=item    QColormap(const QColormap & colormap)
+=item   QColormap(const QColormap & colormap)
 
-=item    ~QColormap()
+=item   ~QColormap()
 
-=item   static void cleanup()
+=item  static void cleanup()
 
-=item   const QColor colorAt(uint pixel)
+=item  const QColor colorAt(uint pixel)
 
-=item   int depth()
+=item  int depth()
 
-=item   static void initialize()
+=item  static void initialize()
 
-=item   static QColormap instance(int screen = -1)
+=item  static QColormap instance(int screen)
 
-=item   static QColormap instance(int screen)
+=item  static QColormap instance(int screen = -1)
 
-=item   QColormap::Mode mode()
+=item  QColormap::Mode mode()
 
-=item   QColormap & operator=(const QColormap & colormap)
+=item  QColormap & operator=(const QColormap & colormap)
 
-=item   uint pixel(const QColor & color)
+=item  uint pixel(const QColor & color)
 
-=item   int size()
+=item  int size()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Direct
+
+=item Indexed
+
+=item Gray
 
 
 =back

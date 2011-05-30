@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,43 +24,50 @@ Qt::Gui::QWizardPage
 
 =over
 
-=item    QWizardPage(QWidget * parent = 0)
+=item   QWizardPage(QWidget * parent)
 
-=item    QWizardPage(QWidget * parent)
+=item   QWizardPage(QWidget * parent = 0)
 
-=item   QString buttonText(QWizard::WizardButton which)
+=item  QString buttonText(QWizard::WizardButton which)
 
-=item   void cleanupPage()
+=item  void cleanupPage()
 
-=item   void initializePage()
+=item  void initializePage()
 
-=item   bool isCommitPage()
+=item  bool isCommitPage()
 
-=item   bool isComplete()
+=item  bool isComplete()
 
-=item   bool isFinalPage()
+=item  bool isFinalPage()
 
-=item   int nextId()
+=item  int nextId()
 
-=item   QPixmap pixmap(QWizard::WizardPixmap which)
+=item  QPixmap pixmap(QWizard::WizardPixmap which)
 
-=item   void setButtonText(QWizard::WizardButton which, const QString & text)
+=item  void setButtonText(QWizard::WizardButton which, const QString & text)
 
-=item   void setCommitPage(bool commitPage)
+=item  void setCommitPage(bool commitPage)
 
-=item   void setFinalPage(bool finalPage)
+=item  void setFinalPage(bool finalPage)
 
-=item   void setPixmap(QWizard::WizardPixmap which, const QPixmap & pixmap)
+=item  void setPixmap(QWizard::WizardPixmap which, const QPixmap & pixmap)
 
-=item   void setSubTitle(const QString & subTitle)
+=item  void setSubTitle(const QString & subTitle)
 
-=item   void setTitle(const QString & title)
+=item  void setTitle(const QString & title)
 
-=item   QString subTitle()
+=item  QString subTitle()
 
-=item   QString title()
+=item  QString title()
 
-=item   bool validatePage()
+=item  bool validatePage()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

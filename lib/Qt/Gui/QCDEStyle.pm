@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QMotifStyle/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QMotifStyle/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,29 +24,34 @@ Qt::Gui::QCDEStyle
 
 =over
 
-=item    QCDEStyle(bool useHighlightCols = false)
+=item   QCDEStyle(bool useHighlightCols)
 
-=item    QCDEStyle(bool useHighlightCols)
+=item   QCDEStyle(bool useHighlightCols = false)
 
-=item    ~QCDEStyle()
+=item   ~QCDEStyle()
 
-=item   void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w = 0)
+=item  void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w)
 
-=item   void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w)
+=item  void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w = 0)
 
-=item   void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w = 0)
+=item  void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w)
 
-=item   void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w)
+=item  void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w = 0)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget = 0)
+=item  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget)
+=item  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget = 0)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option = 0, const QWidget * widget = 0)
+=item  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option = 0, const QWidget * widget = 0)
 
-=item   int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget = 0)
+=item  QPalette standardPalette()
 
-=item   QPalette standardPalette()
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -29,32 +29,40 @@ QPrinterInfo * arg10;
 QPrinter * arg20;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QPrinterInfo();
+        if (1) {
+      
+    ret = new QPrinterInfo();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPrinterInfo", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QPrinterInfo")) {
-        arg10 = reinterpret_cast<QPrinterInfo *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QPrinterInfo");
+      arg10 = reinterpret_cast<QPrinterInfo *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QPrinterInfo(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPrinterInfo", (void *)ret);
     XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QPrinter")) {
+      arg20 = reinterpret_cast<QPrinter *>(SvIV((SV*)SvRV(ST(1))));
+    ret = new QPrinterInfo(*arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPrinterInfo", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QPrinterInfo()
@@ -69,30 +77,39 @@ void
 QPrinterInfo::defaultPrinter(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QPrinterInfo ret = THIS->defaultPrinter();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPrinterInfo", (void *)new QPrinterInfo(ret));
     XSRETURN(1);
+    }
 
 ## bool isDefault()
 void
 QPrinterInfo::isDefault(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isDefault();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isNull()
 void
 QPrinterInfo::isNull(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isNull();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QPrinterInfo & operator=(const QPrinterInfo & src)
 void
@@ -101,21 +118,22 @@ PREINIT:
 QPrinterInfo * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QPrinterInfo")) {
-        arg00 = reinterpret_cast<QPrinterInfo *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPrinterInfo");
+      arg00 = reinterpret_cast<QPrinterInfo *>(SvIV((SV*)SvRV(ST(1))));
     QPrinterInfo * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPrinterInfo", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QString printerName()
 void
 QPrinterInfo::printerName(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->printerName();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }

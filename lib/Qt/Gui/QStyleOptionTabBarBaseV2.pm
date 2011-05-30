@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QStyleOptionTabBarBase/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QStyleOptionTabBarBase/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Version() { 0 }
 
 
 1;
@@ -28,13 +24,22 @@ Qt::Gui::QStyleOptionTabBarBaseV2
 
 =over
 
-=item    QStyleOptionTabBarBaseV2()
+=item   QStyleOptionTabBarBaseV2()
 
-=item    QStyleOptionTabBarBaseV2(const QStyleOptionTabBarBaseV2 & other)
+=item   QStyleOptionTabBarBaseV2(const QStyleOptionTabBarBaseV2 & other)
 
-=item    QStyleOptionTabBarBaseV2(const QStyleOptionTabBarBase & other)
+=item   QStyleOptionTabBarBaseV2(const QStyleOptionTabBarBase & other)
 
-=item   QStyleOptionTabBarBaseV2 & operator=(const QStyleOptionTabBarBase & other)
+=item  QStyleOptionTabBarBaseV2 & operator=(const QStyleOptionTabBarBase & other)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Version
 
 
 =back

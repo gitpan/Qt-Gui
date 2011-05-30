@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,73 +23,80 @@ Qt::Gui::QQuaternion
 
 =over
 
-=item    QQuaternion()
+=item   QQuaternion()
 
-=item    QQuaternion(const QVector4D & vector)
+=item   QQuaternion(const QVector4D & vector)
 
-=item    QQuaternion(qreal scalar, const QVector3D & vector)
+=item   QQuaternion(qreal scalar, const QVector3D & vector)
 
-=item    QQuaternion(qreal scalar, qreal xpos, qreal ypos, qreal zpos)
+=item   QQuaternion(qreal scalar, qreal xpos, qreal ypos, qreal zpos)
 
-=item   QQuaternion conjugate()
+=item  QQuaternion conjugate()
 
-=item   static QQuaternion fromAxisAndAngle(const QVector3D & axis, qreal angle)
+=item  static QQuaternion fromAxisAndAngle(const QVector3D & axis, qreal angle)
 
-=item   static QQuaternion fromAxisAndAngle(qreal x, qreal y, qreal z, qreal angle)
+=item  static QQuaternion fromAxisAndAngle(qreal x, qreal y, qreal z, qreal angle)
 
-=item   bool isIdentity()
+=item  bool isIdentity()
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   qreal length()
+=item  qreal length()
 
-=item   qreal lengthSquared()
+=item  qreal lengthSquared()
 
-=item   static QQuaternion nlerp(const QQuaternion & q1, const QQuaternion & q2, qreal t)
+=item  static QQuaternion nlerp(const QQuaternion & q1, const QQuaternion & q2, qreal t)
 
-=item   void normalize()
+=item  void normalize()
 
-=item   QQuaternion normalized()
+=item  QQuaternion normalized()
 
-=item   QVariant operator QVariant()
+=item  QVariant operator QVariant()
 
-=item   QQuaternion & operator*=(qreal factor)
+=item  QQuaternion & operator*=(qreal factor)
 
-=item   QQuaternion & operator*=(const QQuaternion & quaternion)
+=item  QQuaternion & operator*=(const QQuaternion & quaternion)
 
-=item   QQuaternion & operator+=(const QQuaternion & quaternion)
+=item  QQuaternion & operator+=(const QQuaternion & quaternion)
 
-=item   QQuaternion & operator-=(const QQuaternion & quaternion)
+=item  QQuaternion & operator-=(const QQuaternion & quaternion)
 
-=item   QQuaternion & operator/=(qreal divisor)
+=item  QQuaternion & operator/=(qreal divisor)
 
-=item   QVector3D rotatedVector(const QVector3D & vector)
+=item  QVector3D rotatedVector(const QVector3D & vector)
 
-=item   qreal scalar()
+=item  qreal scalar()
 
-=item   void setScalar(qreal scalar)
+=item  void setScalar(qreal scalar)
 
-=item   void setVector(const QVector3D & vector)
+=item  void setVector(const QVector3D & vector)
 
-=item   void setVector(qreal x, qreal y, qreal z)
+=item  void setVector(qreal x, qreal y, qreal z)
 
-=item   void setX(qreal x)
+=item  void setX(qreal x)
 
-=item   void setY(qreal y)
+=item  void setY(qreal y)
 
-=item   void setZ(qreal z)
+=item  void setZ(qreal z)
 
-=item   static QQuaternion slerp(const QQuaternion & q1, const QQuaternion & q2, qreal t)
+=item  static QQuaternion slerp(const QQuaternion & q1, const QQuaternion & q2, qreal t)
 
-=item   QVector4D toVector4D()
+=item  QVector4D toVector4D()
 
-=item   QVector3D vector()
+=item  QVector3D vector()
 
-=item   qreal x()
+=item  qreal x()
 
-=item   qreal y()
+=item  qreal y()
 
-=item   qreal z()
+=item  qreal z()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

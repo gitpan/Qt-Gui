@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsLayout/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsLayout/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,37 +24,48 @@ Qt::Gui::QGraphicsAnchorLayout
 
 =over
 
-=item    QGraphicsAnchorLayout(QGraphicsLayoutItem * parent = 0)
+=item   QGraphicsAnchorLayout(QGraphicsLayoutItem * parent)
 
-=item    QGraphicsAnchorLayout(QGraphicsLayoutItem * parent)
+=item   QGraphicsAnchorLayout(QGraphicsLayoutItem * parent = 0)
 
-=item    ~QGraphicsAnchorLayout()
+=item   ~QGraphicsAnchorLayout()
 
-=item   QGraphicsAnchor * addAnchor(QGraphicsLayoutItem * firstItem, Qt::AnchorPoint firstEdge, QGraphicsLayoutItem * secondItem, Qt::AnchorPoint secondEdge)
+=item  QGraphicsAnchor * addAnchor(QGraphicsLayoutItem * firstItem, Qt::AnchorPoint firstEdge, QGraphicsLayoutItem * secondItem, Qt::AnchorPoint secondEdge)
 
-=item   void addCornerAnchors(QGraphicsLayoutItem * firstItem, Qt::Corner firstCorner, QGraphicsLayoutItem * secondItem, Qt::Corner secondCorner)
+=item  void addAnchors(QGraphicsLayoutItem * firstItem, QGraphicsLayoutItem * secondItem, QFlags<Qt::Orientation> orientations)
 
-=item   QGraphicsAnchor * anchor(QGraphicsLayoutItem * firstItem, Qt::AnchorPoint firstEdge, QGraphicsLayoutItem * secondItem, Qt::AnchorPoint secondEdge)
+=item  void addAnchors(QGraphicsLayoutItem * firstItem, QGraphicsLayoutItem * secondItem, QFlags<Qt::Orientation> orientations = Qt::Horizontal | Qt::Vertical)
 
-=item   int count()
+=item  void addCornerAnchors(QGraphicsLayoutItem * firstItem, Qt::Corner firstCorner, QGraphicsLayoutItem * secondItem, Qt::Corner secondCorner)
 
-=item   qreal horizontalSpacing()
+=item  QGraphicsAnchor * anchor(QGraphicsLayoutItem * firstItem, Qt::AnchorPoint firstEdge, QGraphicsLayoutItem * secondItem, Qt::AnchorPoint secondEdge)
 
-=item   void invalidate()
+=item  int count()
 
-=item   QGraphicsLayoutItem * itemAt(int index)
+=item  qreal horizontalSpacing()
 
-=item   void removeAt(int index)
+=item  void invalidate()
 
-=item   void setGeometry(const QRectF & rect)
+=item  QGraphicsLayoutItem * itemAt(int index)
 
-=item   void setHorizontalSpacing(qreal spacing)
+=item  void removeAt(int index)
 
-=item   void setSpacing(qreal spacing)
+=item  void setGeometry(const QRectF & rect)
 
-=item   void setVerticalSpacing(qreal spacing)
+=item  void setHorizontalSpacing(qreal spacing)
 
-=item   qreal verticalSpacing()
+=item  void setSpacing(qreal spacing)
+
+=item  void setVerticalSpacing(qreal spacing)
+
+=item  qreal verticalSpacing()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

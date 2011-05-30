@@ -7,39 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub GrowFlag() { 0 }
-sub ExpandFlag() { 1 }
-sub ShrinkFlag() { 2 }
-sub IgnoreFlag() { 3 }
-sub Fixed() { 0 }
-sub Minimum() { 1 }
-sub Maximum() { 2 }
-sub Preferred() { 3 }
-sub MinimumExpanding() { 4 }
-sub Expanding() { 5 }
-sub Ignored() { 6 }
-sub DefaultType() { 0 }
-sub ButtonBox() { 1 }
-sub CheckBox() { 2 }
-sub ComboBox() { 3 }
-sub Frame() { 4 }
-sub GroupBox() { 5 }
-sub Label() { 6 }
-sub Line() { 7 }
-sub LineEdit() { 8 }
-sub PushButton() { 9 }
-sub RadioButton() { 10 }
-sub Slider() { 11 }
-sub SpinBox() { 12 }
-sub TabWidget() { 13 }
-sub ToolButton() { 14 }
 
 
 1;
@@ -52,43 +23,104 @@ Qt::Gui::QSizePolicy
 
 =over
 
-=item    QSizePolicy()
+=item   QSizePolicy()
 
-=item    QSizePolicy(QSizePolicy::Policy horizontal, QSizePolicy::Policy vertical)
+=item   QSizePolicy(QSizePolicy::Policy horizontal, QSizePolicy::Policy vertical)
 
-=item    QSizePolicy(QSizePolicy::Policy horizontal, QSizePolicy::Policy vertical, QSizePolicy::ControlType type)
+=item   QSizePolicy(QSizePolicy::Policy horizontal, QSizePolicy::Policy vertical, QSizePolicy::ControlType type)
 
-=item   QSizePolicy::ControlType controlType()
+=item  QSizePolicy::ControlType controlType()
 
-=item   bool hasHeightForWidth()
+=item  QFlags<Qt::Orientation> expandingDirections()
 
-=item   QSizePolicy::Policy horizontalPolicy()
+=item  bool hasHeightForWidth()
 
-=item   int horizontalStretch()
+=item  QSizePolicy::Policy horizontalPolicy()
 
-=item   QVariant operator QVariant()
+=item  int horizontalStretch()
 
-=item   bool operator!=(const QSizePolicy & s)
+=item  QVariant operator QVariant()
 
-=item   bool operator==(const QSizePolicy & s)
+=item  bool operator!=(const QSizePolicy & s)
 
-=item   void setControlType(QSizePolicy::ControlType type)
+=item  bool operator==(const QSizePolicy & s)
 
-=item   void setHeightForWidth(bool b)
+=item  void setControlType(QSizePolicy::ControlType type)
 
-=item   void setHorizontalPolicy(QSizePolicy::Policy d)
+=item  void setHeightForWidth(bool b)
 
-=item   void setHorizontalStretch(uchar stretchFactor)
+=item  void setHorizontalPolicy(QSizePolicy::Policy d)
 
-=item   void setVerticalPolicy(QSizePolicy::Policy d)
+=item  void setHorizontalStretch(uchar stretchFactor)
 
-=item   void setVerticalStretch(uchar stretchFactor)
+=item  void setVerticalPolicy(QSizePolicy::Policy d)
 
-=item   void transpose()
+=item  void setVerticalStretch(uchar stretchFactor)
 
-=item   QSizePolicy::Policy verticalPolicy()
+=item  void transpose()
 
-=item   int verticalStretch()
+=item  QSizePolicy::Policy verticalPolicy()
+
+=item  int verticalStretch()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item GrowFlag
+
+=item ExpandFlag
+
+=item ShrinkFlag
+
+=item IgnoreFlag
+
+=item Fixed
+
+=item Minimum
+
+=item Maximum
+
+=item Preferred
+
+=item MinimumExpanding
+
+=item Expanding
+
+=item Ignored
+
+=item DefaultType
+
+=item ButtonBox
+
+=item CheckBox
+
+=item ComboBox
+
+=item Frame
+
+=item GroupBox
+
+=item Label
+
+=item Line
+
+=item LineEdit
+
+=item PushButton
+
+=item RadioButton
+
+=item Slider
+
+=item SpinBox
+
+=item TabWidget
+
+=item ToolButton
 
 
 =back

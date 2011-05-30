@@ -7,25 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub LinearGradient() { 0 }
-sub RadialGradient() { 1 }
-sub ConicalGradient() { 2 }
-sub NoGradient() { 3 }
-sub PadSpread() { 0 }
-sub ReflectSpread() { 1 }
-sub RepeatSpread() { 2 }
-sub LogicalMode() { 0 }
-sub StretchToDeviceMode() { 1 }
-sub ObjectBoundingMode() { 2 }
-sub ColorInterpolation() { 0 }
-sub ComponentInterpolation() { 1 }
 
 
 1;
@@ -38,29 +23,60 @@ Qt::Gui::QGradient
 
 =over
 
-=item    QGradient()
+=item   QGradient()
 
-=item   QGradient::CoordinateMode coordinateMode()
+=item  QGradient::CoordinateMode coordinateMode()
 
-=item   QGradient::InterpolationMode interpolationMode()
+=item  QGradient::InterpolationMode interpolationMode()
 
-=item   bool operator!=(const QGradient & other)
+=item  bool operator!=(const QGradient & other)
 
-=item   bool operator==(const QGradient & gradient)
+=item  bool operator==(const QGradient & gradient)
 
-=item   bool operator==(const QGradient & gradient)
+=item  bool operator==(const QGradient & gradient)
 
-=item   void setColorAt(qreal pos, const QColor & color)
+=item  void setColorAt(qreal pos, const QColor & color)
 
-=item   void setCoordinateMode(QGradient::CoordinateMode mode)
+=item  void setCoordinateMode(QGradient::CoordinateMode mode)
 
-=item   void setInterpolationMode(QGradient::InterpolationMode mode)
+=item  void setInterpolationMode(QGradient::InterpolationMode mode)
 
-=item   void setSpread(QGradient::Spread spread)
+=item  void setSpread(QGradient::Spread spread)
 
-=item   QGradient::Spread spread()
+=item  QGradient::Spread spread()
 
-=item   QGradient::Type type()
+=item  QGradient::Type type()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item LinearGradient
+
+=item RadialGradient
+
+=item ConicalGradient
+
+=item NoGradient
+
+=item PadSpread
+
+=item ReflectSpread
+
+=item RepeatSpread
+
+=item LogicalMode
+
+=item StretchToDeviceMode
+
+=item ObjectBoundingMode
+
+=item ColorInterpolation
+
+=item ComponentInterpolation
 
 
 =back

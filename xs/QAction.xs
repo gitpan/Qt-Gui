@@ -33,65 +33,72 @@ QString * arg21;
 QObject * arg22;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        if (sv_derived_from(ST(1), "")) {
+        if ((sv_derived_from(ST(1), "Qt::Core::QObject") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Core::QObject")) {
         arg00 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(1))));
     }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
+    }
     else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QObject");
     ret = new QAction(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 3:
+      case 3:
       {
-        if (sv_isa(ST(1), "")) {
-        arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type ");
-    if (sv_derived_from(ST(2), "")) {
+        if (sv_isa(ST(1), "Qt::Core::QString") && (sv_derived_from(ST(2), "Qt::Core::QObject") || ST(2) == &PL_sv_undef)) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Core::QObject")) {
         arg11 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(2))));
     }
+    else if (ST(2) == &PL_sv_undef) {
+        arg11 = 0;
+    }
     else
-        Perl_croak(aTHX_ "arg11 is not of type ");
+        Perl_croak(aTHX_ "arg11 is not of type Qt::Core::QObject");
     ret = new QAction(*arg10, arg11);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 4:
+      case 4:
       {
-        if (sv_isa(ST(1), "Qt::Gui::QIcon")) {
-        arg20 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg20 is not of type Qt::Gui::QIcon");
-    if (sv_isa(ST(2), "")) {
-        arg21 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg21 is not of type ");
-    if (sv_derived_from(ST(3), "")) {
+        if (sv_isa(ST(1), "Qt::Gui::QIcon") && sv_isa(ST(2), "Qt::Core::QString") && (sv_derived_from(ST(3), "Qt::Core::QObject") || ST(3) == &PL_sv_undef)) {
+      arg20 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
+      arg21 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+      if (sv_derived_from(ST(3), "Qt::Core::QObject")) {
         arg22 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(3))));
     }
+    else if (ST(3) == &PL_sv_undef) {
+        arg22 = 0;
+    }
     else
-        Perl_croak(aTHX_ "arg22 is not of type ");
+        Perl_croak(aTHX_ "arg22 is not of type Qt::Core::QObject");
     ret = new QAction(*arg20, *arg21, arg22);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QAction()
@@ -106,10 +113,13 @@ void
 QAction::actionGroup(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QActionGroup * ret = THIS->actionGroup();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QActionGroup", (void *)ret);
     XSRETURN(1);
+    }
 
 ## void activate(QAction::ActionEvent event)
 void
@@ -117,176 +127,217 @@ QAction::activate(...)
 PREINIT:
 QAction::ActionEvent arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QAction::Trigger;
-      break;
-    case 1:
-      arg00 = QAction::Hover;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAction::ActionEvent passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QAction::ActionEvent)SvIV(ST(1));
     (void)THIS->activate(arg00);
     XSRETURN(0);
+    }
 
 ## bool autoRepeat()
 void
 QAction::autoRepeat(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->autoRepeat();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QVariant data()
 void
 QAction::data(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QVariant ret = THIS->data();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
     XSRETURN(1);
+    }
 
 ## QFont font()
 void
 QAction::font(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QFont ret = THIS->font();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QFont", (void *)new QFont(ret));
     XSRETURN(1);
+    }
 
 ## void hover()
 void
 QAction::hover(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->hover();
     XSRETURN(0);
+    }
 
 ## QIcon icon()
 void
 QAction::icon(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QIcon ret = THIS->icon();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QIcon", (void *)new QIcon(ret));
     XSRETURN(1);
+    }
 
 ## QString iconText()
 void
 QAction::iconText(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->iconText();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## bool isCheckable()
 void
 QAction::isCheckable(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isCheckable();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isChecked()
 void
 QAction::isChecked(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isChecked();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isEnabled()
 void
 QAction::isEnabled(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isEnabled();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isIconVisibleInMenu()
 void
 QAction::isIconVisibleInMenu(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isIconVisibleInMenu();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isSeparator()
 void
 QAction::isSeparator(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isSeparator();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isVisible()
 void
 QAction::isVisible(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isVisible();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QMenu * menu()
 void
 QAction::menu(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QMenu * ret = THIS->menu();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QMenu", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QAction::MenuRole menuRole()
 void
 QAction::menuRole(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QAction::MenuRole ret = THIS->menuRole();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QWidget * parentWidget()
 void
 QAction::parentWidget(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QWidget * ret = THIS->parentWidget();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QAction::Priority priority()
 void
 QAction::priority(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QAction::Priority ret = THIS->priority();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## void setActionGroup(QActionGroup * group)
 void
@@ -294,13 +345,18 @@ QAction::setActionGroup(...)
 PREINIT:
 QActionGroup * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QActionGroup")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QActionGroup") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QActionGroup")) {
         arg00 = reinterpret_cast<QActionGroup *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QActionGroup");
     (void)THIS->setActionGroup(arg00);
     XSRETURN(0);
+    }
 
 ## void setAutoRepeat(bool arg0)
 void
@@ -308,9 +364,11 @@ QAction::setAutoRepeat(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setAutoRepeat(arg00);
     XSRETURN(0);
+    }
 
 ## void setCheckable(bool arg0)
 void
@@ -318,9 +376,11 @@ QAction::setCheckable(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setCheckable(arg00);
     XSRETURN(0);
+    }
 
 ## void setChecked(bool arg0)
 void
@@ -328,9 +388,11 @@ QAction::setChecked(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setChecked(arg00);
     XSRETURN(0);
+    }
 
 ## void setData(const QVariant & var)
 void
@@ -338,13 +400,11 @@ QAction::setData(...)
 PREINIT:
 QVariant * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QVariant")) {
+      arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setData(*arg00);
     XSRETURN(0);
+    }
 
 ## void setDisabled(bool b)
 void
@@ -352,9 +412,11 @@ QAction::setDisabled(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setDisabled(arg00);
     XSRETURN(0);
+    }
 
 ## void setEnabled(bool arg0)
 void
@@ -362,9 +424,11 @@ QAction::setEnabled(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setEnabled(arg00);
     XSRETURN(0);
+    }
 
 ## void setFont(const QFont & font)
 void
@@ -373,12 +437,10 @@ PREINIT:
 QFont * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QFont")) {
-        arg00 = reinterpret_cast<QFont *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QFont");
+      arg00 = reinterpret_cast<QFont *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setFont(*arg00);
     XSRETURN(0);
+    }
 
 ## void setIcon(const QIcon & icon)
 void
@@ -387,12 +449,10 @@ PREINIT:
 QIcon * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QIcon")) {
-        arg00 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QIcon");
+      arg00 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setIcon(*arg00);
     XSRETURN(0);
+    }
 
 ## void setIconText(const QString & text)
 void
@@ -400,13 +460,11 @@ QAction::setIconText(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setIconText(*arg00);
     XSRETURN(0);
+    }
 
 ## void setIconVisibleInMenu(bool visible)
 void
@@ -414,9 +472,11 @@ QAction::setIconVisibleInMenu(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setIconVisibleInMenu(arg00);
     XSRETURN(0);
+    }
 
 ## void setMenu(QMenu * menu)
 void
@@ -424,13 +484,18 @@ QAction::setMenu(...)
 PREINIT:
 QMenu * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QMenu")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QMenu") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QMenu")) {
         arg00 = reinterpret_cast<QMenu *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QMenu");
     (void)THIS->setMenu(arg00);
     XSRETURN(0);
+    }
 
 ## void setMenuRole(QAction::MenuRole menuRole)
 void
@@ -438,33 +503,11 @@ QAction::setMenuRole(...)
 PREINIT:
 QAction::MenuRole arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QAction::NoRole;
-      break;
-    case 1:
-      arg00 = QAction::TextHeuristicRole;
-      break;
-    case 2:
-      arg00 = QAction::ApplicationSpecificRole;
-      break;
-    case 3:
-      arg00 = QAction::AboutQtRole;
-      break;
-    case 4:
-      arg00 = QAction::AboutRole;
-      break;
-    case 5:
-      arg00 = QAction::PreferencesRole;
-      break;
-    case 6:
-      arg00 = QAction::QuitRole;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAction::MenuRole passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QAction::MenuRole)SvIV(ST(1));
     (void)THIS->setMenuRole(arg00);
     XSRETURN(0);
+    }
 
 ## void setPriority(QAction::Priority priority)
 void
@@ -472,21 +515,11 @@ QAction::setPriority(...)
 PREINIT:
 QAction::Priority arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QAction::LowPriority;
-      break;
-    case 1:
-      arg00 = QAction::NormalPriority;
-      break;
-    case 2:
-      arg00 = QAction::HighPriority;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAction::Priority passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QAction::Priority)SvIV(ST(1));
     (void)THIS->setPriority(arg00);
     XSRETURN(0);
+    }
 
 ## void setSeparator(bool b)
 void
@@ -494,9 +527,11 @@ QAction::setSeparator(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setSeparator(arg00);
     XSRETURN(0);
+    }
 
 ## void setShortcut(const QKeySequence & shortcut)
 void
@@ -505,12 +540,10 @@ PREINIT:
 QKeySequence * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QKeySequence")) {
-        arg00 = reinterpret_cast<QKeySequence *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QKeySequence");
+      arg00 = reinterpret_cast<QKeySequence *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setShortcut(*arg00);
     XSRETURN(0);
+    }
 
 ## void setShortcutContext(Qt::ShortcutContext context)
 void
@@ -518,24 +551,11 @@ QAction::setShortcutContext(...)
 PREINIT:
 Qt::ShortcutContext arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = Qt::WidgetShortcut;
-      break;
-    case 1:
-      arg00 = Qt::WindowShortcut;
-      break;
-    case 2:
-      arg00 = Qt::ApplicationShortcut;
-      break;
-    case 3:
-      arg00 = Qt::WidgetWithChildrenShortcut;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::ShortcutContext passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (Qt::ShortcutContext)SvIV(ST(1));
     (void)THIS->setShortcutContext(arg00);
     XSRETURN(0);
+    }
 
 ## void setShortcuts(QKeySequence::StandardKey arg0)
 void
@@ -543,210 +563,11 @@ QAction::setShortcuts(...)
 PREINIT:
 QKeySequence::StandardKey arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QKeySequence::UnknownKey;
-      break;
-    case 1:
-      arg00 = QKeySequence::HelpContents;
-      break;
-    case 2:
-      arg00 = QKeySequence::WhatsThis;
-      break;
-    case 3:
-      arg00 = QKeySequence::Open;
-      break;
-    case 4:
-      arg00 = QKeySequence::Close;
-      break;
-    case 5:
-      arg00 = QKeySequence::Save;
-      break;
-    case 6:
-      arg00 = QKeySequence::New;
-      break;
-    case 7:
-      arg00 = QKeySequence::Delete;
-      break;
-    case 8:
-      arg00 = QKeySequence::Cut;
-      break;
-    case 9:
-      arg00 = QKeySequence::Copy;
-      break;
-    case 10:
-      arg00 = QKeySequence::Paste;
-      break;
-    case 11:
-      arg00 = QKeySequence::Undo;
-      break;
-    case 12:
-      arg00 = QKeySequence::Redo;
-      break;
-    case 13:
-      arg00 = QKeySequence::Back;
-      break;
-    case 14:
-      arg00 = QKeySequence::Forward;
-      break;
-    case 15:
-      arg00 = QKeySequence::Refresh;
-      break;
-    case 16:
-      arg00 = QKeySequence::ZoomIn;
-      break;
-    case 17:
-      arg00 = QKeySequence::ZoomOut;
-      break;
-    case 18:
-      arg00 = QKeySequence::Print;
-      break;
-    case 19:
-      arg00 = QKeySequence::AddTab;
-      break;
-    case 20:
-      arg00 = QKeySequence::NextChild;
-      break;
-    case 21:
-      arg00 = QKeySequence::PreviousChild;
-      break;
-    case 22:
-      arg00 = QKeySequence::Find;
-      break;
-    case 23:
-      arg00 = QKeySequence::FindNext;
-      break;
-    case 24:
-      arg00 = QKeySequence::FindPrevious;
-      break;
-    case 25:
-      arg00 = QKeySequence::Replace;
-      break;
-    case 26:
-      arg00 = QKeySequence::SelectAll;
-      break;
-    case 27:
-      arg00 = QKeySequence::Bold;
-      break;
-    case 28:
-      arg00 = QKeySequence::Italic;
-      break;
-    case 29:
-      arg00 = QKeySequence::Underline;
-      break;
-    case 30:
-      arg00 = QKeySequence::MoveToNextChar;
-      break;
-    case 31:
-      arg00 = QKeySequence::MoveToPreviousChar;
-      break;
-    case 32:
-      arg00 = QKeySequence::MoveToNextWord;
-      break;
-    case 33:
-      arg00 = QKeySequence::MoveToPreviousWord;
-      break;
-    case 34:
-      arg00 = QKeySequence::MoveToNextLine;
-      break;
-    case 35:
-      arg00 = QKeySequence::MoveToPreviousLine;
-      break;
-    case 36:
-      arg00 = QKeySequence::MoveToNextPage;
-      break;
-    case 37:
-      arg00 = QKeySequence::MoveToPreviousPage;
-      break;
-    case 38:
-      arg00 = QKeySequence::MoveToStartOfLine;
-      break;
-    case 39:
-      arg00 = QKeySequence::MoveToEndOfLine;
-      break;
-    case 40:
-      arg00 = QKeySequence::MoveToStartOfBlock;
-      break;
-    case 41:
-      arg00 = QKeySequence::MoveToEndOfBlock;
-      break;
-    case 42:
-      arg00 = QKeySequence::MoveToStartOfDocument;
-      break;
-    case 43:
-      arg00 = QKeySequence::MoveToEndOfDocument;
-      break;
-    case 44:
-      arg00 = QKeySequence::SelectNextChar;
-      break;
-    case 45:
-      arg00 = QKeySequence::SelectPreviousChar;
-      break;
-    case 46:
-      arg00 = QKeySequence::SelectNextWord;
-      break;
-    case 47:
-      arg00 = QKeySequence::SelectPreviousWord;
-      break;
-    case 48:
-      arg00 = QKeySequence::SelectNextLine;
-      break;
-    case 49:
-      arg00 = QKeySequence::SelectPreviousLine;
-      break;
-    case 50:
-      arg00 = QKeySequence::SelectNextPage;
-      break;
-    case 51:
-      arg00 = QKeySequence::SelectPreviousPage;
-      break;
-    case 52:
-      arg00 = QKeySequence::SelectStartOfLine;
-      break;
-    case 53:
-      arg00 = QKeySequence::SelectEndOfLine;
-      break;
-    case 54:
-      arg00 = QKeySequence::SelectStartOfBlock;
-      break;
-    case 55:
-      arg00 = QKeySequence::SelectEndOfBlock;
-      break;
-    case 56:
-      arg00 = QKeySequence::SelectStartOfDocument;
-      break;
-    case 57:
-      arg00 = QKeySequence::SelectEndOfDocument;
-      break;
-    case 58:
-      arg00 = QKeySequence::DeleteStartOfWord;
-      break;
-    case 59:
-      arg00 = QKeySequence::DeleteEndOfWord;
-      break;
-    case 60:
-      arg00 = QKeySequence::DeleteEndOfLine;
-      break;
-    case 61:
-      arg00 = QKeySequence::InsertParagraphSeparator;
-      break;
-    case 62:
-      arg00 = QKeySequence::InsertLineSeparator;
-      break;
-    case 63:
-      arg00 = QKeySequence::SaveAs;
-      break;
-    case 64:
-      arg00 = QKeySequence::Preferences;
-      break;
-    case 65:
-      arg00 = QKeySequence::Quit;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QKeySequence::StandardKey passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QKeySequence::StandardKey)SvIV(ST(1));
     (void)THIS->setShortcuts(arg00);
     XSRETURN(0);
+    }
 
 ## void setSoftKeyRole(QAction::SoftKeyRole softKeyRole)
 void
@@ -754,24 +575,11 @@ QAction::setSoftKeyRole(...)
 PREINIT:
 QAction::SoftKeyRole arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QAction::NoSoftKey;
-      break;
-    case 1:
-      arg00 = QAction::PositiveSoftKey;
-      break;
-    case 2:
-      arg00 = QAction::NegativeSoftKey;
-      break;
-    case 3:
-      arg00 = QAction::SelectSoftKey;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAction::SoftKeyRole passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QAction::SoftKeyRole)SvIV(ST(1));
     (void)THIS->setSoftKeyRole(arg00);
     XSRETURN(0);
+    }
 
 ## void setStatusTip(const QString & statusTip)
 void
@@ -779,13 +587,11 @@ QAction::setStatusTip(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setStatusTip(*arg00);
     XSRETURN(0);
+    }
 
 ## void setText(const QString & text)
 void
@@ -793,13 +599,11 @@ QAction::setText(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setText(*arg00);
     XSRETURN(0);
+    }
 
 ## void setToolTip(const QString & tip)
 void
@@ -807,13 +611,11 @@ QAction::setToolTip(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setToolTip(*arg00);
     XSRETURN(0);
+    }
 
 ## void setVisible(bool arg0)
 void
@@ -821,9 +623,11 @@ QAction::setVisible(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setVisible(arg00);
     XSRETURN(0);
+    }
 
 ## void setWhatsThis(const QString & what)
 void
@@ -831,69 +635,81 @@ QAction::setWhatsThis(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setWhatsThis(*arg00);
     XSRETURN(0);
+    }
 
 ## QKeySequence shortcut()
 void
 QAction::shortcut(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QKeySequence ret = THIS->shortcut();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QKeySequence", (void *)new QKeySequence(ret));
     XSRETURN(1);
+    }
 
 ## Qt::ShortcutContext shortcutContext()
 void
 QAction::shortcutContext(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     Qt::ShortcutContext ret = THIS->shortcutContext();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
-## bool showStatusText(QWidget * widget = 0)
 ## bool showStatusText(QWidget * widget)
+## bool showStatusText(QWidget * widget = 0)
 void
 QAction::showStatusText(...)
 PREINIT:
-QWidget * arg00 = 0;
-QWidget * arg10;
+QWidget * arg00;
+QWidget * arg10 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        bool ret = THIS->showStatusText(arg00);
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-        break;
-      }
-    case 2:
-      {
-        if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        if (1) {
+      
     bool ret = THIS->showStatusText(arg10);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
         break;
       }
-    default:
+      case 2:
       {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
+    bool ret = THIS->showStatusText(arg00);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QAction::SoftKeyRole softKeyRole()
@@ -901,63 +717,235 @@ void
 QAction::softKeyRole(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QAction::SoftKeyRole ret = THIS->softKeyRole();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QString statusTip()
 void
 QAction::statusTip(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->statusTip();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## QString text()
 void
 QAction::text(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->text();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## void toggle()
 void
 QAction::toggle(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->toggle();
     XSRETURN(0);
+    }
 
 ## QString toolTip()
 void
 QAction::toolTip(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->toolTip();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## void trigger()
 void
 QAction::trigger(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->trigger();
     XSRETURN(0);
+    }
 
 ## QString whatsThis()
 void
 QAction::whatsThis(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->whatsThis();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
+    XSRETURN(1);
+    }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# MenuRole::NoRole
+void
+NoRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::NoRole);
+    XSRETURN(1);
+
+
+# MenuRole::TextHeuristicRole
+void
+TextHeuristicRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::TextHeuristicRole);
+    XSRETURN(1);
+
+
+# MenuRole::ApplicationSpecificRole
+void
+ApplicationSpecificRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::ApplicationSpecificRole);
+    XSRETURN(1);
+
+
+# MenuRole::AboutQtRole
+void
+AboutQtRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::AboutQtRole);
+    XSRETURN(1);
+
+
+# MenuRole::AboutRole
+void
+AboutRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::AboutRole);
+    XSRETURN(1);
+
+
+# MenuRole::PreferencesRole
+void
+PreferencesRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::PreferencesRole);
+    XSRETURN(1);
+
+
+# MenuRole::QuitRole
+void
+QuitRole()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::QuitRole);
+    XSRETURN(1);
+
+
+# SoftKeyRole::NoSoftKey
+void
+NoSoftKey()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::NoSoftKey);
+    XSRETURN(1);
+
+
+# SoftKeyRole::PositiveSoftKey
+void
+PositiveSoftKey()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::PositiveSoftKey);
+    XSRETURN(1);
+
+
+# SoftKeyRole::NegativeSoftKey
+void
+NegativeSoftKey()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::NegativeSoftKey);
+    XSRETURN(1);
+
+
+# SoftKeyRole::SelectSoftKey
+void
+SelectSoftKey()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::SelectSoftKey);
+    XSRETURN(1);
+
+
+# Priority::LowPriority
+void
+LowPriority()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::LowPriority);
+    XSRETURN(1);
+
+
+# Priority::NormalPriority
+void
+NormalPriority()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::NormalPriority);
+    XSRETURN(1);
+
+
+# Priority::HighPriority
+void
+HighPriority()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::HighPriority);
+    XSRETURN(1);
+
+
+# ActionEvent::Trigger
+void
+Trigger()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::Trigger);
+    XSRETURN(1);
+
+
+# ActionEvent::Hover
+void
+Hover()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QAction::Hover);
     XSRETURN(1);

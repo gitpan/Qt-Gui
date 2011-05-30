@@ -7,18 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub RightToLeft() { 0 }
-sub Overline() { 1 }
-sub Underline() { 2 }
-sub StrikeOut() { 3 }
-sub Dummy() { 4 }
 
 
 1;
@@ -31,15 +23,34 @@ Qt::Gui::QTextItem
 
 =over
 
-=item   qreal ascent()
+=item  qreal ascent()
 
-=item   qreal descent()
+=item  qreal descent()
 
-=item   QFont font()
+=item  QFont font()
 
-=item   QString text()
+=item  QFlags<QTextItem::RenderFlag> renderFlags()
 
-=item   qreal width()
+=item  QString text()
+
+=item  qreal width()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item RightToLeft
+
+=item Overline
+
+=item Underline
+
+=item StrikeOut
+
+=item Dummy
 
 
 =back

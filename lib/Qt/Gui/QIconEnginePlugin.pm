@@ -1,34 +1,45 @@
-package Qt::Gui::QTextOption::Tab;
+package Qt::Gui::QIconEnginePlugin;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QTextOption::Tab
-# file     : QtGui/qtextoption.h
+# classname: QIconEnginePlugin
+# file     : QtGui/qiconengineplugin.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject Qt::Gui::QIconEngineFactoryInterface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
 
 =head1 NAME
 
-Qt::Gui::QTextOption::Tab
+Qt::Gui::QIconEnginePlugin
 
 =head1 PUBLIC METHODS
 
 =over
 
-=item    QTextOption::Tab()
+=item   QIconEnginePlugin(QObject * parent)
 
-=item   bool operator!=(const QTextOption::Tab & other)
+=item   QIconEnginePlugin(QObject * parent = 0)
 
-=item   bool operator==(const QTextOption::Tab & other)
+=item   ~QIconEnginePlugin()
+
+=item  QIconEngine * create(const QString & filename)
+
+=item  QStringList keys()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

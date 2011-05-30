@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsSceneEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsSceneEvent/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Mouse() { 0 }
-sub Keyboard() { 1 }
-sub Other() { 2 }
 
 
 1;
@@ -30,27 +24,44 @@ Qt::Gui::QGraphicsSceneContextMenuEvent
 
 =over
 
-=item    QGraphicsSceneContextMenuEvent(QGraphicsSceneContextMenuEvent::Type type = QGraphicsSceneContextMenuEvent::None)
+=item   QGraphicsSceneContextMenuEvent(QGraphicsSceneContextMenuEvent::Type type)
 
-=item    QGraphicsSceneContextMenuEvent(QGraphicsSceneContextMenuEvent::Type type)
+=item   QGraphicsSceneContextMenuEvent(QGraphicsSceneContextMenuEvent::Type type = QGraphicsSceneContextMenuEvent::None)
 
-=item    ~QGraphicsSceneContextMenuEvent()
+=item   ~QGraphicsSceneContextMenuEvent()
 
-=item   QPointF pos()
+=item  QFlags<Qt::KeyboardModifier> modifiers()
 
-=item   QGraphicsSceneContextMenuEvent::Reason reason()
+=item  QPointF pos()
 
-=item   QPointF scenePos()
+=item  QGraphicsSceneContextMenuEvent::Reason reason()
 
-=item   QPoint screenPos()
+=item  QPointF scenePos()
 
-=item   void setPos(const QPointF & pos)
+=item  QPoint screenPos()
 
-=item   void setReason(QGraphicsSceneContextMenuEvent::Reason reason)
+=item  void setModifiers(QFlags<Qt::KeyboardModifier> modifiers)
 
-=item   void setScenePos(const QPointF & pos)
+=item  void setPos(const QPointF & pos)
 
-=item   void setScreenPos(const QPoint & pos)
+=item  void setReason(QGraphicsSceneContextMenuEvent::Reason reason)
+
+=item  void setScenePos(const QPointF & pos)
+
+=item  void setScreenPos(const QPoint & pos)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Mouse
+
+=item Keyboard
+
+=item Other
 
 
 =back

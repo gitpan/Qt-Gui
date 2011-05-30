@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDateTimeEdit/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDateTimeEdit/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,13 +24,20 @@ Qt::Gui::QDateEdit
 
 =over
 
-=item    QDateEdit(QWidget * parent = 0)
+=item   QDateEdit(QWidget * parent)
 
-=item    QDateEdit(QWidget * parent)
+=item   QDateEdit(QWidget * parent = 0)
 
-=item    QDateEdit(const QDate & date, QWidget * parent = 0)
+=item   QDateEdit(const QDate & date, QWidget * parent)
 
-=item    QDateEdit(const QDate & date, QWidget * parent)
+=item   QDateEdit(const QDate & date, QWidget * parent = 0)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

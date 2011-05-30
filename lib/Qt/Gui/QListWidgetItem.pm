@@ -7,15 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
-sub UserType() { 1 }
 
 
 1;
@@ -28,111 +23,120 @@ Qt::Gui::QListWidgetItem
 
 =over
 
-=item    QListWidgetItem(const QListWidgetItem & other)
+=item   QListWidgetItem(const QListWidgetItem & other)
 
-=item    QListWidgetItem(QListWidget * view, int type = QListWidgetItem::Type)
+=item   QListWidgetItem(QListWidget * view, int type)
 
-=item    QListWidgetItem(QListWidget * view, int type)
+=item   QListWidgetItem(QListWidget * view, int type = QListWidgetItem::Type)
 
-=item    QListWidgetItem(QListWidget * view = 0, int type = QListWidgetItem::Type)
+=item   QListWidgetItem(QListWidget * view = 0, int type = QListWidgetItem::Type)
 
-=item    QListWidgetItem(QListWidget * view, int type = QListWidgetItem::Type)
+=item   QListWidgetItem(const QString & text, QListWidget * view, int type)
 
-=item    QListWidgetItem(const QString & text, QListWidget * view, int type = QListWidgetItem::Type)
+=item   QListWidgetItem(const QString & text, QListWidget * view, int type = QListWidgetItem::Type)
 
-=item    QListWidgetItem(const QString & text, QListWidget * view, int type)
+=item   QListWidgetItem(const QString & text, QListWidget * view = 0, int type = QListWidgetItem::Type)
 
-=item    QListWidgetItem(const QString & text, QListWidget * view = 0, int type = QListWidgetItem::Type)
+=item   QListWidgetItem(const QIcon & icon, const QString & text, QListWidget * view, int type)
 
-=item    QListWidgetItem(const QString & text, QListWidget * view, int type = QListWidgetItem::Type)
+=item   QListWidgetItem(const QIcon & icon, const QString & text, QListWidget * view, int type = QListWidgetItem::Type)
 
-=item    QListWidgetItem(const QIcon & icon, const QString & text, QListWidget * view, int type = QListWidgetItem::Type)
+=item   QListWidgetItem(const QIcon & icon, const QString & text, QListWidget * view = 0, int type = QListWidgetItem::Type)
 
-=item    QListWidgetItem(const QIcon & icon, const QString & text, QListWidget * view, int type)
+=item   ~QListWidgetItem()
 
-=item    QListWidgetItem(const QIcon & icon, const QString & text, QListWidget * view = 0, int type = QListWidgetItem::Type)
+=item  QBrush background()
 
-=item    QListWidgetItem(const QIcon & icon, const QString & text, QListWidget * view, int type = QListWidgetItem::Type)
+=item  QColor backgroundColor()
 
-=item    ~QListWidgetItem()
+=item  Qt::CheckState checkState()
 
-=item   QBrush background()
+=item  QListWidgetItem * clone()
 
-=item   QColor backgroundColor()
+=item  QVariant data(int role)
 
-=item   Qt::CheckState checkState()
+=item  QFlags<Qt::ItemFlag> flags()
 
-=item   QListWidgetItem * clone()
+=item  QFont font()
 
-=item   QVariant data(int role)
+=item  QBrush foreground()
 
-=item   QFont font()
+=item  QIcon icon()
 
-=item   QBrush foreground()
+=item  bool isHidden()
 
-=item   QIcon icon()
+=item  bool isSelected()
 
-=item   bool isHidden()
+=item  QListWidget * listWidget()
 
-=item   bool isSelected()
+=item  bool operator<(const QListWidgetItem & other)
 
-=item   QListWidget * listWidget()
+=item  QListWidgetItem & operator=(const QListWidgetItem & other)
 
-=item   bool operator<(const QListWidgetItem & other)
+=item  void read(QDataStream & in)
 
-=item   QListWidgetItem & operator=(const QListWidgetItem & other)
+=item  void setBackground(const QBrush & brush)
 
-=item   void read(QDataStream & in)
+=item  void setBackgroundColor(const QColor & color)
 
-=item   void setBackground(const QBrush & brush)
+=item  void setCheckState(Qt::CheckState state)
 
-=item   void setBackgroundColor(const QColor & color)
+=item  void setData(int role, const QVariant & value)
 
-=item   void setCheckState(Qt::CheckState state)
+=item  void setFlags(QFlags<Qt::ItemFlag> flags)
 
-=item   void setData(int role, const QVariant & value)
+=item  void setFont(const QFont & font)
 
-=item   void setFont(const QFont & font)
+=item  void setForeground(const QBrush & brush)
 
-=item   void setForeground(const QBrush & brush)
+=item  void setHidden(bool hide)
 
-=item   void setHidden(bool hide)
+=item  void setIcon(const QIcon & icon)
 
-=item   void setIcon(const QIcon & icon)
+=item  void setSelected(bool select)
 
-=item   void setSelected(bool select)
+=item  void setSizeHint(const QSize & size)
 
-=item   void setSizeHint(const QSize & size)
+=item  void setStatusTip(const QString & statusTip)
 
-=item   void setStatusTip(const QString & statusTip)
+=item  void setText(const QString & text)
 
-=item   void setText(const QString & text)
+=item  void setTextAlignment(int alignment)
 
-=item   void setTextAlignment(int alignment)
+=item  void setTextColor(const QColor & color)
 
-=item   void setTextColor(const QColor & color)
+=item  void setToolTip(const QString & toolTip)
 
-=item   void setToolTip(const QString & toolTip)
+=item  void setWhatsThis(const QString & whatsThis)
 
-=item   void setWhatsThis(const QString & whatsThis)
+=item  QSize sizeHint()
 
-=item   QSize sizeHint()
+=item  QString statusTip()
 
-=item   QString statusTip()
+=item  QString text()
 
-=item   QString text()
+=item  int textAlignment()
 
-=item   int textAlignment()
+=item  QColor textColor()
 
-=item   QColor textColor()
+=item  QString toolTip()
 
-=item   QString toolTip()
+=item  int type()
 
-=item   int type()
+=item  QString whatsThis()
 
-=item   QString whatsThis()
+=item  void write(QDataStream & out)
 
-=item   void write(QDataStream & out)
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Type
+
+=item UserType
 
 
 =back

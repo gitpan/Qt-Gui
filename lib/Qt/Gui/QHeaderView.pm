@@ -7,19 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractItemView/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractItemView/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Interactive() { 0 }
-sub Stretch() { 1 }
-sub Fixed() { 2 }
-sub ResizeToContents() { 3 }
-sub Custom() { 4 }
 
 
 1;
@@ -32,127 +24,148 @@ Qt::Gui::QHeaderView
 
 =over
 
-=item    QHeaderView(Qt::Orientation orientation, QWidget * parent = 0)
+=item   QHeaderView(Qt::Orientation orientation, QWidget * parent)
 
-=item    QHeaderView(Qt::Orientation orientation, QWidget * parent)
+=item   QHeaderView(Qt::Orientation orientation, QWidget * parent = 0)
 
-=item    ~QHeaderView()
+=item   ~QHeaderView()
 
-=item   bool cascadingSectionResizes()
+=item  bool cascadingSectionResizes()
 
-=item   int count()
+=item  int count()
 
-=item   int defaultSectionSize()
+=item  QFlags<Qt::AlignmentFlag> defaultAlignment()
 
-=item   void doItemsLayout()
+=item  int defaultSectionSize()
 
-=item   void headerDataChanged(Qt::Orientation orientation, int logicalFirst, int logicalLast)
+=item  void doItemsLayout()
 
-=item   int hiddenSectionCount()
+=item  void headerDataChanged(Qt::Orientation orientation, int logicalFirst, int logicalLast)
 
-=item   void hideSection(int logicalIndex)
+=item  int hiddenSectionCount()
 
-=item   bool highlightSections()
+=item  void hideSection(int logicalIndex)
 
-=item   bool isClickable()
+=item  bool highlightSections()
 
-=item   bool isMovable()
+=item  bool isClickable()
 
-=item   bool isSectionHidden(int logicalIndex)
+=item  bool isMovable()
 
-=item   bool isSortIndicatorShown()
+=item  bool isSectionHidden(int logicalIndex)
 
-=item   int length()
+=item  bool isSortIndicatorShown()
 
-=item   int logicalIndex(int visualIndex)
+=item  int length()
 
-=item   int logicalIndexAt(int position)
+=item  int logicalIndex(int visualIndex)
 
-=item   int logicalIndexAt(const QPoint & pos)
+=item  int logicalIndexAt(int position)
 
-=item   int logicalIndexAt(int x, int y)
+=item  int logicalIndexAt(const QPoint & pos)
 
-=item   int minimumSectionSize()
+=item  int logicalIndexAt(int x, int y)
 
-=item   void moveSection(int from, int to)
+=item  int minimumSectionSize()
 
-=item   int offset()
+=item  void moveSection(int from, int to)
 
-=item   Qt::Orientation orientation()
+=item  int offset()
 
-=item   void reset()
+=item  Qt::Orientation orientation()
 
-=item   QHeaderView::ResizeMode resizeMode(int logicalIndex)
+=item  void reset()
 
-=item   void resizeSection(int logicalIndex, int size)
+=item  QHeaderView::ResizeMode resizeMode(int logicalIndex)
 
-=item   void resizeSections(QHeaderView::ResizeMode mode)
+=item  void resizeSection(int logicalIndex, int size)
 
-=item   bool restoreState(const QByteArray & state)
+=item  void resizeSections(QHeaderView::ResizeMode mode)
 
-=item   QByteArray saveState()
+=item  bool restoreState(const QByteArray & state)
 
-=item   int sectionPosition(int logicalIndex)
+=item  QByteArray saveState()
 
-=item   int sectionSize(int logicalIndex)
+=item  int sectionPosition(int logicalIndex)
 
-=item   int sectionSizeHint(int logicalIndex)
+=item  int sectionSize(int logicalIndex)
 
-=item   int sectionViewportPosition(int logicalIndex)
+=item  int sectionSizeHint(int logicalIndex)
 
-=item   bool sectionsHidden()
+=item  int sectionViewportPosition(int logicalIndex)
 
-=item   bool sectionsMoved()
+=item  bool sectionsHidden()
 
-=item   void setCascadingSectionResizes(bool enable)
+=item  bool sectionsMoved()
 
-=item   void setClickable(bool clickable)
+=item  void setCascadingSectionResizes(bool enable)
 
-=item   void setDefaultSectionSize(int size)
+=item  void setClickable(bool clickable)
 
-=item   void setHighlightSections(bool highlight)
+=item  void setDefaultAlignment(QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setMinimumSectionSize(int size)
+=item  void setDefaultSectionSize(int size)
 
-=item   void setModel(QAbstractItemModel * model)
+=item  void setHighlightSections(bool highlight)
 
-=item   void setMovable(bool movable)
+=item  void setMinimumSectionSize(int size)
 
-=item   void setOffset(int offset)
+=item  void setModel(QAbstractItemModel * model)
 
-=item   void setOffsetToLastSection()
+=item  void setMovable(bool movable)
 
-=item   void setOffsetToSectionPosition(int visualIndex)
+=item  void setOffset(int offset)
 
-=item   void setResizeMode(QHeaderView::ResizeMode mode)
+=item  void setOffsetToLastSection()
 
-=item   void setResizeMode(int logicalIndex, QHeaderView::ResizeMode mode)
+=item  void setOffsetToSectionPosition(int visualIndex)
 
-=item   void setSectionHidden(int logicalIndex, bool hide)
+=item  void setResizeMode(QHeaderView::ResizeMode mode)
 
-=item   void setSortIndicator(int logicalIndex, Qt::SortOrder order)
+=item  void setResizeMode(int logicalIndex, QHeaderView::ResizeMode mode)
 
-=item   void setSortIndicatorShown(bool show)
+=item  void setSectionHidden(int logicalIndex, bool hide)
 
-=item   void setStretchLastSection(bool stretch)
+=item  void setSortIndicator(int logicalIndex, Qt::SortOrder order)
 
-=item   void showSection(int logicalIndex)
+=item  void setSortIndicatorShown(bool show)
 
-=item   QSize sizeHint()
+=item  void setStretchLastSection(bool stretch)
 
-=item   Qt::SortOrder sortIndicatorOrder()
+=item  void showSection(int logicalIndex)
 
-=item   int sortIndicatorSection()
+=item  QSize sizeHint()
 
-=item   bool stretchLastSection()
+=item  Qt::SortOrder sortIndicatorOrder()
 
-=item   int stretchSectionCount()
+=item  int sortIndicatorSection()
 
-=item   void swapSections(int first, int second)
+=item  bool stretchLastSection()
 
-=item   int visualIndex(int logicalIndex)
+=item  int stretchSectionCount()
 
-=item   int visualIndexAt(int position)
+=item  void swapSections(int first, int second)
+
+=item  int visualIndex(int logicalIndex)
+
+=item  int visualIndexAt(int position)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Interactive
+
+=item Stretch
+
+=item Fixed
+
+=item ResizeToContents
+
+=item Custom
 
 
 =back

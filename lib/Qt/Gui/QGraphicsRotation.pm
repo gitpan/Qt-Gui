@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsTransform/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsTransform/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,27 +24,34 @@ Qt::Gui::QGraphicsRotation
 
 =over
 
-=item    QGraphicsRotation(QObject * parent = 0)
+=item   QGraphicsRotation(QObject * parent)
 
-=item    QGraphicsRotation(QObject * parent)
+=item   QGraphicsRotation(QObject * parent = 0)
 
-=item    ~QGraphicsRotation()
+=item   ~QGraphicsRotation()
 
-=item   qreal angle()
+=item  qreal angle()
 
-=item   void applyTo(QMatrix4x4 * matrix)
+=item  void applyTo(QMatrix4x4 * matrix)
 
-=item   QVector3D axis()
+=item  QVector3D axis()
 
-=item   QVector3D origin()
+=item  QVector3D origin()
 
-=item   void setAngle(qreal arg0)
+=item  void setAngle(qreal arg0)
 
-=item   void setAxis(const QVector3D & axis)
+=item  void setAxis(const QVector3D & axis)
 
-=item   void setAxis(Qt::Axis axis)
+=item  void setAxis(Qt::Axis axis)
 
-=item   void setOrigin(const QVector3D & point)
+=item  void setOrigin(const QVector3D & point)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

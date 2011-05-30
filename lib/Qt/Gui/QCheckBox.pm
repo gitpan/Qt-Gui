@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractButton/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractButton/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,25 +24,32 @@ Qt::Gui::QCheckBox
 
 =over
 
-=item    QCheckBox(QWidget * parent = 0)
+=item   QCheckBox(QWidget * parent)
 
-=item    QCheckBox(QWidget * parent)
+=item   QCheckBox(QWidget * parent = 0)
 
-=item    QCheckBox(const QString & text, QWidget * parent = 0)
+=item   QCheckBox(const QString & text, QWidget * parent)
 
-=item    QCheckBox(const QString & text, QWidget * parent)
+=item   QCheckBox(const QString & text, QWidget * parent = 0)
 
-=item   Qt::CheckState checkState()
+=item  Qt::CheckState checkState()
 
-=item   bool isTristate()
+=item  bool isTristate()
 
-=item   void setCheckState(Qt::CheckState state)
+=item  void setCheckState(Qt::CheckState state)
 
-=item   void setTristate(bool y = true)
+=item  void setTristate(bool y)
 
-=item   void setTristate(bool y)
+=item  void setTristate(bool y = true)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

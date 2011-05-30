@@ -18,7 +18,68 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-
+##  QDialog(QWidget * parent, QFlags<Qt::WindowType> f)
+##  QDialog(QWidget * parent, QFlags<Qt::WindowType> f = 0)
+##  QDialog(QWidget * parent = 0, QFlags<Qt::WindowType> f = 0)
+  void
+QDialog::new(...)
+PREINIT:
+QDialog *ret;
+QWidget * arg00;
+QFlags<Qt::WindowType> arg01;
+QWidget * arg10;
+QFlags<Qt::WindowType> arg11 = 0;
+QWidget * arg20 = 0;
+QFlags<Qt::WindowType> arg21 = 0;
+PPCODE:
+    switch(items) {
+      case 1:
+      {
+        if (1) {
+      
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        break;
+      }
+      case 2:
+      {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg10 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 3:
+      {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef) && SvIOK(ST(2))) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
+      arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
 
 ##  ~QDialog()
 void
@@ -32,8 +93,11 @@ void
 QDialog::accept(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->accept();
     XSRETURN(0);
+    }
 
 ## void done(int arg0)
 void
@@ -41,85 +105,111 @@ QDialog::done(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->done(arg00);
     XSRETURN(0);
+    }
 
 ## int exec()
 void
 QDialog::exec(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->exec();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QWidget * extension()
 void
 QDialog::extension(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QWidget * ret = THIS->extension();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
     XSRETURN(1);
+    }
 
 ## bool isSizeGripEnabled()
 void
 QDialog::isSizeGripEnabled(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isSizeGripEnabled();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QSize minimumSizeHint()
 void
 QDialog::minimumSizeHint(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSize ret = THIS->minimumSizeHint();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }
 
 ## void open()
 void
 QDialog::open(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->open();
     XSRETURN(0);
+    }
 
 ## Qt::Orientation orientation()
 void
 QDialog::orientation(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     Qt::Orientation ret = THIS->orientation();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## void reject()
 void
 QDialog::reject(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->reject();
     XSRETURN(0);
+    }
 
 ## int result()
 void
 QDialog::result(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->result();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## void setExtension(QWidget * extension)
 void
@@ -127,13 +217,18 @@ QDialog::setExtension(...)
 PREINIT:
 QWidget * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     (void)THIS->setExtension(arg00);
     XSRETURN(0);
+    }
 
 ## void setModal(bool modal)
 void
@@ -141,9 +236,11 @@ QDialog::setModal(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setModal(arg00);
     XSRETURN(0);
+    }
 
 ## void setOrientation(Qt::Orientation orientation)
 void
@@ -151,18 +248,11 @@ QDialog::setOrientation(...)
 PREINIT:
 Qt::Orientation arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = Qt::Horizontal;
-      break;
-    case 1:
-      arg00 = Qt::Vertical;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type Qt::Orientation passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (Qt::Orientation)SvIV(ST(1));
     (void)THIS->setOrientation(arg00);
     XSRETURN(0);
+    }
 
 ## void setResult(int r)
 void
@@ -170,9 +260,11 @@ QDialog::setResult(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->setResult(arg00);
     XSRETURN(0);
+    }
 
 ## void setSizeGripEnabled(bool arg0)
 void
@@ -180,9 +272,11 @@ QDialog::setSizeGripEnabled(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setSizeGripEnabled(arg00);
     XSRETURN(0);
+    }
 
 ## void setVisible(bool visible)
 void
@@ -190,9 +284,11 @@ QDialog::setVisible(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setVisible(arg00);
     XSRETURN(0);
+    }
 
 ## void showExtension(bool arg0)
 void
@@ -200,16 +296,46 @@ QDialog::showExtension(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->showExtension(arg00);
     XSRETURN(0);
+    }
 
 ## QSize sizeHint()
 void
 QDialog::sizeHint(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSize ret = THIS->sizeHint();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
+    XSRETURN(1);
+    }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# DialogCode::Rejected
+void
+Rejected()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialog::Rejected);
+    XSRETURN(1);
+
+
+# DialogCode::Accepted
+void
+Accepted()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDialog::Accepted);
     XSRETURN(1);

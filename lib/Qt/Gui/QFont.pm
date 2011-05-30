@@ -7,74 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Helvetica() { 0 }
-sub SansSerif() { 1 }
-sub Times() { 2 }
-sub Serif() { 3 }
-sub Courier() { 4 }
-sub TypeWriter() { 5 }
-sub OldEnglish() { 6 }
-sub Decorative() { 7 }
-sub System() { 8 }
-sub AnyStyle() { 9 }
-sub PreferDefault() { 0 }
-sub PreferBitmap() { 1 }
-sub PreferDevice() { 2 }
-sub PreferOutline() { 3 }
-sub ForceOutline() { 4 }
-sub PreferMatch() { 5 }
-sub PreferQuality() { 6 }
-sub PreferAntialias() { 7 }
-sub NoAntialias() { 8 }
-sub OpenGLCompatible() { 9 }
-sub NoFontMerging() { 10 }
-sub Light() { 0 }
-sub Normal() { 1 }
-sub DemiBold() { 2 }
-sub Bold() { 3 }
-sub Black() { 4 }
-sub StyleNormal() { 0 }
-sub StyleItalic() { 1 }
-sub StyleOblique() { 2 }
-sub UltraCondensed() { 0 }
-sub ExtraCondensed() { 1 }
-sub Condensed() { 2 }
-sub SemiCondensed() { 3 }
-sub Unstretched() { 4 }
-sub SemiExpanded() { 5 }
-sub Expanded() { 6 }
-sub ExtraExpanded() { 7 }
-sub UltraExpanded() { 8 }
-sub MixedCase() { 0 }
-sub AllUppercase() { 1 }
-sub AllLowercase() { 2 }
-sub SmallCaps() { 3 }
-sub Capitalize() { 4 }
-sub PercentageSpacing() { 0 }
-sub AbsoluteSpacing() { 1 }
-sub FamilyResolved() { 0 }
-sub SizeResolved() { 1 }
-sub StyleHintResolved() { 2 }
-sub StyleStrategyResolved() { 3 }
-sub WeightResolved() { 4 }
-sub StyleResolved() { 5 }
-sub UnderlineResolved() { 6 }
-sub OverlineResolved() { 7 }
-sub StrikeOutResolved() { 8 }
-sub FixedPitchResolved() { 9 }
-sub StretchResolved() { 10 }
-sub KerningResolved() { 11 }
-sub CapitalizationResolved() { 12 }
-sub LetterSpacingResolved() { 13 }
-sub WordSpacingResolved() { 14 }
-sub AllPropertiesResolved() { 15 }
 
 
 1;
@@ -87,167 +23,300 @@ Qt::Gui::QFont
 
 =over
 
-=item    QFont()
+=item   QFont()
 
-=item    QFont(const QFont & arg0)
+=item   QFont(const QFont & arg0)
 
-=item    QFont(const QFont & arg0, QPaintDevice * pd)
+=item   QFont(const QFont & arg0, QPaintDevice * pd)
 
-=item    QFont(const QString & family, int pointSize, int weight, bool italic = false)
+=item   QFont(const QString & family, int pointSize, int weight, bool italic)
 
-=item    QFont(const QString & family, int pointSize, int weight, bool italic)
+=item   QFont(const QString & family, int pointSize, int weight, bool italic = false)
 
-=item    QFont(const QString & family, int pointSize, int weight = -1, bool italic = false)
+=item   QFont(const QString & family, int pointSize, int weight = -1, bool italic = false)
 
-=item    QFont(const QString & family, int pointSize, int weight, bool italic = false)
+=item   QFont(const QString & family, int pointSize = -1, int weight = -1, bool italic = false)
 
-=item    QFont(const QString & family, int pointSize = -1, int weight = -1, bool italic = false)
+=item   ~QFont()
 
-=item    QFont(const QString & family, int pointSize, int weight = -1, bool italic = false)
+=item  bool bold()
 
-=item    ~QFont()
+=item  static void cacheStatistics()
 
-=item   bool bold()
+=item  QFont::Capitalization capitalization()
 
-=item   static void cacheStatistics()
+=item  static void cleanup()
 
-=item   QFont::Capitalization capitalization()
+=item  QString defaultFamily()
 
-=item   static void cleanup()
+=item  bool exactMatch()
 
-=item   QString defaultFamily()
+=item  QString family()
 
-=item   bool exactMatch()
+=item  bool fixedPitch()
 
-=item   QString family()
+=item  FT_FaceRec_ * freetypeFace()
 
-=item   bool fixedPitch()
+=item  bool fromString(const QString & arg0)
 
-=item   FT_FaceRec_ * freetypeFace()
+=item  unsigned long handle()
 
-=item   bool fromString(const QString & arg0)
+=item  static void initialize()
 
-=item   unsigned long handle()
+=item  static void insertSubstitution(const QString & arg0, const QString & arg1)
 
-=item   static void initialize()
+=item  static void insertSubstitutions(const QString & arg0, const QStringList & arg1)
 
-=item   static void insertSubstitution(const QString & arg0, const QString & arg1)
+=item  bool isCopyOf(const QFont & arg0)
 
-=item   static void insertSubstitutions(const QString & arg0, const QStringList & arg1)
+=item  bool italic()
 
-=item   bool isCopyOf(const QFont & arg0)
+=item  bool kerning()
 
-=item   bool italic()
+=item  QString key()
 
-=item   bool kerning()
+=item  QString lastResortFamily()
 
-=item   QString key()
+=item  QString lastResortFont()
 
-=item   QString lastResortFamily()
+=item  qreal letterSpacing()
 
-=item   QString lastResortFont()
+=item  QFont::SpacingType letterSpacingType()
 
-=item   qreal letterSpacing()
+=item  QVariant operator QVariant()
 
-=item   QFont::SpacingType letterSpacingType()
+=item  bool operator!=(const QFont & arg0)
 
-=item   QVariant operator QVariant()
+=item  bool operator<(const QFont & arg0)
 
-=item   bool operator!=(const QFont & arg0)
+=item  QFont & operator=(const QFont & arg0)
 
-=item   bool operator<(const QFont & arg0)
+=item  bool operator==(const QFont & arg0)
 
-=item   QFont & operator=(const QFont & arg0)
+=item  bool overline()
 
-=item   bool operator==(const QFont & arg0)
+=item  int pixelSize()
 
-=item   bool overline()
+=item  int pointSize()
 
-=item   int pixelSize()
+=item  qreal pointSizeF()
 
-=item   int pointSize()
+=item  bool rawMode()
 
-=item   qreal pointSizeF()
+=item  QString rawName()
 
-=item   bool rawMode()
+=item  static void removeSubstitution(const QString & arg0)
 
-=item   QString rawName()
+=item  uint resolve()
 
-=item   static void removeSubstitution(const QString & arg0)
+=item  QFont resolve(const QFont & arg0)
 
-=item   uint resolve()
+=item  void resolve(uint mask)
 
-=item   QFont resolve(const QFont & arg0)
+=item  void setBold(bool arg0)
 
-=item   void resolve(uint mask)
+=item  void setCapitalization(QFont::Capitalization arg0)
 
-=item   void setBold(bool arg0)
+=item  void setFamily(const QString & arg0)
 
-=item   void setCapitalization(QFont::Capitalization arg0)
+=item  void setFixedPitch(bool arg0)
 
-=item   void setFamily(const QString & arg0)
+=item  void setItalic(bool b)
 
-=item   void setFixedPitch(bool arg0)
+=item  void setKerning(bool arg0)
 
-=item   void setItalic(bool b)
+=item  void setLetterSpacing(QFont::SpacingType type, qreal spacing)
 
-=item   void setKerning(bool arg0)
+=item  void setOverline(bool arg0)
 
-=item   void setLetterSpacing(QFont::SpacingType type, qreal spacing)
+=item  void setPixelSize(int arg0)
 
-=item   void setOverline(bool arg0)
+=item  void setPointSize(int arg0)
 
-=item   void setPixelSize(int arg0)
+=item  void setPointSizeF(qreal arg0)
 
-=item   void setPointSize(int arg0)
+=item  void setRawMode(bool arg0)
 
-=item   void setPointSizeF(qreal arg0)
+=item  void setRawName(const QString & arg0)
 
-=item   void setRawMode(bool arg0)
+=item  void setStretch(int arg0)
 
-=item   void setRawName(const QString & arg0)
+=item  void setStrikeOut(bool arg0)
 
-=item   void setStretch(int arg0)
+=item  void setStyle(QFont::Style style)
 
-=item   void setStrikeOut(bool arg0)
+=item  void setStyleHint(QFont::StyleHint arg0, QFont::StyleStrategy arg1)
 
-=item   void setStyle(QFont::Style style)
+=item  void setStyleHint(QFont::StyleHint arg0, QFont::StyleStrategy arg1 = QFont::PreferDefault)
 
-=item   void setStyleHint(QFont::StyleHint arg0, QFont::StyleStrategy arg1 = QFont::PreferDefault)
+=item  void setStyleStrategy(QFont::StyleStrategy s)
 
-=item   void setStyleHint(QFont::StyleHint arg0, QFont::StyleStrategy arg1)
+=item  void setUnderline(bool arg0)
 
-=item   void setStyleStrategy(QFont::StyleStrategy s)
+=item  void setWeight(int arg0)
 
-=item   void setUnderline(bool arg0)
+=item  void setWordSpacing(qreal spacing)
 
-=item   void setWeight(int arg0)
+=item  int stretch()
 
-=item   void setWordSpacing(qreal spacing)
+=item  bool strikeOut()
 
-=item   int stretch()
+=item  QFont::Style style()
 
-=item   bool strikeOut()
+=item  QFont::StyleHint styleHint()
 
-=item   QFont::Style style()
+=item  QFont::StyleStrategy styleStrategy()
 
-=item   QFont::StyleHint styleHint()
+=item  static QString substitute(const QString & arg0)
 
-=item   QFont::StyleStrategy styleStrategy()
+=item  static QStringList substitutes(const QString & arg0)
 
-=item   static QString substitute(const QString & arg0)
+=item  static QStringList substitutions()
 
-=item   static QStringList substitutes(const QString & arg0)
+=item  QString toString()
 
-=item   static QStringList substitutions()
+=item  bool underline()
 
-=item   QString toString()
+=item  int weight()
 
-=item   bool underline()
+=item  qreal wordSpacing()
 
-=item   int weight()
 
-=item   qreal wordSpacing()
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Helvetica
+
+=item SansSerif
+
+=item Times
+
+=item Serif
+
+=item Courier
+
+=item TypeWriter
+
+=item OldEnglish
+
+=item Decorative
+
+=item System
+
+=item AnyStyle
+
+=item Cursive
+
+=item Monospace
+
+=item Fantasy
+
+=item PreferDefault
+
+=item PreferBitmap
+
+=item PreferDevice
+
+=item PreferOutline
+
+=item ForceOutline
+
+=item PreferMatch
+
+=item PreferQuality
+
+=item PreferAntialias
+
+=item NoAntialias
+
+=item OpenGLCompatible
+
+=item ForceIntegerMetrics
+
+=item NoFontMerging
+
+=item Light
+
+=item Normal
+
+=item DemiBold
+
+=item Bold
+
+=item Black
+
+=item StyleNormal
+
+=item StyleItalic
+
+=item StyleOblique
+
+=item UltraCondensed
+
+=item ExtraCondensed
+
+=item Condensed
+
+=item SemiCondensed
+
+=item Unstretched
+
+=item SemiExpanded
+
+=item Expanded
+
+=item ExtraExpanded
+
+=item UltraExpanded
+
+=item MixedCase
+
+=item AllUppercase
+
+=item AllLowercase
+
+=item SmallCaps
+
+=item Capitalize
+
+=item PercentageSpacing
+
+=item AbsoluteSpacing
+
+=item FamilyResolved
+
+=item SizeResolved
+
+=item StyleHintResolved
+
+=item StyleStrategyResolved
+
+=item WeightResolved
+
+=item StyleResolved
+
+=item UnderlineResolved
+
+=item OverlineResolved
+
+=item StrikeOutResolved
+
+=item FixedPitchResolved
+
+=item StretchResolved
+
+=item KerningResolved
+
+=item CapitalizationResolved
+
+=item LetterSpacingResolved
+
+=item WordSpacingResolved
+
+=item AllPropertiesResolved
 
 
 =back

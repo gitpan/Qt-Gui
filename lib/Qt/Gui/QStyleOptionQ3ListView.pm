@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QStyleOptionComplex/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QStyleOptionComplex/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
-sub Version() { 0 }
 
 
 1;
@@ -29,9 +24,20 @@ Qt::Gui::QStyleOptionQ3ListView
 
 =over
 
-=item    QStyleOptionQ3ListView()
+=item   QStyleOptionQ3ListView()
 
-=item    QStyleOptionQ3ListView(const QStyleOptionQ3ListView & other)
+=item   QStyleOptionQ3ListView(const QStyleOptionQ3ListView & other)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Type
+
+=item Version
 
 
 =back

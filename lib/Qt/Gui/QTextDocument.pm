@@ -7,22 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub DocumentTitle() { 0 }
-sub DocumentUrl() { 1 }
-sub FindBackward() { 0 }
-sub FindCaseSensitively() { 1 }
-sub FindWholeWords() { 2 }
-sub HtmlResource() { 0 }
-sub ImageResource() { 1 }
-sub StyleSheetResource() { 2 }
-sub UserResource() { 3 }
 
 
 1;
@@ -35,159 +24,214 @@ Qt::Gui::QTextDocument
 
 =over
 
-=item    QTextDocument(QObject * parent = 0)
+=item   QTextDocument(QObject * parent)
 
-=item    QTextDocument(QObject * parent)
+=item   QTextDocument(QObject * parent = 0)
 
-=item    QTextDocument(const QString & text, QObject * parent = 0)
+=item   QTextDocument(const QString & text, QObject * parent)
 
-=item    QTextDocument(const QString & text, QObject * parent)
+=item   QTextDocument(const QString & text, QObject * parent = 0)
 
-=item    ~QTextDocument()
+=item   ~QTextDocument()
 
-=item   void addResource(int type, const QUrl & name, const QVariant & resource)
+=item  void addResource(int type, const QUrl & name, const QVariant & resource)
 
-=item   void adjustSize()
+=item  void adjustSize()
 
-=item   void appendUndoItem(QAbstractUndoItem * arg0)
+=item  void appendUndoItem(QAbstractUndoItem * arg0)
 
-=item   int availableRedoSteps()
+=item  int availableRedoSteps()
 
-=item   int availableUndoSteps()
+=item  int availableUndoSteps()
 
-=item   QTextBlock begin()
+=item  QTextBlock begin()
 
-=item   int blockCount()
+=item  int blockCount()
 
-=item   QChar characterAt(int pos)
+=item  QChar characterAt(int pos)
 
-=item   int characterCount()
+=item  int characterCount()
 
-=item   void clear()
+=item  void clear()
 
-=item   QTextDocument * clone(QObject * parent = 0)
+=item  void clearUndoRedoStacks(QTextDocument::Stacks historyToClear)
 
-=item   QTextDocument * clone(QObject * parent)
+=item  void clearUndoRedoStacks(QTextDocument::Stacks historyToClear = QTextDocument::UndoAndRedoStacks)
 
-=item   QFont defaultFont()
+=item  QTextDocument * clone(QObject * parent)
 
-=item   QString defaultStyleSheet()
+=item  QTextDocument * clone(QObject * parent = 0)
 
-=item   QTextOption defaultTextOption()
+=item  QFont defaultFont()
 
-=item   QTextDocumentPrivate * docHandle()
+=item  QString defaultStyleSheet()
 
-=item   QAbstractTextDocumentLayout * documentLayout()
+=item  QTextOption defaultTextOption()
 
-=item   qreal documentMargin()
+=item  QTextDocumentPrivate * docHandle()
 
-=item   void drawContents(QPainter * painter, const QRectF & rect = QRectF())
+=item  QAbstractTextDocumentLayout * documentLayout()
 
-=item   void drawContents(QPainter * painter, const QRectF & rect)
+=item  qreal documentMargin()
 
-=item   QTextBlock end()
+=item  void drawContents(QPainter * painter, const QRectF & rect)
 
-=item   QTextBlock findBlock(int pos)
+=item  void drawContents(QPainter * painter, const QRectF & rect = QRectF())
 
-=item   QTextBlock findBlockByLineNumber(int blockNumber)
+=item  QTextBlock end()
 
-=item   QTextBlock findBlockByNumber(int blockNumber)
+=item  QTextCursor find(const QString & subString, int from, QFlags<QTextDocument::FindFlag> options)
 
-=item   QTextBlock firstBlock()
+=item  QTextCursor find(const QString & subString, int from, QFlags<QTextDocument::FindFlag> options = 0)
 
-=item   QTextFrame * frameAt(int pos)
+=item  QTextCursor find(const QString & subString, int from = 0, QFlags<QTextDocument::FindFlag> options = 0)
 
-=item   qreal idealWidth()
+=item  QTextCursor find(const QString & subString, const QTextCursor & from, QFlags<QTextDocument::FindFlag> options)
 
-=item   qreal indentWidth()
+=item  QTextCursor find(const QString & subString, const QTextCursor & from, QFlags<QTextDocument::FindFlag> options = 0)
 
-=item   bool isEmpty()
+=item  QTextCursor find(const QRegExp & expr, int from, QFlags<QTextDocument::FindFlag> options)
 
-=item   bool isModified()
+=item  QTextCursor find(const QRegExp & expr, int from, QFlags<QTextDocument::FindFlag> options = 0)
 
-=item   bool isRedoAvailable()
+=item  QTextCursor find(const QRegExp & expr, int from = 0, QFlags<QTextDocument::FindFlag> options = 0)
 
-=item   bool isUndoAvailable()
+=item  QTextCursor find(const QRegExp & expr, const QTextCursor & from, QFlags<QTextDocument::FindFlag> options)
 
-=item   bool isUndoRedoEnabled()
+=item  QTextCursor find(const QRegExp & expr, const QTextCursor & from, QFlags<QTextDocument::FindFlag> options = 0)
 
-=item   QTextBlock lastBlock()
+=item  QTextBlock findBlock(int pos)
 
-=item   int lineCount()
+=item  QTextBlock findBlockByLineNumber(int blockNumber)
 
-=item   void markContentsDirty(int from, int length)
+=item  QTextBlock findBlockByNumber(int blockNumber)
 
-=item   int maximumBlockCount()
+=item  QTextBlock firstBlock()
 
-=item   QString metaInformation(QTextDocument::MetaInformation info)
+=item  QTextFrame * frameAt(int pos)
 
-=item   QTextObject * object(int objectIndex)
+=item  qreal idealWidth()
 
-=item   QTextObject * objectForFormat(const QTextFormat & arg0)
+=item  qreal indentWidth()
 
-=item   int pageCount()
+=item  bool isEmpty()
 
-=item   QSizeF pageSize()
+=item  bool isModified()
 
-=item   void print(QPrinter * printer)
+=item  bool isRedoAvailable()
 
-=item   void redo()
+=item  bool isUndoAvailable()
 
-=item   void redo(QTextCursor * cursor)
+=item  bool isUndoRedoEnabled()
 
-=item   QVariant resource(int type, const QUrl & name)
+=item  QTextBlock lastBlock()
 
-=item   int revision()
+=item  int lineCount()
 
-=item   QTextFrame * rootFrame()
+=item  void markContentsDirty(int from, int length)
 
-=item   void setDefaultFont(const QFont & font)
+=item  int maximumBlockCount()
 
-=item   void setDefaultStyleSheet(const QString & sheet)
+=item  QString metaInformation(QTextDocument::MetaInformation info)
 
-=item   void setDefaultTextOption(const QTextOption & option)
+=item  QTextObject * object(int objectIndex)
 
-=item   void setDocumentLayout(QAbstractTextDocumentLayout * layout)
+=item  QTextObject * objectForFormat(const QTextFormat & arg0)
 
-=item   void setDocumentMargin(qreal margin)
+=item  int pageCount()
 
-=item   void setHtml(const QString & html)
+=item  QSizeF pageSize()
 
-=item   void setIndentWidth(qreal width)
+=item  void print(QPrinter * printer)
 
-=item   void setMaximumBlockCount(int maximum)
+=item  void redo()
 
-=item   void setMetaInformation(QTextDocument::MetaInformation info, const QString & arg1)
+=item  void redo(QTextCursor * cursor)
 
-=item   void setModified(bool m = true)
+=item  QVariant resource(int type, const QUrl & name)
 
-=item   void setModified(bool m)
+=item  int revision()
 
-=item   void setPageSize(const QSizeF & size)
+=item  QTextFrame * rootFrame()
 
-=item   void setPlainText(const QString & text)
+=item  void setDefaultFont(const QFont & font)
 
-=item   void setTextWidth(qreal width)
+=item  void setDefaultStyleSheet(const QString & sheet)
 
-=item   void setUndoRedoEnabled(bool enable)
+=item  void setDefaultTextOption(const QTextOption & option)
 
-=item   void setUseDesignMetrics(bool b)
+=item  void setDocumentLayout(QAbstractTextDocumentLayout * layout)
 
-=item   QSizeF size()
+=item  void setDocumentMargin(qreal margin)
 
-=item   qreal textWidth()
+=item  void setHtml(const QString & html)
 
-=item   QString toHtml(const QByteArray & encoding = QByteArray())
+=item  void setIndentWidth(qreal width)
 
-=item   QString toHtml(const QByteArray & encoding)
+=item  void setMaximumBlockCount(int maximum)
 
-=item   QString toPlainText()
+=item  void setMetaInformation(QTextDocument::MetaInformation info, const QString & arg1)
 
-=item   void undo()
+=item  void setModified(bool m)
 
-=item   void undo(QTextCursor * cursor)
+=item  void setModified(bool m = true)
 
-=item   bool useDesignMetrics()
+=item  void setPageSize(const QSizeF & size)
+
+=item  void setPlainText(const QString & text)
+
+=item  void setTextWidth(qreal width)
+
+=item  void setUndoRedoEnabled(bool enable)
+
+=item  void setUseDesignMetrics(bool b)
+
+=item  QSizeF size()
+
+=item  qreal textWidth()
+
+=item  QString toHtml(const QByteArray & encoding)
+
+=item  QString toHtml(const QByteArray & encoding = QByteArray())
+
+=item  QString toPlainText()
+
+=item  void undo()
+
+=item  void undo(QTextCursor * cursor)
+
+=item  bool useDesignMetrics()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item DocumentTitle
+
+=item DocumentUrl
+
+=item FindBackward
+
+=item FindCaseSensitively
+
+=item FindWholeWords
+
+=item HtmlResource
+
+=item ImageResource
+
+=item StyleSheetResource
+
+=item UserResource
+
+=item UndoStack
+
+=item RedoStack
+
+=item UndoAndRedoStacks
 
 
 =back

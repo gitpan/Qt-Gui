@@ -19,59 +19,95 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QStyleOptionComplex(const QStyleOptionComplex & other)
-##  QStyleOptionComplex(int version, int type = QStyleOptionComplex::SO_Complex)
 ##  QStyleOptionComplex(int version, int type)
-##  QStyleOptionComplex(int version = QStyleOptionComplex::Version, int type = QStyleOptionComplex::SO_Complex)
 ##  QStyleOptionComplex(int version, int type = QStyleOptionComplex::SO_Complex)
+##  QStyleOptionComplex(int version = QStyleOptionComplex::Version, int type = QStyleOptionComplex::SO_Complex)
   void
 QStyleOptionComplex::new(...)
 PREINIT:
 QStyleOptionComplex *ret;
 QStyleOptionComplex * arg00;
 int arg10;
-int arg11 = QStyleOptionComplex::SO_Complex;
+int arg11;
 int arg20;
-int arg21;
+int arg21 = QStyleOptionComplex::SO_Complex;
 int arg30 = QStyleOptionComplex::Version;
 int arg31 = QStyleOptionComplex::SO_Complex;
-int arg40;
-int arg41 = QStyleOptionComplex::SO_Complex;
 PPCODE:
     switch(items) {
-    case 2:
+      case 1:
+      {
+        if (1) {
+      
+    ret = new QStyleOptionComplex(arg30, arg31);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionComplex", (void *)ret);
+    XSRETURN(1);
+    }
+        break;
+      }
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QStyleOptionComplex")) {
-        arg00 = reinterpret_cast<QStyleOptionComplex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QStyleOptionComplex");
+      arg00 = reinterpret_cast<QStyleOptionComplex *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QStyleOptionComplex(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionComplex", (void *)ret);
     XSRETURN(1);
-        break;
-      }
-    case 3:
-      {
-        arg20 = (int)SvIV(ST(1));
-    arg21 = (int)SvIV(ST(2));
+    }
+        else if (SvIOK(ST(1))) {
+      arg20 = (int)SvIV(ST(1));
     ret = new QStyleOptionComplex(arg20, arg21);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionComplex", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 1:
+      case 3:
       {
-        ret = new QStyleOptionComplex(arg30, arg31);
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
+    ret = new QStyleOptionComplex(arg10, arg11);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionComplex", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
+
+
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# StyleOptionType::Type
+void
+Type()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QStyleOptionComplex::Type);
+    XSRETURN(1);
+
+
+# StyleOptionVersion::Version
+void
+Version()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QStyleOptionComplex::Version);
+    XSRETURN(1);

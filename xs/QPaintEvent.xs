@@ -28,24 +28,29 @@ QRegion * arg00;
 QRect * arg10;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QRegion")) {
-        arg00 = reinterpret_cast<QRegion *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QRegion");
+      arg00 = reinterpret_cast<QRegion *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QPaintEvent(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPaintEvent", (void *)ret);
     XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QRect")) {
+      arg10 = reinterpret_cast<QRect *>(SvIV((SV*)SvRV(ST(1))));
+    ret = new QPaintEvent(*arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPaintEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QPaintEvent()
@@ -60,17 +65,23 @@ void
 QPaintEvent::rect(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     const QRect * ret = &THIS->rect();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::Core::QRect", (void *)ret);
     XSRETURN(1);
+    }
 
 ## const QRegion & region()
 void
 QPaintEvent::region(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     const QRegion * ret = &THIS->region();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QRegion", (void *)ret);
     XSRETURN(1);
+    }

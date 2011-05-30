@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,33 +24,40 @@ Qt::Gui::QActionGroup
 
 =over
 
-=item    QActionGroup(QObject * parent)
+=item   QActionGroup(QObject * parent)
 
-=item    ~QActionGroup()
+=item   ~QActionGroup()
 
-=item   QAction * addAction(QAction * a)
+=item  QAction * addAction(QAction * a)
 
-=item   QAction * addAction(const QString & text)
+=item  QAction * addAction(const QString & text)
 
-=item   QAction * addAction(const QIcon & icon, const QString & text)
+=item  QAction * addAction(const QIcon & icon, const QString & text)
 
-=item   QAction * checkedAction()
+=item  QAction * checkedAction()
 
-=item   bool isEnabled()
+=item  bool isEnabled()
 
-=item   bool isExclusive()
+=item  bool isExclusive()
 
-=item   bool isVisible()
+=item  bool isVisible()
 
-=item   void removeAction(QAction * a)
+=item  void removeAction(QAction * a)
 
-=item   void setDisabled(bool b)
+=item  void setDisabled(bool b)
 
-=item   void setEnabled(bool arg0)
+=item  void setEnabled(bool arg0)
 
-=item   void setExclusive(bool arg0)
+=item  void setExclusive(bool arg0)
 
-=item   void setVisible(bool arg0)
+=item  void setVisible(bool arg0)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

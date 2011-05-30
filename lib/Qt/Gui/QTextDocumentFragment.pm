@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,31 +23,38 @@ Qt::Gui::QTextDocumentFragment
 
 =over
 
-=item    QTextDocumentFragment()
+=item   QTextDocumentFragment()
 
-=item    QTextDocumentFragment(const QTextDocument * document)
+=item   QTextDocumentFragment(const QTextDocument * document)
 
-=item    QTextDocumentFragment(const QTextCursor & range)
+=item   QTextDocumentFragment(const QTextCursor & range)
 
-=item    QTextDocumentFragment(const QTextDocumentFragment & rhs)
+=item   QTextDocumentFragment(const QTextDocumentFragment & rhs)
 
-=item    ~QTextDocumentFragment()
+=item   ~QTextDocumentFragment()
 
-=item   static QTextDocumentFragment fromHtml(const QString & html)
+=item  static QTextDocumentFragment fromHtml(const QString & html)
 
-=item   static QTextDocumentFragment fromHtml(const QString & html, const QTextDocument * resourceProvider)
+=item  static QTextDocumentFragment fromHtml(const QString & html, const QTextDocument * resourceProvider)
 
-=item   static QTextDocumentFragment fromPlainText(const QString & plainText)
+=item  static QTextDocumentFragment fromPlainText(const QString & plainText)
 
-=item   bool isEmpty()
+=item  bool isEmpty()
 
-=item   QTextDocumentFragment & operator=(const QTextDocumentFragment & rhs)
+=item  QTextDocumentFragment & operator=(const QTextDocumentFragment & rhs)
 
-=item   QString toHtml()
+=item  QString toHtml()
 
-=item   QString toHtml(const QByteArray & encoding)
+=item  QString toHtml(const QByteArray & encoding)
 
-=item   QString toPlainText()
+=item  QString toPlainText()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

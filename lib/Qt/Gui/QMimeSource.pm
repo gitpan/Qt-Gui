@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +23,22 @@ Qt::Gui::QMimeSource
 
 =over
 
-=item    ~QMimeSource()
+=item   ~QMimeSource()
 
-=item   QByteArray encodedData(const char * arg0)
+=item  QByteArray encodedData(const char * arg0)
 
-=item   const char * format(int n = 0)
+=item  const char * format(int n)
 
-=item   const char * format(int n)
+=item  const char * format(int n = 0)
 
-=item   bool provides(const char * arg0)
+=item  bool provides(const char * arg0)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

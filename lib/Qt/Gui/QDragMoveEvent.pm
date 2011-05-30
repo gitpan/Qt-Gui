@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDropEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDropEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,28 @@ Qt::Gui::QDragMoveEvent
 
 =over
 
-=item    ~QDragMoveEvent()
+=item   QDragMoveEvent(const QPoint & pos, QFlags<Qt::DropAction> actions, const QMimeData * data, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers, QDragMoveEvent::Type type)
 
-=item   void accept()
+=item   QDragMoveEvent(const QPoint & pos, QFlags<Qt::DropAction> actions, const QMimeData * data, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers, QDragMoveEvent::Type type = QDragMoveEvent::DragMove)
 
-=item   void accept(const QRect & r)
+=item   ~QDragMoveEvent()
 
-=item   QRect answerRect()
+=item  void accept()
 
-=item   void ignore()
+=item  void accept(const QRect & r)
 
-=item   void ignore(const QRect & r)
+=item  QRect answerRect()
+
+=item  void ignore()
+
+=item  void ignore(const QRect & r)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

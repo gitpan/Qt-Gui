@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,21 +23,28 @@ Qt::Gui::QWhatsThis
 
 =over
 
-=item   static QAction * createAction(QObject * parent = 0)
+=item  static QAction * createAction(QObject * parent)
 
-=item   static QAction * createAction(QObject * parent)
+=item  static QAction * createAction(QObject * parent = 0)
 
-=item   static void enterWhatsThisMode()
+=item  static void enterWhatsThisMode()
 
-=item   static void hideText()
+=item  static void hideText()
 
-=item   static bool inWhatsThisMode()
+=item  static bool inWhatsThisMode()
 
-=item   static void leaveWhatsThisMode()
+=item  static void leaveWhatsThisMode()
 
-=item   static void showText(const QPoint & pos, const QString & text, QWidget * w = 0)
+=item  static void showText(const QPoint & pos, const QString & text, QWidget * w)
 
-=item   static void showText(const QPoint & pos, const QString & text, QWidget * w)
+=item  static void showText(const QPoint & pos, const QString & text, QWidget * w = 0)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

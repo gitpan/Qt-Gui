@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,21 +24,28 @@ Qt::Gui::QAbstractPageSetupDialog
 
 =over
 
-=item    QAbstractPageSetupDialog(QPrinter * printer, QWidget * parent = 0)
+=item   QAbstractPageSetupDialog(QPrinter * printer, QWidget * parent)
 
-=item    QAbstractPageSetupDialog(QPrinter * printer, QWidget * parent)
+=item   QAbstractPageSetupDialog(QPrinter * printer, QWidget * parent = 0)
 
-=item    QAbstractPageSetupDialog(QAbstractPageSetupDialogPrivate & ptr, QPrinter * printer, QWidget * parent = 0)
+=item   QAbstractPageSetupDialog(QAbstractPageSetupDialogPrivate & ptr, QPrinter * printer, QWidget * parent)
 
-=item    QAbstractPageSetupDialog(QAbstractPageSetupDialogPrivate & ptr, QPrinter * printer, QWidget * parent)
+=item   QAbstractPageSetupDialog(QAbstractPageSetupDialogPrivate & ptr, QPrinter * printer, QWidget * parent = 0)
 
-=item    ~QAbstractPageSetupDialog()
+=item   ~QAbstractPageSetupDialog()
 
-=item   void done(int result)
+=item  void done(int result)
 
-=item   int exec()
+=item  int exec()
 
-=item   QPrinter * printer()
+=item  QPrinter * printer()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

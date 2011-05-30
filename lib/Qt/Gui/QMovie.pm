@@ -7,18 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NotRunning() { 0 }
-sub Paused() { 1 }
-sub Running() { 2 }
-sub CacheNone() { 0 }
-sub CacheAll() { 1 }
 
 
 1;
@@ -31,85 +24,98 @@ Qt::Gui::QMovie
 
 =over
 
-=item    QMovie(QObject * parent = 0)
+=item   QMovie(QObject * parent)
 
-=item    QMovie(QObject * parent)
+=item   QMovie(QObject * parent = 0)
 
-=item    QMovie(QIODevice * device, const QByteArray & format, QObject * parent = 0)
+=item   QMovie(QIODevice * device, const QByteArray & format, QObject * parent)
 
-=item    QMovie(QIODevice * device, const QByteArray & format, QObject * parent)
+=item   QMovie(QIODevice * device, const QByteArray & format, QObject * parent = 0)
 
-=item    QMovie(QIODevice * device, const QByteArray & format = QByteArray(), QObject * parent = 0)
+=item   QMovie(QIODevice * device, const QByteArray & format = QByteArray(), QObject * parent = 0)
 
-=item    QMovie(QIODevice * device, const QByteArray & format, QObject * parent = 0)
+=item   QMovie(const QString & fileName, const QByteArray & format, QObject * parent)
 
-=item    QMovie(const QString & fileName, const QByteArray & format, QObject * parent = 0)
+=item   QMovie(const QString & fileName, const QByteArray & format, QObject * parent = 0)
 
-=item    QMovie(const QString & fileName, const QByteArray & format, QObject * parent)
+=item   QMovie(const QString & fileName, const QByteArray & format = QByteArray(), QObject * parent = 0)
 
-=item    QMovie(const QString & fileName, const QByteArray & format = QByteArray(), QObject * parent = 0)
+=item   ~QMovie()
 
-=item    QMovie(const QString & fileName, const QByteArray & format, QObject * parent = 0)
+=item  QColor backgroundColor()
 
-=item    ~QMovie()
+=item  QMovie::CacheMode cacheMode()
 
-=item   QColor backgroundColor()
+=item  QMovie::CacheMode cacheMode()
 
-=item   QMovie::CacheMode cacheMode()
+=item  int currentFrameNumber()
 
-=item   QMovie::CacheMode cacheMode()
+=item  QImage currentImage()
 
-=item   int currentFrameNumber()
+=item  QPixmap currentPixmap()
 
-=item   QImage currentImage()
+=item  QIODevice * device()
 
-=item   QPixmap currentPixmap()
+=item  QString fileName()
 
-=item   QIODevice * device()
+=item  QByteArray format()
 
-=item   QString fileName()
+=item  int frameCount()
 
-=item   QByteArray format()
+=item  QRect frameRect()
 
-=item   int frameCount()
+=item  bool isValid()
 
-=item   QRect frameRect()
+=item  bool jumpToFrame(int frameNumber)
 
-=item   bool isValid()
+=item  bool jumpToNextFrame()
 
-=item   bool jumpToFrame(int frameNumber)
+=item  int loopCount()
 
-=item   bool jumpToNextFrame()
+=item  int nextFrameDelay()
 
-=item   int loopCount()
+=item  QSize scaledSize()
 
-=item   int nextFrameDelay()
+=item  void setBackgroundColor(const QColor & color)
 
-=item   QSize scaledSize()
+=item  void setCacheMode(QMovie::CacheMode mode)
 
-=item   void setBackgroundColor(const QColor & color)
+=item  void setDevice(QIODevice * device)
 
-=item   void setCacheMode(QMovie::CacheMode mode)
+=item  void setFileName(const QString & fileName)
 
-=item   void setDevice(QIODevice * device)
+=item  void setFormat(const QByteArray & format)
 
-=item   void setFileName(const QString & fileName)
+=item  void setPaused(bool paused)
 
-=item   void setFormat(const QByteArray & format)
+=item  void setScaledSize(const QSize & size)
 
-=item   void setPaused(bool paused)
+=item  void setSpeed(int percentSpeed)
 
-=item   void setScaledSize(const QSize & size)
+=item  int speed()
 
-=item   void setSpeed(int percentSpeed)
+=item  void start()
 
-=item   int speed()
+=item  QMovie::MovieState state()
 
-=item   void start()
+=item  void stop()
 
-=item   QMovie::MovieState state()
 
-=item   void stop()
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NotRunning
+
+=item Paused
+
+=item Running
+
+=item CacheNone
+
+=item CacheAll
 
 
 =back

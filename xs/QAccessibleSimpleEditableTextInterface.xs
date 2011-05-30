@@ -25,12 +25,17 @@ PREINIT:
 QAccessibleSimpleEditableTextInterface *ret;
 QAccessibleInterface * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QAccessibleInterface")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAccessibleInterface") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAccessibleInterface")) {
         arg00 = reinterpret_cast<QAccessibleInterface *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAccessibleInterface");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
 
 
 
@@ -41,10 +46,12 @@ PREINIT:
 int arg00;
 int arg01;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
+    if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
     (void)THIS->copyText(arg00, arg01);
     XSRETURN(0);
+    }
 
 ## void cutText(int startOffset, int endOffset)
 void
@@ -53,10 +60,12 @@ PREINIT:
 int arg00;
 int arg01;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
+    if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
     (void)THIS->cutText(arg00, arg01);
     XSRETURN(0);
+    }
 
 ## void deleteText(int startOffset, int endOffset)
 void
@@ -65,10 +74,12 @@ PREINIT:
 int arg00;
 int arg01;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
+    if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
     (void)THIS->deleteText(arg00, arg01);
     XSRETURN(0);
+    }
 
 ## void insertText(int offset, const QString & text)
 void
@@ -77,14 +88,12 @@ PREINIT:
 int arg00;
 QString * arg01;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    if (sv_isa(ST(2), "")) {
-        arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type ");
+    if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QString")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
     (void)THIS->insertText(arg00, *arg01);
     XSRETURN(0);
+    }
 
 ## void pasteText(int offset)
 void
@@ -92,9 +101,11 @@ QAccessibleSimpleEditableTextInterface::pasteText(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->pasteText(arg00);
     XSRETURN(0);
+    }
 
 ## void replaceText(int startOffset, int endOffset, const QString & text)
 void
@@ -104,15 +115,13 @@ int arg00;
 int arg01;
 QString * arg02;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
-    if (sv_isa(ST(3), "")) {
-        arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type ");
+    if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QString")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
     (void)THIS->replaceText(arg00, arg01, *arg02);
     XSRETURN(0);
+    }
 
 ## void setAttributes(int arg0, int arg1, const QString & arg2)
 void
@@ -122,12 +131,10 @@ int arg00;
 int arg01;
 QString * arg02;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    arg01 = (int)SvIV(ST(2));
-    if (sv_isa(ST(3), "")) {
-        arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type ");
+    if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QString")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
     (void)THIS->setAttributes(arg00, arg01, *arg02);
     XSRETURN(0);
+    }

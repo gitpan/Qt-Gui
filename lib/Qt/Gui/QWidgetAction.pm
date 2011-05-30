@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAction/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAction/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,24 @@ Qt::Gui::QWidgetAction
 
 =over
 
-=item    QWidgetAction(QObject * parent)
+=item   QWidgetAction(QObject * parent)
 
-=item    ~QWidgetAction()
+=item   ~QWidgetAction()
 
-=item   QWidget * defaultWidget()
+=item  QWidget * defaultWidget()
 
-=item   void releaseWidget(QWidget * widget)
+=item  void releaseWidget(QWidget * widget)
 
-=item   QWidget * requestWidget(QWidget * parent)
+=item  QWidget * requestWidget(QWidget * parent)
 
-=item   void setDefaultWidget(QWidget * w)
+=item  void setDefaultWidget(QWidget * w)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

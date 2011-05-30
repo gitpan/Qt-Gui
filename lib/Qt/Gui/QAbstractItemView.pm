@@ -7,61 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractScrollArea/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractScrollArea/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoSelection() { 0 }
-sub SingleSelection() { 1 }
-sub MultiSelection() { 2 }
-sub ExtendedSelection() { 3 }
-sub ContiguousSelection() { 4 }
-sub SelectItems() { 0 }
-sub SelectRows() { 1 }
-sub SelectColumns() { 2 }
-sub EnsureVisible() { 0 }
-sub PositionAtTop() { 1 }
-sub PositionAtBottom() { 2 }
-sub PositionAtCenter() { 3 }
-sub NoEditTriggers() { 0 }
-sub CurrentChanged() { 1 }
-sub DoubleClicked() { 2 }
-sub SelectedClicked() { 3 }
-sub EditKeyPressed() { 4 }
-sub AnyKeyPressed() { 5 }
-sub AllEditTriggers() { 6 }
-sub ScrollPerItem() { 0 }
-sub ScrollPerPixel() { 1 }
-sub NoDragDrop() { 0 }
-sub DragOnly() { 1 }
-sub DropOnly() { 2 }
-sub DragDrop() { 3 }
-sub InternalMove() { 4 }
-sub MoveUp() { 0 }
-sub MoveDown() { 1 }
-sub MoveLeft() { 2 }
-sub MoveRight() { 3 }
-sub MoveHome() { 4 }
-sub MoveEnd() { 5 }
-sub MovePageUp() { 6 }
-sub MovePageDown() { 7 }
-sub MoveNext() { 8 }
-sub MovePrevious() { 9 }
-sub NoState() { 0 }
-sub DraggingState() { 1 }
-sub DragSelectingState() { 2 }
-sub EditingState() { 3 }
-sub ExpandingState() { 4 }
-sub CollapsingState() { 5 }
-sub AnimatingState() { 6 }
-sub OnItem() { 0 }
-sub AboveItem() { 1 }
-sub BelowItem() { 2 }
-sub OnViewport() { 3 }
 
 
 1;
@@ -74,143 +24,206 @@ Qt::Gui::QAbstractItemView
 
 =over
 
-=item    QAbstractItemView(QWidget * parent = 0)
+=item   QAbstractItemView(QWidget * parent)
 
-=item    QAbstractItemView(QWidget * parent)
+=item   QAbstractItemView(QWidget * parent = 0)
 
-=item    ~QAbstractItemView()
+=item   ~QAbstractItemView()
 
-=item   bool alternatingRowColors()
+=item  bool alternatingRowColors()
 
-=item   int autoScrollMargin()
+=item  int autoScrollMargin()
 
-=item   void clearSelection()
+=item  void clearSelection()
 
-=item   void closePersistentEditor(const QModelIndex & index)
+=item  void closePersistentEditor(const QModelIndex & index)
 
-=item   QModelIndex currentIndex()
+=item  QModelIndex currentIndex()
 
-=item   Qt::DropAction defaultDropAction()
+=item  Qt::DropAction defaultDropAction()
 
-=item   void doItemsLayout()
+=item  void doItemsLayout()
 
-=item   QAbstractItemView::DragDropMode dragDropMode()
+=item  QAbstractItemView::DragDropMode dragDropMode()
 
-=item   bool dragDropOverwriteMode()
+=item  bool dragDropOverwriteMode()
 
-=item   bool dragEnabled()
+=item  bool dragEnabled()
 
-=item   void edit(const QModelIndex & index)
+=item  void edit(const QModelIndex & index)
 
-=item   bool hasAutoScroll()
+=item  QFlags<QAbstractItemView::EditTrigger> editTriggers()
 
-=item   QAbstractItemView::ScrollMode horizontalScrollMode()
+=item  bool hasAutoScroll()
 
-=item   QSize iconSize()
+=item  QAbstractItemView::ScrollMode horizontalScrollMode()
 
-=item   QModelIndex indexAt(const QPoint & point)
+=item  QSize iconSize()
 
-=item   QWidget * indexWidget(const QModelIndex & index)
+=item  QModelIndex indexAt(const QPoint & point)
 
-=item   QVariant inputMethodQuery(Qt::InputMethodQuery query)
+=item  QWidget * indexWidget(const QModelIndex & index)
 
-=item   QAbstractItemDelegate * itemDelegate()
+=item  QVariant inputMethodQuery(Qt::InputMethodQuery query)
 
-=item   QAbstractItemDelegate * itemDelegate(const QModelIndex & index)
+=item  QAbstractItemDelegate * itemDelegate()
 
-=item   QAbstractItemDelegate * itemDelegateForColumn(int column)
+=item  QAbstractItemDelegate * itemDelegate(const QModelIndex & index)
 
-=item   QAbstractItemDelegate * itemDelegateForRow(int row)
+=item  QAbstractItemDelegate * itemDelegateForColumn(int column)
 
-=item   void keyboardSearch(const QString & search)
+=item  QAbstractItemDelegate * itemDelegateForRow(int row)
 
-=item   QAbstractItemModel * model()
+=item  void keyboardSearch(const QString & search)
 
-=item   void openPersistentEditor(const QModelIndex & index)
+=item  QAbstractItemModel * model()
 
-=item   void reset()
+=item  void openPersistentEditor(const QModelIndex & index)
 
-=item   QModelIndex rootIndex()
+=item  void reset()
 
-=item   void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+=item  QModelIndex rootIndex()
 
-=item   void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint)
+=item  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint)
 
-=item   void scrollToBottom()
+=item  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 
-=item   void scrollToTop()
+=item  void scrollToBottom()
 
-=item   void selectAll()
+=item  void scrollToTop()
 
-=item   QAbstractItemView::SelectionBehavior selectionBehavior()
+=item  void selectAll()
 
-=item   QAbstractItemView::SelectionMode selectionMode()
+=item  QAbstractItemView::SelectionBehavior selectionBehavior()
 
-=item   QItemSelectionModel * selectionModel()
+=item  QAbstractItemView::SelectionMode selectionMode()
 
-=item   void setAlternatingRowColors(bool enable)
+=item  QItemSelectionModel * selectionModel()
 
-=item   void setAutoScroll(bool enable)
+=item  void setAlternatingRowColors(bool enable)
 
-=item   void setAutoScrollMargin(int margin)
+=item  void setAutoScroll(bool enable)
 
-=item   void setCurrentIndex(const QModelIndex & index)
+=item  void setAutoScrollMargin(int margin)
 
-=item   void setDefaultDropAction(Qt::DropAction dropAction)
+=item  void setCurrentIndex(const QModelIndex & index)
 
-=item   void setDragDropMode(QAbstractItemView::DragDropMode behavior)
+=item  void setDefaultDropAction(Qt::DropAction dropAction)
 
-=item   void setDragDropOverwriteMode(bool overwrite)
+=item  void setDragDropMode(QAbstractItemView::DragDropMode behavior)
 
-=item   void setDragEnabled(bool enable)
+=item  void setDragDropOverwriteMode(bool overwrite)
 
-=item   void setDropIndicatorShown(bool enable)
+=item  void setDragEnabled(bool enable)
 
-=item   void setHorizontalScrollMode(QAbstractItemView::ScrollMode mode)
+=item  void setDropIndicatorShown(bool enable)
 
-=item   void setIconSize(const QSize & size)
+=item  void setEditTriggers(QFlags<QAbstractItemView::EditTrigger> triggers)
 
-=item   void setIndexWidget(const QModelIndex & index, QWidget * widget)
+=item  void setHorizontalScrollMode(QAbstractItemView::ScrollMode mode)
 
-=item   void setItemDelegate(QAbstractItemDelegate * delegate)
+=item  void setIconSize(const QSize & size)
 
-=item   void setItemDelegateForColumn(int column, QAbstractItemDelegate * delegate)
+=item  void setIndexWidget(const QModelIndex & index, QWidget * widget)
 
-=item   void setItemDelegateForRow(int row, QAbstractItemDelegate * delegate)
+=item  void setItemDelegate(QAbstractItemDelegate * delegate)
 
-=item   void setModel(QAbstractItemModel * model)
+=item  void setItemDelegateForColumn(int column, QAbstractItemDelegate * delegate)
 
-=item   void setRootIndex(const QModelIndex & index)
+=item  void setItemDelegateForRow(int row, QAbstractItemDelegate * delegate)
 
-=item   void setSelectionBehavior(QAbstractItemView::SelectionBehavior behavior)
+=item  void setModel(QAbstractItemModel * model)
 
-=item   void setSelectionMode(QAbstractItemView::SelectionMode mode)
+=item  void setRootIndex(const QModelIndex & index)
 
-=item   void setSelectionModel(QItemSelectionModel * selectionModel)
+=item  void setSelectionBehavior(QAbstractItemView::SelectionBehavior behavior)
 
-=item   void setTabKeyNavigation(bool enable)
+=item  void setSelectionMode(QAbstractItemView::SelectionMode mode)
 
-=item   void setTextElideMode(Qt::TextElideMode mode)
+=item  void setSelectionModel(QItemSelectionModel * selectionModel)
 
-=item   void setVerticalScrollMode(QAbstractItemView::ScrollMode mode)
+=item  void setTabKeyNavigation(bool enable)
 
-=item   bool showDropIndicator()
+=item  void setTextElideMode(Qt::TextElideMode mode)
 
-=item   int sizeHintForColumn(int column)
+=item  void setVerticalScrollMode(QAbstractItemView::ScrollMode mode)
 
-=item   QSize sizeHintForIndex(const QModelIndex & index)
+=item  bool showDropIndicator()
 
-=item   int sizeHintForRow(int row)
+=item  int sizeHintForColumn(int column)
 
-=item   bool tabKeyNavigation()
+=item  QSize sizeHintForIndex(const QModelIndex & index)
 
-=item   Qt::TextElideMode textElideMode()
+=item  int sizeHintForRow(int row)
 
-=item   void update(const QModelIndex & index)
+=item  bool tabKeyNavigation()
 
-=item   QAbstractItemView::ScrollMode verticalScrollMode()
+=item  Qt::TextElideMode textElideMode()
 
-=item   QRect visualRect(const QModelIndex & index)
+=item  void update(const QModelIndex & index)
+
+=item  QAbstractItemView::ScrollMode verticalScrollMode()
+
+=item  QRect visualRect(const QModelIndex & index)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoSelection
+
+=item SingleSelection
+
+=item MultiSelection
+
+=item ExtendedSelection
+
+=item ContiguousSelection
+
+=item SelectItems
+
+=item SelectRows
+
+=item SelectColumns
+
+=item EnsureVisible
+
+=item PositionAtTop
+
+=item PositionAtBottom
+
+=item PositionAtCenter
+
+=item NoEditTriggers
+
+=item CurrentChanged
+
+=item DoubleClicked
+
+=item SelectedClicked
+
+=item EditKeyPressed
+
+=item AnyKeyPressed
+
+=item AllEditTriggers
+
+=item ScrollPerItem
+
+=item ScrollPerPixel
+
+=item NoDragDrop
+
+=item DragOnly
+
+=item DropOnly
+
+=item DragDrop
+
+=item InternalMove
 
 
 =back

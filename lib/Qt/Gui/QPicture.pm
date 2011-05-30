@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QPaintDevice/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QPaintDevice/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,59 +24,66 @@ Qt::Gui::QPicture
 
 =over
 
-=item    QPicture(int formatVersion = -1)
+=item   QPicture(int formatVersion)
 
-=item    QPicture(int formatVersion)
+=item   QPicture(int formatVersion = -1)
 
-=item    QPicture(const QPicture & arg0)
+=item   QPicture(const QPicture & arg0)
 
-=item    ~QPicture()
+=item   ~QPicture()
 
-=item   QRect boundingRect()
+=item  QRect boundingRect()
 
-=item   const char * data()
+=item  const char * data()
 
-=item   void detach()
+=item  void detach()
 
-=item   int devType()
+=item  int devType()
 
-=item   static QStringList inputFormatList()
+=item  static QStringList inputFormatList()
 
-=item   bool isDetached()
+=item  bool isDetached()
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   bool load(QIODevice * dev, const char * format = 0)
+=item  bool load(QIODevice * dev, const char * format)
 
-=item   bool load(QIODevice * dev, const char * format)
+=item  bool load(QIODevice * dev, const char * format = 0)
 
-=item   bool load(const QString & fileName, const char * format = 0)
+=item  bool load(const QString & fileName, const char * format)
 
-=item   bool load(const QString & fileName, const char * format)
+=item  bool load(const QString & fileName, const char * format = 0)
 
-=item   QPicture & operator=(const QPicture & p)
+=item  QPicture & operator=(const QPicture & p)
 
-=item   static QStringList outputFormatList()
+=item  static QStringList outputFormatList()
 
-=item   QPaintEngine * paintEngine()
+=item  QPaintEngine * paintEngine()
 
-=item   static const char * pictureFormat(const QString & fileName)
+=item  static const char * pictureFormat(const QString & fileName)
 
-=item   bool play(QPainter * p)
+=item  bool play(QPainter * p)
 
-=item   bool save(QIODevice * dev, const char * format = 0)
+=item  bool save(QIODevice * dev, const char * format)
 
-=item   bool save(QIODevice * dev, const char * format)
+=item  bool save(QIODevice * dev, const char * format = 0)
 
-=item   bool save(const QString & fileName, const char * format = 0)
+=item  bool save(const QString & fileName, const char * format)
 
-=item   bool save(const QString & fileName, const char * format)
+=item  bool save(const QString & fileName, const char * format = 0)
 
-=item   void setBoundingRect(const QRect & r)
+=item  void setBoundingRect(const QRect & r)
 
-=item   void setData(const char * data, uint size)
+=item  void setData(const char * data, uint size)
 
-=item   uint size()
+=item  uint size()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

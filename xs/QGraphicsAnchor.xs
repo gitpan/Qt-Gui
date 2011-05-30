@@ -33,33 +33,11 @@ QGraphicsAnchor::setSizePolicy(...)
 PREINIT:
 QSizePolicy::Policy arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QSizePolicy::Fixed;
-      break;
-    case 1:
-      arg00 = QSizePolicy::Minimum;
-      break;
-    case 2:
-      arg00 = QSizePolicy::Maximum;
-      break;
-    case 3:
-      arg00 = QSizePolicy::Preferred;
-      break;
-    case 4:
-      arg00 = QSizePolicy::MinimumExpanding;
-      break;
-    case 5:
-      arg00 = QSizePolicy::Expanding;
-      break;
-    case 6:
-      arg00 = QSizePolicy::Ignored;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QSizePolicy::Policy passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QSizePolicy::Policy)SvIV(ST(1));
     (void)THIS->setSizePolicy(arg00);
     XSRETURN(0);
+    }
 
 ## void setSpacing(qreal spacing)
 void
@@ -67,34 +45,45 @@ QGraphicsAnchor::setSpacing(...)
 PREINIT:
 qreal arg00;
 PPCODE:
-    arg00 = (double)SvNV(ST(1));
+    if (SvNOK(ST(1))) {
+      arg00 = (double)SvNV(ST(1));
     (void)THIS->setSpacing(arg00);
     XSRETURN(0);
+    }
 
 ## QSizePolicy::Policy sizePolicy()
 void
 QGraphicsAnchor::sizePolicy(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSizePolicy::Policy ret = THIS->sizePolicy();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## qreal spacing()
 void
 QGraphicsAnchor::spacing(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     qreal ret = THIS->spacing();
     ST(0) = sv_newmortal();
     sv_setnv(ST(0), (double)ret);
     XSRETURN(1);
+    }
 
 ## void unsetSpacing()
 void
 QGraphicsAnchor::unsetSpacing(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->unsetSpacing();
     XSRETURN(0);
+    }

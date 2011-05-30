@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,31 +23,38 @@ Qt::Gui::QUndoCommand
 
 =over
 
-=item    QUndoCommand(QUndoCommand * parent = 0)
+=item   QUndoCommand(QUndoCommand * parent)
 
-=item    QUndoCommand(QUndoCommand * parent)
+=item   QUndoCommand(QUndoCommand * parent = 0)
 
-=item    QUndoCommand(const QString & text, QUndoCommand * parent = 0)
+=item   QUndoCommand(const QString & text, QUndoCommand * parent)
 
-=item    QUndoCommand(const QString & text, QUndoCommand * parent)
+=item   QUndoCommand(const QString & text, QUndoCommand * parent = 0)
 
-=item    ~QUndoCommand()
+=item   ~QUndoCommand()
 
-=item   const QUndoCommand * child(int index)
+=item  const QUndoCommand * child(int index)
 
-=item   int childCount()
+=item  int childCount()
 
-=item   int id()
+=item  int id()
 
-=item   bool mergeWith(const QUndoCommand * other)
+=item  bool mergeWith(const QUndoCommand * other)
 
-=item   void redo()
+=item  void redo()
 
-=item   void setText(const QString & text)
+=item  void setText(const QString & text)
 
-=item   QString text()
+=item  QString text()
 
-=item   void undo()
+=item  void undo()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

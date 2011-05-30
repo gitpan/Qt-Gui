@@ -18,57 +18,72 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QMenu(QWidget * parent = 0)
 ##  QMenu(QWidget * parent)
-##  QMenu(const QString & title, QWidget * parent = 0)
+##  QMenu(QWidget * parent = 0)
 ##  QMenu(const QString & title, QWidget * parent)
+##  QMenu(const QString & title, QWidget * parent = 0)
   void
 QMenu::new(...)
 PREINIT:
 QMenu *ret;
-QWidget * arg00 = 0;
-QWidget * arg10;
+QWidget * arg00;
+QWidget * arg10 = 0;
 QString * arg20;
-QWidget * arg21 = 0;
+QWidget * arg21;
 QString * arg30;
-QWidget * arg31;
+QWidget * arg31 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
-        break;
-      }
-    case 2:
-      {
-        if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        if (1) {
+      
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 3:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg30 is not of type ");
-    if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
-        arg31 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg31 is not of type Qt::Gui::QWidget");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QString") && (sv_derived_from(ST(2), "Qt::Gui::QWidget") || ST(2) == &PL_sv_undef)) {
+      arg20 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
+        arg21 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg21 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QMenu()
@@ -84,15 +99,13 @@ QMenu::actionAt(...)
 PREINIT:
 QPoint * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QPoint")) {
+      arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
     QAction * ret = THIS->actionAt(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QRect actionGeometry(QAction * arg0)
 void
@@ -100,32 +113,40 @@ QMenu::actionGeometry(...)
 PREINIT:
 QAction * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAction") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
         arg00 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAction");
     QRect ret = THIS->actionGeometry(arg00);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QRect(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QRect", (void *)new QRect(ret));
     XSRETURN(1);
+    }
 
 ## QAction * activeAction()
 void
 QMenu::activeAction(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QAction * ret = THIS->activeAction();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QAction * addAction(const QString & text)
 ## QAction * addAction(const QIcon & icon, const QString & text)
-## QAction * addAction(const QString & text, const QObject * receiver, const char * member, const QKeySequence & shortcut = 0)
 ## QAction * addAction(const QString & text, const QObject * receiver, const char * member, const QKeySequence & shortcut)
-## QAction * addAction(const QIcon & icon, const QString & text, const QObject * receiver, const char * member, const QKeySequence & shortcut = 0)
+## QAction * addAction(const QString & text, const QObject * receiver, const char * member, const QKeySequence & shortcut = 0)
 ## QAction * addAction(const QIcon & icon, const QString & text, const QObject * receiver, const char * member, const QKeySequence & shortcut)
+## QAction * addAction(const QIcon & icon, const QString & text, const QObject * receiver, const char * member, const QKeySequence & shortcut = 0)
 void
 QMenu::addAction(...)
 PREINIT:
@@ -135,133 +156,141 @@ QString * arg11;
 QString * arg20;
 const QObject * arg21;
 const char * arg22;
-const QKeySequence & arg23_ = 0;
-QKeySequence * arg23 = const_cast<QKeySequence *>(&arg23_);
+QKeySequence * arg23;
 QString * arg30;
 const QObject * arg31;
 const char * arg32;
-QKeySequence * arg33;
+const QKeySequence & arg33_ = 0;
+QKeySequence * arg33 = const_cast<QKeySequence *>(&arg33_);
 QIcon * arg40;
 QString * arg41;
 const QObject * arg42;
 const char * arg43;
-const QKeySequence & arg44_ = 0;
-QKeySequence * arg44 = const_cast<QKeySequence *>(&arg44_);
+QKeySequence * arg44;
 QIcon * arg50;
 QString * arg51;
 const QObject * arg52;
 const char * arg53;
-QKeySequence * arg54;
+const QKeySequence & arg54_ = 0;
+QKeySequence * arg54 = const_cast<QKeySequence *>(&arg54_);
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+        if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     QAction * ret = THIS->addAction(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 3:
+      case 3:
       {
-        if (sv_isa(ST(1), "Qt::Gui::QIcon")) {
-        arg10 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QIcon");
-    if (sv_isa(ST(2), "")) {
-        arg11 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg11 is not of type ");
+        if (sv_isa(ST(1), "Qt::Gui::QIcon") && sv_isa(ST(2), "Qt::Core::QString")) {
+      arg10 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
+      arg11 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
     QAction * ret = THIS->addAction(*arg10, *arg11);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 4:
+      case 4:
       {
-        if (sv_isa(ST(1), "")) {
-        arg20 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg20 is not of type ");
-    if (sv_derived_from(ST(2), "")) {
-        arg21 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg21 is not of type ");
-    arg22 = (const char *)SvPV_nolen(ST(3));
-    QAction * ret = THIS->addAction(*arg20, arg21, arg22, *arg23);
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
-    XSRETURN(1);
-        break;
-      }
-    case 5:
-      {
-        if (sv_isa(ST(1), "")) {
-        arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg30 is not of type ");
-    if (sv_derived_from(ST(2), "")) {
+        if (sv_isa(ST(1), "Qt::Core::QString") && (sv_derived_from(ST(2), "Qt::Core::QObject") || ST(2) == &PL_sv_undef) && SvPOK(ST(3))) {
+      arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Core::QObject")) {
         arg31 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(2))));
     }
-    else
-        Perl_croak(aTHX_ "arg31 is not of type ");
-    arg32 = (const char *)SvPV_nolen(ST(3));
-    if (sv_isa(ST(4), "Qt::Gui::QKeySequence")) {
-        arg33 = reinterpret_cast<QKeySequence *>(SvIV((SV*)SvRV(ST(4))));
+    else if (ST(2) == &PL_sv_undef) {
+        arg31 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg33 is not of type Qt::Gui::QKeySequence");
+        Perl_croak(aTHX_ "arg31 is not of type Qt::Core::QObject");
+      arg32 = (const char *)SvPV_nolen(ST(3));
     QAction * ret = THIS->addAction(*arg30, arg31, arg32, *arg33);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 6:
+      case 5:
       {
-        if (sv_isa(ST(1), "Qt::Gui::QIcon")) {
-        arg50 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
+        if (sv_isa(ST(1), "Qt::Core::QString") && (sv_derived_from(ST(2), "Qt::Core::QObject") || ST(2) == &PL_sv_undef) && SvPOK(ST(3)) && sv_isa(ST(4), "Qt::Gui::QKeySequence")) {
+      arg20 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Core::QObject")) {
+        arg21 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg21 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg50 is not of type Qt::Gui::QIcon");
-    if (sv_isa(ST(2), "")) {
-        arg51 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+        Perl_croak(aTHX_ "arg21 is not of type Qt::Core::QObject");
+      arg22 = (const char *)SvPV_nolen(ST(3));
+      arg23 = reinterpret_cast<QKeySequence *>(SvIV((SV*)SvRV(ST(4))));
+    QAction * ret = THIS->addAction(*arg20, arg21, arg22, *arg23);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
+    XSRETURN(1);
     }
-    else
-        Perl_croak(aTHX_ "arg51 is not of type ");
-    if (sv_derived_from(ST(3), "")) {
+        else if (sv_isa(ST(1), "Qt::Gui::QIcon") && sv_isa(ST(2), "Qt::Core::QString") && (sv_derived_from(ST(3), "Qt::Core::QObject") || ST(3) == &PL_sv_undef) && SvPOK(ST(4))) {
+      arg50 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
+      arg51 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+      if (sv_derived_from(ST(3), "Qt::Core::QObject")) {
         arg52 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(3))));
     }
-    else
-        Perl_croak(aTHX_ "arg52 is not of type ");
-    arg53 = (const char *)SvPV_nolen(ST(4));
-    if (sv_isa(ST(5), "Qt::Gui::QKeySequence")) {
-        arg54 = reinterpret_cast<QKeySequence *>(SvIV((SV*)SvRV(ST(5))));
+    else if (ST(3) == &PL_sv_undef) {
+        arg52 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg54 is not of type Qt::Gui::QKeySequence");
+        Perl_croak(aTHX_ "arg52 is not of type Qt::Core::QObject");
+      arg53 = (const char *)SvPV_nolen(ST(4));
     QAction * ret = THIS->addAction(*arg50, *arg51, arg52, arg53, *arg54);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 6:
       {
+        if (sv_isa(ST(1), "Qt::Gui::QIcon") && sv_isa(ST(2), "Qt::Core::QString") && (sv_derived_from(ST(3), "Qt::Core::QObject") || ST(3) == &PL_sv_undef) && SvPOK(ST(4)) && sv_isa(ST(5), "Qt::Gui::QKeySequence")) {
+      arg40 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
+      arg41 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+      if (sv_derived_from(ST(3), "Qt::Core::QObject")) {
+        arg42 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(3))));
+    }
+    else if (ST(3) == &PL_sv_undef) {
+        arg42 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg42 is not of type Qt::Core::QObject");
+      arg43 = (const char *)SvPV_nolen(ST(4));
+      arg44 = reinterpret_cast<QKeySequence *>(SvIV((SV*)SvRV(ST(5))));
+    QAction * ret = THIS->addAction(*arg40, *arg41, arg42, arg43, *arg44);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QAction * addMenu(QMenu * menu)
@@ -276,10 +305,14 @@ QIcon * arg20;
 QString * arg21;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        if (sv_derived_from(ST(1), "Qt::Gui::QMenu")) {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QMenu") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QMenu")) {
         arg00 = reinterpret_cast<QMenu *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QMenu");
@@ -287,31 +320,35 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+    QMenu * ret = THIS->addMenu(*arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMenu", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 3:
+      case 3:
       {
-        if (sv_isa(ST(1), "Qt::Gui::QIcon")) {
-        arg20 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg20 is not of type Qt::Gui::QIcon");
-    if (sv_isa(ST(2), "")) {
-        arg21 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg21 is not of type ");
+        if (sv_isa(ST(1), "Qt::Gui::QIcon") && sv_isa(ST(2), "Qt::Core::QString")) {
+      arg20 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
+      arg21 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
     QMenu * ret = THIS->addMenu(*arg20, *arg21);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QMenu", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QAction * addSeparator()
@@ -319,85 +356,98 @@ void
 QMenu::addSeparator(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QAction * ret = THIS->addSeparator();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
 
 ## void clear()
 void
 QMenu::clear(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->clear();
     XSRETURN(0);
+    }
 
 ## QAction * defaultAction()
 void
 QMenu::defaultAction(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QAction * ret = THIS->defaultAction();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QAction * exec()
-## QAction * exec(const QPoint & pos, QAction * at = 0)
 ## QAction * exec(const QPoint & pos, QAction * at)
+## QAction * exec(const QPoint & pos, QAction * at = 0)
 void
 QMenu::exec(...)
 PREINIT:
 QPoint * arg10;
-QAction * arg11 = 0;
+QAction * arg11;
 QPoint * arg20;
-QAction * arg21;
+QAction * arg21 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        QAction * ret = THIS->exec();
+        if (1) {
+      
+    QAction * ret = THIS->exec();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg10 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type ");
-    QAction * ret = THIS->exec(*arg10, arg11);
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
-    XSRETURN(1);
-        break;
-      }
-    case 3:
-      {
-        if (sv_isa(ST(1), "")) {
-        arg20 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg20 is not of type ");
-    if (sv_derived_from(ST(2), "Qt::Gui::QAction")) {
-        arg21 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QAction");
+        if (sv_isa(ST(1), "Qt::Core::QPoint")) {
+      arg20 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
     QAction * ret = THIS->exec(*arg20, arg21);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QPoint") && (sv_derived_from(ST(2), "Qt::Gui::QAction") || ST(2) == &PL_sv_undef)) {
+      arg10 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Gui::QAction")) {
+        arg11 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg11 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg11 is not of type Qt::Gui::QAction");
+    QAction * ret = THIS->exec(*arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void hideTearOffMenu()
@@ -405,18 +455,24 @@ void
 QMenu::hideTearOffMenu(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->hideTearOffMenu();
     XSRETURN(0);
+    }
 
 ## QIcon icon()
 void
 QMenu::icon(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QIcon ret = THIS->icon();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QIcon", (void *)new QIcon(ret));
     XSRETURN(1);
+    }
 
 ## QAction * insertMenu(QAction * before, QMenu * menu)
 void
@@ -425,13 +481,20 @@ PREINIT:
 QAction * arg00;
 QMenu * arg01;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAction") || ST(1) == &PL_sv_undef) && (sv_derived_from(ST(2), "Qt::Gui::QMenu") || ST(2) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
         arg00 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAction");
-    if (sv_derived_from(ST(2), "Qt::Gui::QMenu")) {
+      if (sv_derived_from(ST(2), "Qt::Gui::QMenu")) {
         arg01 = reinterpret_cast<QMenu *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg01 = 0;
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QMenu");
@@ -439,6 +502,7 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QAction * insertSeparator(QAction * before)
 void
@@ -446,8 +510,12 @@ QMenu::insertSeparator(...)
 PREINIT:
 QAction * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAction") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
         arg00 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAction");
@@ -455,90 +523,104 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
 
 ## bool isEmpty()
 void
 QMenu::isEmpty(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isEmpty();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isTearOffEnabled()
 void
 QMenu::isTearOffEnabled(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isTearOffEnabled();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isTearOffMenuVisible()
 void
 QMenu::isTearOffMenuVisible(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isTearOffMenuVisible();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QAction * menuAction()
 void
 QMenu::menuAction(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QAction * ret = THIS->menuAction();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);
+    }
 
-## void popup(const QPoint & pos, QAction * at = 0)
 ## void popup(const QPoint & pos, QAction * at)
+## void popup(const QPoint & pos, QAction * at = 0)
 void
 QMenu::popup(...)
 PREINIT:
 QPoint * arg00;
-QAction * arg01 = 0;
+QAction * arg01;
 QPoint * arg10;
-QAction * arg11;
+QAction * arg11 = 0;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    (void)THIS->popup(*arg00, arg01);
-    XSRETURN(0);
-        break;
-      }
-    case 3:
-      {
-        if (sv_isa(ST(1), "")) {
-        arg10 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type ");
-    if (sv_derived_from(ST(2), "Qt::Gui::QAction")) {
-        arg11 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg11 is not of type Qt::Gui::QAction");
+        if (sv_isa(ST(1), "Qt::Core::QPoint")) {
+      arg10 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->popup(*arg10, arg11);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QPoint") && (sv_derived_from(ST(2), "Qt::Gui::QAction") || ST(2) == &PL_sv_undef)) {
+      arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Gui::QAction")) {
+        arg01 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg01 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QAction");
+    (void)THIS->popup(*arg00, arg01);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## bool separatorsCollapsible()
@@ -546,10 +628,13 @@ void
 QMenu::separatorsCollapsible(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->separatorsCollapsible();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## void setActiveAction(QAction * act)
 void
@@ -557,13 +642,18 @@ QMenu::setActiveAction(...)
 PREINIT:
 QAction * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAction") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
         arg00 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAction");
     (void)THIS->setActiveAction(arg00);
     XSRETURN(0);
+    }
 
 ## void setDefaultAction(QAction * arg0)
 void
@@ -571,13 +661,18 @@ QMenu::setDefaultAction(...)
 PREINIT:
 QAction * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAction") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
         arg00 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAction");
     (void)THIS->setDefaultAction(arg00);
     XSRETURN(0);
+    }
 
 ## void setIcon(const QIcon & icon)
 void
@@ -586,12 +681,10 @@ PREINIT:
 QIcon * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QIcon")) {
-        arg00 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QIcon");
+      arg00 = reinterpret_cast<QIcon *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setIcon(*arg00);
     XSRETURN(0);
+    }
 
 ## void setNoReplayFor(QWidget * widget)
 void
@@ -599,13 +692,18 @@ QMenu::setNoReplayFor(...)
 PREINIT:
 QWidget * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     (void)THIS->setNoReplayFor(arg00);
     XSRETURN(0);
+    }
 
 ## void setSeparatorsCollapsible(bool collapse)
 void
@@ -613,9 +711,11 @@ QMenu::setSeparatorsCollapsible(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setSeparatorsCollapsible(arg00);
     XSRETURN(0);
+    }
 
 ## void setTearOffEnabled(bool arg0)
 void
@@ -623,9 +723,11 @@ QMenu::setTearOffEnabled(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setTearOffEnabled(arg00);
     XSRETURN(0);
+    }
 
 ## void setTitle(const QString & title)
 void
@@ -633,30 +735,34 @@ QMenu::setTitle(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setTitle(*arg00);
     XSRETURN(0);
+    }
 
 ## QSize sizeHint()
 void
 QMenu::sizeHint(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSize ret = THIS->sizeHint();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }
 
 ## QString title()
 void
 QMenu::title(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->title();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }

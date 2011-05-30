@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,37 +23,44 @@ Qt::Gui::QPainterPathStroker
 
 =over
 
-=item    QPainterPathStroker()
+=item   QPainterPathStroker()
 
-=item    ~QPainterPathStroker()
+=item   ~QPainterPathStroker()
 
-=item   Qt::PenCapStyle capStyle()
+=item  Qt::PenCapStyle capStyle()
 
-=item   QPainterPath createStroke(const QPainterPath & path)
+=item  QPainterPath createStroke(const QPainterPath & path)
 
-=item   qreal curveThreshold()
+=item  qreal curveThreshold()
 
-=item   qreal dashOffset()
+=item  qreal dashOffset()
 
-=item   Qt::PenJoinStyle joinStyle()
+=item  Qt::PenJoinStyle joinStyle()
 
-=item   qreal miterLimit()
+=item  qreal miterLimit()
 
-=item   void setCapStyle(Qt::PenCapStyle style)
+=item  void setCapStyle(Qt::PenCapStyle style)
 
-=item   void setCurveThreshold(qreal threshold)
+=item  void setCurveThreshold(qreal threshold)
 
-=item   void setDashOffset(qreal offset)
+=item  void setDashOffset(qreal offset)
 
-=item   void setDashPattern(Qt::PenStyle arg0)
+=item  void setDashPattern(Qt::PenStyle arg0)
 
-=item   void setJoinStyle(Qt::PenJoinStyle style)
+=item  void setJoinStyle(Qt::PenJoinStyle style)
 
-=item   void setMiterLimit(qreal length)
+=item  void setMiterLimit(qreal length)
 
-=item   void setWidth(qreal width)
+=item  void setWidth(qreal width)
 
-=item   qreal width()
+=item  qreal width()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

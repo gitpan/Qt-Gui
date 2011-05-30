@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QFrame/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QFrame/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,47 +24,60 @@ Qt::Gui::QToolBox
 
 =over
 
-=item    ~QToolBox()
+=item   QToolBox(QWidget * parent, QFlags<Qt::WindowType> f)
 
-=item   int addItem(QWidget * widget, const QString & text)
+=item   QToolBox(QWidget * parent, QFlags<Qt::WindowType> f = 0)
 
-=item   int addItem(QWidget * widget, const QIcon & icon, const QString & text)
+=item   QToolBox(QWidget * parent = 0, QFlags<Qt::WindowType> f = 0)
 
-=item   int count()
+=item   ~QToolBox()
 
-=item   int currentIndex()
+=item  int addItem(QWidget * widget, const QString & text)
 
-=item   QWidget * currentWidget()
+=item  int addItem(QWidget * widget, const QIcon & icon, const QString & text)
 
-=item   int indexOf(QWidget * widget)
+=item  int count()
 
-=item   int insertItem(int index, QWidget * widget, const QString & text)
+=item  int currentIndex()
 
-=item   int insertItem(int index, QWidget * widget, const QIcon & icon, const QString & text)
+=item  QWidget * currentWidget()
 
-=item   bool isItemEnabled(int index)
+=item  int indexOf(QWidget * widget)
 
-=item   QIcon itemIcon(int index)
+=item  int insertItem(int index, QWidget * widget, const QString & text)
 
-=item   QString itemText(int index)
+=item  int insertItem(int index, QWidget * widget, const QIcon & icon, const QString & text)
 
-=item   QString itemToolTip(int index)
+=item  bool isItemEnabled(int index)
 
-=item   void removeItem(int index)
+=item  QIcon itemIcon(int index)
 
-=item   void setCurrentIndex(int index)
+=item  QString itemText(int index)
 
-=item   void setCurrentWidget(QWidget * widget)
+=item  QString itemToolTip(int index)
 
-=item   void setItemEnabled(int index, bool enabled)
+=item  void removeItem(int index)
 
-=item   void setItemIcon(int index, const QIcon & icon)
+=item  void setCurrentIndex(int index)
 
-=item   void setItemText(int index, const QString & text)
+=item  void setCurrentWidget(QWidget * widget)
 
-=item   void setItemToolTip(int index, const QString & toolTip)
+=item  void setItemEnabled(int index, bool enabled)
 
-=item   QWidget * widget(int index)
+=item  void setItemIcon(int index, const QIcon & icon)
+
+=item  void setItemText(int index, const QString & text)
+
+=item  void setItemToolTip(int index, const QString & toolTip)
+
+=item  QWidget * widget(int index)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

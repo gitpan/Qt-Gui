@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub PreeditFormat() { 0 }
-sub SelectionFormat() { 1 }
 
 
 1;
@@ -28,39 +24,50 @@ Qt::Gui::QInputContext
 
 =over
 
-=item    QInputContext(QObject * parent = 0)
+=item   QInputContext(QObject * parent)
 
-=item    QInputContext(QObject * parent)
+=item   QInputContext(QObject * parent = 0)
 
-=item    ~QInputContext()
+=item   ~QInputContext()
 
-=item   bool filterEvent(const QEvent * event)
+=item  bool filterEvent(const QEvent * event)
 
-=item   QWidget * focusWidget()
+=item  QWidget * focusWidget()
 
-=item   QFont font()
+=item  QFont font()
 
-=item   QString identifierName()
+=item  QString identifierName()
 
-=item   bool isComposing()
+=item  bool isComposing()
 
-=item   QString language()
+=item  QString language()
 
-=item   void mouseHandler(int x, QMouseEvent * event)
+=item  void mouseHandler(int x, QMouseEvent * event)
 
-=item   void reset()
+=item  void reset()
 
-=item   void sendEvent(const QInputMethodEvent & event)
+=item  void sendEvent(const QInputMethodEvent & event)
 
-=item   void setFocusWidget(QWidget * w)
+=item  void setFocusWidget(QWidget * w)
 
-=item   QTextFormat standardFormat(QInputContext::StandardFormat s)
+=item  QTextFormat standardFormat(QInputContext::StandardFormat s)
 
-=item   void update()
+=item  void update()
 
-=item   void widgetDestroyed(QWidget * w)
+=item  void widgetDestroyed(QWidget * w)
 
-=item   bool x11FilterEvent(QWidget * keywidget, _XEvent * event)
+=item  bool x11FilterEvent(QWidget * keywidget, _XEvent * event)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item PreeditFormat
+
+=item SelectionFormat
 
 
 =back

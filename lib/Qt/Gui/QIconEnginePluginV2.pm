@@ -1,32 +1,47 @@
-package Qt::Gui::QIconEngineFactoryInterfaceV2;
+package Qt::Gui::QIconEnginePluginV2;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QIconEngineFactoryInterfaceV2
+# classname: QIconEnginePluginV2
 # file     : QtGui/qiconengineplugin.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject Qt::Gui::QIconEngineFactoryInterfaceV2/;
 
 
 # FIXME: operator overload
-
 
 
 1;
 
 =head1 NAME
 
-Qt::Gui::QIconEngineFactoryInterfaceV2
+Qt::Gui::QIconEnginePluginV2
 
 =head1 PUBLIC METHODS
 
 =over
 
-=item   QIconEngineV2 * create(const QString & filename = QString())
+=item   QIconEnginePluginV2(QObject * parent)
 
-=item   QIconEngineV2 * create(const QString & filename)
+=item   QIconEnginePluginV2(QObject * parent = 0)
+
+=item   ~QIconEnginePluginV2()
+
+=item  QIconEngineV2 * create(const QString & filename)
+
+=item  QIconEngineV2 * create(const QString & filename = QString())
+
+=item  QStringList keys()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

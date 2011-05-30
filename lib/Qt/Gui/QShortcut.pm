@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,45 +24,48 @@ Qt::Gui::QShortcut
 
 =over
 
-=item    QShortcut(QWidget * parent)
+=item   QShortcut(QWidget * parent)
 
-=item    QShortcut(const QKeySequence & key, QWidget * parent, const char * member, const char * ambiguousMember, Qt::ShortcutContext context = Qt::WindowShortcut)
+=item   QShortcut(const QKeySequence & key, QWidget * parent, const char * member, const char * ambiguousMember, Qt::ShortcutContext context)
 
-=item    QShortcut(const QKeySequence & key, QWidget * parent, const char * member, const char * ambiguousMember, Qt::ShortcutContext context)
+=item   QShortcut(const QKeySequence & key, QWidget * parent, const char * member, const char * ambiguousMember, Qt::ShortcutContext context = Qt::WindowShortcut)
 
-=item    QShortcut(const QKeySequence & key, QWidget * parent, const char * member, const char * ambiguousMember = 0, Qt::ShortcutContext context = Qt::WindowShortcut)
+=item   QShortcut(const QKeySequence & key, QWidget * parent, const char * member, const char * ambiguousMember = 0, Qt::ShortcutContext context = Qt::WindowShortcut)
 
-=item    QShortcut(const QKeySequence & key, QWidget * parent, const char * member, const char * ambiguousMember, Qt::ShortcutContext context = Qt::WindowShortcut)
+=item   QShortcut(const QKeySequence & key, QWidget * parent, const char * member = 0, const char * ambiguousMember = 0, Qt::ShortcutContext context = Qt::WindowShortcut)
 
-=item    QShortcut(const QKeySequence & key, QWidget * parent, const char * member = 0, const char * ambiguousMember = 0, Qt::ShortcutContext context = Qt::WindowShortcut)
+=item   ~QShortcut()
 
-=item    QShortcut(const QKeySequence & key, QWidget * parent, const char * member, const char * ambiguousMember = 0, Qt::ShortcutContext context = Qt::WindowShortcut)
+=item  bool autoRepeat()
 
-=item    ~QShortcut()
+=item  Qt::ShortcutContext context()
 
-=item   bool autoRepeat()
+=item  int id()
 
-=item   Qt::ShortcutContext context()
+=item  bool isEnabled()
 
-=item   int id()
+=item  QKeySequence key()
 
-=item   bool isEnabled()
+=item  QWidget * parentWidget()
 
-=item   QKeySequence key()
+=item  void setAutoRepeat(bool on)
 
-=item   QWidget * parentWidget()
+=item  void setContext(Qt::ShortcutContext context)
 
-=item   void setAutoRepeat(bool on)
+=item  void setEnabled(bool enable)
 
-=item   void setContext(Qt::ShortcutContext context)
+=item  void setKey(const QKeySequence & key)
 
-=item   void setEnabled(bool enable)
+=item  void setWhatsThis(const QString & text)
 
-=item   void setKey(const QKeySequence & key)
+=item  QString whatsThis()
 
-=item   void setWhatsThis(const QString & text)
 
-=item   QString whatsThis()
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

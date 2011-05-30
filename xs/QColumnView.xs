@@ -18,36 +18,44 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QColumnView(QWidget * parent = 0)
 ##  QColumnView(QWidget * parent)
+##  QColumnView(QWidget * parent = 0)
   void
 QColumnView::new(...)
 PREINIT:
 QColumnView *ret;
-QWidget * arg00 = 0;
-QWidget * arg10;
+QWidget * arg00;
+QWidget * arg10 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
+        if (1) {
+      
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QColumnView()
@@ -63,90 +71,77 @@ QColumnView::indexAt(...)
 PREINIT:
 QPoint * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QPoint")) {
+      arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
     QModelIndex ret = THIS->indexAt(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QModelIndex", (void *)new QModelIndex(ret));
     XSRETURN(1);
+    }
 
 ## QWidget * previewWidget()
 void
 QColumnView::previewWidget(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QWidget * ret = THIS->previewWidget();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
     XSRETURN(1);
+    }
 
 ## bool resizeGripsVisible()
 void
 QColumnView::resizeGripsVisible(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->resizeGripsVisible();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
-## void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 ## void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint)
+## void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 void
 QColumnView::scrollTo(...)
 PREINIT:
 QModelIndex * arg00;
-QAbstractItemView::ScrollHint arg01 = QAbstractItemView::EnsureVisible;
+QAbstractItemView::ScrollHint arg01;
 QModelIndex * arg10;
-QAbstractItemView::ScrollHint arg11;
+QAbstractItemView::ScrollHint arg11 = QAbstractItemView::EnsureVisible;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
-    (void)THIS->scrollTo(*arg00, arg01);
-    XSRETURN(0);
-        break;
-      }
-    case 3:
-      {
-        if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg10 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Core::QModelIndex");
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg11 = QAbstractItemView::EnsureVisible;
-      break;
-    case 1:
-      arg11 = QAbstractItemView::PositionAtTop;
-      break;
-    case 2:
-      arg11 = QAbstractItemView::PositionAtBottom;
-      break;
-    case 3:
-      arg11 = QAbstractItemView::PositionAtCenter;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QAbstractItemView::ScrollHint passed in");
-    }
+      arg10 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->scrollTo(*arg10, arg11);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QModelIndex") && SvIOK(ST(2))) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = (QAbstractItemView::ScrollHint)SvIV(ST(2));
+    (void)THIS->scrollTo(*arg00, arg01);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void selectAll()
@@ -154,8 +149,11 @@ void
 QColumnView::selectAll(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->selectAll();
     XSRETURN(0);
+    }
 
 ## void setModel(QAbstractItemModel * model)
 void
@@ -163,13 +161,18 @@ QColumnView::setModel(...)
 PREINIT:
 QAbstractItemModel * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Core::QAbstractItemModel")) {
+    if ((sv_derived_from(ST(1), "Qt::Core::QAbstractItemModel") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Core::QAbstractItemModel")) {
         arg00 = reinterpret_cast<QAbstractItemModel *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QAbstractItemModel");
     (void)THIS->setModel(arg00);
     XSRETURN(0);
+    }
 
 ## void setPreviewWidget(QWidget * widget)
 void
@@ -177,13 +180,18 @@ QColumnView::setPreviewWidget(...)
 PREINIT:
 QWidget * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
     (void)THIS->setPreviewWidget(arg00);
     XSRETURN(0);
+    }
 
 ## void setResizeGripsVisible(bool visible)
 void
@@ -191,9 +199,11 @@ QColumnView::setResizeGripsVisible(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setResizeGripsVisible(arg00);
     XSRETURN(0);
+    }
 
 ## void setRootIndex(const QModelIndex & index)
 void
@@ -202,12 +212,10 @@ PREINIT:
 QModelIndex * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setRootIndex(*arg00);
     XSRETURN(0);
+    }
 
 ## void setSelectionModel(QItemSelectionModel * selectionModel)
 void
@@ -215,23 +223,31 @@ QColumnView::setSelectionModel(...)
 PREINIT:
 QItemSelectionModel * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QItemSelectionModel")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QItemSelectionModel") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QItemSelectionModel")) {
         arg00 = reinterpret_cast<QItemSelectionModel *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QItemSelectionModel");
     (void)THIS->setSelectionModel(arg00);
     XSRETURN(0);
+    }
 
 ## QSize sizeHint()
 void
 QColumnView::sizeHint(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QSize ret = THIS->sizeHint();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }
 
 ## QRect visualRect(const QModelIndex & index)
 void
@@ -240,11 +256,9 @@ PREINIT:
 QModelIndex * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
-        arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QModelIndex");
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     QRect ret = THIS->visualRect(*arg00);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QRect(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QRect", (void *)new QRect(ret));
     XSRETURN(1);
+    }

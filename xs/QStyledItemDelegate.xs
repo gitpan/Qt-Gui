@@ -18,36 +18,44 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QStyledItemDelegate(QObject * parent = 0)
 ##  QStyledItemDelegate(QObject * parent)
+##  QStyledItemDelegate(QObject * parent = 0)
   void
 QStyledItemDelegate::new(...)
 PREINIT:
 QStyledItemDelegate *ret;
-QObject * arg00 = 0;
-QObject * arg10;
+QObject * arg00;
+QObject * arg10 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
+        if (1) {
+      
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_derived_from(ST(1), "")) {
-        arg10 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(1))));
+        if ((sv_derived_from(ST(1), "Qt::Core::QObject") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Core::QObject")) {
+        arg00 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg10 is not of type ");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QObject");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QStyledItemDelegate()
@@ -65,25 +73,22 @@ QWidget * arg00;
 QStyleOptionViewItem * arg01;
 QModelIndex * arg02;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Gui::QStyleOptionViewItem") && sv_isa(ST(3), "Qt::Core::QModelIndex")) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    if (sv_isa(ST(2), "Qt::Gui::QStyleOptionViewItem")) {
-        arg01 = reinterpret_cast<QStyleOptionViewItem *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStyleOptionViewItem");
-    if (sv_isa(ST(3), "Qt::Core::QModelIndex")) {
-        arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Core::QModelIndex");
+      arg01 = reinterpret_cast<QStyleOptionViewItem *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
     QWidget * ret = THIS->createEditor(arg00, *arg01, *arg02);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QString displayText(const QVariant & value, const QLocale & locale)
 void
@@ -92,30 +97,27 @@ PREINIT:
 QVariant * arg00;
 QLocale * arg01;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    if (sv_isa(ST(2), "")) {
-        arg01 = reinterpret_cast<QLocale *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QVariant") && sv_isa(ST(2), "Qt::Core::QLocale")) {
+      arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QLocale *>(SvIV((SV*)SvRV(ST(2))));
     QString ret = THIS->displayText(*arg00, *arg01);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## QItemEditorFactory * itemEditorFactory()
 void
 QStyledItemDelegate::itemEditorFactory(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QItemEditorFactory * ret = THIS->itemEditorFactory();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QItemEditorFactory", (void *)ret);
     XSRETURN(1);
+    }
 
 ## void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index)
 void
@@ -125,23 +127,20 @@ QPainter * arg00;
 QStyleOptionViewItem * arg01;
 QModelIndex * arg02;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QPainter")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QPainter") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Gui::QStyleOptionViewItem") && sv_isa(ST(3), "Qt::Core::QModelIndex")) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QPainter")) {
         arg00 = reinterpret_cast<QPainter *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPainter");
-    if (sv_isa(ST(2), "Qt::Gui::QStyleOptionViewItem")) {
-        arg01 = reinterpret_cast<QStyleOptionViewItem *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStyleOptionViewItem");
-    if (sv_isa(ST(3), "Qt::Core::QModelIndex")) {
-        arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Core::QModelIndex");
+      arg01 = reinterpret_cast<QStyleOptionViewItem *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
     (void)THIS->paint(arg00, *arg01, *arg02);
     XSRETURN(0);
+    }
 
 ## void setEditorData(QWidget * editor, const QModelIndex & index)
 void
@@ -150,18 +149,19 @@ PREINIT:
 QWidget * arg00;
 QModelIndex * arg01;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Core::QModelIndex")) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    if (sv_isa(ST(2), "Qt::Core::QModelIndex")) {
-        arg01 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QModelIndex");
+      arg01 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(2))));
     (void)THIS->setEditorData(arg00, *arg01);
     XSRETURN(0);
+    }
 
 ## void setItemEditorFactory(QItemEditorFactory * factory)
 void
@@ -169,13 +169,18 @@ QStyledItemDelegate::setItemEditorFactory(...)
 PREINIT:
 QItemEditorFactory * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QItemEditorFactory")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QItemEditorFactory") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QItemEditorFactory")) {
         arg00 = reinterpret_cast<QItemEditorFactory *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QItemEditorFactory");
     (void)THIS->setItemEditorFactory(arg00);
     XSRETURN(0);
+    }
 
 ## void setModelData(QWidget * editor, QAbstractItemModel * model, const QModelIndex & index)
 void
@@ -185,23 +190,27 @@ QWidget * arg00;
 QAbstractItemModel * arg01;
 QModelIndex * arg02;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef) && (sv_derived_from(ST(2), "Qt::Core::QAbstractItemModel") || ST(2) == &PL_sv_undef) && sv_isa(ST(3), "Qt::Core::QModelIndex")) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    if (sv_derived_from(ST(2), "Qt::Core::QAbstractItemModel")) {
+      if (sv_derived_from(ST(2), "Qt::Core::QAbstractItemModel")) {
         arg01 = reinterpret_cast<QAbstractItemModel *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg01 = 0;
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QAbstractItemModel");
-    if (sv_isa(ST(3), "Qt::Core::QModelIndex")) {
-        arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Core::QModelIndex");
+      arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
     (void)THIS->setModelData(arg00, arg01, *arg02);
     XSRETURN(0);
+    }
 
 ## QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index)
 void
@@ -210,20 +219,14 @@ PREINIT:
 QStyleOptionViewItem * arg00;
 QModelIndex * arg01;
 PPCODE:
-    if (sv_isa(ST(1), "Qt::Gui::QStyleOptionViewItem")) {
-        arg00 = reinterpret_cast<QStyleOptionViewItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QStyleOptionViewItem");
-    if (sv_isa(ST(2), "Qt::Core::QModelIndex")) {
-        arg01 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QModelIndex");
+    if (sv_isa(ST(1), "Qt::Gui::QStyleOptionViewItem") && sv_isa(ST(2), "Qt::Core::QModelIndex")) {
+      arg00 = reinterpret_cast<QStyleOptionViewItem *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(2))));
     QSize ret = THIS->sizeHint(*arg00, *arg01);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QSize(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }
 
 ## void updateEditorGeometry(QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & index)
 void
@@ -233,20 +236,17 @@ QWidget * arg00;
 QStyleOptionViewItem * arg01;
 QModelIndex * arg02;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
+    if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Gui::QStyleOptionViewItem") && sv_isa(ST(3), "Qt::Core::QModelIndex")) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
         arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    if (sv_isa(ST(2), "Qt::Gui::QStyleOptionViewItem")) {
-        arg01 = reinterpret_cast<QStyleOptionViewItem *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStyleOptionViewItem");
-    if (sv_isa(ST(3), "Qt::Core::QModelIndex")) {
-        arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Core::QModelIndex");
+      arg01 = reinterpret_cast<QStyleOptionViewItem *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(3))));
     (void)THIS->updateEditorGeometry(arg00, *arg01, *arg02);
     XSRETURN(0);
+    }

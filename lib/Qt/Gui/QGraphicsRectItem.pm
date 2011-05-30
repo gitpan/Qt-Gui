@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractGraphicsShapeItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractGraphicsShapeItem/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
 
 
 1;
@@ -28,53 +24,56 @@ Qt::Gui::QGraphicsRectItem
 
 =over
 
-=item    QGraphicsRectItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsRectItem(QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsRectItem(QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsRectItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsRectItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   QGraphicsRectItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsRectItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsRectItem(const QRectF & rect, QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsRectItem(const QRectF & rect, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsRectItem(const QRectF & rect, QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsRectItem(const QRectF & rect, QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsRectItem(const QRectF & rect, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsRectItem(const QRectF & rect, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   QGraphicsRectItem(qreal x, qreal y, qreal w, qreal h, QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsRectItem(const QRectF & rect, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsRectItem(qreal x, qreal y, qreal w, qreal h, QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsRectItem(qreal x, qreal y, qreal w, qreal h, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsRectItem(qreal x, qreal y, qreal w, qreal h, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsRectItem(qreal x, qreal y, qreal w, qreal h, QGraphicsItem * parent, QGraphicsScene * scene)
+=item   ~QGraphicsRectItem()
 
-=item    QGraphicsRectItem(qreal x, qreal y, qreal w, qreal h, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item  QRectF boundingRect()
 
-=item    QGraphicsRectItem(qreal x, qreal y, qreal w, qreal h, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item  bool contains(const QPointF & point)
 
-=item    ~QGraphicsRectItem()
+=item  bool isObscuredBy(const QGraphicsItem * item)
 
-=item   QRectF boundingRect()
+=item  QPainterPath opaqueArea()
 
-=item   bool contains(const QPointF & point)
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 
-=item   bool isObscuredBy(const QGraphicsItem * item)
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
 
-=item   QPainterPath opaqueArea()
+=item  QRectF rect()
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
+=item  void setRect(const QRectF & rect)
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
+=item  void setRect(qreal x, qreal y, qreal w, qreal h)
 
-=item   QRectF rect()
+=item  QPainterPath shape()
 
-=item   void setRect(const QRectF & rect)
+=item  int type()
 
-=item   void setRect(qreal x, qreal y, qreal w, qreal h)
 
-=item   QPainterPath shape()
+=back
 
-=item   int type()
+=head1 ENUM VALUES
+
+=over
+
+=item Type
 
 
 =back

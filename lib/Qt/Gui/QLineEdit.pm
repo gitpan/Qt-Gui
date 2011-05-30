@@ -7,18 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Normal() { 0 }
-sub NoEcho() { 1 }
-sub Password() { 2 }
-sub PasswordEchoOnEdit() { 3 }
 
 
 1;
@@ -31,133 +24,156 @@ Qt::Gui::QLineEdit
 
 =over
 
-=item    QLineEdit(QWidget * parent = 0)
+=item   QLineEdit(QWidget * parent)
 
-=item    QLineEdit(QWidget * parent)
+=item   QLineEdit(QWidget * parent = 0)
 
-=item    QLineEdit(const QString & arg0, QWidget * parent = 0)
+=item   QLineEdit(const QString & arg0, QWidget * parent)
 
-=item    QLineEdit(const QString & arg0, QWidget * parent)
+=item   QLineEdit(const QString & arg0, QWidget * parent = 0)
 
-=item    ~QLineEdit()
+=item   ~QLineEdit()
 
-=item   void backspace()
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   void clear()
+=item  void backspace()
 
-=item   QCompleter * completer()
+=item  void clear()
 
-=item   void copy()
+=item  QCompleter * completer()
 
-=item   QMenu * createStandardContextMenu()
+=item  void copy()
 
-=item   void cursorBackward(bool mark, int steps = 1)
+=item  QMenu * createStandardContextMenu()
 
-=item   void cursorBackward(bool mark, int steps)
+=item  void cursorBackward(bool mark, int steps)
 
-=item   void cursorForward(bool mark, int steps = 1)
+=item  void cursorBackward(bool mark, int steps = 1)
 
-=item   void cursorForward(bool mark, int steps)
+=item  void cursorForward(bool mark, int steps)
 
-=item   int cursorPosition()
+=item  void cursorForward(bool mark, int steps = 1)
 
-=item   int cursorPositionAt(const QPoint & pos)
+=item  int cursorPosition()
 
-=item   void cursorWordBackward(bool mark)
+=item  int cursorPositionAt(const QPoint & pos)
 
-=item   void cursorWordForward(bool mark)
+=item  void cursorWordBackward(bool mark)
 
-=item   void cut()
+=item  void cursorWordForward(bool mark)
 
-=item   void del()
+=item  void cut()
 
-=item   void deselect()
+=item  void del()
 
-=item   QString displayText()
+=item  void deselect()
 
-=item   bool dragEnabled()
+=item  QString displayText()
 
-=item   QLineEdit::EchoMode echoMode()
+=item  bool dragEnabled()
 
-=item   void end(bool mark)
+=item  QLineEdit::EchoMode echoMode()
 
-=item   bool event(QEvent * arg0)
+=item  void end(bool mark)
 
-=item   void getTextMargins(int * left, int * top, int * right, int * bottom)
+=item  bool event(QEvent * arg0)
 
-=item   bool hasAcceptableInput()
+=item  void getTextMargins(int * left, int * top, int * right, int * bottom)
 
-=item   bool hasFrame()
+=item  bool hasAcceptableInput()
 
-=item   bool hasSelectedText()
+=item  bool hasFrame()
 
-=item   void home(bool mark)
+=item  bool hasSelectedText()
 
-=item   QString inputMask()
+=item  void home(bool mark)
 
-=item   QVariant inputMethodQuery(Qt::InputMethodQuery arg0)
+=item  QString inputMask()
 
-=item   void insert(const QString & arg0)
+=item  QVariant inputMethodQuery(Qt::InputMethodQuery arg0)
 
-=item   bool isModified()
+=item  void insert(const QString & arg0)
 
-=item   bool isReadOnly()
+=item  bool isModified()
 
-=item   bool isRedoAvailable()
+=item  bool isReadOnly()
 
-=item   bool isUndoAvailable()
+=item  bool isRedoAvailable()
 
-=item   int maxLength()
+=item  bool isUndoAvailable()
 
-=item   QSize minimumSizeHint()
+=item  int maxLength()
 
-=item   void paste()
+=item  QSize minimumSizeHint()
 
-=item   void redo()
+=item  void paste()
 
-=item   void selectAll()
+=item  QString placeholderText()
 
-=item   QString selectedText()
+=item  void redo()
 
-=item   int selectionStart()
+=item  void selectAll()
 
-=item   void setCompleter(QCompleter * completer)
+=item  QString selectedText()
 
-=item   void setCursorPosition(int arg0)
+=item  int selectionStart()
 
-=item   void setDragEnabled(bool b)
+=item  void setAlignment(QFlags<Qt::AlignmentFlag> flag)
 
-=item   void setEchoMode(QLineEdit::EchoMode arg0)
+=item  void setCompleter(QCompleter * completer)
 
-=item   void setFrame(bool arg0)
+=item  void setCursorPosition(int arg0)
 
-=item   void setInputMask(const QString & inputMask)
+=item  void setDragEnabled(bool b)
 
-=item   void setMaxLength(int arg0)
+=item  void setEchoMode(QLineEdit::EchoMode arg0)
 
-=item   void setModified(bool arg0)
+=item  void setFrame(bool arg0)
 
-=item   void setReadOnly(bool arg0)
+=item  void setInputMask(const QString & inputMask)
 
-=item   void setSelection(int arg0, int arg1)
+=item  void setMaxLength(int arg0)
 
-=item   void setText(const QString & arg0)
+=item  void setModified(bool arg0)
 
-=item   void setTextMargins(const QMargins & margins)
+=item  void setPlaceholderText(const QString & arg0)
 
-=item   void setTextMargins(int left, int top, int right, int bottom)
+=item  void setReadOnly(bool arg0)
 
-=item   void setValidator(const QValidator * arg0)
+=item  void setSelection(int arg0, int arg1)
 
-=item   QSize sizeHint()
+=item  void setText(const QString & arg0)
 
-=item   QString text()
+=item  void setTextMargins(const QMargins & margins)
 
-=item   QMargins textMargins()
+=item  void setTextMargins(int left, int top, int right, int bottom)
 
-=item   void undo()
+=item  void setValidator(const QValidator * arg0)
 
-=item   const QValidator * validator()
+=item  QSize sizeHint()
+
+=item  QString text()
+
+=item  QMargins textMargins()
+
+=item  void undo()
+
+=item  const QValidator * validator()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Normal
+
+=item NoEcho
+
+=item Password
+
+=item PasswordEchoOnEdit
 
 
 =back

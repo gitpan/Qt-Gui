@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTextFormat/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTextFormat/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,37 +24,52 @@ Qt::Gui::QTextBlockFormat
 
 =over
 
-=item    QTextBlockFormat()
+=item   QTextBlockFormat()
 
-=item   qreal bottomMargin()
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   int indent()
+=item  qreal bottomMargin()
 
-=item   bool isValid()
+=item  int indent()
 
-=item   qreal leftMargin()
+=item  bool isValid()
 
-=item   bool nonBreakableLines()
+=item  qreal leftMargin()
 
-=item   qreal rightMargin()
+=item  bool nonBreakableLines()
 
-=item   void setBottomMargin(qreal margin)
+=item  QFlags<QTextFormat::PageBreakFlag> pageBreakPolicy()
 
-=item   void setIndent(int indent)
+=item  qreal rightMargin()
 
-=item   void setLeftMargin(qreal margin)
+=item  void setAlignment(QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setNonBreakableLines(bool b)
+=item  void setBottomMargin(qreal margin)
 
-=item   void setRightMargin(qreal margin)
+=item  void setIndent(int indent)
 
-=item   void setTextIndent(qreal aindent)
+=item  void setLeftMargin(qreal margin)
 
-=item   void setTopMargin(qreal margin)
+=item  void setNonBreakableLines(bool b)
 
-=item   qreal textIndent()
+=item  void setPageBreakPolicy(QFlags<QTextFormat::PageBreakFlag> flags)
 
-=item   qreal topMargin()
+=item  void setRightMargin(qreal margin)
+
+=item  void setTextIndent(qreal aindent)
+
+=item  void setTopMargin(qreal margin)
+
+=item  qreal textIndent()
+
+=item  qreal topMargin()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

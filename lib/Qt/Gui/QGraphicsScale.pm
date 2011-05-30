@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsTransform/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsTransform/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,29 +24,36 @@ Qt::Gui::QGraphicsScale
 
 =over
 
-=item    QGraphicsScale(QObject * parent = 0)
+=item   QGraphicsScale(QObject * parent)
 
-=item    QGraphicsScale(QObject * parent)
+=item   QGraphicsScale(QObject * parent = 0)
 
-=item    ~QGraphicsScale()
+=item   ~QGraphicsScale()
 
-=item   void applyTo(QMatrix4x4 * matrix)
+=item  void applyTo(QMatrix4x4 * matrix)
 
-=item   QVector3D origin()
+=item  QVector3D origin()
 
-=item   void setOrigin(const QVector3D & point)
+=item  void setOrigin(const QVector3D & point)
 
-=item   void setXScale(qreal arg0)
+=item  void setXScale(qreal arg0)
 
-=item   void setYScale(qreal arg0)
+=item  void setYScale(qreal arg0)
 
-=item   void setZScale(qreal arg0)
+=item  void setZScale(qreal arg0)
 
-=item   qreal xScale()
+=item  qreal xScale()
 
-=item   qreal yScale()
+=item  qreal yScale()
 
-=item   qreal zScale()
+=item  qreal zScale()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

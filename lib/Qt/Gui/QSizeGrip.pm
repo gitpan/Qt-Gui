@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,13 +24,20 @@ Qt::Gui::QSizeGrip
 
 =over
 
-=item    QSizeGrip(QWidget * parent)
+=item   QSizeGrip(QWidget * parent)
 
-=item    ~QSizeGrip()
+=item   ~QSizeGrip()
 
-=item   void setVisible(bool arg0)
+=item  void setVisible(bool arg0)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

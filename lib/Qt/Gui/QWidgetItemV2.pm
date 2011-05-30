@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidgetItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidgetItem/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,24 @@ Qt::Gui::QWidgetItemV2
 
 =over
 
-=item    QWidgetItemV2(QWidget * widget)
+=item   QWidgetItemV2(QWidget * widget)
 
-=item    ~QWidgetItemV2()
+=item   ~QWidgetItemV2()
 
-=item   int heightForWidth(int width)
+=item  int heightForWidth(int width)
 
-=item   QSize maximumSize()
+=item  QSize maximumSize()
 
-=item   QSize minimumSize()
+=item  QSize minimumSize()
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

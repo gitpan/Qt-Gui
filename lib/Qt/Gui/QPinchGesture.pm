@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGesture/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGesture/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub ScaleFactorChanged() { 0 }
-sub RotationAngleChanged() { 1 }
-sub CenterPointChanged() { 2 }
 
 
 1;
@@ -30,45 +24,66 @@ Qt::Gui::QPinchGesture
 
 =over
 
-=item    QPinchGesture(QObject * parent = 0)
+=item   QPinchGesture(QObject * parent)
 
-=item    QPinchGesture(QObject * parent)
+=item   QPinchGesture(QObject * parent = 0)
 
-=item   QPointF centerPoint()
+=item  QPointF centerPoint()
 
-=item   QPointF lastCenterPoint()
+=item  QFlags<QPinchGesture::ChangeFlag> changeFlags()
 
-=item   qreal lastRotationAngle()
+=item  QPointF lastCenterPoint()
 
-=item   qreal lastScaleFactor()
+=item  qreal lastRotationAngle()
 
-=item   qreal rotationAngle()
+=item  qreal lastScaleFactor()
 
-=item   qreal scaleFactor()
+=item  qreal rotationAngle()
 
-=item   void setCenterPoint(const QPointF & value)
+=item  qreal scaleFactor()
 
-=item   void setLastCenterPoint(const QPointF & value)
+=item  void setCenterPoint(const QPointF & value)
 
-=item   void setLastRotationAngle(qreal value)
+=item  void setChangeFlags(QFlags<QPinchGesture::ChangeFlag> value)
 
-=item   void setLastScaleFactor(qreal value)
+=item  void setLastCenterPoint(const QPointF & value)
 
-=item   void setRotationAngle(qreal value)
+=item  void setLastRotationAngle(qreal value)
 
-=item   void setScaleFactor(qreal value)
+=item  void setLastScaleFactor(qreal value)
 
-=item   void setStartCenterPoint(const QPointF & value)
+=item  void setRotationAngle(qreal value)
 
-=item   void setTotalRotationAngle(qreal value)
+=item  void setScaleFactor(qreal value)
 
-=item   void setTotalScaleFactor(qreal value)
+=item  void setStartCenterPoint(const QPointF & value)
 
-=item   QPointF startCenterPoint()
+=item  void setTotalChangeFlags(QFlags<QPinchGesture::ChangeFlag> value)
 
-=item   qreal totalRotationAngle()
+=item  void setTotalRotationAngle(qreal value)
 
-=item   qreal totalScaleFactor()
+=item  void setTotalScaleFactor(qreal value)
+
+=item  QPointF startCenterPoint()
+
+=item  QFlags<QPinchGesture::ChangeFlag> totalChangeFlags()
+
+=item  qreal totalRotationAngle()
+
+=item  qreal totalScaleFactor()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item ScaleFactorChanged
+
+=item RotationAngleChanged
+
+=item CenterPointChanged
 
 
 =back

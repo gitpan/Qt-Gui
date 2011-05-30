@@ -7,16 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub UnknownError() { 0 }
-sub DeviceError() { 1 }
-sub UnsupportedFormatError() { 2 }
 
 
 1;
@@ -29,55 +23,68 @@ Qt::Gui::QImageWriter
 
 =over
 
-=item    QImageWriter()
+=item   QImageWriter()
 
-=item    QImageWriter(QIODevice * device, const QByteArray & format)
+=item   QImageWriter(QIODevice * device, const QByteArray & format)
 
-=item    QImageWriter(const QString & fileName, const QByteArray & format = QByteArray())
+=item   QImageWriter(const QString & fileName, const QByteArray & format)
 
-=item    QImageWriter(const QString & fileName, const QByteArray & format)
+=item   QImageWriter(const QString & fileName, const QByteArray & format = QByteArray())
 
-=item    ~QImageWriter()
+=item   ~QImageWriter()
 
-=item   bool canWrite()
+=item  bool canWrite()
 
-=item   int compression()
+=item  int compression()
 
-=item   QString description()
+=item  QString description()
 
-=item   QIODevice * device()
+=item  QIODevice * device()
 
-=item   QImageWriter::ImageWriterError error()
+=item  QImageWriter::ImageWriterError error()
 
-=item   QString errorString()
+=item  QString errorString()
 
-=item   QString fileName()
+=item  QString fileName()
 
-=item   QByteArray format()
+=item  QByteArray format()
 
-=item   float gamma()
+=item  float gamma()
 
-=item   int quality()
+=item  int quality()
 
-=item   void setCompression(int compression)
+=item  void setCompression(int compression)
 
-=item   void setDescription(const QString & description)
+=item  void setDescription(const QString & description)
 
-=item   void setDevice(QIODevice * device)
+=item  void setDevice(QIODevice * device)
 
-=item   void setFileName(const QString & fileName)
+=item  void setFileName(const QString & fileName)
 
-=item   void setFormat(const QByteArray & format)
+=item  void setFormat(const QByteArray & format)
 
-=item   void setGamma(float gamma)
+=item  void setGamma(float gamma)
 
-=item   void setQuality(int quality)
+=item  void setQuality(int quality)
 
-=item   void setText(const QString & key, const QString & text)
+=item  void setText(const QString & key, const QString & text)
 
-=item   bool supportsOption(QImageIOHandler::ImageOption option)
+=item  bool supportsOption(QImageIOHandler::ImageOption option)
 
-=item   bool write(const QImage & image)
+=item  bool write(const QImage & image)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item UnknownError
+
+=item DeviceError
+
+=item UnsupportedFormatError
 
 
 =back

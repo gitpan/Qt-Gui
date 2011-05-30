@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,21 +24,28 @@ Qt::Gui::QSyntaxHighlighter
 
 =over
 
-=item    QSyntaxHighlighter(QObject * parent)
+=item   QSyntaxHighlighter(QObject * parent)
 
-=item    QSyntaxHighlighter(QTextDocument * parent)
+=item   QSyntaxHighlighter(QTextDocument * parent)
 
-=item    QSyntaxHighlighter(QTextEdit * parent)
+=item   QSyntaxHighlighter(QTextEdit * parent)
 
-=item    ~QSyntaxHighlighter()
+=item   ~QSyntaxHighlighter()
 
-=item   QTextDocument * document()
+=item  QTextDocument * document()
 
-=item   void rehighlight()
+=item  void rehighlight()
 
-=item   void rehighlightBlock(const QTextBlock & block)
+=item  void rehighlightBlock(const QTextBlock & block)
 
-=item   void setDocument(QTextDocument * doc)
+=item  void setDocument(QTextDocument * doc)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

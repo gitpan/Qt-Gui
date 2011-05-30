@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,65 +24,72 @@ Qt::Gui::QUndoStack
 
 =over
 
-=item    QUndoStack(QObject * parent = 0)
+=item   QUndoStack(QObject * parent)
 
-=item    QUndoStack(QObject * parent)
+=item   QUndoStack(QObject * parent = 0)
 
-=item    ~QUndoStack()
+=item   ~QUndoStack()
 
-=item   void beginMacro(const QString & text)
+=item  void beginMacro(const QString & text)
 
-=item   bool canRedo()
+=item  bool canRedo()
 
-=item   bool canUndo()
+=item  bool canUndo()
 
-=item   int cleanIndex()
+=item  int cleanIndex()
 
-=item   void clear()
+=item  void clear()
 
-=item   const QUndoCommand * command(int index)
+=item  const QUndoCommand * command(int index)
 
-=item   int count()
+=item  int count()
 
-=item   QAction * createRedoAction(QObject * parent, const QString & prefix = QString())
+=item  QAction * createRedoAction(QObject * parent, const QString & prefix)
 
-=item   QAction * createRedoAction(QObject * parent, const QString & prefix)
+=item  QAction * createRedoAction(QObject * parent, const QString & prefix = QString())
 
-=item   QAction * createUndoAction(QObject * parent, const QString & prefix = QString())
+=item  QAction * createUndoAction(QObject * parent, const QString & prefix)
 
-=item   QAction * createUndoAction(QObject * parent, const QString & prefix)
+=item  QAction * createUndoAction(QObject * parent, const QString & prefix = QString())
 
-=item   void endMacro()
+=item  void endMacro()
 
-=item   int index()
+=item  int index()
 
-=item   bool isActive()
+=item  bool isActive()
 
-=item   bool isClean()
+=item  bool isClean()
 
-=item   void push(QUndoCommand * cmd)
+=item  void push(QUndoCommand * cmd)
 
-=item   void redo()
+=item  void redo()
 
-=item   QString redoText()
+=item  QString redoText()
 
-=item   void setActive(bool active = true)
+=item  void setActive(bool active)
 
-=item   void setActive(bool active)
+=item  void setActive(bool active = true)
 
-=item   void setClean()
+=item  void setClean()
 
-=item   void setIndex(int idx)
+=item  void setIndex(int idx)
 
-=item   void setUndoLimit(int limit)
+=item  void setUndoLimit(int limit)
 
-=item   QString text(int idx)
+=item  QString text(int idx)
 
-=item   void undo()
+=item  void undo()
 
-=item   int undoLimit()
+=item  int undoLimit()
 
-=item   QString undoText()
+=item  QString undoText()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

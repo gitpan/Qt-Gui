@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAccessibleEditableTextInterface/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAccessibleEditableTextInterface/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,21 +24,28 @@ Qt::Gui::QAccessibleSimpleEditableTextInterface
 
 =over
 
-=item    QAccessibleSimpleEditableTextInterface(QAccessibleInterface * accessibleInterface)
+=item   QAccessibleSimpleEditableTextInterface(QAccessibleInterface * accessibleInterface)
 
-=item   void copyText(int startOffset, int endOffset)
+=item  void copyText(int startOffset, int endOffset)
 
-=item   void cutText(int startOffset, int endOffset)
+=item  void cutText(int startOffset, int endOffset)
 
-=item   void deleteText(int startOffset, int endOffset)
+=item  void deleteText(int startOffset, int endOffset)
 
-=item   void insertText(int offset, const QString & text)
+=item  void insertText(int offset, const QString & text)
 
-=item   void pasteText(int offset)
+=item  void pasteText(int offset)
 
-=item   void replaceText(int startOffset, int endOffset, const QString & text)
+=item  void replaceText(int startOffset, int endOffset, const QString & text)
 
-=item   void setAttributes(int arg0, int arg1, const QString & arg2)
+=item  void setAttributes(int arg0, int arg1, const QString & arg2)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

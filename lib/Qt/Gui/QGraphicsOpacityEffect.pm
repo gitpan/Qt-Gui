@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsEffect/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsEffect/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,19 +24,26 @@ Qt::Gui::QGraphicsOpacityEffect
 
 =over
 
-=item    QGraphicsOpacityEffect(QObject * parent = 0)
+=item   QGraphicsOpacityEffect(QObject * parent)
 
-=item    QGraphicsOpacityEffect(QObject * parent)
+=item   QGraphicsOpacityEffect(QObject * parent = 0)
 
-=item    ~QGraphicsOpacityEffect()
+=item   ~QGraphicsOpacityEffect()
 
-=item   qreal opacity()
+=item  qreal opacity()
 
-=item   QBrush opacityMask()
+=item  QBrush opacityMask()
 
-=item   void setOpacity(qreal opacity)
+=item  void setOpacity(qreal opacity)
 
-=item   void setOpacityMask(const QBrush & mask)
+=item  void setOpacityMask(const QBrush & mask)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -27,32 +27,33 @@ QStyleOptionGraphicsItem *ret;
 QStyleOptionGraphicsItem * arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QStyleOptionGraphicsItem();
+        if (1) {
+      
+    ret = new QStyleOptionGraphicsItem();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionGraphicsItem", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QStyleOptionGraphicsItem")) {
-        arg10 = reinterpret_cast<QStyleOptionGraphicsItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QStyleOptionGraphicsItem");
+      arg10 = reinterpret_cast<QStyleOptionGraphicsItem *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QStyleOptionGraphicsItem(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionGraphicsItem", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -64,11 +65,34 @@ PREINIT:
 QTransform * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QTransform")) {
-        arg00 = reinterpret_cast<QTransform *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTransform");
+      arg00 = reinterpret_cast<QTransform *>(SvIV((SV*)SvRV(ST(1))));
     qreal ret = THIS->levelOfDetailFromTransform(*arg00);
     ST(0) = sv_newmortal();
     sv_setnv(ST(0), (double)ret);
+    XSRETURN(1);
+    }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# StyleOptionType::Type
+void
+Type()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QStyleOptionGraphicsItem::Type);
+    XSRETURN(1);
+
+
+# StyleOptionVersion::Version
+void
+Version()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QStyleOptionGraphicsItem::Version);
     XSRETURN(1);

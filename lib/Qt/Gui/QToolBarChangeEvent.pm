@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,11 +24,18 @@ Qt::Gui::QToolBarChangeEvent
 
 =over
 
-=item    QToolBarChangeEvent(bool t)
+=item   QToolBarChangeEvent(bool t)
 
-=item    ~QToolBarChangeEvent()
+=item   ~QToolBarChangeEvent()
 
-=item   bool toggle()
+=item  bool toggle()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

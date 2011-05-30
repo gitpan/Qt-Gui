@@ -7,35 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Detail() { 0 }
-sub List() { 1 }
-sub AnyFile() { 0 }
-sub ExistingFile() { 1 }
-sub Directory() { 2 }
-sub ExistingFiles() { 3 }
-sub DirectoryOnly() { 4 }
-sub AcceptOpen() { 0 }
-sub AcceptSave() { 1 }
-sub LookIn() { 0 }
-sub FileName() { 1 }
-sub FileType() { 2 }
-sub Accept() { 3 }
-sub Reject() { 4 }
-sub ShowDirsOnly() { 0 }
-sub DontResolveSymlinks() { 1 }
-sub DontConfirmOverwrite() { 2 }
-sub DontUseSheet() { 3 }
-sub DontUseNativeDialog() { 4 }
-sub ReadOnly() { 5 }
-sub HideNameFilterDetails() { 6 }
 
 
 1;
@@ -48,123 +24,224 @@ Qt::Gui::QFileDialog
 
 =over
 
-=item    QFileDialog(QWidget * parent, const QString & caption, const QString & directory, const QString & filter = QString())
+=item   QFileDialog(QWidget * parent, QFlags<Qt::WindowType> f)
 
-=item    QFileDialog(QWidget * parent, const QString & caption, const QString & directory, const QString & filter)
+=item   QFileDialog(QWidget * parent, const QString & caption, const QString & directory, const QString & filter)
 
-=item    QFileDialog(QWidget * parent, const QString & caption, const QString & directory = QString(), const QString & filter = QString())
+=item   QFileDialog(QWidget * parent, const QString & caption, const QString & directory, const QString & filter = QString())
 
-=item    QFileDialog(QWidget * parent, const QString & caption, const QString & directory, const QString & filter = QString())
+=item   QFileDialog(QWidget * parent, const QString & caption, const QString & directory = QString(), const QString & filter = QString())
 
-=item    QFileDialog(QWidget * parent, const QString & caption = QString(), const QString & directory = QString(), const QString & filter = QString())
+=item   QFileDialog(QWidget * parent, const QString & caption = QString(), const QString & directory = QString(), const QString & filter = QString())
 
-=item    QFileDialog(QWidget * parent, const QString & caption, const QString & directory = QString(), const QString & filter = QString())
+=item   QFileDialog(QWidget * parent = 0, const QString & caption = QString(), const QString & directory = QString(), const QString & filter = QString())
 
-=item    QFileDialog(QWidget * parent = 0, const QString & caption = QString(), const QString & directory = QString(), const QString & filter = QString())
+=item   ~QFileDialog()
 
-=item    QFileDialog(QWidget * parent, const QString & caption = QString(), const QString & directory = QString(), const QString & filter = QString())
+=item  QFileDialog::AcceptMode acceptMode()
 
-=item    ~QFileDialog()
+=item  bool confirmOverwrite()
 
-=item   QFileDialog::AcceptMode acceptMode()
+=item  QString defaultSuffix()
 
-=item   bool confirmOverwrite()
+=item  QDir directory()
 
-=item   QString defaultSuffix()
+=item  QFileDialog::FileMode fileMode()
 
-=item   QDir directory()
+=item  QDir::Filters filter()
 
-=item   QFileDialog::FileMode fileMode()
+=item  QStringList filters()
 
-=item   QDir::Filters filter()
+=item  static QString getExistingDirectory(QWidget * parent, const QString & caption, const QString & dir, QFlags<QFileDialog::Option> options)
 
-=item   QStringList filters()
+=item  static QString getExistingDirectory(QWidget * parent, const QString & caption, const QString & dir, QFlags<QFileDialog::Option> options = QFileDialog::ShowDirsOnly)
 
-=item   QStringList history()
+=item  static QString getExistingDirectory(QWidget * parent, const QString & caption, const QString & dir = QString(), QFlags<QFileDialog::Option> options = QFileDialog::ShowDirsOnly)
 
-=item   QFileIconProvider * iconProvider()
+=item  static QString getExistingDirectory(QWidget * parent, const QString & caption = QString(), const QString & dir = QString(), QFlags<QFileDialog::Option> options = QFileDialog::ShowDirsOnly)
 
-=item   bool isNameFilterDetailsVisible()
+=item  static QString getExistingDirectory(QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), QFlags<QFileDialog::Option> options = QFileDialog::ShowDirsOnly)
 
-=item   bool isReadOnly()
+=item  static QString getOpenFileName(QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter, QFlags<QFileDialog::Option> options)
 
-=item   QAbstractItemDelegate * itemDelegate()
+=item  static QString getOpenFileName(QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter, QFlags<QFileDialog::Option> options = 0)
 
-=item   QString labelText(QFileDialog::DialogLabel label)
+=item  static QString getOpenFileName(QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   QStringList nameFilters()
+=item  static QString getOpenFileName(QWidget * parent, const QString & caption, const QString & dir, const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   void open(QObject * receiver, const char * member)
+=item  static QString getOpenFileName(QWidget * parent, const QString & caption, const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   QAbstractProxyModel * proxyModel()
+=item  static QString getOpenFileName(QWidget * parent, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   bool resolveSymlinks()
+=item  static QString getOpenFileName(QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   bool restoreState(const QByteArray & state)
+=item  static QStringList getOpenFileNames(QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter, QFlags<QFileDialog::Option> options)
 
-=item   QByteArray saveState()
+=item  static QStringList getOpenFileNames(QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter, QFlags<QFileDialog::Option> options = 0)
 
-=item   void selectFile(const QString & filename)
+=item  static QStringList getOpenFileNames(QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   void selectFilter(const QString & filter)
+=item  static QStringList getOpenFileNames(QWidget * parent, const QString & caption, const QString & dir, const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   void selectNameFilter(const QString & filter)
+=item  static QStringList getOpenFileNames(QWidget * parent, const QString & caption, const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   QStringList selectedFiles()
+=item  static QStringList getOpenFileNames(QWidget * parent, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   QString selectedFilter()
+=item  static QStringList getOpenFileNames(QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   QString selectedNameFilter()
+=item  static QString getSaveFileName(QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter, QFlags<QFileDialog::Option> options)
 
-=item   void setAcceptMode(QFileDialog::AcceptMode mode)
+=item  static QString getSaveFileName(QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter, QFlags<QFileDialog::Option> options = 0)
 
-=item   void setConfirmOverwrite(bool enabled)
+=item  static QString getSaveFileName(QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   void setDefaultSuffix(const QString & suffix)
+=item  static QString getSaveFileName(QWidget * parent, const QString & caption, const QString & dir, const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   void setDirectory(const QString & directory)
+=item  static QString getSaveFileName(QWidget * parent, const QString & caption, const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   void setDirectory(const QDir & directory)
+=item  static QString getSaveFileName(QWidget * parent, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   void setFileMode(QFileDialog::FileMode mode)
+=item  static QString getSaveFileName(QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFlags<QFileDialog::Option> options = 0)
 
-=item   void setFilter(const QString & filter)
+=item  QStringList history()
 
-=item   void setFilter(QDir::Filters filters)
+=item  QFileIconProvider * iconProvider()
 
-=item   void setFilters(const QStringList & filters)
+=item  bool isNameFilterDetailsVisible()
 
-=item   void setHistory(const QStringList & paths)
+=item  bool isReadOnly()
 
-=item   void setIconProvider(QFileIconProvider * provider)
+=item  QAbstractItemDelegate * itemDelegate()
 
-=item   void setItemDelegate(QAbstractItemDelegate * delegate)
+=item  QString labelText(QFileDialog::DialogLabel label)
 
-=item   void setLabelText(QFileDialog::DialogLabel label, const QString & text)
+=item  QStringList nameFilters()
 
-=item   void setNameFilter(const QString & filter)
+=item  void open(QObject * receiver, const char * member)
 
-=item   void setNameFilterDetailsVisible(bool enabled)
+=item  QFlags<QFileDialog::Option> options()
 
-=item   void setNameFilters(const QStringList & filters)
+=item  QAbstractProxyModel * proxyModel()
 
-=item   void setOption(QFileDialog::Option option, bool on = true)
+=item  bool resolveSymlinks()
 
-=item   void setOption(QFileDialog::Option option, bool on)
+=item  bool restoreState(const QByteArray & state)
 
-=item   void setProxyModel(QAbstractProxyModel * model)
+=item  QByteArray saveState()
 
-=item   void setReadOnly(bool enabled)
+=item  void selectFile(const QString & filename)
 
-=item   void setResolveSymlinks(bool enabled)
+=item  void selectFilter(const QString & filter)
 
-=item   void setViewMode(QFileDialog::ViewMode mode)
+=item  void selectNameFilter(const QString & filter)
 
-=item   void setVisible(bool visible)
+=item  QStringList selectedFiles()
 
-=item   bool testOption(QFileDialog::Option option)
+=item  QString selectedFilter()
 
-=item   QFileDialog::ViewMode viewMode()
+=item  QString selectedNameFilter()
+
+=item  void setAcceptMode(QFileDialog::AcceptMode mode)
+
+=item  void setConfirmOverwrite(bool enabled)
+
+=item  void setDefaultSuffix(const QString & suffix)
+
+=item  void setDirectory(const QString & directory)
+
+=item  void setDirectory(const QDir & directory)
+
+=item  void setFileMode(QFileDialog::FileMode mode)
+
+=item  void setFilter(const QString & filter)
+
+=item  void setFilter(QDir::Filters filters)
+
+=item  void setFilters(const QStringList & filters)
+
+=item  void setHistory(const QStringList & paths)
+
+=item  void setIconProvider(QFileIconProvider * provider)
+
+=item  void setItemDelegate(QAbstractItemDelegate * delegate)
+
+=item  void setLabelText(QFileDialog::DialogLabel label, const QString & text)
+
+=item  void setNameFilter(const QString & filter)
+
+=item  void setNameFilterDetailsVisible(bool enabled)
+
+=item  void setNameFilters(const QStringList & filters)
+
+=item  void setOption(QFileDialog::Option option, bool on)
+
+=item  void setOption(QFileDialog::Option option, bool on = true)
+
+=item  void setOptions(QFlags<QFileDialog::Option> options)
+
+=item  void setProxyModel(QAbstractProxyModel * model)
+
+=item  void setReadOnly(bool enabled)
+
+=item  void setResolveSymlinks(bool enabled)
+
+=item  void setViewMode(QFileDialog::ViewMode mode)
+
+=item  void setVisible(bool visible)
+
+=item  bool testOption(QFileDialog::Option option)
+
+=item  QFileDialog::ViewMode viewMode()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Detail
+
+=item List
+
+=item AnyFile
+
+=item ExistingFile
+
+=item Directory
+
+=item ExistingFiles
+
+=item DirectoryOnly
+
+=item AcceptOpen
+
+=item AcceptSave
+
+=item LookIn
+
+=item FileName
+
+=item FileType
+
+=item Accept
+
+=item Reject
+
+=item ShowDirsOnly
+
+=item DontResolveSymlinks
+
+=item DontConfirmOverwrite
+
+=item DontUseSheet
+
+=item DontUseNativeDialog
+
+=item ReadOnly
+
+=item HideNameFilterDetails
 
 
 =back

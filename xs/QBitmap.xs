@@ -22,8 +22,8 @@ PROTOTYPES: DISABLE
 ##  QBitmap(const QPixmap & arg0)
 ##  QBitmap(const QSize & arg0)
 ##  QBitmap(int w, int h)
-##  QBitmap(const QString & fileName, const char * format = 0)
 ##  QBitmap(const QString & fileName, const char * format)
+##  QBitmap(const QString & fileName, const char * format = 0)
   void
 QBitmap::new(...)
 PREINIT:
@@ -33,38 +33,56 @@ QSize * arg20;
 int arg30;
 int arg31;
 QString * arg40;
-const char * arg41 = 0;
+const char * arg41;
 QString * arg50;
-const char * arg51;
+const char * arg51 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        Perl_croak(aTHX_ "Trying to create abstract class object");
+        if (1) {
+      
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QPixmap")) {
-        arg10 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(1))));
+      arg10 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(1))));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
     }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QPixmap");
+        else if (sv_isa(ST(1), "Qt::Core::QSize")) {
+      arg20 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg50 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 3:
+      case 3:
       {
-        arg30 = (int)SvIV(ST(1));
-    arg31 = (int)SvIV(ST(2));
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg30 = (int)SvIV(ST(1));
+      arg31 = (int)SvIV(ST(2));
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QString") && SvPOK(ST(2))) {
+      arg40 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg41 = (const char *)SvPV_nolen(ST(2));
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QBitmap()
@@ -79,116 +97,106 @@ void
 QBitmap::clear(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->clear();
     XSRETURN(0);
+    }
 
-## static QBitmap fromData(const QSize & size, const uchar * bits, QImage::Format monoFormat = QImage::Format_MonoLSB)
 ## static QBitmap fromData(const QSize & size, const uchar * bits, QImage::Format monoFormat)
+## static QBitmap fromData(const QSize & size, const uchar * bits, QImage::Format monoFormat = QImage::Format_MonoLSB)
 void
 QBitmap::fromData(...)
 PREINIT:
 QSize * arg00;
 const uchar * arg01;
-QImage::Format arg02 = QImage::Format_MonoLSB;
+QImage::Format arg02;
 QSize * arg10;
 const uchar * arg11;
-QImage::Format arg12;
+QImage::Format arg12 = QImage::Format_MonoLSB;
 PPCODE:
     switch(items) {
-    case 3:
+      case 3:
       {
-        if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    {
-        uchar tmp = static_cast<uchar>(SvIV(ST(2)));
-        arg01 = &tmp;
-    }
-    QBitmap ret = THIS->fromData(*arg00, arg01, arg02);
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)new QBitmap(ret));
-    XSRETURN(1);
-        break;
-      }
-    case 4:
+        if (sv_isa(ST(1), "Qt::Core::QSize") && SvIOK(ST(2))) {
+      arg10 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
       {
-        if (sv_isa(ST(1), "")) {
-        arg10 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type ");
-    {
         uchar tmp = static_cast<uchar>(SvIV(ST(2)));
         arg11 = &tmp;
-    }
-    switch(SvIV(ST(3))) {
-    case 0:
-      arg12 = QImage::Format_Invalid;
-      break;
-    case 1:
-      arg12 = QImage::Format_Mono;
-      break;
-    case 2:
-      arg12 = QImage::Format_MonoLSB;
-      break;
-    case 3:
-      arg12 = QImage::Format_Indexed8;
-      break;
-    case 4:
-      arg12 = QImage::Format_RGB32;
-      break;
-    case 5:
-      arg12 = QImage::Format_ARGB32;
-      break;
-    case 6:
-      arg12 = QImage::Format_ARGB32_Premultiplied;
-      break;
-    case 7:
-      arg12 = QImage::Format_RGB16;
-      break;
-    case 8:
-      arg12 = QImage::Format_ARGB8565_Premultiplied;
-      break;
-    case 9:
-      arg12 = QImage::Format_RGB666;
-      break;
-    case 10:
-      arg12 = QImage::Format_ARGB6666_Premultiplied;
-      break;
-    case 11:
-      arg12 = QImage::Format_RGB555;
-      break;
-    case 12:
-      arg12 = QImage::Format_ARGB8555_Premultiplied;
-      break;
-    case 13:
-      arg12 = QImage::Format_RGB888;
-      break;
-    case 14:
-      arg12 = QImage::Format_RGB444;
-      break;
-    case 15:
-      arg12 = QImage::Format_ARGB4444_Premultiplied;
-      break;
-    case 16:
-      arg12 = QImage::NImageFormats;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QImage::Format passed in");
     }
     QBitmap ret = THIS->fromData(*arg10, arg11, arg12);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)new QBitmap(ret));
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (sv_isa(ST(1), "Qt::Core::QSize") && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg00 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
+      {
+        uchar tmp = static_cast<uchar>(SvIV(ST(2)));
+        arg01 = &tmp;
+    }
+      arg02 = (QImage::Format)SvIV(ST(3));
+    QBitmap ret = THIS->fromData(*arg00, arg01, arg02);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)new QBitmap(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## static QBitmap fromImage(const QImage & image, QFlags<Qt::ImageConversionFlag> flags)
+## static QBitmap fromImage(const QImage & image, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
+void
+QBitmap::fromImage(...)
+PREINIT:
+QImage * arg00;
+QFlags<Qt::ImageConversionFlag> arg01;
+QImage * arg10;
+QFlags<Qt::ImageConversionFlag> arg11 = Qt::AutoColor;
+PPCODE:
+    switch(items) {
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::Gui::QImage")) {
+      arg10 = reinterpret_cast<QImage *>(SvIV((SV*)SvRV(ST(1))));
+    QBitmap ret = THIS->fromImage(*arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)new QBitmap(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
       }
+      case 3:
+      {
+        if (sv_isa(ST(1), "Qt::Gui::QImage") && SvIOK(ST(2))) {
+      arg00 = reinterpret_cast<QImage *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(2)));
+    QBitmap ret = THIS->fromImage(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)new QBitmap(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## QVariant operator QVariant()
@@ -196,10 +204,13 @@ void
 QBitmap::operator_QVariant(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QVariant ret = THIS->operator QVariant();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
     XSRETURN(1);
+    }
 
 ## QBitmap & operator=(const QPixmap & arg0)
 void
@@ -208,14 +219,12 @@ PREINIT:
 QPixmap * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QPixmap")) {
-        arg00 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPixmap");
+      arg00 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(1))));
     QBitmap * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QBitmap transformed(const QMatrix & arg0)
 ## QBitmap transformed(const QTransform & matrix)
@@ -226,22 +235,27 @@ QMatrix * arg00;
 QTransform * arg10;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QMatrix")) {
-        arg00 = reinterpret_cast<QMatrix *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QMatrix");
+      arg00 = reinterpret_cast<QMatrix *>(SvIV((SV*)SvRV(ST(1))));
     QBitmap ret = THIS->transformed(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)new QBitmap(ret));
     XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QTransform")) {
+      arg10 = reinterpret_cast<QTransform *>(SvIV((SV*)SvRV(ST(1))));
+    QBitmap ret = THIS->transformed(*arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)new QBitmap(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }

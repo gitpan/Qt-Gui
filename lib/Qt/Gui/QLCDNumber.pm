@@ -7,21 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QFrame/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QFrame/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Hex() { 0 }
-sub Dec() { 1 }
-sub Oct() { 2 }
-sub Bin() { 3 }
-sub Outline() { 0 }
-sub Filled() { 1 }
-sub Flat() { 2 }
 
 
 1;
@@ -34,59 +24,80 @@ Qt::Gui::QLCDNumber
 
 =over
 
-=item    QLCDNumber(QWidget * parent = 0)
+=item   QLCDNumber(QWidget * parent)
 
-=item    QLCDNumber(QWidget * parent)
+=item   QLCDNumber(QWidget * parent = 0)
 
-=item    QLCDNumber(uint numDigits, QWidget * parent = 0)
+=item   QLCDNumber(uint numDigits, QWidget * parent)
 
-=item    QLCDNumber(uint numDigits, QWidget * parent)
+=item   QLCDNumber(uint numDigits, QWidget * parent = 0)
 
-=item    ~QLCDNumber()
+=item   ~QLCDNumber()
 
-=item   bool checkOverflow(double num)
+=item  bool checkOverflow(double num)
 
-=item   bool checkOverflow(int num)
+=item  bool checkOverflow(int num)
 
-=item   int digitCount()
+=item  int digitCount()
 
-=item   void display(const QString & str)
+=item  void display(const QString & str)
 
-=item   void display(int num)
+=item  void display(int num)
 
-=item   void display(double num)
+=item  void display(double num)
 
-=item   int intValue()
+=item  int intValue()
 
-=item   QLCDNumber::Mode mode()
+=item  QLCDNumber::Mode mode()
 
-=item   int numDigits()
+=item  int numDigits()
 
-=item   QLCDNumber::SegmentStyle segmentStyle()
+=item  QLCDNumber::SegmentStyle segmentStyle()
 
-=item   void setBinMode()
+=item  void setBinMode()
 
-=item   void setDecMode()
+=item  void setDecMode()
 
-=item   void setDigitCount(int nDigits)
+=item  void setDigitCount(int nDigits)
 
-=item   void setHexMode()
+=item  void setHexMode()
 
-=item   void setMode(QLCDNumber::Mode arg0)
+=item  void setMode(QLCDNumber::Mode arg0)
 
-=item   void setNumDigits(int nDigits)
+=item  void setNumDigits(int nDigits)
 
-=item   void setOctMode()
+=item  void setOctMode()
 
-=item   void setSegmentStyle(QLCDNumber::SegmentStyle arg0)
+=item  void setSegmentStyle(QLCDNumber::SegmentStyle arg0)
 
-=item   void setSmallDecimalPoint(bool arg0)
+=item  void setSmallDecimalPoint(bool arg0)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   bool smallDecimalPoint()
+=item  bool smallDecimalPoint()
 
-=item   double value()
+=item  double value()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Hex
+
+=item Dec
+
+=item Oct
+
+=item Bin
+
+=item Outline
+
+=item Filled
+
+=item Flat
 
 
 =back

@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QListView/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QListView/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,35 +24,42 @@ Qt::Gui::QUndoView
 
 =over
 
-=item    QUndoView(QWidget * parent = 0)
+=item   QUndoView(QWidget * parent)
 
-=item    QUndoView(QWidget * parent)
+=item   QUndoView(QWidget * parent = 0)
 
-=item    QUndoView(QUndoStack * stack, QWidget * parent = 0)
+=item   QUndoView(QUndoStack * stack, QWidget * parent)
 
-=item    QUndoView(QUndoStack * stack, QWidget * parent)
+=item   QUndoView(QUndoStack * stack, QWidget * parent = 0)
 
-=item    QUndoView(QUndoGroup * group, QWidget * parent = 0)
+=item   QUndoView(QUndoGroup * group, QWidget * parent)
 
-=item    QUndoView(QUndoGroup * group, QWidget * parent)
+=item   QUndoView(QUndoGroup * group, QWidget * parent = 0)
 
-=item    ~QUndoView()
+=item   ~QUndoView()
 
-=item   QIcon cleanIcon()
+=item  QIcon cleanIcon()
 
-=item   QString emptyLabel()
+=item  QString emptyLabel()
 
-=item   QUndoGroup * group()
+=item  QUndoGroup * group()
 
-=item   void setCleanIcon(const QIcon & icon)
+=item  void setCleanIcon(const QIcon & icon)
 
-=item   void setEmptyLabel(const QString & label)
+=item  void setEmptyLabel(const QString & label)
 
-=item   void setGroup(QUndoGroup * group)
+=item  void setGroup(QUndoGroup * group)
 
-=item   void setStack(QUndoStack * stack)
+=item  void setStack(QUndoStack * stack)
 
-=item   QUndoStack * stack()
+=item  QUndoStack * stack()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

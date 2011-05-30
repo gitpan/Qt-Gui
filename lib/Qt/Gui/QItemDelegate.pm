@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractItemDelegate/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractItemDelegate/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,31 +24,38 @@ Qt::Gui::QItemDelegate
 
 =over
 
-=item    QItemDelegate(QObject * parent = 0)
+=item   QItemDelegate(QObject * parent)
 
-=item    QItemDelegate(QObject * parent)
+=item   QItemDelegate(QObject * parent = 0)
 
-=item    ~QItemDelegate()
+=item   ~QItemDelegate()
 
-=item   QWidget * createEditor(QWidget * parent, const QStyleOptionViewItem & option, const QModelIndex & index)
+=item  QWidget * createEditor(QWidget * parent, const QStyleOptionViewItem & option, const QModelIndex & index)
 
-=item   bool hasClipping()
+=item  bool hasClipping()
 
-=item   QItemEditorFactory * itemEditorFactory()
+=item  QItemEditorFactory * itemEditorFactory()
 
-=item   void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index)
+=item  void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index)
 
-=item   void setClipping(bool clip)
+=item  void setClipping(bool clip)
 
-=item   void setEditorData(QWidget * editor, const QModelIndex & index)
+=item  void setEditorData(QWidget * editor, const QModelIndex & index)
 
-=item   void setItemEditorFactory(QItemEditorFactory * factory)
+=item  void setItemEditorFactory(QItemEditorFactory * factory)
 
-=item   void setModelData(QWidget * editor, QAbstractItemModel * model, const QModelIndex & index)
+=item  void setModelData(QWidget * editor, QAbstractItemModel * model, const QModelIndex & index)
 
-=item   QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index)
+=item  QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index)
 
-=item   void updateEditorGeometry(QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & index)
+=item  void updateEditorGeometry(QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & index)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

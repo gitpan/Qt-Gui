@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QInputEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QInputEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,23 +24,40 @@ Qt::Gui::QWheelEvent
 
 =over
 
-=item    ~QWheelEvent()
+=item   QWheelEvent(const QPoint & pos, int delta, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers, Qt::Orientation orient)
 
-=item   int delta()
+=item   QWheelEvent(const QPoint & pos, int delta, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers, Qt::Orientation orient = Qt::Vertical)
 
-=item   const QPoint & globalPos()
+=item   QWheelEvent(const QPoint & pos, const QPoint & globalPos, int delta, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers, Qt::Orientation orient)
 
-=item   int globalX()
+=item   QWheelEvent(const QPoint & pos, const QPoint & globalPos, int delta, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers, Qt::Orientation orient = Qt::Vertical)
 
-=item   int globalY()
+=item   ~QWheelEvent()
 
-=item   Qt::Orientation orientation()
+=item  QFlags<Qt::MouseButton> buttons()
 
-=item   const QPoint & pos()
+=item  int delta()
 
-=item   int x()
+=item  const QPoint & globalPos()
 
-=item   int y()
+=item  int globalX()
+
+=item  int globalY()
+
+=item  Qt::Orientation orientation()
+
+=item  const QPoint & pos()
+
+=item  int x()
+
+=item  int y()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

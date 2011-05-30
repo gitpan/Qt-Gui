@@ -24,10 +24,13 @@ QHideEvent::new(...)
 PREINIT:
 QHideEvent *ret;
 PPCODE:
+    if (1) {
+      
     ret = new QHideEvent();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QHideEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QHideEvent()
 void

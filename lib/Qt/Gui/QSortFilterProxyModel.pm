@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractProxyModel/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractProxyModel/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,133 +24,144 @@ Qt::Gui::QSortFilterProxyModel
 
 =over
 
-=item    QSortFilterProxyModel(QObject * parent = 0)
+=item   QSortFilterProxyModel(QObject * parent)
 
-=item    QSortFilterProxyModel(QObject * parent)
+=item   QSortFilterProxyModel(QObject * parent = 0)
 
-=item    ~QSortFilterProxyModel()
+=item   ~QSortFilterProxyModel()
 
-=item   QModelIndex buddy(const QModelIndex & index)
+=item  QModelIndex buddy(const QModelIndex & index)
 
-=item   bool canFetchMore(const QModelIndex & parent)
+=item  bool canFetchMore(const QModelIndex & parent)
 
-=item   void clear()
+=item  void clear()
 
-=item   int columnCount(const QModelIndex & parent = QModelIndex())
+=item  int columnCount(const QModelIndex & parent)
 
-=item   int columnCount(const QModelIndex & parent)
+=item  int columnCount(const QModelIndex & parent = QModelIndex())
 
-=item   QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
+=item  QVariant data(const QModelIndex & index, int role)
 
-=item   QVariant data(const QModelIndex & index, int role)
+=item  QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
 
-=item   bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
+=item  bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
 
-=item   bool dynamicSortFilter()
+=item  bool dynamicSortFilter()
 
-=item   void fetchMore(const QModelIndex & parent)
+=item  void fetchMore(const QModelIndex & parent)
 
-=item   Qt::CaseSensitivity filterCaseSensitivity()
+=item  Qt::CaseSensitivity filterCaseSensitivity()
 
-=item   int filterKeyColumn()
+=item  int filterKeyColumn()
 
-=item   QRegExp filterRegExp()
+=item  QRegExp filterRegExp()
 
-=item   int filterRole()
+=item  int filterRole()
 
-=item   bool hasChildren(const QModelIndex & parent = QModelIndex())
+=item  QFlags<Qt::ItemFlag> flags(const QModelIndex & index)
 
-=item   bool hasChildren(const QModelIndex & parent)
+=item  bool hasChildren(const QModelIndex & parent)
 
-=item   QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)
+=item  bool hasChildren(const QModelIndex & parent = QModelIndex())
 
-=item   QVariant headerData(int section, Qt::Orientation orientation, int role)
+=item  QVariant headerData(int section, Qt::Orientation orientation, int role)
 
-=item   QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex())
+=item  QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)
 
-=item   QModelIndex index(int row, int column, const QModelIndex & parent)
+=item  QModelIndex index(int row, int column, const QModelIndex & parent)
 
-=item   bool insertColumns(int column, int count, const QModelIndex & parent = QModelIndex())
+=item  QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex())
 
-=item   bool insertColumns(int column, int count, const QModelIndex & parent)
+=item  bool insertColumns(int column, int count, const QModelIndex & parent)
 
-=item   bool insertRows(int row, int count, const QModelIndex & parent = QModelIndex())
+=item  bool insertColumns(int column, int count, const QModelIndex & parent = QModelIndex())
 
-=item   bool insertRows(int row, int count, const QModelIndex & parent)
+=item  bool insertRows(int row, int count, const QModelIndex & parent)
 
-=item   void invalidate()
+=item  bool insertRows(int row, int count, const QModelIndex & parent = QModelIndex())
 
-=item   bool isSortLocaleAware()
+=item  void invalidate()
 
-=item   QModelIndex mapFromSource(const QModelIndex & sourceIndex)
+=item  bool isSortLocaleAware()
 
-=item   QItemSelection mapSelectionFromSource(const QItemSelection & sourceSelection)
+=item  QModelIndex mapFromSource(const QModelIndex & sourceIndex)
 
-=item   QItemSelection mapSelectionToSource(const QItemSelection & proxySelection)
+=item  QItemSelection mapSelectionFromSource(const QItemSelection & sourceSelection)
 
-=item   QModelIndex mapToSource(const QModelIndex & proxyIndex)
+=item  QItemSelection mapSelectionToSource(const QItemSelection & proxySelection)
 
-=item   QStringList mimeTypes()
+=item  QModelIndex mapToSource(const QModelIndex & proxyIndex)
 
-=item   QModelIndex parent(const QModelIndex & child)
+=item  QStringList mimeTypes()
 
-=item   bool removeColumns(int column, int count, const QModelIndex & parent = QModelIndex())
+=item  QModelIndex parent(const QModelIndex & child)
 
-=item   bool removeColumns(int column, int count, const QModelIndex & parent)
+=item  bool removeColumns(int column, int count, const QModelIndex & parent)
 
-=item   bool removeRows(int row, int count, const QModelIndex & parent = QModelIndex())
+=item  bool removeColumns(int column, int count, const QModelIndex & parent = QModelIndex())
 
-=item   bool removeRows(int row, int count, const QModelIndex & parent)
+=item  bool removeRows(int row, int count, const QModelIndex & parent)
 
-=item   int rowCount(const QModelIndex & parent = QModelIndex())
+=item  bool removeRows(int row, int count, const QModelIndex & parent = QModelIndex())
 
-=item   int rowCount(const QModelIndex & parent)
+=item  int rowCount(const QModelIndex & parent)
 
-=item   bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole)
+=item  int rowCount(const QModelIndex & parent = QModelIndex())
 
-=item   bool setData(const QModelIndex & index, const QVariant & value, int role)
+=item  bool setData(const QModelIndex & index, const QVariant & value, int role)
 
-=item   void setDynamicSortFilter(bool enable)
+=item  bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole)
 
-=item   void setFilterCaseSensitivity(Qt::CaseSensitivity cs)
+=item  void setDynamicSortFilter(bool enable)
 
-=item   void setFilterFixedString(const QString & pattern)
+=item  void setFilterCaseSensitivity(Qt::CaseSensitivity cs)
 
-=item   void setFilterKeyColumn(int column)
+=item  void setFilterFixedString(const QString & pattern)
 
-=item   void setFilterRegExp(const QString & pattern)
+=item  void setFilterKeyColumn(int column)
 
-=item   void setFilterRegExp(const QRegExp & regExp)
+=item  void setFilterRegExp(const QString & pattern)
 
-=item   void setFilterRole(int role)
+=item  void setFilterRegExp(const QRegExp & regExp)
 
-=item   void setFilterWildcard(const QString & pattern)
+=item  void setFilterRole(int role)
 
-=item   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole)
+=item  void setFilterWildcard(const QString & pattern)
 
-=item   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)
+=item  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role)
 
-=item   void setSortCaseSensitivity(Qt::CaseSensitivity cs)
+=item  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role = Qt::EditRole)
 
-=item   void setSortLocaleAware(bool on)
+=item  void setSortCaseSensitivity(Qt::CaseSensitivity cs)
 
-=item   void setSortRole(int role)
+=item  void setSortLocaleAware(bool on)
 
-=item   void setSourceModel(QAbstractItemModel * sourceModel)
+=item  void setSortRole(int role)
 
-=item   void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)
+=item  void setSourceModel(QAbstractItemModel * sourceModel)
 
-=item   void sort(int column, Qt::SortOrder order)
+=item  void sort(int column, Qt::SortOrder order)
 
-=item   Qt::CaseSensitivity sortCaseSensitivity()
+=item  void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)
 
-=item   int sortColumn()
+=item  Qt::CaseSensitivity sortCaseSensitivity()
 
-=item   Qt::SortOrder sortOrder()
+=item  int sortColumn()
 
-=item   int sortRole()
+=item  Qt::SortOrder sortOrder()
 
-=item   QSize span(const QModelIndex & index)
+=item  int sortRole()
+
+=item  QSize span(const QModelIndex & index)
+
+=item  QFlags<Qt::DropAction> supportedDropActions()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

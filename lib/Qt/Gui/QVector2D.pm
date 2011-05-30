@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,57 +23,64 @@ Qt::Gui::QVector2D
 
 =over
 
-=item    QVector2D()
+=item   QVector2D()
 
-=item    QVector2D(const QPoint & point)
+=item   QVector2D(const QPoint & point)
 
-=item    QVector2D(const QPointF & point)
+=item   QVector2D(const QPointF & point)
 
-=item    QVector2D(const QVector3D & vector)
+=item   QVector2D(const QVector3D & vector)
 
-=item    QVector2D(const QVector4D & vector)
+=item   QVector2D(const QVector4D & vector)
 
-=item    QVector2D(qreal xpos, qreal ypos)
+=item   QVector2D(qreal xpos, qreal ypos)
 
-=item   static qreal dotProduct(const QVector2D & v1, const QVector2D & v2)
+=item  static qreal dotProduct(const QVector2D & v1, const QVector2D & v2)
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   qreal length()
+=item  qreal length()
 
-=item   qreal lengthSquared()
+=item  qreal lengthSquared()
 
-=item   void normalize()
+=item  void normalize()
 
-=item   QVector2D normalized()
+=item  QVector2D normalized()
 
-=item   QVariant operator QVariant()
+=item  QVariant operator QVariant()
 
-=item   QVector2D & operator*=(qreal factor)
+=item  QVector2D & operator*=(qreal factor)
 
-=item   QVector2D & operator*=(const QVector2D & vector)
+=item  QVector2D & operator*=(const QVector2D & vector)
 
-=item   QVector2D & operator+=(const QVector2D & vector)
+=item  QVector2D & operator+=(const QVector2D & vector)
 
-=item   QVector2D & operator-=(const QVector2D & vector)
+=item  QVector2D & operator-=(const QVector2D & vector)
 
-=item   QVector2D & operator/=(qreal divisor)
+=item  QVector2D & operator/=(qreal divisor)
 
-=item   void setX(qreal x)
+=item  void setX(qreal x)
 
-=item   void setY(qreal y)
+=item  void setY(qreal y)
 
-=item   QPoint toPoint()
+=item  QPoint toPoint()
 
-=item   QPointF toPointF()
+=item  QPointF toPointF()
 
-=item   QVector3D toVector3D()
+=item  QVector3D toVector3D()
 
-=item   QVector4D toVector4D()
+=item  QVector4D toVector4D()
 
-=item   qreal x()
+=item  qreal x()
 
-=item   qreal y()
+=item  qreal y()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

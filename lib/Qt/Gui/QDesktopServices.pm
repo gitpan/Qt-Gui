@@ -7,24 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub DesktopLocation() { 0 }
-sub DocumentsLocation() { 1 }
-sub FontsLocation() { 2 }
-sub ApplicationsLocation() { 3 }
-sub MusicLocation() { 4 }
-sub MoviesLocation() { 5 }
-sub PicturesLocation() { 6 }
-sub TempLocation() { 7 }
-sub HomeLocation() { 8 }
-sub DataLocation() { 9 }
-sub CacheLocation() { 10 }
 
 
 1;
@@ -37,15 +23,44 @@ Qt::Gui::QDesktopServices
 
 =over
 
-=item   static QString displayName(QDesktopServices::StandardLocation type)
+=item  static QString displayName(QDesktopServices::StandardLocation type)
 
-=item   static bool openUrl(const QUrl & url)
+=item  static bool openUrl(const QUrl & url)
 
-=item   static void setUrlHandler(const QString & scheme, QObject * receiver, const char * method)
+=item  static void setUrlHandler(const QString & scheme, QObject * receiver, const char * method)
 
-=item   static QString storageLocation(QDesktopServices::StandardLocation type)
+=item  static QString storageLocation(QDesktopServices::StandardLocation type)
 
-=item   static void unsetUrlHandler(const QString & scheme)
+=item  static void unsetUrlHandler(const QString & scheme)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item DesktopLocation
+
+=item DocumentsLocation
+
+=item FontsLocation
+
+=item ApplicationsLocation
+
+=item MusicLocation
+
+=item MoviesLocation
+
+=item PicturesLocation
+
+=item TempLocation
+
+=item HomeLocation
+
+=item DataLocation
+
+=item CacheLocation
 
 
 =back

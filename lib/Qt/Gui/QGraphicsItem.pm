@@ -7,67 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub ItemIsMovable() { 0 }
-sub ItemIsSelectable() { 1 }
-sub ItemIsFocusable() { 2 }
-sub ItemClipsToShape() { 3 }
-sub ItemClipsChildrenToShape() { 4 }
-sub ItemIgnoresTransformations() { 5 }
-sub ItemIgnoresParentOpacity() { 6 }
-sub ItemDoesntPropagateOpacityToChildren() { 7 }
-sub ItemStacksBehindParent() { 8 }
-sub ItemUsesExtendedStyleOption() { 9 }
-sub ItemHasNoContents() { 10 }
-sub ItemSendsGeometryChanges() { 11 }
-sub ItemAcceptsInputMethod() { 12 }
-sub ItemNegativeZStacksBehindParent() { 13 }
-sub ItemIsPanel() { 14 }
-sub ItemIsFocusScope() { 15 }
-sub ItemSendsScenePositionChanges() { 16 }
-sub ItemPositionChange() { 0 }
-sub ItemMatrixChange() { 1 }
-sub ItemVisibleChange() { 2 }
-sub ItemEnabledChange() { 3 }
-sub ItemSelectedChange() { 4 }
-sub ItemParentChange() { 5 }
-sub ItemChildAddedChange() { 6 }
-sub ItemChildRemovedChange() { 7 }
-sub ItemTransformChange() { 8 }
-sub ItemPositionHasChanged() { 9 }
-sub ItemTransformHasChanged() { 10 }
-sub ItemSceneChange() { 11 }
-sub ItemVisibleHasChanged() { 12 }
-sub ItemEnabledHasChanged() { 13 }
-sub ItemSelectedHasChanged() { 14 }
-sub ItemParentHasChanged() { 15 }
-sub ItemSceneHasChanged() { 16 }
-sub ItemCursorChange() { 17 }
-sub ItemCursorHasChanged() { 18 }
-sub ItemToolTipChange() { 19 }
-sub ItemToolTipHasChanged() { 20 }
-sub ItemFlagsChange() { 21 }
-sub ItemFlagsHaveChanged() { 22 }
-sub ItemZValueChange() { 23 }
-sub ItemZValueHasChanged() { 24 }
-sub ItemOpacityChange() { 25 }
-sub ItemOpacityHasChanged() { 26 }
-sub ItemScenePositionHasChanged() { 27 }
-sub NoCache() { 0 }
-sub ItemCoordinateCache() { 1 }
-sub DeviceCoordinateCache() { 2 }
-sub NonModal() { 0 }
-sub PanelModal() { 1 }
-sub SceneModal() { 2 }
-sub Type() { 0 }
-sub UserType() { 1 }
-sub UserExtension() { 0 }
 
 
 1;
@@ -80,415 +23,546 @@ Qt::Gui::QGraphicsItem
 
 =over
 
-=item    QGraphicsItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsItem(QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsItem(QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   QGraphicsItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   ~QGraphicsItem()
 
-=item    ~QGraphicsItem()
+=item  bool acceptDrops()
 
-=item   bool acceptDrops()
+=item  bool acceptHoverEvents()
 
-=item   bool acceptHoverEvents()
+=item  bool acceptTouchEvents()
 
-=item   bool acceptTouchEvents()
+=item  QFlags<Qt::MouseButton> acceptedMouseButtons()
 
-=item   bool acceptsHoverEvents()
+=item  bool acceptsHoverEvents()
 
-=item   void advance(int phase)
+=item  void advance(int phase)
 
-=item   QRectF boundingRect()
+=item  QRectF boundingRect()
 
-=item   QRegion boundingRegion(const QTransform & itemToDeviceTransform)
+=item  QRegion boundingRegion(const QTransform & itemToDeviceTransform)
 
-=item   qreal boundingRegionGranularity()
+=item  qreal boundingRegionGranularity()
 
-=item   QGraphicsItem::CacheMode cacheMode()
+=item  QGraphicsItem::CacheMode cacheMode()
 
-=item   QRectF childrenBoundingRect()
+=item  QRectF childrenBoundingRect()
 
-=item   void clearFocus()
+=item  void clearFocus()
 
-=item   QPainterPath clipPath()
+=item  QPainterPath clipPath()
 
-=item   bool collidesWithItem(const QGraphicsItem * other, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+=item  bool collidesWithItem(const QGraphicsItem * other, Qt::ItemSelectionMode mode)
 
-=item   bool collidesWithItem(const QGraphicsItem * other, Qt::ItemSelectionMode mode)
+=item  bool collidesWithItem(const QGraphicsItem * other, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
 
-=item   bool collidesWithPath(const QPainterPath & path, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+=item  bool collidesWithPath(const QPainterPath & path, Qt::ItemSelectionMode mode)
 
-=item   bool collidesWithPath(const QPainterPath & path, Qt::ItemSelectionMode mode)
+=item  bool collidesWithPath(const QPainterPath & path, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
 
-=item   QGraphicsItem * commonAncestorItem(const QGraphicsItem * other)
+=item  QGraphicsItem * commonAncestorItem(const QGraphicsItem * other)
 
-=item   bool contains(const QPointF & point)
+=item  bool contains(const QPointF & point)
 
-=item   QCursor cursor()
+=item  QCursor cursor()
 
-=item   QVariant data(int key)
+=item  QVariant data(int key)
 
-=item   QTransform deviceTransform(const QTransform & viewportTransform)
+=item  QTransform deviceTransform(const QTransform & viewportTransform)
 
-=item   qreal effectiveOpacity()
+=item  qreal effectiveOpacity()
 
-=item   void ensureVisible(const QRectF & rect, int xmargin, int ymargin = 50)
+=item  void ensureVisible(const QRectF & rect, int xmargin, int ymargin)
 
-=item   void ensureVisible(const QRectF & rect, int xmargin, int ymargin)
+=item  void ensureVisible(const QRectF & rect, int xmargin, int ymargin = 50)
 
-=item   void ensureVisible(const QRectF & rect, int xmargin = 50, int ymargin = 50)
+=item  void ensureVisible(const QRectF & rect, int xmargin = 50, int ymargin = 50)
 
-=item   void ensureVisible(const QRectF & rect, int xmargin, int ymargin = 50)
+=item  void ensureVisible(const QRectF & rect = QRectF(), int xmargin = 50, int ymargin = 50)
 
-=item   void ensureVisible(const QRectF & rect = QRectF(), int xmargin = 50, int ymargin = 50)
+=item  void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin, int ymargin)
 
-=item   void ensureVisible(const QRectF & rect, int xmargin = 50, int ymargin = 50)
+=item  void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin, int ymargin = 50)
 
-=item   void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin, int ymargin = 50)
+=item  void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin = 50, int ymargin = 50)
 
-=item   void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin, int ymargin)
+=item  bool filtersChildEvents()
 
-=item   void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin = 50, int ymargin = 50)
+=item  QFlags<QGraphicsItem::GraphicsItemFlag> flags()
 
-=item   void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin, int ymargin = 50)
+=item  QGraphicsItem * focusItem()
 
-=item   bool filtersChildEvents()
+=item  QGraphicsItem * focusProxy()
 
-=item   QGraphicsItem * focusItem()
+=item  QGraphicsItem * focusScopeItem()
 
-=item   QGraphicsItem * focusProxy()
+=item  void grabKeyboard()
 
-=item   QGraphicsItem * focusScopeItem()
+=item  void grabMouse()
 
-=item   void grabKeyboard()
+=item  QGraphicsEffect * graphicsEffect()
 
-=item   void grabMouse()
+=item  QGraphicsItemGroup * group()
 
-=item   QGraphicsEffect * graphicsEffect()
+=item  bool handlesChildEvents()
 
-=item   QGraphicsItemGroup * group()
+=item  bool hasCursor()
 
-=item   bool handlesChildEvents()
+=item  bool hasFocus()
 
-=item   bool hasCursor()
+=item  void hide()
 
-=item   bool hasFocus()
+=item  QFlags<Qt::InputMethodHint> inputMethodHints()
 
-=item   void hide()
+=item  void installSceneEventFilter(QGraphicsItem * filterItem)
 
-=item   void installSceneEventFilter(QGraphicsItem * filterItem)
+=item  bool isActive()
 
-=item   bool isActive()
+=item  bool isAncestorOf(const QGraphicsItem * child)
 
-=item   bool isAncestorOf(const QGraphicsItem * child)
+=item  bool isBlockedByModalPanel(QGraphicsItem ** blockingPanel)
 
-=item   bool isBlockedByModalPanel(QGraphicsItem ** blockingPanel = 0)
+=item  bool isBlockedByModalPanel(QGraphicsItem ** blockingPanel = 0)
 
-=item   bool isBlockedByModalPanel(QGraphicsItem ** blockingPanel)
+=item  bool isClipped()
 
-=item   bool isClipped()
+=item  bool isEnabled()
 
-=item   bool isEnabled()
+=item  bool isObscured()
 
-=item   bool isObscured()
+=item  bool isObscured(const QRectF & rect)
 
-=item   bool isObscured(const QRectF & rect)
+=item  bool isObscured(qreal x, qreal y, qreal w, qreal h)
 
-=item   bool isObscured(qreal x, qreal y, qreal w, qreal h)
+=item  bool isObscuredBy(const QGraphicsItem * item)
 
-=item   bool isObscuredBy(const QGraphicsItem * item)
+=item  bool isPanel()
 
-=item   bool isPanel()
+=item  bool isSelected()
 
-=item   bool isSelected()
+=item  bool isUnderMouse()
 
-=item   bool isUnderMouse()
+=item  bool isVisible()
 
-=item   bool isVisible()
+=item  bool isVisibleTo(const QGraphicsItem * parent)
 
-=item   bool isVisibleTo(const QGraphicsItem * parent)
+=item  bool isWidget()
 
-=item   bool isWidget()
+=item  bool isWindow()
 
-=item   bool isWindow()
+=item  QTransform itemTransform(const QGraphicsItem * other, bool * ok)
 
-=item   QTransform itemTransform(const QGraphicsItem * other, bool * ok = 0)
+=item  QTransform itemTransform(const QGraphicsItem * other, bool * ok = 0)
 
-=item   QTransform itemTransform(const QGraphicsItem * other, bool * ok)
+=item  QPointF mapFromItem(const QGraphicsItem * item, const QPointF & point)
 
-=item   QPointF mapFromItem(const QGraphicsItem * item, const QPointF & point)
+=item  QPolygonF mapFromItem(const QGraphicsItem * item, const QRectF & rect)
 
-=item   QPolygonF mapFromItem(const QGraphicsItem * item, const QRectF & rect)
+=item  QPolygonF mapFromItem(const QGraphicsItem * item, const QPolygonF & polygon)
 
-=item   QPolygonF mapFromItem(const QGraphicsItem * item, const QPolygonF & polygon)
+=item  QPainterPath mapFromItem(const QGraphicsItem * item, const QPainterPath & path)
 
-=item   QPainterPath mapFromItem(const QGraphicsItem * item, const QPainterPath & path)
+=item  QPointF mapFromItem(const QGraphicsItem * item, qreal x, qreal y)
 
-=item   QPointF mapFromItem(const QGraphicsItem * item, qreal x, qreal y)
+=item  QPolygonF mapFromItem(const QGraphicsItem * item, qreal x, qreal y, qreal w, qreal h)
 
-=item   QPolygonF mapFromItem(const QGraphicsItem * item, qreal x, qreal y, qreal w, qreal h)
+=item  QPointF mapFromParent(const QPointF & point)
 
-=item   QPointF mapFromParent(const QPointF & point)
+=item  QPolygonF mapFromParent(const QRectF & rect)
 
-=item   QPolygonF mapFromParent(const QRectF & rect)
+=item  QPolygonF mapFromParent(const QPolygonF & polygon)
 
-=item   QPolygonF mapFromParent(const QPolygonF & polygon)
+=item  QPainterPath mapFromParent(const QPainterPath & path)
 
-=item   QPainterPath mapFromParent(const QPainterPath & path)
+=item  QPointF mapFromParent(qreal x, qreal y)
 
-=item   QPointF mapFromParent(qreal x, qreal y)
+=item  QPolygonF mapFromParent(qreal x, qreal y, qreal w, qreal h)
 
-=item   QPolygonF mapFromParent(qreal x, qreal y, qreal w, qreal h)
+=item  QPointF mapFromScene(const QPointF & point)
 
-=item   QPointF mapFromScene(const QPointF & point)
+=item  QPolygonF mapFromScene(const QRectF & rect)
 
-=item   QPolygonF mapFromScene(const QRectF & rect)
+=item  QPolygonF mapFromScene(const QPolygonF & polygon)
 
-=item   QPolygonF mapFromScene(const QPolygonF & polygon)
+=item  QPainterPath mapFromScene(const QPainterPath & path)
 
-=item   QPainterPath mapFromScene(const QPainterPath & path)
+=item  QPointF mapFromScene(qreal x, qreal y)
 
-=item   QPointF mapFromScene(qreal x, qreal y)
+=item  QPolygonF mapFromScene(qreal x, qreal y, qreal w, qreal h)
 
-=item   QPolygonF mapFromScene(qreal x, qreal y, qreal w, qreal h)
+=item  QRectF mapRectFromItem(const QGraphicsItem * item, const QRectF & rect)
 
-=item   QRectF mapRectFromItem(const QGraphicsItem * item, const QRectF & rect)
+=item  QRectF mapRectFromItem(const QGraphicsItem * item, qreal x, qreal y, qreal w, qreal h)
 
-=item   QRectF mapRectFromItem(const QGraphicsItem * item, qreal x, qreal y, qreal w, qreal h)
+=item  QRectF mapRectFromParent(const QRectF & rect)
 
-=item   QRectF mapRectFromParent(const QRectF & rect)
+=item  QRectF mapRectFromParent(qreal x, qreal y, qreal w, qreal h)
 
-=item   QRectF mapRectFromParent(qreal x, qreal y, qreal w, qreal h)
+=item  QRectF mapRectFromScene(const QRectF & rect)
 
-=item   QRectF mapRectFromScene(const QRectF & rect)
+=item  QRectF mapRectFromScene(qreal x, qreal y, qreal w, qreal h)
 
-=item   QRectF mapRectFromScene(qreal x, qreal y, qreal w, qreal h)
+=item  QRectF mapRectToItem(const QGraphicsItem * item, const QRectF & rect)
 
-=item   QRectF mapRectToItem(const QGraphicsItem * item, const QRectF & rect)
+=item  QRectF mapRectToItem(const QGraphicsItem * item, qreal x, qreal y, qreal w, qreal h)
 
-=item   QRectF mapRectToItem(const QGraphicsItem * item, qreal x, qreal y, qreal w, qreal h)
+=item  QRectF mapRectToParent(const QRectF & rect)
 
-=item   QRectF mapRectToParent(const QRectF & rect)
+=item  QRectF mapRectToParent(qreal x, qreal y, qreal w, qreal h)
 
-=item   QRectF mapRectToParent(qreal x, qreal y, qreal w, qreal h)
+=item  QRectF mapRectToScene(const QRectF & rect)
 
-=item   QRectF mapRectToScene(const QRectF & rect)
+=item  QRectF mapRectToScene(qreal x, qreal y, qreal w, qreal h)
 
-=item   QRectF mapRectToScene(qreal x, qreal y, qreal w, qreal h)
+=item  QPointF mapToItem(const QGraphicsItem * item, const QPointF & point)
 
-=item   QPointF mapToItem(const QGraphicsItem * item, const QPointF & point)
+=item  QPolygonF mapToItem(const QGraphicsItem * item, const QRectF & rect)
 
-=item   QPolygonF mapToItem(const QGraphicsItem * item, const QRectF & rect)
+=item  QPolygonF mapToItem(const QGraphicsItem * item, const QPolygonF & polygon)
 
-=item   QPolygonF mapToItem(const QGraphicsItem * item, const QPolygonF & polygon)
+=item  QPainterPath mapToItem(const QGraphicsItem * item, const QPainterPath & path)
 
-=item   QPainterPath mapToItem(const QGraphicsItem * item, const QPainterPath & path)
+=item  QPointF mapToItem(const QGraphicsItem * item, qreal x, qreal y)
 
-=item   QPointF mapToItem(const QGraphicsItem * item, qreal x, qreal y)
+=item  QPolygonF mapToItem(const QGraphicsItem * item, qreal x, qreal y, qreal w, qreal h)
 
-=item   QPolygonF mapToItem(const QGraphicsItem * item, qreal x, qreal y, qreal w, qreal h)
+=item  QPointF mapToParent(const QPointF & point)
 
-=item   QPointF mapToParent(const QPointF & point)
+=item  QPolygonF mapToParent(const QRectF & rect)
 
-=item   QPolygonF mapToParent(const QRectF & rect)
+=item  QPolygonF mapToParent(const QPolygonF & polygon)
 
-=item   QPolygonF mapToParent(const QPolygonF & polygon)
+=item  QPainterPath mapToParent(const QPainterPath & path)
 
-=item   QPainterPath mapToParent(const QPainterPath & path)
+=item  QPointF mapToParent(qreal x, qreal y)
 
-=item   QPointF mapToParent(qreal x, qreal y)
+=item  QPolygonF mapToParent(qreal x, qreal y, qreal w, qreal h)
 
-=item   QPolygonF mapToParent(qreal x, qreal y, qreal w, qreal h)
+=item  QPointF mapToScene(const QPointF & point)
 
-=item   QPointF mapToScene(const QPointF & point)
+=item  QPolygonF mapToScene(const QRectF & rect)
 
-=item   QPolygonF mapToScene(const QRectF & rect)
+=item  QPolygonF mapToScene(const QPolygonF & polygon)
 
-=item   QPolygonF mapToScene(const QPolygonF & polygon)
+=item  QPainterPath mapToScene(const QPainterPath & path)
 
-=item   QPainterPath mapToScene(const QPainterPath & path)
+=item  QPointF mapToScene(qreal x, qreal y)
 
-=item   QPointF mapToScene(qreal x, qreal y)
+=item  QPolygonF mapToScene(qreal x, qreal y, qreal w, qreal h)
 
-=item   QPolygonF mapToScene(qreal x, qreal y, qreal w, qreal h)
+=item  QMatrix matrix()
 
-=item   QMatrix matrix()
+=item  void moveBy(qreal dx, qreal dy)
 
-=item   void moveBy(qreal dx, qreal dy)
+=item  qreal opacity()
 
-=item   qreal opacity()
+=item  QPainterPath opaqueArea()
 
-=item   QPainterPath opaqueArea()
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
+=item  QGraphicsItem * panel()
 
-=item   QGraphicsItem * panel()
+=item  QGraphicsItem::PanelModality panelModality()
 
-=item   QGraphicsItem::PanelModality panelModality()
+=item  QGraphicsItem * parentItem()
 
-=item   QGraphicsItem * parentItem()
+=item  QGraphicsObject * parentObject()
 
-=item   QGraphicsObject * parentObject()
+=item  QGraphicsWidget * parentWidget()
 
-=item   QGraphicsWidget * parentWidget()
+=item  QPointF pos()
 
-=item   QPointF pos()
+=item  void removeSceneEventFilter(QGraphicsItem * filterItem)
 
-=item   void removeSceneEventFilter(QGraphicsItem * filterItem)
+=item  void resetMatrix()
 
-=item   void resetMatrix()
+=item  void resetTransform()
 
-=item   void resetTransform()
+=item  void rotate(qreal angle)
 
-=item   void rotate(qreal angle)
+=item  qreal rotation()
 
-=item   qreal rotation()
+=item  qreal scale()
 
-=item   qreal scale()
+=item  void scale(qreal sx, qreal sy)
 
-=item   void scale(qreal sx, qreal sy)
+=item  QGraphicsScene * scene()
 
-=item   QGraphicsScene * scene()
+=item  QRectF sceneBoundingRect()
 
-=item   QRectF sceneBoundingRect()
+=item  QMatrix sceneMatrix()
 
-=item   QMatrix sceneMatrix()
+=item  QPointF scenePos()
 
-=item   QPointF scenePos()
+=item  QTransform sceneTransform()
 
-=item   QTransform sceneTransform()
+=item  void scroll(qreal dx, qreal dy, const QRectF & rect)
 
-=item   void scroll(qreal dx, qreal dy, const QRectF & rect = QRectF())
+=item  void scroll(qreal dx, qreal dy, const QRectF & rect = QRectF())
 
-=item   void scroll(qreal dx, qreal dy, const QRectF & rect)
+=item  void setAcceptDrops(bool on)
 
-=item   void setAcceptDrops(bool on)
+=item  void setAcceptHoverEvents(bool enabled)
 
-=item   void setAcceptHoverEvents(bool enabled)
+=item  void setAcceptTouchEvents(bool enabled)
 
-=item   void setAcceptTouchEvents(bool enabled)
+=item  void setAcceptedMouseButtons(QFlags<Qt::MouseButton> buttons)
 
-=item   void setAcceptsHoverEvents(bool enabled)
+=item  void setAcceptsHoverEvents(bool enabled)
 
-=item   void setActive(bool active)
+=item  void setActive(bool active)
 
-=item   void setBoundingRegionGranularity(qreal granularity)
+=item  void setBoundingRegionGranularity(qreal granularity)
 
-=item   void setCacheMode(QGraphicsItem::CacheMode mode, const QSize & cacheSize = QSize())
+=item  void setCacheMode(QGraphicsItem::CacheMode mode, const QSize & cacheSize)
 
-=item   void setCacheMode(QGraphicsItem::CacheMode mode, const QSize & cacheSize)
+=item  void setCacheMode(QGraphicsItem::CacheMode mode, const QSize & cacheSize = QSize())
 
-=item   void setCursor(const QCursor & cursor)
+=item  void setCursor(const QCursor & cursor)
 
-=item   void setData(int key, const QVariant & value)
+=item  void setData(int key, const QVariant & value)
 
-=item   void setEnabled(bool enabled)
+=item  void setEnabled(bool enabled)
 
-=item   void setFiltersChildEvents(bool enabled)
+=item  void setFiltersChildEvents(bool enabled)
 
-=item   void setFlag(QGraphicsItem::GraphicsItemFlag flag, bool enabled = true)
+=item  void setFlag(QGraphicsItem::GraphicsItemFlag flag, bool enabled)
 
-=item   void setFlag(QGraphicsItem::GraphicsItemFlag flag, bool enabled)
+=item  void setFlag(QGraphicsItem::GraphicsItemFlag flag, bool enabled = true)
 
-=item   void setFocus(Qt::FocusReason focusReason = Qt::OtherFocusReason)
+=item  void setFlags(QFlags<QGraphicsItem::GraphicsItemFlag> flags)
 
-=item   void setFocus(Qt::FocusReason focusReason)
+=item  void setFocus(Qt::FocusReason focusReason)
 
-=item   void setFocusProxy(QGraphicsItem * item)
+=item  void setFocus(Qt::FocusReason focusReason = Qt::OtherFocusReason)
 
-=item   void setGraphicsEffect(QGraphicsEffect * effect)
+=item  void setFocusProxy(QGraphicsItem * item)
 
-=item   void setGroup(QGraphicsItemGroup * group)
+=item  void setGraphicsEffect(QGraphicsEffect * effect)
 
-=item   void setHandlesChildEvents(bool enabled)
+=item  void setGroup(QGraphicsItemGroup * group)
 
-=item   void setMatrix(const QMatrix & matrix, bool combine = false)
+=item  void setHandlesChildEvents(bool enabled)
 
-=item   void setMatrix(const QMatrix & matrix, bool combine)
+=item  void setInputMethodHints(QFlags<Qt::InputMethodHint> hints)
 
-=item   void setOpacity(qreal opacity)
+=item  void setMatrix(const QMatrix & matrix, bool combine)
 
-=item   void setPanelModality(QGraphicsItem::PanelModality panelModality)
+=item  void setMatrix(const QMatrix & matrix, bool combine = false)
 
-=item   void setParentItem(QGraphicsItem * parent)
+=item  void setOpacity(qreal opacity)
 
-=item   void setPos(const QPointF & pos)
+=item  void setPanelModality(QGraphicsItem::PanelModality panelModality)
 
-=item   void setPos(qreal x, qreal y)
+=item  void setParentItem(QGraphicsItem * parent)
 
-=item   void setRotation(qreal angle)
+=item  void setPos(const QPointF & pos)
 
-=item   void setScale(qreal scale)
+=item  void setPos(qreal x, qreal y)
 
-=item   void setSelected(bool selected)
+=item  void setRotation(qreal angle)
 
-=item   void setToolTip(const QString & toolTip)
+=item  void setScale(qreal scale)
 
-=item   void setTransform(const QTransform & matrix, bool combine = false)
+=item  void setSelected(bool selected)
 
-=item   void setTransform(const QTransform & matrix, bool combine)
+=item  void setToolTip(const QString & toolTip)
 
-=item   void setTransformOriginPoint(const QPointF & origin)
+=item  void setTransform(const QTransform & matrix, bool combine)
 
-=item   void setTransformOriginPoint(qreal ax, qreal ay)
+=item  void setTransform(const QTransform & matrix, bool combine = false)
 
-=item   void setVisible(bool visible)
+=item  void setTransformOriginPoint(const QPointF & origin)
 
-=item   void setX(qreal x)
+=item  void setTransformOriginPoint(qreal ax, qreal ay)
 
-=item   void setY(qreal y)
+=item  void setVisible(bool visible)
 
-=item   void setZValue(qreal z)
+=item  void setX(qreal x)
 
-=item   QPainterPath shape()
+=item  void setY(qreal y)
 
-=item   void shear(qreal sh, qreal sv)
+=item  void setZValue(qreal z)
 
-=item   void show()
+=item  QPainterPath shape()
 
-=item   void stackBefore(const QGraphicsItem * sibling)
+=item  void shear(qreal sh, qreal sv)
 
-=item   QGraphicsObject * toGraphicsObject()
+=item  void show()
 
-=item   const QGraphicsObject * toGraphicsObject()
+=item  void stackBefore(const QGraphicsItem * sibling)
 
-=item   QString toolTip()
+=item  QGraphicsObject * toGraphicsObject()
 
-=item   QGraphicsItem * topLevelItem()
+=item  const QGraphicsObject * toGraphicsObject()
 
-=item   QGraphicsWidget * topLevelWidget()
+=item  QString toolTip()
 
-=item   QTransform transform()
+=item  QGraphicsItem * topLevelItem()
 
-=item   QPointF transformOriginPoint()
+=item  QGraphicsWidget * topLevelWidget()
 
-=item   void translate(qreal dx, qreal dy)
+=item  QTransform transform()
 
-=item   int type()
+=item  QPointF transformOriginPoint()
 
-=item   void ungrabKeyboard()
+=item  void translate(qreal dx, qreal dy)
 
-=item   void ungrabMouse()
+=item  int type()
 
-=item   void unsetCursor()
+=item  void ungrabKeyboard()
 
-=item   void update(const QRectF & rect = QRectF())
+=item  void ungrabMouse()
 
-=item   void update(const QRectF & rect)
+=item  void unsetCursor()
 
-=item   void update(qreal x, qreal y, qreal width, qreal height)
+=item  void update(const QRectF & rect)
 
-=item   QGraphicsWidget * window()
+=item  void update(const QRectF & rect = QRectF())
 
-=item   qreal x()
+=item  void update(qreal x, qreal y, qreal width, qreal height)
 
-=item   qreal y()
+=item  QGraphicsWidget * window()
 
-=item   qreal zValue()
+=item  qreal x()
+
+=item  qreal y()
+
+=item  qreal zValue()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item ItemIsMovable
+
+=item ItemIsSelectable
+
+=item ItemIsFocusable
+
+=item ItemClipsToShape
+
+=item ItemClipsChildrenToShape
+
+=item ItemIgnoresTransformations
+
+=item ItemIgnoresParentOpacity
+
+=item ItemDoesntPropagateOpacityToChildren
+
+=item ItemStacksBehindParent
+
+=item ItemUsesExtendedStyleOption
+
+=item ItemHasNoContents
+
+=item ItemSendsGeometryChanges
+
+=item ItemAcceptsInputMethod
+
+=item ItemNegativeZStacksBehindParent
+
+=item ItemIsPanel
+
+=item ItemIsFocusScope
+
+=item ItemSendsScenePositionChanges
+
+=item ItemStopsClickFocusPropagation
+
+=item ItemPositionChange
+
+=item ItemMatrixChange
+
+=item ItemVisibleChange
+
+=item ItemEnabledChange
+
+=item ItemSelectedChange
+
+=item ItemParentChange
+
+=item ItemChildAddedChange
+
+=item ItemChildRemovedChange
+
+=item ItemTransformChange
+
+=item ItemPositionHasChanged
+
+=item ItemTransformHasChanged
+
+=item ItemSceneChange
+
+=item ItemVisibleHasChanged
+
+=item ItemEnabledHasChanged
+
+=item ItemSelectedHasChanged
+
+=item ItemParentHasChanged
+
+=item ItemSceneHasChanged
+
+=item ItemCursorChange
+
+=item ItemCursorHasChanged
+
+=item ItemToolTipChange
+
+=item ItemToolTipHasChanged
+
+=item ItemFlagsChange
+
+=item ItemFlagsHaveChanged
+
+=item ItemZValueChange
+
+=item ItemZValueHasChanged
+
+=item ItemOpacityChange
+
+=item ItemOpacityHasChanged
+
+=item ItemScenePositionHasChanged
+
+=item ItemRotationChange
+
+=item ItemRotationHasChanged
+
+=item ItemScaleChange
+
+=item ItemScaleHasChanged
+
+=item ItemTransformOriginPointChange
+
+=item ItemTransformOriginPointHasChanged
+
+=item NoCache
+
+=item ItemCoordinateCache
+
+=item DeviceCoordinateCache
+
+=item NonModal
+
+=item PanelModal
+
+=item SceneModal
+
+=item Type
+
+=item UserType
 
 
 =back

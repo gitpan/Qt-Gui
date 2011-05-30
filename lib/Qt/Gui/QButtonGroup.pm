@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,31 +24,38 @@ Qt::Gui::QButtonGroup
 
 =over
 
-=item    QButtonGroup(QObject * parent = 0)
+=item   QButtonGroup(QObject * parent)
 
-=item    QButtonGroup(QObject * parent)
+=item   QButtonGroup(QObject * parent = 0)
 
-=item    ~QButtonGroup()
+=item   ~QButtonGroup()
 
-=item   void addButton(QAbstractButton * arg0)
+=item  void addButton(QAbstractButton * arg0)
 
-=item   void addButton(QAbstractButton * arg0, int id)
+=item  void addButton(QAbstractButton * arg0, int id)
 
-=item   QAbstractButton * button(int id)
+=item  QAbstractButton * button(int id)
 
-=item   QAbstractButton * checkedButton()
+=item  QAbstractButton * checkedButton()
 
-=item   int checkedId()
+=item  int checkedId()
 
-=item   bool exclusive()
+=item  bool exclusive()
 
-=item   int id(QAbstractButton * button)
+=item  int id(QAbstractButton * button)
 
-=item   void removeButton(QAbstractButton * arg0)
+=item  void removeButton(QAbstractButton * arg0)
 
-=item   void setExclusive(bool arg0)
+=item  void setExclusive(bool arg0)
 
-=item   void setId(QAbstractButton * button, int id)
+=item  void setId(QAbstractButton * button, int id)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

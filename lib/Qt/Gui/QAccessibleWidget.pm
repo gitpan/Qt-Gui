@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAccessibleObject/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAccessibleObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,33 +24,42 @@ Qt::Gui::QAccessibleWidget
 
 =over
 
-=item    QAccessibleWidget(QWidget * o, QAccessible::Role r, const QString & name = QString())
+=item   QAccessibleWidget(QWidget * o, QAccessible::Role r, const QString & name)
 
-=item    QAccessibleWidget(QWidget * o, QAccessible::Role r, const QString & name)
+=item   QAccessibleWidget(QWidget * o, QAccessible::Role r, const QString & name = QString())
 
-=item    QAccessibleWidget(QWidget * o, QAccessible::Role r = QAccessible::Client, const QString & name = QString())
+=item   QAccessibleWidget(QWidget * o, QAccessible::Role r = QAccessible::Client, const QString & name = QString())
 
-=item    QAccessibleWidget(QWidget * o, QAccessible::Role r, const QString & name = QString())
+=item  QString actionText(int action, QAccessible::Text t, int child)
 
-=item   QString actionText(int action, QAccessible::Text t, int child)
+=item  int childAt(int x, int y)
 
-=item   int childAt(int x, int y)
+=item  int childCount()
 
-=item   int childCount()
+=item  bool doAction(int action, int child, const QVariantList & params)
 
-=item   bool doAction(int action, int child, const QVariantList & params)
+=item  int indexOfChild(const QAccessibleInterface * child)
 
-=item   int indexOfChild(const QAccessibleInterface * child)
+=item  int navigate(QAccessible::RelationFlag rel, int entry, QAccessibleInterface ** target)
 
-=item   int navigate(QAccessible::RelationFlag rel, int entry, QAccessibleInterface ** target)
+=item  QRect rect(int child)
 
-=item   QRect rect(int child)
+=item  QFlags<QAccessible::RelationFlag> relationTo(int child, const QAccessibleInterface * other, int otherChild)
 
-=item   QAccessible::Role role(int child)
+=item  QAccessible::Role role(int child)
 
-=item   QString text(QAccessible::Text t, int child)
+=item  QFlags<QAccessible::StateFlag> state(int child)
 
-=item   int userActionCount(int child)
+=item  QString text(QAccessible::Text t, int child)
+
+=item  int userActionCount(int child)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

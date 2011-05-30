@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractTextDocumentLayout/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractTextDocumentLayout/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,29 +24,36 @@ Qt::Gui::QPlainTextDocumentLayout
 
 =over
 
-=item    QPlainTextDocumentLayout(QTextDocument * document)
+=item   QPlainTextDocumentLayout(QTextDocument * document)
 
-=item    ~QPlainTextDocumentLayout()
+=item   ~QPlainTextDocumentLayout()
 
-=item   QRectF blockBoundingRect(const QTextBlock & block)
+=item  QRectF blockBoundingRect(const QTextBlock & block)
 
-=item   int cursorWidth()
+=item  int cursorWidth()
 
-=item   QSizeF documentSize()
+=item  QSizeF documentSize()
 
-=item   void draw(QPainter * arg0, const QAbstractTextDocumentLayout::PaintContext & arg1)
+=item  void draw(QPainter * arg0, const QAbstractTextDocumentLayout::PaintContext & arg1)
 
-=item   void ensureBlockLayout(const QTextBlock & block)
+=item  void ensureBlockLayout(const QTextBlock & block)
 
-=item   QRectF frameBoundingRect(QTextFrame * arg0)
+=item  QRectF frameBoundingRect(QTextFrame * arg0)
 
-=item   int hitTest(const QPointF & arg0, Qt::HitTestAccuracy arg1)
+=item  int hitTest(const QPointF & arg0, Qt::HitTestAccuracy arg1)
 
-=item   int pageCount()
+=item  int pageCount()
 
-=item   void requestUpdate()
+=item  void requestUpdate()
 
-=item   void setCursorWidth(int width)
+=item  void setCursorWidth(int width)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,23 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub PdmWidth() { 0 }
-sub PdmHeight() { 1 }
-sub PdmWidthMM() { 2 }
-sub PdmHeightMM() { 3 }
-sub PdmNumColors() { 4 }
-sub PdmDepth() { 5 }
-sub PdmDpiX() { 6 }
-sub PdmDpiY() { 7 }
-sub PdmPhysicalDpiX() { 8 }
-sub PdmPhysicalDpiY() { 9 }
 
 
 1;
@@ -36,35 +23,62 @@ Qt::Gui::QPaintDevice
 
 =over
 
-=item    ~QPaintDevice()
+=item   ~QPaintDevice()
 
-=item   int colorCount()
+=item  int colorCount()
 
-=item   int depth()
+=item  int depth()
 
-=item   int devType()
+=item  int devType()
 
-=item   int height()
+=item  int height()
 
-=item   int heightMM()
+=item  int heightMM()
 
-=item   int logicalDpiX()
+=item  int logicalDpiX()
 
-=item   int logicalDpiY()
+=item  int logicalDpiY()
 
-=item   int numColors()
+=item  int numColors()
 
-=item   QPaintEngine * paintEngine()
+=item  QPaintEngine * paintEngine()
 
-=item   bool paintingActive()
+=item  bool paintingActive()
 
-=item   int physicalDpiX()
+=item  int physicalDpiX()
 
-=item   int physicalDpiY()
+=item  int physicalDpiY()
 
-=item   int width()
+=item  int width()
 
-=item   int widthMM()
+=item  int widthMM()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item PdmWidth
+
+=item PdmHeight
+
+=item PdmWidthMM
+
+=item PdmHeightMM
+
+=item PdmNumColors
+
+=item PdmDepth
+
+=item PdmDpiX
+
+=item PdmDpiY
+
+=item PdmPhysicalDpiX
+
+=item PdmPhysicalDpiY
 
 
 =back

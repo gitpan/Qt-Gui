@@ -28,22 +28,23 @@ QStyleFactory::create(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     QStyle * ret = THIS->create(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyle", (void *)ret);
     XSRETURN(1);
+    }
 
 ## static QStringList keys()
 void
 QStyleFactory::keys(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QStringList ret = THIS->keys();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QStringList(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QStringList", (void *)new QStringList(ret));
     XSRETURN(1);
+    }

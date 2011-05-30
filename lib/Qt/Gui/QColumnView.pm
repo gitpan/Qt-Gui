@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractItemView/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractItemView/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,37 +24,44 @@ Qt::Gui::QColumnView
 
 =over
 
-=item    QColumnView(QWidget * parent = 0)
+=item   QColumnView(QWidget * parent)
 
-=item    QColumnView(QWidget * parent)
+=item   QColumnView(QWidget * parent = 0)
 
-=item    ~QColumnView()
+=item   ~QColumnView()
 
-=item   QModelIndex indexAt(const QPoint & point)
+=item  QModelIndex indexAt(const QPoint & point)
 
-=item   QWidget * previewWidget()
+=item  QWidget * previewWidget()
 
-=item   bool resizeGripsVisible()
+=item  bool resizeGripsVisible()
 
-=item   void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+=item  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint)
 
-=item   void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint)
+=item  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 
-=item   void selectAll()
+=item  void selectAll()
 
-=item   void setModel(QAbstractItemModel * model)
+=item  void setModel(QAbstractItemModel * model)
 
-=item   void setPreviewWidget(QWidget * widget)
+=item  void setPreviewWidget(QWidget * widget)
 
-=item   void setResizeGripsVisible(bool visible)
+=item  void setResizeGripsVisible(bool visible)
 
-=item   void setRootIndex(const QModelIndex & index)
+=item  void setRootIndex(const QModelIndex & index)
 
-=item   void setSelectionModel(QItemSelectionModel * selectionModel)
+=item  void setSelectionModel(QItemSelectionModel * selectionModel)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   QRect visualRect(const QModelIndex & index)
+=item  QRect visualRect(const QModelIndex & index)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

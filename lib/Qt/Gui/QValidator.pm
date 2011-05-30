@@ -7,16 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Invalid() { 0 }
-sub Intermediate() { 1 }
-sub Acceptable() { 2 }
 
 
 1;
@@ -29,19 +24,32 @@ Qt::Gui::QValidator
 
 =over
 
-=item    QValidator(QObject * parent = 0)
+=item   QValidator(QObject * parent)
 
-=item    QValidator(QObject * parent)
+=item   QValidator(QObject * parent = 0)
 
-=item    ~QValidator()
+=item   ~QValidator()
 
-=item   void fixup(QString & arg0)
+=item  void fixup(QString & arg0)
 
-=item   QLocale locale()
+=item  QLocale locale()
 
-=item   void setLocale(const QLocale & locale)
+=item  void setLocale(const QLocale & locale)
 
-=item   QValidator::State validate(QString & arg0, int & arg1)
+=item  QValidator::State validate(QString & arg0, int & arg1)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Invalid
+
+=item Intermediate
+
+=item Acceptable
 
 
 =back

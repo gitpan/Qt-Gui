@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,45 +23,52 @@ Qt::Gui::QTextTableCell
 
 =over
 
-=item    QTextTableCell()
+=item   QTextTableCell()
 
-=item    QTextTableCell(const QTextTableCell & o)
+=item   QTextTableCell(const QTextTableCell & o)
 
-=item    ~QTextTableCell()
+=item   ~QTextTableCell()
 
-=item   QTextFrame::iterator begin()
+=item  QTextFrame::iterator begin()
 
-=item   int column()
+=item  int column()
 
-=item   int columnSpan()
+=item  int columnSpan()
 
-=item   QTextFrame::iterator end()
+=item  QTextFrame::iterator end()
 
-=item   QTextCursor firstCursorPosition()
+=item  QTextCursor firstCursorPosition()
 
-=item   int firstPosition()
+=item  int firstPosition()
 
-=item   QTextCharFormat format()
+=item  QTextCharFormat format()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   QTextCursor lastCursorPosition()
+=item  QTextCursor lastCursorPosition()
 
-=item   int lastPosition()
+=item  int lastPosition()
 
-=item   bool operator!=(const QTextTableCell & other)
+=item  bool operator!=(const QTextTableCell & other)
 
-=item   QTextTableCell & operator=(const QTextTableCell & o)
+=item  QTextTableCell & operator=(const QTextTableCell & o)
 
-=item   bool operator==(const QTextTableCell & other)
+=item  bool operator==(const QTextTableCell & other)
 
-=item   int row()
+=item  int row()
 
-=item   int rowSpan()
+=item  int rowSpan()
 
-=item   void setFormat(const QTextCharFormat & format)
+=item  void setFormat(const QTextCharFormat & format)
 
-=item   int tableCellFormatIndex()
+=item  int tableCellFormatIndex()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

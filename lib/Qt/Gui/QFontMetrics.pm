@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,99 +23,102 @@ Qt::Gui::QFontMetrics
 
 =over
 
-=item    QFontMetrics(const QFont & arg0)
+=item   QFontMetrics(const QFont & arg0)
 
-=item    QFontMetrics(const QFontMetrics & arg0)
+=item   QFontMetrics(const QFontMetrics & arg0)
 
-=item    QFontMetrics(const QFont & arg0, QPaintDevice * pd)
+=item   QFontMetrics(const QFont & arg0, QPaintDevice * pd)
 
-=item    ~QFontMetrics()
+=item   ~QFontMetrics()
 
-=item   int ascent()
+=item  int ascent()
 
-=item   int averageCharWidth()
+=item  int averageCharWidth()
 
-=item   QRect boundingRect(QChar arg0)
+=item  QRect boundingRect(QChar arg0)
 
-=item   QRect boundingRect(const QString & text)
+=item  QRect boundingRect(const QString & text)
 
-=item   QRect boundingRect(const QRect & r, int flags, const QString & text, int tabstops, int * tabarray = 0)
+=item  QRect boundingRect(const QRect & r, int flags, const QString & text, int tabstops, int * tabarray)
 
-=item   QRect boundingRect(const QRect & r, int flags, const QString & text, int tabstops, int * tabarray)
+=item  QRect boundingRect(const QRect & r, int flags, const QString & text, int tabstops, int * tabarray = 0)
 
-=item   QRect boundingRect(const QRect & r, int flags, const QString & text, int tabstops = 0, int * tabarray = 0)
+=item  QRect boundingRect(const QRect & r, int flags, const QString & text, int tabstops = 0, int * tabarray = 0)
 
-=item   QRect boundingRect(const QRect & r, int flags, const QString & text, int tabstops, int * tabarray = 0)
+=item  QRect boundingRect(int x, int y, int w, int h, int flags, const QString & text, int tabstops, int * tabarray)
 
-=item   QRect boundingRect(int x, int y, int w, int h, int flags, const QString & text, int tabstops, int * tabarray = 0)
+=item  QRect boundingRect(int x, int y, int w, int h, int flags, const QString & text, int tabstops, int * tabarray = 0)
 
-=item   QRect boundingRect(int x, int y, int w, int h, int flags, const QString & text, int tabstops, int * tabarray)
+=item  QRect boundingRect(int x, int y, int w, int h, int flags, const QString & text, int tabstops = 0, int * tabarray = 0)
 
-=item   QRect boundingRect(int x, int y, int w, int h, int flags, const QString & text, int tabstops = 0, int * tabarray = 0)
+=item  int charWidth(const QString & str, int pos)
 
-=item   QRect boundingRect(int x, int y, int w, int h, int flags, const QString & text, int tabstops, int * tabarray = 0)
+=item  int descent()
 
-=item   int charWidth(const QString & str, int pos)
+=item  QString elidedText(const QString & text, Qt::TextElideMode mode, int width, int flags)
 
-=item   int descent()
+=item  QString elidedText(const QString & text, Qt::TextElideMode mode, int width, int flags = 0)
 
-=item   QString elidedText(const QString & text, Qt::TextElideMode mode, int width, int flags = 0)
+=item  int height()
 
-=item   QString elidedText(const QString & text, Qt::TextElideMode mode, int width, int flags)
+=item  bool inFont(QChar arg0)
 
-=item   int height()
+=item  int leading()
 
-=item   bool inFont(QChar arg0)
+=item  int leftBearing(QChar arg0)
 
-=item   int leading()
+=item  int lineSpacing()
 
-=item   int leftBearing(QChar arg0)
+=item  int lineWidth()
 
-=item   int lineSpacing()
+=item  int maxWidth()
 
-=item   int lineWidth()
+=item  int minLeftBearing()
 
-=item   int maxWidth()
+=item  int minRightBearing()
 
-=item   int minLeftBearing()
+=item  bool operator!=(const QFontMetrics & other)
 
-=item   int minRightBearing()
+=item  bool operator!=(const QFontMetrics & other)
 
-=item   bool operator!=(const QFontMetrics & other)
+=item  QFontMetrics & operator=(const QFontMetrics & arg0)
 
-=item   bool operator!=(const QFontMetrics & other)
+=item  bool operator==(const QFontMetrics & other)
 
-=item   QFontMetrics & operator=(const QFontMetrics & arg0)
+=item  bool operator==(const QFontMetrics & other)
 
-=item   bool operator==(const QFontMetrics & other)
+=item  int overlinePos()
 
-=item   bool operator==(const QFontMetrics & other)
+=item  int rightBearing(QChar arg0)
 
-=item   int overlinePos()
+=item  QSize size(int flags, const QString & str, int tabstops, int * tabarray)
 
-=item   int rightBearing(QChar arg0)
+=item  QSize size(int flags, const QString & str, int tabstops, int * tabarray = 0)
 
-=item   QSize size(int flags, const QString & str, int tabstops, int * tabarray = 0)
+=item  QSize size(int flags, const QString & str, int tabstops = 0, int * tabarray = 0)
 
-=item   QSize size(int flags, const QString & str, int tabstops, int * tabarray)
+=item  int strikeOutPos()
 
-=item   QSize size(int flags, const QString & str, int tabstops = 0, int * tabarray = 0)
+=item  QRect tightBoundingRect(const QString & text)
 
-=item   QSize size(int flags, const QString & str, int tabstops, int * tabarray = 0)
+=item  int underlinePos()
 
-=item   int strikeOutPos()
+=item  int width(QChar arg0)
 
-=item   QRect tightBoundingRect(const QString & text)
+=item  int width(const QString & arg0, int len)
 
-=item   int underlinePos()
+=item  int width(const QString & arg0, int len = -1)
 
-=item   int width(QChar arg0)
+=item  int width(const QString & arg0, int len, int flags)
 
-=item   int width(const QString & arg0, int len = -1)
+=item  int xHeight()
 
-=item   int width(const QString & arg0, int len)
 
-=item   int xHeight()
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

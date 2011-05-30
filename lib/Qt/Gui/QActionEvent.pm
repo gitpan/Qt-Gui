@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +24,22 @@ Qt::Gui::QActionEvent
 
 =over
 
-=item    QActionEvent(int type, QAction * action, QAction * before = 0)
+=item   QActionEvent(int type, QAction * action, QAction * before)
 
-=item    QActionEvent(int type, QAction * action, QAction * before)
+=item   QActionEvent(int type, QAction * action, QAction * before = 0)
 
-=item    ~QActionEvent()
+=item   ~QActionEvent()
 
-=item   QAction * action()
+=item  QAction * action()
 
-=item   QAction * before()
+=item  QAction * before()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

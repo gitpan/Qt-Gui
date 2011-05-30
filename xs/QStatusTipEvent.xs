@@ -25,15 +25,13 @@ PREINIT:
 QStatusTipEvent *ret;
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QStatusTipEvent(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStatusTipEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QStatusTipEvent()
 void
@@ -47,7 +45,10 @@ void
 QStatusTipEvent::tip(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->tip();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }

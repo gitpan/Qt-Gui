@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,69 +23,78 @@ Qt::Gui::QTextBlock
 
 =over
 
-=item    QTextBlock()
+=item   QTextBlock()
 
-=item    QTextBlock(const QTextBlock & o)
+=item   QTextBlock(const QTextBlock & o)
 
-=item    QTextBlock(QTextDocumentPrivate * priv, int b)
+=item   QTextBlock(QTextDocumentPrivate * priv, int b)
 
-=item   QTextBlockFormat blockFormat()
+=item  QTextBlockFormat blockFormat()
 
-=item   int blockFormatIndex()
+=item  int blockFormatIndex()
 
-=item   int blockNumber()
+=item  int blockNumber()
 
-=item   QTextCharFormat charFormat()
+=item  QTextCharFormat charFormat()
 
-=item   int charFormatIndex()
+=item  int charFormatIndex()
 
-=item   void clearLayout()
+=item  void clearLayout()
 
-=item   bool contains(int position)
+=item  bool contains(int position)
 
-=item   const QTextDocument * document()
+=item  const QTextDocument * document()
 
-=item   int firstLineNumber()
+=item  int firstLineNumber()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   bool isVisible()
+=item  bool isVisible()
 
-=item   QTextLayout * layout()
+=item  QTextLayout * layout()
 
-=item   int length()
+=item  int length()
 
-=item   int lineCount()
+=item  int lineCount()
 
-=item   bool operator!=(const QTextBlock & o)
+=item  bool operator!=(const QTextBlock & o)
 
-=item   bool operator<(const QTextBlock & o)
+=item  bool operator<(const QTextBlock & o)
 
-=item   QTextBlock & operator=(const QTextBlock & o)
+=item  QTextBlock & operator=(const QTextBlock & o)
 
-=item   bool operator==(const QTextBlock & o)
+=item  bool operator==(const QTextBlock & o)
 
-=item   int position()
+=item  int position()
 
-=item   int revision()
+=item  int revision()
 
-=item   void setLineCount(int count)
+=item  void setLineCount(int count)
 
-=item   void setRevision(int rev)
+=item  void setRevision(int rev)
 
-=item   void setUserData(QTextBlockUserData * data)
+=item  void setUserData(QTextBlockUserData * data)
 
-=item   void setUserState(int state)
+=item  void setUserState(int state)
 
-=item   void setVisible(bool visible)
+=item  void setVisible(bool visible)
 
-=item   QString text()
+=item  QString text()
 
-=item   QTextList * textList()
+=item  Qt::LayoutDirection textDirection()
 
-=item   QTextBlockUserData * userData()
+=item  QTextList * textList()
 
-=item   int userState()
+=item  QTextBlockUserData * userData()
+
+=item  int userState()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

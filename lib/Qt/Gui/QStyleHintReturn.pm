@@ -7,18 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub SH_Default() { 0 }
-sub SH_Mask() { 1 }
-sub SH_Variant() { 2 }
-sub Type() { 0 }
-sub Version() { 0 }
 
 
 1;
@@ -31,15 +23,30 @@ Qt::Gui::QStyleHintReturn
 
 =over
 
-=item    QStyleHintReturn(int version, int type = QStyleHintReturn::SH_Default)
+=item   QStyleHintReturn(int version, int type)
 
-=item    QStyleHintReturn(int version, int type)
+=item   QStyleHintReturn(int version, int type = QStyleHintReturn::SH_Default)
 
-=item    QStyleHintReturn(int version = QStyleOption::Version, int type = QStyleHintReturn::SH_Default)
+=item   QStyleHintReturn(int version = QStyleOption::Version, int type = QStyleHintReturn::SH_Default)
 
-=item    QStyleHintReturn(int version, int type = QStyleHintReturn::SH_Default)
+=item   ~QStyleHintReturn()
 
-=item    ~QStyleHintReturn()
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item SH_Default
+
+=item SH_Mask
+
+=item SH_Variant
+
+=item Type
+
+=item Version
 
 
 =back

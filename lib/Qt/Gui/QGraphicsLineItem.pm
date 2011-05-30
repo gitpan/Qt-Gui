@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsItem/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
 
 
 1;
@@ -28,57 +24,60 @@ Qt::Gui::QGraphicsLineItem
 
 =over
 
-=item    QGraphicsLineItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsLineItem(QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsLineItem(QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsLineItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsLineItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   QGraphicsLineItem(QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsLineItem(QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsLineItem(const QLineF & line, QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsLineItem(const QLineF & line, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsLineItem(const QLineF & line, QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsLineItem(const QLineF & line, QGraphicsItem * parent, QGraphicsScene * scene)
+=item   QGraphicsLineItem(const QLineF & line, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsLineItem(const QLineF & line, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item   QGraphicsLineItem(qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem * parent, QGraphicsScene * scene)
 
-=item    QGraphicsLineItem(const QLineF & line, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsLineItem(qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem * parent, QGraphicsScene * scene = 0)
 
-=item    QGraphicsLineItem(qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item   QGraphicsLineItem(qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
 
-=item    QGraphicsLineItem(qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem * parent, QGraphicsScene * scene)
+=item   ~QGraphicsLineItem()
 
-=item    QGraphicsLineItem(qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem * parent = 0, QGraphicsScene * scene = 0)
+=item  QRectF boundingRect()
 
-=item    QGraphicsLineItem(qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem * parent, QGraphicsScene * scene = 0)
+=item  bool contains(const QPointF & point)
 
-=item    ~QGraphicsLineItem()
+=item  bool isObscuredBy(const QGraphicsItem * item)
 
-=item   QRectF boundingRect()
+=item  QLineF line()
 
-=item   bool contains(const QPointF & point)
+=item  QPainterPath opaqueArea()
 
-=item   bool isObscuredBy(const QGraphicsItem * item)
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 
-=item   QLineF line()
+=item  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
 
-=item   QPainterPath opaqueArea()
+=item  QPen pen()
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0)
+=item  void setLine(const QLineF & line)
 
-=item   void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
+=item  void setLine(qreal x1, qreal y1, qreal x2, qreal y2)
 
-=item   QPen pen()
+=item  void setPen(const QPen & pen)
 
-=item   void setLine(const QLineF & line)
+=item  QPainterPath shape()
 
-=item   void setLine(qreal x1, qreal y1, qreal x2, qreal y2)
+=item  int type()
 
-=item   void setPen(const QPen & pen)
 
-=item   QPainterPath shape()
+=back
 
-=item   int type()
+=head1 ENUM VALUES
+
+=over
+
+=item Type
 
 
 =back

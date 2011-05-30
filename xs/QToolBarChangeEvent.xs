@@ -25,11 +25,13 @@ PREINIT:
 QToolBarChangeEvent *ret;
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     ret = new QToolBarChangeEvent(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QToolBarChangeEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QToolBarChangeEvent()
 void
@@ -43,7 +45,10 @@ void
 QToolBarChangeEvent::toggle(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->toggle();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }

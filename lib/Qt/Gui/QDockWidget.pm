@@ -7,22 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub DockWidgetClosable() { 0 }
-sub DockWidgetMovable() { 1 }
-sub DockWidgetFloatable() { 2 }
-sub DockWidgetVerticalTitleBar() { 3 }
-sub DockWidgetFeatureMask() { 4 }
-sub AllDockWidgetFeatures() { 5 }
-sub NoDockWidgetFeatures() { 6 }
-sub Reserved() { 7 }
 
 
 1;
@@ -35,23 +24,66 @@ Qt::Gui::QDockWidget
 
 =over
 
-=item    ~QDockWidget()
+=item   QDockWidget(QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   bool isAreaAllowed(Qt::DockWidgetArea area)
+=item   QDockWidget(QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   bool isFloating()
+=item   QDockWidget(QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setFloating(bool floating)
+=item   QDockWidget(const QString & title, QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   void setTitleBarWidget(QWidget * widget)
+=item   QDockWidget(const QString & title, QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   void setWidget(QWidget * widget)
+=item   QDockWidget(const QString & title, QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   QWidget * titleBarWidget()
+=item   ~QDockWidget()
 
-=item   QAction * toggleViewAction()
+=item  QFlags<Qt::DockWidgetArea> allowedAreas()
 
-=item   QWidget * widget()
+=item  QFlags<QDockWidget::DockWidgetFeature> features()
+
+=item  bool isAreaAllowed(Qt::DockWidgetArea area)
+
+=item  bool isFloating()
+
+=item  void setAllowedAreas(QFlags<Qt::DockWidgetArea> areas)
+
+=item  void setFeatures(QFlags<QDockWidget::DockWidgetFeature> features)
+
+=item  void setFloating(bool floating)
+
+=item  void setTitleBarWidget(QWidget * widget)
+
+=item  void setWidget(QWidget * widget)
+
+=item  QWidget * titleBarWidget()
+
+=item  QAction * toggleViewAction()
+
+=item  QWidget * widget()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item DockWidgetClosable
+
+=item DockWidgetMovable
+
+=item DockWidgetFloatable
+
+=item DockWidgetVerticalTitleBar
+
+=item DockWidgetFeatureMask
+
+=item AllDockWidgetFeatures
+
+=item NoDockWidgetFeatures
+
+=item Reserved
 
 
 =back

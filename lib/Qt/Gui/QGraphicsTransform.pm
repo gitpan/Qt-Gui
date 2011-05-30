@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,13 +24,20 @@ Qt::Gui::QGraphicsTransform
 
 =over
 
-=item    QGraphicsTransform(QObject * parent = 0)
+=item   QGraphicsTransform(QObject * parent)
 
-=item    QGraphicsTransform(QObject * parent)
+=item   QGraphicsTransform(QObject * parent = 0)
 
-=item    ~QGraphicsTransform()
+=item   ~QGraphicsTransform()
 
-=item   void applyTo(QMatrix4x4 * matrix)
+=item  void applyTo(QMatrix4x4 * matrix)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

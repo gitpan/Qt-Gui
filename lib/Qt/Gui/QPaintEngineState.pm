@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,39 +23,50 @@ Qt::Gui::QPaintEngineState
 
 =over
 
-=item   QBrush backgroundBrush()
+=item  QBrush backgroundBrush()
 
-=item   Qt::BGMode backgroundMode()
+=item  Qt::BGMode backgroundMode()
 
-=item   QBrush brush()
+=item  QBrush brush()
 
-=item   bool brushNeedsResolving()
+=item  bool brushNeedsResolving()
 
-=item   QPointF brushOrigin()
+=item  QPointF brushOrigin()
 
-=item   Qt::ClipOperation clipOperation()
+=item  Qt::ClipOperation clipOperation()
 
-=item   QPainterPath clipPath()
+=item  QPainterPath clipPath()
 
-=item   QRegion clipRegion()
+=item  QRegion clipRegion()
 
-=item   QPainter::CompositionMode compositionMode()
+=item  QPainter::CompositionMode compositionMode()
 
-=item   QFont font()
+=item  QFont font()
 
-=item   bool isClipEnabled()
+=item  bool isClipEnabled()
 
-=item   QMatrix matrix()
+=item  QMatrix matrix()
 
-=item   qreal opacity()
+=item  qreal opacity()
 
-=item   QPainter * painter()
+=item  QPainter * painter()
 
-=item   QPen pen()
+=item  QPen pen()
 
-=item   bool penNeedsResolving()
+=item  bool penNeedsResolving()
 
-=item   QTransform transform()
+=item  QFlags<QPainter::RenderHint> renderHints()
+
+=item  QFlags<QPaintEngine::DirtyFlag> state()
+
+=item  QTransform transform()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

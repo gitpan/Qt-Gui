@@ -7,53 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub BackButton() { 0 }
-sub NextButton() { 1 }
-sub CommitButton() { 2 }
-sub FinishButton() { 3 }
-sub CancelButton() { 4 }
-sub HelpButton() { 5 }
-sub CustomButton1() { 6 }
-sub CustomButton2() { 7 }
-sub CustomButton3() { 8 }
-sub Stretch() { 9 }
-sub NoButton() { 10 }
-sub NStandardButtons() { 11 }
-sub NButtons() { 12 }
-sub WatermarkPixmap() { 0 }
-sub LogoPixmap() { 1 }
-sub BannerPixmap() { 2 }
-sub BackgroundPixmap() { 3 }
-sub NPixmaps() { 4 }
-sub ClassicStyle() { 0 }
-sub ModernStyle() { 1 }
-sub MacStyle() { 2 }
-sub AeroStyle() { 3 }
-sub NStyles() { 4 }
-sub IndependentPages() { 0 }
-sub IgnoreSubTitles() { 1 }
-sub ExtendedWatermarkPixmap() { 2 }
-sub NoDefaultButton() { 3 }
-sub NoBackButtonOnStartPage() { 4 }
-sub NoBackButtonOnLastPage() { 5 }
-sub DisabledBackButtonOnLastPage() { 6 }
-sub HaveNextButtonOnLastPage() { 7 }
-sub HaveFinishButtonOnEarlyPages() { 8 }
-sub NoCancelButton() { 9 }
-sub CancelButtonOnLeft() { 10 }
-sub HaveHelpButton() { 11 }
-sub HelpButtonOnRight() { 12 }
-sub HaveCustomButton1() { 13 }
-sub HaveCustomButton2() { 14 }
-sub HaveCustomButton3() { 15 }
 
 
 1;
@@ -66,75 +24,174 @@ Qt::Gui::QWizard
 
 =over
 
-=item    ~QWizard()
+=item   QWizard(QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   int addPage(QWizardPage * page)
+=item   QWizard(QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   void back()
+=item   QWizard(QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   QAbstractButton * button(QWizard::WizardButton which)
+=item   ~QWizard()
 
-=item   QString buttonText(QWizard::WizardButton which)
+=item  int addPage(QWizardPage * page)
 
-=item   int currentId()
+=item  void back()
 
-=item   QWizardPage * currentPage()
+=item  QAbstractButton * button(QWizard::WizardButton which)
 
-=item   QVariant field(const QString & name)
+=item  QString buttonText(QWizard::WizardButton which)
 
-=item   bool hasVisitedPage(int id)
+=item  int currentId()
 
-=item   void next()
+=item  QWizardPage * currentPage()
 
-=item   int nextId()
+=item  QVariant field(const QString & name)
 
-=item   QWizardPage * page(int id)
+=item  bool hasVisitedPage(int id)
 
-=item   QPixmap pixmap(QWizard::WizardPixmap which)
+=item  void next()
 
-=item   void removePage(int id)
+=item  int nextId()
 
-=item   void restart()
+=item  QFlags<QWizard::WizardOption> options()
 
-=item   void setButton(QWizard::WizardButton which, QAbstractButton * button)
+=item  QWizardPage * page(int id)
 
-=item   void setButtonText(QWizard::WizardButton which, const QString & text)
+=item  QPixmap pixmap(QWizard::WizardPixmap which)
 
-=item   void setDefaultProperty(const char * className, const char * property, const char * changedSignal)
+=item  void removePage(int id)
 
-=item   void setField(const QString & name, const QVariant & value)
+=item  void restart()
 
-=item   void setOption(QWizard::WizardOption option, bool on = true)
+=item  void setButton(QWizard::WizardButton which, QAbstractButton * button)
 
-=item   void setOption(QWizard::WizardOption option, bool on)
+=item  void setButtonText(QWizard::WizardButton which, const QString & text)
 
-=item   void setPage(int id, QWizardPage * page)
+=item  void setDefaultProperty(const char * className, const char * property, const char * changedSignal)
 
-=item   void setPixmap(QWizard::WizardPixmap which, const QPixmap & pixmap)
+=item  void setField(const QString & name, const QVariant & value)
 
-=item   void setStartId(int id)
+=item  void setOption(QWizard::WizardOption option, bool on)
 
-=item   void setSubTitleFormat(Qt::TextFormat format)
+=item  void setOption(QWizard::WizardOption option, bool on = true)
 
-=item   void setTitleFormat(Qt::TextFormat format)
+=item  void setOptions(QFlags<QWizard::WizardOption> options)
 
-=item   void setVisible(bool visible)
+=item  void setPage(int id, QWizardPage * page)
 
-=item   void setWizardStyle(QWizard::WizardStyle style)
+=item  void setPixmap(QWizard::WizardPixmap which, const QPixmap & pixmap)
 
-=item   QSize sizeHint()
+=item  void setSideWidget(QWidget * widget)
 
-=item   int startId()
+=item  void setStartId(int id)
 
-=item   Qt::TextFormat subTitleFormat()
+=item  void setSubTitleFormat(Qt::TextFormat format)
 
-=item   bool testOption(QWizard::WizardOption option)
+=item  void setTitleFormat(Qt::TextFormat format)
 
-=item   Qt::TextFormat titleFormat()
+=item  void setVisible(bool visible)
 
-=item   bool validateCurrentPage()
+=item  void setWizardStyle(QWizard::WizardStyle style)
 
-=item   QWizard::WizardStyle wizardStyle()
+=item  QWidget * sideWidget()
+
+=item  QSize sizeHint()
+
+=item  int startId()
+
+=item  Qt::TextFormat subTitleFormat()
+
+=item  bool testOption(QWizard::WizardOption option)
+
+=item  Qt::TextFormat titleFormat()
+
+=item  bool validateCurrentPage()
+
+=item  QWizard::WizardStyle wizardStyle()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item BackButton
+
+=item NextButton
+
+=item CommitButton
+
+=item FinishButton
+
+=item CancelButton
+
+=item HelpButton
+
+=item CustomButton1
+
+=item CustomButton2
+
+=item CustomButton3
+
+=item Stretch
+
+=item NoButton
+
+=item NStandardButtons
+
+=item NButtons
+
+=item WatermarkPixmap
+
+=item LogoPixmap
+
+=item BannerPixmap
+
+=item BackgroundPixmap
+
+=item NPixmaps
+
+=item ClassicStyle
+
+=item ModernStyle
+
+=item MacStyle
+
+=item AeroStyle
+
+=item NStyles
+
+=item IndependentPages
+
+=item IgnoreSubTitles
+
+=item ExtendedWatermarkPixmap
+
+=item NoDefaultButton
+
+=item NoBackButtonOnStartPage
+
+=item NoBackButtonOnLastPage
+
+=item DisabledBackButtonOnLastPage
+
+=item HaveNextButtonOnLastPage
+
+=item HaveFinishButtonOnEarlyPages
+
+=item NoCancelButton
+
+=item CancelButtonOnLeft
+
+=item HaveHelpButton
+
+=item HelpButtonOnRight
+
+=item HaveCustomButton1
+
+=item HaveCustomButton2
+
+=item HaveCustomButton3
 
 
 =back

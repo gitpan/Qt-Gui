@@ -7,20 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractScrollArea/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractScrollArea/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub DontMaximizeSubWindowOnActivation() { 0 }
-sub CreationOrder() { 0 }
-sub StackingOrder() { 1 }
-sub ActivationHistoryOrder() { 2 }
-sub SubWindowView() { 0 }
-sub TabbedView() { 1 }
 
 
 1;
@@ -33,65 +24,88 @@ Qt::Gui::QMdiArea
 
 =over
 
-=item    QMdiArea(QWidget * parent = 0)
+=item   QMdiArea(QWidget * parent)
 
-=item    QMdiArea(QWidget * parent)
+=item   QMdiArea(QWidget * parent = 0)
 
-=item    ~QMdiArea()
+=item   ~QMdiArea()
 
-=item   void activateNextSubWindow()
+=item  void activateNextSubWindow()
 
-=item   void activatePreviousSubWindow()
+=item  void activatePreviousSubWindow()
 
-=item   QMdiArea::WindowOrder activationOrder()
+=item  QMdiArea::WindowOrder activationOrder()
 
-=item   QMdiSubWindow * activeSubWindow()
+=item  QMdiSubWindow * activeSubWindow()
 
-=item   QBrush background()
+=item  QMdiSubWindow * addSubWindow(QWidget * widget, QFlags<Qt::WindowType> flags)
 
-=item   void cascadeSubWindows()
+=item  QMdiSubWindow * addSubWindow(QWidget * widget, QFlags<Qt::WindowType> flags = 0)
 
-=item   void closeActiveSubWindow()
+=item  QBrush background()
 
-=item   void closeAllSubWindows()
+=item  void cascadeSubWindows()
 
-=item   QMdiSubWindow * currentSubWindow()
+=item  void closeActiveSubWindow()
 
-=item   bool documentMode()
+=item  void closeAllSubWindows()
 
-=item   QSize minimumSizeHint()
+=item  QMdiSubWindow * currentSubWindow()
 
-=item   void removeSubWindow(QWidget * widget)
+=item  bool documentMode()
 
-=item   void setActivationOrder(QMdiArea::WindowOrder order)
+=item  QSize minimumSizeHint()
 
-=item   void setActiveSubWindow(QMdiSubWindow * window)
+=item  void removeSubWindow(QWidget * widget)
 
-=item   void setBackground(const QBrush & background)
+=item  void setActivationOrder(QMdiArea::WindowOrder order)
 
-=item   void setDocumentMode(bool enabled)
+=item  void setActiveSubWindow(QMdiSubWindow * window)
 
-=item   void setOption(QMdiArea::AreaOption option, bool on = true)
+=item  void setBackground(const QBrush & background)
 
-=item   void setOption(QMdiArea::AreaOption option, bool on)
+=item  void setDocumentMode(bool enabled)
 
-=item   void setTabPosition(QTabWidget::TabPosition position)
+=item  void setOption(QMdiArea::AreaOption option, bool on)
 
-=item   void setTabShape(QTabWidget::TabShape shape)
+=item  void setOption(QMdiArea::AreaOption option, bool on = true)
 
-=item   void setViewMode(QMdiArea::ViewMode mode)
+=item  void setTabPosition(QTabWidget::TabPosition position)
 
-=item   QSize sizeHint()
+=item  void setTabShape(QTabWidget::TabShape shape)
 
-=item   QTabWidget::TabPosition tabPosition()
+=item  void setViewMode(QMdiArea::ViewMode mode)
 
-=item   QTabWidget::TabShape tabShape()
+=item  QSize sizeHint()
 
-=item   bool testOption(QMdiArea::AreaOption opton)
+=item  QTabWidget::TabPosition tabPosition()
 
-=item   void tileSubWindows()
+=item  QTabWidget::TabShape tabShape()
 
-=item   QMdiArea::ViewMode viewMode()
+=item  bool testOption(QMdiArea::AreaOption opton)
+
+=item  void tileSubWindows()
+
+=item  QMdiArea::ViewMode viewMode()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item DontMaximizeSubWindowOnActivation
+
+=item CreationOrder
+
+=item StackingOrder
+
+=item ActivationHistoryOrder
+
+=item SubWindowView
+
+=item TabbedView
 
 
 =back

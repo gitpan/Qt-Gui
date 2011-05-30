@@ -7,25 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QInputEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QInputEvent/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoDevice() { 0 }
-sub Puck() { 1 }
-sub Stylus() { 2 }
-sub Airbrush() { 3 }
-sub FourDMouse() { 4 }
-sub XFreeEraser() { 5 }
-sub RotationStylus() { 6 }
-sub UnknownPointer() { 0 }
-sub Pen() { 1 }
-sub Cursor() { 2 }
-sub Eraser() { 3 }
 
 
 1;
@@ -38,43 +24,74 @@ Qt::Gui::QTabletEvent
 
 =over
 
-=item    ~QTabletEvent()
+=item   QTabletEvent(QTabletEvent::Type t, const QPoint & pos, const QPoint & globalPos, const QPointF & hiResGlobalPos, int device, int pointerType, qreal pressure, int xTilt, int yTilt, qreal tangentialPressure, qreal rotation, int z, QFlags<Qt::KeyboardModifier> keyState, qint64 uniqueID)
 
-=item   QTabletEvent::TabletDevice device()
+=item   ~QTabletEvent()
 
-=item   const QPoint & globalPos()
+=item  QTabletEvent::TabletDevice device()
 
-=item   int globalX()
+=item  const QPoint & globalPos()
 
-=item   int globalY()
+=item  int globalX()
 
-=item   const QPointF & hiResGlobalPos()
+=item  int globalY()
 
-=item   qreal hiResGlobalX()
+=item  const QPointF & hiResGlobalPos()
 
-=item   qreal hiResGlobalY()
+=item  qreal hiResGlobalX()
 
-=item   QTabletEvent::PointerType pointerType()
+=item  qreal hiResGlobalY()
 
-=item   const QPoint & pos()
+=item  QTabletEvent::PointerType pointerType()
 
-=item   qreal pressure()
+=item  const QPoint & pos()
 
-=item   qreal rotation()
+=item  qreal pressure()
 
-=item   qreal tangentialPressure()
+=item  qreal rotation()
 
-=item   qint64 uniqueId()
+=item  qreal tangentialPressure()
 
-=item   int x()
+=item  qint64 uniqueId()
 
-=item   int xTilt()
+=item  int x()
 
-=item   int y()
+=item  int xTilt()
 
-=item   int yTilt()
+=item  int y()
 
-=item   int z()
+=item  int yTilt()
+
+=item  int z()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoDevice
+
+=item Puck
+
+=item Stylus
+
+=item Airbrush
+
+=item FourDMouse
+
+=item XFreeEraser
+
+=item RotationStylus
+
+=item UnknownPointer
+
+=item Pen
+
+=item Cursor
+
+=item Eraser
 
 
 =back

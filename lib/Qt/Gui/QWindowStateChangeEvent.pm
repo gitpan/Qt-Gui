@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,9 +24,22 @@ Qt::Gui::QWindowStateChangeEvent
 
 =over
 
-=item    ~QWindowStateChangeEvent()
+=item   QWindowStateChangeEvent(QFlags<Qt::WindowState> aOldState)
 
-=item   bool isOverride()
+=item   QWindowStateChangeEvent(QFlags<Qt::WindowState> aOldState, bool isOverride)
+
+=item   ~QWindowStateChangeEvent()
+
+=item  bool isOverride()
+
+=item  QFlags<Qt::WindowState> oldState()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

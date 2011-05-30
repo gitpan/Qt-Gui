@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,11 +23,18 @@ Qt::Gui::QTextObjectInterface
 
 =over
 
-=item    ~QTextObjectInterface()
+=item   ~QTextObjectInterface()
 
-=item   void drawObject(QPainter * painter, const QRectF & rect, QTextDocument * doc, int posInDocument, const QTextFormat & format)
+=item  void drawObject(QPainter * painter, const QRectF & rect, QTextDocument * doc, int posInDocument, const QTextFormat & format)
 
-=item   QSizeF intrinsicSize(QTextDocument * doc, int posInDocument, const QTextFormat & format)
+=item  QSizeF intrinsicSize(QTextDocument * doc, int posInDocument, const QTextFormat & format)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

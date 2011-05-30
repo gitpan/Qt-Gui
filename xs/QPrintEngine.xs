@@ -32,10 +32,13 @@ void
 QPrintEngine::abort(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->abort();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## int metric(QPaintDevice::PaintDeviceMetric arg0)
 void
@@ -43,64 +46,39 @@ QPrintEngine::metric(...)
 PREINIT:
 QPaintDevice::PaintDeviceMetric arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QPaintDevice::PdmWidth;
-      break;
-    case 1:
-      arg00 = QPaintDevice::PdmHeight;
-      break;
-    case 2:
-      arg00 = QPaintDevice::PdmWidthMM;
-      break;
-    case 3:
-      arg00 = QPaintDevice::PdmHeightMM;
-      break;
-    case 4:
-      arg00 = QPaintDevice::PdmNumColors;
-      break;
-    case 5:
-      arg00 = QPaintDevice::PdmDepth;
-      break;
-    case 6:
-      arg00 = QPaintDevice::PdmDpiX;
-      break;
-    case 7:
-      arg00 = QPaintDevice::PdmDpiY;
-      break;
-    case 8:
-      arg00 = QPaintDevice::PdmPhysicalDpiX;
-      break;
-    case 9:
-      arg00 = QPaintDevice::PdmPhysicalDpiY;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QPaintDevice::PaintDeviceMetric passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QPaintDevice::PaintDeviceMetric)SvIV(ST(1));
     int ret = THIS->metric(arg00);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## bool newPage()
 void
 QPrintEngine::newPage(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->newPage();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QPrinter::PrinterState printerState()
 void
 QPrintEngine::printerState(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QPrinter::PrinterState ret = THIS->printerState();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QVariant property(QPrintEngine::PrintEnginePropertyKey key)
 void
@@ -108,92 +86,13 @@ QPrintEngine::property(...)
 PREINIT:
 QPrintEngine::PrintEnginePropertyKey arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QPrintEngine::PPK_CollateCopies;
-      break;
-    case 1:
-      arg00 = QPrintEngine::PPK_ColorMode;
-      break;
-    case 2:
-      arg00 = QPrintEngine::PPK_Creator;
-      break;
-    case 3:
-      arg00 = QPrintEngine::PPK_DocumentName;
-      break;
-    case 4:
-      arg00 = QPrintEngine::PPK_FullPage;
-      break;
-    case 5:
-      arg00 = QPrintEngine::PPK_NumberOfCopies;
-      break;
-    case 6:
-      arg00 = QPrintEngine::PPK_Orientation;
-      break;
-    case 7:
-      arg00 = QPrintEngine::PPK_OutputFileName;
-      break;
-    case 8:
-      arg00 = QPrintEngine::PPK_PageOrder;
-      break;
-    case 9:
-      arg00 = QPrintEngine::PPK_PageRect;
-      break;
-    case 10:
-      arg00 = QPrintEngine::PPK_PageSize;
-      break;
-    case 11:
-      arg00 = QPrintEngine::PPK_PaperRect;
-      break;
-    case 12:
-      arg00 = QPrintEngine::PPK_PaperSource;
-      break;
-    case 13:
-      arg00 = QPrintEngine::PPK_PrinterName;
-      break;
-    case 14:
-      arg00 = QPrintEngine::PPK_PrinterProgram;
-      break;
-    case 15:
-      arg00 = QPrintEngine::PPK_Resolution;
-      break;
-    case 16:
-      arg00 = QPrintEngine::PPK_SelectionOption;
-      break;
-    case 17:
-      arg00 = QPrintEngine::PPK_SupportedResolutions;
-      break;
-    case 18:
-      arg00 = QPrintEngine::PPK_WindowsPageSize;
-      break;
-    case 19:
-      arg00 = QPrintEngine::PPK_FontEmbedding;
-      break;
-    case 20:
-      arg00 = QPrintEngine::PPK_SuppressSystemPrintStatus;
-      break;
-    case 21:
-      arg00 = QPrintEngine::PPK_Duplex;
-      break;
-    case 22:
-      arg00 = QPrintEngine::PPK_PaperSources;
-      break;
-    case 23:
-      arg00 = QPrintEngine::PPK_CustomPaperSize;
-      break;
-    case 24:
-      arg00 = QPrintEngine::PPK_PageMargins;
-      break;
-    case 25:
-      arg00 = QPrintEngine::PPK_CustomBase;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QPrintEngine::PrintEnginePropertyKey passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QPrintEngine::PrintEnginePropertyKey)SvIV(ST(1));
     QVariant ret = THIS->property(arg00);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QVariant(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
     XSRETURN(1);
+    }
 
 ## void setProperty(QPrintEngine::PrintEnginePropertyKey key, const QVariant & value)
 void
@@ -202,92 +101,277 @@ PREINIT:
 QPrintEngine::PrintEnginePropertyKey arg00;
 QVariant * arg01;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QPrintEngine::PPK_CollateCopies;
-      break;
-    case 1:
-      arg00 = QPrintEngine::PPK_ColorMode;
-      break;
-    case 2:
-      arg00 = QPrintEngine::PPK_Creator;
-      break;
-    case 3:
-      arg00 = QPrintEngine::PPK_DocumentName;
-      break;
-    case 4:
-      arg00 = QPrintEngine::PPK_FullPage;
-      break;
-    case 5:
-      arg00 = QPrintEngine::PPK_NumberOfCopies;
-      break;
-    case 6:
-      arg00 = QPrintEngine::PPK_Orientation;
-      break;
-    case 7:
-      arg00 = QPrintEngine::PPK_OutputFileName;
-      break;
-    case 8:
-      arg00 = QPrintEngine::PPK_PageOrder;
-      break;
-    case 9:
-      arg00 = QPrintEngine::PPK_PageRect;
-      break;
-    case 10:
-      arg00 = QPrintEngine::PPK_PageSize;
-      break;
-    case 11:
-      arg00 = QPrintEngine::PPK_PaperRect;
-      break;
-    case 12:
-      arg00 = QPrintEngine::PPK_PaperSource;
-      break;
-    case 13:
-      arg00 = QPrintEngine::PPK_PrinterName;
-      break;
-    case 14:
-      arg00 = QPrintEngine::PPK_PrinterProgram;
-      break;
-    case 15:
-      arg00 = QPrintEngine::PPK_Resolution;
-      break;
-    case 16:
-      arg00 = QPrintEngine::PPK_SelectionOption;
-      break;
-    case 17:
-      arg00 = QPrintEngine::PPK_SupportedResolutions;
-      break;
-    case 18:
-      arg00 = QPrintEngine::PPK_WindowsPageSize;
-      break;
-    case 19:
-      arg00 = QPrintEngine::PPK_FontEmbedding;
-      break;
-    case 20:
-      arg00 = QPrintEngine::PPK_SuppressSystemPrintStatus;
-      break;
-    case 21:
-      arg00 = QPrintEngine::PPK_Duplex;
-      break;
-    case 22:
-      arg00 = QPrintEngine::PPK_PaperSources;
-      break;
-    case 23:
-      arg00 = QPrintEngine::PPK_CustomPaperSize;
-      break;
-    case 24:
-      arg00 = QPrintEngine::PPK_PageMargins;
-      break;
-    case 25:
-      arg00 = QPrintEngine::PPK_CustomBase;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QPrintEngine::PrintEnginePropertyKey passed in");
-    }
-    if (sv_isa(ST(2), "")) {
-        arg01 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type ");
+    if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QVariant")) {
+      arg00 = (QPrintEngine::PrintEnginePropertyKey)SvIV(ST(1));
+      arg01 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(2))));
     (void)THIS->setProperty(arg00, *arg01);
     XSRETURN(0);
+    }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# PrintEnginePropertyKey::PPK_CollateCopies
+void
+PPK_CollateCopies()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_CollateCopies);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_ColorMode
+void
+PPK_ColorMode()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_ColorMode);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_Creator
+void
+PPK_Creator()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_Creator);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_DocumentName
+void
+PPK_DocumentName()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_DocumentName);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_FullPage
+void
+PPK_FullPage()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_FullPage);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_NumberOfCopies
+void
+PPK_NumberOfCopies()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_NumberOfCopies);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_Orientation
+void
+PPK_Orientation()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_Orientation);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_OutputFileName
+void
+PPK_OutputFileName()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_OutputFileName);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PageOrder
+void
+PPK_PageOrder()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PageOrder);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PageRect
+void
+PPK_PageRect()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PageRect);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PageSize
+void
+PPK_PageSize()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PageSize);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PaperRect
+void
+PPK_PaperRect()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PaperRect);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PaperSource
+void
+PPK_PaperSource()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PaperSource);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PrinterName
+void
+PPK_PrinterName()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PrinterName);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PrinterProgram
+void
+PPK_PrinterProgram()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PrinterProgram);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_Resolution
+void
+PPK_Resolution()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_Resolution);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_SelectionOption
+void
+PPK_SelectionOption()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_SelectionOption);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_SupportedResolutions
+void
+PPK_SupportedResolutions()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_SupportedResolutions);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_WindowsPageSize
+void
+PPK_WindowsPageSize()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_WindowsPageSize);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_FontEmbedding
+void
+PPK_FontEmbedding()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_FontEmbedding);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_SuppressSystemPrintStatus
+void
+PPK_SuppressSystemPrintStatus()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_SuppressSystemPrintStatus);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_Duplex
+void
+PPK_Duplex()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_Duplex);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PaperSources
+void
+PPK_PaperSources()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PaperSources);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_CustomPaperSize
+void
+PPK_CustomPaperSize()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_CustomPaperSize);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PageMargins
+void
+PPK_PageMargins()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PageMargins);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_CopyCount
+void
+PPK_CopyCount()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_CopyCount);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_SupportsMultipleCopies
+void
+PPK_SupportsMultipleCopies()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_SupportsMultipleCopies);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_PaperSize
+void
+PPK_PaperSize()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_PaperSize);
+    XSRETURN(1);
+
+
+# PrintEnginePropertyKey::PPK_CustomBase
+void
+PPK_CustomBase()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QPrintEngine::PPK_CustomBase);
+    XSRETURN(1);

@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractItemModel/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QAbstractItemModel/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub FileIconRole() { 0 }
-sub FilePathRole() { 1 }
-sub FileNameRole() { 2 }
 
 
 1;
@@ -30,105 +24,122 @@ Qt::Gui::QDirModel
 
 =over
 
-=item    QDirModel(QObject * parent = 0)
+=item   QDirModel(QObject * parent)
 
-=item    QDirModel(QObject * parent)
+=item   QDirModel(QObject * parent = 0)
 
-=item    QDirModel(const QStringList & nameFilters, QDir::Filters filters, QDir::SortFlags sort, QObject * parent = 0)
+=item   QDirModel(const QStringList & nameFilters, QDir::Filters filters, QDir::SortFlags sort, QObject * parent)
 
-=item    QDirModel(const QStringList & nameFilters, QDir::Filters filters, QDir::SortFlags sort, QObject * parent)
+=item   QDirModel(const QStringList & nameFilters, QDir::Filters filters, QDir::SortFlags sort, QObject * parent = 0)
 
-=item    ~QDirModel()
+=item   ~QDirModel()
 
-=item   int columnCount(const QModelIndex & parent = QModelIndex())
+=item  int columnCount(const QModelIndex & parent)
 
-=item   int columnCount(const QModelIndex & parent)
+=item  int columnCount(const QModelIndex & parent = QModelIndex())
 
-=item   QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
+=item  QVariant data(const QModelIndex & index, int role)
 
-=item   QVariant data(const QModelIndex & index, int role)
+=item  QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
 
-=item   bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
+=item  bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
 
-=item   QIcon fileIcon(const QModelIndex & index)
+=item  QIcon fileIcon(const QModelIndex & index)
 
-=item   QFileInfo fileInfo(const QModelIndex & index)
+=item  QFileInfo fileInfo(const QModelIndex & index)
 
-=item   QString fileName(const QModelIndex & index)
+=item  QString fileName(const QModelIndex & index)
 
-=item   QString filePath(const QModelIndex & index)
+=item  QString filePath(const QModelIndex & index)
 
-=item   QDir::Filters filter()
+=item  QDir::Filters filter()
 
-=item   bool hasChildren(const QModelIndex & index = QModelIndex())
+=item  QFlags<Qt::ItemFlag> flags(const QModelIndex & index)
 
-=item   bool hasChildren(const QModelIndex & index)
+=item  bool hasChildren(const QModelIndex & index)
 
-=item   QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)
+=item  bool hasChildren(const QModelIndex & index = QModelIndex())
 
-=item   QVariant headerData(int section, Qt::Orientation orientation, int role)
+=item  QVariant headerData(int section, Qt::Orientation orientation, int role)
 
-=item   QFileIconProvider * iconProvider()
+=item  QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)
 
-=item   QModelIndex index(const QString & path, int column = 0)
+=item  QFileIconProvider * iconProvider()
 
-=item   QModelIndex index(const QString & path, int column)
+=item  QModelIndex index(const QString & path, int column)
 
-=item   QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex())
+=item  QModelIndex index(const QString & path, int column = 0)
 
-=item   QModelIndex index(int row, int column, const QModelIndex & parent)
+=item  QModelIndex index(int row, int column, const QModelIndex & parent)
 
-=item   bool isDir(const QModelIndex & index)
+=item  QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex())
 
-=item   bool isReadOnly()
+=item  bool isDir(const QModelIndex & index)
 
-=item   bool lazyChildCount()
+=item  bool isReadOnly()
 
-=item   QStringList mimeTypes()
+=item  bool lazyChildCount()
 
-=item   QModelIndex mkdir(const QModelIndex & parent, const QString & name)
+=item  QStringList mimeTypes()
 
-=item   QStringList nameFilters()
+=item  QModelIndex mkdir(const QModelIndex & parent, const QString & name)
 
-=item   QModelIndex parent(const QModelIndex & child)
+=item  QStringList nameFilters()
 
-=item   void refresh(const QModelIndex & parent = QModelIndex())
+=item  QModelIndex parent(const QModelIndex & child)
 
-=item   void refresh(const QModelIndex & parent)
+=item  void refresh(const QModelIndex & parent)
 
-=item   bool remove(const QModelIndex & index)
+=item  void refresh(const QModelIndex & parent = QModelIndex())
 
-=item   bool resolveSymlinks()
+=item  bool remove(const QModelIndex & index)
 
-=item   bool rmdir(const QModelIndex & index)
+=item  bool resolveSymlinks()
 
-=item   int rowCount(const QModelIndex & parent = QModelIndex())
+=item  bool rmdir(const QModelIndex & index)
 
-=item   int rowCount(const QModelIndex & parent)
+=item  int rowCount(const QModelIndex & parent)
 
-=item   bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole)
+=item  int rowCount(const QModelIndex & parent = QModelIndex())
 
-=item   bool setData(const QModelIndex & index, const QVariant & value, int role)
+=item  bool setData(const QModelIndex & index, const QVariant & value, int role)
 
-=item   void setFilter(QDir::Filters filters)
+=item  bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole)
 
-=item   void setIconProvider(QFileIconProvider * provider)
+=item  void setFilter(QDir::Filters filters)
 
-=item   void setLazyChildCount(bool enable)
+=item  void setIconProvider(QFileIconProvider * provider)
 
-=item   void setNameFilters(const QStringList & filters)
+=item  void setLazyChildCount(bool enable)
 
-=item   void setReadOnly(bool enable)
+=item  void setNameFilters(const QStringList & filters)
 
-=item   void setResolveSymlinks(bool enable)
+=item  void setReadOnly(bool enable)
 
-=item   void setSorting(QDir::SortFlags sort)
+=item  void setResolveSymlinks(bool enable)
 
-=item   void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)
+=item  void setSorting(QDir::SortFlags sort)
 
-=item   void sort(int column, Qt::SortOrder order)
+=item  void sort(int column, Qt::SortOrder order)
 
-=item   QDir::SortFlags sorting()
+=item  void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)
+
+=item  QDir::SortFlags sorting()
+
+=item  QFlags<Qt::DropAction> supportedDropActions()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item FileIconRole
+
+=item FilePathRole
+
+=item FileNameRole
 
 
 =back

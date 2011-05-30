@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QTreeView/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QTreeView/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,111 +24,120 @@ Qt::Gui::QTreeWidget
 
 =over
 
-=item    QTreeWidget(QWidget * parent = 0)
+=item   QTreeWidget(QWidget * parent)
 
-=item    QTreeWidget(QWidget * parent)
+=item   QTreeWidget(QWidget * parent = 0)
 
-=item    ~QTreeWidget()
+=item   ~QTreeWidget()
 
-=item   void addTopLevelItem(QTreeWidgetItem * item)
+=item  void addTopLevelItem(QTreeWidgetItem * item)
 
-=item   void clear()
+=item  void clear()
 
-=item   void closePersistentEditor(QTreeWidgetItem * item, int column = 0)
+=item  void closePersistentEditor(QTreeWidgetItem * item, int column)
 
-=item   void closePersistentEditor(QTreeWidgetItem * item, int column)
+=item  void closePersistentEditor(QTreeWidgetItem * item, int column = 0)
 
-=item   void collapseItem(const QTreeWidgetItem * item)
+=item  void collapseItem(const QTreeWidgetItem * item)
 
-=item   int columnCount()
+=item  int columnCount()
 
-=item   int currentColumn()
+=item  int currentColumn()
 
-=item   QTreeWidgetItem * currentItem()
+=item  QTreeWidgetItem * currentItem()
 
-=item   void editItem(QTreeWidgetItem * item, int column = 0)
+=item  void editItem(QTreeWidgetItem * item, int column)
 
-=item   void editItem(QTreeWidgetItem * item, int column)
+=item  void editItem(QTreeWidgetItem * item, int column = 0)
 
-=item   void expandItem(const QTreeWidgetItem * item)
+=item  void expandItem(const QTreeWidgetItem * item)
 
-=item   QTreeWidgetItem * headerItem()
+=item  QTreeWidgetItem * headerItem()
 
-=item   int indexOfTopLevelItem(QTreeWidgetItem * item)
+=item  int indexOfTopLevelItem(QTreeWidgetItem * item)
 
-=item   int indexOfTopLevelItem(QTreeWidgetItem * item)
+=item  int indexOfTopLevelItem(QTreeWidgetItem * item)
 
-=item   void insertTopLevelItem(int index, QTreeWidgetItem * item)
+=item  void insertTopLevelItem(int index, QTreeWidgetItem * item)
 
-=item   QTreeWidgetItem * invisibleRootItem()
+=item  QTreeWidgetItem * invisibleRootItem()
 
-=item   bool isFirstItemColumnSpanned(const QTreeWidgetItem * item)
+=item  bool isFirstItemColumnSpanned(const QTreeWidgetItem * item)
 
-=item   bool isItemExpanded(const QTreeWidgetItem * item)
+=item  bool isItemExpanded(const QTreeWidgetItem * item)
 
-=item   bool isItemHidden(const QTreeWidgetItem * item)
+=item  bool isItemHidden(const QTreeWidgetItem * item)
 
-=item   bool isItemSelected(const QTreeWidgetItem * item)
+=item  bool isItemSelected(const QTreeWidgetItem * item)
 
-=item   bool isSortingEnabled()
+=item  bool isSortingEnabled()
 
-=item   QTreeWidgetItem * itemAbove(const QTreeWidgetItem * item)
+=item  QTreeWidgetItem * itemAbove(const QTreeWidgetItem * item)
 
-=item   QTreeWidgetItem * itemAt(const QPoint & p)
+=item  QTreeWidgetItem * itemAt(const QPoint & p)
 
-=item   QTreeWidgetItem * itemAt(int x, int y)
+=item  QTreeWidgetItem * itemAt(int x, int y)
 
-=item   QTreeWidgetItem * itemBelow(const QTreeWidgetItem * item)
+=item  QTreeWidgetItem * itemBelow(const QTreeWidgetItem * item)
 
-=item   QWidget * itemWidget(QTreeWidgetItem * item, int column)
+=item  QWidget * itemWidget(QTreeWidgetItem * item, int column)
 
-=item   void openPersistentEditor(QTreeWidgetItem * item, int column = 0)
+=item  void openPersistentEditor(QTreeWidgetItem * item, int column)
 
-=item   void openPersistentEditor(QTreeWidgetItem * item, int column)
+=item  void openPersistentEditor(QTreeWidgetItem * item, int column = 0)
 
-=item   void removeItemWidget(QTreeWidgetItem * item, int column)
+=item  void removeItemWidget(QTreeWidgetItem * item, int column)
 
-=item   void scrollToItem(const QTreeWidgetItem * item, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+=item  void scrollToItem(const QTreeWidgetItem * item, QAbstractItemView::ScrollHint hint)
 
-=item   void scrollToItem(const QTreeWidgetItem * item, QAbstractItemView::ScrollHint hint)
+=item  void scrollToItem(const QTreeWidgetItem * item, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 
-=item   void setColumnCount(int columns)
+=item  void setColumnCount(int columns)
 
-=item   void setCurrentItem(QTreeWidgetItem * item)
+=item  void setCurrentItem(QTreeWidgetItem * item)
 
-=item   void setCurrentItem(QTreeWidgetItem * item, int column)
+=item  void setCurrentItem(QTreeWidgetItem * item, int column)
 
-=item   void setFirstItemColumnSpanned(const QTreeWidgetItem * item, bool span)
+=item  void setCurrentItem(QTreeWidgetItem * item, int column, QFlags<QItemSelectionModel::SelectionFlag> command)
 
-=item   void setHeaderItem(QTreeWidgetItem * item)
+=item  void setFirstItemColumnSpanned(const QTreeWidgetItem * item, bool span)
 
-=item   void setHeaderLabel(const QString & label)
+=item  void setHeaderItem(QTreeWidgetItem * item)
 
-=item   void setHeaderLabels(const QStringList & labels)
+=item  void setHeaderLabel(const QString & label)
 
-=item   void setItemExpanded(const QTreeWidgetItem * item, bool expand)
+=item  void setHeaderLabels(const QStringList & labels)
 
-=item   void setItemHidden(const QTreeWidgetItem * item, bool hide)
+=item  void setItemExpanded(const QTreeWidgetItem * item, bool expand)
 
-=item   void setItemSelected(const QTreeWidgetItem * item, bool select)
+=item  void setItemHidden(const QTreeWidgetItem * item, bool hide)
 
-=item   void setItemWidget(QTreeWidgetItem * item, int column, QWidget * widget)
+=item  void setItemSelected(const QTreeWidgetItem * item, bool select)
 
-=item   void setSelectionModel(QItemSelectionModel * selectionModel)
+=item  void setItemWidget(QTreeWidgetItem * item, int column, QWidget * widget)
 
-=item   void setSortingEnabled(bool enable)
+=item  void setSelectionModel(QItemSelectionModel * selectionModel)
 
-=item   int sortColumn()
+=item  void setSortingEnabled(bool enable)
 
-=item   void sortItems(int column, Qt::SortOrder order)
+=item  int sortColumn()
 
-=item   QTreeWidgetItem * takeTopLevelItem(int index)
+=item  void sortItems(int column, Qt::SortOrder order)
 
-=item   QTreeWidgetItem * topLevelItem(int index)
+=item  QTreeWidgetItem * takeTopLevelItem(int index)
 
-=item   int topLevelItemCount()
+=item  QTreeWidgetItem * topLevelItem(int index)
 
-=item   QRect visualItemRect(const QTreeWidgetItem * item)
+=item  int topLevelItemCount()
+
+=item  QRect visualItemRect(const QTreeWidgetItem * item)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

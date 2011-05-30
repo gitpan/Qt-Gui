@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QFrame/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QFrame/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,31 +24,38 @@ Qt::Gui::QStackedWidget
 
 =over
 
-=item    QStackedWidget(QWidget * parent = 0)
+=item   QStackedWidget(QWidget * parent)
 
-=item    QStackedWidget(QWidget * parent)
+=item   QStackedWidget(QWidget * parent = 0)
 
-=item    ~QStackedWidget()
+=item   ~QStackedWidget()
 
-=item   int addWidget(QWidget * w)
+=item  int addWidget(QWidget * w)
 
-=item   int count()
+=item  int count()
 
-=item   int currentIndex()
+=item  int currentIndex()
 
-=item   QWidget * currentWidget()
+=item  QWidget * currentWidget()
 
-=item   int indexOf(QWidget * arg0)
+=item  int indexOf(QWidget * arg0)
 
-=item   int insertWidget(int index, QWidget * w)
+=item  int insertWidget(int index, QWidget * w)
 
-=item   void removeWidget(QWidget * w)
+=item  void removeWidget(QWidget * w)
 
-=item   void setCurrentIndex(int index)
+=item  void setCurrentIndex(int index)
 
-=item   void setCurrentWidget(QWidget * w)
+=item  void setCurrentWidget(QWidget * w)
 
-=item   QWidget * widget(int arg0)
+=item  QWidget * widget(int arg0)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

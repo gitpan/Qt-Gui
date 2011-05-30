@@ -24,10 +24,13 @@ QShowEvent::new(...)
 PREINIT:
 QShowEvent *ret;
 PPCODE:
+    if (1) {
+      
     ret = new QShowEvent();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QShowEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QShowEvent()
 void

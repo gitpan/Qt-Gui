@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractScrollArea/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractScrollArea/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,41 +24,48 @@ Qt::Gui::QScrollArea
 
 =over
 
-=item    QScrollArea(QWidget * parent = 0)
+=item   QScrollArea(QWidget * parent)
 
-=item    QScrollArea(QWidget * parent)
+=item   QScrollArea(QWidget * parent = 0)
 
-=item    ~QScrollArea()
+=item   ~QScrollArea()
 
-=item   void ensureVisible(int x, int y, int xmargin, int ymargin = 50)
+=item  QFlags<Qt::AlignmentFlag> alignment()
 
-=item   void ensureVisible(int x, int y, int xmargin, int ymargin)
+=item  void ensureVisible(int x, int y, int xmargin, int ymargin)
 
-=item   void ensureVisible(int x, int y, int xmargin = 50, int ymargin = 50)
+=item  void ensureVisible(int x, int y, int xmargin, int ymargin = 50)
 
-=item   void ensureVisible(int x, int y, int xmargin, int ymargin = 50)
+=item  void ensureVisible(int x, int y, int xmargin = 50, int ymargin = 50)
 
-=item   void ensureWidgetVisible(QWidget * childWidget, int xmargin, int ymargin = 50)
+=item  void ensureWidgetVisible(QWidget * childWidget, int xmargin, int ymargin)
 
-=item   void ensureWidgetVisible(QWidget * childWidget, int xmargin, int ymargin)
+=item  void ensureWidgetVisible(QWidget * childWidget, int xmargin, int ymargin = 50)
 
-=item   void ensureWidgetVisible(QWidget * childWidget, int xmargin = 50, int ymargin = 50)
+=item  void ensureWidgetVisible(QWidget * childWidget, int xmargin = 50, int ymargin = 50)
 
-=item   void ensureWidgetVisible(QWidget * childWidget, int xmargin, int ymargin = 50)
+=item  bool focusNextPrevChild(bool next)
 
-=item   bool focusNextPrevChild(bool next)
+=item  void setAlignment(QFlags<Qt::AlignmentFlag> arg0)
 
-=item   void setWidget(QWidget * widget)
+=item  void setWidget(QWidget * widget)
 
-=item   void setWidgetResizable(bool resizable)
+=item  void setWidgetResizable(bool resizable)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   QWidget * takeWidget()
+=item  QWidget * takeWidget()
 
-=item   QWidget * widget()
+=item  QWidget * widget()
 
-=item   bool widgetResizable()
+=item  bool widgetResizable()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

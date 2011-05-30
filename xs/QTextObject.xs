@@ -27,47 +27,62 @@ void
 QTextObject::docHandle(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QTextDocumentPrivate * ret = THIS->docHandle();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QTextDocument * document()
 void
 QTextObject::document(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QTextDocument * ret = THIS->document();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextDocument", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QTextFormat format()
 void
 QTextObject::format(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QTextFormat ret = THIS->format();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextFormat", (void *)new QTextFormat(ret));
     XSRETURN(1);
+    }
 
 ## int formatIndex()
 void
 QTextObject::formatIndex(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->formatIndex();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int objectIndex()
 void
 QTextObject::objectIndex(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->objectIndex();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }

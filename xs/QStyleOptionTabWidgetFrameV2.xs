@@ -29,32 +29,40 @@ QStyleOptionTabWidgetFrameV2 * arg10;
 QStyleOptionTabWidgetFrame * arg20;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QStyleOptionTabWidgetFrameV2();
+        if (1) {
+      
+    ret = new QStyleOptionTabWidgetFrameV2();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionTabWidgetFrameV2", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Gui::QStyleOptionTabWidgetFrameV2")) {
-        arg10 = reinterpret_cast<QStyleOptionTabWidgetFrameV2 *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QStyleOptionTabWidgetFrameV2");
+      arg10 = reinterpret_cast<QStyleOptionTabWidgetFrameV2 *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QStyleOptionTabWidgetFrameV2(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionTabWidgetFrameV2", (void *)ret);
     XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QStyleOptionTabWidgetFrame")) {
+      arg20 = reinterpret_cast<QStyleOptionTabWidgetFrame *>(SvIV((SV*)SvRV(ST(1))));
+    ret = new QStyleOptionTabWidgetFrameV2(*arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionTabWidgetFrameV2", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -66,11 +74,25 @@ PREINIT:
 QStyleOptionTabWidgetFrame * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QStyleOptionTabWidgetFrame")) {
-        arg00 = reinterpret_cast<QStyleOptionTabWidgetFrame *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QStyleOptionTabWidgetFrame");
+      arg00 = reinterpret_cast<QStyleOptionTabWidgetFrame *>(SvIV((SV*)SvRV(ST(1))));
     QStyleOptionTabWidgetFrameV2 * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QStyleOptionTabWidgetFrameV2", (void *)ret);
+    XSRETURN(1);
+    }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# StyleOptionVersion::Version
+void
+Version()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QStyleOptionTabWidgetFrameV2::Version);
     XSRETURN(1);

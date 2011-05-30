@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QBoxLayout/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QBoxLayout/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,11 +24,18 @@ Qt::Gui::QHBoxLayout
 
 =over
 
-=item    QHBoxLayout()
+=item   QHBoxLayout()
 
-=item    QHBoxLayout(QWidget * parent)
+=item   QHBoxLayout(QWidget * parent)
 
-=item    ~QHBoxLayout()
+=item   ~QHBoxLayout()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

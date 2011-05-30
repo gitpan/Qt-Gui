@@ -25,15 +25,13 @@ PREINIT:
 QWhatsThisClickedEvent *ret;
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QWhatsThisClickedEvent(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWhatsThisClickedEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QWhatsThisClickedEvent()
 void
@@ -47,7 +45,10 @@ void
 QWhatsThisClickedEvent::href(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->href();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }

@@ -18,54 +18,55 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QSound(const QString & filename, QObject * parent = 0)
 ##  QSound(const QString & filename, QObject * parent)
+##  QSound(const QString & filename, QObject * parent = 0)
   void
 QSound::new(...)
 PREINIT:
 QSound *ret;
 QString * arg00;
-QObject * arg01 = 0;
+QObject * arg01;
 QString * arg10;
-QObject * arg11;
+QObject * arg11 = 0;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    ret = new QSound(*arg00, arg01);
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Gui::QSound", (void *)ret);
-    XSRETURN(1);
-        break;
-      }
-    case 3:
-      {
-        if (sv_isa(ST(1), "")) {
-        arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type ");
-    if (sv_derived_from(ST(2), "")) {
-        arg11 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg11 is not of type ");
+        if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QSound(*arg10, arg11);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QSound", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QString") && (sv_derived_from(ST(2), "Qt::Core::QObject") || ST(2) == &PL_sv_undef)) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Core::QObject")) {
+        arg01 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg01 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QObject");
+    ret = new QSound(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSound", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QSound()
@@ -80,50 +81,65 @@ void
 QSound::fileName(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->fileName();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## static bool isAvailable()
 void
 QSound::isAvailable(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isAvailable();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isFinished()
 void
 QSound::isFinished(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isFinished();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## int loops()
 void
 QSound::loops(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->loops();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int loopsRemaining()
 void
 QSound::loopsRemaining(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->loopsRemaining();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## void play()
 ## static void play(const QString & filename)
@@ -133,28 +149,29 @@ PREINIT:
 QString * arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->play();
+        if (1) {
+      
+    (void)THIS->play();
     XSRETURN(0);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type ");
+        if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->play(*arg10);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void setLoops(int arg0)
@@ -163,14 +180,19 @@ QSound::setLoops(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->setLoops(arg00);
     XSRETURN(0);
+    }
 
 ## void stop()
 void
 QSound::stop(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->stop();
     XSRETURN(0);
+    }

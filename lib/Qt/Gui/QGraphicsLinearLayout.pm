@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsLayout/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsLayout/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,63 +24,74 @@ Qt::Gui::QGraphicsLinearLayout
 
 =over
 
-=item    QGraphicsLinearLayout(QGraphicsLayoutItem * parent = 0)
+=item   QGraphicsLinearLayout(QGraphicsLayoutItem * parent)
 
-=item    QGraphicsLinearLayout(QGraphicsLayoutItem * parent)
+=item   QGraphicsLinearLayout(QGraphicsLayoutItem * parent = 0)
 
-=item    QGraphicsLinearLayout(Qt::Orientation orientation, QGraphicsLayoutItem * parent = 0)
+=item   QGraphicsLinearLayout(Qt::Orientation orientation, QGraphicsLayoutItem * parent)
 
-=item    QGraphicsLinearLayout(Qt::Orientation orientation, QGraphicsLayoutItem * parent)
+=item   QGraphicsLinearLayout(Qt::Orientation orientation, QGraphicsLayoutItem * parent = 0)
 
-=item    ~QGraphicsLinearLayout()
+=item   ~QGraphicsLinearLayout()
 
-=item   void addItem(QGraphicsLayoutItem * item)
+=item  void addItem(QGraphicsLayoutItem * item)
 
-=item   void addStretch(int stretch = 1)
+=item  void addStretch(int stretch)
 
-=item   void addStretch(int stretch)
+=item  void addStretch(int stretch = 1)
 
-=item   int count()
+=item  QFlags<Qt::AlignmentFlag> alignment(QGraphicsLayoutItem * item)
 
-=item   void dump(int indent = 0)
+=item  int count()
 
-=item   void dump(int indent)
+=item  void dump(int indent)
 
-=item   void insertItem(int index, QGraphicsLayoutItem * item)
+=item  void dump(int indent = 0)
 
-=item   void insertStretch(int index, int stretch = 1)
+=item  void insertItem(int index, QGraphicsLayoutItem * item)
 
-=item   void insertStretch(int index, int stretch)
+=item  void insertStretch(int index, int stretch)
 
-=item   void invalidate()
+=item  void insertStretch(int index, int stretch = 1)
 
-=item   QGraphicsLayoutItem * itemAt(int index)
+=item  void invalidate()
 
-=item   qreal itemSpacing(int index)
+=item  QGraphicsLayoutItem * itemAt(int index)
 
-=item   Qt::Orientation orientation()
+=item  qreal itemSpacing(int index)
 
-=item   void removeAt(int index)
+=item  Qt::Orientation orientation()
 
-=item   void removeItem(QGraphicsLayoutItem * item)
+=item  void removeAt(int index)
 
-=item   void setGeometry(const QRectF & rect)
+=item  void removeItem(QGraphicsLayoutItem * item)
 
-=item   void setItemSpacing(int index, qreal spacing)
+=item  void setAlignment(QGraphicsLayoutItem * item, QFlags<Qt::AlignmentFlag> alignment)
 
-=item   void setOrientation(Qt::Orientation orientation)
+=item  void setGeometry(const QRectF & rect)
 
-=item   void setSpacing(qreal spacing)
+=item  void setItemSpacing(int index, qreal spacing)
 
-=item   void setStretchFactor(QGraphicsLayoutItem * item, int stretch)
+=item  void setOrientation(Qt::Orientation orientation)
 
-=item   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint = QSizeF())
+=item  void setSpacing(qreal spacing)
 
-=item   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint)
+=item  void setStretchFactor(QGraphicsLayoutItem * item, int stretch)
 
-=item   qreal spacing()
+=item  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint)
 
-=item   int stretchFactor(QGraphicsLayoutItem * item)
+=item  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint = QSizeF())
+
+=item  qreal spacing()
+
+=item  int stretchFactor(QGraphicsLayoutItem * item)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

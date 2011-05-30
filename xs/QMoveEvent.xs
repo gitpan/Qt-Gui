@@ -26,20 +26,14 @@ QMoveEvent *ret;
 QPoint * arg00;
 QPoint * arg01;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    if (sv_isa(ST(2), "")) {
-        arg01 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QPoint") && sv_isa(ST(2), "Qt::Core::QPoint")) {
+      arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
     ret = new QMoveEvent(*arg00, *arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QMoveEvent", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QMoveEvent()
 void
@@ -53,17 +47,23 @@ void
 QMoveEvent::oldPos(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     const QPoint * ret = &THIS->oldPos();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::Core::QPoint", (void *)ret);
     XSRETURN(1);
+    }
 
 ## const QPoint & pos()
 void
 QMoveEvent::pos(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     const QPoint * ret = &THIS->pos();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::Core::QPoint", (void *)ret);
     XSRETURN(1);
+    }

@@ -28,29 +28,34 @@ const char * arg10;
 const char * arg11;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QImageTextKeyLang();
+        if (1) {
+      
+    ret = new QImageTextKeyLang();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QImageTextKeyLang", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 3:
+      case 3:
       {
-        arg10 = (const char *)SvPV_nolen(ST(1));
-    arg11 = (const char *)SvPV_nolen(ST(2));
+        if (SvPOK(ST(1)) && SvPOK(ST(2))) {
+      arg10 = (const char *)SvPV_nolen(ST(1));
+      arg11 = (const char *)SvPV_nolen(ST(2));
     ret = new QImageTextKeyLang(arg10, arg11);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QImageTextKeyLang", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -62,14 +67,12 @@ PREINIT:
 QImageTextKeyLang * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QImageTextKeyLang")) {
-        arg00 = reinterpret_cast<QImageTextKeyLang *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QImageTextKeyLang");
+      arg00 = reinterpret_cast<QImageTextKeyLang *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->operator!=(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool operator<(const QImageTextKeyLang & other)
 void
@@ -78,14 +81,12 @@ PREINIT:
 QImageTextKeyLang * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QImageTextKeyLang")) {
-        arg00 = reinterpret_cast<QImageTextKeyLang *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QImageTextKeyLang");
+      arg00 = reinterpret_cast<QImageTextKeyLang *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->operator<(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool operator==(const QImageTextKeyLang & other)
 void
@@ -94,11 +95,9 @@ PREINIT:
 QImageTextKeyLang * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QImageTextKeyLang")) {
-        arg00 = reinterpret_cast<QImageTextKeyLang *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QImageTextKeyLang");
+      arg00 = reinterpret_cast<QImageTextKeyLang *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->operator==(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }

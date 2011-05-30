@@ -7,57 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QDialog/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoIcon() { 0 }
-sub Information() { 1 }
-sub Warning() { 2 }
-sub Critical() { 3 }
-sub Question() { 4 }
-sub InvalidRole() { 0 }
-sub AcceptRole() { 1 }
-sub RejectRole() { 2 }
-sub DestructiveRole() { 3 }
-sub ActionRole() { 4 }
-sub HelpRole() { 5 }
-sub YesRole() { 6 }
-sub NoRole() { 7 }
-sub ResetRole() { 8 }
-sub ApplyRole() { 9 }
-sub NRoles() { 10 }
-sub NoButton() { 0 }
-sub Ok() { 1 }
-sub Save() { 2 }
-sub SaveAll() { 3 }
-sub Open() { 4 }
-sub Yes() { 5 }
-sub YesToAll() { 6 }
-sub No() { 7 }
-sub NoToAll() { 8 }
-sub Abort() { 9 }
-sub Retry() { 10 }
-sub Ignore() { 11 }
-sub Close() { 12 }
-sub Cancel() { 13 }
-sub Discard() { 14 }
-sub Help() { 15 }
-sub Apply() { 16 }
-sub Reset() { 17 }
-sub RestoreDefaults() { 18 }
-sub FirstButton() { 19 }
-sub LastButton() { 20 }
-sub YesAll() { 21 }
-sub NoAll() { 22 }
-sub Default() { 23 }
-sub Escape() { 24 }
-sub FlagMask() { 25 }
-sub ButtonMask() { 26 }
 
 
 1;
@@ -70,181 +24,288 @@ Qt::Gui::QMessageBox
 
 =over
 
-=item    QMessageBox(QWidget * parent = 0)
+=item   QMessageBox(QWidget * parent)
 
-=item    QMessageBox(QWidget * parent)
+=item   QMessageBox(QWidget * parent = 0)
 
-=item    ~QMessageBox()
+=item   QMessageBox(QMessageBox::Icon icon, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   static void about(QWidget * parent, const QString & title, const QString & text)
+=item   QMessageBox(QMessageBox::Icon icon, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QWidget * parent, QFlags<Qt::WindowType> flags = Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint)
 
-=item   static void aboutQt(QWidget * parent, const QString & title = QString())
+=item   QMessageBox(QMessageBox::Icon icon, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QWidget * parent = 0, QFlags<Qt::WindowType> flags = Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint)
 
-=item   static void aboutQt(QWidget * parent, const QString & title)
+=item   QMessageBox(QMessageBox::Icon icon, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons = QMessageBox::NoButton, QWidget * parent = 0, QFlags<Qt::WindowType> flags = Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint)
 
-=item   QPushButton * addButton(QMessageBox::StandardButton button)
+=item   QMessageBox(const QString & title, const QString & text, QMessageBox::Icon icon, int button0, int button1, int button2, QWidget * parent, QFlags<Qt::WindowType> f)
 
-=item   void addButton(QAbstractButton * button, QMessageBox::ButtonRole role)
+=item   QMessageBox(const QString & title, const QString & text, QMessageBox::Icon icon, int button0, int button1, int button2, QWidget * parent, QFlags<Qt::WindowType> f = Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint)
 
-=item   QPushButton * addButton(const QString & text, QMessageBox::ButtonRole role)
+=item   QMessageBox(const QString & title, const QString & text, QMessageBox::Icon icon, int button0, int button1, int button2, QWidget * parent = 0, QFlags<Qt::WindowType> f = Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint)
 
-=item   QAbstractButton * button(QMessageBox::StandardButton which)
+=item   ~QMessageBox()
 
-=item   QMessageBox::ButtonRole buttonRole(QAbstractButton * button)
+=item  static void about(QWidget * parent, const QString & title, const QString & text)
 
-=item   QString buttonText(int button)
+=item  static void aboutQt(QWidget * parent, const QString & title)
 
-=item   QAbstractButton * clickedButton()
+=item  static void aboutQt(QWidget * parent, const QString & title = QString())
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1)
+=item  QPushButton * addButton(QMessageBox::StandardButton button)
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
+=item  void addButton(QAbstractButton * button, QMessageBox::ButtonRole role)
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2)
+=item  QPushButton * addButton(const QString & text, QMessageBox::ButtonRole role)
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
+=item  QAbstractButton * button(QMessageBox::StandardButton which)
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber)
+=item  QMessageBox::ButtonRole buttonRole(QAbstractButton * button)
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  QString buttonText(int button)
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
+=item  QAbstractButton * clickedButton()
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton critical(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QMessageBox::StandardButton defaultButton)
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton critical(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton)
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text = QString(), const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton critical(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons = QMessageBox::Ok, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton)
 
-=item   static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static int critical(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1)
 
-=item   QPushButton * defaultButton()
+=item  static int critical(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2)
 
-=item   QString detailedText()
+=item  static int critical(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
 
-=item   QAbstractButton * escapeButton()
+=item  static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber)
 
-=item   QMessageBox::Icon icon()
+=item  static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
 
-=item   QPixmap iconPixmap()
+=item  static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
 
-=item   static QMessageBox::StandardButton information(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1 = QMessageBox::NoButton)
+=item  static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
 
-=item   static QMessageBox::StandardButton information(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1)
+=item  static int critical(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text = QString(), const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
+=item  QPushButton * defaultButton()
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2)
+=item  QString detailedText()
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, int button0, int button1 = 0, int button2 = 0)
+=item  QAbstractButton * escapeButton()
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
+=item  QMessageBox::Icon icon()
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
+=item  QPixmap iconPixmap()
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber)
+=item  static QMessageBox::StandardButton information(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QMessageBox::StandardButton defaultButton)
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton information(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton)
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton information(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons = QMessageBox::Ok, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton)
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton information(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1)
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton information(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1 = QMessageBox::NoButton)
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text = QString(), const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static int information(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2)
 
-=item   static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static int information(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
 
-=item   QString informativeText()
+=item  static int information(QWidget * parent, const QString & title, const QString & text, int button0, int button1 = 0, int button2 = 0)
 
-=item   void open(QObject * receiver, const char * member)
+=item  static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1)
+=item  static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
+=item  static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2)
+=item  static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, int button0, int button1 = 0, int button2 = 0)
+=item  static int information(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text = QString(), const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
+=item  QString informativeText()
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
+=item  void open(QObject * receiver, const char * member)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber)
+=item  static QMessageBox::StandardButton question(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QMessageBox::StandardButton defaultButton)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton question(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton question(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons = QMessageBox::Ok, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static int question(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static int question(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text = QString(), const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static int question(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
 
-=item   static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static int question(QWidget * parent, const QString & title, const QString & text, int button0, int button1 = 0, int button2 = 0)
 
-=item   void removeButton(QAbstractButton * button)
+=item  static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber)
 
-=item   void setButtonText(int button, const QString & text)
+=item  static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
 
-=item   void setDefaultButton(QPushButton * button)
+=item  static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
 
-=item   void setDefaultButton(QMessageBox::StandardButton button)
+=item  static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
 
-=item   void setDetailedText(const QString & text)
+=item  static int question(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text = QString(), const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
 
-=item   void setEscapeButton(QAbstractButton * button)
+=item  void removeButton(QAbstractButton * button)
 
-=item   void setEscapeButton(QMessageBox::StandardButton button)
+=item  void setButtonText(int button, const QString & text)
 
-=item   void setIcon(QMessageBox::Icon arg0)
+=item  void setDefaultButton(QPushButton * button)
 
-=item   void setIconPixmap(const QPixmap & pixmap)
+=item  void setDefaultButton(QMessageBox::StandardButton button)
 
-=item   void setInformativeText(const QString & text)
+=item  void setDetailedText(const QString & text)
 
-=item   void setText(const QString & text)
+=item  void setEscapeButton(QAbstractButton * button)
 
-=item   void setTextFormat(Qt::TextFormat format)
+=item  void setEscapeButton(QMessageBox::StandardButton button)
 
-=item   void setWindowModality(Qt::WindowModality windowModality)
+=item  void setIcon(QMessageBox::Icon arg0)
 
-=item   void setWindowTitle(const QString & title)
+=item  void setIconPixmap(const QPixmap & pixmap)
 
-=item   QSize sizeHint()
+=item  void setInformativeText(const QString & text)
 
-=item   QMessageBox::StandardButton standardButton(QAbstractButton * button)
+=item  void setStandardButtons(QFlags<QMessageBox::StandardButton> buttons)
 
-=item   static QPixmap standardIcon(QMessageBox::Icon icon)
+=item  void setText(const QString & text)
 
-=item   QString text()
+=item  void setTextFormat(Qt::TextFormat format)
 
-=item   Qt::TextFormat textFormat()
+=item  void setWindowModality(Qt::WindowModality windowModality)
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1)
+=item  void setWindowTitle(const QString & title)
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
+=item  QSize sizeHint()
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2)
+=item  QMessageBox::StandardButton standardButton(QAbstractButton * button)
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
+=item  QFlags<QMessageBox::StandardButton> standardButtons()
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber)
+=item  static QPixmap standardIcon(QMessageBox::Icon icon)
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  QString text()
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
+=item  Qt::TextFormat textFormat()
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton warning(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QMessageBox::StandardButton defaultButton)
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton warning(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton)
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text = QString(), const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static QMessageBox::StandardButton warning(QWidget * parent, const QString & title, const QString & text, QFlags<QMessageBox::StandardButton> buttons = QMessageBox::Ok, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton)
 
-=item   static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+=item  static int warning(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1)
+
+=item  static int warning(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2)
+
+=item  static int warning(QWidget * parent, const QString & title, const QString & text, int button0, int button1, int button2 = 0)
+
+=item  static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber)
+
+=item  static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber, int escapeButtonNumber = -1)
+
+=item  static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text, int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+
+=item  static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text, const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+
+=item  static int warning(QWidget * parent, const QString & title, const QString & text, const QString & button0Text, const QString & button1Text = QString(), const QString & button2Text = QString(), int defaultButtonNumber = 0, int escapeButtonNumber = -1)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoIcon
+
+=item Information
+
+=item Warning
+
+=item Critical
+
+=item Question
+
+=item InvalidRole
+
+=item AcceptRole
+
+=item RejectRole
+
+=item DestructiveRole
+
+=item ActionRole
+
+=item HelpRole
+
+=item YesRole
+
+=item NoRole
+
+=item ResetRole
+
+=item ApplyRole
+
+=item NRoles
+
+=item NoButton
+
+=item Ok
+
+=item Save
+
+=item SaveAll
+
+=item Open
+
+=item Yes
+
+=item YesToAll
+
+=item No
+
+=item NoToAll
+
+=item Abort
+
+=item Retry
+
+=item Ignore
+
+=item Close
+
+=item Cancel
+
+=item Discard
+
+=item Help
+
+=item Apply
+
+=item Reset
+
+=item RestoreDefaults
+
+=item FirstButton
+
+=item LastButton
+
+=item YesAll
+
+=item NoAll
+
+=item Default
+
+=item Escape
+
+=item FlagMask
+
+=item ButtonMask
 
 
 =back

@@ -7,15 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub CancelNone() { 0 }
-sub CancelAllInContext() { 1 }
 
 
 1;
@@ -28,27 +24,38 @@ Qt::Gui::QGesture
 
 =over
 
-=item    QGesture(QObject * parent = 0)
+=item   QGesture(QObject * parent)
 
-=item    QGesture(QObject * parent)
+=item   QGesture(QObject * parent = 0)
 
-=item    ~QGesture()
+=item   ~QGesture()
 
-=item   QGesture::GestureCancelPolicy gestureCancelPolicy()
+=item  QGesture::GestureCancelPolicy gestureCancelPolicy()
 
-=item   Qt::GestureType gestureType()
+=item  Qt::GestureType gestureType()
 
-=item   bool hasHotSpot()
+=item  bool hasHotSpot()
 
-=item   QPointF hotSpot()
+=item  QPointF hotSpot()
 
-=item   void setGestureCancelPolicy(QGesture::GestureCancelPolicy policy)
+=item  void setGestureCancelPolicy(QGesture::GestureCancelPolicy policy)
 
-=item   void setHotSpot(const QPointF & value)
+=item  void setHotSpot(const QPointF & value)
 
-=item   Qt::GestureState state()
+=item  Qt::GestureState state()
 
-=item   void unsetHotSpot()
+=item  void unsetHotSpot()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item CancelNone
+
+=item CancelAllInContext
 
 
 =back

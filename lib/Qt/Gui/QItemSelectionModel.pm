@@ -7,24 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub NoUpdate() { 0 }
-sub Clear() { 1 }
-sub Select() { 2 }
-sub Deselect() { 3 }
-sub Toggle() { 4 }
-sub Current() { 5 }
-sub Rows() { 6 }
-sub Columns() { 7 }
-sub SelectCurrent() { 8 }
-sub ToggleCurrent() { 9 }
-sub ClearAndSelect() { 10 }
 
 
 1;
@@ -37,35 +24,70 @@ Qt::Gui::QItemSelectionModel
 
 =over
 
-=item    QItemSelectionModel(QAbstractItemModel * model)
+=item   QItemSelectionModel(QAbstractItemModel * model)
 
-=item    QItemSelectionModel(QAbstractItemModel * model, QObject * parent)
+=item   QItemSelectionModel(QAbstractItemModel * model, QObject * parent)
 
-=item    ~QItemSelectionModel()
+=item   ~QItemSelectionModel()
 
-=item   void clear()
+=item  void clear()
 
-=item   void clearSelection()
+=item  void clearSelection()
 
-=item   bool columnIntersectsSelection(int column, const QModelIndex & parent)
+=item  bool columnIntersectsSelection(int column, const QModelIndex & parent)
 
-=item   QModelIndex currentIndex()
+=item  QModelIndex currentIndex()
 
-=item   bool hasSelection()
+=item  bool hasSelection()
 
-=item   bool isColumnSelected(int column, const QModelIndex & parent)
+=item  bool isColumnSelected(int column, const QModelIndex & parent)
 
-=item   bool isRowSelected(int row, const QModelIndex & parent)
+=item  bool isRowSelected(int row, const QModelIndex & parent)
 
-=item   bool isSelected(const QModelIndex & index)
+=item  bool isSelected(const QModelIndex & index)
 
-=item   const QAbstractItemModel * model()
+=item  const QAbstractItemModel * model()
 
-=item   void reset()
+=item  void reset()
 
-=item   bool rowIntersectsSelection(int row, const QModelIndex & parent)
+=item  bool rowIntersectsSelection(int row, const QModelIndex & parent)
 
-=item   const QItemSelection selection()
+=item  void select(const QModelIndex & index, QFlags<QItemSelectionModel::SelectionFlag> command)
+
+=item  void select(const QItemSelection & selection, QFlags<QItemSelectionModel::SelectionFlag> command)
+
+=item  const QItemSelection selection()
+
+=item  void setCurrentIndex(const QModelIndex & index, QFlags<QItemSelectionModel::SelectionFlag> command)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item NoUpdate
+
+=item Clear
+
+=item Select
+
+=item Deselect
+
+=item Toggle
+
+=item Current
+
+=item Rows
+
+=item Columns
+
+=item SelectCurrent
+
+=item ToggleCurrent
+
+=item ClearAndSelect
 
 
 =back

@@ -19,46 +19,64 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QRegExpValidator(QObject * parent)
+##  QRegExpValidator(QObject * parent = 0)
 ##  QRegExpValidator(const QRegExp & rx, QObject * parent)
   void
 QRegExpValidator::new(...)
 PREINIT:
 QRegExpValidator *ret;
 QObject * arg00;
-QRegExp * arg10;
-QObject * arg11;
+QObject * arg10 = 0;
+QRegExp * arg20;
+QObject * arg21;
 PPCODE:
     switch(items) {
-    case 2:
+      case 1:
       {
-        if (sv_derived_from(ST(1), "")) {
+        if (1) {
+      
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+        break;
+      }
+      case 2:
+      {
+        if ((sv_derived_from(ST(1), "Qt::Core::QObject") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Core::QObject")) {
         arg00 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(1))));
     }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
-        break;
-      }
-    case 3:
-      {
-        if (sv_isa(ST(1), "")) {
-        arg10 = reinterpret_cast<QRegExp *>(SvIV((SV*)SvRV(ST(1))));
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg10 is not of type ");
-    if (sv_derived_from(ST(2), "")) {
-        arg11 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg11 is not of type ");
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QObject");
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QRegExp") && (sv_derived_from(ST(2), "Qt::Core::QObject") || ST(2) == &PL_sv_undef)) {
+      arg20 = reinterpret_cast<QRegExp *>(SvIV((SV*)SvRV(ST(1))));
+      if (sv_derived_from(ST(2), "Qt::Core::QObject")) {
+        arg21 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg21 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg21 is not of type Qt::Core::QObject");
+    Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QRegExpValidator()
@@ -73,10 +91,13 @@ void
 QRegExpValidator::regExp(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     const QRegExp * ret = &THIS->regExp();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::Core::QRegExp", (void *)ret);
     XSRETURN(1);
+    }
 
 ## void setRegExp(const QRegExp & rx)
 void
@@ -84,13 +105,11 @@ QRegExpValidator::setRegExp(...)
 PREINIT:
 QRegExp * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QRegExp *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QRegExp")) {
+      arg00 = reinterpret_cast<QRegExp *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setRegExp(*arg00);
     XSRETURN(0);
+    }
 
 ## QValidator::State validate(QString & input, int & pos)
 void
@@ -99,13 +118,11 @@ PREINIT:
 QString * arg00;
 int arg01;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
-    arg01 = (int)SvIV(ST(2));
+    if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2))) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = (int)SvIV(ST(2));
     QValidator::State ret = THIS->validate(*arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }

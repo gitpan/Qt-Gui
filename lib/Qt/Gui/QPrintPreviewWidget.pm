@@ -7,20 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub SinglePageView() { 0 }
-sub FacingPagesView() { 1 }
-sub AllPagesView() { 2 }
-sub CustomZoom() { 0 }
-sub FitToWidth() { 1 }
-sub FitInView() { 2 }
 
 
 1;
@@ -33,59 +24,90 @@ Qt::Gui::QPrintPreviewWidget
 
 =over
 
-=item    ~QPrintPreviewWidget()
+=item   QPrintPreviewWidget(QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   int currentPage()
+=item   QPrintPreviewWidget(QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   void fitInView()
+=item   QPrintPreviewWidget(QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   void fitToWidth()
+=item   QPrintPreviewWidget(QPrinter * printer, QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   int numPages()
+=item   QPrintPreviewWidget(QPrinter * printer, QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   QPrinter::Orientation orientation()
+=item   QPrintPreviewWidget(QPrinter * printer, QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   int pageCount()
+=item   ~QPrintPreviewWidget()
 
-=item   void print()
+=item  int currentPage()
 
-=item   void setAllPagesViewMode()
+=item  void fitInView()
 
-=item   void setCurrentPage(int pageNumber)
+=item  void fitToWidth()
 
-=item   void setFacingPagesViewMode()
+=item  int numPages()
 
-=item   void setLandscapeOrientation()
+=item  QPrinter::Orientation orientation()
 
-=item   void setOrientation(QPrinter::Orientation orientation)
+=item  int pageCount()
 
-=item   void setPortraitOrientation()
+=item  void print()
 
-=item   void setSinglePageViewMode()
+=item  void setAllPagesViewMode()
 
-=item   void setViewMode(QPrintPreviewWidget::ViewMode viewMode)
+=item  void setCurrentPage(int pageNumber)
 
-=item   void setVisible(bool visible)
+=item  void setFacingPagesViewMode()
 
-=item   void setZoomFactor(qreal zoomFactor)
+=item  void setLandscapeOrientation()
 
-=item   void setZoomMode(QPrintPreviewWidget::ZoomMode zoomMode)
+=item  void setOrientation(QPrinter::Orientation orientation)
 
-=item   void updatePreview()
+=item  void setPortraitOrientation()
 
-=item   QPrintPreviewWidget::ViewMode viewMode()
+=item  void setSinglePageViewMode()
 
-=item   qreal zoomFactor()
+=item  void setViewMode(QPrintPreviewWidget::ViewMode viewMode)
 
-=item   void zoomIn(qreal zoom = 1.1)
+=item  void setVisible(bool visible)
 
-=item   void zoomIn(qreal zoom)
+=item  void setZoomFactor(qreal zoomFactor)
 
-=item   QPrintPreviewWidget::ZoomMode zoomMode()
+=item  void setZoomMode(QPrintPreviewWidget::ZoomMode zoomMode)
 
-=item   void zoomOut(qreal zoom = 1.1)
+=item  void updatePreview()
 
-=item   void zoomOut(qreal zoom)
+=item  QPrintPreviewWidget::ViewMode viewMode()
+
+=item  qreal zoomFactor()
+
+=item  void zoomIn(qreal zoom)
+
+=item  void zoomIn(qreal zoom = 1.1)
+
+=item  QPrintPreviewWidget::ZoomMode zoomMode()
+
+=item  void zoomOut(qreal zoom)
+
+=item  void zoomOut(qreal zoom = 1.1)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item SinglePageView
+
+=item FacingPagesView
+
+=item AllPagesView
+
+=item CustomZoom
+
+=item FitToWidth
+
+=item FitInView
 
 
 =back

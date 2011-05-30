@@ -21,8 +21,8 @@ PROTOTYPES: DISABLE
 ##  QTextLayout()
 ##  QTextLayout(const QString & text)
 ##  QTextLayout(const QTextBlock & b)
-##  QTextLayout(const QString & text, const QFont & font, QPaintDevice * paintdevice = 0)
 ##  QTextLayout(const QString & text, const QFont & font, QPaintDevice * paintdevice)
+##  QTextLayout(const QString & text, const QFont & font, QPaintDevice * paintdevice = 0)
   void
 QTextLayout::new(...)
 PREINIT:
@@ -31,79 +31,82 @@ QString * arg10;
 QTextBlock * arg20;
 QString * arg30;
 QFont * arg31;
-QPaintDevice * arg32 = 0;
+QPaintDevice * arg32;
 QString * arg40;
 QFont * arg41;
-QPaintDevice * arg42;
+QPaintDevice * arg42 = 0;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QTextLayout();
+        if (1) {
+      
+    ret = new QTextLayout();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextLayout", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "")) {
-        arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type ");
+        if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QTextLayout(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextLayout", (void *)ret);
     XSRETURN(1);
-        break;
-      }
-    case 3:
-      {
-        if (sv_isa(ST(1), "")) {
-        arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     }
-    else
-        Perl_croak(aTHX_ "arg30 is not of type ");
-    if (sv_isa(ST(2), "Qt::Gui::QFont")) {
-        arg31 = reinterpret_cast<QFont *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg31 is not of type Qt::Gui::QFont");
-    ret = new QTextLayout(*arg30, *arg31, arg32);
+        else if (sv_isa(ST(1), "Qt::Gui::QTextBlock")) {
+      arg20 = reinterpret_cast<QTextBlock *>(SvIV((SV*)SvRV(ST(1))));
+    ret = new QTextLayout(*arg20);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextLayout", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 4:
+      case 3:
       {
-        if (sv_isa(ST(1), "")) {
-        arg40 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg40 is not of type ");
-    if (sv_isa(ST(2), "Qt::Gui::QFont")) {
-        arg41 = reinterpret_cast<QFont *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg41 is not of type Qt::Gui::QFont");
-    if (sv_derived_from(ST(3), "Qt::Gui::QPaintDevice")) {
-        arg42 = reinterpret_cast<QPaintDevice *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg42 is not of type Qt::Gui::QPaintDevice");
+        if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Gui::QFont")) {
+      arg40 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg41 = reinterpret_cast<QFont *>(SvIV((SV*)SvRV(ST(2))));
     ret = new QTextLayout(*arg40, *arg41, arg42);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextLayout", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 4:
       {
+        if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Gui::QFont") && (sv_derived_from(ST(3), "Qt::Gui::QPaintDevice") || ST(3) == &PL_sv_undef)) {
+      arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg31 = reinterpret_cast<QFont *>(SvIV((SV*)SvRV(ST(2))));
+      if (sv_derived_from(ST(3), "Qt::Gui::QPaintDevice")) {
+        arg32 = reinterpret_cast<QPaintDevice *>(SvIV((SV*)SvRV(ST(3))));
+    }
+    else if (ST(3) == &PL_sv_undef) {
+        arg32 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg32 is not of type Qt::Gui::QPaintDevice");
+    ret = new QTextLayout(*arg30, *arg31, arg32);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QTextLayout", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QTextLayout()
@@ -118,54 +121,72 @@ void
 QTextLayout::beginLayout(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->beginLayout();
     XSRETURN(0);
+    }
 
 ## QRectF boundingRect()
 void
 QTextLayout::boundingRect(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QRectF ret = THIS->boundingRect();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QRectF(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QRectF", (void *)new QRectF(ret));
     XSRETURN(1);
+    }
 
 ## bool cacheEnabled()
 void
 QTextLayout::cacheEnabled(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->cacheEnabled();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## void clearAdditionalFormats()
 void
 QTextLayout::clearAdditionalFormats(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->clearAdditionalFormats();
     XSRETURN(0);
+    }
 
 ## void clearLayout()
 void
 QTextLayout::clearLayout(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->clearLayout();
     XSRETURN(0);
+    }
 
 ## QTextLine createLine()
 void
 QTextLayout::createLine(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QTextLine ret = THIS->createLine();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextLine", (void *)new QTextLine(ret));
     XSRETURN(1);
+    }
 
 ## void drawCursor(QPainter * p, const QPointF & pos, int cursorPosition)
 ## void drawCursor(QPainter * p, const QPointF & pos, int cursorPosition, int width)
@@ -181,46 +202,50 @@ int arg12;
 int arg13;
 PPCODE:
     switch(items) {
-    case 4:
+      case 4:
       {
-        if (sv_derived_from(ST(1), "Qt::Gui::QPainter")) {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QPainter") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Core::QPointF") && SvIOK(ST(3))) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QPainter")) {
         arg00 = reinterpret_cast<QPainter *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPainter");
-    if (sv_isa(ST(2), "")) {
-        arg01 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type ");
-    arg02 = (int)SvIV(ST(3));
+      arg01 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = (int)SvIV(ST(3));
     (void)THIS->drawCursor(arg00, *arg01, arg02);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 5:
+      case 5:
       {
-        if (sv_derived_from(ST(1), "Qt::Gui::QPainter")) {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QPainter") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Core::QPointF") && SvIOK(ST(3)) && SvIOK(ST(4))) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QPainter")) {
         arg10 = reinterpret_cast<QPainter *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg10 = 0;
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QPainter");
-    if (sv_isa(ST(2), "")) {
-        arg11 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg11 is not of type ");
-    arg12 = (int)SvIV(ST(3));
-    arg13 = (int)SvIV(ST(4));
+      arg11 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(2))));
+      arg12 = (int)SvIV(ST(3));
+      arg13 = (int)SvIV(ST(4));
     (void)THIS->drawCursor(arg10, *arg11, arg12, arg13);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void endLayout()
@@ -228,28 +253,37 @@ void
 QTextLayout::endLayout(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     (void)THIS->endLayout();
     XSRETURN(0);
+    }
 
 ## QTextEngine * engine()
 void
 QTextLayout::engine(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QTextEngine * ret = THIS->engine();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QFont font()
 void
 QTextLayout::font(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QFont ret = THIS->font();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QFont", (void *)new QFont(ret));
     XSRETURN(1);
+    }
 
 ## bool isValidCursorPosition(int pos)
 void
@@ -257,11 +291,13 @@ QTextLayout::isValidCursorPosition(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     bool ret = THIS->isValidCursorPosition(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QTextLine lineAt(int i)
 void
@@ -269,21 +305,26 @@ QTextLayout::lineAt(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     QTextLine ret = THIS->lineAt(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextLine", (void *)new QTextLine(ret));
     XSRETURN(1);
+    }
 
 ## int lineCount()
 void
 QTextLayout::lineCount(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->lineCount();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QTextLine lineForTextPosition(int pos)
 void
@@ -291,76 +332,81 @@ QTextLayout::lineForTextPosition(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     QTextLine ret = THIS->lineForTextPosition(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextLine", (void *)new QTextLine(ret));
     XSRETURN(1);
+    }
 
 ## qreal maximumWidth()
 void
 QTextLayout::maximumWidth(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     qreal ret = THIS->maximumWidth();
     ST(0) = sv_newmortal();
     sv_setnv(ST(0), (double)ret);
     XSRETURN(1);
+    }
 
 ## qreal minimumWidth()
 void
 QTextLayout::minimumWidth(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     qreal ret = THIS->minimumWidth();
     ST(0) = sv_newmortal();
     sv_setnv(ST(0), (double)ret);
     XSRETURN(1);
+    }
 
-## int nextCursorPosition(int oldPos, QTextLayout::CursorMode mode = QTextLayout::SkipCharacters)
 ## int nextCursorPosition(int oldPos, QTextLayout::CursorMode mode)
+## int nextCursorPosition(int oldPos, QTextLayout::CursorMode mode = QTextLayout::SkipCharacters)
 void
 QTextLayout::nextCursorPosition(...)
 PREINIT:
 int arg00;
-QTextLayout::CursorMode arg01 = QTextLayout::SkipCharacters;
+QTextLayout::CursorMode arg01;
 int arg10;
-QTextLayout::CursorMode arg11;
+QTextLayout::CursorMode arg11 = QTextLayout::SkipCharacters;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        arg00 = (int)SvIV(ST(1));
-    int ret = THIS->nextCursorPosition(arg00, arg01);
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
-    XSRETURN(1);
-        break;
-      }
-    case 3:
-      {
-        arg10 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg11 = QTextLayout::SkipCharacters;
-      break;
-    case 1:
-      arg11 = QTextLayout::SkipWords;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QTextLayout::CursorMode passed in");
-    }
+        if (SvIOK(ST(1))) {
+      arg10 = (int)SvIV(ST(1));
     int ret = THIS->nextCursorPosition(arg10, arg11);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (QTextLayout::CursorMode)SvIV(ST(2));
+    int ret = THIS->nextCursorPosition(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QPointF position()
@@ -368,75 +414,81 @@ void
 QTextLayout::position(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QPointF ret = THIS->position();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QPointF(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QPointF", (void *)new QPointF(ret));
     XSRETURN(1);
+    }
 
 ## int preeditAreaPosition()
 void
 QTextLayout::preeditAreaPosition(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->preeditAreaPosition();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## QString preeditAreaText()
 void
 QTextLayout::preeditAreaText(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->preeditAreaText();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
-## int previousCursorPosition(int oldPos, QTextLayout::CursorMode mode = QTextLayout::SkipCharacters)
 ## int previousCursorPosition(int oldPos, QTextLayout::CursorMode mode)
+## int previousCursorPosition(int oldPos, QTextLayout::CursorMode mode = QTextLayout::SkipCharacters)
 void
 QTextLayout::previousCursorPosition(...)
 PREINIT:
 int arg00;
-QTextLayout::CursorMode arg01 = QTextLayout::SkipCharacters;
+QTextLayout::CursorMode arg01;
 int arg10;
-QTextLayout::CursorMode arg11;
+QTextLayout::CursorMode arg11 = QTextLayout::SkipCharacters;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        arg00 = (int)SvIV(ST(1));
-    int ret = THIS->previousCursorPosition(arg00, arg01);
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
-    XSRETURN(1);
-        break;
-      }
-    case 3:
-      {
-        arg10 = (int)SvIV(ST(1));
-    switch(SvIV(ST(2))) {
-    case 0:
-      arg11 = QTextLayout::SkipCharacters;
-      break;
-    case 1:
-      arg11 = QTextLayout::SkipWords;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QTextLayout::CursorMode passed in");
-    }
+        if (SvIOK(ST(1))) {
+      arg10 = (int)SvIV(ST(1));
     int ret = THIS->previousCursorPosition(arg10, arg11);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = (QTextLayout::CursorMode)SvIV(ST(2));
+    int ret = THIS->previousCursorPosition(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void setCacheEnabled(bool enable)
@@ -445,9 +497,11 @@ QTextLayout::setCacheEnabled(...)
 PREINIT:
 bool arg00;
 PPCODE:
-    arg00 = (bool)SvTRUE(ST(1));
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setCacheEnabled(arg00);
     XSRETURN(0);
+    }
 
 ## void setFlags(int flags)
 void
@@ -455,9 +509,11 @@ QTextLayout::setFlags(...)
 PREINIT:
 int arg00;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
     (void)THIS->setFlags(arg00);
     XSRETURN(0);
+    }
 
 ## void setFont(const QFont & f)
 void
@@ -466,12 +522,10 @@ PREINIT:
 QFont * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QFont")) {
-        arg00 = reinterpret_cast<QFont *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QFont");
+      arg00 = reinterpret_cast<QFont *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setFont(*arg00);
     XSRETURN(0);
+    }
 
 ## void setPosition(const QPointF & p)
 void
@@ -479,13 +533,11 @@ QTextLayout::setPosition(...)
 PREINIT:
 QPointF * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QPointF")) {
+      arg00 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setPosition(*arg00);
     XSRETURN(0);
+    }
 
 ## void setPreeditArea(int position, const QString & text)
 void
@@ -494,14 +546,12 @@ PREINIT:
 int arg00;
 QString * arg01;
 PPCODE:
-    arg00 = (int)SvIV(ST(1));
-    if (sv_isa(ST(2), "")) {
-        arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type ");
+    if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QString")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
     (void)THIS->setPreeditArea(arg00, *arg01);
     XSRETURN(0);
+    }
 
 ## void setText(const QString & string)
 void
@@ -509,13 +559,11 @@ QTextLayout::setText(...)
 PREINIT:
 QString * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type ");
+    if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setText(*arg00);
     XSRETURN(0);
+    }
 
 ## void setTextOption(const QTextOption & option)
 void
@@ -524,29 +572,58 @@ PREINIT:
 QTextOption * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Gui::QTextOption")) {
-        arg00 = reinterpret_cast<QTextOption *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTextOption");
+      arg00 = reinterpret_cast<QTextOption *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setTextOption(*arg00);
     XSRETURN(0);
+    }
 
 ## QString text()
 void
 QTextLayout::text(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->text();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## QTextOption textOption()
 void
 QTextLayout::textOption(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QTextOption ret = THIS->textOption();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextOption", (void *)new QTextOption(ret));
+    XSRETURN(1);
+    }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# CursorMode::SkipCharacters
+void
+SkipCharacters()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QTextLayout::SkipCharacters);
+    XSRETURN(1);
+
+
+# CursorMode::SkipWords
+void
+SkipWords()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QTextLayout::SkipWords);
     XSRETURN(1);

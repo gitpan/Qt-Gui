@@ -7,18 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QWidget/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub AllowOutsideAreaHorizontally() { 0 }
-sub AllowOutsideAreaVertically() { 1 }
-sub RubberBandResize() { 2 }
-sub RubberBandMove() { 3 }
 
 
 1;
@@ -31,45 +24,66 @@ Qt::Gui::QMdiSubWindow
 
 =over
 
-=item    ~QMdiSubWindow()
+=item   QMdiSubWindow(QWidget * parent, QFlags<Qt::WindowType> flags)
 
-=item   bool isShaded()
+=item   QMdiSubWindow(QWidget * parent, QFlags<Qt::WindowType> flags = 0)
 
-=item   int keyboardPageStep()
+=item   QMdiSubWindow(QWidget * parent = 0, QFlags<Qt::WindowType> flags = 0)
 
-=item   int keyboardSingleStep()
+=item   ~QMdiSubWindow()
 
-=item   QWidget * maximizedButtonsWidget()
+=item  bool isShaded()
 
-=item   QWidget * maximizedSystemMenuIconWidget()
+=item  int keyboardPageStep()
 
-=item   QMdiArea * mdiArea()
+=item  int keyboardSingleStep()
 
-=item   QSize minimumSizeHint()
+=item  QWidget * maximizedButtonsWidget()
 
-=item   void setKeyboardPageStep(int step)
+=item  QWidget * maximizedSystemMenuIconWidget()
 
-=item   void setKeyboardSingleStep(int step)
+=item  QMdiArea * mdiArea()
 
-=item   void setOption(QMdiSubWindow::SubWindowOption option, bool on = true)
+=item  QSize minimumSizeHint()
 
-=item   void setOption(QMdiSubWindow::SubWindowOption option, bool on)
+=item  void setKeyboardPageStep(int step)
 
-=item   void setSystemMenu(QMenu * systemMenu)
+=item  void setKeyboardSingleStep(int step)
 
-=item   void setWidget(QWidget * widget)
+=item  void setOption(QMdiSubWindow::SubWindowOption option, bool on)
 
-=item   void showShaded()
+=item  void setOption(QMdiSubWindow::SubWindowOption option, bool on = true)
 
-=item   void showSystemMenu()
+=item  void setSystemMenu(QMenu * systemMenu)
 
-=item   QSize sizeHint()
+=item  void setWidget(QWidget * widget)
 
-=item   QMenu * systemMenu()
+=item  void showShaded()
 
-=item   bool testOption(QMdiSubWindow::SubWindowOption arg0)
+=item  void showSystemMenu()
 
-=item   QWidget * widget()
+=item  QSize sizeHint()
+
+=item  QMenu * systemMenu()
+
+=item  bool testOption(QMdiSubWindow::SubWindowOption arg0)
+
+=item  QWidget * widget()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item AllowOutsideAreaHorizontally
+
+=item AllowOutsideAreaVertically
+
+=item RubberBandResize
+
+=item RubberBandMove
 
 
 =back

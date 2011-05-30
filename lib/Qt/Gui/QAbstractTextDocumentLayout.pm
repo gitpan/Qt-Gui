@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,9 +24,16 @@ Qt::Gui::QAbstractTextDocumentLayout
 
 =over
 
-=item    QAbstractTextDocumentLayout(QTextDocument * doc)
+=item   QAbstractTextDocumentLayout(QTextDocument * doc)
 
-=item    ~QAbstractTextDocumentLayout()
+=item   ~QAbstractTextDocumentLayout()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

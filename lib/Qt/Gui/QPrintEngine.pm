@@ -7,40 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub PPK_CollateCopies() { 0 }
-sub PPK_ColorMode() { 1 }
-sub PPK_Creator() { 2 }
-sub PPK_DocumentName() { 3 }
-sub PPK_FullPage() { 4 }
-sub PPK_NumberOfCopies() { 5 }
-sub PPK_Orientation() { 6 }
-sub PPK_OutputFileName() { 7 }
-sub PPK_PageOrder() { 8 }
-sub PPK_PageRect() { 9 }
-sub PPK_PageSize() { 10 }
-sub PPK_PaperRect() { 11 }
-sub PPK_PaperSource() { 12 }
-sub PPK_PrinterName() { 13 }
-sub PPK_PrinterProgram() { 14 }
-sub PPK_Resolution() { 15 }
-sub PPK_SelectionOption() { 16 }
-sub PPK_SupportedResolutions() { 17 }
-sub PPK_WindowsPageSize() { 18 }
-sub PPK_FontEmbedding() { 19 }
-sub PPK_SuppressSystemPrintStatus() { 20 }
-sub PPK_Duplex() { 21 }
-sub PPK_PaperSources() { 22 }
-sub PPK_CustomPaperSize() { 23 }
-sub PPK_PageMargins() { 24 }
-sub PPK_PaperSize() { 25 }
-sub PPK_CustomBase() { 26 }
 
 
 1;
@@ -53,19 +23,84 @@ Qt::Gui::QPrintEngine
 
 =over
 
-=item    ~QPrintEngine()
+=item   ~QPrintEngine()
 
-=item   bool abort()
+=item  bool abort()
 
-=item   int metric(QPaintDevice::PaintDeviceMetric arg0)
+=item  int metric(QPaintDevice::PaintDeviceMetric arg0)
 
-=item   bool newPage()
+=item  bool newPage()
 
-=item   QPrinter::PrinterState printerState()
+=item  QPrinter::PrinterState printerState()
 
-=item   QVariant property(QPrintEngine::PrintEnginePropertyKey key)
+=item  QVariant property(QPrintEngine::PrintEnginePropertyKey key)
 
-=item   void setProperty(QPrintEngine::PrintEnginePropertyKey key, const QVariant & value)
+=item  void setProperty(QPrintEngine::PrintEnginePropertyKey key, const QVariant & value)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item PPK_CollateCopies
+
+=item PPK_ColorMode
+
+=item PPK_Creator
+
+=item PPK_DocumentName
+
+=item PPK_FullPage
+
+=item PPK_NumberOfCopies
+
+=item PPK_Orientation
+
+=item PPK_OutputFileName
+
+=item PPK_PageOrder
+
+=item PPK_PageRect
+
+=item PPK_PageSize
+
+=item PPK_PaperRect
+
+=item PPK_PaperSource
+
+=item PPK_PrinterName
+
+=item PPK_PrinterProgram
+
+=item PPK_Resolution
+
+=item PPK_SelectionOption
+
+=item PPK_SupportedResolutions
+
+=item PPK_WindowsPageSize
+
+=item PPK_FontEmbedding
+
+=item PPK_SuppressSystemPrintStatus
+
+=item PPK_Duplex
+
+=item PPK_PaperSources
+
+=item PPK_CustomPaperSize
+
+=item PPK_PageMargins
+
+=item PPK_CopyCount
+
+=item PPK_SupportsMultipleCopies
+
+=item PPK_PaperSize
+
+=item PPK_CustomBase
 
 
 =back

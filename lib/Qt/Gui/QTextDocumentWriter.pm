@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,35 +23,42 @@ Qt::Gui::QTextDocumentWriter
 
 =over
 
-=item    QTextDocumentWriter()
+=item   QTextDocumentWriter()
 
-=item    QTextDocumentWriter(QIODevice * device, const QByteArray & format)
+=item   QTextDocumentWriter(QIODevice * device, const QByteArray & format)
 
-=item    QTextDocumentWriter(const QString & fileName, const QByteArray & format = QByteArray())
+=item   QTextDocumentWriter(const QString & fileName, const QByteArray & format)
 
-=item    QTextDocumentWriter(const QString & fileName, const QByteArray & format)
+=item   QTextDocumentWriter(const QString & fileName, const QByteArray & format = QByteArray())
 
-=item    ~QTextDocumentWriter()
+=item   ~QTextDocumentWriter()
 
-=item   QTextCodec * codec()
+=item  QTextCodec * codec()
 
-=item   QIODevice * device()
+=item  QIODevice * device()
 
-=item   QString fileName()
+=item  QString fileName()
 
-=item   QByteArray format()
+=item  QByteArray format()
 
-=item   void setCodec(QTextCodec * codec)
+=item  void setCodec(QTextCodec * codec)
 
-=item   void setDevice(QIODevice * device)
+=item  void setDevice(QIODevice * device)
 
-=item   void setFileName(const QString & fileName)
+=item  void setFileName(const QString & fileName)
 
-=item   void setFormat(const QByteArray & format)
+=item  void setFormat(const QByteArray & format)
 
-=item   bool write(const QTextDocument * document)
+=item  bool write(const QTextDocument * document)
 
-=item   bool write(const QTextDocumentFragment & fragment)
+=item  bool write(const QTextDocumentFragment & fragment)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

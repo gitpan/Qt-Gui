@@ -7,15 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Type() { 0 }
-sub UserType() { 1 }
 
 
 1;
@@ -28,163 +23,182 @@ Qt::Gui::QStandardItem
 
 =over
 
-=item    QStandardItem()
+=item   QStandardItem()
 
-=item    QStandardItem(const QString & text)
+=item   QStandardItem(const QString & text)
 
-=item    QStandardItem(const QIcon & icon, const QString & text)
+=item   QStandardItem(const QIcon & icon, const QString & text)
 
-=item    QStandardItem(int rows, int columns = 1)
+=item   QStandardItem(int rows, int columns)
 
-=item    QStandardItem(int rows, int columns)
+=item   QStandardItem(int rows, int columns = 1)
 
-=item    ~QStandardItem()
+=item   ~QStandardItem()
 
-=item   QString accessibleDescription()
+=item  QString accessibleDescription()
 
-=item   QString accessibleText()
+=item  QString accessibleText()
 
-=item   void appendRow(QStandardItem * item)
+=item  void appendRow(QStandardItem * item)
 
-=item   QBrush background()
+=item  QBrush background()
 
-=item   Qt::CheckState checkState()
+=item  Qt::CheckState checkState()
 
-=item   QStandardItem * child(int row, int column = 0)
+=item  QStandardItem * child(int row, int column)
 
-=item   QStandardItem * child(int row, int column)
+=item  QStandardItem * child(int row, int column = 0)
 
-=item   QStandardItem * clone()
+=item  QStandardItem * clone()
 
-=item   int column()
+=item  int column()
 
-=item   int columnCount()
+=item  int columnCount()
 
-=item   QVariant data(int role = Qt::UserRole + 1)
+=item  QVariant data(int role)
 
-=item   QVariant data(int role)
+=item  QVariant data(int role = Qt::UserRole + 1)
 
-=item   QFont font()
+=item  QFlags<Qt::ItemFlag> flags()
 
-=item   QBrush foreground()
+=item  QFont font()
 
-=item   bool hasChildren()
+=item  QBrush foreground()
 
-=item   QIcon icon()
+=item  bool hasChildren()
 
-=item   QModelIndex index()
+=item  QIcon icon()
 
-=item   void insertColumns(int column, int count)
+=item  QModelIndex index()
 
-=item   void insertRow(int row, QStandardItem * item)
+=item  void insertColumns(int column, int count)
 
-=item   void insertRows(int row, int count)
+=item  void insertRow(int row, QStandardItem * item)
 
-=item   bool isCheckable()
+=item  void insertRows(int row, int count)
 
-=item   bool isDragEnabled()
+=item  bool isCheckable()
 
-=item   bool isDropEnabled()
+=item  bool isDragEnabled()
 
-=item   bool isEditable()
+=item  bool isDropEnabled()
 
-=item   bool isEnabled()
+=item  bool isEditable()
 
-=item   bool isSelectable()
+=item  bool isEnabled()
 
-=item   bool isTristate()
+=item  bool isSelectable()
 
-=item   QStandardItemModel * model()
+=item  bool isTristate()
 
-=item   bool operator<(const QStandardItem & other)
+=item  QStandardItemModel * model()
 
-=item   QStandardItem * parent()
+=item  bool operator<(const QStandardItem & other)
 
-=item   void read(QDataStream & in)
+=item  QStandardItem * parent()
 
-=item   void removeColumn(int column)
+=item  void read(QDataStream & in)
 
-=item   void removeColumns(int column, int count)
+=item  void removeColumn(int column)
 
-=item   void removeRow(int row)
+=item  void removeColumns(int column, int count)
 
-=item   void removeRows(int row, int count)
+=item  void removeRow(int row)
 
-=item   int row()
+=item  void removeRows(int row, int count)
 
-=item   int rowCount()
+=item  int row()
 
-=item   void setAccessibleDescription(const QString & accessibleDescription)
+=item  int rowCount()
 
-=item   void setAccessibleText(const QString & accessibleText)
+=item  void setAccessibleDescription(const QString & accessibleDescription)
 
-=item   void setBackground(const QBrush & brush)
+=item  void setAccessibleText(const QString & accessibleText)
 
-=item   void setCheckState(Qt::CheckState checkState)
+=item  void setBackground(const QBrush & brush)
 
-=item   void setCheckable(bool checkable)
+=item  void setCheckState(Qt::CheckState checkState)
 
-=item   void setChild(int row, QStandardItem * item)
+=item  void setCheckable(bool checkable)
 
-=item   void setChild(int row, int column, QStandardItem * item)
+=item  void setChild(int row, QStandardItem * item)
 
-=item   void setColumnCount(int columns)
+=item  void setChild(int row, int column, QStandardItem * item)
 
-=item   void setData(const QVariant & value, int role = Qt::UserRole + 1)
+=item  void setColumnCount(int columns)
 
-=item   void setData(const QVariant & value, int role)
+=item  void setData(const QVariant & value, int role)
 
-=item   void setDragEnabled(bool dragEnabled)
+=item  void setData(const QVariant & value, int role = Qt::UserRole + 1)
 
-=item   void setDropEnabled(bool dropEnabled)
+=item  void setDragEnabled(bool dragEnabled)
 
-=item   void setEditable(bool editable)
+=item  void setDropEnabled(bool dropEnabled)
 
-=item   void setEnabled(bool enabled)
+=item  void setEditable(bool editable)
 
-=item   void setFont(const QFont & font)
+=item  void setEnabled(bool enabled)
 
-=item   void setForeground(const QBrush & brush)
+=item  void setFlags(QFlags<Qt::ItemFlag> flags)
 
-=item   void setIcon(const QIcon & icon)
+=item  void setFont(const QFont & font)
 
-=item   void setRowCount(int rows)
+=item  void setForeground(const QBrush & brush)
 
-=item   void setSelectable(bool selectable)
+=item  void setIcon(const QIcon & icon)
 
-=item   void setSizeHint(const QSize & sizeHint)
+=item  void setRowCount(int rows)
 
-=item   void setStatusTip(const QString & statusTip)
+=item  void setSelectable(bool selectable)
 
-=item   void setText(const QString & text)
+=item  void setSizeHint(const QSize & sizeHint)
 
-=item   void setToolTip(const QString & toolTip)
+=item  void setStatusTip(const QString & statusTip)
 
-=item   void setTristate(bool tristate)
+=item  void setText(const QString & text)
 
-=item   void setWhatsThis(const QString & whatsThis)
+=item  void setTextAlignment(QFlags<Qt::AlignmentFlag> textAlignment)
 
-=item   QSize sizeHint()
+=item  void setToolTip(const QString & toolTip)
 
-=item   void sortChildren(int column, Qt::SortOrder order = Qt::AscendingOrder)
+=item  void setTristate(bool tristate)
 
-=item   void sortChildren(int column, Qt::SortOrder order)
+=item  void setWhatsThis(const QString & whatsThis)
 
-=item   QString statusTip()
+=item  QSize sizeHint()
 
-=item   QStandardItem * takeChild(int row, int column = 0)
+=item  void sortChildren(int column, Qt::SortOrder order)
 
-=item   QStandardItem * takeChild(int row, int column)
+=item  void sortChildren(int column, Qt::SortOrder order = Qt::AscendingOrder)
 
-=item   QString text()
+=item  QString statusTip()
 
-=item   QString toolTip()
+=item  QStandardItem * takeChild(int row, int column)
 
-=item   int type()
+=item  QStandardItem * takeChild(int row, int column = 0)
 
-=item   QString whatsThis()
+=item  QString text()
 
-=item   void write(QDataStream & out)
+=item  QFlags<Qt::AlignmentFlag> textAlignment()
+
+=item  QString toolTip()
+
+=item  int type()
+
+=item  QString whatsThis()
+
+=item  void write(QDataStream & out)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Type
+
+=item UserType
 
 
 =back

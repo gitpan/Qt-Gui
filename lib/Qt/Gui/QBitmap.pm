@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QPixmap/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QPixmap/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,33 +24,44 @@ Qt::Gui::QBitmap
 
 =over
 
-=item    QBitmap()
+=item   QBitmap()
 
-=item    QBitmap(const QPixmap & arg0)
+=item   QBitmap(const QPixmap & arg0)
 
-=item    QBitmap(const QSize & arg0)
+=item   QBitmap(const QSize & arg0)
 
-=item    QBitmap(int w, int h)
+=item   QBitmap(int w, int h)
 
-=item    QBitmap(const QString & fileName, const char * format = 0)
+=item   QBitmap(const QString & fileName, const char * format)
 
-=item    QBitmap(const QString & fileName, const char * format)
+=item   QBitmap(const QString & fileName, const char * format = 0)
 
-=item    ~QBitmap()
+=item   ~QBitmap()
 
-=item   void clear()
+=item  void clear()
 
-=item   static QBitmap fromData(const QSize & size, const uchar * bits, QImage::Format monoFormat = QImage::Format_MonoLSB)
+=item  static QBitmap fromData(const QSize & size, const uchar * bits, QImage::Format monoFormat)
 
-=item   static QBitmap fromData(const QSize & size, const uchar * bits, QImage::Format monoFormat)
+=item  static QBitmap fromData(const QSize & size, const uchar * bits, QImage::Format monoFormat = QImage::Format_MonoLSB)
 
-=item   QVariant operator QVariant()
+=item  static QBitmap fromImage(const QImage & image, QFlags<Qt::ImageConversionFlag> flags)
 
-=item   QBitmap & operator=(const QPixmap & arg0)
+=item  static QBitmap fromImage(const QImage & image, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
-=item   QBitmap transformed(const QMatrix & arg0)
+=item  QVariant operator QVariant()
 
-=item   QBitmap transformed(const QTransform & matrix)
+=item  QBitmap & operator=(const QPixmap & arg0)
+
+=item  QBitmap transformed(const QMatrix & arg0)
+
+=item  QBitmap transformed(const QTransform & matrix)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

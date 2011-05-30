@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractSpinBox/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractSpinBox/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,37 +24,44 @@ Qt::Gui::QSpinBox
 
 =over
 
-=item    QSpinBox(QWidget * parent = 0)
+=item   QSpinBox(QWidget * parent)
 
-=item    QSpinBox(QWidget * parent)
+=item   QSpinBox(QWidget * parent = 0)
 
-=item   QString cleanText()
+=item  QString cleanText()
 
-=item   int maximum()
+=item  int maximum()
 
-=item   int minimum()
+=item  int minimum()
 
-=item   QString prefix()
+=item  QString prefix()
 
-=item   void setMaximum(int max)
+=item  void setMaximum(int max)
 
-=item   void setMinimum(int min)
+=item  void setMinimum(int min)
 
-=item   void setPrefix(const QString & prefix)
+=item  void setPrefix(const QString & prefix)
 
-=item   void setRange(int min, int max)
+=item  void setRange(int min, int max)
 
-=item   void setSingleStep(int val)
+=item  void setSingleStep(int val)
 
-=item   void setSuffix(const QString & suffix)
+=item  void setSuffix(const QString & suffix)
 
-=item   void setValue(int val)
+=item  void setValue(int val)
 
-=item   int singleStep()
+=item  int singleStep()
 
-=item   QString suffix()
+=item  QString suffix()
 
-=item   int value()
+=item  int value()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

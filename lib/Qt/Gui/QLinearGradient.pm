@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGradient/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGradient/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,23 +24,30 @@ Qt::Gui::QLinearGradient
 
 =over
 
-=item    QLinearGradient()
+=item   QLinearGradient()
 
-=item    QLinearGradient(const QPointF & start, const QPointF & finalStop)
+=item   QLinearGradient(const QPointF & start, const QPointF & finalStop)
 
-=item    QLinearGradient(qreal xStart, qreal yStart, qreal xFinalStop, qreal yFinalStop)
+=item   QLinearGradient(qreal xStart, qreal yStart, qreal xFinalStop, qreal yFinalStop)
 
-=item   QPointF finalStop()
+=item  QPointF finalStop()
 
-=item   void setFinalStop(const QPointF & stop)
+=item  void setFinalStop(const QPointF & stop)
 
-=item   void setFinalStop(qreal x, qreal y)
+=item  void setFinalStop(qreal x, qreal y)
 
-=item   void setStart(const QPointF & start)
+=item  void setStart(const QPointF & start)
 
-=item   void setStart(qreal x, qreal y)
+=item  void setStart(qreal x, qreal y)
 
-=item   QPointF start()
+=item  QPointF start()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,29 +24,36 @@ Qt::Gui::QSound
 
 =over
 
-=item    QSound(const QString & filename, QObject * parent = 0)
+=item   QSound(const QString & filename, QObject * parent)
 
-=item    QSound(const QString & filename, QObject * parent)
+=item   QSound(const QString & filename, QObject * parent = 0)
 
-=item    ~QSound()
+=item   ~QSound()
 
-=item   QString fileName()
+=item  QString fileName()
 
-=item   static bool isAvailable()
+=item  static bool isAvailable()
 
-=item   bool isFinished()
+=item  bool isFinished()
 
-=item   int loops()
+=item  int loops()
 
-=item   int loopsRemaining()
+=item  int loopsRemaining()
 
-=item   void play()
+=item  void play()
 
-=item   static void play(const QString & filename)
+=item  static void play(const QString & filename)
 
-=item   void setLoops(int arg0)
+=item  void setLoops(int arg0)
 
-=item   void stop()
+=item  void stop()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

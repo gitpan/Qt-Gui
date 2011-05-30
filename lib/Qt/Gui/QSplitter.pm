@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QFrame/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QFrame/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,63 +24,70 @@ Qt::Gui::QSplitter
 
 =over
 
-=item    QSplitter(QWidget * parent = 0)
+=item   QSplitter(QWidget * parent)
 
-=item    QSplitter(QWidget * parent)
+=item   QSplitter(QWidget * parent = 0)
 
-=item    QSplitter(Qt::Orientation arg0, QWidget * parent = 0)
+=item   QSplitter(Qt::Orientation arg0, QWidget * parent)
 
-=item    QSplitter(Qt::Orientation arg0, QWidget * parent)
+=item   QSplitter(Qt::Orientation arg0, QWidget * parent = 0)
 
-=item    ~QSplitter()
+=item   ~QSplitter()
 
-=item   void addWidget(QWidget * widget)
+=item  void addWidget(QWidget * widget)
 
-=item   bool childrenCollapsible()
+=item  bool childrenCollapsible()
 
-=item   int count()
+=item  int count()
 
-=item   void getRange(int index, int * arg1, int * arg2)
+=item  void getRange(int index, int * arg1, int * arg2)
 
-=item   QSplitterHandle * handle(int index)
+=item  QSplitterHandle * handle(int index)
 
-=item   int handleWidth()
+=item  int handleWidth()
 
-=item   int indexOf(QWidget * w)
+=item  int indexOf(QWidget * w)
 
-=item   void insertWidget(int index, QWidget * widget)
+=item  void insertWidget(int index, QWidget * widget)
 
-=item   bool isCollapsible(int index)
+=item  bool isCollapsible(int index)
 
-=item   QSize minimumSizeHint()
+=item  QSize minimumSizeHint()
 
-=item   bool opaqueResize()
+=item  bool opaqueResize()
 
-=item   Qt::Orientation orientation()
+=item  Qt::Orientation orientation()
 
-=item   void refresh()
+=item  void refresh()
 
-=item   bool restoreState(const QByteArray & state)
+=item  bool restoreState(const QByteArray & state)
 
-=item   QByteArray saveState()
+=item  QByteArray saveState()
 
-=item   void setChildrenCollapsible(bool arg0)
+=item  void setChildrenCollapsible(bool arg0)
 
-=item   void setCollapsible(int index, bool arg1)
+=item  void setCollapsible(int index, bool arg1)
 
-=item   void setHandleWidth(int arg0)
+=item  void setHandleWidth(int arg0)
 
-=item   void setOpaqueResize(bool opaque = true)
+=item  void setOpaqueResize(bool opaque)
 
-=item   void setOpaqueResize(bool opaque)
+=item  void setOpaqueResize(bool opaque = true)
 
-=item   void setOrientation(Qt::Orientation arg0)
+=item  void setOrientation(Qt::Orientation arg0)
 
-=item   void setStretchFactor(int index, int stretch)
+=item  void setStretchFactor(int index, int stretch)
 
-=item   QSize sizeHint()
+=item  QSize sizeHint()
 
-=item   QWidget * widget(int index)
+=item  QWidget * widget(int index)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

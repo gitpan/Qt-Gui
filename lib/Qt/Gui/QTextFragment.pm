@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,33 +23,40 @@ Qt::Gui::QTextFragment
 
 =over
 
-=item    QTextFragment()
+=item   QTextFragment()
 
-=item    QTextFragment(const QTextFragment & o)
+=item   QTextFragment(const QTextFragment & o)
 
-=item    QTextFragment(const QTextDocumentPrivate * priv, int f, int fe)
+=item   QTextFragment(const QTextDocumentPrivate * priv, int f, int fe)
 
-=item   QTextCharFormat charFormat()
+=item  QTextCharFormat charFormat()
 
-=item   int charFormatIndex()
+=item  int charFormatIndex()
 
-=item   bool contains(int position)
+=item  bool contains(int position)
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   int length()
+=item  int length()
 
-=item   bool operator!=(const QTextFragment & o)
+=item  bool operator!=(const QTextFragment & o)
 
-=item   bool operator<(const QTextFragment & o)
+=item  bool operator<(const QTextFragment & o)
 
-=item   QTextFragment & operator=(const QTextFragment & o)
+=item  QTextFragment & operator=(const QTextFragment & o)
 
-=item   bool operator==(const QTextFragment & o)
+=item  bool operator==(const QTextFragment & o)
 
-=item   int position()
+=item  int position()
 
-=item   QString text()
+=item  QString text()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

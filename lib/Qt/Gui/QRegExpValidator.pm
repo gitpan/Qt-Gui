@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QValidator/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QValidator/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,26 @@ Qt::Gui::QRegExpValidator
 
 =over
 
-=item    QRegExpValidator(QObject * parent)
+=item   QRegExpValidator(QObject * parent)
 
-=item    QRegExpValidator(const QRegExp & rx, QObject * parent)
+=item   QRegExpValidator(QObject * parent = 0)
 
-=item    ~QRegExpValidator()
+=item   QRegExpValidator(const QRegExp & rx, QObject * parent)
 
-=item   const QRegExp & regExp()
+=item   ~QRegExpValidator()
 
-=item   void setRegExp(const QRegExp & rx)
+=item  const QRegExp & regExp()
 
-=item   QValidator::State validate(QString & input, int & pos)
+=item  void setRegExp(const QRegExp & rx)
+
+=item  QValidator::State validate(QString & input, int & pos)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

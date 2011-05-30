@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QGraphicsSceneEvent/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QGraphicsSceneEvent/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,31 +24,46 @@ Qt::Gui::QGraphicsSceneWheelEvent
 
 =over
 
-=item    QGraphicsSceneWheelEvent(QGraphicsSceneWheelEvent::Type type = QGraphicsSceneWheelEvent::None)
+=item   QGraphicsSceneWheelEvent(QGraphicsSceneWheelEvent::Type type)
 
-=item    QGraphicsSceneWheelEvent(QGraphicsSceneWheelEvent::Type type)
+=item   QGraphicsSceneWheelEvent(QGraphicsSceneWheelEvent::Type type = QGraphicsSceneWheelEvent::None)
 
-=item    ~QGraphicsSceneWheelEvent()
+=item   ~QGraphicsSceneWheelEvent()
 
-=item   int delta()
+=item  QFlags<Qt::MouseButton> buttons()
 
-=item   Qt::Orientation orientation()
+=item  int delta()
 
-=item   QPointF pos()
+=item  QFlags<Qt::KeyboardModifier> modifiers()
 
-=item   QPointF scenePos()
+=item  Qt::Orientation orientation()
 
-=item   QPoint screenPos()
+=item  QPointF pos()
 
-=item   void setDelta(int delta)
+=item  QPointF scenePos()
 
-=item   void setOrientation(Qt::Orientation orientation)
+=item  QPoint screenPos()
 
-=item   void setPos(const QPointF & pos)
+=item  void setButtons(QFlags<Qt::MouseButton> buttons)
 
-=item   void setScenePos(const QPointF & pos)
+=item  void setDelta(int delta)
 
-=item   void setScreenPos(const QPoint & pos)
+=item  void setModifiers(QFlags<Qt::KeyboardModifier> modifiers)
+
+=item  void setOrientation(Qt::Orientation orientation)
+
+=item  void setPos(const QPointF & pos)
+
+=item  void setScenePos(const QPointF & pos)
+
+=item  void setScreenPos(const QPoint & pos)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

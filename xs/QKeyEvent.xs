@@ -18,7 +18,111 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-
+##  QKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, const QString & text, bool autorep, ushort count)
+##  QKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, const QString & text, bool autorep, ushort count = 1)
+##  QKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, const QString & text, bool autorep = false, ushort count = 1)
+##  QKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, const QString & text = QString(), bool autorep = false, ushort count = 1)
+  void
+QKeyEvent::new(...)
+PREINIT:
+QKeyEvent *ret;
+QKeyEvent::Type arg00;
+int arg01;
+QFlags<Qt::KeyboardModifier> arg02;
+QString * arg03;
+bool arg04;
+ushort arg05;
+QKeyEvent::Type arg10;
+int arg11;
+QFlags<Qt::KeyboardModifier> arg12;
+QString * arg13;
+bool arg14;
+ushort arg15 = 1;
+QKeyEvent::Type arg20;
+int arg21;
+QFlags<Qt::KeyboardModifier> arg22;
+QString * arg23;
+bool arg24 = false;
+ushort arg25 = 1;
+QKeyEvent::Type arg30;
+int arg31;
+QFlags<Qt::KeyboardModifier> arg32;
+const QString & arg33_ = QString();
+QString * arg33 = const_cast<QString *>(&arg33_);
+bool arg34 = false;
+ushort arg35 = 1;
+PPCODE:
+    switch(items) {
+      case 4:
+      {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg30 = (QKeyEvent::Type)SvIV(ST(1));
+      arg31 = (int)SvIV(ST(2));
+      arg32 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+    ret = new QKeyEvent(arg30, arg31, arg32, *arg33, arg34, arg35);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QKeyEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 5:
+      {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Core::QString")) {
+      arg20 = (QKeyEvent::Type)SvIV(ST(1));
+      arg21 = (int)SvIV(ST(2));
+      arg22 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg23 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(4))));
+    ret = new QKeyEvent(arg20, arg21, arg22, *arg23, arg24, arg25);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QKeyEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 6:
+      {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Core::QString") && 1) {
+      arg10 = (QKeyEvent::Type)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
+      arg12 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg13 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(4))));
+      arg14 = (bool)SvTRUE(ST(5));
+    ret = new QKeyEvent(arg10, arg11, arg12, *arg13, arg14, arg15);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QKeyEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 7:
+      {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Core::QString") && 1 && SvUOK(ST(6))) {
+      arg00 = (QKeyEvent::Type)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg03 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(4))));
+      arg04 = (bool)SvTRUE(ST(5));
+      arg05 = (ushort)SvUV(ST(6));
+    ret = new QKeyEvent(arg00, arg01, arg02, *arg03, arg04, arg05);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QKeyEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
 
 ##  ~QKeyEvent()
 void
@@ -32,40 +136,181 @@ void
 QKeyEvent::count(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->count();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
+
+## static QKeyEvent * createExtendedKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString & text, bool autorep, ushort count)
+## static QKeyEvent * createExtendedKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString & text, bool autorep, ushort count = 1)
+## static QKeyEvent * createExtendedKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString & text, bool autorep = false, ushort count = 1)
+## static QKeyEvent * createExtendedKeyEvent(QKeyEvent::Type type, int key, QFlags<Qt::KeyboardModifier> modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString & text = QString(), bool autorep = false, ushort count = 1)
+void
+QKeyEvent::createExtendedKeyEvent(...)
+PREINIT:
+QKeyEvent::Type arg00;
+int arg01;
+QFlags<Qt::KeyboardModifier> arg02;
+quint32 arg03;
+quint32 arg04;
+quint32 arg05;
+QString * arg06;
+bool arg07;
+ushort arg08;
+QKeyEvent::Type arg10;
+int arg11;
+QFlags<Qt::KeyboardModifier> arg12;
+quint32 arg13;
+quint32 arg14;
+quint32 arg15;
+QString * arg16;
+bool arg17;
+ushort arg18 = 1;
+QKeyEvent::Type arg20;
+int arg21;
+QFlags<Qt::KeyboardModifier> arg22;
+quint32 arg23;
+quint32 arg24;
+quint32 arg25;
+QString * arg26;
+bool arg27 = false;
+ushort arg28 = 1;
+QKeyEvent::Type arg30;
+int arg31;
+QFlags<Qt::KeyboardModifier> arg32;
+quint32 arg33;
+quint32 arg34;
+quint32 arg35;
+const QString & arg36_ = QString();
+QString * arg36 = const_cast<QString *>(&arg36_);
+bool arg37 = false;
+ushort arg38 = 1;
+PPCODE:
+    switch(items) {
+      case 7:
+      {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5)) && SvUOK(ST(6))) {
+      arg30 = (QKeyEvent::Type)SvIV(ST(1));
+      arg31 = (int)SvIV(ST(2));
+      arg32 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg33 = (quint32)SvUV(ST(4));
+      arg34 = (quint32)SvUV(ST(5));
+      arg35 = (quint32)SvUV(ST(6));
+    QKeyEvent * ret = THIS->createExtendedKeyEvent(arg30, arg31, arg32, arg33, arg34, arg35, *arg36, arg37, arg38);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QKeyEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 8:
+      {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5)) && SvUOK(ST(6)) && sv_isa(ST(7), "Qt::Core::QString")) {
+      arg20 = (QKeyEvent::Type)SvIV(ST(1));
+      arg21 = (int)SvIV(ST(2));
+      arg22 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg23 = (quint32)SvUV(ST(4));
+      arg24 = (quint32)SvUV(ST(5));
+      arg25 = (quint32)SvUV(ST(6));
+      arg26 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(7))));
+    QKeyEvent * ret = THIS->createExtendedKeyEvent(arg20, arg21, arg22, arg23, arg24, arg25, *arg26, arg27, arg28);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QKeyEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 9:
+      {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5)) && SvUOK(ST(6)) && sv_isa(ST(7), "Qt::Core::QString") && 1) {
+      arg10 = (QKeyEvent::Type)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
+      arg12 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg13 = (quint32)SvUV(ST(4));
+      arg14 = (quint32)SvUV(ST(5));
+      arg15 = (quint32)SvUV(ST(6));
+      arg16 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(7))));
+      arg17 = (bool)SvTRUE(ST(8));
+    QKeyEvent * ret = THIS->createExtendedKeyEvent(arg10, arg11, arg12, arg13, arg14, arg15, *arg16, arg17, arg18);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QKeyEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 10:
+      {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5)) && SvUOK(ST(6)) && sv_isa(ST(7), "Qt::Core::QString") && 1 && SvUOK(ST(9))) {
+      arg00 = (QKeyEvent::Type)SvIV(ST(1));
+      arg01 = (int)SvIV(ST(2));
+      arg02 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg03 = (quint32)SvUV(ST(4));
+      arg04 = (quint32)SvUV(ST(5));
+      arg05 = (quint32)SvUV(ST(6));
+      arg06 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(7))));
+      arg07 = (bool)SvTRUE(ST(8));
+      arg08 = (ushort)SvUV(ST(9));
+    QKeyEvent * ret = THIS->createExtendedKeyEvent(arg00, arg01, arg02, arg03, arg04, arg05, *arg06, arg07, arg08);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QKeyEvent", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
 
 ## bool hasExtendedInfo()
 void
 QKeyEvent::hasExtendedInfo(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->hasExtendedInfo();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool isAutoRepeat()
 void
 QKeyEvent::isAutoRepeat(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->isAutoRepeat();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## int key()
 void
 QKeyEvent::key(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->key();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## bool matches(QKeySequence::StandardKey key)
 void
@@ -73,249 +318,75 @@ QKeyEvent::matches(...)
 PREINIT:
 QKeySequence::StandardKey arg00;
 PPCODE:
-    switch(SvIV(ST(1))) {
-    case 0:
-      arg00 = QKeySequence::UnknownKey;
-      break;
-    case 1:
-      arg00 = QKeySequence::HelpContents;
-      break;
-    case 2:
-      arg00 = QKeySequence::WhatsThis;
-      break;
-    case 3:
-      arg00 = QKeySequence::Open;
-      break;
-    case 4:
-      arg00 = QKeySequence::Close;
-      break;
-    case 5:
-      arg00 = QKeySequence::Save;
-      break;
-    case 6:
-      arg00 = QKeySequence::New;
-      break;
-    case 7:
-      arg00 = QKeySequence::Delete;
-      break;
-    case 8:
-      arg00 = QKeySequence::Cut;
-      break;
-    case 9:
-      arg00 = QKeySequence::Copy;
-      break;
-    case 10:
-      arg00 = QKeySequence::Paste;
-      break;
-    case 11:
-      arg00 = QKeySequence::Undo;
-      break;
-    case 12:
-      arg00 = QKeySequence::Redo;
-      break;
-    case 13:
-      arg00 = QKeySequence::Back;
-      break;
-    case 14:
-      arg00 = QKeySequence::Forward;
-      break;
-    case 15:
-      arg00 = QKeySequence::Refresh;
-      break;
-    case 16:
-      arg00 = QKeySequence::ZoomIn;
-      break;
-    case 17:
-      arg00 = QKeySequence::ZoomOut;
-      break;
-    case 18:
-      arg00 = QKeySequence::Print;
-      break;
-    case 19:
-      arg00 = QKeySequence::AddTab;
-      break;
-    case 20:
-      arg00 = QKeySequence::NextChild;
-      break;
-    case 21:
-      arg00 = QKeySequence::PreviousChild;
-      break;
-    case 22:
-      arg00 = QKeySequence::Find;
-      break;
-    case 23:
-      arg00 = QKeySequence::FindNext;
-      break;
-    case 24:
-      arg00 = QKeySequence::FindPrevious;
-      break;
-    case 25:
-      arg00 = QKeySequence::Replace;
-      break;
-    case 26:
-      arg00 = QKeySequence::SelectAll;
-      break;
-    case 27:
-      arg00 = QKeySequence::Bold;
-      break;
-    case 28:
-      arg00 = QKeySequence::Italic;
-      break;
-    case 29:
-      arg00 = QKeySequence::Underline;
-      break;
-    case 30:
-      arg00 = QKeySequence::MoveToNextChar;
-      break;
-    case 31:
-      arg00 = QKeySequence::MoveToPreviousChar;
-      break;
-    case 32:
-      arg00 = QKeySequence::MoveToNextWord;
-      break;
-    case 33:
-      arg00 = QKeySequence::MoveToPreviousWord;
-      break;
-    case 34:
-      arg00 = QKeySequence::MoveToNextLine;
-      break;
-    case 35:
-      arg00 = QKeySequence::MoveToPreviousLine;
-      break;
-    case 36:
-      arg00 = QKeySequence::MoveToNextPage;
-      break;
-    case 37:
-      arg00 = QKeySequence::MoveToPreviousPage;
-      break;
-    case 38:
-      arg00 = QKeySequence::MoveToStartOfLine;
-      break;
-    case 39:
-      arg00 = QKeySequence::MoveToEndOfLine;
-      break;
-    case 40:
-      arg00 = QKeySequence::MoveToStartOfBlock;
-      break;
-    case 41:
-      arg00 = QKeySequence::MoveToEndOfBlock;
-      break;
-    case 42:
-      arg00 = QKeySequence::MoveToStartOfDocument;
-      break;
-    case 43:
-      arg00 = QKeySequence::MoveToEndOfDocument;
-      break;
-    case 44:
-      arg00 = QKeySequence::SelectNextChar;
-      break;
-    case 45:
-      arg00 = QKeySequence::SelectPreviousChar;
-      break;
-    case 46:
-      arg00 = QKeySequence::SelectNextWord;
-      break;
-    case 47:
-      arg00 = QKeySequence::SelectPreviousWord;
-      break;
-    case 48:
-      arg00 = QKeySequence::SelectNextLine;
-      break;
-    case 49:
-      arg00 = QKeySequence::SelectPreviousLine;
-      break;
-    case 50:
-      arg00 = QKeySequence::SelectNextPage;
-      break;
-    case 51:
-      arg00 = QKeySequence::SelectPreviousPage;
-      break;
-    case 52:
-      arg00 = QKeySequence::SelectStartOfLine;
-      break;
-    case 53:
-      arg00 = QKeySequence::SelectEndOfLine;
-      break;
-    case 54:
-      arg00 = QKeySequence::SelectStartOfBlock;
-      break;
-    case 55:
-      arg00 = QKeySequence::SelectEndOfBlock;
-      break;
-    case 56:
-      arg00 = QKeySequence::SelectStartOfDocument;
-      break;
-    case 57:
-      arg00 = QKeySequence::SelectEndOfDocument;
-      break;
-    case 58:
-      arg00 = QKeySequence::DeleteStartOfWord;
-      break;
-    case 59:
-      arg00 = QKeySequence::DeleteEndOfWord;
-      break;
-    case 60:
-      arg00 = QKeySequence::DeleteEndOfLine;
-      break;
-    case 61:
-      arg00 = QKeySequence::InsertParagraphSeparator;
-      break;
-    case 62:
-      arg00 = QKeySequence::InsertLineSeparator;
-      break;
-    case 63:
-      arg00 = QKeySequence::SaveAs;
-      break;
-    case 64:
-      arg00 = QKeySequence::Preferences;
-      break;
-    case 65:
-      arg00 = QKeySequence::Quit;
-      break;
-    default:
-      Perl_croak(aTHX_ "wrong enum value for type QKeySequence::StandardKey passed in");
-    }
+    if (SvIOK(ST(1))) {
+      arg00 = (QKeySequence::StandardKey)SvIV(ST(1));
     bool ret = THIS->matches(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+
+## QFlags<Qt::KeyboardModifier> modifiers()
+void
+QKeyEvent::modifiers(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QFlags<Qt::KeyboardModifier> ret = THIS->modifiers();
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
 
 ## quint32 nativeModifiers()
 void
 QKeyEvent::nativeModifiers(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     quint32 ret = THIS->nativeModifiers();
     ST(0) = sv_newmortal();
     sv_setuv(ST(0), (UV)ret);
     XSRETURN(1);
+    }
 
 ## quint32 nativeScanCode()
 void
 QKeyEvent::nativeScanCode(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     quint32 ret = THIS->nativeScanCode();
     ST(0) = sv_newmortal();
     sv_setuv(ST(0), (UV)ret);
     XSRETURN(1);
+    }
 
 ## quint32 nativeVirtualKey()
 void
 QKeyEvent::nativeVirtualKey(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     quint32 ret = THIS->nativeVirtualKey();
     ST(0) = sv_newmortal();
     sv_setuv(ST(0), (UV)ret);
     XSRETURN(1);
+    }
 
 ## QString text()
 void
 QKeyEvent::text(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->text();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }

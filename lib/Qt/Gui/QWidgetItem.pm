@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QLayoutItem/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QLayoutItem/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,25 +24,34 @@ Qt::Gui::QWidgetItem
 
 =over
 
-=item    QWidgetItem(QWidget * w)
+=item   QWidgetItem(QWidget * w)
 
-=item   QRect geometry()
+=item  QFlags<Qt::Orientation> expandingDirections()
 
-=item   bool hasHeightForWidth()
+=item  QRect geometry()
 
-=item   int heightForWidth(int arg0)
+=item  bool hasHeightForWidth()
 
-=item   bool isEmpty()
+=item  int heightForWidth(int arg0)
 
-=item   QSize maximumSize()
+=item  bool isEmpty()
 
-=item   QSize minimumSize()
+=item  QSize maximumSize()
 
-=item   void setGeometry(const QRect & arg0)
+=item  QSize minimumSize()
 
-=item   QSize sizeHint()
+=item  void setGeometry(const QRect & arg0)
 
-=item   QWidget * widget()
+=item  QSize sizeHint()
+
+=item  QWidget * widget()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

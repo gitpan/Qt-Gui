@@ -7,17 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractPageSetupDialog/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Gui::QAbstractPageSetupDialog/;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub None() { 0 }
-sub DontUseSheet() { 1 }
-sub OwnsPrinter() { 2 }
 
 
 1;
@@ -30,27 +24,48 @@ Qt::Gui::QPageSetupDialog
 
 =over
 
-=item    QPageSetupDialog(QWidget * parent = 0)
+=item   QPageSetupDialog(QWidget * parent)
 
-=item    QPageSetupDialog(QWidget * parent)
+=item   QPageSetupDialog(QWidget * parent = 0)
 
-=item    QPageSetupDialog(QPrinter * printer, QWidget * parent = 0)
+=item   QPageSetupDialog(QPrinter * printer, QWidget * parent)
 
-=item    QPageSetupDialog(QPrinter * printer, QWidget * parent)
+=item   QPageSetupDialog(QPrinter * printer, QWidget * parent = 0)
 
-=item   void addEnabledOption(QPageSetupDialog::PageSetupDialogOption option)
+=item  void addEnabledOption(QPageSetupDialog::PageSetupDialogOption option)
 
-=item   int exec()
+=item  QFlags<QPageSetupDialog::PageSetupDialogOption> enabledOptions()
 
-=item   bool isOptionEnabled(QPageSetupDialog::PageSetupDialogOption option)
+=item  int exec()
 
-=item   void open(QObject * receiver, const char * member)
+=item  bool isOptionEnabled(QPageSetupDialog::PageSetupDialogOption option)
 
-=item   void setOption(QPageSetupDialog::PageSetupDialogOption option, bool on = true)
+=item  void open(QObject * receiver, const char * member)
 
-=item   void setOption(QPageSetupDialog::PageSetupDialogOption option, bool on)
+=item  QFlags<QPageSetupDialog::PageSetupDialogOption> options()
 
-=item   bool testOption(QPageSetupDialog::PageSetupDialogOption option)
+=item  void setEnabledOptions(QFlags<QPageSetupDialog::PageSetupDialogOption> options)
+
+=item  void setOption(QPageSetupDialog::PageSetupDialogOption option, bool on)
+
+=item  void setOption(QPageSetupDialog::PageSetupDialogOption option, bool on = true)
+
+=item  void setOptions(QFlags<QPageSetupDialog::PageSetupDialogOption> options)
+
+=item  bool testOption(QPageSetupDialog::PageSetupDialogOption option)
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item None
+
+=item DontUseSheet
+
+=item OwnsPrinter
 
 
 =back
