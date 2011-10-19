@@ -432,32 +432,6 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool isDragEnabled()
-void
-QStandardItem::isDragEnabled(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    bool ret = THIS->isDragEnabled();
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-    }
-
-## bool isDropEnabled()
-void
-QStandardItem::isDropEnabled(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    bool ret = THIS->isDropEnabled();
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-    }
-
 ## bool isEditable()
 void
 QStandardItem::isEditable(...)
@@ -805,30 +779,6 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-    }
-
-## void setDragEnabled(bool dragEnabled)
-void
-QStandardItem::setDragEnabled(...)
-PREINIT:
-bool arg00;
-PPCODE:
-    if (1) {
-      arg00 = (bool)SvTRUE(ST(1));
-    (void)THIS->setDragEnabled(arg00);
-    XSRETURN(0);
-    }
-
-## void setDropEnabled(bool dropEnabled)
-void
-QStandardItem::setDropEnabled(...)
-PREINIT:
-bool arg00;
-PPCODE:
-    if (1) {
-      arg00 = (bool)SvTRUE(ST(1));
-    (void)THIS->setDropEnabled(arg00);
-    XSRETURN(0);
     }
 
 ## void setEditable(bool editable)

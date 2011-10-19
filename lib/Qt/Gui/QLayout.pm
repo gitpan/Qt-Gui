@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Core::QObject Qt::Gui::QLayoutItem/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Gui::QLayoutItem/;
+#our @ISA = qw/Qt::Gui::QLayoutItem/;
 
 
 # FIXME: operator overload

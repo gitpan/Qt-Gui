@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QDateTimeEdit/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Gui::QDateTimeEdit/;
+#our @ISA = qw/Qt::Gui::QDateTimeEdit/;
 
 
 # FIXME: operator overload

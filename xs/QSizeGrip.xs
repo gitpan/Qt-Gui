@@ -34,7 +34,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSizeGrip(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSizeGrip", (void *)ret);
+    XSRETURN(1);
     }
 
 ##  ~QSizeGrip()

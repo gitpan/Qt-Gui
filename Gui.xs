@@ -27,7 +27,6 @@
 #include "QtGui/qcalendarwidget.h"
 #include "QtGui/qcdestyle.h"
 #include "QtGui/qcheckbox.h"
-#include "QtGui/qclipboard.h"
 #include "QtGui/qcolor.h"
 #include "QtGui/qcolordialog.h"
 #include "QtGui/qcolormap.h"
@@ -46,7 +45,6 @@
 #include "QtGui/qdialogbuttonbox.h"
 #include "QtGui/qdirmodel.h"
 #include "QtGui/qdockwidget.h"
-#include "QtGui/qdrag.h"
 #include "QtGui/qdrawutil.h"
 #include "QtGui/qerrormessage.h"
 #include "QtGui/qevent.h"
@@ -206,7 +204,6 @@
 #include "QtGui/qwidgetaction.h"
 #include "QtGui/qwizard.h"
 #include "QtGui/qworkspace.h"
-#include "QtGui/qwsembedwidget.h"
 
 #include "EXTERN.h"
 #include "perl.h"
@@ -215,8 +212,8 @@
 #include "ppport.h"
 #undef do_open
 #undef do_close
+#undef RETURN
 
-typedef char * const * T_ARRAY_XPM;
 typedef QStyleOptionGraphicsItem * T_ARRAY_OPTIONS;
 typedef QGraphicsItem ** T_ARRAY_ITEMS;
 typedef QStyleOptionGraphicsItem * T_ARRAY_OPTIONS;
@@ -226,7 +223,6 @@ typedef bool (*T_FPOINTER_QINTERNALCALLBACK_QNAMESPACE)(void **);
 typedef void (*T_FPOINTER_ROOTOBJECTHANDLER_QACCESSIBLE)(QObject*);
 typedef void (*T_FPOINTER_UPDATEHANDLER_QACCESSIBLE)(QObject*,int who,QAccessible::Event reason);
 typedef QAccessibleInterface * (*T_FPOINTER_INTERFACEFACTORY_QACCESSIBLE)(const QString &key,QObject*);
-typedef char * const * T_ARRAY_XPM;
 
 MODULE = Qt		PACKAGE = Qt
 PROTOTYPES: DISABLE
@@ -247,9 +243,11 @@ INCLUDE:		xs/QAccessible.xs
 INCLUDE:		xs/QAccessible2Interface.xs
 INCLUDE:		xs/QAccessibleActionInterface.xs
 INCLUDE:		xs/QAccessibleApplication.xs
+INCLUDE:		xs/QAccessibleBridgeFactoryInterface.xs
 INCLUDE:		xs/QAccessibleBridgePlugin.xs
 INCLUDE:		xs/QAccessibleEditableTextInterface.xs
 INCLUDE:		xs/QAccessibleEvent.xs
+INCLUDE:		xs/QAccessibleFactoryInterface.xs
 INCLUDE:		xs/QAccessibleImageInterface.xs
 INCLUDE:		xs/QAccessibleInterface.xs
 INCLUDE:		xs/QAccessibleInterfaceEx.xs
@@ -273,8 +271,6 @@ INCLUDE:		xs/QButtonGroup.xs
 INCLUDE:		xs/QCalendarWidget.xs
 INCLUDE:		xs/QCDEStyle.xs
 INCLUDE:		xs/QCheckBox.xs
-INCLUDE:		xs/QClipboard.xs
-INCLUDE:		xs/QClipboardEvent.xs
 INCLUDE:		xs/QCloseEvent.xs
 INCLUDE:		xs/QColor.xs
 INCLUDE:		xs/QColorDialog.xs
@@ -299,12 +295,6 @@ INCLUDE:		xs/QDirModel.xs
 INCLUDE:		xs/QDockWidget.xs
 INCLUDE:		xs/QDoubleSpinBox.xs
 INCLUDE:		xs/QDoubleValidator.xs
-INCLUDE:		xs/QDrag.xs
-INCLUDE:		xs/QDragEnterEvent.xs
-INCLUDE:		xs/QDragLeaveEvent.xs
-INCLUDE:		xs/QDragMoveEvent.xs
-INCLUDE:		xs/QDragResponseEvent.xs
-INCLUDE:		xs/QDropEvent.xs
 INCLUDE:		xs/QErrorMessage.xs
 INCLUDE:		xs/QFileDialog.xs
 INCLUDE:		xs/QFileIconProvider.xs
@@ -374,17 +364,21 @@ INCLUDE:		xs/QHoverEvent.xs
 INCLUDE:		xs/QIcon.xs
 INCLUDE:		xs/QIconDragEvent.xs
 INCLUDE:		xs/QIconEngine.xs
+INCLUDE:		xs/QIconEngineFactoryInterface.xs
+INCLUDE:		xs/QIconEngineFactoryInterfaceV2.xs
 INCLUDE:		xs/QIconEnginePlugin.xs
 INCLUDE:		xs/QIconEnginePluginV2.xs
 INCLUDE:		xs/QIconEngineV2.xs
 INCLUDE:		xs/QImage.xs
 INCLUDE:		xs/QImageIOHandler.xs
+INCLUDE:		xs/QImageIOHandlerFactoryInterface.xs
 INCLUDE:		xs/QImageIOPlugin.xs
 INCLUDE:		xs/QImageReader.xs
 INCLUDE:		xs/QImageTextKeyLang.xs
 INCLUDE:		xs/QImageWriter.xs
 INCLUDE:		xs/QInputContext.xs
 INCLUDE:		xs/QInputContextFactory.xs
+INCLUDE:		xs/QInputContextFactoryInterface.xs
 INCLUDE:		xs/QInputContextPlugin.xs
 INCLUDE:		xs/QInputDialog.xs
 INCLUDE:		xs/QInputEvent.xs
@@ -434,10 +428,12 @@ INCLUDE:		xs/QPalette.xs
 INCLUDE:		xs/QPanGesture.xs
 INCLUDE:		xs/QPen.xs
 INCLUDE:		xs/QPicture.xs
+INCLUDE:		xs/QPictureFormatInterface.xs
 INCLUDE:		xs/QPictureFormatPlugin.xs
 INCLUDE:		xs/QPictureIO.xs
 INCLUDE:		xs/QPinchGesture.xs
 INCLUDE:		xs/QPixmap.xs
+INCLUDE:		xs/QPixmapCache.xs
 INCLUDE:		xs/QPixmapCache__Key.xs
 INCLUDE:		xs/QPlainTextDocumentLayout.xs
 INCLUDE:		xs/QPlainTextEdit.xs
@@ -488,6 +484,7 @@ INCLUDE:		xs/QStringListModel.xs
 INCLUDE:		xs/QStyle.xs
 INCLUDE:		xs/QStyledItemDelegate.xs
 INCLUDE:		xs/QStyleFactory.xs
+INCLUDE:		xs/QStyleFactoryInterface.xs
 INCLUDE:		xs/QStyleHintReturn.xs
 INCLUDE:		xs/QStyleHintReturnMask.xs
 INCLUDE:		xs/QStyleHintReturnVariant.xs
@@ -546,6 +543,7 @@ INCLUDE:		xs/QTapGesture.xs
 INCLUDE:		xs/QTextBlock.xs
 INCLUDE:		xs/QTextBlock__iterator.xs
 INCLUDE:		xs/QTextBlockFormat.xs
+INCLUDE:		xs/QTextBlockGroup.xs
 INCLUDE:		xs/QTextBlockUserData.xs
 INCLUDE:		xs/QTextBrowser.xs
 INCLUDE:		xs/QTextCharFormat.xs
@@ -571,6 +569,7 @@ INCLUDE:		xs/QTextListFormat.xs
 INCLUDE:		xs/QTextObject.xs
 INCLUDE:		xs/QTextObjectInterface.xs
 INCLUDE:		xs/QTextOption.xs
+INCLUDE:		xs/QTextOption__Tab.xs
 INCLUDE:		xs/QTextTable.xs
 INCLUDE:		xs/QTextTableCell.xs
 INCLUDE:		xs/QTextTableCellFormat.xs
@@ -609,4 +608,3 @@ INCLUDE:		xs/QWindowStateChangeEvent.xs
 INCLUDE:		xs/QWizard.xs
 INCLUDE:		xs/QWizardPage.xs
 INCLUDE:		xs/QWorkspace.xs
-INCLUDE:		xs/QWSEmbedWidget.xs

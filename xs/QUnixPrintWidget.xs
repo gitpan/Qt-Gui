@@ -41,7 +41,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QPrinter");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QUnixPrintWidget(arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QUnixPrintWidget", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -66,7 +69,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QUnixPrintWidget(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QUnixPrintWidget", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

@@ -21,7 +21,7 @@ PROTOTYPES: DISABLE
 ##  QPixmap()
 ##  QPixmap(QPixmapData * data)
 ##  QPixmap(const QSize & arg0)
-##  QPixmap(T_ARRAY_XPM const char * const * T_ARRAY_XPM)
+##  QPixmap(const char ** xpm)
 ##  QPixmap(const QPixmap & arg0)
 ##  QPixmap(int w, int h)
 ##  QPixmap(const QString & fileName, const char * format, QFlags<Qt::ImageConversionFlag> flags)
@@ -33,7 +33,7 @@ PREINIT:
 QPixmap *ret;
 QPixmapData * arg10;
 QSize * arg20;
-T_ARRAY_XPM arg30;
+const char ** arg30;
 QPixmap * arg40;
 int arg50;
 int arg51;
@@ -52,7 +52,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPixmap();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -67,23 +70,38 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type ");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPixmap(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QSize")) {
       arg20 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPixmap(*arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
+    XSRETURN(1);
     }
-        else if (SvIOK(ST(1))) {
-      arg30 = reinterpret_cast<T_ARRAY_XPM>(SvIV(ST(1)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+        else if (SvPOK(ST(1))) {
+      arg30 = (const char **)SvPV_nolen(ST(1));
+    ret = new QPixmap(arg30);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Gui::QPixmap")) {
       arg40 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPixmap(*arg40);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString")) {
       arg80 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPixmap(*arg80, arg81, arg82);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -94,12 +112,18 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg50 = (int)SvIV(ST(1));
       arg51 = (int)SvIV(ST(2));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPixmap(arg50, arg51);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString") && SvPOK(ST(2))) {
       arg70 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg71 = (const char *)SvPV_nolen(ST(2));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPixmap(*arg70, arg71, arg72);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -111,7 +135,10 @@ PPCODE:
       arg60 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg61 = (const char *)SvPV_nolen(ST(2));
       arg62 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(3)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPixmap(*arg60, arg61, arg62);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -582,7 +609,7 @@ PPCODE:
     switch(items) {
       case 2:
       {
-        if (SvUOK(ST(1))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg10 = (unsigned long)SvUV(ST(1));
     QPixmap ret = THIS->fromX11Pixmap(arg10, arg11);
     ST(0) = sv_newmortal();
@@ -595,7 +622,7 @@ PPCODE:
       }
       case 3:
       {
-        if (SvUOK(ST(1)) && SvIOK(ST(2))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1))) && SvIOK(ST(2))) {
       arg00 = (unsigned long)SvUV(ST(1));
       arg01 = (QPixmap::ShareMode)SvIV(ST(2));
     QPixmap ret = THIS->fromX11Pixmap(arg00, arg01);
@@ -817,7 +844,7 @@ PPCODE:
     switch(items) {
       case 2:
       {
-        if (SvUOK(ST(1))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg40 = (unsigned long)SvUV(ST(1));
     QPixmap ret = THIS->grabWindow(arg40, arg41, arg42, arg43, arg44);
     ST(0) = sv_newmortal();
@@ -830,7 +857,7 @@ PPCODE:
       }
       case 3:
       {
-        if (SvUOK(ST(1)) && SvIOK(ST(2))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1))) && SvIOK(ST(2))) {
       arg30 = (unsigned long)SvUV(ST(1));
       arg31 = (int)SvIV(ST(2));
     QPixmap ret = THIS->grabWindow(arg30, arg31, arg32, arg33, arg34);
@@ -844,7 +871,7 @@ PPCODE:
       }
       case 4:
       {
-        if (SvUOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1))) && SvIOK(ST(2)) && SvIOK(ST(3))) {
       arg20 = (unsigned long)SvUV(ST(1));
       arg21 = (int)SvIV(ST(2));
       arg22 = (int)SvIV(ST(3));
@@ -859,7 +886,7 @@ PPCODE:
       }
       case 5:
       {
-        if (SvUOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1))) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4))) {
       arg10 = (unsigned long)SvUV(ST(1));
       arg11 = (int)SvIV(ST(2));
       arg12 = (int)SvIV(ST(3));
@@ -875,7 +902,7 @@ PPCODE:
       }
       case 6:
       {
-        if (SvUOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4)) && SvIOK(ST(5))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1))) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4)) && SvIOK(ST(5))) {
       arg00 = (unsigned long)SvUV(ST(1));
       arg01 = (int)SvIV(ST(2));
       arg02 = (int)SvIV(ST(3));
@@ -1105,7 +1132,7 @@ PPCODE:
     ST(0) = boolSV(ret);
     XSRETURN(1);
     }
-        else if (SvIOK(ST(1)) && SvUOK(ST(2))) {
+        else if (SvIOK(ST(1)) && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       {
         uchar tmp = static_cast<uchar>(SvIV(ST(1)));
         arg50 = &tmp;
@@ -1131,7 +1158,7 @@ PPCODE:
     ST(0) = boolSV(ret);
     XSRETURN(1);
     }
-        else if (SvIOK(ST(1)) && SvUOK(ST(2)) && SvPOK(ST(3))) {
+        else if (SvIOK(ST(1)) && (SvIOK(ST(2)) || SvUOK(ST(2))) && SvPOK(ST(3))) {
       {
         uchar tmp = static_cast<uchar>(SvIV(ST(1)));
         arg40 = &tmp;
@@ -1149,7 +1176,7 @@ PPCODE:
       }
       case 5:
       {
-        if (SvIOK(ST(1)) && SvUOK(ST(2)) && SvPOK(ST(3)) && SvIOK(ST(4))) {
+        if (SvIOK(ST(1)) && (SvIOK(ST(2)) || SvUOK(ST(2))) && SvPOK(ST(3)) && SvIOK(ST(4))) {
       {
         uchar tmp = static_cast<uchar>(SvIV(ST(1)));
         arg30 = &tmp;

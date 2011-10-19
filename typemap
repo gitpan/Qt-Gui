@@ -30,383 +30,374 @@ QTabBar *                               		T_PTROBJ_0026
 QFormLayout *                           		T_PTROBJ_0027
 QDialogButtonBox *                      		T_PTROBJ_0028
 QPrintPreviewWidget *                   		T_PTROBJ_0029
-QDragMoveEvent *                        		T_PTROBJ_0030
-QTextFrameLayoutData *                  		T_PTROBJ_0031
-QAbstractSpinBox *                      		T_PTROBJ_0032
-QStyleOptionButton *                    		T_PTROBJ_0033
-QStyleOptionFrame *                     		T_PTROBJ_0034
-QTextTableCell *                        		T_PTROBJ_0035
-QImageIOHandlerFactoryInterface *       		T_PTROBJ_0036
-QFontDatabase *                         		T_PTROBJ_0037
-QWidgetItem *                           		T_PTROBJ_0038
-QTextTable *                            		T_PTROBJ_0039
-QAbstractTextDocumentLayout::PaintContext *		T_PTROBJ_0040
-QGridLayout *                           		T_PTROBJ_0041
-QBitmap *                               		T_PTROBJ_0042
-QStyleOptionTabWidgetFrameV2 *          		T_PTROBJ_0043
-QToolBox *                              		T_PTROBJ_0044
-QTextBlockFormat *                      		T_PTROBJ_0045
-QSortFilterProxyModel *                 		T_PTROBJ_0046
-QGraphicsPolygonItem *                  		T_PTROBJ_0047
-QSystemTrayIcon *                       		T_PTROBJ_0048
-QGraphicsEllipseItem *                  		T_PTROBJ_0049
-QAccessibleEvent *                      		T_PTROBJ_0050
-QClipboard *                            		T_PTROBJ_0051
-QAccessibleBridge *                     		T_PTROBJ_0052
-QSlider *                               		T_PTROBJ_0053
-QGraphicsDropShadowEffect *             		T_PTROBJ_0054
-QStylePainter *                         		T_PTROBJ_0055
-QHelpEvent *                            		T_PTROBJ_0056
-QInputContextPlugin *                   		T_PTROBJ_0057
-QIconEnginePlugin *                     		T_PTROBJ_0058
-QDesktopServices *                      		T_PTROBJ_0059
-QPainterPathPrivate *                   		T_PTROBJ_0060
-QTextListFormat *                       		T_PTROBJ_0061
-QClipboardEvent *                       		T_PTROBJ_0062
-QInputContextFactoryInterface *         		T_PTROBJ_0063
-QGraphicsSceneWheelEvent *              		T_PTROBJ_0064
-QStyleOptionProgressBar *               		T_PTROBJ_0065
-QPainterPathStroker *                   		T_PTROBJ_0066
-QTextDocumentFragment *                 		T_PTROBJ_0067
-QProgressBar *                          		T_PTROBJ_0068
-QGraphicsRectItem *                     		T_PTROBJ_0069
-QTextBlock::iterator *                  		T_PTROBJ_0070
-QTextFrame::iterator *                  		T_PTROBJ_0071
-QImageWriter *                          		T_PTROBJ_0072
-QStyleOptionSpinBox *                   		T_PTROBJ_0073
-QStyleOptionFocusRect *                 		T_PTROBJ_0074
-QCloseEvent *                           		T_PTROBJ_0075
-QPageSetupDialog *                      		T_PTROBJ_0076
-QScrollBar *                            		T_PTROBJ_0077
-QRubberBand *                           		T_PTROBJ_0078
-QStyleOptionSizeGrip *                  		T_PTROBJ_0079
-QAccessibleInterfaceEx *                		T_PTROBJ_0080
-QStyleOptionViewItemV2 *                		T_PTROBJ_0081
-QGraphicsGridLayout *                   		T_PTROBJ_0082
-QStackedLayout *                        		T_PTROBJ_0083
-QActionEvent *                          		T_PTROBJ_0084
-QPolygonF *                             		T_PTROBJ_0085
-QPainterPath::Element *                 		T_PTROBJ_0086
-QImageTextKeyLang *                     		T_PTROBJ_0087
-QSizePolicy *                           		T_PTROBJ_0088
-QStyleOptionViewItemV3 *                		T_PTROBJ_0089
-QGradient *                             		T_PTROBJ_0090
-QFont *                                 		T_PTROBJ_0091
-QMdiSubWindow *                         		T_PTROBJ_0092
-QWorkspace *                            		T_PTROBJ_0093
-QDoubleValidator *                      		T_PTROBJ_0094
-QTouchEvent *                           		T_PTROBJ_0095
-QInputMethodEvent *                     		T_PTROBJ_0096
-QTabWidget *                            		T_PTROBJ_0097
-QPainterPath *                          		T_PTROBJ_0098
-QTextTableFormat *                      		T_PTROBJ_0099
-QStyleOptionViewItemV4 *                		T_PTROBJ_0100
-QSpinBox *                              		T_PTROBJ_0101
-QMenu *                                 		T_PTROBJ_0102
-QPalette *                              		T_PTROBJ_0103
-QAbstractUndoItem *                     		T_PTROBJ_0104
-QDateEdit *                             		T_PTROBJ_0105
-QItemEditorCreatorBase *                		T_PTROBJ_0106
-QGraphicsSceneContextMenuEvent *        		T_PTROBJ_0107
-QAbstractButton *                       		T_PTROBJ_0108
-QHideEvent *                            		T_PTROBJ_0109
-QSplashScreen *                         		T_PTROBJ_0110
-QDataWidgetMapper *                     		T_PTROBJ_0111
-QHoverEvent *                           		T_PTROBJ_0112
-QSyntaxHighlighter *                    		T_PTROBJ_0113
-QAccessible *                           		T_PTROBJ_0114
-QTextFrameFormat *                      		T_PTROBJ_0115
-QGraphicsObject *                       		T_PTROBJ_0116
-QPaintEvent *                           		T_PTROBJ_0117
-QToolButton *                           		T_PTROBJ_0118
-QMotifStyle *                           		T_PTROBJ_0119
-QWidgetAction *                         		T_PTROBJ_0120
-QTextObjectInterface *                  		T_PTROBJ_0121
-QAccessibleEditableTextInterface *      		T_PTROBJ_0122
-QLabel *                                		T_PTROBJ_0123
-QPaintEngineState *                     		T_PTROBJ_0124
-QComboBox *                             		T_PTROBJ_0125
-QSplitter *                             		T_PTROBJ_0126
-QDateTimeEdit *                         		T_PTROBJ_0127
-QWidget *                               		T_PTROBJ_0128
-QFocusEvent *                           		T_PTROBJ_0129
-QImageIOPlugin *                        		T_PTROBJ_0130
-QValidator *                            		T_PTROBJ_0131
-QPushButton *                           		T_PTROBJ_0132
-QTextBlock *                            		T_PTROBJ_0133
-QGraphicsSceneDragDropEvent *           		T_PTROBJ_0134
-QPrintEngine *                          		T_PTROBJ_0135
-QUnixPrintWidget *                      		T_PTROBJ_0136
-QItemSelectionModel *                   		T_PTROBJ_0137
-QColormap *                             		T_PTROBJ_0138
-QFontMetrics *                          		T_PTROBJ_0139
-QHeaderView *                           		T_PTROBJ_0140
-QLayoutItem *                           		T_PTROBJ_0141
-QTextEdit *                             		T_PTROBJ_0142
-QMenuBar *                              		T_PTROBJ_0143
-QStyledItemDelegate *                   		T_PTROBJ_0144
-QShowEvent *                            		T_PTROBJ_0145
-QTransform *                            		T_PTROBJ_0146
-QTabletEvent *                          		T_PTROBJ_0147
-QProxyModel *                           		T_PTROBJ_0148
-QKeySequence *                          		T_PTROBJ_0149
-QVector2D *                             		T_PTROBJ_0150
-QTextFormat *                           		T_PTROBJ_0151
-QTextCharFormat *                       		T_PTROBJ_0152
-QAccessibleFactoryInterface *           		T_PTROBJ_0153
-QAccessibleTextInterface *              		T_PTROBJ_0154
-QAccessibleInterface *                  		T_PTROBJ_0155
-QActionGroup *                          		T_PTROBJ_0156
-QStyleOptionComplex *                   		T_PTROBJ_0157
-QStaticText *                           		T_PTROBJ_0158
-QItemEditorFactory *                    		T_PTROBJ_0159
-QStatusTipEvent *                       		T_PTROBJ_0160
-QTextLayout *                           		T_PTROBJ_0161
-QTapAndHoldGesture *                    		T_PTROBJ_0162
-QGraphicsItemAnimation *                		T_PTROBJ_0163
-QIconEnginePluginV2 *                   		T_PTROBJ_0164
-QStyleFactoryInterface *                		T_PTROBJ_0165
-QMouseEvent *                           		T_PTROBJ_0166
-QButtonGroup *                          		T_PTROBJ_0167
-QPlainTextEdit *                        		T_PTROBJ_0168
-QTextCursor *                           		T_PTROBJ_0169
-QItemDelegate *                         		T_PTROBJ_0170
-QGraphicsRotation *                     		T_PTROBJ_0171
-QUndoCommand *                          		T_PTROBJ_0172
-Qt *                                    		T_PTROBJ_0173
-QStyleOptionMenuItem *                  		T_PTROBJ_0174
-QRadioButton *                          		T_PTROBJ_0175
-QListView *                             		T_PTROBJ_0176
-QIconEngineFactoryInterface *           		T_PTROBJ_0177
-QGraphicsSceneEvent *                   		T_PTROBJ_0178
-QProxyStyle *                           		T_PTROBJ_0179
-QGraphicsSimpleTextItem *               		T_PTROBJ_0180
-QTextDocumentWriter *                   		T_PTROBJ_0181
-QStyleOptionTabBarBase *                		T_PTROBJ_0182
-QStandardItemModel *                    		T_PTROBJ_0183
-QPrinterInfo *                          		T_PTROBJ_0184
-QIconEngineV2 *                         		T_PTROBJ_0185
-QAccessibleObject *                     		T_PTROBJ_0186
-QPainter::PixmapFragment *              		T_PTROBJ_0187
-QGraphicsLayoutItem *                   		T_PTROBJ_0188
-QAbstractTextDocumentLayout *           		T_PTROBJ_0189
-QPersistentModelIndex *                 		T_PTROBJ_0190
-QGraphicsItemGroup *                    		T_PTROBJ_0191
-QAccessibleApplication *                		T_PTROBJ_0192
-QGraphicsAnchor *                       		T_PTROBJ_0193
-QTileRules *                            		T_PTROBJ_0194
-QKeyEvent *                             		T_PTROBJ_0195
-QStyleOptionTabV2 *                     		T_PTROBJ_0196
-QTextBlockGroup *                       		T_PTROBJ_0197
-QVBoxLayout *                           		T_PTROBJ_0198
-QGesture *                              		T_PTROBJ_0199
-QStyleOptionRubberBand *                		T_PTROBJ_0200
-QApplication *                          		T_PTROBJ_0201
-QAbstractPrintDialog *                  		T_PTROBJ_0202
-QTreeWidgetItem *                       		T_PTROBJ_0203
-QStyleFactory *                         		T_PTROBJ_0204
-QHBoxLayout *                           		T_PTROBJ_0205
-QStyleOptionGroupBox *                  		T_PTROBJ_0206
-QInputDialog *                          		T_PTROBJ_0207
-QStyleOptionTabV3 *                     		T_PTROBJ_0208
-QAccessibleImageInterface *             		T_PTROBJ_0209
-QUndoGroup *                            		T_PTROBJ_0210
-QLayout *                               		T_PTROBJ_0211
-QAction *                               		T_PTROBJ_0212
-QTextImageFormat *                      		T_PTROBJ_0213
-QStyleOptionTabBarBaseV2 *              		T_PTROBJ_0214
-QAccessibleBridgePlugin *               		T_PTROBJ_0215
-QMessageBox *                           		T_PTROBJ_0216
-QScrollArea *                           		T_PTROBJ_0217
-QTextTableCellFormat *                  		T_PTROBJ_0218
-QAbstractProxyModel *                   		T_PTROBJ_0219
-QVector3D *                             		T_PTROBJ_0220
-QStyleOptionHeader *                    		T_PTROBJ_0221
-QDial *                                 		T_PTROBJ_0222
-QCursor *                               		T_PTROBJ_0223
-QColor *                                		T_PTROBJ_0224
-QQuaternion *                           		T_PTROBJ_0225
-QGraphicsSceneMoveEvent *               		T_PTROBJ_0226
-QInternal *                             		T_PTROBJ_0227
-QTextDocument *                         		T_PTROBJ_0228
-QWindowStateChangeEvent *               		T_PTROBJ_0229
-QGraphicsLineItem *                     		T_PTROBJ_0230
-QPolygon *                              		T_PTROBJ_0231
-QGraphicsPathItem *                     		T_PTROBJ_0232
-QInputMethodEvent::Attribute *          		T_PTROBJ_0233
-QStyleOptionToolButton *                		T_PTROBJ_0234
-QStyleOptionTabWidgetFrame *            		T_PTROBJ_0235
-QPixmap *                               		T_PTROBJ_0236
-QFocusFrame *                           		T_PTROBJ_0237
-QUpdateLaterEvent *                     		T_PTROBJ_0238
-QStyleOptionQ3ListView *                		T_PTROBJ_0239
-QIconEngineFactoryInterfaceV2 *         		T_PTROBJ_0240
-QWSEmbedWidget *                        		T_PTROBJ_0241
-QMatrix *                               		T_PTROBJ_0242
-QGraphicsLinearLayout *                 		T_PTROBJ_0243
-QCheckBox *                             		T_PTROBJ_0244
-QPlainTextDocumentLayout *              		T_PTROBJ_0245
-QShortcut *                             		T_PTROBJ_0246
-QPainter *                              		T_PTROBJ_0247
-QTextItem *                             		T_PTROBJ_0248
-QStringListModel *                      		T_PTROBJ_0249
-QAbstractGraphicsShapeItem *            		T_PTROBJ_0250
-QFontInfo *                             		T_PTROBJ_0251
-QGraphicsSceneHoverEvent *              		T_PTROBJ_0252
-QLCDNumber *                            		T_PTROBJ_0253
-QAccessibleTableInterface *             		T_PTROBJ_0254
-QMouseEventTransition *                 		T_PTROBJ_0255
-QCommonStyle *                          		T_PTROBJ_0256
-QGraphicsEffect *                       		T_PTROBJ_0257
-QTextInlineObject *                     		T_PTROBJ_0258
-QIntValidator *                         		T_PTROBJ_0259
-QStyleOption *                          		T_PTROBJ_0260
-QTextObject *                           		T_PTROBJ_0261
-QAbstractScrollArea *                   		T_PTROBJ_0262
-QDoubleSpinBox *                        		T_PTROBJ_0263
-QUndoStack *                            		T_PTROBJ_0264
-QDropEvent *                            		T_PTROBJ_0265
-QContextMenuEvent *                     		T_PTROBJ_0266
-QVector4D *                             		T_PTROBJ_0267
-QPictureFormatInterface *               		T_PTROBJ_0268
-QStylePlugin *                          		T_PTROBJ_0269
-QAbstractPageSetupDialog *              		T_PTROBJ_0270
-QAccessibleActionInterface *            		T_PTROBJ_0271
-QAbstractListModel *                    		T_PTROBJ_0272
-QGraphicsScene *                        		T_PTROBJ_0273
-QGraphicsBlurEffect *                   		T_PTROBJ_0274
-QSessionManager *                       		T_PTROBJ_0275
-QAbstractItemView *                     		T_PTROBJ_0276
-QBoxLayout *                            		T_PTROBJ_0277
-QDragLeaveEvent *                       		T_PTROBJ_0278
-QTextOption::Tab *                      		T_PTROBJ_0279
-QPictureFormatPlugin *                  		T_PTROBJ_0280
-QGraphicsPixmapItem *                   		T_PTROBJ_0281
-QAbstractItemDelegate *                 		T_PTROBJ_0282
-QStyleOptionFrameV2 *                   		T_PTROBJ_0283
-QSound *                                		T_PTROBJ_0284
-QGraphicsSceneHelpEvent *               		T_PTROBJ_0285
-QImageIOHandler *                       		T_PTROBJ_0286
-QStyleOptionFrameV3 *                   		T_PTROBJ_0287
-QDockWidget *                           		T_PTROBJ_0288
-QColorDialog *                          		T_PTROBJ_0289
-QSwipeGesture *                         		T_PTROBJ_0290
-QWhatsThis *                            		T_PTROBJ_0291
-QTextBlockUserData *                    		T_PTROBJ_0292
-QTreeWidgetItemIterator *               		T_PTROBJ_0293
-QGraphicsSceneMouseEvent *              		T_PTROBJ_0294
-QStyleOptionComboBox *                  		T_PTROBJ_0295
-QSpacerItem *                           		T_PTROBJ_0296
-QInputContext *                         		T_PTROBJ_0297
-QSizeGrip *                             		T_PTROBJ_0298
-QTableView *                            		T_PTROBJ_0299
-QPrintPreviewDialog *                   		T_PTROBJ_0300
-QStyleOptionSlider *                    		T_PTROBJ_0301
-QStyleOptionDockWidgetV2 *              		T_PTROBJ_0302
-QListWidgetItem *                       		T_PTROBJ_0303
-QStyle *                                		T_PTROBJ_0304
-QTextList *                             		T_PTROBJ_0305
-QToolBarChangeEvent *                   		T_PTROBJ_0306
-QGraphicsProxyWidget *                  		T_PTROBJ_0307
-QPixmapCache *                          		T_PTROBJ_0308
-QTreeView *                             		T_PTROBJ_0309
-QTextFragment *                         		T_PTROBJ_0310
-QStyleOptionQ3ListViewItem *            		T_PTROBJ_0311
-QLinearGradient *                       		T_PTROBJ_0312
-QGraphicsColorizeEffect *               		T_PTROBJ_0313
-QInputContextFactory *                  		T_PTROBJ_0314
-QRadialGradient *                       		T_PTROBJ_0315
-QAccessibleValueInterface *             		T_PTROBJ_0316
-QGraphicsOpacityEffect *                		T_PTROBJ_0317
-QIconDragEvent *                        		T_PTROBJ_0318
-QAccessibleBridgeFactoryInterface *     		T_PTROBJ_0319
-QWheelEvent *                           		T_PTROBJ_0320
-QCommandLinkButton *                    		T_PTROBJ_0321
-QItemSelection *                        		T_PTROBJ_0322
-QDesktopWidget *                        		T_PTROBJ_0323
-QPictureIO *                            		T_PTROBJ_0324
-QIcon *                                 		T_PTROBJ_0325
-QStyleOptionGraphicsItem *              		T_PTROBJ_0326
-QGraphicsSceneResizeEvent *             		T_PTROBJ_0327
-QPicture *                              		T_PTROBJ_0328
-QTableWidgetItem *                      		T_PTROBJ_0329
-QTextLine *                             		T_PTROBJ_0330
-QWidgetItemV2 *                         		T_PTROBJ_0331
-QTextFrame *                            		T_PTROBJ_0332
-QWidgetData *                           		T_PTROBJ_0333
-QWhatsThisClickedEvent *                		T_PTROBJ_0334
-QMdiArea *                              		T_PTROBJ_0335
-QFileDialog *                           		T_PTROBJ_0336
-QGraphicsWidget *                       		T_PTROBJ_0337
-QPaintEngine *                          		T_PTROBJ_0338
-QRegExpValidator *                      		T_PTROBJ_0339
-QAccessiblePlugin *                     		T_PTROBJ_0340
-QFontMetricsF *                         		T_PTROBJ_0341
-QLineEdit *                             		T_PTROBJ_0342
-QCompleter *                            		T_PTROBJ_0343
-QShortcutEvent *                        		T_PTROBJ_0344
-QStyleOptionViewItem *                  		T_PTROBJ_0345
-QGraphicsView *                         		T_PTROBJ_0346
-QItemSelectionRange *                   		T_PTROBJ_0347
-QKeyEventTransition *                   		T_PTROBJ_0348
-QPanGesture *                           		T_PTROBJ_0349
-QTreeWidget *                           		T_PTROBJ_0350
-QUndoView *                             		T_PTROBJ_0351
-QCDEStyle *                             		T_PTROBJ_0352
-QStatusBar *                            		T_PTROBJ_0353
-QAccessibleWidgetEx *                   		T_PTROBJ_0354
-QListWidget *                           		T_PTROBJ_0355
-QModelIndex *                           		T_PTROBJ_0356
-QRegion *                               		T_PTROBJ_0357
-QConicalGradient *                      		T_PTROBJ_0358
-QPaintDevice *                          		T_PTROBJ_0359
-QPrintDialog *                          		T_PTROBJ_0360
-QColumnView *                           		T_PTROBJ_0361
-QTapGesture *                           		T_PTROBJ_0362
-QGraphicsAnchorLayout *                 		T_PTROBJ_0363
-QStyleOptionProgressBarV2 *             		T_PTROBJ_0364
-QStyleOptionTitleBar *                  		T_PTROBJ_0365
-QDrag *                                 		T_PTROBJ_0366
-QErrorMessage *                         		T_PTROBJ_0367
-QDirModel *                             		T_PTROBJ_0368
-QInputEvent *                           		T_PTROBJ_0369
-QGraphicsItem *                         		T_PTROBJ_0370
-QFileSystemModel *                      		T_PTROBJ_0371
-QTableWidget *                          		T_PTROBJ_0372
-QCalendarWidget *                       		T_PTROBJ_0373
-QGestureEvent *                         		T_PTROBJ_0374
-QGestureRecognizer *                    		T_PTROBJ_0375
-QAbstractSlider *                       		T_PTROBJ_0376
-QFontDialog *                           		T_PTROBJ_0377
-QDragEnterEvent *                       		T_PTROBJ_0378
-QStyleOptionToolBar *                   		T_PTROBJ_0379
-QMoveEvent *                            		T_PTROBJ_0380
-QTextLength *                           		T_PTROBJ_0381
-QTextBrowser *                          		T_PTROBJ_0382
-QFileIconProvider *                     		T_PTROBJ_0383
-QProgressDialog *                       		T_PTROBJ_0384
-QImage *                                		T_PTROBJ_0385
-QTableWidgetSelectionRange *            		T_PTROBJ_0386
-QPinchGesture *                         		T_PTROBJ_0387
-QImageReader *                          		T_PTROBJ_0388
-QToolTip *                              		T_PTROBJ_0389
-QStyleOptionTab *                       		T_PTROBJ_0390
-QMatrix4x4 *                            		T_PTROBJ_0391
-QSplitterHandle *                       		T_PTROBJ_0392
-QPrinter *                              		T_PTROBJ_0393
-QWizardPage *                           		T_PTROBJ_0394
-QGraphicsScale *                        		T_PTROBJ_0395
-QGraphicsTransform *                    		T_PTROBJ_0396
-QMainWindow *                           		T_PTROBJ_0397
-QDragResponseEvent *                    		T_PTROBJ_0398
-QToolBar *                              		T_PTROBJ_0399
-QBrush *                                		T_PTROBJ_0400
-QAccessible2Interface *                 		T_PTROBJ_0401
-QStyleOptionDockWidget *                		T_PTROBJ_0402
-QMimeSource *                           		T_PTROBJ_0403
-QFontComboBox *                         		T_PTROBJ_0404
-QDialog *                               		T_PTROBJ_0405
-QAccessibleObjectEx *                   		T_PTROBJ_0406
+QTextFrameLayoutData *                  		T_PTROBJ_0030
+QAbstractSpinBox *                      		T_PTROBJ_0031
+QStyleOptionButton *                    		T_PTROBJ_0032
+QStyleOptionFrame *                     		T_PTROBJ_0033
+QTextTableCell *                        		T_PTROBJ_0034
+QImageIOHandlerFactoryInterface *       		T_PTROBJ_0035
+QFontDatabase *                         		T_PTROBJ_0036
+QWidgetItem *                           		T_PTROBJ_0037
+QTextTable *                            		T_PTROBJ_0038
+QAbstractTextDocumentLayout::PaintContext *		T_PTROBJ_0039
+QGridLayout *                           		T_PTROBJ_0040
+QBitmap *                               		T_PTROBJ_0041
+QStyleOptionTabWidgetFrameV2 *          		T_PTROBJ_0042
+QToolBox *                              		T_PTROBJ_0043
+QTextBlockFormat *                      		T_PTROBJ_0044
+QSortFilterProxyModel *                 		T_PTROBJ_0045
+QGraphicsPolygonItem *                  		T_PTROBJ_0046
+QSystemTrayIcon *                       		T_PTROBJ_0047
+QGraphicsEllipseItem *                  		T_PTROBJ_0048
+QAccessibleEvent *                      		T_PTROBJ_0049
+QAccessibleBridge *                     		T_PTROBJ_0050
+QSlider *                               		T_PTROBJ_0051
+QGraphicsDropShadowEffect *             		T_PTROBJ_0052
+QStylePainter *                         		T_PTROBJ_0053
+QHelpEvent *                            		T_PTROBJ_0054
+QInputContextPlugin *                   		T_PTROBJ_0055
+QIconEnginePlugin *                     		T_PTROBJ_0056
+QDesktopServices *                      		T_PTROBJ_0057
+QPainterPathPrivate *                   		T_PTROBJ_0058
+QTextListFormat *                       		T_PTROBJ_0059
+QInputContextFactoryInterface *         		T_PTROBJ_0060
+QGraphicsSceneWheelEvent *              		T_PTROBJ_0061
+QStyleOptionProgressBar *               		T_PTROBJ_0062
+QPainterPathStroker *                   		T_PTROBJ_0063
+QTextDocumentFragment *                 		T_PTROBJ_0064
+QProgressBar *                          		T_PTROBJ_0065
+QGraphicsRectItem *                     		T_PTROBJ_0066
+QTextBlock::iterator *                  		T_PTROBJ_0067
+QTextFrame::iterator *                  		T_PTROBJ_0068
+QImageWriter *                          		T_PTROBJ_0069
+QStyleOptionSpinBox *                   		T_PTROBJ_0070
+QStyleOptionFocusRect *                 		T_PTROBJ_0071
+QCloseEvent *                           		T_PTROBJ_0072
+QPageSetupDialog *                      		T_PTROBJ_0073
+QScrollBar *                            		T_PTROBJ_0074
+QRubberBand *                           		T_PTROBJ_0075
+QStyleOptionSizeGrip *                  		T_PTROBJ_0076
+QAccessibleInterfaceEx *                		T_PTROBJ_0077
+QStyleOptionViewItemV2 *                		T_PTROBJ_0078
+QGraphicsGridLayout *                   		T_PTROBJ_0079
+QStackedLayout *                        		T_PTROBJ_0080
+QActionEvent *                          		T_PTROBJ_0081
+QPolygonF *                             		T_PTROBJ_0082
+QPainterPath::Element *                 		T_PTROBJ_0083
+QImageTextKeyLang *                     		T_PTROBJ_0084
+QSizePolicy *                           		T_PTROBJ_0085
+QStyleOptionViewItemV3 *                		T_PTROBJ_0086
+QGradient *                             		T_PTROBJ_0087
+QFont *                                 		T_PTROBJ_0088
+QMdiSubWindow *                         		T_PTROBJ_0089
+QWorkspace *                            		T_PTROBJ_0090
+QDoubleValidator *                      		T_PTROBJ_0091
+QTouchEvent *                           		T_PTROBJ_0092
+QInputMethodEvent *                     		T_PTROBJ_0093
+QTabWidget *                            		T_PTROBJ_0094
+QPainterPath *                          		T_PTROBJ_0095
+QTextTableFormat *                      		T_PTROBJ_0096
+QStyleOptionViewItemV4 *                		T_PTROBJ_0097
+QSpinBox *                              		T_PTROBJ_0098
+QMenu *                                 		T_PTROBJ_0099
+QPalette *                              		T_PTROBJ_0100
+QAbstractUndoItem *                     		T_PTROBJ_0101
+QDateEdit *                             		T_PTROBJ_0102
+QItemEditorCreatorBase *                		T_PTROBJ_0103
+QGraphicsSceneContextMenuEvent *        		T_PTROBJ_0104
+QAbstractButton *                       		T_PTROBJ_0105
+QHideEvent *                            		T_PTROBJ_0106
+QSplashScreen *                         		T_PTROBJ_0107
+QDataWidgetMapper *                     		T_PTROBJ_0108
+QHoverEvent *                           		T_PTROBJ_0109
+QSyntaxHighlighter *                    		T_PTROBJ_0110
+QAccessible *                           		T_PTROBJ_0111
+QTextFrameFormat *                      		T_PTROBJ_0112
+QGraphicsObject *                       		T_PTROBJ_0113
+QPaintEvent *                           		T_PTROBJ_0114
+QToolButton *                           		T_PTROBJ_0115
+QMotifStyle *                           		T_PTROBJ_0116
+QWidgetAction *                         		T_PTROBJ_0117
+QTextObjectInterface *                  		T_PTROBJ_0118
+QAccessibleEditableTextInterface *      		T_PTROBJ_0119
+QLabel *                                		T_PTROBJ_0120
+QPaintEngineState *                     		T_PTROBJ_0121
+QComboBox *                             		T_PTROBJ_0122
+QSplitter *                             		T_PTROBJ_0123
+QDateTimeEdit *                         		T_PTROBJ_0124
+QWidget *                               		T_PTROBJ_0125
+QFocusEvent *                           		T_PTROBJ_0126
+QImageIOPlugin *                        		T_PTROBJ_0127
+QValidator *                            		T_PTROBJ_0128
+QPushButton *                           		T_PTROBJ_0129
+QTextBlock *                            		T_PTROBJ_0130
+QGraphicsSceneDragDropEvent *           		T_PTROBJ_0131
+QPrintEngine *                          		T_PTROBJ_0132
+QUnixPrintWidget *                      		T_PTROBJ_0133
+QItemSelectionModel *                   		T_PTROBJ_0134
+QColormap *                             		T_PTROBJ_0135
+QFontMetrics *                          		T_PTROBJ_0136
+QHeaderView *                           		T_PTROBJ_0137
+QLayoutItem *                           		T_PTROBJ_0138
+QTextEdit *                             		T_PTROBJ_0139
+QMenuBar *                              		T_PTROBJ_0140
+QStyledItemDelegate *                   		T_PTROBJ_0141
+QShowEvent *                            		T_PTROBJ_0142
+QTransform *                            		T_PTROBJ_0143
+QTabletEvent *                          		T_PTROBJ_0144
+QProxyModel *                           		T_PTROBJ_0145
+QKeySequence *                          		T_PTROBJ_0146
+QVector2D *                             		T_PTROBJ_0147
+QTextFormat *                           		T_PTROBJ_0148
+QTextCharFormat *                       		T_PTROBJ_0149
+QAccessibleFactoryInterface *           		T_PTROBJ_0150
+QAccessibleTextInterface *              		T_PTROBJ_0151
+QAccessibleInterface *                  		T_PTROBJ_0152
+QActionGroup *                          		T_PTROBJ_0153
+QStyleOptionComplex *                   		T_PTROBJ_0154
+QStaticText *                           		T_PTROBJ_0155
+QItemEditorFactory *                    		T_PTROBJ_0156
+QStatusTipEvent *                       		T_PTROBJ_0157
+QTextLayout *                           		T_PTROBJ_0158
+QTapAndHoldGesture *                    		T_PTROBJ_0159
+QGraphicsItemAnimation *                		T_PTROBJ_0160
+QIconEnginePluginV2 *                   		T_PTROBJ_0161
+QStyleFactoryInterface *                		T_PTROBJ_0162
+QMouseEvent *                           		T_PTROBJ_0163
+QButtonGroup *                          		T_PTROBJ_0164
+QPlainTextEdit *                        		T_PTROBJ_0165
+QTextCursor *                           		T_PTROBJ_0166
+QItemDelegate *                         		T_PTROBJ_0167
+QGraphicsRotation *                     		T_PTROBJ_0168
+QUndoCommand *                          		T_PTROBJ_0169
+Qt *                                    		T_PTROBJ_0170
+QStyleOptionMenuItem *                  		T_PTROBJ_0171
+QRadioButton *                          		T_PTROBJ_0172
+QListView *                             		T_PTROBJ_0173
+QIconEngineFactoryInterface *           		T_PTROBJ_0174
+QGraphicsSceneEvent *                   		T_PTROBJ_0175
+QProxyStyle *                           		T_PTROBJ_0176
+QGraphicsSimpleTextItem *               		T_PTROBJ_0177
+QTextDocumentWriter *                   		T_PTROBJ_0178
+QStyleOptionTabBarBase *                		T_PTROBJ_0179
+QStandardItemModel *                    		T_PTROBJ_0180
+QPrinterInfo *                          		T_PTROBJ_0181
+QIconEngineV2 *                         		T_PTROBJ_0182
+QAccessibleObject *                     		T_PTROBJ_0183
+QPainter::PixmapFragment *              		T_PTROBJ_0184
+QGraphicsLayoutItem *                   		T_PTROBJ_0185
+QAbstractTextDocumentLayout *           		T_PTROBJ_0186
+QPersistentModelIndex *                 		T_PTROBJ_0187
+QGraphicsItemGroup *                    		T_PTROBJ_0188
+QAccessibleApplication *                		T_PTROBJ_0189
+QGraphicsAnchor *                       		T_PTROBJ_0190
+QTileRules *                            		T_PTROBJ_0191
+QKeyEvent *                             		T_PTROBJ_0192
+QStyleOptionTabV2 *                     		T_PTROBJ_0193
+QTextBlockGroup *                       		T_PTROBJ_0194
+QVBoxLayout *                           		T_PTROBJ_0195
+QGesture *                              		T_PTROBJ_0196
+QStyleOptionRubberBand *                		T_PTROBJ_0197
+QApplication *                          		T_PTROBJ_0198
+QAbstractPrintDialog *                  		T_PTROBJ_0199
+QTreeWidgetItem *                       		T_PTROBJ_0200
+QStyleFactory *                         		T_PTROBJ_0201
+QHBoxLayout *                           		T_PTROBJ_0202
+QStyleOptionGroupBox *                  		T_PTROBJ_0203
+QInputDialog *                          		T_PTROBJ_0204
+QStyleOptionTabV3 *                     		T_PTROBJ_0205
+QAccessibleImageInterface *             		T_PTROBJ_0206
+QUndoGroup *                            		T_PTROBJ_0207
+QLayout *                               		T_PTROBJ_0208
+QAction *                               		T_PTROBJ_0209
+QTextImageFormat *                      		T_PTROBJ_0210
+QStyleOptionTabBarBaseV2 *              		T_PTROBJ_0211
+QAccessibleBridgePlugin *               		T_PTROBJ_0212
+QMessageBox *                           		T_PTROBJ_0213
+QScrollArea *                           		T_PTROBJ_0214
+QTextTableCellFormat *                  		T_PTROBJ_0215
+QAbstractProxyModel *                   		T_PTROBJ_0216
+QVector3D *                             		T_PTROBJ_0217
+QStyleOptionHeader *                    		T_PTROBJ_0218
+QDial *                                 		T_PTROBJ_0219
+QCursor *                               		T_PTROBJ_0220
+QColor *                                		T_PTROBJ_0221
+QQuaternion *                           		T_PTROBJ_0222
+QGraphicsSceneMoveEvent *               		T_PTROBJ_0223
+QInternal *                             		T_PTROBJ_0224
+QTextDocument *                         		T_PTROBJ_0225
+QWindowStateChangeEvent *               		T_PTROBJ_0226
+QGraphicsLineItem *                     		T_PTROBJ_0227
+QPolygon *                              		T_PTROBJ_0228
+QGraphicsPathItem *                     		T_PTROBJ_0229
+QInputMethodEvent::Attribute *          		T_PTROBJ_0230
+QStyleOptionToolButton *                		T_PTROBJ_0231
+QStyleOptionTabWidgetFrame *            		T_PTROBJ_0232
+QPixmap *                               		T_PTROBJ_0233
+QFocusFrame *                           		T_PTROBJ_0234
+QUpdateLaterEvent *                     		T_PTROBJ_0235
+QStyleOptionQ3ListView *                		T_PTROBJ_0236
+QIconEngineFactoryInterfaceV2 *         		T_PTROBJ_0237
+QMatrix *                               		T_PTROBJ_0238
+QGraphicsLinearLayout *                 		T_PTROBJ_0239
+QCheckBox *                             		T_PTROBJ_0240
+QPlainTextDocumentLayout *              		T_PTROBJ_0241
+QShortcut *                             		T_PTROBJ_0242
+QPainter *                              		T_PTROBJ_0243
+QTextItem *                             		T_PTROBJ_0244
+QStringListModel *                      		T_PTROBJ_0245
+QAbstractGraphicsShapeItem *            		T_PTROBJ_0246
+QFontInfo *                             		T_PTROBJ_0247
+QGraphicsSceneHoverEvent *              		T_PTROBJ_0248
+QLCDNumber *                            		T_PTROBJ_0249
+QAccessibleTableInterface *             		T_PTROBJ_0250
+QMouseEventTransition *                 		T_PTROBJ_0251
+QCommonStyle *                          		T_PTROBJ_0252
+QGraphicsEffect *                       		T_PTROBJ_0253
+QTextInlineObject *                     		T_PTROBJ_0254
+QIntValidator *                         		T_PTROBJ_0255
+QStyleOption *                          		T_PTROBJ_0256
+QTextObject *                           		T_PTROBJ_0257
+QAbstractScrollArea *                   		T_PTROBJ_0258
+QDoubleSpinBox *                        		T_PTROBJ_0259
+QUndoStack *                            		T_PTROBJ_0260
+QContextMenuEvent *                     		T_PTROBJ_0261
+QVector4D *                             		T_PTROBJ_0262
+QPictureFormatInterface *               		T_PTROBJ_0263
+QStylePlugin *                          		T_PTROBJ_0264
+QAbstractPageSetupDialog *              		T_PTROBJ_0265
+QAccessibleActionInterface *            		T_PTROBJ_0266
+QAbstractListModel *                    		T_PTROBJ_0267
+QGraphicsScene *                        		T_PTROBJ_0268
+QGraphicsBlurEffect *                   		T_PTROBJ_0269
+QSessionManager *                       		T_PTROBJ_0270
+QAbstractItemView *                     		T_PTROBJ_0271
+QBoxLayout *                            		T_PTROBJ_0272
+QTextOption::Tab *                      		T_PTROBJ_0273
+QPictureFormatPlugin *                  		T_PTROBJ_0274
+QGraphicsPixmapItem *                   		T_PTROBJ_0275
+QAbstractItemDelegate *                 		T_PTROBJ_0276
+QStyleOptionFrameV2 *                   		T_PTROBJ_0277
+QSound *                                		T_PTROBJ_0278
+QGraphicsSceneHelpEvent *               		T_PTROBJ_0279
+QImageIOHandler *                       		T_PTROBJ_0280
+QStyleOptionFrameV3 *                   		T_PTROBJ_0281
+QDockWidget *                           		T_PTROBJ_0282
+QColorDialog *                          		T_PTROBJ_0283
+QSwipeGesture *                         		T_PTROBJ_0284
+QWhatsThis *                            		T_PTROBJ_0285
+QTextBlockUserData *                    		T_PTROBJ_0286
+QTreeWidgetItemIterator *               		T_PTROBJ_0287
+QGraphicsSceneMouseEvent *              		T_PTROBJ_0288
+QStyleOptionComboBox *                  		T_PTROBJ_0289
+QSpacerItem *                           		T_PTROBJ_0290
+QInputContext *                         		T_PTROBJ_0291
+QSizeGrip *                             		T_PTROBJ_0292
+QTableView *                            		T_PTROBJ_0293
+QPrintPreviewDialog *                   		T_PTROBJ_0294
+QStyleOptionSlider *                    		T_PTROBJ_0295
+QStyleOptionDockWidgetV2 *              		T_PTROBJ_0296
+QListWidgetItem *                       		T_PTROBJ_0297
+QStyle *                                		T_PTROBJ_0298
+QTextList *                             		T_PTROBJ_0299
+QToolBarChangeEvent *                   		T_PTROBJ_0300
+QGraphicsProxyWidget *                  		T_PTROBJ_0301
+QPixmapCache *                          		T_PTROBJ_0302
+QTreeView *                             		T_PTROBJ_0303
+QTextFragment *                         		T_PTROBJ_0304
+QStyleOptionQ3ListViewItem *            		T_PTROBJ_0305
+QLinearGradient *                       		T_PTROBJ_0306
+QGraphicsColorizeEffect *               		T_PTROBJ_0307
+QInputContextFactory *                  		T_PTROBJ_0308
+QRadialGradient *                       		T_PTROBJ_0309
+QAccessibleValueInterface *             		T_PTROBJ_0310
+QGraphicsOpacityEffect *                		T_PTROBJ_0311
+QIconDragEvent *                        		T_PTROBJ_0312
+QAccessibleBridgeFactoryInterface *     		T_PTROBJ_0313
+QWheelEvent *                           		T_PTROBJ_0314
+QCommandLinkButton *                    		T_PTROBJ_0315
+QItemSelection *                        		T_PTROBJ_0316
+QDesktopWidget *                        		T_PTROBJ_0317
+QPictureIO *                            		T_PTROBJ_0318
+QIcon *                                 		T_PTROBJ_0319
+QStyleOptionGraphicsItem *              		T_PTROBJ_0320
+QGraphicsSceneResizeEvent *             		T_PTROBJ_0321
+QPicture *                              		T_PTROBJ_0322
+QTableWidgetItem *                      		T_PTROBJ_0323
+QTextLine *                             		T_PTROBJ_0324
+QWidgetItemV2 *                         		T_PTROBJ_0325
+QTextFrame *                            		T_PTROBJ_0326
+QWidgetData *                           		T_PTROBJ_0327
+QWhatsThisClickedEvent *                		T_PTROBJ_0328
+QMdiArea *                              		T_PTROBJ_0329
+QFileDialog *                           		T_PTROBJ_0330
+QGraphicsWidget *                       		T_PTROBJ_0331
+QPaintEngine *                          		T_PTROBJ_0332
+QRegExpValidator *                      		T_PTROBJ_0333
+QAccessiblePlugin *                     		T_PTROBJ_0334
+QFontMetricsF *                         		T_PTROBJ_0335
+QLineEdit *                             		T_PTROBJ_0336
+QCompleter *                            		T_PTROBJ_0337
+QShortcutEvent *                        		T_PTROBJ_0338
+QStyleOptionViewItem *                  		T_PTROBJ_0339
+QGraphicsView *                         		T_PTROBJ_0340
+QItemSelectionRange *                   		T_PTROBJ_0341
+QKeyEventTransition *                   		T_PTROBJ_0342
+QPanGesture *                           		T_PTROBJ_0343
+QTreeWidget *                           		T_PTROBJ_0344
+QUndoView *                             		T_PTROBJ_0345
+QCDEStyle *                             		T_PTROBJ_0346
+QStatusBar *                            		T_PTROBJ_0347
+QAccessibleWidgetEx *                   		T_PTROBJ_0348
+QListWidget *                           		T_PTROBJ_0349
+QModelIndex *                           		T_PTROBJ_0350
+QRegion *                               		T_PTROBJ_0351
+QConicalGradient *                      		T_PTROBJ_0352
+QPaintDevice *                          		T_PTROBJ_0353
+QPrintDialog *                          		T_PTROBJ_0354
+QColumnView *                           		T_PTROBJ_0355
+QTapGesture *                           		T_PTROBJ_0356
+QGraphicsAnchorLayout *                 		T_PTROBJ_0357
+QStyleOptionProgressBarV2 *             		T_PTROBJ_0358
+QStyleOptionTitleBar *                  		T_PTROBJ_0359
+QErrorMessage *                         		T_PTROBJ_0360
+QDirModel *                             		T_PTROBJ_0361
+QInputEvent *                           		T_PTROBJ_0362
+QGraphicsItem *                         		T_PTROBJ_0363
+QFileSystemModel *                      		T_PTROBJ_0364
+QTableWidget *                          		T_PTROBJ_0365
+QCalendarWidget *                       		T_PTROBJ_0366
+QGestureEvent *                         		T_PTROBJ_0367
+QGestureRecognizer *                    		T_PTROBJ_0368
+QAbstractSlider *                       		T_PTROBJ_0369
+QFontDialog *                           		T_PTROBJ_0370
+QStyleOptionToolBar *                   		T_PTROBJ_0371
+QMoveEvent *                            		T_PTROBJ_0372
+QTextLength *                           		T_PTROBJ_0373
+QTextBrowser *                          		T_PTROBJ_0374
+QFileIconProvider *                     		T_PTROBJ_0375
+QProgressDialog *                       		T_PTROBJ_0376
+QImage *                                		T_PTROBJ_0377
+QTableWidgetSelectionRange *            		T_PTROBJ_0378
+QPinchGesture *                         		T_PTROBJ_0379
+QImageReader *                          		T_PTROBJ_0380
+QToolTip *                              		T_PTROBJ_0381
+QStyleOptionTab *                       		T_PTROBJ_0382
+QMatrix4x4 *                            		T_PTROBJ_0383
+QSplitterHandle *                       		T_PTROBJ_0384
+QPrinter *                              		T_PTROBJ_0385
+QWizardPage *                           		T_PTROBJ_0386
+QGraphicsScale *                        		T_PTROBJ_0387
+QGraphicsTransform *                    		T_PTROBJ_0388
+QMainWindow *                           		T_PTROBJ_0389
+QToolBar *                              		T_PTROBJ_0390
+QBrush *                                		T_PTROBJ_0391
+QAccessible2Interface *                 		T_PTROBJ_0392
+QStyleOptionDockWidget *                		T_PTROBJ_0393
+QMimeSource *                           		T_PTROBJ_0394
+QFontComboBox *                         		T_PTROBJ_0395
+QDialog *                               		T_PTROBJ_0396
+QAccessibleObjectEx *                   		T_PTROBJ_0397
 
 ################################################################
 INPUT
@@ -591,2262 +582,2208 @@ T_PTROBJ_0029
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPrintPreviewWidget\");
 
 T_PTROBJ_0030
-    if (sv_derived_from($arg, \"Qt::Gui::QDragMoveEvent\"))
-        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
-    else
-        Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDragMoveEvent\");
-
-T_PTROBJ_0031
     if (sv_derived_from($arg, \"Qt::Gui::QTextFrameLayoutData\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextFrameLayoutData\");
 
-T_PTROBJ_0032
+T_PTROBJ_0031
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractSpinBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractSpinBox\");
 
-T_PTROBJ_0033
+T_PTROBJ_0032
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionButton\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionButton\");
 
-T_PTROBJ_0034
+T_PTROBJ_0033
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionFrame\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionFrame\");
 
-T_PTROBJ_0035
+T_PTROBJ_0034
     if (sv_derived_from($arg, \"Qt::Gui::QTextTableCell\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextTableCell\");
 
-T_PTROBJ_0036
+T_PTROBJ_0035
     if (sv_derived_from($arg, \"Qt::Gui::QImageIOHandlerFactoryInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QImageIOHandlerFactoryInterface\");
 
-T_PTROBJ_0037
+T_PTROBJ_0036
     if (sv_derived_from($arg, \"Qt::Gui::QFontDatabase\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFontDatabase\");
 
-T_PTROBJ_0038
+T_PTROBJ_0037
     if (sv_derived_from($arg, \"Qt::Gui::QWidgetItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWidgetItem\");
 
-T_PTROBJ_0039
+T_PTROBJ_0038
     if (sv_derived_from($arg, \"Qt::Gui::QTextTable\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextTable\");
 
-T_PTROBJ_0040
+T_PTROBJ_0039
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractTextDocumentLayout::PaintContext\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractTextDocumentLayout::PaintContext\");
 
-T_PTROBJ_0041
+T_PTROBJ_0040
     if (sv_derived_from($arg, \"Qt::Gui::QGridLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGridLayout\");
 
-T_PTROBJ_0042
+T_PTROBJ_0041
     if (sv_derived_from($arg, \"Qt::Gui::QBitmap\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QBitmap\");
 
-T_PTROBJ_0043
+T_PTROBJ_0042
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionTabWidgetFrameV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionTabWidgetFrameV2\");
 
-T_PTROBJ_0044
+T_PTROBJ_0043
     if (sv_derived_from($arg, \"Qt::Gui::QToolBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QToolBox\");
 
-T_PTROBJ_0045
+T_PTROBJ_0044
     if (sv_derived_from($arg, \"Qt::Gui::QTextBlockFormat\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextBlockFormat\");
 
-T_PTROBJ_0046
+T_PTROBJ_0045
     if (sv_derived_from($arg, \"Qt::Gui::QSortFilterProxyModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSortFilterProxyModel\");
 
-T_PTROBJ_0047
+T_PTROBJ_0046
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsPolygonItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsPolygonItem\");
 
-T_PTROBJ_0048
+T_PTROBJ_0047
     if (sv_derived_from($arg, \"Qt::Gui::QSystemTrayIcon\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSystemTrayIcon\");
 
-T_PTROBJ_0049
+T_PTROBJ_0048
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsEllipseItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsEllipseItem\");
 
-T_PTROBJ_0050
+T_PTROBJ_0049
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleEvent\");
 
-T_PTROBJ_0051
-    if (sv_derived_from($arg, \"Qt::Gui::QClipboard\"))
-        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
-    else
-        Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QClipboard\");
-
-T_PTROBJ_0052
+T_PTROBJ_0050
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleBridge\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleBridge\");
 
-T_PTROBJ_0053
+T_PTROBJ_0051
     if (sv_derived_from($arg, \"Qt::Gui::QSlider\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSlider\");
 
-T_PTROBJ_0054
+T_PTROBJ_0052
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsDropShadowEffect\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsDropShadowEffect\");
 
-T_PTROBJ_0055
+T_PTROBJ_0053
     if (sv_derived_from($arg, \"Qt::Gui::QStylePainter\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStylePainter\");
 
-T_PTROBJ_0056
+T_PTROBJ_0054
     if (sv_derived_from($arg, \"Qt::Gui::QHelpEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QHelpEvent\");
 
-T_PTROBJ_0057
+T_PTROBJ_0055
     if (sv_derived_from($arg, \"Qt::Gui::QInputContextPlugin\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QInputContextPlugin\");
 
-T_PTROBJ_0058
+T_PTROBJ_0056
     if (sv_derived_from($arg, \"Qt::Gui::QIconEnginePlugin\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QIconEnginePlugin\");
 
-T_PTROBJ_0059
+T_PTROBJ_0057
     if (sv_derived_from($arg, \"Qt::Gui::QDesktopServices\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDesktopServices\");
 
-T_PTROBJ_0060
+T_PTROBJ_0058
     if (sv_derived_from($arg, \"Qt::Gui::QPainterPathPrivate\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPainterPathPrivate\");
 
-T_PTROBJ_0061
+T_PTROBJ_0059
     if (sv_derived_from($arg, \"Qt::Gui::QTextListFormat\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextListFormat\");
 
-T_PTROBJ_0062
-    if (sv_derived_from($arg, \"Qt::Gui::QClipboardEvent\"))
-        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
-    else
-        Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QClipboardEvent\");
-
-T_PTROBJ_0063
+T_PTROBJ_0060
     if (sv_derived_from($arg, \"Qt::Gui::QInputContextFactoryInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QInputContextFactoryInterface\");
 
-T_PTROBJ_0064
+T_PTROBJ_0061
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSceneWheelEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSceneWheelEvent\");
 
-T_PTROBJ_0065
+T_PTROBJ_0062
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionProgressBar\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionProgressBar\");
 
-T_PTROBJ_0066
+T_PTROBJ_0063
     if (sv_derived_from($arg, \"Qt::Gui::QPainterPathStroker\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPainterPathStroker\");
 
-T_PTROBJ_0067
+T_PTROBJ_0064
     if (sv_derived_from($arg, \"Qt::Gui::QTextDocumentFragment\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextDocumentFragment\");
 
-T_PTROBJ_0068
+T_PTROBJ_0065
     if (sv_derived_from($arg, \"Qt::Gui::QProgressBar\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QProgressBar\");
 
-T_PTROBJ_0069
+T_PTROBJ_0066
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsRectItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsRectItem\");
 
-T_PTROBJ_0070
+T_PTROBJ_0067
     if (sv_derived_from($arg, \"Qt::Gui::QTextBlock::iterator\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextBlock::iterator\");
 
-T_PTROBJ_0071
+T_PTROBJ_0068
     if (sv_derived_from($arg, \"Qt::Gui::QTextFrame::iterator\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextFrame::iterator\");
 
-T_PTROBJ_0072
+T_PTROBJ_0069
     if (sv_derived_from($arg, \"Qt::Gui::QImageWriter\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QImageWriter\");
 
-T_PTROBJ_0073
+T_PTROBJ_0070
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionSpinBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionSpinBox\");
 
-T_PTROBJ_0074
+T_PTROBJ_0071
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionFocusRect\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionFocusRect\");
 
-T_PTROBJ_0075
+T_PTROBJ_0072
     if (sv_derived_from($arg, \"Qt::Gui::QCloseEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QCloseEvent\");
 
-T_PTROBJ_0076
+T_PTROBJ_0073
     if (sv_derived_from($arg, \"Qt::Gui::QPageSetupDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPageSetupDialog\");
 
-T_PTROBJ_0077
+T_PTROBJ_0074
     if (sv_derived_from($arg, \"Qt::Gui::QScrollBar\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QScrollBar\");
 
-T_PTROBJ_0078
+T_PTROBJ_0075
     if (sv_derived_from($arg, \"Qt::Gui::QRubberBand\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QRubberBand\");
 
-T_PTROBJ_0079
+T_PTROBJ_0076
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionSizeGrip\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionSizeGrip\");
 
-T_PTROBJ_0080
+T_PTROBJ_0077
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleInterfaceEx\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleInterfaceEx\");
 
-T_PTROBJ_0081
+T_PTROBJ_0078
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionViewItemV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionViewItemV2\");
 
-T_PTROBJ_0082
+T_PTROBJ_0079
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsGridLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsGridLayout\");
 
-T_PTROBJ_0083
+T_PTROBJ_0080
     if (sv_derived_from($arg, \"Qt::Gui::QStackedLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStackedLayout\");
 
-T_PTROBJ_0084
+T_PTROBJ_0081
     if (sv_derived_from($arg, \"Qt::Gui::QActionEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QActionEvent\");
 
-T_PTROBJ_0085
+T_PTROBJ_0082
     if (sv_derived_from($arg, \"Qt::Gui::QPolygonF\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPolygonF\");
 
-T_PTROBJ_0086
+T_PTROBJ_0083
     if (sv_derived_from($arg, \"Qt::Gui::QPainterPath::Element\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPainterPath::Element\");
 
-T_PTROBJ_0087
+T_PTROBJ_0084
     if (sv_derived_from($arg, \"Qt::Gui::QImageTextKeyLang\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QImageTextKeyLang\");
 
-T_PTROBJ_0088
+T_PTROBJ_0085
     if (sv_derived_from($arg, \"Qt::Gui::QSizePolicy\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSizePolicy\");
 
-T_PTROBJ_0089
+T_PTROBJ_0086
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionViewItemV3\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionViewItemV3\");
 
-T_PTROBJ_0090
+T_PTROBJ_0087
     if (sv_derived_from($arg, \"Qt::Gui::QGradient\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGradient\");
 
-T_PTROBJ_0091
+T_PTROBJ_0088
     if (sv_derived_from($arg, \"Qt::Gui::QFont\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFont\");
 
-T_PTROBJ_0092
+T_PTROBJ_0089
     if (sv_derived_from($arg, \"Qt::Gui::QMdiSubWindow\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMdiSubWindow\");
 
-T_PTROBJ_0093
+T_PTROBJ_0090
     if (sv_derived_from($arg, \"Qt::Gui::QWorkspace\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWorkspace\");
 
-T_PTROBJ_0094
+T_PTROBJ_0091
     if (sv_derived_from($arg, \"Qt::Gui::QDoubleValidator\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDoubleValidator\");
 
-T_PTROBJ_0095
+T_PTROBJ_0092
     if (sv_derived_from($arg, \"Qt::Gui::QTouchEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTouchEvent\");
 
-T_PTROBJ_0096
+T_PTROBJ_0093
     if (sv_derived_from($arg, \"Qt::Gui::QInputMethodEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QInputMethodEvent\");
 
-T_PTROBJ_0097
+T_PTROBJ_0094
     if (sv_derived_from($arg, \"Qt::Gui::QTabWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTabWidget\");
 
-T_PTROBJ_0098
+T_PTROBJ_0095
     if (sv_derived_from($arg, \"Qt::Gui::QPainterPath\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPainterPath\");
 
-T_PTROBJ_0099
+T_PTROBJ_0096
     if (sv_derived_from($arg, \"Qt::Gui::QTextTableFormat\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextTableFormat\");
 
-T_PTROBJ_0100
+T_PTROBJ_0097
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionViewItemV4\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionViewItemV4\");
 
-T_PTROBJ_0101
+T_PTROBJ_0098
     if (sv_derived_from($arg, \"Qt::Gui::QSpinBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSpinBox\");
 
-T_PTROBJ_0102
+T_PTROBJ_0099
     if (sv_derived_from($arg, \"Qt::Gui::QMenu\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMenu\");
 
-T_PTROBJ_0103
+T_PTROBJ_0100
     if (sv_derived_from($arg, \"Qt::Gui::QPalette\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPalette\");
 
-T_PTROBJ_0104
+T_PTROBJ_0101
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractUndoItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractUndoItem\");
 
-T_PTROBJ_0105
+T_PTROBJ_0102
     if (sv_derived_from($arg, \"Qt::Gui::QDateEdit\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDateEdit\");
 
-T_PTROBJ_0106
+T_PTROBJ_0103
     if (sv_derived_from($arg, \"Qt::Gui::QItemEditorCreatorBase\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QItemEditorCreatorBase\");
 
-T_PTROBJ_0107
+T_PTROBJ_0104
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSceneContextMenuEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSceneContextMenuEvent\");
 
-T_PTROBJ_0108
+T_PTROBJ_0105
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractButton\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractButton\");
 
-T_PTROBJ_0109
+T_PTROBJ_0106
     if (sv_derived_from($arg, \"Qt::Gui::QHideEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QHideEvent\");
 
-T_PTROBJ_0110
+T_PTROBJ_0107
     if (sv_derived_from($arg, \"Qt::Gui::QSplashScreen\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSplashScreen\");
 
-T_PTROBJ_0111
+T_PTROBJ_0108
     if (sv_derived_from($arg, \"Qt::Gui::QDataWidgetMapper\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDataWidgetMapper\");
 
-T_PTROBJ_0112
+T_PTROBJ_0109
     if (sv_derived_from($arg, \"Qt::Gui::QHoverEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QHoverEvent\");
 
-T_PTROBJ_0113
+T_PTROBJ_0110
     if (sv_derived_from($arg, \"Qt::Gui::QSyntaxHighlighter\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSyntaxHighlighter\");
 
-T_PTROBJ_0114
+T_PTROBJ_0111
     if (sv_derived_from($arg, \"Qt::Gui::QAccessible\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessible\");
 
-T_PTROBJ_0115
+T_PTROBJ_0112
     if (sv_derived_from($arg, \"Qt::Gui::QTextFrameFormat\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextFrameFormat\");
 
-T_PTROBJ_0116
+T_PTROBJ_0113
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsObject\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsObject\");
 
-T_PTROBJ_0117
+T_PTROBJ_0114
     if (sv_derived_from($arg, \"Qt::Gui::QPaintEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPaintEvent\");
 
-T_PTROBJ_0118
+T_PTROBJ_0115
     if (sv_derived_from($arg, \"Qt::Gui::QToolButton\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QToolButton\");
 
-T_PTROBJ_0119
+T_PTROBJ_0116
     if (sv_derived_from($arg, \"Qt::Gui::QMotifStyle\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMotifStyle\");
 
-T_PTROBJ_0120
+T_PTROBJ_0117
     if (sv_derived_from($arg, \"Qt::Gui::QWidgetAction\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWidgetAction\");
 
-T_PTROBJ_0121
+T_PTROBJ_0118
     if (sv_derived_from($arg, \"Qt::Gui::QTextObjectInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextObjectInterface\");
 
-T_PTROBJ_0122
+T_PTROBJ_0119
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleEditableTextInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleEditableTextInterface\");
 
-T_PTROBJ_0123
+T_PTROBJ_0120
     if (sv_derived_from($arg, \"Qt::Gui::QLabel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QLabel\");
 
-T_PTROBJ_0124
+T_PTROBJ_0121
     if (sv_derived_from($arg, \"Qt::Gui::QPaintEngineState\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPaintEngineState\");
 
-T_PTROBJ_0125
+T_PTROBJ_0122
     if (sv_derived_from($arg, \"Qt::Gui::QComboBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QComboBox\");
 
-T_PTROBJ_0126
+T_PTROBJ_0123
     if (sv_derived_from($arg, \"Qt::Gui::QSplitter\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSplitter\");
 
-T_PTROBJ_0127
+T_PTROBJ_0124
     if (sv_derived_from($arg, \"Qt::Gui::QDateTimeEdit\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDateTimeEdit\");
 
-T_PTROBJ_0128
+T_PTROBJ_0125
     if (sv_derived_from($arg, \"Qt::Gui::QWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWidget\");
 
-T_PTROBJ_0129
+T_PTROBJ_0126
     if (sv_derived_from($arg, \"Qt::Gui::QFocusEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFocusEvent\");
 
-T_PTROBJ_0130
+T_PTROBJ_0127
     if (sv_derived_from($arg, \"Qt::Gui::QImageIOPlugin\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QImageIOPlugin\");
 
-T_PTROBJ_0131
+T_PTROBJ_0128
     if (sv_derived_from($arg, \"Qt::Gui::QValidator\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QValidator\");
 
-T_PTROBJ_0132
+T_PTROBJ_0129
     if (sv_derived_from($arg, \"Qt::Gui::QPushButton\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPushButton\");
 
-T_PTROBJ_0133
+T_PTROBJ_0130
     if (sv_derived_from($arg, \"Qt::Gui::QTextBlock\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextBlock\");
 
-T_PTROBJ_0134
+T_PTROBJ_0131
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSceneDragDropEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSceneDragDropEvent\");
 
-T_PTROBJ_0135
+T_PTROBJ_0132
     if (sv_derived_from($arg, \"Qt::Gui::QPrintEngine\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPrintEngine\");
 
-T_PTROBJ_0136
+T_PTROBJ_0133
     if (sv_derived_from($arg, \"Qt::Gui::QUnixPrintWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QUnixPrintWidget\");
 
-T_PTROBJ_0137
+T_PTROBJ_0134
     if (sv_derived_from($arg, \"Qt::Gui::QItemSelectionModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QItemSelectionModel\");
 
-T_PTROBJ_0138
+T_PTROBJ_0135
     if (sv_derived_from($arg, \"Qt::Gui::QColormap\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QColormap\");
 
-T_PTROBJ_0139
+T_PTROBJ_0136
     if (sv_derived_from($arg, \"Qt::Gui::QFontMetrics\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFontMetrics\");
 
-T_PTROBJ_0140
+T_PTROBJ_0137
     if (sv_derived_from($arg, \"Qt::Gui::QHeaderView\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QHeaderView\");
 
-T_PTROBJ_0141
+T_PTROBJ_0138
     if (sv_derived_from($arg, \"Qt::Gui::QLayoutItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QLayoutItem\");
 
-T_PTROBJ_0142
+T_PTROBJ_0139
     if (sv_derived_from($arg, \"Qt::Gui::QTextEdit\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextEdit\");
 
-T_PTROBJ_0143
+T_PTROBJ_0140
     if (sv_derived_from($arg, \"Qt::Gui::QMenuBar\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMenuBar\");
 
-T_PTROBJ_0144
+T_PTROBJ_0141
     if (sv_derived_from($arg, \"Qt::Gui::QStyledItemDelegate\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyledItemDelegate\");
 
-T_PTROBJ_0145
+T_PTROBJ_0142
     if (sv_derived_from($arg, \"Qt::Gui::QShowEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QShowEvent\");
 
-T_PTROBJ_0146
+T_PTROBJ_0143
     if (sv_derived_from($arg, \"Qt::Gui::QTransform\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTransform\");
 
-T_PTROBJ_0147
+T_PTROBJ_0144
     if (sv_derived_from($arg, \"Qt::Gui::QTabletEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTabletEvent\");
 
-T_PTROBJ_0148
+T_PTROBJ_0145
     if (sv_derived_from($arg, \"Qt::Gui::QProxyModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QProxyModel\");
 
-T_PTROBJ_0149
+T_PTROBJ_0146
     if (sv_derived_from($arg, \"Qt::Gui::QKeySequence\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QKeySequence\");
 
-T_PTROBJ_0150
+T_PTROBJ_0147
     if (sv_derived_from($arg, \"Qt::Gui::QVector2D\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QVector2D\");
 
-T_PTROBJ_0151
+T_PTROBJ_0148
     if (sv_derived_from($arg, \"Qt::Gui::QTextFormat\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextFormat\");
 
-T_PTROBJ_0152
+T_PTROBJ_0149
     if (sv_derived_from($arg, \"Qt::Gui::QTextCharFormat\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextCharFormat\");
 
-T_PTROBJ_0153
+T_PTROBJ_0150
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleFactoryInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleFactoryInterface\");
 
-T_PTROBJ_0154
+T_PTROBJ_0151
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleTextInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleTextInterface\");
 
-T_PTROBJ_0155
+T_PTROBJ_0152
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleInterface\");
 
-T_PTROBJ_0156
+T_PTROBJ_0153
     if (sv_derived_from($arg, \"Qt::Gui::QActionGroup\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QActionGroup\");
 
-T_PTROBJ_0157
+T_PTROBJ_0154
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionComplex\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionComplex\");
 
-T_PTROBJ_0158
+T_PTROBJ_0155
     if (sv_derived_from($arg, \"Qt::Gui::QStaticText\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStaticText\");
 
-T_PTROBJ_0159
+T_PTROBJ_0156
     if (sv_derived_from($arg, \"Qt::Gui::QItemEditorFactory\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QItemEditorFactory\");
 
-T_PTROBJ_0160
+T_PTROBJ_0157
     if (sv_derived_from($arg, \"Qt::Gui::QStatusTipEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStatusTipEvent\");
 
-T_PTROBJ_0161
+T_PTROBJ_0158
     if (sv_derived_from($arg, \"Qt::Gui::QTextLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextLayout\");
 
-T_PTROBJ_0162
+T_PTROBJ_0159
     if (sv_derived_from($arg, \"Qt::Gui::QTapAndHoldGesture\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTapAndHoldGesture\");
 
-T_PTROBJ_0163
+T_PTROBJ_0160
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsItemAnimation\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsItemAnimation\");
 
-T_PTROBJ_0164
+T_PTROBJ_0161
     if (sv_derived_from($arg, \"Qt::Gui::QIconEnginePluginV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QIconEnginePluginV2\");
 
-T_PTROBJ_0165
+T_PTROBJ_0162
     if (sv_derived_from($arg, \"Qt::Gui::QStyleFactoryInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleFactoryInterface\");
 
-T_PTROBJ_0166
+T_PTROBJ_0163
     if (sv_derived_from($arg, \"Qt::Gui::QMouseEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMouseEvent\");
 
-T_PTROBJ_0167
+T_PTROBJ_0164
     if (sv_derived_from($arg, \"Qt::Gui::QButtonGroup\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QButtonGroup\");
 
-T_PTROBJ_0168
+T_PTROBJ_0165
     if (sv_derived_from($arg, \"Qt::Gui::QPlainTextEdit\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPlainTextEdit\");
 
-T_PTROBJ_0169
+T_PTROBJ_0166
     if (sv_derived_from($arg, \"Qt::Gui::QTextCursor\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextCursor\");
 
-T_PTROBJ_0170
+T_PTROBJ_0167
     if (sv_derived_from($arg, \"Qt::Gui::QItemDelegate\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QItemDelegate\");
 
-T_PTROBJ_0171
+T_PTROBJ_0168
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsRotation\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsRotation\");
 
-T_PTROBJ_0172
+T_PTROBJ_0169
     if (sv_derived_from($arg, \"Qt::Gui::QUndoCommand\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QUndoCommand\");
 
-T_PTROBJ_0173
+T_PTROBJ_0170
     if (sv_derived_from($arg, \"Qt\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt\");
 
-T_PTROBJ_0174
+T_PTROBJ_0171
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionMenuItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionMenuItem\");
 
-T_PTROBJ_0175
+T_PTROBJ_0172
     if (sv_derived_from($arg, \"Qt::Gui::QRadioButton\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QRadioButton\");
 
-T_PTROBJ_0176
+T_PTROBJ_0173
     if (sv_derived_from($arg, \"Qt::Gui::QListView\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QListView\");
 
-T_PTROBJ_0177
+T_PTROBJ_0174
     if (sv_derived_from($arg, \"Qt::Gui::QIconEngineFactoryInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QIconEngineFactoryInterface\");
 
-T_PTROBJ_0178
+T_PTROBJ_0175
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSceneEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSceneEvent\");
 
-T_PTROBJ_0179
+T_PTROBJ_0176
     if (sv_derived_from($arg, \"Qt::Gui::QProxyStyle\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QProxyStyle\");
 
-T_PTROBJ_0180
+T_PTROBJ_0177
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSimpleTextItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSimpleTextItem\");
 
-T_PTROBJ_0181
+T_PTROBJ_0178
     if (sv_derived_from($arg, \"Qt::Gui::QTextDocumentWriter\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextDocumentWriter\");
 
-T_PTROBJ_0182
+T_PTROBJ_0179
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionTabBarBase\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionTabBarBase\");
 
-T_PTROBJ_0183
+T_PTROBJ_0180
     if (sv_derived_from($arg, \"Qt::Gui::QStandardItemModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStandardItemModel\");
 
-T_PTROBJ_0184
+T_PTROBJ_0181
     if (sv_derived_from($arg, \"Qt::Gui::QPrinterInfo\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPrinterInfo\");
 
-T_PTROBJ_0185
+T_PTROBJ_0182
     if (sv_derived_from($arg, \"Qt::Gui::QIconEngineV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QIconEngineV2\");
 
-T_PTROBJ_0186
+T_PTROBJ_0183
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleObject\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleObject\");
 
-T_PTROBJ_0187
+T_PTROBJ_0184
     if (sv_derived_from($arg, \"Qt::Gui::QPainter::PixmapFragment\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPainter::PixmapFragment\");
 
-T_PTROBJ_0188
+T_PTROBJ_0185
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsLayoutItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsLayoutItem\");
 
-T_PTROBJ_0189
+T_PTROBJ_0186
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractTextDocumentLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractTextDocumentLayout\");
 
-T_PTROBJ_0190
+T_PTROBJ_0187
     if (sv_derived_from($arg, \"Qt::Core::QPersistentModelIndex\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QPersistentModelIndex\");
 
-T_PTROBJ_0191
+T_PTROBJ_0188
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsItemGroup\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsItemGroup\");
 
-T_PTROBJ_0192
+T_PTROBJ_0189
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleApplication\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleApplication\");
 
-T_PTROBJ_0193
+T_PTROBJ_0190
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsAnchor\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsAnchor\");
 
-T_PTROBJ_0194
+T_PTROBJ_0191
     if (sv_derived_from($arg, \"Qt::Gui::QTileRules\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTileRules\");
 
-T_PTROBJ_0195
+T_PTROBJ_0192
     if (sv_derived_from($arg, \"Qt::Gui::QKeyEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QKeyEvent\");
 
-T_PTROBJ_0196
+T_PTROBJ_0193
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionTabV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionTabV2\");
 
-T_PTROBJ_0197
+T_PTROBJ_0194
     if (sv_derived_from($arg, \"Qt::Gui::QTextBlockGroup\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextBlockGroup\");
 
-T_PTROBJ_0198
+T_PTROBJ_0195
     if (sv_derived_from($arg, \"Qt::Gui::QVBoxLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QVBoxLayout\");
 
-T_PTROBJ_0199
+T_PTROBJ_0196
     if (sv_derived_from($arg, \"Qt::Gui::QGesture\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGesture\");
 
-T_PTROBJ_0200
+T_PTROBJ_0197
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionRubberBand\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionRubberBand\");
 
-T_PTROBJ_0201
+T_PTROBJ_0198
     if (sv_derived_from($arg, \"Qt::Gui::QApplication\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QApplication\");
 
-T_PTROBJ_0202
+T_PTROBJ_0199
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractPrintDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractPrintDialog\");
 
-T_PTROBJ_0203
+T_PTROBJ_0200
     if (sv_derived_from($arg, \"Qt::Gui::QTreeWidgetItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTreeWidgetItem\");
 
-T_PTROBJ_0204
+T_PTROBJ_0201
     if (sv_derived_from($arg, \"Qt::Gui::QStyleFactory\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleFactory\");
 
-T_PTROBJ_0205
+T_PTROBJ_0202
     if (sv_derived_from($arg, \"Qt::Gui::QHBoxLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QHBoxLayout\");
 
-T_PTROBJ_0206
+T_PTROBJ_0203
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionGroupBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionGroupBox\");
 
-T_PTROBJ_0207
+T_PTROBJ_0204
     if (sv_derived_from($arg, \"Qt::Gui::QInputDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QInputDialog\");
 
-T_PTROBJ_0208
+T_PTROBJ_0205
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionTabV3\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionTabV3\");
 
-T_PTROBJ_0209
+T_PTROBJ_0206
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleImageInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleImageInterface\");
 
-T_PTROBJ_0210
+T_PTROBJ_0207
     if (sv_derived_from($arg, \"Qt::Gui::QUndoGroup\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QUndoGroup\");
 
-T_PTROBJ_0211
+T_PTROBJ_0208
     if (sv_derived_from($arg, \"Qt::Gui::QLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QLayout\");
 
-T_PTROBJ_0212
+T_PTROBJ_0209
     if (sv_derived_from($arg, \"Qt::Gui::QAction\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAction\");
 
-T_PTROBJ_0213
+T_PTROBJ_0210
     if (sv_derived_from($arg, \"Qt::Gui::QTextImageFormat\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextImageFormat\");
 
-T_PTROBJ_0214
+T_PTROBJ_0211
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionTabBarBaseV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionTabBarBaseV2\");
 
-T_PTROBJ_0215
+T_PTROBJ_0212
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleBridgePlugin\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleBridgePlugin\");
 
-T_PTROBJ_0216
+T_PTROBJ_0213
     if (sv_derived_from($arg, \"Qt::Gui::QMessageBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMessageBox\");
 
-T_PTROBJ_0217
+T_PTROBJ_0214
     if (sv_derived_from($arg, \"Qt::Gui::QScrollArea\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QScrollArea\");
 
-T_PTROBJ_0218
+T_PTROBJ_0215
     if (sv_derived_from($arg, \"Qt::Gui::QTextTableCellFormat\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextTableCellFormat\");
 
-T_PTROBJ_0219
+T_PTROBJ_0216
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractProxyModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractProxyModel\");
 
-T_PTROBJ_0220
+T_PTROBJ_0217
     if (sv_derived_from($arg, \"Qt::Gui::QVector3D\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QVector3D\");
 
-T_PTROBJ_0221
+T_PTROBJ_0218
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionHeader\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionHeader\");
 
-T_PTROBJ_0222
+T_PTROBJ_0219
     if (sv_derived_from($arg, \"Qt::Gui::QDial\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDial\");
 
-T_PTROBJ_0223
+T_PTROBJ_0220
     if (sv_derived_from($arg, \"Qt::Gui::QCursor\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QCursor\");
 
-T_PTROBJ_0224
+T_PTROBJ_0221
     if (sv_derived_from($arg, \"Qt::Gui::QColor\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QColor\");
 
-T_PTROBJ_0225
+T_PTROBJ_0222
     if (sv_derived_from($arg, \"Qt::Gui::QQuaternion\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QQuaternion\");
 
-T_PTROBJ_0226
+T_PTROBJ_0223
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSceneMoveEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSceneMoveEvent\");
 
-T_PTROBJ_0227
+T_PTROBJ_0224
     if (sv_derived_from($arg, \"Qt::Core::QInternal\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QInternal\");
 
-T_PTROBJ_0228
+T_PTROBJ_0225
     if (sv_derived_from($arg, \"Qt::Gui::QTextDocument\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextDocument\");
 
-T_PTROBJ_0229
+T_PTROBJ_0226
     if (sv_derived_from($arg, \"Qt::Gui::QWindowStateChangeEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWindowStateChangeEvent\");
 
-T_PTROBJ_0230
+T_PTROBJ_0227
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsLineItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsLineItem\");
 
-T_PTROBJ_0231
+T_PTROBJ_0228
     if (sv_derived_from($arg, \"Qt::Gui::QPolygon\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPolygon\");
 
-T_PTROBJ_0232
+T_PTROBJ_0229
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsPathItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsPathItem\");
 
-T_PTROBJ_0233
+T_PTROBJ_0230
     if (sv_derived_from($arg, \"Qt::Gui::QInputMethodEvent::Attribute\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QInputMethodEvent::Attribute\");
 
-T_PTROBJ_0234
+T_PTROBJ_0231
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionToolButton\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionToolButton\");
 
-T_PTROBJ_0235
+T_PTROBJ_0232
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionTabWidgetFrame\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionTabWidgetFrame\");
 
-T_PTROBJ_0236
+T_PTROBJ_0233
     if (sv_derived_from($arg, \"Qt::Gui::QPixmap\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPixmap\");
 
-T_PTROBJ_0237
+T_PTROBJ_0234
     if (sv_derived_from($arg, \"Qt::Gui::QFocusFrame\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFocusFrame\");
 
-T_PTROBJ_0238
+T_PTROBJ_0235
     if (sv_derived_from($arg, \"Qt::Gui::QUpdateLaterEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QUpdateLaterEvent\");
 
-T_PTROBJ_0239
+T_PTROBJ_0236
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionQ3ListView\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionQ3ListView\");
 
-T_PTROBJ_0240
+T_PTROBJ_0237
     if (sv_derived_from($arg, \"Qt::Gui::QIconEngineFactoryInterfaceV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QIconEngineFactoryInterfaceV2\");
 
-T_PTROBJ_0241
-    if (sv_derived_from($arg, \"Qt::Gui::QWSEmbedWidget\"))
-        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
-    else
-        Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWSEmbedWidget\");
-
-T_PTROBJ_0242
+T_PTROBJ_0238
     if (sv_derived_from($arg, \"Qt::Gui::QMatrix\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMatrix\");
 
-T_PTROBJ_0243
+T_PTROBJ_0239
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsLinearLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsLinearLayout\");
 
-T_PTROBJ_0244
+T_PTROBJ_0240
     if (sv_derived_from($arg, \"Qt::Gui::QCheckBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QCheckBox\");
 
-T_PTROBJ_0245
+T_PTROBJ_0241
     if (sv_derived_from($arg, \"Qt::Gui::QPlainTextDocumentLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPlainTextDocumentLayout\");
 
-T_PTROBJ_0246
+T_PTROBJ_0242
     if (sv_derived_from($arg, \"Qt::Gui::QShortcut\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QShortcut\");
 
-T_PTROBJ_0247
+T_PTROBJ_0243
     if (sv_derived_from($arg, \"Qt::Gui::QPainter\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPainter\");
 
-T_PTROBJ_0248
+T_PTROBJ_0244
     if (sv_derived_from($arg, \"Qt::Gui::QTextItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextItem\");
 
-T_PTROBJ_0249
+T_PTROBJ_0245
     if (sv_derived_from($arg, \"Qt::Gui::QStringListModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStringListModel\");
 
-T_PTROBJ_0250
+T_PTROBJ_0246
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractGraphicsShapeItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractGraphicsShapeItem\");
 
-T_PTROBJ_0251
+T_PTROBJ_0247
     if (sv_derived_from($arg, \"Qt::Gui::QFontInfo\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFontInfo\");
 
-T_PTROBJ_0252
+T_PTROBJ_0248
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSceneHoverEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSceneHoverEvent\");
 
-T_PTROBJ_0253
+T_PTROBJ_0249
     if (sv_derived_from($arg, \"Qt::Gui::QLCDNumber\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QLCDNumber\");
 
-T_PTROBJ_0254
+T_PTROBJ_0250
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleTableInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleTableInterface\");
 
-T_PTROBJ_0255
+T_PTROBJ_0251
     if (sv_derived_from($arg, \"Qt::Gui::QMouseEventTransition\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMouseEventTransition\");
 
-T_PTROBJ_0256
+T_PTROBJ_0252
     if (sv_derived_from($arg, \"Qt::Gui::QCommonStyle\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QCommonStyle\");
 
-T_PTROBJ_0257
+T_PTROBJ_0253
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsEffect\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsEffect\");
 
-T_PTROBJ_0258
+T_PTROBJ_0254
     if (sv_derived_from($arg, \"Qt::Gui::QTextInlineObject\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextInlineObject\");
 
-T_PTROBJ_0259
+T_PTROBJ_0255
     if (sv_derived_from($arg, \"Qt::Gui::QIntValidator\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QIntValidator\");
 
-T_PTROBJ_0260
+T_PTROBJ_0256
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOption\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOption\");
 
-T_PTROBJ_0261
+T_PTROBJ_0257
     if (sv_derived_from($arg, \"Qt::Gui::QTextObject\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextObject\");
 
-T_PTROBJ_0262
+T_PTROBJ_0258
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractScrollArea\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractScrollArea\");
 
-T_PTROBJ_0263
+T_PTROBJ_0259
     if (sv_derived_from($arg, \"Qt::Gui::QDoubleSpinBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDoubleSpinBox\");
 
-T_PTROBJ_0264
+T_PTROBJ_0260
     if (sv_derived_from($arg, \"Qt::Gui::QUndoStack\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QUndoStack\");
 
-T_PTROBJ_0265
-    if (sv_derived_from($arg, \"Qt::Gui::QDropEvent\"))
-        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
-    else
-        Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDropEvent\");
-
-T_PTROBJ_0266
+T_PTROBJ_0261
     if (sv_derived_from($arg, \"Qt::Gui::QContextMenuEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QContextMenuEvent\");
 
-T_PTROBJ_0267
+T_PTROBJ_0262
     if (sv_derived_from($arg, \"Qt::Gui::QVector4D\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QVector4D\");
 
-T_PTROBJ_0268
+T_PTROBJ_0263
     if (sv_derived_from($arg, \"Qt::Gui::QPictureFormatInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPictureFormatInterface\");
 
-T_PTROBJ_0269
+T_PTROBJ_0264
     if (sv_derived_from($arg, \"Qt::Gui::QStylePlugin\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStylePlugin\");
 
-T_PTROBJ_0270
+T_PTROBJ_0265
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractPageSetupDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractPageSetupDialog\");
 
-T_PTROBJ_0271
+T_PTROBJ_0266
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleActionInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleActionInterface\");
 
-T_PTROBJ_0272
+T_PTROBJ_0267
     if (sv_derived_from($arg, \"Qt::Core::QAbstractListModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QAbstractListModel\");
 
-T_PTROBJ_0273
+T_PTROBJ_0268
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsScene\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsScene\");
 
-T_PTROBJ_0274
+T_PTROBJ_0269
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsBlurEffect\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsBlurEffect\");
 
-T_PTROBJ_0275
+T_PTROBJ_0270
     if (sv_derived_from($arg, \"Qt::Gui::QSessionManager\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSessionManager\");
 
-T_PTROBJ_0276
+T_PTROBJ_0271
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractItemView\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractItemView\");
 
-T_PTROBJ_0277
+T_PTROBJ_0272
     if (sv_derived_from($arg, \"Qt::Gui::QBoxLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QBoxLayout\");
 
-T_PTROBJ_0278
-    if (sv_derived_from($arg, \"Qt::Gui::QDragLeaveEvent\"))
-        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
-    else
-        Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDragLeaveEvent\");
-
-T_PTROBJ_0279
+T_PTROBJ_0273
     if (sv_derived_from($arg, \"Qt::Gui::QTextOption::Tab\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextOption::Tab\");
 
-T_PTROBJ_0280
+T_PTROBJ_0274
     if (sv_derived_from($arg, \"Qt::Gui::QPictureFormatPlugin\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPictureFormatPlugin\");
 
-T_PTROBJ_0281
+T_PTROBJ_0275
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsPixmapItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsPixmapItem\");
 
-T_PTROBJ_0282
+T_PTROBJ_0276
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractItemDelegate\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractItemDelegate\");
 
-T_PTROBJ_0283
+T_PTROBJ_0277
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionFrameV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionFrameV2\");
 
-T_PTROBJ_0284
+T_PTROBJ_0278
     if (sv_derived_from($arg, \"Qt::Gui::QSound\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSound\");
 
-T_PTROBJ_0285
+T_PTROBJ_0279
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSceneHelpEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSceneHelpEvent\");
 
-T_PTROBJ_0286
+T_PTROBJ_0280
     if (sv_derived_from($arg, \"Qt::Gui::QImageIOHandler\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QImageIOHandler\");
 
-T_PTROBJ_0287
+T_PTROBJ_0281
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionFrameV3\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionFrameV3\");
 
-T_PTROBJ_0288
+T_PTROBJ_0282
     if (sv_derived_from($arg, \"Qt::Gui::QDockWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDockWidget\");
 
-T_PTROBJ_0289
+T_PTROBJ_0283
     if (sv_derived_from($arg, \"Qt::Gui::QColorDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QColorDialog\");
 
-T_PTROBJ_0290
+T_PTROBJ_0284
     if (sv_derived_from($arg, \"Qt::Gui::QSwipeGesture\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSwipeGesture\");
 
-T_PTROBJ_0291
+T_PTROBJ_0285
     if (sv_derived_from($arg, \"Qt::Gui::QWhatsThis\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWhatsThis\");
 
-T_PTROBJ_0292
+T_PTROBJ_0286
     if (sv_derived_from($arg, \"Qt::Gui::QTextBlockUserData\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextBlockUserData\");
 
-T_PTROBJ_0293
+T_PTROBJ_0287
     if (sv_derived_from($arg, \"Qt::Gui::QTreeWidgetItemIterator\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTreeWidgetItemIterator\");
 
-T_PTROBJ_0294
+T_PTROBJ_0288
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSceneMouseEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSceneMouseEvent\");
 
-T_PTROBJ_0295
+T_PTROBJ_0289
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionComboBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionComboBox\");
 
-T_PTROBJ_0296
+T_PTROBJ_0290
     if (sv_derived_from($arg, \"Qt::Gui::QSpacerItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSpacerItem\");
 
-T_PTROBJ_0297
+T_PTROBJ_0291
     if (sv_derived_from($arg, \"Qt::Gui::QInputContext\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QInputContext\");
 
-T_PTROBJ_0298
+T_PTROBJ_0292
     if (sv_derived_from($arg, \"Qt::Gui::QSizeGrip\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSizeGrip\");
 
-T_PTROBJ_0299
+T_PTROBJ_0293
     if (sv_derived_from($arg, \"Qt::Gui::QTableView\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTableView\");
 
-T_PTROBJ_0300
+T_PTROBJ_0294
     if (sv_derived_from($arg, \"Qt::Gui::QPrintPreviewDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPrintPreviewDialog\");
 
-T_PTROBJ_0301
+T_PTROBJ_0295
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionSlider\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionSlider\");
 
-T_PTROBJ_0302
+T_PTROBJ_0296
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionDockWidgetV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionDockWidgetV2\");
 
-T_PTROBJ_0303
+T_PTROBJ_0297
     if (sv_derived_from($arg, \"Qt::Gui::QListWidgetItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QListWidgetItem\");
 
-T_PTROBJ_0304
+T_PTROBJ_0298
     if (sv_derived_from($arg, \"Qt::Gui::QStyle\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyle\");
 
-T_PTROBJ_0305
+T_PTROBJ_0299
     if (sv_derived_from($arg, \"Qt::Gui::QTextList\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextList\");
 
-T_PTROBJ_0306
+T_PTROBJ_0300
     if (sv_derived_from($arg, \"Qt::Gui::QToolBarChangeEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QToolBarChangeEvent\");
 
-T_PTROBJ_0307
+T_PTROBJ_0301
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsProxyWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsProxyWidget\");
 
-T_PTROBJ_0308
+T_PTROBJ_0302
     if (sv_derived_from($arg, \"Qt::Gui::QPixmapCache\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPixmapCache\");
 
-T_PTROBJ_0309
+T_PTROBJ_0303
     if (sv_derived_from($arg, \"Qt::Gui::QTreeView\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTreeView\");
 
-T_PTROBJ_0310
+T_PTROBJ_0304
     if (sv_derived_from($arg, \"Qt::Gui::QTextFragment\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextFragment\");
 
-T_PTROBJ_0311
+T_PTROBJ_0305
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionQ3ListViewItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionQ3ListViewItem\");
 
-T_PTROBJ_0312
+T_PTROBJ_0306
     if (sv_derived_from($arg, \"Qt::Gui::QLinearGradient\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QLinearGradient\");
 
-T_PTROBJ_0313
+T_PTROBJ_0307
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsColorizeEffect\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsColorizeEffect\");
 
-T_PTROBJ_0314
+T_PTROBJ_0308
     if (sv_derived_from($arg, \"Qt::Gui::QInputContextFactory\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QInputContextFactory\");
 
-T_PTROBJ_0315
+T_PTROBJ_0309
     if (sv_derived_from($arg, \"Qt::Gui::QRadialGradient\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QRadialGradient\");
 
-T_PTROBJ_0316
+T_PTROBJ_0310
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleValueInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleValueInterface\");
 
-T_PTROBJ_0317
+T_PTROBJ_0311
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsOpacityEffect\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsOpacityEffect\");
 
-T_PTROBJ_0318
+T_PTROBJ_0312
     if (sv_derived_from($arg, \"Qt::Gui::QIconDragEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QIconDragEvent\");
 
-T_PTROBJ_0319
+T_PTROBJ_0313
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleBridgeFactoryInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleBridgeFactoryInterface\");
 
-T_PTROBJ_0320
+T_PTROBJ_0314
     if (sv_derived_from($arg, \"Qt::Gui::QWheelEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWheelEvent\");
 
-T_PTROBJ_0321
+T_PTROBJ_0315
     if (sv_derived_from($arg, \"Qt::Gui::QCommandLinkButton\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QCommandLinkButton\");
 
-T_PTROBJ_0322
+T_PTROBJ_0316
     if (sv_derived_from($arg, \"Qt::Gui::QItemSelection\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QItemSelection\");
 
-T_PTROBJ_0323
+T_PTROBJ_0317
     if (sv_derived_from($arg, \"Qt::Gui::QDesktopWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDesktopWidget\");
 
-T_PTROBJ_0324
+T_PTROBJ_0318
     if (sv_derived_from($arg, \"Qt::Gui::QPictureIO\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPictureIO\");
 
-T_PTROBJ_0325
+T_PTROBJ_0319
     if (sv_derived_from($arg, \"Qt::Gui::QIcon\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QIcon\");
 
-T_PTROBJ_0326
+T_PTROBJ_0320
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionGraphicsItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionGraphicsItem\");
 
-T_PTROBJ_0327
+T_PTROBJ_0321
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsSceneResizeEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsSceneResizeEvent\");
 
-T_PTROBJ_0328
+T_PTROBJ_0322
     if (sv_derived_from($arg, \"Qt::Gui::QPicture\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPicture\");
 
-T_PTROBJ_0329
+T_PTROBJ_0323
     if (sv_derived_from($arg, \"Qt::Gui::QTableWidgetItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTableWidgetItem\");
 
-T_PTROBJ_0330
+T_PTROBJ_0324
     if (sv_derived_from($arg, \"Qt::Gui::QTextLine\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextLine\");
 
-T_PTROBJ_0331
+T_PTROBJ_0325
     if (sv_derived_from($arg, \"Qt::Gui::QWidgetItemV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWidgetItemV2\");
 
-T_PTROBJ_0332
+T_PTROBJ_0326
     if (sv_derived_from($arg, \"Qt::Gui::QTextFrame\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextFrame\");
 
-T_PTROBJ_0333
+T_PTROBJ_0327
     if (sv_derived_from($arg, \"Qt::Gui::QWidgetData\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWidgetData\");
 
-T_PTROBJ_0334
+T_PTROBJ_0328
     if (sv_derived_from($arg, \"Qt::Gui::QWhatsThisClickedEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWhatsThisClickedEvent\");
 
-T_PTROBJ_0335
+T_PTROBJ_0329
     if (sv_derived_from($arg, \"Qt::Gui::QMdiArea\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMdiArea\");
 
-T_PTROBJ_0336
+T_PTROBJ_0330
     if (sv_derived_from($arg, \"Qt::Gui::QFileDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFileDialog\");
 
-T_PTROBJ_0337
+T_PTROBJ_0331
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsWidget\");
 
-T_PTROBJ_0338
+T_PTROBJ_0332
     if (sv_derived_from($arg, \"Qt::Gui::QPaintEngine\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPaintEngine\");
 
-T_PTROBJ_0339
+T_PTROBJ_0333
     if (sv_derived_from($arg, \"Qt::Gui::QRegExpValidator\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QRegExpValidator\");
 
-T_PTROBJ_0340
+T_PTROBJ_0334
     if (sv_derived_from($arg, \"Qt::Gui::QAccessiblePlugin\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessiblePlugin\");
 
-T_PTROBJ_0341
+T_PTROBJ_0335
     if (sv_derived_from($arg, \"Qt::Gui::QFontMetricsF\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFontMetricsF\");
 
-T_PTROBJ_0342
+T_PTROBJ_0336
     if (sv_derived_from($arg, \"Qt::Gui::QLineEdit\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QLineEdit\");
 
-T_PTROBJ_0343
+T_PTROBJ_0337
     if (sv_derived_from($arg, \"Qt::Gui::QCompleter\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QCompleter\");
 
-T_PTROBJ_0344
+T_PTROBJ_0338
     if (sv_derived_from($arg, \"Qt::Gui::QShortcutEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QShortcutEvent\");
 
-T_PTROBJ_0345
+T_PTROBJ_0339
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionViewItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionViewItem\");
 
-T_PTROBJ_0346
+T_PTROBJ_0340
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsView\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsView\");
 
-T_PTROBJ_0347
+T_PTROBJ_0341
     if (sv_derived_from($arg, \"Qt::Gui::QItemSelectionRange\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QItemSelectionRange\");
 
-T_PTROBJ_0348
+T_PTROBJ_0342
     if (sv_derived_from($arg, \"Qt::Gui::QKeyEventTransition\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QKeyEventTransition\");
 
-T_PTROBJ_0349
+T_PTROBJ_0343
     if (sv_derived_from($arg, \"Qt::Gui::QPanGesture\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPanGesture\");
 
-T_PTROBJ_0350
+T_PTROBJ_0344
     if (sv_derived_from($arg, \"Qt::Gui::QTreeWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTreeWidget\");
 
-T_PTROBJ_0351
+T_PTROBJ_0345
     if (sv_derived_from($arg, \"Qt::Gui::QUndoView\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QUndoView\");
 
-T_PTROBJ_0352
+T_PTROBJ_0346
     if (sv_derived_from($arg, \"Qt::Gui::QCDEStyle\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QCDEStyle\");
 
-T_PTROBJ_0353
+T_PTROBJ_0347
     if (sv_derived_from($arg, \"Qt::Gui::QStatusBar\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStatusBar\");
 
-T_PTROBJ_0354
+T_PTROBJ_0348
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleWidgetEx\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessibleWidgetEx\");
 
-T_PTROBJ_0355
+T_PTROBJ_0349
     if (sv_derived_from($arg, \"Qt::Gui::QListWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QListWidget\");
 
-T_PTROBJ_0356
+T_PTROBJ_0350
     if (sv_derived_from($arg, \"Qt::Core::QModelIndex\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QModelIndex\");
 
-T_PTROBJ_0357
+T_PTROBJ_0351
     if (sv_derived_from($arg, \"Qt::Gui::QRegion\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QRegion\");
 
-T_PTROBJ_0358
+T_PTROBJ_0352
     if (sv_derived_from($arg, \"Qt::Gui::QConicalGradient\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QConicalGradient\");
 
-T_PTROBJ_0359
+T_PTROBJ_0353
     if (sv_derived_from($arg, \"Qt::Gui::QPaintDevice\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPaintDevice\");
 
-T_PTROBJ_0360
+T_PTROBJ_0354
     if (sv_derived_from($arg, \"Qt::Gui::QPrintDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPrintDialog\");
 
-T_PTROBJ_0361
+T_PTROBJ_0355
     if (sv_derived_from($arg, \"Qt::Gui::QColumnView\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QColumnView\");
 
-T_PTROBJ_0362
+T_PTROBJ_0356
     if (sv_derived_from($arg, \"Qt::Gui::QTapGesture\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTapGesture\");
 
-T_PTROBJ_0363
+T_PTROBJ_0357
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsAnchorLayout\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsAnchorLayout\");
 
-T_PTROBJ_0364
+T_PTROBJ_0358
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionProgressBarV2\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionProgressBarV2\");
 
-T_PTROBJ_0365
+T_PTROBJ_0359
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionTitleBar\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionTitleBar\");
 
-T_PTROBJ_0366
-    if (sv_derived_from($arg, \"Qt::Gui::QDrag\"))
-        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
-    else
-        Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDrag\");
-
-T_PTROBJ_0367
+T_PTROBJ_0360
     if (sv_derived_from($arg, \"Qt::Gui::QErrorMessage\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QErrorMessage\");
 
-T_PTROBJ_0368
+T_PTROBJ_0361
     if (sv_derived_from($arg, \"Qt::Gui::QDirModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDirModel\");
 
-T_PTROBJ_0369
+T_PTROBJ_0362
     if (sv_derived_from($arg, \"Qt::Gui::QInputEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QInputEvent\");
 
-T_PTROBJ_0370
+T_PTROBJ_0363
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsItem\");
 
-T_PTROBJ_0371
+T_PTROBJ_0364
     if (sv_derived_from($arg, \"Qt::Gui::QFileSystemModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFileSystemModel\");
 
-T_PTROBJ_0372
+T_PTROBJ_0365
     if (sv_derived_from($arg, \"Qt::Gui::QTableWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTableWidget\");
 
-T_PTROBJ_0373
+T_PTROBJ_0366
     if (sv_derived_from($arg, \"Qt::Gui::QCalendarWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QCalendarWidget\");
 
-T_PTROBJ_0374
+T_PTROBJ_0367
     if (sv_derived_from($arg, \"Qt::Gui::QGestureEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGestureEvent\");
 
-T_PTROBJ_0375
+T_PTROBJ_0368
     if (sv_derived_from($arg, \"Qt::Gui::QGestureRecognizer\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGestureRecognizer\");
 
-T_PTROBJ_0376
+T_PTROBJ_0369
     if (sv_derived_from($arg, \"Qt::Gui::QAbstractSlider\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAbstractSlider\");
 
-T_PTROBJ_0377
+T_PTROBJ_0370
     if (sv_derived_from($arg, \"Qt::Gui::QFontDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFontDialog\");
 
-T_PTROBJ_0378
-    if (sv_derived_from($arg, \"Qt::Gui::QDragEnterEvent\"))
-        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
-    else
-        Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDragEnterEvent\");
-
-T_PTROBJ_0379
+T_PTROBJ_0371
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionToolBar\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionToolBar\");
 
-T_PTROBJ_0380
+T_PTROBJ_0372
     if (sv_derived_from($arg, \"Qt::Gui::QMoveEvent\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMoveEvent\");
 
-T_PTROBJ_0381
+T_PTROBJ_0373
     if (sv_derived_from($arg, \"Qt::Gui::QTextLength\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextLength\");
 
-T_PTROBJ_0382
+T_PTROBJ_0374
     if (sv_derived_from($arg, \"Qt::Gui::QTextBrowser\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTextBrowser\");
 
-T_PTROBJ_0383
+T_PTROBJ_0375
     if (sv_derived_from($arg, \"Qt::Gui::QFileIconProvider\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFileIconProvider\");
 
-T_PTROBJ_0384
+T_PTROBJ_0376
     if (sv_derived_from($arg, \"Qt::Gui::QProgressDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QProgressDialog\");
 
-T_PTROBJ_0385
+T_PTROBJ_0377
     if (sv_derived_from($arg, \"Qt::Gui::QImage\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QImage\");
 
-T_PTROBJ_0386
+T_PTROBJ_0378
     if (sv_derived_from($arg, \"Qt::Gui::QTableWidgetSelectionRange\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QTableWidgetSelectionRange\");
 
-T_PTROBJ_0387
+T_PTROBJ_0379
     if (sv_derived_from($arg, \"Qt::Gui::QPinchGesture\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPinchGesture\");
 
-T_PTROBJ_0388
+T_PTROBJ_0380
     if (sv_derived_from($arg, \"Qt::Gui::QImageReader\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QImageReader\");
 
-T_PTROBJ_0389
+T_PTROBJ_0381
     if (sv_derived_from($arg, \"Qt::Gui::QToolTip\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QToolTip\");
 
-T_PTROBJ_0390
+T_PTROBJ_0382
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionTab\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionTab\");
 
-T_PTROBJ_0391
+T_PTROBJ_0383
     if (sv_derived_from($arg, \"Qt::Gui::QMatrix4x4\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMatrix4x4\");
 
-T_PTROBJ_0392
+T_PTROBJ_0384
     if (sv_derived_from($arg, \"Qt::Gui::QSplitterHandle\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QSplitterHandle\");
 
-T_PTROBJ_0393
+T_PTROBJ_0385
     if (sv_derived_from($arg, \"Qt::Gui::QPrinter\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QPrinter\");
 
-T_PTROBJ_0394
+T_PTROBJ_0386
     if (sv_derived_from($arg, \"Qt::Gui::QWizardPage\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QWizardPage\");
 
-T_PTROBJ_0395
+T_PTROBJ_0387
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsScale\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsScale\");
 
-T_PTROBJ_0396
+T_PTROBJ_0388
     if (sv_derived_from($arg, \"Qt::Gui::QGraphicsTransform\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QGraphicsTransform\");
 
-T_PTROBJ_0397
+T_PTROBJ_0389
     if (sv_derived_from($arg, \"Qt::Gui::QMainWindow\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMainWindow\");
 
-T_PTROBJ_0398
-    if (sv_derived_from($arg, \"Qt::Gui::QDragResponseEvent\"))
-        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
-    else
-        Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDragResponseEvent\");
-
-T_PTROBJ_0399
+T_PTROBJ_0390
     if (sv_derived_from($arg, \"Qt::Gui::QToolBar\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QToolBar\");
 
-T_PTROBJ_0400
+T_PTROBJ_0391
     if (sv_derived_from($arg, \"Qt::Gui::QBrush\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QBrush\");
 
-T_PTROBJ_0401
+T_PTROBJ_0392
     if (sv_derived_from($arg, \"Qt::Gui::QAccessible2Interface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QAccessible2Interface\");
 
-T_PTROBJ_0402
+T_PTROBJ_0393
     if (sv_derived_from($arg, \"Qt::Gui::QStyleOptionDockWidget\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QStyleOptionDockWidget\");
 
-T_PTROBJ_0403
+T_PTROBJ_0394
     if (sv_derived_from($arg, \"Qt::Gui::QMimeSource\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QMimeSource\");
 
-T_PTROBJ_0404
+T_PTROBJ_0395
     if (sv_derived_from($arg, \"Qt::Gui::QFontComboBox\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QFontComboBox\");
 
-T_PTROBJ_0405
+T_PTROBJ_0396
     if (sv_derived_from($arg, \"Qt::Gui::QDialog\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Gui::QDialog\");
 
-T_PTROBJ_0406
+T_PTROBJ_0397
     if (sv_derived_from($arg, \"Qt::Gui::QAccessibleObjectEx\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
@@ -2946,1133 +2883,1106 @@ T_PTROBJ_0029
     sv_setref_pv($arg, \"Qt::Gui::QPrintPreviewWidget\", (void *)$var);
 
 T_PTROBJ_0030
-    sv_setref_pv($arg, \"Qt::Gui::QDragMoveEvent\", (void *)$var);
-
-T_PTROBJ_0031
     sv_setref_pv($arg, \"Qt::Gui::QTextFrameLayoutData\", (void *)$var);
 
-T_PTROBJ_0032
+T_PTROBJ_0031
     sv_setref_pv($arg, \"Qt::Gui::QAbstractSpinBox\", (void *)$var);
 
-T_PTROBJ_0033
+T_PTROBJ_0032
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionButton\", (void *)$var);
 
-T_PTROBJ_0034
+T_PTROBJ_0033
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionFrame\", (void *)$var);
 
-T_PTROBJ_0035
+T_PTROBJ_0034
     sv_setref_pv($arg, \"Qt::Gui::QTextTableCell\", (void *)$var);
 
-T_PTROBJ_0036
+T_PTROBJ_0035
     sv_setref_pv($arg, \"Qt::Gui::QImageIOHandlerFactoryInterface\", (void *)$var);
 
-T_PTROBJ_0037
+T_PTROBJ_0036
     sv_setref_pv($arg, \"Qt::Gui::QFontDatabase\", (void *)$var);
 
-T_PTROBJ_0038
+T_PTROBJ_0037
     sv_setref_pv($arg, \"Qt::Gui::QWidgetItem\", (void *)$var);
 
-T_PTROBJ_0039
+T_PTROBJ_0038
     sv_setref_pv($arg, \"Qt::Gui::QTextTable\", (void *)$var);
 
-T_PTROBJ_0040
+T_PTROBJ_0039
     sv_setref_pv($arg, \"Qt::Gui::QAbstractTextDocumentLayout::PaintContext\", (void *)$var);
 
-T_PTROBJ_0041
+T_PTROBJ_0040
     sv_setref_pv($arg, \"Qt::Gui::QGridLayout\", (void *)$var);
 
-T_PTROBJ_0042
+T_PTROBJ_0041
     sv_setref_pv($arg, \"Qt::Gui::QBitmap\", (void *)$var);
 
-T_PTROBJ_0043
+T_PTROBJ_0042
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionTabWidgetFrameV2\", (void *)$var);
 
-T_PTROBJ_0044
+T_PTROBJ_0043
     sv_setref_pv($arg, \"Qt::Gui::QToolBox\", (void *)$var);
 
-T_PTROBJ_0045
+T_PTROBJ_0044
     sv_setref_pv($arg, \"Qt::Gui::QTextBlockFormat\", (void *)$var);
 
-T_PTROBJ_0046
+T_PTROBJ_0045
     sv_setref_pv($arg, \"Qt::Gui::QSortFilterProxyModel\", (void *)$var);
 
-T_PTROBJ_0047
+T_PTROBJ_0046
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsPolygonItem\", (void *)$var);
 
-T_PTROBJ_0048
+T_PTROBJ_0047
     sv_setref_pv($arg, \"Qt::Gui::QSystemTrayIcon\", (void *)$var);
 
-T_PTROBJ_0049
+T_PTROBJ_0048
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsEllipseItem\", (void *)$var);
 
-T_PTROBJ_0050
+T_PTROBJ_0049
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleEvent\", (void *)$var);
 
-T_PTROBJ_0051
-    sv_setref_pv($arg, \"Qt::Gui::QClipboard\", (void *)$var);
-
-T_PTROBJ_0052
+T_PTROBJ_0050
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleBridge\", (void *)$var);
 
-T_PTROBJ_0053
+T_PTROBJ_0051
     sv_setref_pv($arg, \"Qt::Gui::QSlider\", (void *)$var);
 
-T_PTROBJ_0054
+T_PTROBJ_0052
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsDropShadowEffect\", (void *)$var);
 
-T_PTROBJ_0055
+T_PTROBJ_0053
     sv_setref_pv($arg, \"Qt::Gui::QStylePainter\", (void *)$var);
 
-T_PTROBJ_0056
+T_PTROBJ_0054
     sv_setref_pv($arg, \"Qt::Gui::QHelpEvent\", (void *)$var);
 
-T_PTROBJ_0057
+T_PTROBJ_0055
     sv_setref_pv($arg, \"Qt::Gui::QInputContextPlugin\", (void *)$var);
 
-T_PTROBJ_0058
+T_PTROBJ_0056
     sv_setref_pv($arg, \"Qt::Gui::QIconEnginePlugin\", (void *)$var);
 
-T_PTROBJ_0059
+T_PTROBJ_0057
     sv_setref_pv($arg, \"Qt::Gui::QDesktopServices\", (void *)$var);
 
-T_PTROBJ_0060
+T_PTROBJ_0058
     sv_setref_pv($arg, \"Qt::Gui::QPainterPathPrivate\", (void *)$var);
 
-T_PTROBJ_0061
+T_PTROBJ_0059
     sv_setref_pv($arg, \"Qt::Gui::QTextListFormat\", (void *)$var);
 
-T_PTROBJ_0062
-    sv_setref_pv($arg, \"Qt::Gui::QClipboardEvent\", (void *)$var);
-
-T_PTROBJ_0063
+T_PTROBJ_0060
     sv_setref_pv($arg, \"Qt::Gui::QInputContextFactoryInterface\", (void *)$var);
 
-T_PTROBJ_0064
+T_PTROBJ_0061
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSceneWheelEvent\", (void *)$var);
 
-T_PTROBJ_0065
+T_PTROBJ_0062
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionProgressBar\", (void *)$var);
 
-T_PTROBJ_0066
+T_PTROBJ_0063
     sv_setref_pv($arg, \"Qt::Gui::QPainterPathStroker\", (void *)$var);
 
-T_PTROBJ_0067
+T_PTROBJ_0064
     sv_setref_pv($arg, \"Qt::Gui::QTextDocumentFragment\", (void *)$var);
 
-T_PTROBJ_0068
+T_PTROBJ_0065
     sv_setref_pv($arg, \"Qt::Gui::QProgressBar\", (void *)$var);
 
-T_PTROBJ_0069
+T_PTROBJ_0066
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsRectItem\", (void *)$var);
 
-T_PTROBJ_0070
+T_PTROBJ_0067
     sv_setref_pv($arg, \"Qt::Gui::QTextBlock::iterator\", (void *)$var);
 
-T_PTROBJ_0071
+T_PTROBJ_0068
     sv_setref_pv($arg, \"Qt::Gui::QTextFrame::iterator\", (void *)$var);
 
-T_PTROBJ_0072
+T_PTROBJ_0069
     sv_setref_pv($arg, \"Qt::Gui::QImageWriter\", (void *)$var);
 
-T_PTROBJ_0073
+T_PTROBJ_0070
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionSpinBox\", (void *)$var);
 
-T_PTROBJ_0074
+T_PTROBJ_0071
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionFocusRect\", (void *)$var);
 
-T_PTROBJ_0075
+T_PTROBJ_0072
     sv_setref_pv($arg, \"Qt::Gui::QCloseEvent\", (void *)$var);
 
-T_PTROBJ_0076
+T_PTROBJ_0073
     sv_setref_pv($arg, \"Qt::Gui::QPageSetupDialog\", (void *)$var);
 
-T_PTROBJ_0077
+T_PTROBJ_0074
     sv_setref_pv($arg, \"Qt::Gui::QScrollBar\", (void *)$var);
 
-T_PTROBJ_0078
+T_PTROBJ_0075
     sv_setref_pv($arg, \"Qt::Gui::QRubberBand\", (void *)$var);
 
-T_PTROBJ_0079
+T_PTROBJ_0076
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionSizeGrip\", (void *)$var);
 
-T_PTROBJ_0080
+T_PTROBJ_0077
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleInterfaceEx\", (void *)$var);
 
-T_PTROBJ_0081
+T_PTROBJ_0078
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionViewItemV2\", (void *)$var);
 
-T_PTROBJ_0082
+T_PTROBJ_0079
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsGridLayout\", (void *)$var);
 
-T_PTROBJ_0083
+T_PTROBJ_0080
     sv_setref_pv($arg, \"Qt::Gui::QStackedLayout\", (void *)$var);
 
-T_PTROBJ_0084
+T_PTROBJ_0081
     sv_setref_pv($arg, \"Qt::Gui::QActionEvent\", (void *)$var);
 
-T_PTROBJ_0085
+T_PTROBJ_0082
     sv_setref_pv($arg, \"Qt::Gui::QPolygonF\", (void *)$var);
 
-T_PTROBJ_0086
+T_PTROBJ_0083
     sv_setref_pv($arg, \"Qt::Gui::QPainterPath::Element\", (void *)$var);
 
-T_PTROBJ_0087
+T_PTROBJ_0084
     sv_setref_pv($arg, \"Qt::Gui::QImageTextKeyLang\", (void *)$var);
 
-T_PTROBJ_0088
+T_PTROBJ_0085
     sv_setref_pv($arg, \"Qt::Gui::QSizePolicy\", (void *)$var);
 
-T_PTROBJ_0089
+T_PTROBJ_0086
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionViewItemV3\", (void *)$var);
 
-T_PTROBJ_0090
+T_PTROBJ_0087
     sv_setref_pv($arg, \"Qt::Gui::QGradient\", (void *)$var);
 
-T_PTROBJ_0091
+T_PTROBJ_0088
     sv_setref_pv($arg, \"Qt::Gui::QFont\", (void *)$var);
 
-T_PTROBJ_0092
+T_PTROBJ_0089
     sv_setref_pv($arg, \"Qt::Gui::QMdiSubWindow\", (void *)$var);
 
-T_PTROBJ_0093
+T_PTROBJ_0090
     sv_setref_pv($arg, \"Qt::Gui::QWorkspace\", (void *)$var);
 
-T_PTROBJ_0094
+T_PTROBJ_0091
     sv_setref_pv($arg, \"Qt::Gui::QDoubleValidator\", (void *)$var);
 
-T_PTROBJ_0095
+T_PTROBJ_0092
     sv_setref_pv($arg, \"Qt::Gui::QTouchEvent\", (void *)$var);
 
-T_PTROBJ_0096
+T_PTROBJ_0093
     sv_setref_pv($arg, \"Qt::Gui::QInputMethodEvent\", (void *)$var);
 
-T_PTROBJ_0097
+T_PTROBJ_0094
     sv_setref_pv($arg, \"Qt::Gui::QTabWidget\", (void *)$var);
 
-T_PTROBJ_0098
+T_PTROBJ_0095
     sv_setref_pv($arg, \"Qt::Gui::QPainterPath\", (void *)$var);
 
-T_PTROBJ_0099
+T_PTROBJ_0096
     sv_setref_pv($arg, \"Qt::Gui::QTextTableFormat\", (void *)$var);
 
-T_PTROBJ_0100
+T_PTROBJ_0097
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionViewItemV4\", (void *)$var);
 
-T_PTROBJ_0101
+T_PTROBJ_0098
     sv_setref_pv($arg, \"Qt::Gui::QSpinBox\", (void *)$var);
 
-T_PTROBJ_0102
+T_PTROBJ_0099
     sv_setref_pv($arg, \"Qt::Gui::QMenu\", (void *)$var);
 
-T_PTROBJ_0103
+T_PTROBJ_0100
     sv_setref_pv($arg, \"Qt::Gui::QPalette\", (void *)$var);
 
-T_PTROBJ_0104
+T_PTROBJ_0101
     sv_setref_pv($arg, \"Qt::Gui::QAbstractUndoItem\", (void *)$var);
 
-T_PTROBJ_0105
+T_PTROBJ_0102
     sv_setref_pv($arg, \"Qt::Gui::QDateEdit\", (void *)$var);
 
-T_PTROBJ_0106
+T_PTROBJ_0103
     sv_setref_pv($arg, \"Qt::Gui::QItemEditorCreatorBase\", (void *)$var);
 
-T_PTROBJ_0107
+T_PTROBJ_0104
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSceneContextMenuEvent\", (void *)$var);
 
-T_PTROBJ_0108
+T_PTROBJ_0105
     sv_setref_pv($arg, \"Qt::Gui::QAbstractButton\", (void *)$var);
 
-T_PTROBJ_0109
+T_PTROBJ_0106
     sv_setref_pv($arg, \"Qt::Gui::QHideEvent\", (void *)$var);
 
-T_PTROBJ_0110
+T_PTROBJ_0107
     sv_setref_pv($arg, \"Qt::Gui::QSplashScreen\", (void *)$var);
 
-T_PTROBJ_0111
+T_PTROBJ_0108
     sv_setref_pv($arg, \"Qt::Gui::QDataWidgetMapper\", (void *)$var);
 
-T_PTROBJ_0112
+T_PTROBJ_0109
     sv_setref_pv($arg, \"Qt::Gui::QHoverEvent\", (void *)$var);
 
-T_PTROBJ_0113
+T_PTROBJ_0110
     sv_setref_pv($arg, \"Qt::Gui::QSyntaxHighlighter\", (void *)$var);
 
-T_PTROBJ_0114
+T_PTROBJ_0111
     sv_setref_pv($arg, \"Qt::Gui::QAccessible\", (void *)$var);
 
-T_PTROBJ_0115
+T_PTROBJ_0112
     sv_setref_pv($arg, \"Qt::Gui::QTextFrameFormat\", (void *)$var);
 
-T_PTROBJ_0116
+T_PTROBJ_0113
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsObject\", (void *)$var);
 
-T_PTROBJ_0117
+T_PTROBJ_0114
     sv_setref_pv($arg, \"Qt::Gui::QPaintEvent\", (void *)$var);
 
-T_PTROBJ_0118
+T_PTROBJ_0115
     sv_setref_pv($arg, \"Qt::Gui::QToolButton\", (void *)$var);
 
-T_PTROBJ_0119
+T_PTROBJ_0116
     sv_setref_pv($arg, \"Qt::Gui::QMotifStyle\", (void *)$var);
 
-T_PTROBJ_0120
+T_PTROBJ_0117
     sv_setref_pv($arg, \"Qt::Gui::QWidgetAction\", (void *)$var);
 
-T_PTROBJ_0121
+T_PTROBJ_0118
     sv_setref_pv($arg, \"Qt::Gui::QTextObjectInterface\", (void *)$var);
 
-T_PTROBJ_0122
+T_PTROBJ_0119
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleEditableTextInterface\", (void *)$var);
 
-T_PTROBJ_0123
+T_PTROBJ_0120
     sv_setref_pv($arg, \"Qt::Gui::QLabel\", (void *)$var);
 
-T_PTROBJ_0124
+T_PTROBJ_0121
     sv_setref_pv($arg, \"Qt::Gui::QPaintEngineState\", (void *)$var);
 
-T_PTROBJ_0125
+T_PTROBJ_0122
     sv_setref_pv($arg, \"Qt::Gui::QComboBox\", (void *)$var);
 
-T_PTROBJ_0126
+T_PTROBJ_0123
     sv_setref_pv($arg, \"Qt::Gui::QSplitter\", (void *)$var);
 
-T_PTROBJ_0127
+T_PTROBJ_0124
     sv_setref_pv($arg, \"Qt::Gui::QDateTimeEdit\", (void *)$var);
 
-T_PTROBJ_0128
+T_PTROBJ_0125
     sv_setref_pv($arg, \"Qt::Gui::QWidget\", (void *)$var);
 
-T_PTROBJ_0129
+T_PTROBJ_0126
     sv_setref_pv($arg, \"Qt::Gui::QFocusEvent\", (void *)$var);
 
-T_PTROBJ_0130
+T_PTROBJ_0127
     sv_setref_pv($arg, \"Qt::Gui::QImageIOPlugin\", (void *)$var);
 
-T_PTROBJ_0131
+T_PTROBJ_0128
     sv_setref_pv($arg, \"Qt::Gui::QValidator\", (void *)$var);
 
-T_PTROBJ_0132
+T_PTROBJ_0129
     sv_setref_pv($arg, \"Qt::Gui::QPushButton\", (void *)$var);
 
-T_PTROBJ_0133
+T_PTROBJ_0130
     sv_setref_pv($arg, \"Qt::Gui::QTextBlock\", (void *)$var);
 
-T_PTROBJ_0134
+T_PTROBJ_0131
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSceneDragDropEvent\", (void *)$var);
 
-T_PTROBJ_0135
+T_PTROBJ_0132
     sv_setref_pv($arg, \"Qt::Gui::QPrintEngine\", (void *)$var);
 
-T_PTROBJ_0136
+T_PTROBJ_0133
     sv_setref_pv($arg, \"Qt::Gui::QUnixPrintWidget\", (void *)$var);
 
-T_PTROBJ_0137
+T_PTROBJ_0134
     sv_setref_pv($arg, \"Qt::Gui::QItemSelectionModel\", (void *)$var);
 
-T_PTROBJ_0138
+T_PTROBJ_0135
     sv_setref_pv($arg, \"Qt::Gui::QColormap\", (void *)$var);
 
-T_PTROBJ_0139
+T_PTROBJ_0136
     sv_setref_pv($arg, \"Qt::Gui::QFontMetrics\", (void *)$var);
 
-T_PTROBJ_0140
+T_PTROBJ_0137
     sv_setref_pv($arg, \"Qt::Gui::QHeaderView\", (void *)$var);
 
-T_PTROBJ_0141
+T_PTROBJ_0138
     sv_setref_pv($arg, \"Qt::Gui::QLayoutItem\", (void *)$var);
 
-T_PTROBJ_0142
+T_PTROBJ_0139
     sv_setref_pv($arg, \"Qt::Gui::QTextEdit\", (void *)$var);
 
-T_PTROBJ_0143
+T_PTROBJ_0140
     sv_setref_pv($arg, \"Qt::Gui::QMenuBar\", (void *)$var);
 
-T_PTROBJ_0144
+T_PTROBJ_0141
     sv_setref_pv($arg, \"Qt::Gui::QStyledItemDelegate\", (void *)$var);
 
-T_PTROBJ_0145
+T_PTROBJ_0142
     sv_setref_pv($arg, \"Qt::Gui::QShowEvent\", (void *)$var);
 
-T_PTROBJ_0146
+T_PTROBJ_0143
     sv_setref_pv($arg, \"Qt::Gui::QTransform\", (void *)$var);
 
-T_PTROBJ_0147
+T_PTROBJ_0144
     sv_setref_pv($arg, \"Qt::Gui::QTabletEvent\", (void *)$var);
 
-T_PTROBJ_0148
+T_PTROBJ_0145
     sv_setref_pv($arg, \"Qt::Gui::QProxyModel\", (void *)$var);
 
-T_PTROBJ_0149
+T_PTROBJ_0146
     sv_setref_pv($arg, \"Qt::Gui::QKeySequence\", (void *)$var);
 
-T_PTROBJ_0150
+T_PTROBJ_0147
     sv_setref_pv($arg, \"Qt::Gui::QVector2D\", (void *)$var);
 
-T_PTROBJ_0151
+T_PTROBJ_0148
     sv_setref_pv($arg, \"Qt::Gui::QTextFormat\", (void *)$var);
 
-T_PTROBJ_0152
+T_PTROBJ_0149
     sv_setref_pv($arg, \"Qt::Gui::QTextCharFormat\", (void *)$var);
 
-T_PTROBJ_0153
+T_PTROBJ_0150
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleFactoryInterface\", (void *)$var);
 
-T_PTROBJ_0154
+T_PTROBJ_0151
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleTextInterface\", (void *)$var);
 
-T_PTROBJ_0155
+T_PTROBJ_0152
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleInterface\", (void *)$var);
 
-T_PTROBJ_0156
+T_PTROBJ_0153
     sv_setref_pv($arg, \"Qt::Gui::QActionGroup\", (void *)$var);
 
-T_PTROBJ_0157
+T_PTROBJ_0154
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionComplex\", (void *)$var);
 
-T_PTROBJ_0158
+T_PTROBJ_0155
     sv_setref_pv($arg, \"Qt::Gui::QStaticText\", (void *)$var);
 
-T_PTROBJ_0159
+T_PTROBJ_0156
     sv_setref_pv($arg, \"Qt::Gui::QItemEditorFactory\", (void *)$var);
 
-T_PTROBJ_0160
+T_PTROBJ_0157
     sv_setref_pv($arg, \"Qt::Gui::QStatusTipEvent\", (void *)$var);
 
-T_PTROBJ_0161
+T_PTROBJ_0158
     sv_setref_pv($arg, \"Qt::Gui::QTextLayout\", (void *)$var);
 
-T_PTROBJ_0162
+T_PTROBJ_0159
     sv_setref_pv($arg, \"Qt::Gui::QTapAndHoldGesture\", (void *)$var);
 
-T_PTROBJ_0163
+T_PTROBJ_0160
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsItemAnimation\", (void *)$var);
 
-T_PTROBJ_0164
+T_PTROBJ_0161
     sv_setref_pv($arg, \"Qt::Gui::QIconEnginePluginV2\", (void *)$var);
 
-T_PTROBJ_0165
+T_PTROBJ_0162
     sv_setref_pv($arg, \"Qt::Gui::QStyleFactoryInterface\", (void *)$var);
 
-T_PTROBJ_0166
+T_PTROBJ_0163
     sv_setref_pv($arg, \"Qt::Gui::QMouseEvent\", (void *)$var);
 
-T_PTROBJ_0167
+T_PTROBJ_0164
     sv_setref_pv($arg, \"Qt::Gui::QButtonGroup\", (void *)$var);
 
-T_PTROBJ_0168
+T_PTROBJ_0165
     sv_setref_pv($arg, \"Qt::Gui::QPlainTextEdit\", (void *)$var);
 
-T_PTROBJ_0169
+T_PTROBJ_0166
     sv_setref_pv($arg, \"Qt::Gui::QTextCursor\", (void *)$var);
 
-T_PTROBJ_0170
+T_PTROBJ_0167
     sv_setref_pv($arg, \"Qt::Gui::QItemDelegate\", (void *)$var);
 
-T_PTROBJ_0171
+T_PTROBJ_0168
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsRotation\", (void *)$var);
 
-T_PTROBJ_0172
+T_PTROBJ_0169
     sv_setref_pv($arg, \"Qt::Gui::QUndoCommand\", (void *)$var);
 
-T_PTROBJ_0173
+T_PTROBJ_0170
     sv_setref_pv($arg, \"Qt\", (void *)$var);
 
-T_PTROBJ_0174
+T_PTROBJ_0171
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionMenuItem\", (void *)$var);
 
-T_PTROBJ_0175
+T_PTROBJ_0172
     sv_setref_pv($arg, \"Qt::Gui::QRadioButton\", (void *)$var);
 
-T_PTROBJ_0176
+T_PTROBJ_0173
     sv_setref_pv($arg, \"Qt::Gui::QListView\", (void *)$var);
 
-T_PTROBJ_0177
+T_PTROBJ_0174
     sv_setref_pv($arg, \"Qt::Gui::QIconEngineFactoryInterface\", (void *)$var);
 
-T_PTROBJ_0178
+T_PTROBJ_0175
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSceneEvent\", (void *)$var);
 
-T_PTROBJ_0179
+T_PTROBJ_0176
     sv_setref_pv($arg, \"Qt::Gui::QProxyStyle\", (void *)$var);
 
-T_PTROBJ_0180
+T_PTROBJ_0177
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSimpleTextItem\", (void *)$var);
 
-T_PTROBJ_0181
+T_PTROBJ_0178
     sv_setref_pv($arg, \"Qt::Gui::QTextDocumentWriter\", (void *)$var);
 
-T_PTROBJ_0182
+T_PTROBJ_0179
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionTabBarBase\", (void *)$var);
 
-T_PTROBJ_0183
+T_PTROBJ_0180
     sv_setref_pv($arg, \"Qt::Gui::QStandardItemModel\", (void *)$var);
 
-T_PTROBJ_0184
+T_PTROBJ_0181
     sv_setref_pv($arg, \"Qt::Gui::QPrinterInfo\", (void *)$var);
 
-T_PTROBJ_0185
+T_PTROBJ_0182
     sv_setref_pv($arg, \"Qt::Gui::QIconEngineV2\", (void *)$var);
 
-T_PTROBJ_0186
+T_PTROBJ_0183
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleObject\", (void *)$var);
 
-T_PTROBJ_0187
+T_PTROBJ_0184
     sv_setref_pv($arg, \"Qt::Gui::QPainter::PixmapFragment\", (void *)$var);
 
-T_PTROBJ_0188
+T_PTROBJ_0185
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsLayoutItem\", (void *)$var);
 
-T_PTROBJ_0189
+T_PTROBJ_0186
     sv_setref_pv($arg, \"Qt::Gui::QAbstractTextDocumentLayout\", (void *)$var);
 
-T_PTROBJ_0190
+T_PTROBJ_0187
     sv_setref_pv($arg, \"Qt::Core::QPersistentModelIndex\", (void *)$var);
 
-T_PTROBJ_0191
+T_PTROBJ_0188
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsItemGroup\", (void *)$var);
 
-T_PTROBJ_0192
+T_PTROBJ_0189
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleApplication\", (void *)$var);
 
-T_PTROBJ_0193
+T_PTROBJ_0190
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsAnchor\", (void *)$var);
 
-T_PTROBJ_0194
+T_PTROBJ_0191
     sv_setref_pv($arg, \"Qt::Gui::QTileRules\", (void *)$var);
 
-T_PTROBJ_0195
+T_PTROBJ_0192
     sv_setref_pv($arg, \"Qt::Gui::QKeyEvent\", (void *)$var);
 
-T_PTROBJ_0196
+T_PTROBJ_0193
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionTabV2\", (void *)$var);
 
-T_PTROBJ_0197
+T_PTROBJ_0194
     sv_setref_pv($arg, \"Qt::Gui::QTextBlockGroup\", (void *)$var);
 
-T_PTROBJ_0198
+T_PTROBJ_0195
     sv_setref_pv($arg, \"Qt::Gui::QVBoxLayout\", (void *)$var);
 
-T_PTROBJ_0199
+T_PTROBJ_0196
     sv_setref_pv($arg, \"Qt::Gui::QGesture\", (void *)$var);
 
-T_PTROBJ_0200
+T_PTROBJ_0197
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionRubberBand\", (void *)$var);
 
-T_PTROBJ_0201
+T_PTROBJ_0198
     sv_setref_pv($arg, \"Qt::Gui::QApplication\", (void *)$var);
 
-T_PTROBJ_0202
+T_PTROBJ_0199
     sv_setref_pv($arg, \"Qt::Gui::QAbstractPrintDialog\", (void *)$var);
 
-T_PTROBJ_0203
+T_PTROBJ_0200
     sv_setref_pv($arg, \"Qt::Gui::QTreeWidgetItem\", (void *)$var);
 
-T_PTROBJ_0204
+T_PTROBJ_0201
     sv_setref_pv($arg, \"Qt::Gui::QStyleFactory\", (void *)$var);
 
-T_PTROBJ_0205
+T_PTROBJ_0202
     sv_setref_pv($arg, \"Qt::Gui::QHBoxLayout\", (void *)$var);
 
-T_PTROBJ_0206
+T_PTROBJ_0203
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionGroupBox\", (void *)$var);
 
-T_PTROBJ_0207
+T_PTROBJ_0204
     sv_setref_pv($arg, \"Qt::Gui::QInputDialog\", (void *)$var);
 
-T_PTROBJ_0208
+T_PTROBJ_0205
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionTabV3\", (void *)$var);
 
-T_PTROBJ_0209
+T_PTROBJ_0206
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleImageInterface\", (void *)$var);
 
-T_PTROBJ_0210
+T_PTROBJ_0207
     sv_setref_pv($arg, \"Qt::Gui::QUndoGroup\", (void *)$var);
 
-T_PTROBJ_0211
+T_PTROBJ_0208
     sv_setref_pv($arg, \"Qt::Gui::QLayout\", (void *)$var);
 
-T_PTROBJ_0212
+T_PTROBJ_0209
     sv_setref_pv($arg, \"Qt::Gui::QAction\", (void *)$var);
 
-T_PTROBJ_0213
+T_PTROBJ_0210
     sv_setref_pv($arg, \"Qt::Gui::QTextImageFormat\", (void *)$var);
 
-T_PTROBJ_0214
+T_PTROBJ_0211
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionTabBarBaseV2\", (void *)$var);
 
-T_PTROBJ_0215
+T_PTROBJ_0212
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleBridgePlugin\", (void *)$var);
 
-T_PTROBJ_0216
+T_PTROBJ_0213
     sv_setref_pv($arg, \"Qt::Gui::QMessageBox\", (void *)$var);
 
-T_PTROBJ_0217
+T_PTROBJ_0214
     sv_setref_pv($arg, \"Qt::Gui::QScrollArea\", (void *)$var);
 
-T_PTROBJ_0218
+T_PTROBJ_0215
     sv_setref_pv($arg, \"Qt::Gui::QTextTableCellFormat\", (void *)$var);
 
-T_PTROBJ_0219
+T_PTROBJ_0216
     sv_setref_pv($arg, \"Qt::Gui::QAbstractProxyModel\", (void *)$var);
 
-T_PTROBJ_0220
+T_PTROBJ_0217
     sv_setref_pv($arg, \"Qt::Gui::QVector3D\", (void *)$var);
 
-T_PTROBJ_0221
+T_PTROBJ_0218
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionHeader\", (void *)$var);
 
-T_PTROBJ_0222
+T_PTROBJ_0219
     sv_setref_pv($arg, \"Qt::Gui::QDial\", (void *)$var);
 
-T_PTROBJ_0223
+T_PTROBJ_0220
     sv_setref_pv($arg, \"Qt::Gui::QCursor\", (void *)$var);
 
-T_PTROBJ_0224
+T_PTROBJ_0221
     sv_setref_pv($arg, \"Qt::Gui::QColor\", (void *)$var);
 
-T_PTROBJ_0225
+T_PTROBJ_0222
     sv_setref_pv($arg, \"Qt::Gui::QQuaternion\", (void *)$var);
 
-T_PTROBJ_0226
+T_PTROBJ_0223
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSceneMoveEvent\", (void *)$var);
 
-T_PTROBJ_0227
+T_PTROBJ_0224
     sv_setref_pv($arg, \"Qt::Core::QInternal\", (void *)$var);
 
-T_PTROBJ_0228
+T_PTROBJ_0225
     sv_setref_pv($arg, \"Qt::Gui::QTextDocument\", (void *)$var);
 
-T_PTROBJ_0229
+T_PTROBJ_0226
     sv_setref_pv($arg, \"Qt::Gui::QWindowStateChangeEvent\", (void *)$var);
 
-T_PTROBJ_0230
+T_PTROBJ_0227
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsLineItem\", (void *)$var);
 
-T_PTROBJ_0231
+T_PTROBJ_0228
     sv_setref_pv($arg, \"Qt::Gui::QPolygon\", (void *)$var);
 
-T_PTROBJ_0232
+T_PTROBJ_0229
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsPathItem\", (void *)$var);
 
-T_PTROBJ_0233
+T_PTROBJ_0230
     sv_setref_pv($arg, \"Qt::Gui::QInputMethodEvent::Attribute\", (void *)$var);
 
-T_PTROBJ_0234
+T_PTROBJ_0231
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionToolButton\", (void *)$var);
 
-T_PTROBJ_0235
+T_PTROBJ_0232
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionTabWidgetFrame\", (void *)$var);
 
-T_PTROBJ_0236
+T_PTROBJ_0233
     sv_setref_pv($arg, \"Qt::Gui::QPixmap\", (void *)$var);
 
-T_PTROBJ_0237
+T_PTROBJ_0234
     sv_setref_pv($arg, \"Qt::Gui::QFocusFrame\", (void *)$var);
 
-T_PTROBJ_0238
+T_PTROBJ_0235
     sv_setref_pv($arg, \"Qt::Gui::QUpdateLaterEvent\", (void *)$var);
 
-T_PTROBJ_0239
+T_PTROBJ_0236
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionQ3ListView\", (void *)$var);
 
-T_PTROBJ_0240
+T_PTROBJ_0237
     sv_setref_pv($arg, \"Qt::Gui::QIconEngineFactoryInterfaceV2\", (void *)$var);
 
-T_PTROBJ_0241
-    sv_setref_pv($arg, \"Qt::Gui::QWSEmbedWidget\", (void *)$var);
-
-T_PTROBJ_0242
+T_PTROBJ_0238
     sv_setref_pv($arg, \"Qt::Gui::QMatrix\", (void *)$var);
 
-T_PTROBJ_0243
+T_PTROBJ_0239
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsLinearLayout\", (void *)$var);
 
-T_PTROBJ_0244
+T_PTROBJ_0240
     sv_setref_pv($arg, \"Qt::Gui::QCheckBox\", (void *)$var);
 
-T_PTROBJ_0245
+T_PTROBJ_0241
     sv_setref_pv($arg, \"Qt::Gui::QPlainTextDocumentLayout\", (void *)$var);
 
-T_PTROBJ_0246
+T_PTROBJ_0242
     sv_setref_pv($arg, \"Qt::Gui::QShortcut\", (void *)$var);
 
-T_PTROBJ_0247
+T_PTROBJ_0243
     sv_setref_pv($arg, \"Qt::Gui::QPainter\", (void *)$var);
 
-T_PTROBJ_0248
+T_PTROBJ_0244
     sv_setref_pv($arg, \"Qt::Gui::QTextItem\", (void *)$var);
 
-T_PTROBJ_0249
+T_PTROBJ_0245
     sv_setref_pv($arg, \"Qt::Gui::QStringListModel\", (void *)$var);
 
-T_PTROBJ_0250
+T_PTROBJ_0246
     sv_setref_pv($arg, \"Qt::Gui::QAbstractGraphicsShapeItem\", (void *)$var);
 
-T_PTROBJ_0251
+T_PTROBJ_0247
     sv_setref_pv($arg, \"Qt::Gui::QFontInfo\", (void *)$var);
 
-T_PTROBJ_0252
+T_PTROBJ_0248
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSceneHoverEvent\", (void *)$var);
 
-T_PTROBJ_0253
+T_PTROBJ_0249
     sv_setref_pv($arg, \"Qt::Gui::QLCDNumber\", (void *)$var);
 
-T_PTROBJ_0254
+T_PTROBJ_0250
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleTableInterface\", (void *)$var);
 
-T_PTROBJ_0255
+T_PTROBJ_0251
     sv_setref_pv($arg, \"Qt::Gui::QMouseEventTransition\", (void *)$var);
 
-T_PTROBJ_0256
+T_PTROBJ_0252
     sv_setref_pv($arg, \"Qt::Gui::QCommonStyle\", (void *)$var);
 
-T_PTROBJ_0257
+T_PTROBJ_0253
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsEffect\", (void *)$var);
 
-T_PTROBJ_0258
+T_PTROBJ_0254
     sv_setref_pv($arg, \"Qt::Gui::QTextInlineObject\", (void *)$var);
 
-T_PTROBJ_0259
+T_PTROBJ_0255
     sv_setref_pv($arg, \"Qt::Gui::QIntValidator\", (void *)$var);
 
-T_PTROBJ_0260
+T_PTROBJ_0256
     sv_setref_pv($arg, \"Qt::Gui::QStyleOption\", (void *)$var);
 
-T_PTROBJ_0261
+T_PTROBJ_0257
     sv_setref_pv($arg, \"Qt::Gui::QTextObject\", (void *)$var);
 
-T_PTROBJ_0262
+T_PTROBJ_0258
     sv_setref_pv($arg, \"Qt::Gui::QAbstractScrollArea\", (void *)$var);
 
-T_PTROBJ_0263
+T_PTROBJ_0259
     sv_setref_pv($arg, \"Qt::Gui::QDoubleSpinBox\", (void *)$var);
 
-T_PTROBJ_0264
+T_PTROBJ_0260
     sv_setref_pv($arg, \"Qt::Gui::QUndoStack\", (void *)$var);
 
-T_PTROBJ_0265
-    sv_setref_pv($arg, \"Qt::Gui::QDropEvent\", (void *)$var);
-
-T_PTROBJ_0266
+T_PTROBJ_0261
     sv_setref_pv($arg, \"Qt::Gui::QContextMenuEvent\", (void *)$var);
 
-T_PTROBJ_0267
+T_PTROBJ_0262
     sv_setref_pv($arg, \"Qt::Gui::QVector4D\", (void *)$var);
 
-T_PTROBJ_0268
+T_PTROBJ_0263
     sv_setref_pv($arg, \"Qt::Gui::QPictureFormatInterface\", (void *)$var);
 
-T_PTROBJ_0269
+T_PTROBJ_0264
     sv_setref_pv($arg, \"Qt::Gui::QStylePlugin\", (void *)$var);
 
-T_PTROBJ_0270
+T_PTROBJ_0265
     sv_setref_pv($arg, \"Qt::Gui::QAbstractPageSetupDialog\", (void *)$var);
 
-T_PTROBJ_0271
+T_PTROBJ_0266
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleActionInterface\", (void *)$var);
 
-T_PTROBJ_0272
+T_PTROBJ_0267
     sv_setref_pv($arg, \"Qt::Core::QAbstractListModel\", (void *)$var);
 
-T_PTROBJ_0273
+T_PTROBJ_0268
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsScene\", (void *)$var);
 
-T_PTROBJ_0274
+T_PTROBJ_0269
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsBlurEffect\", (void *)$var);
 
-T_PTROBJ_0275
+T_PTROBJ_0270
     sv_setref_pv($arg, \"Qt::Gui::QSessionManager\", (void *)$var);
 
-T_PTROBJ_0276
+T_PTROBJ_0271
     sv_setref_pv($arg, \"Qt::Gui::QAbstractItemView\", (void *)$var);
 
-T_PTROBJ_0277
+T_PTROBJ_0272
     sv_setref_pv($arg, \"Qt::Gui::QBoxLayout\", (void *)$var);
 
-T_PTROBJ_0278
-    sv_setref_pv($arg, \"Qt::Gui::QDragLeaveEvent\", (void *)$var);
-
-T_PTROBJ_0279
+T_PTROBJ_0273
     sv_setref_pv($arg, \"Qt::Gui::QTextOption::Tab\", (void *)$var);
 
-T_PTROBJ_0280
+T_PTROBJ_0274
     sv_setref_pv($arg, \"Qt::Gui::QPictureFormatPlugin\", (void *)$var);
 
-T_PTROBJ_0281
+T_PTROBJ_0275
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsPixmapItem\", (void *)$var);
 
-T_PTROBJ_0282
+T_PTROBJ_0276
     sv_setref_pv($arg, \"Qt::Gui::QAbstractItemDelegate\", (void *)$var);
 
-T_PTROBJ_0283
+T_PTROBJ_0277
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionFrameV2\", (void *)$var);
 
-T_PTROBJ_0284
+T_PTROBJ_0278
     sv_setref_pv($arg, \"Qt::Gui::QSound\", (void *)$var);
 
-T_PTROBJ_0285
+T_PTROBJ_0279
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSceneHelpEvent\", (void *)$var);
 
-T_PTROBJ_0286
+T_PTROBJ_0280
     sv_setref_pv($arg, \"Qt::Gui::QImageIOHandler\", (void *)$var);
 
-T_PTROBJ_0287
+T_PTROBJ_0281
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionFrameV3\", (void *)$var);
 
-T_PTROBJ_0288
+T_PTROBJ_0282
     sv_setref_pv($arg, \"Qt::Gui::QDockWidget\", (void *)$var);
 
-T_PTROBJ_0289
+T_PTROBJ_0283
     sv_setref_pv($arg, \"Qt::Gui::QColorDialog\", (void *)$var);
 
-T_PTROBJ_0290
+T_PTROBJ_0284
     sv_setref_pv($arg, \"Qt::Gui::QSwipeGesture\", (void *)$var);
 
-T_PTROBJ_0291
+T_PTROBJ_0285
     sv_setref_pv($arg, \"Qt::Gui::QWhatsThis\", (void *)$var);
 
-T_PTROBJ_0292
+T_PTROBJ_0286
     sv_setref_pv($arg, \"Qt::Gui::QTextBlockUserData\", (void *)$var);
 
-T_PTROBJ_0293
+T_PTROBJ_0287
     sv_setref_pv($arg, \"Qt::Gui::QTreeWidgetItemIterator\", (void *)$var);
 
-T_PTROBJ_0294
+T_PTROBJ_0288
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSceneMouseEvent\", (void *)$var);
 
-T_PTROBJ_0295
+T_PTROBJ_0289
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionComboBox\", (void *)$var);
 
-T_PTROBJ_0296
+T_PTROBJ_0290
     sv_setref_pv($arg, \"Qt::Gui::QSpacerItem\", (void *)$var);
 
-T_PTROBJ_0297
+T_PTROBJ_0291
     sv_setref_pv($arg, \"Qt::Gui::QInputContext\", (void *)$var);
 
-T_PTROBJ_0298
+T_PTROBJ_0292
     sv_setref_pv($arg, \"Qt::Gui::QSizeGrip\", (void *)$var);
 
-T_PTROBJ_0299
+T_PTROBJ_0293
     sv_setref_pv($arg, \"Qt::Gui::QTableView\", (void *)$var);
 
-T_PTROBJ_0300
+T_PTROBJ_0294
     sv_setref_pv($arg, \"Qt::Gui::QPrintPreviewDialog\", (void *)$var);
 
-T_PTROBJ_0301
+T_PTROBJ_0295
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionSlider\", (void *)$var);
 
-T_PTROBJ_0302
+T_PTROBJ_0296
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionDockWidgetV2\", (void *)$var);
 
-T_PTROBJ_0303
+T_PTROBJ_0297
     sv_setref_pv($arg, \"Qt::Gui::QListWidgetItem\", (void *)$var);
 
-T_PTROBJ_0304
+T_PTROBJ_0298
     sv_setref_pv($arg, \"Qt::Gui::QStyle\", (void *)$var);
 
-T_PTROBJ_0305
+T_PTROBJ_0299
     sv_setref_pv($arg, \"Qt::Gui::QTextList\", (void *)$var);
 
-T_PTROBJ_0306
+T_PTROBJ_0300
     sv_setref_pv($arg, \"Qt::Gui::QToolBarChangeEvent\", (void *)$var);
 
-T_PTROBJ_0307
+T_PTROBJ_0301
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsProxyWidget\", (void *)$var);
 
-T_PTROBJ_0308
+T_PTROBJ_0302
     sv_setref_pv($arg, \"Qt::Gui::QPixmapCache\", (void *)$var);
 
-T_PTROBJ_0309
+T_PTROBJ_0303
     sv_setref_pv($arg, \"Qt::Gui::QTreeView\", (void *)$var);
 
-T_PTROBJ_0310
+T_PTROBJ_0304
     sv_setref_pv($arg, \"Qt::Gui::QTextFragment\", (void *)$var);
 
-T_PTROBJ_0311
+T_PTROBJ_0305
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionQ3ListViewItem\", (void *)$var);
 
-T_PTROBJ_0312
+T_PTROBJ_0306
     sv_setref_pv($arg, \"Qt::Gui::QLinearGradient\", (void *)$var);
 
-T_PTROBJ_0313
+T_PTROBJ_0307
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsColorizeEffect\", (void *)$var);
 
-T_PTROBJ_0314
+T_PTROBJ_0308
     sv_setref_pv($arg, \"Qt::Gui::QInputContextFactory\", (void *)$var);
 
-T_PTROBJ_0315
+T_PTROBJ_0309
     sv_setref_pv($arg, \"Qt::Gui::QRadialGradient\", (void *)$var);
 
-T_PTROBJ_0316
+T_PTROBJ_0310
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleValueInterface\", (void *)$var);
 
-T_PTROBJ_0317
+T_PTROBJ_0311
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsOpacityEffect\", (void *)$var);
 
-T_PTROBJ_0318
+T_PTROBJ_0312
     sv_setref_pv($arg, \"Qt::Gui::QIconDragEvent\", (void *)$var);
 
-T_PTROBJ_0319
+T_PTROBJ_0313
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleBridgeFactoryInterface\", (void *)$var);
 
-T_PTROBJ_0320
+T_PTROBJ_0314
     sv_setref_pv($arg, \"Qt::Gui::QWheelEvent\", (void *)$var);
 
-T_PTROBJ_0321
+T_PTROBJ_0315
     sv_setref_pv($arg, \"Qt::Gui::QCommandLinkButton\", (void *)$var);
 
-T_PTROBJ_0322
+T_PTROBJ_0316
     sv_setref_pv($arg, \"Qt::Gui::QItemSelection\", (void *)$var);
 
-T_PTROBJ_0323
+T_PTROBJ_0317
     sv_setref_pv($arg, \"Qt::Gui::QDesktopWidget\", (void *)$var);
 
-T_PTROBJ_0324
+T_PTROBJ_0318
     sv_setref_pv($arg, \"Qt::Gui::QPictureIO\", (void *)$var);
 
-T_PTROBJ_0325
+T_PTROBJ_0319
     sv_setref_pv($arg, \"Qt::Gui::QIcon\", (void *)$var);
 
-T_PTROBJ_0326
+T_PTROBJ_0320
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionGraphicsItem\", (void *)$var);
 
-T_PTROBJ_0327
+T_PTROBJ_0321
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsSceneResizeEvent\", (void *)$var);
 
-T_PTROBJ_0328
+T_PTROBJ_0322
     sv_setref_pv($arg, \"Qt::Gui::QPicture\", (void *)$var);
 
-T_PTROBJ_0329
+T_PTROBJ_0323
     sv_setref_pv($arg, \"Qt::Gui::QTableWidgetItem\", (void *)$var);
 
-T_PTROBJ_0330
+T_PTROBJ_0324
     sv_setref_pv($arg, \"Qt::Gui::QTextLine\", (void *)$var);
 
-T_PTROBJ_0331
+T_PTROBJ_0325
     sv_setref_pv($arg, \"Qt::Gui::QWidgetItemV2\", (void *)$var);
 
-T_PTROBJ_0332
+T_PTROBJ_0326
     sv_setref_pv($arg, \"Qt::Gui::QTextFrame\", (void *)$var);
 
-T_PTROBJ_0333
+T_PTROBJ_0327
     sv_setref_pv($arg, \"Qt::Gui::QWidgetData\", (void *)$var);
 
-T_PTROBJ_0334
+T_PTROBJ_0328
     sv_setref_pv($arg, \"Qt::Gui::QWhatsThisClickedEvent\", (void *)$var);
 
-T_PTROBJ_0335
+T_PTROBJ_0329
     sv_setref_pv($arg, \"Qt::Gui::QMdiArea\", (void *)$var);
 
-T_PTROBJ_0336
+T_PTROBJ_0330
     sv_setref_pv($arg, \"Qt::Gui::QFileDialog\", (void *)$var);
 
-T_PTROBJ_0337
+T_PTROBJ_0331
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsWidget\", (void *)$var);
 
-T_PTROBJ_0338
+T_PTROBJ_0332
     sv_setref_pv($arg, \"Qt::Gui::QPaintEngine\", (void *)$var);
 
-T_PTROBJ_0339
+T_PTROBJ_0333
     sv_setref_pv($arg, \"Qt::Gui::QRegExpValidator\", (void *)$var);
 
-T_PTROBJ_0340
+T_PTROBJ_0334
     sv_setref_pv($arg, \"Qt::Gui::QAccessiblePlugin\", (void *)$var);
 
-T_PTROBJ_0341
+T_PTROBJ_0335
     sv_setref_pv($arg, \"Qt::Gui::QFontMetricsF\", (void *)$var);
 
-T_PTROBJ_0342
+T_PTROBJ_0336
     sv_setref_pv($arg, \"Qt::Gui::QLineEdit\", (void *)$var);
 
-T_PTROBJ_0343
+T_PTROBJ_0337
     sv_setref_pv($arg, \"Qt::Gui::QCompleter\", (void *)$var);
 
-T_PTROBJ_0344
+T_PTROBJ_0338
     sv_setref_pv($arg, \"Qt::Gui::QShortcutEvent\", (void *)$var);
 
-T_PTROBJ_0345
+T_PTROBJ_0339
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionViewItem\", (void *)$var);
 
-T_PTROBJ_0346
+T_PTROBJ_0340
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsView\", (void *)$var);
 
-T_PTROBJ_0347
+T_PTROBJ_0341
     sv_setref_pv($arg, \"Qt::Gui::QItemSelectionRange\", (void *)$var);
 
-T_PTROBJ_0348
+T_PTROBJ_0342
     sv_setref_pv($arg, \"Qt::Gui::QKeyEventTransition\", (void *)$var);
 
-T_PTROBJ_0349
+T_PTROBJ_0343
     sv_setref_pv($arg, \"Qt::Gui::QPanGesture\", (void *)$var);
 
-T_PTROBJ_0350
+T_PTROBJ_0344
     sv_setref_pv($arg, \"Qt::Gui::QTreeWidget\", (void *)$var);
 
-T_PTROBJ_0351
+T_PTROBJ_0345
     sv_setref_pv($arg, \"Qt::Gui::QUndoView\", (void *)$var);
 
-T_PTROBJ_0352
+T_PTROBJ_0346
     sv_setref_pv($arg, \"Qt::Gui::QCDEStyle\", (void *)$var);
 
-T_PTROBJ_0353
+T_PTROBJ_0347
     sv_setref_pv($arg, \"Qt::Gui::QStatusBar\", (void *)$var);
 
-T_PTROBJ_0354
+T_PTROBJ_0348
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleWidgetEx\", (void *)$var);
 
-T_PTROBJ_0355
+T_PTROBJ_0349
     sv_setref_pv($arg, \"Qt::Gui::QListWidget\", (void *)$var);
 
-T_PTROBJ_0356
+T_PTROBJ_0350
     sv_setref_pv($arg, \"Qt::Core::QModelIndex\", (void *)$var);
 
-T_PTROBJ_0357
+T_PTROBJ_0351
     sv_setref_pv($arg, \"Qt::Gui::QRegion\", (void *)$var);
 
-T_PTROBJ_0358
+T_PTROBJ_0352
     sv_setref_pv($arg, \"Qt::Gui::QConicalGradient\", (void *)$var);
 
-T_PTROBJ_0359
+T_PTROBJ_0353
     sv_setref_pv($arg, \"Qt::Gui::QPaintDevice\", (void *)$var);
 
-T_PTROBJ_0360
+T_PTROBJ_0354
     sv_setref_pv($arg, \"Qt::Gui::QPrintDialog\", (void *)$var);
 
-T_PTROBJ_0361
+T_PTROBJ_0355
     sv_setref_pv($arg, \"Qt::Gui::QColumnView\", (void *)$var);
 
-T_PTROBJ_0362
+T_PTROBJ_0356
     sv_setref_pv($arg, \"Qt::Gui::QTapGesture\", (void *)$var);
 
-T_PTROBJ_0363
+T_PTROBJ_0357
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsAnchorLayout\", (void *)$var);
 
-T_PTROBJ_0364
+T_PTROBJ_0358
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionProgressBarV2\", (void *)$var);
 
-T_PTROBJ_0365
+T_PTROBJ_0359
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionTitleBar\", (void *)$var);
 
-T_PTROBJ_0366
-    sv_setref_pv($arg, \"Qt::Gui::QDrag\", (void *)$var);
-
-T_PTROBJ_0367
+T_PTROBJ_0360
     sv_setref_pv($arg, \"Qt::Gui::QErrorMessage\", (void *)$var);
 
-T_PTROBJ_0368
+T_PTROBJ_0361
     sv_setref_pv($arg, \"Qt::Gui::QDirModel\", (void *)$var);
 
-T_PTROBJ_0369
+T_PTROBJ_0362
     sv_setref_pv($arg, \"Qt::Gui::QInputEvent\", (void *)$var);
 
-T_PTROBJ_0370
+T_PTROBJ_0363
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsItem\", (void *)$var);
 
-T_PTROBJ_0371
+T_PTROBJ_0364
     sv_setref_pv($arg, \"Qt::Gui::QFileSystemModel\", (void *)$var);
 
-T_PTROBJ_0372
+T_PTROBJ_0365
     sv_setref_pv($arg, \"Qt::Gui::QTableWidget\", (void *)$var);
 
-T_PTROBJ_0373
+T_PTROBJ_0366
     sv_setref_pv($arg, \"Qt::Gui::QCalendarWidget\", (void *)$var);
 
-T_PTROBJ_0374
+T_PTROBJ_0367
     sv_setref_pv($arg, \"Qt::Gui::QGestureEvent\", (void *)$var);
 
-T_PTROBJ_0375
+T_PTROBJ_0368
     sv_setref_pv($arg, \"Qt::Gui::QGestureRecognizer\", (void *)$var);
 
-T_PTROBJ_0376
+T_PTROBJ_0369
     sv_setref_pv($arg, \"Qt::Gui::QAbstractSlider\", (void *)$var);
 
-T_PTROBJ_0377
+T_PTROBJ_0370
     sv_setref_pv($arg, \"Qt::Gui::QFontDialog\", (void *)$var);
 
-T_PTROBJ_0378
-    sv_setref_pv($arg, \"Qt::Gui::QDragEnterEvent\", (void *)$var);
-
-T_PTROBJ_0379
+T_PTROBJ_0371
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionToolBar\", (void *)$var);
 
-T_PTROBJ_0380
+T_PTROBJ_0372
     sv_setref_pv($arg, \"Qt::Gui::QMoveEvent\", (void *)$var);
 
-T_PTROBJ_0381
+T_PTROBJ_0373
     sv_setref_pv($arg, \"Qt::Gui::QTextLength\", (void *)$var);
 
-T_PTROBJ_0382
+T_PTROBJ_0374
     sv_setref_pv($arg, \"Qt::Gui::QTextBrowser\", (void *)$var);
 
-T_PTROBJ_0383
+T_PTROBJ_0375
     sv_setref_pv($arg, \"Qt::Gui::QFileIconProvider\", (void *)$var);
 
-T_PTROBJ_0384
+T_PTROBJ_0376
     sv_setref_pv($arg, \"Qt::Gui::QProgressDialog\", (void *)$var);
 
-T_PTROBJ_0385
+T_PTROBJ_0377
     sv_setref_pv($arg, \"Qt::Gui::QImage\", (void *)$var);
 
-T_PTROBJ_0386
+T_PTROBJ_0378
     sv_setref_pv($arg, \"Qt::Gui::QTableWidgetSelectionRange\", (void *)$var);
 
-T_PTROBJ_0387
+T_PTROBJ_0379
     sv_setref_pv($arg, \"Qt::Gui::QPinchGesture\", (void *)$var);
 
-T_PTROBJ_0388
+T_PTROBJ_0380
     sv_setref_pv($arg, \"Qt::Gui::QImageReader\", (void *)$var);
 
-T_PTROBJ_0389
+T_PTROBJ_0381
     sv_setref_pv($arg, \"Qt::Gui::QToolTip\", (void *)$var);
 
-T_PTROBJ_0390
+T_PTROBJ_0382
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionTab\", (void *)$var);
 
-T_PTROBJ_0391
+T_PTROBJ_0383
     sv_setref_pv($arg, \"Qt::Gui::QMatrix4x4\", (void *)$var);
 
-T_PTROBJ_0392
+T_PTROBJ_0384
     sv_setref_pv($arg, \"Qt::Gui::QSplitterHandle\", (void *)$var);
 
-T_PTROBJ_0393
+T_PTROBJ_0385
     sv_setref_pv($arg, \"Qt::Gui::QPrinter\", (void *)$var);
 
-T_PTROBJ_0394
+T_PTROBJ_0386
     sv_setref_pv($arg, \"Qt::Gui::QWizardPage\", (void *)$var);
 
-T_PTROBJ_0395
+T_PTROBJ_0387
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsScale\", (void *)$var);
 
-T_PTROBJ_0396
+T_PTROBJ_0388
     sv_setref_pv($arg, \"Qt::Gui::QGraphicsTransform\", (void *)$var);
 
-T_PTROBJ_0397
+T_PTROBJ_0389
     sv_setref_pv($arg, \"Qt::Gui::QMainWindow\", (void *)$var);
 
-T_PTROBJ_0398
-    sv_setref_pv($arg, \"Qt::Gui::QDragResponseEvent\", (void *)$var);
-
-T_PTROBJ_0399
+T_PTROBJ_0390
     sv_setref_pv($arg, \"Qt::Gui::QToolBar\", (void *)$var);
 
-T_PTROBJ_0400
+T_PTROBJ_0391
     sv_setref_pv($arg, \"Qt::Gui::QBrush\", (void *)$var);
 
-T_PTROBJ_0401
+T_PTROBJ_0392
     sv_setref_pv($arg, \"Qt::Gui::QAccessible2Interface\", (void *)$var);
 
-T_PTROBJ_0402
+T_PTROBJ_0393
     sv_setref_pv($arg, \"Qt::Gui::QStyleOptionDockWidget\", (void *)$var);
 
-T_PTROBJ_0403
+T_PTROBJ_0394
     sv_setref_pv($arg, \"Qt::Gui::QMimeSource\", (void *)$var);
 
-T_PTROBJ_0404
+T_PTROBJ_0395
     sv_setref_pv($arg, \"Qt::Gui::QFontComboBox\", (void *)$var);
 
-T_PTROBJ_0405
+T_PTROBJ_0396
     sv_setref_pv($arg, \"Qt::Gui::QDialog\", (void *)$var);
 
-T_PTROBJ_0406
+T_PTROBJ_0397
     sv_setref_pv($arg, \"Qt::Gui::QAccessibleObjectEx\", (void *)$var);
 

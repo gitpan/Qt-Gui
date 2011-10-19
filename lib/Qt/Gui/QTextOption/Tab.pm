@@ -1,14 +1,13 @@
-package Qt::Gui::QDragLeaveEvent;
+package Qt::Gui::QTextOption::Tab;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QDragLeaveEvent
-# file     : QtGui/qevent.h
+# classname: QTextOption::Tab
+# file     : QtGui/qtextoption.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Core::QEvent/;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -18,15 +17,11 @@ our $ISA     = qw/Qt::Core::QEvent/;
 
 =head1 NAME
 
-Qt::Gui::QDragLeaveEvent
+Qt::Gui::QTextOption::Tab
 
 =head1 PUBLIC METHODS
 
 =over
-
-=item   QDragLeaveEvent()
-
-=item   ~QDragLeaveEvent()
 
 
 =back

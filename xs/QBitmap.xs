@@ -42,7 +42,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QBitmap();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -50,15 +53,24 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Gui::QPixmap")) {
       arg10 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QBitmap(*arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QSize")) {
       arg20 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QBitmap(*arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString")) {
       arg50 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QBitmap(*arg50, arg51);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -69,12 +81,18 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg30 = (int)SvIV(ST(1));
       arg31 = (int)SvIV(ST(2));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QBitmap(arg30, arg31);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString") && SvPOK(ST(2))) {
       arg40 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg41 = (const char *)SvPV_nolen(ST(2));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QBitmap(*arg40, arg41);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

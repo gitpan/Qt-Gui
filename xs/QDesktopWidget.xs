@@ -26,7 +26,10 @@ QDesktopWidget *ret;
 PPCODE:
     if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QDesktopWidget();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QDesktopWidget", (void *)ret);
+    XSRETURN(1);
     }
 
 ##  ~QDesktopWidget()

@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QAbstractScrollArea/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Gui::QAbstractScrollArea/;
+#our @ISA = qw/Qt::Gui::QAbstractScrollArea/;
 
 
 # FIXME: operator overload
@@ -40,15 +41,7 @@ Qt::Gui::QAbstractItemView
 
 =item  QModelIndex currentIndex()
 
-=item  Qt::DropAction defaultDropAction()
-
 =item  void doItemsLayout()
-
-=item  QAbstractItemView::DragDropMode dragDropMode()
-
-=item  bool dragDropOverwriteMode()
-
-=item  bool dragEnabled()
 
 =item  void edit(const QModelIndex & index)
 
@@ -108,16 +101,6 @@ Qt::Gui::QAbstractItemView
 
 =item  void setCurrentIndex(const QModelIndex & index)
 
-=item  void setDefaultDropAction(Qt::DropAction dropAction)
-
-=item  void setDragDropMode(QAbstractItemView::DragDropMode behavior)
-
-=item  void setDragDropOverwriteMode(bool overwrite)
-
-=item  void setDragEnabled(bool enable)
-
-=item  void setDropIndicatorShown(bool enable)
-
 =item  void setEditTriggers(QFlags<QAbstractItemView::EditTrigger> triggers)
 
 =item  void setHorizontalScrollMode(QAbstractItemView::ScrollMode mode)
@@ -147,8 +130,6 @@ Qt::Gui::QAbstractItemView
 =item  void setTextElideMode(Qt::TextElideMode mode)
 
 =item  void setVerticalScrollMode(QAbstractItemView::ScrollMode mode)
-
-=item  bool showDropIndicator()
 
 =item  int sizeHintForColumn(int column)
 
@@ -214,16 +195,6 @@ Qt::Gui::QAbstractItemView
 =item ScrollPerItem
 
 =item ScrollPerPixel
-
-=item NoDragDrop
-
-=item DragOnly
-
-=item DropOnly
-
-=item DragDrop
-
-=item InternalMove
 
 
 =back

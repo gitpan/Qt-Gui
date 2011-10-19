@@ -85,7 +85,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::Gui::QCursor", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg30 = (unsigned long)SvUV(ST(1));
     ret = new QCursor(arg30);
     ST(0) = sv_newmortal();

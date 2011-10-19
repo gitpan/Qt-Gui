@@ -44,7 +44,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QUndoView(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QUndoView", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -59,7 +62,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QUndoView(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QUndoView", (void *)ret);
+    XSRETURN(1);
     }
         else if ((sv_derived_from(ST(1), "Qt::Gui::QUndoStack") || ST(1) == &PL_sv_undef)) {
       if (sv_derived_from(ST(1), "Qt::Gui::QUndoStack")) {
@@ -70,7 +76,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg30 is not of type Qt::Gui::QUndoStack");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QUndoView(arg30, arg31);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QUndoView", (void *)ret);
+    XSRETURN(1);
     }
         else if ((sv_derived_from(ST(1), "Qt::Gui::QUndoGroup") || ST(1) == &PL_sv_undef)) {
       if (sv_derived_from(ST(1), "Qt::Gui::QUndoGroup")) {
@@ -81,7 +90,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg50 is not of type Qt::Gui::QUndoGroup");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QUndoView(arg50, arg51);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QUndoView", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -106,7 +118,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QUndoView(arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QUndoView", (void *)ret);
+    XSRETURN(1);
     }
         else if ((sv_derived_from(ST(1), "Qt::Gui::QUndoGroup") || ST(1) == &PL_sv_undef) && (sv_derived_from(ST(2), "Qt::Gui::QWidget") || ST(2) == &PL_sv_undef)) {
       if (sv_derived_from(ST(1), "Qt::Gui::QUndoGroup")) {
@@ -125,7 +140,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg41 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QUndoView(arg40, arg41);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QUndoView", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

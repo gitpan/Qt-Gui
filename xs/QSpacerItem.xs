@@ -44,7 +44,10 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg20 = (int)SvIV(ST(1));
       arg21 = (int)SvIV(ST(2));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSpacerItem(arg20, arg21, arg22, arg23);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSpacerItem", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -56,7 +59,10 @@ PPCODE:
       arg10 = (int)SvIV(ST(1));
       arg11 = (int)SvIV(ST(2));
       arg12 = (QSizePolicy::Policy)SvIV(ST(3));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSpacerItem(arg10, arg11, arg12, arg13);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSpacerItem", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -69,7 +75,10 @@ PPCODE:
       arg01 = (int)SvIV(ST(2));
       arg02 = (QSizePolicy::Policy)SvIV(ST(3));
       arg03 = (QSizePolicy::Policy)SvIV(ST(4));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSpacerItem(arg00, arg01, arg02, arg03);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSpacerItem", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

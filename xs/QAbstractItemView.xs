@@ -127,19 +127,6 @@ PPCODE:
     XSRETURN(1);
     }
 
-## Qt::DropAction defaultDropAction()
-void
-QAbstractItemView::defaultDropAction(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    Qt::DropAction ret = THIS->defaultDropAction();
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
-    XSRETURN(1);
-    }
-
 ## void doItemsLayout()
 void
 QAbstractItemView::doItemsLayout(...)
@@ -149,45 +136,6 @@ PPCODE:
       
     (void)THIS->doItemsLayout();
     XSRETURN(0);
-    }
-
-## QAbstractItemView::DragDropMode dragDropMode()
-void
-QAbstractItemView::dragDropMode(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    QAbstractItemView::DragDropMode ret = THIS->dragDropMode();
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
-    XSRETURN(1);
-    }
-
-## bool dragDropOverwriteMode()
-void
-QAbstractItemView::dragDropOverwriteMode(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    bool ret = THIS->dragDropOverwriteMode();
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-    }
-
-## bool dragEnabled()
-void
-QAbstractItemView::dragEnabled(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    bool ret = THIS->dragEnabled();
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
     }
 
 ## void edit(const QModelIndex & index)
@@ -581,66 +529,6 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setDefaultDropAction(Qt::DropAction dropAction)
-void
-QAbstractItemView::setDefaultDropAction(...)
-PREINIT:
-Qt::DropAction arg00;
-PPCODE:
-    if (SvIOK(ST(1))) {
-      arg00 = (Qt::DropAction)SvIV(ST(1));
-    (void)THIS->setDefaultDropAction(arg00);
-    XSRETURN(0);
-    }
-
-## void setDragDropMode(QAbstractItemView::DragDropMode behavior)
-void
-QAbstractItemView::setDragDropMode(...)
-PREINIT:
-QAbstractItemView::DragDropMode arg00;
-PPCODE:
-    if (SvIOK(ST(1))) {
-      arg00 = (QAbstractItemView::DragDropMode)SvIV(ST(1));
-    (void)THIS->setDragDropMode(arg00);
-    XSRETURN(0);
-    }
-
-## void setDragDropOverwriteMode(bool overwrite)
-void
-QAbstractItemView::setDragDropOverwriteMode(...)
-PREINIT:
-bool arg00;
-PPCODE:
-    if (1) {
-      arg00 = (bool)SvTRUE(ST(1));
-    (void)THIS->setDragDropOverwriteMode(arg00);
-    XSRETURN(0);
-    }
-
-## void setDragEnabled(bool enable)
-void
-QAbstractItemView::setDragEnabled(...)
-PREINIT:
-bool arg00;
-PPCODE:
-    if (1) {
-      arg00 = (bool)SvTRUE(ST(1));
-    (void)THIS->setDragEnabled(arg00);
-    XSRETURN(0);
-    }
-
-## void setDropIndicatorShown(bool enable)
-void
-QAbstractItemView::setDropIndicatorShown(...)
-PREINIT:
-bool arg00;
-PPCODE:
-    if (1) {
-      arg00 = (bool)SvTRUE(ST(1));
-    (void)THIS->setDropIndicatorShown(arg00);
-    XSRETURN(0);
-    }
-
 ## void setEditTriggers(QFlags<QAbstractItemView::EditTrigger> triggers)
 void
 QAbstractItemView::setEditTriggers(...)
@@ -867,19 +755,6 @@ PPCODE:
       arg00 = (QAbstractItemView::ScrollMode)SvIV(ST(1));
     (void)THIS->setVerticalScrollMode(arg00);
     XSRETURN(0);
-    }
-
-## bool showDropIndicator()
-void
-QAbstractItemView::showDropIndicator(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    bool ret = THIS->showDropIndicator();
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
     }
 
 ## int sizeHintForColumn(int column)
@@ -1183,49 +1058,4 @@ ScrollPerPixel()
 PPCODE:
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)QAbstractItemView::ScrollPerPixel);
-    XSRETURN(1);
-
-
-# DragDropMode::NoDragDrop
-void
-NoDragDrop()
-PPCODE:
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)QAbstractItemView::NoDragDrop);
-    XSRETURN(1);
-
-
-# DragDropMode::DragOnly
-void
-DragOnly()
-PPCODE:
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)QAbstractItemView::DragOnly);
-    XSRETURN(1);
-
-
-# DragDropMode::DropOnly
-void
-DropOnly()
-PPCODE:
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)QAbstractItemView::DropOnly);
-    XSRETURN(1);
-
-
-# DragDropMode::DragDrop
-void
-DragDrop()
-PPCODE:
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)QAbstractItemView::DragDrop);
-    XSRETURN(1);
-
-
-# DragDropMode::InternalMove
-void
-InternalMove()
-PPCODE:
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)QAbstractItemView::InternalMove);
     XSRETURN(1);

@@ -32,7 +32,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMotifStyle(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMotifStyle", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -40,7 +43,10 @@ PPCODE:
       {
         if (1) {
       arg00 = (bool)SvTRUE(ST(1));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMotifStyle(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMotifStyle", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

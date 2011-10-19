@@ -51,7 +51,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSplashScreen(*arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSplashScreen", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -59,7 +62,10 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Gui::QPixmap")) {
       arg10 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSplashScreen(*arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSplashScreen", (void *)ret);
+    XSRETURN(1);
     }
         else if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
       if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
@@ -70,7 +76,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg50 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSplashScreen(arg50, *arg51, arg52);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSplashScreen", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -81,7 +90,10 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Gui::QPixmap") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSplashScreen(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSplashScreen", (void *)ret);
+    XSRETURN(1);
     }
         else if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Gui::QPixmap")) {
       if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
@@ -93,7 +105,10 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg40 is not of type Qt::Gui::QWidget");
       arg41 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(2))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSplashScreen(arg40, *arg41, arg42);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSplashScreen", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -112,7 +127,10 @@ PPCODE:
         Perl_croak(aTHX_ "arg30 is not of type Qt::Gui::QWidget");
       arg31 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(2))));
       arg32 = QFlags<Qt::WindowType>((int)SvIV(ST(3)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QSplashScreen(arg30, *arg31, arg32);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QSplashScreen", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

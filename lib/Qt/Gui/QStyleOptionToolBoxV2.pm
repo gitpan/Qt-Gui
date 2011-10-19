@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QStyleOptionToolBox/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Gui::QStyleOptionToolBox/;
+#our @ISA = qw/Qt::Gui::QStyleOptionToolBox/;
 
 
 # FIXME: operator overload

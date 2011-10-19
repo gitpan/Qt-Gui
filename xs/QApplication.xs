@@ -100,6 +100,16 @@ unsigned long argd4 = 0;
 int argd5 = 0x040703;
 PPCODE:
     switch(items) {
+      case 1:
+      {
+	static char *argv[] = { "PerlQt" };
+	static int argc = 1;
+        ret = new QApplication(argc, argv);
+        ST(0) = sv_newmortal();
+        sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
+        XSRETURN(1);
+	break;
+      }
       case 2:
       {
         if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef)) {
@@ -122,15 +132,20 @@ PPCODE:
       }
       case 3:
       {
-        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+        if (SvIOK(ST(1)) && (SvOK(ST(2)) && SvTYPE(SvRV(ST(2)))==SVt_PVAV)) {
       arg10 = (int)SvIV(ST(1));
-      arg11 = reinterpret_cast<char **>(SvIV(ST(2)));
+      char *arg11[av_len((AV *)SvRV(ST(2)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(2))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(2)), i, 0);
+	char *str = SvPVX(*svp);
+	arg11[i] = str;
+    }
     ret = new QApplication(arg10, arg11, arg12);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
     XSRETURN(1);
     }
-        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvUOK(ST(2))) {
+        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       if (sv_derived_from(ST(1), "")) {
         arg80 = reinterpret_cast<_XDisplay *>(SvIV((SV*)SvRV(ST(1))));
     }
@@ -151,34 +166,49 @@ PPCODE:
       }
       case 4:
       {
-        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+        if (SvIOK(ST(1)) && (SvOK(ST(2)) && SvTYPE(SvRV(ST(2)))==SVt_PVAV) && SvIOK(ST(3))) {
       arg00 = (int)SvIV(ST(1));
-      arg01 = reinterpret_cast<char **>(SvIV(ST(2)));
+      char *arg01[av_len((AV *)SvRV(ST(2)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(2))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(2)), i, 0);
+	char *str = SvPVX(*svp);
+	arg01[i] = str;
+    }
       arg02 = (int)SvIV(ST(3));
     ret = new QApplication(arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvIOK(ST(1)) && SvIOK(ST(2)) && 1) {
+        else if (SvIOK(ST(1)) && (SvOK(ST(2)) && SvTYPE(SvRV(ST(2)))==SVt_PVAV) && 1) {
       arg30 = (int)SvIV(ST(1));
-      arg31 = reinterpret_cast<char **>(SvIV(ST(2)));
+      char *arg31[av_len((AV *)SvRV(ST(2)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(2))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(2)), i, 0);
+	char *str = SvPVX(*svp);
+	arg31[i] = str;
+    }
       arg32 = (bool)SvTRUE(ST(3));
     ret = new QApplication(arg30, arg31, arg32, arg33);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+        else if (SvIOK(ST(1)) && (SvOK(ST(2)) && SvTYPE(SvRV(ST(2)))==SVt_PVAV) && SvIOK(ST(3))) {
       arg50 = (int)SvIV(ST(1));
-      arg51 = reinterpret_cast<char **>(SvIV(ST(2)));
+      char *arg51[av_len((AV *)SvRV(ST(2)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(2))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(2)), i, 0);
+	char *str = SvPVX(*svp);
+	arg51[i] = str;
+    }
       arg52 = (QApplication::Type)SvIV(ST(3));
     ret = new QApplication(arg50, arg51, arg52, arg53);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
     XSRETURN(1);
     }
-        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvUOK(ST(2)) && SvUOK(ST(3))) {
+        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && (SvIOK(ST(2)) || SvUOK(ST(2))) && (SvIOK(ST(3)) || SvUOK(ST(3)))) {
       if (sv_derived_from(ST(1), "")) {
         arg70 = reinterpret_cast<_XDisplay *>(SvIV((SV*)SvRV(ST(1))));
     }
@@ -194,7 +224,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
     XSRETURN(1);
     }
-        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && (SvOK(ST(3)) && SvTYPE(SvRV(ST(3)))==SVt_PVAV)) {
       if (sv_derived_from(ST(1), "")) {
         argd0 = reinterpret_cast<_XDisplay *>(SvIV((SV*)SvRV(ST(1))));
     }
@@ -204,7 +234,12 @@ PPCODE:
     else
         Perl_croak(aTHX_ "argd0 is not of type ");
       argd1 = (int)SvIV(ST(2));
-      argd2 = reinterpret_cast<char **>(SvIV(ST(3)));
+      char *argd2[av_len((AV *)SvRV(ST(3)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(3))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(3)), i, 0);
+	char *str = SvPVX(*svp);
+	argd2[i] = str;
+    }
     ret = new QApplication(argd0, argd1, argd2, argd3, argd4, argd5);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
@@ -216,9 +251,14 @@ PPCODE:
       }
       case 5:
       {
-        if (SvIOK(ST(1)) && SvIOK(ST(2)) && 1 && SvIOK(ST(4))) {
+        if (SvIOK(ST(1)) && (SvOK(ST(2)) && SvTYPE(SvRV(ST(2)))==SVt_PVAV) && 1 && SvIOK(ST(4))) {
       arg20 = (int)SvIV(ST(1));
-      arg21 = reinterpret_cast<char **>(SvIV(ST(2)));
+      char *arg21[av_len((AV *)SvRV(ST(2)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(2))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(2)), i, 0);
+	char *str = SvPVX(*svp);
+	arg21[i] = str;
+    }
       arg22 = (bool)SvTRUE(ST(3));
       arg23 = (int)SvIV(ST(4));
     ret = new QApplication(arg20, arg21, arg22, arg23);
@@ -226,9 +266,14 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4))) {
+        else if (SvIOK(ST(1)) && (SvOK(ST(2)) && SvTYPE(SvRV(ST(2)))==SVt_PVAV) && SvIOK(ST(3)) && SvIOK(ST(4))) {
       arg40 = (int)SvIV(ST(1));
-      arg41 = reinterpret_cast<char **>(SvIV(ST(2)));
+      char *arg41[av_len((AV *)SvRV(ST(2)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(2))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(2)), i, 0);
+	char *str = SvPVX(*svp);
+	arg41[i] = str;
+    }
       arg42 = (QApplication::Type)SvIV(ST(3));
       arg43 = (int)SvIV(ST(4));
     ret = new QApplication(arg40, arg41, arg42, arg43);
@@ -236,7 +281,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
     XSRETURN(1);
     }
-        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvUOK(ST(2)) && SvUOK(ST(3)) && SvIOK(ST(4))) {
+        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && (SvIOK(ST(2)) || SvUOK(ST(2))) && (SvIOK(ST(3)) || SvUOK(ST(3))) && SvIOK(ST(4))) {
       if (sv_derived_from(ST(1), "")) {
         arg60 = reinterpret_cast<_XDisplay *>(SvIV((SV*)SvRV(ST(1))));
     }
@@ -253,7 +298,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
     XSRETURN(1);
     }
-        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4))) {
+        else if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && (SvOK(ST(3)) && SvTYPE(SvRV(ST(3)))==SVt_PVAV) && (SvIOK(ST(4)) || SvUOK(ST(4)))) {
       if (sv_derived_from(ST(1), "")) {
         argc0 = reinterpret_cast<_XDisplay *>(SvIV((SV*)SvRV(ST(1))));
     }
@@ -263,7 +308,12 @@ PPCODE:
     else
         Perl_croak(aTHX_ "argc0 is not of type ");
       argc1 = (int)SvIV(ST(2));
-      argc2 = reinterpret_cast<char **>(SvIV(ST(3)));
+      char *argc2[av_len((AV *)SvRV(ST(3)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(3))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(3)), i, 0);
+	char *str = SvPVX(*svp);
+	argc2[i] = str;
+    }
       argc3 = (unsigned long)SvUV(ST(4));
     ret = new QApplication(argc0, argc1, argc2, argc3, argc4, argc5);
     ST(0) = sv_newmortal();
@@ -276,7 +326,7 @@ PPCODE:
       }
       case 6:
       {
-        if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5))) {
+        if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && (SvOK(ST(3)) && SvTYPE(SvRV(ST(3)))==SVt_PVAV) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5)))) {
       if (sv_derived_from(ST(1), "")) {
         argb0 = reinterpret_cast<_XDisplay *>(SvIV((SV*)SvRV(ST(1))));
     }
@@ -286,7 +336,12 @@ PPCODE:
     else
         Perl_croak(aTHX_ "argb0 is not of type ");
       argb1 = (int)SvIV(ST(2));
-      argb2 = reinterpret_cast<char **>(SvIV(ST(3)));
+      char *argb2[av_len((AV *)SvRV(ST(3)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(3))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(3)), i, 0);
+	char *str = SvPVX(*svp);
+	argb2[i] = str;
+    }
       argb3 = (unsigned long)SvUV(ST(4));
       argb4 = (unsigned long)SvUV(ST(5));
     ret = new QApplication(argb0, argb1, argb2, argb3, argb4, argb5);
@@ -300,7 +355,7 @@ PPCODE:
       }
       case 7:
       {
-        if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5)) && SvIOK(ST(6))) {
+        if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && (SvOK(ST(3)) && SvTYPE(SvRV(ST(3)))==SVt_PVAV) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5))) && SvIOK(ST(6))) {
       if (sv_derived_from(ST(1), "")) {
         arga0 = reinterpret_cast<_XDisplay *>(SvIV((SV*)SvRV(ST(1))));
     }
@@ -310,7 +365,12 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arga0 is not of type ");
       arga1 = (int)SvIV(ST(2));
-      arga2 = reinterpret_cast<char **>(SvIV(ST(3)));
+      char *arga2[av_len((AV *)SvRV(ST(3)))+1];
+    for (int i = 0; i < av_len((AV *)SvRV(ST(3))) + 1; i++) {
+        SV **svp = av_fetch((AV *)SvRV(ST(3)), i, 0);
+	char *str = SvPVX(*svp);
+	arga2[i] = str;
+    }
       arga3 = (unsigned long)SvUV(ST(4));
       arga4 = (unsigned long)SvUV(ST(5));
       arga5 = (int)SvIV(ST(6));
@@ -472,19 +532,6 @@ PPCODE:
       arg00 = reinterpret_cast<QCursor *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->changeOverrideCursor(*arg00);
     XSRETURN(0);
-    }
-
-## static QClipboard * clipboard()
-void
-QApplication::clipboard(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    QClipboard * ret = THIS->clipboard();
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Gui::QClipboard", (void *)ret);
-    XSRETURN(1);
     }
 
 ## static void closeAllWindows()

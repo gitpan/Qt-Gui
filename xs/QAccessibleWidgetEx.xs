@@ -49,7 +49,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg20 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QAccessibleWidgetEx(arg20, arg21, *arg22);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QAccessibleWidgetEx", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -67,7 +70,10 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
       arg11 = (QAccessible::Role)SvIV(ST(2));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QAccessibleWidgetEx(arg10, arg11, *arg12);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QAccessibleWidgetEx", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -86,7 +92,10 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
       arg01 = (QAccessible::Role)SvIV(ST(2));
       arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QAccessibleWidgetEx(arg00, arg01, *arg02);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QAccessibleWidgetEx", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

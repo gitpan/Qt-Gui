@@ -1,14 +1,13 @@
-package Qt::Gui::QWSEmbedWidget;
+package Qt::Gui::QIconEngineFactoryInterfaceV2;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QWSEmbedWidget
-# file     : QtGui/qwsembedwidget.h
+# classname: QIconEngineFactoryInterfaceV2
+# file     : QtGui/qiconengineplugin.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QWidget/;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -18,17 +17,11 @@ our $ISA     = qw/Qt::Gui::QWidget/;
 
 =head1 NAME
 
-Qt::Gui::QWSEmbedWidget
+Qt::Gui::QIconEngineFactoryInterfaceV2
 
 =head1 PUBLIC METHODS
 
 =over
-
-=item   QWSEmbedWidget(unsigned long winId, QWidget * parent)
-
-=item   QWSEmbedWidget(unsigned long winId, QWidget * parent = 0)
-
-=item   ~QWSEmbedWidget()
 
 
 =back

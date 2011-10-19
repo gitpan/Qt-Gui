@@ -626,7 +626,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::Gui::QFont", (void *)new QFont(ret));
     XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg20 = (uint)SvUV(ST(1));
     (void)THIS->resolve(arg20);
     XSRETURN(0);

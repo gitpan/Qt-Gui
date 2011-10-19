@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QTextBlockGroup/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Gui::QTextBlockGroup/;
+#our @ISA = qw/Qt::Gui::QTextBlockGroup/;
 
 
 # FIXME: operator overload

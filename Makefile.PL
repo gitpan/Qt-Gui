@@ -1,11 +1,24 @@
 use 5.008003;
 use ExtUtils::MakeMaker;
 
+BEGIN {
+    require Carp;
+    if (!-d '/usr/include/qt4') {
+        Carp::croak(<<EOF);
+ERROR: This binding requires C++ Qt4 libraries and devel header files installed.
+       Usually the header files are located within /usr/include/qt4.
+       There is no such directory on your system, it is very likely this 
+       installation will not proceed properly.
+ABORT NOW!
+EOF
+    }
+}
+
 # See lib/ExtUtils/MakeMaker.pm for details of how to influence
 # the contents of the Makefile that is written.
 WriteMakefile(
     NAME         => 'Qt::Gui',
-    VERSION      => '0.01_02',
+    VERSION      => '0.01_03',
     LICENSE      => 'perl',
     PREREQ_PM    => {},
     ABSTRACT     => 'Qt Gui binding',
@@ -15,7 +28,7 @@ WriteMakefile(
     LDDLFLAGS    => '-shared',
     XSOPT        => '-C++ -hiertype',
     LIBS         => '-L/usr/lib/qt4 -lQtGui -lQtCore', 
-    DEFINE       => '-DQT_GUI_LIB -DQT_SHARED -DQT_NO_DEBUG -DQT_NO_S60 -DQT_NO_STYLE_S60 -DQT_NO_STYLE_WINDOWS',
+    DEFINE       => '-DQT_GUI_LIB -DQT_SHARED -DQT_NO_DEBUG -DQT_NO_S60 -DQT_NO_STYLE_S60 -DQT_NO_STYLE_WINDOWS -DQT_NO_QWSEMBEDWIDGET -DQT_NO_QWS_SOUNDSERVER -DQT_NO_QWS_PROPERTIES',
     INC          => '-I/usr/include -I/usr/include/qt4',
     # Un-comment this if you add C files to link with later:
     # OBJECT       => '$(O_FILES)', # link all the C files too

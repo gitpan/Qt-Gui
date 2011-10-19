@@ -87,7 +87,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMessageBox(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -102,7 +105,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMessageBox(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -114,7 +120,10 @@ PPCODE:
       arg50 = (QMessageBox::Icon)SvIV(ST(1));
       arg51 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg52 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMessageBox(arg50, *arg51, *arg52, arg53, arg54, arg55);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -127,7 +136,10 @@ PPCODE:
       arg41 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg42 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
       arg43 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMessageBox(arg40, *arg41, *arg42, arg43, arg44, arg45);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -148,7 +160,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg34 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMessageBox(arg30, *arg31, *arg32, arg33, arg34, arg35);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -170,7 +185,10 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg24 is not of type Qt::Gui::QWidget");
       arg25 = QFlags<Qt::WindowType>((int)SvIV(ST(6)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMessageBox(arg20, *arg21, *arg22, arg23, arg24, arg25);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Core::QString") && SvIOK(ST(3)) && SvIOK(ST(4)) && SvIOK(ST(5)) && SvIOK(ST(6))) {
       arg80 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
@@ -179,7 +197,10 @@ PPCODE:
       arg83 = (int)SvIV(ST(4));
       arg84 = (int)SvIV(ST(5));
       arg85 = (int)SvIV(ST(6));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMessageBox(*arg80, *arg81, arg82, arg83, arg84, arg85, arg86, arg87);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -202,7 +223,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg76 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMessageBox(*arg70, *arg71, arg72, arg73, arg74, arg75, arg76, arg77);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -226,7 +250,10 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg66 is not of type Qt::Gui::QWidget");
       arg67 = QFlags<Qt::WindowType>((int)SvIV(ST(8)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QMessageBox(*arg60, *arg61, arg62, arg63, arg64, arg65, arg66, arg67);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

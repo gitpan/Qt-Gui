@@ -38,7 +38,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QLCDNumber(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QLCDNumber", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -53,11 +56,17 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QLCDNumber(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QLCDNumber", (void *)ret);
+    XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg30 = (uint)SvUV(ST(1));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QLCDNumber(arg30, arg31);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QLCDNumber", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -65,7 +74,7 @@ PPCODE:
       }
       case 3:
       {
-        if (SvUOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QWidget") || ST(2) == &PL_sv_undef)) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1))) && (sv_derived_from(ST(2), "Qt::Gui::QWidget") || ST(2) == &PL_sv_undef)) {
       arg20 = (uint)SvUV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QWidget")) {
         arg21 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(2))));
@@ -75,7 +84,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QLCDNumber(arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QLCDNumber", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

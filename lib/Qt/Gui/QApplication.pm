@@ -7,8 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Core::QCoreApplication/;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -71,8 +70,6 @@ Qt::Gui::QApplication
 =item  static void beep()
 
 =item  static void changeOverrideCursor(const QCursor & arg0)
-
-=item  static QClipboard * clipboard()
 
 =item  static void closeAllWindows()
 

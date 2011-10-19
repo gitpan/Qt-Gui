@@ -103,7 +103,7 @@ PPCODE:
       }
       case 7:
       {
-        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Core::QString") && 1 && SvUOK(ST(6))) {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Core::QString") && 1 && (SvIOK(ST(6)) || SvUOK(ST(6)))) {
       arg00 = (QKeyEvent::Type)SvIV(ST(1));
       arg01 = (int)SvIV(ST(2));
       arg02 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
@@ -192,7 +192,7 @@ PPCODE:
     switch(items) {
       case 7:
       {
-        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5)) && SvUOK(ST(6))) {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5))) && (SvIOK(ST(6)) || SvUOK(ST(6)))) {
       arg30 = (QKeyEvent::Type)SvIV(ST(1));
       arg31 = (int)SvIV(ST(2));
       arg32 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
@@ -210,7 +210,7 @@ PPCODE:
       }
       case 8:
       {
-        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5)) && SvUOK(ST(6)) && sv_isa(ST(7), "Qt::Core::QString")) {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5))) && (SvIOK(ST(6)) || SvUOK(ST(6))) && sv_isa(ST(7), "Qt::Core::QString")) {
       arg20 = (QKeyEvent::Type)SvIV(ST(1));
       arg21 = (int)SvIV(ST(2));
       arg22 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
@@ -229,7 +229,7 @@ PPCODE:
       }
       case 9:
       {
-        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5)) && SvUOK(ST(6)) && sv_isa(ST(7), "Qt::Core::QString") && 1) {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5))) && (SvIOK(ST(6)) || SvUOK(ST(6))) && sv_isa(ST(7), "Qt::Core::QString") && 1) {
       arg10 = (QKeyEvent::Type)SvIV(ST(1));
       arg11 = (int)SvIV(ST(2));
       arg12 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
@@ -249,7 +249,7 @@ PPCODE:
       }
       case 10:
       {
-        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvUOK(ST(4)) && SvUOK(ST(5)) && SvUOK(ST(6)) && sv_isa(ST(7), "Qt::Core::QString") && 1 && SvUOK(ST(9))) {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5))) && (SvIOK(ST(6)) || SvUOK(ST(6))) && sv_isa(ST(7), "Qt::Core::QString") && 1 && (SvIOK(ST(9)) || SvUOK(ST(9)))) {
       arg00 = (QKeyEvent::Type)SvIV(ST(1));
       arg01 = (int)SvIV(ST(2));
       arg02 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));

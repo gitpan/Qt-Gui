@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QWidget/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Gui::QWidget/;
+#our @ISA = qw/Qt::Gui::QWidget/;
 
 
 # FIXME: operator overload
@@ -42,8 +43,6 @@ Qt::Gui::QLineEdit
 
 =item  QCompleter * completer()
 
-=item  void copy()
-
 =item  QMenu * createStandardContextMenu()
 
 =item  void cursorBackward(bool mark, int steps)
@@ -61,8 +60,6 @@ Qt::Gui::QLineEdit
 =item  void cursorWordBackward(bool mark)
 
 =item  void cursorWordForward(bool mark)
-
-=item  void cut()
 
 =item  void del()
 
@@ -105,8 +102,6 @@ Qt::Gui::QLineEdit
 =item  int maxLength()
 
 =item  QSize minimumSizeHint()
-
-=item  void paste()
 
 =item  QString placeholderText()
 

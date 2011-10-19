@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QImage()
-##  QImage(T_ARRAY_XPM const char * const * T_ARRAY_XPM)
+##  QImage(const char ** xpm)
 ##  QImage(const QImage & arg0)
 ##  QImage(const QSize & size, QImage::Format format)
 ##  QImage(const QString & fileName, const char * format)
@@ -35,7 +35,7 @@ PROTOTYPES: DISABLE
 QImage::new(...)
 PREINIT:
 QImage *ret;
-T_ARRAY_XPM arg10;
+const char ** arg10;
 QImage * arg20;
 QSize * arg30;
 QImage::Format arg31;
@@ -74,27 +74,42 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
       case 2:
       {
-        if (SvIOK(ST(1))) {
-      arg10 = reinterpret_cast<T_ARRAY_XPM>(SvIV(ST(1)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+        if (SvPOK(ST(1))) {
+      arg10 = (const char **)SvPV_nolen(ST(1));
+    ret = new QImage(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Gui::QImage")) {
       arg20 = reinterpret_cast<QImage *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(*arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString")) {
       arg50 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(*arg50, arg51);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
         else if (SvPOK(ST(1))) {
       arg70 = (const char *)SvPV_nolen(ST(1));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(arg70, arg71);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -105,17 +120,26 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QSize") && SvIOK(ST(2))) {
       arg30 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(1))));
       arg31 = (QImage::Format)SvIV(ST(2));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(*arg30, arg31);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString") && SvPOK(ST(2))) {
       arg40 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg41 = (const char *)SvPV_nolen(ST(2));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(*arg40, arg41);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
         else if (SvPOK(ST(1)) && SvPOK(ST(2))) {
       arg60 = (const char *)SvPV_nolen(ST(1));
       arg61 = (const char *)SvPV_nolen(ST(2));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(arg60, arg61);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -127,7 +151,10 @@ PPCODE:
       arg80 = (int)SvIV(ST(1));
       arg81 = (int)SvIV(ST(2));
       arg82 = (QImage::Format)SvIV(ST(3));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(arg80, arg81, arg82);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -143,7 +170,10 @@ PPCODE:
       arg91 = (int)SvIV(ST(2));
       arg92 = (int)SvIV(ST(3));
       arg93 = (QImage::Format)SvIV(ST(4));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(arg90, arg91, arg92, arg93);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
         else if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4))) {
       {
@@ -153,7 +183,10 @@ PPCODE:
       arga1 = (int)SvIV(ST(2));
       arga2 = (int)SvIV(ST(3));
       arga3 = (QImage::Format)SvIV(ST(4));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(arga0, arga1, arga2, arga3);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -170,7 +203,10 @@ PPCODE:
       argb2 = (int)SvIV(ST(3));
       argb3 = (int)SvIV(ST(4));
       argb4 = (QImage::Format)SvIV(ST(5));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(argb0, argb1, argb2, argb3, argb4);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
         else if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4)) && SvIOK(ST(5))) {
       {
@@ -181,7 +217,10 @@ PPCODE:
       argc2 = (int)SvIV(ST(3));
       argc3 = (int)SvIV(ST(4));
       argc4 = (QImage::Format)SvIV(ST(5));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QImage(argc0, argc1, argc2, argc3, argc4);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -553,7 +592,7 @@ PPCODE:
     switch(items) {
       case 2:
       {
-        if (SvUOK(ST(1))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg10 = (unsigned int)SvUV(ST(1));
     QImage ret = THIS->createMaskFromColor(arg10, arg11);
     ST(0) = sv_newmortal();
@@ -566,7 +605,7 @@ PPCODE:
       }
       case 3:
       {
-        if (SvUOK(ST(1)) && SvIOK(ST(2))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1))) && SvIOK(ST(2))) {
       arg00 = (unsigned int)SvUV(ST(1));
       arg01 = (Qt::MaskMode)SvIV(ST(2));
     QImage ret = THIS->createMaskFromColor(arg00, arg01);
@@ -665,7 +704,7 @@ QImage::fill(...)
 PREINIT:
 uint arg00;
 PPCODE:
-    if (SvUOK(ST(1))) {
+    if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg00 = (uint)SvUV(ST(1));
     (void)THIS->fill(arg00);
     XSRETURN(0);
@@ -1663,7 +1702,7 @@ PREINIT:
 int arg00;
 unsigned int arg01;
 PPCODE:
-    if (SvIOK(ST(1)) && SvUOK(ST(2))) {
+    if (SvIOK(ST(1)) && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       arg00 = (int)SvIV(ST(1));
       arg01 = (unsigned int)SvUV(ST(2));
     (void)THIS->setColor(arg00, arg01);
@@ -1744,7 +1783,7 @@ PPCODE:
     switch(items) {
       case 3:
       {
-        if (sv_isa(ST(1), "Qt::Core::QPoint") && SvUOK(ST(2))) {
+        if (sv_isa(ST(1), "Qt::Core::QPoint") && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (uint)SvUV(ST(2));
     (void)THIS->setPixel(*arg00, arg01);
@@ -1756,7 +1795,7 @@ PPCODE:
       }
       case 4:
       {
-        if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvUOK(ST(3))) {
+        if (SvIOK(ST(1)) && SvIOK(ST(2)) && (SvIOK(ST(3)) || SvUOK(ST(3)))) {
       arg10 = (int)SvIV(ST(1));
       arg11 = (int)SvIV(ST(2));
       arg12 = (uint)SvUV(ST(3));

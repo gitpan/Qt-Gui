@@ -38,7 +38,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QScrollBar(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QScrollBar", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -53,11 +56,17 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QScrollBar(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QScrollBar", (void *)ret);
+    XSRETURN(1);
     }
         else if (SvIOK(ST(1))) {
       arg30 = (Qt::Orientation)SvIV(ST(1));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QScrollBar(arg30, arg31);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QScrollBar", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -75,7 +84,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QScrollBar(arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QScrollBar", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

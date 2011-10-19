@@ -56,7 +56,7 @@ PPCODE:
       
     const char * ret = THIS->format(arg10);
     ST(0) = sv_newmortal();
-    sv_setpv((SV*)ST(0), ret);
+    sv_setpv((SV*)ST(0), (const char *)ret);
     XSRETURN(1);
     }
         break;
@@ -67,7 +67,7 @@ PPCODE:
       arg00 = (int)SvIV(ST(1));
     const char * ret = THIS->format(arg00);
     ST(0) = sv_newmortal();
-    sv_setpv((SV*)ST(0), ret);
+    sv_setpv((SV*)ST(0), (const char *)ret);
     XSRETURN(1);
     }
 	else

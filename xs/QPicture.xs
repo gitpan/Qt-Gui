@@ -34,7 +34,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPicture(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPicture", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -42,11 +45,17 @@ PPCODE:
       {
         if (SvIOK(ST(1))) {
       arg00 = (int)SvIV(ST(1));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPicture(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPicture", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Gui::QPicture")) {
       arg20 = reinterpret_cast<QPicture *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QPicture(*arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPicture", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -86,7 +95,7 @@ PPCODE:
       
     const char * ret = THIS->data();
     ST(0) = sv_newmortal();
-    sv_setpv((SV*)ST(0), ret);
+    sv_setpv((SV*)ST(0), (const char *)ret);
     XSRETURN(1);
     }
 
@@ -281,7 +290,7 @@ PPCODE:
       arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     const char * ret = THIS->pictureFormat(*arg00);
     ST(0) = sv_newmortal();
-    sv_setpv((SV*)ST(0), ret);
+    sv_setpv((SV*)ST(0), (const char *)ret);
     XSRETURN(1);
     }
 
@@ -403,7 +412,7 @@ PREINIT:
 const char * arg00;
 uint arg01;
 PPCODE:
-    if (SvPOK(ST(1)) && SvUOK(ST(2))) {
+    if (SvPOK(ST(1)) && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       arg00 = (const char *)SvPV_nolen(ST(1));
       arg01 = (uint)SvUV(ST(2));
     (void)THIS->setData(arg00, arg01);

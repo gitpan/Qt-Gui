@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QPixmap/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Gui::QPixmap/;
+#our @ISA = qw/Qt::Gui::QPixmap/;
 
 
 # FIXME: operator overload

@@ -1,14 +1,13 @@
-package Qt::Gui::QClipboardEvent;
+package Qt::Gui::QPictureFormatInterface;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QClipboardEvent
-# file     : QtGui/qevent.h
+# classname: QPictureFormatInterface
+# file     : QtGui/qpictureformatplugin.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Core::QEvent/;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -18,17 +17,11 @@ our $ISA     = qw/Qt::Core::QEvent/;
 
 =head1 NAME
 
-Qt::Gui::QClipboardEvent
+Qt::Gui::QPictureFormatInterface
 
 =head1 PUBLIC METHODS
 
 =over
-
-=item   QClipboardEvent(QEventPrivate * data)
-
-=item   ~QClipboardEvent()
-
-=item  QEventPrivate * data()
 
 
 =back

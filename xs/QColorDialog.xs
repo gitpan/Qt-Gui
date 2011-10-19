@@ -38,7 +38,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QColorDialog(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QColorDialog", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -53,11 +56,17 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QColorDialog(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QColorDialog", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Gui::QColor")) {
       arg30 = reinterpret_cast<QColor *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QColorDialog(*arg30, arg31);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QColorDialog", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -75,7 +84,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QColorDialog(*arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QColorDialog", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -287,7 +299,7 @@ PPCODE:
       }
       case 2:
       {
-        if (SvUOK(ST(1))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg20 = (unsigned int)SvUV(ST(1));
     unsigned int ret = THIS->getRgba(arg20, arg21, arg22);
     ST(0) = sv_newmortal();
@@ -300,7 +312,7 @@ PPCODE:
       }
       case 3:
       {
-        if (SvUOK(ST(1)) && 1) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1))) && 1) {
       arg10 = (unsigned int)SvUV(ST(1));
       {
         bool tmp = SvTRUE(ST(2));
@@ -317,7 +329,7 @@ PPCODE:
       }
       case 4:
       {
-        if (SvUOK(ST(1)) && 1 && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef)) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1))) && 1 && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef)) {
       arg00 = (unsigned int)SvUV(ST(1));
       {
         bool tmp = SvTRUE(ST(2));
@@ -411,7 +423,7 @@ PREINIT:
 int arg00;
 unsigned int arg01;
 PPCODE:
-    if (SvIOK(ST(1)) && SvUOK(ST(2))) {
+    if (SvIOK(ST(1)) && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       arg00 = (int)SvIV(ST(1));
       arg01 = (unsigned int)SvUV(ST(2));
     (void)THIS->setCustomColor(arg00, arg01);
@@ -476,7 +488,7 @@ PREINIT:
 int arg00;
 unsigned int arg01;
 PPCODE:
-    if (SvIOK(ST(1)) && SvUOK(ST(2))) {
+    if (SvIOK(ST(1)) && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       arg00 = (int)SvIV(ST(1));
       arg01 = (unsigned int)SvUV(ST(2));
     (void)THIS->setStandardColor(arg00, arg01);

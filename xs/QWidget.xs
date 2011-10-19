@@ -37,7 +37,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QWidget(arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -52,7 +55,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QWidget(arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -70,7 +76,10 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
       arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QWidget(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -416,7 +425,7 @@ QWidget::find(...)
 PREINIT:
 unsigned long arg00;
 PPCODE:
-    if (SvUOK(ST(1))) {
+    if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg00 = (unsigned long)SvUV(ST(1));
     QWidget * ret = THIS->find(arg00);
     ST(0) = sv_newmortal();

@@ -49,7 +49,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QGraphicsTextItem(arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QGraphicsTextItem", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -64,11 +67,17 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QGraphicsItem");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QGraphicsTextItem(arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QGraphicsTextItem", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString")) {
       arg50 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QGraphicsTextItem(*arg50, arg51, arg52);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QGraphicsTextItem", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -93,7 +102,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QGraphicsScene");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QGraphicsTextItem(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QGraphicsTextItem", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString") && (sv_derived_from(ST(2), "Qt::Gui::QGraphicsItem") || ST(2) == &PL_sv_undef)) {
       arg40 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
@@ -105,7 +117,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg41 is not of type Qt::Gui::QGraphicsItem");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QGraphicsTextItem(*arg40, arg41, arg42);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QGraphicsTextItem", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -131,7 +146,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg32 is not of type Qt::Gui::QGraphicsScene");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QGraphicsTextItem(*arg30, arg31, arg32);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QGraphicsTextItem", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

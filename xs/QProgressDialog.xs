@@ -58,7 +58,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QProgressDialog(arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QProgressDialog", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -73,7 +76,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QProgressDialog(arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QProgressDialog", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -91,7 +97,10 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
       arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QProgressDialog(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QProgressDialog", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -104,7 +113,10 @@ PPCODE:
       arg51 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg52 = (int)SvIV(ST(3));
       arg53 = (int)SvIV(ST(4));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QProgressDialog(*arg50, *arg51, arg52, arg53, arg54, arg55);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QProgressDialog", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -125,7 +137,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg44 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QProgressDialog(*arg40, *arg41, arg42, arg43, arg44, arg45);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QProgressDialog", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -147,7 +162,10 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg34 is not of type Qt::Gui::QWidget");
       arg35 = QFlags<Qt::WindowType>((int)SvIV(ST(6)));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QProgressDialog(*arg30, *arg31, arg32, arg33, arg34, arg35);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QProgressDialog", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

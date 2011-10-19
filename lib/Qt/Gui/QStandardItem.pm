@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -79,10 +79,6 @@ Qt::Gui::QStandardItem
 
 =item  bool isCheckable()
 
-=item  bool isDragEnabled()
-
-=item  bool isDropEnabled()
-
 =item  bool isEditable()
 
 =item  bool isEnabled()
@@ -130,10 +126,6 @@ Qt::Gui::QStandardItem
 =item  void setData(const QVariant & value, int role)
 
 =item  void setData(const QVariant & value, int role = Qt::UserRole + 1)
-
-=item  void setDragEnabled(bool dragEnabled)
-
-=item  void setDropEnabled(bool dropEnabled)
 
 =item  void setEditable(bool editable)
 

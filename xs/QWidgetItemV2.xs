@@ -34,7 +34,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QWidgetItemV2(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QWidgetItemV2", (void *)ret);
+    XSRETURN(1);
     }
 
 ##  ~QWidgetItemV2()

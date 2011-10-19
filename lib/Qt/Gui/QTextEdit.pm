@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QAbstractScrollArea/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Gui::QAbstractScrollArea/;
+#our @ISA = qw/Qt::Gui::QAbstractScrollArea/;
 
 
 # FIXME: operator overload
@@ -48,8 +49,6 @@ Qt::Gui::QTextEdit
 
 =item  void clear()
 
-=item  void copy()
-
 =item  QMenu * createStandardContextMenu()
 
 =item  QMenu * createStandardContextMenu(const QPoint & position)
@@ -65,8 +64,6 @@ Qt::Gui::QTextEdit
 =item  QRect cursorRect(const QTextCursor & cursor)
 
 =item  int cursorWidth()
-
-=item  void cut()
 
 =item  QTextDocument * document()
 
@@ -109,8 +106,6 @@ Qt::Gui::QTextEdit
 =item  void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode = QTextCursor::MoveAnchor)
 
 =item  bool overwriteMode()
-
-=item  void paste()
 
 =item  void print(QPrinter * printer)
 

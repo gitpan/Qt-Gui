@@ -67,7 +67,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::Gui::QColor", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg20 = (unsigned int)SvUV(ST(1));
     ret = new QColor(arg20);
     ST(0) = sv_newmortal();
@@ -697,7 +697,7 @@ PPCODE:
     switch(items) {
       case 2:
       {
-        if (SvUOK(ST(1))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg00 = (unsigned int)SvUV(ST(1));
     QColor ret = THIS->fromRgb(arg00);
     ST(0) = sv_newmortal();
@@ -801,7 +801,7 @@ QColor::fromRgba(...)
 PREINIT:
 unsigned int arg00;
 PPCODE:
-    if (SvUOK(ST(1))) {
+    if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg00 = (unsigned int)SvUV(ST(1));
     QColor ret = THIS->fromRgba(arg00);
     ST(0) = sv_newmortal();
@@ -2279,7 +2279,7 @@ PPCODE:
     switch(items) {
       case 2:
       {
-        if (SvUOK(ST(1))) {
+        if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg00 = (unsigned int)SvUV(ST(1));
     (void)THIS->setRgb(arg00);
     XSRETURN(0);
@@ -2373,7 +2373,7 @@ QColor::setRgba(...)
 PREINIT:
 unsigned int arg00;
 PPCODE:
-    if (SvUOK(ST(1))) {
+    if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg00 = (unsigned int)SvUV(ST(1));
     (void)THIS->setRgba(arg00);
     XSRETURN(0);

@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QPaintDevice/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Gui::QPaintDevice/;
+#our @ISA = qw/Qt::Gui::QPaintDevice/;
 
 
 # FIXME: operator overload
@@ -30,7 +31,7 @@ Qt::Gui::QPixmap
 
 =item   QPixmap(const QSize & arg0)
 
-=item   QPixmap(T_ARRAY_XPM const char * const * T_ARRAY_XPM)
+=item   QPixmap(const char ** xpm)
 
 =item   QPixmap(const QPixmap & arg0)
 

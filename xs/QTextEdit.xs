@@ -38,7 +38,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QTextEdit(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QTextEdit", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -53,11 +56,17 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QTextEdit(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QTextEdit", (void *)ret);
+    XSRETURN(1);
     }
         else if (sv_isa(ST(1), "Qt::Core::QString")) {
       arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QTextEdit(*arg30, arg31);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QTextEdit", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -75,7 +84,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg21 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QTextEdit(*arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QTextEdit", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -179,17 +191,6 @@ PPCODE:
     if (1) {
       
     (void)THIS->clear();
-    XSRETURN(0);
-    }
-
-## void copy()
-void
-QTextEdit::copy(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    (void)THIS->copy();
     XSRETURN(0);
     }
 
@@ -318,17 +319,6 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
-    }
-
-## void cut()
-void
-QTextEdit::cut(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    (void)THIS->cut();
-    XSRETURN(0);
     }
 
 ## QTextDocument * document()
@@ -630,17 +620,6 @@ PPCODE:
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
-    }
-
-## void paste()
-void
-QTextEdit::paste(...)
-PREINIT:
-PPCODE:
-    if (1) {
-      
-    (void)THIS->paste();
-    XSRETURN(0);
     }
 
 ## void print(QPrinter * printer)

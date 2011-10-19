@@ -1,14 +1,13 @@
-package Qt::Gui::QDragEnterEvent;
+package Qt::Gui::QIconEngineFactoryInterface;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QDragEnterEvent
-# file     : QtGui/qevent.h
+# classname: QIconEngineFactoryInterface
+# file     : QtGui/qiconengineplugin.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Gui::QDragMoveEvent/;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -18,15 +17,11 @@ our $ISA     = qw/Qt::Gui::QDragMoveEvent/;
 
 =head1 NAME
 
-Qt::Gui::QDragEnterEvent
+Qt::Gui::QIconEngineFactoryInterface
 
 =head1 PUBLIC METHODS
 
 =over
-
-=item   QDragEnterEvent(const QPoint & pos, QFlags<Qt::DropAction> actions, const QMimeData * data, QFlags<Qt::MouseButton> buttons, QFlags<Qt::KeyboardModifier> modifiers)
-
-=item   ~QDragEnterEvent()
 
 
 =back

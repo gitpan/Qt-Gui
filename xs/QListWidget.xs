@@ -32,7 +32,10 @@ PPCODE:
       {
         if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QListWidget(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QListWidget", (void *)ret);
+    XSRETURN(1);
     }
         break;
       }
@@ -47,7 +50,10 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QListWidget(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QListWidget", (void *)ret);
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");
@@ -189,15 +195,15 @@ QListWidget::dropEvent(...)
 PREINIT:
 QDropEvent * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QDropEvent") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QDropEvent")) {
+    if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "")) {
         arg00 = reinterpret_cast<QDropEvent *>(SvIV((SV*)SvRV(ST(1))));
     }
     else if (ST(1) == &PL_sv_undef) {
         arg00 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QDropEvent");
+        Perl_croak(aTHX_ "arg00 is not of type ");
     (void)THIS->dropEvent(arg00);
     XSRETURN(0);
     }
