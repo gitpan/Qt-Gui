@@ -81,7 +81,7 @@ PPCODE:
     XSRETURN(1);
     }
         else if (SvIOK(ST(1))) {
-      arg60 = QFlags<QDialogButtonBox::StandardButton>((int)SvIV(ST(1)));
+      arg60 = QFlags<QDialogButtonBox::StandardButton>((QDialogButtonBox::StandardButton)SvIV(ST(1)));
     ret = new QDialogButtonBox(arg60, arg61, arg62);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QDialogButtonBox", (void *)ret);
@@ -109,7 +109,7 @@ PPCODE:
     XSRETURN(1);
     }
         else if (SvIOK(ST(1)) && SvIOK(ST(2))) {
-      arg50 = QFlags<QDialogButtonBox::StandardButton>((int)SvIV(ST(1)));
+      arg50 = QFlags<QDialogButtonBox::StandardButton>((QDialogButtonBox::StandardButton)SvIV(ST(1)));
       arg51 = (Qt::Orientation)SvIV(ST(2));
     ret = new QDialogButtonBox(arg50, arg51, arg52);
     ST(0) = sv_newmortal();
@@ -123,7 +123,7 @@ PPCODE:
       case 4:
       {
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef)) {
-      arg40 = QFlags<QDialogButtonBox::StandardButton>((int)SvIV(ST(1)));
+      arg40 = QFlags<QDialogButtonBox::StandardButton>((QDialogButtonBox::StandardButton)SvIV(ST(1)));
       arg41 = (Qt::Orientation)SvIV(ST(2));
       if (sv_derived_from(ST(3), "Qt::Gui::QWidget")) {
         arg42 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(3))));
@@ -334,7 +334,7 @@ PREINIT:
 QFlags<QDialogButtonBox::StandardButton> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QDialogButtonBox::StandardButton>((int)SvIV(ST(1)));
+      arg00 = QFlags<QDialogButtonBox::StandardButton>((QDialogButtonBox::StandardButton)SvIV(ST(1)));
     (void)THIS->setStandardButtons(arg00);
     XSRETURN(0);
     }
@@ -369,7 +369,7 @@ PPCODE:
       
     QFlags<QDialogButtonBox::StandardButton> ret = THIS->standardButtons();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

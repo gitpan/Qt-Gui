@@ -47,7 +47,7 @@ QRect * arg03;
 PPCODE:
     if (SvIOK(ST(1)) && SvIOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QSize") && sv_isa(ST(4), "Qt::Core::QRect")) {
       arg00 = (Qt::LayoutDirection)SvIV(ST(1));
-      arg01 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(2)));
       arg02 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(3))));
       arg03 = reinterpret_cast<QRect *>(SvIV((SV*)SvRV(ST(4))));
     QRect ret = THIS->alignedRect(arg00, arg01, *arg02, *arg03);
@@ -82,8 +82,8 @@ PPCODE:
       case 4:
       {
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
-      arg20 = QFlags<QSizePolicy::ControlType>((int)SvIV(ST(1)));
-      arg21 = QFlags<QSizePolicy::ControlType>((int)SvIV(ST(2)));
+      arg20 = QFlags<QSizePolicy::ControlType>((QSizePolicy::ControlType)SvIV(ST(1)));
+      arg21 = QFlags<QSizePolicy::ControlType>((QSizePolicy::ControlType)SvIV(ST(2)));
       arg22 = (Qt::Orientation)SvIV(ST(3));
     int ret = THIS->combinedLayoutSpacing(arg20, arg21, arg22, arg23, arg24);
     ST(0) = sv_newmortal();
@@ -97,8 +97,8 @@ PPCODE:
       case 5:
       {
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (sv_derived_from(ST(4), "Qt::Gui::QStyleOption") || ST(4) == &PL_sv_undef)) {
-      arg10 = QFlags<QSizePolicy::ControlType>((int)SvIV(ST(1)));
-      arg11 = QFlags<QSizePolicy::ControlType>((int)SvIV(ST(2)));
+      arg10 = QFlags<QSizePolicy::ControlType>((QSizePolicy::ControlType)SvIV(ST(1)));
+      arg11 = QFlags<QSizePolicy::ControlType>((QSizePolicy::ControlType)SvIV(ST(2)));
       arg12 = (Qt::Orientation)SvIV(ST(3));
       if (sv_derived_from(ST(4), "Qt::Gui::QStyleOption")) {
         arg13 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(4))));
@@ -120,8 +120,8 @@ PPCODE:
       case 6:
       {
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (sv_derived_from(ST(4), "Qt::Gui::QStyleOption") || ST(4) == &PL_sv_undef) && (sv_derived_from(ST(5), "Qt::Gui::QWidget") || ST(5) == &PL_sv_undef)) {
-      arg00 = QFlags<QSizePolicy::ControlType>((int)SvIV(ST(1)));
-      arg01 = QFlags<QSizePolicy::ControlType>((int)SvIV(ST(2)));
+      arg00 = QFlags<QSizePolicy::ControlType>((QSizePolicy::ControlType)SvIV(ST(1)));
+      arg01 = QFlags<QSizePolicy::ControlType>((QSizePolicy::ControlType)SvIV(ST(2)));
       arg02 = (Qt::Orientation)SvIV(ST(3));
       if (sv_derived_from(ST(4), "Qt::Gui::QStyleOption")) {
         arg03 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(4))));
@@ -1568,10 +1568,10 @@ QFlags<Qt::AlignmentFlag> arg01;
 PPCODE:
     if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg00 = (Qt::LayoutDirection)SvIV(ST(1));
-      arg01 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(2)));
     QFlags<Qt::AlignmentFlag> ret = THIS->visualAlignment(arg00, arg01);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

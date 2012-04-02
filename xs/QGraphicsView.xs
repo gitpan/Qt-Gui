@@ -128,7 +128,7 @@ PPCODE:
       
     QFlags<Qt::AlignmentFlag> ret = THIS->alignment();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -154,7 +154,7 @@ PPCODE:
       
     QFlags<QGraphicsView::CacheModeFlag> ret = THIS->cacheMode();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -575,7 +575,7 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Core::QRectF") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<QGraphicsScene::SceneLayer>((int)SvIV(ST(2)));
+      arg01 = QFlags<QGraphicsScene::SceneLayer>((QGraphicsScene::SceneLayer)SvIV(ST(2)));
     (void)THIS->invalidateScene(*arg00, arg01);
     XSRETURN(0);
     }
@@ -858,7 +858,7 @@ PPCODE:
       
     QFlags<QGraphicsView::OptimizationFlag> ret = THIS->optimizationFlags();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -982,7 +982,7 @@ PPCODE:
       
     QFlags<QPainter::RenderHint> ret = THIS->renderHints();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -1104,7 +1104,7 @@ PREINIT:
 QFlags<Qt::AlignmentFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(1)));
     (void)THIS->setAlignment(arg00);
     XSRETURN(0);
     }
@@ -1128,7 +1128,7 @@ PREINIT:
 QFlags<QGraphicsView::CacheModeFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QGraphicsView::CacheModeFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QGraphicsView::CacheModeFlag>((QGraphicsView::CacheModeFlag)SvIV(ST(1)));
     (void)THIS->setCacheMode(arg00);
     XSRETURN(0);
     }
@@ -1254,7 +1254,7 @@ PREINIT:
 QFlags<QGraphicsView::OptimizationFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QGraphicsView::OptimizationFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QGraphicsView::OptimizationFlag>((QGraphicsView::OptimizationFlag)SvIV(ST(1)));
     (void)THIS->setOptimizationFlags(arg00);
     XSRETURN(0);
     }
@@ -1305,7 +1305,7 @@ PREINIT:
 QFlags<QPainter::RenderHint> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPainter::RenderHint>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPainter::RenderHint>((QPainter::RenderHint)SvIV(ST(1)));
     (void)THIS->setRenderHints(arg00);
     XSRETURN(0);
     }

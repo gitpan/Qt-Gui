@@ -573,7 +573,7 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg20 is not of type Qt::Gui::QPainter");
       arg21 = reinterpret_cast<QRect *>(SvIV((SV*)SvRV(ST(2))));
-      arg22 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(3)));
+      arg22 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(3)));
     (void)THIS->paint(arg20, *arg21, arg22, arg23, arg24);
     XSRETURN(0);
     }
@@ -593,7 +593,7 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QPainter");
       arg11 = reinterpret_cast<QRect *>(SvIV((SV*)SvRV(ST(2))));
-      arg12 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(3)));
+      arg12 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(3)));
       arg13 = (QIcon::Mode)SvIV(ST(4));
     (void)THIS->paint(arg10, *arg11, arg12, arg13, arg14);
     XSRETURN(0);
@@ -614,7 +614,7 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPainter");
       arg01 = reinterpret_cast<QRect *>(SvIV((SV*)SvRV(ST(2))));
-      arg02 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(3)));
+      arg02 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(3)));
       arg03 = (QIcon::Mode)SvIV(ST(4));
       arg04 = (QIcon::State)SvIV(ST(5));
     (void)THIS->paint(arg00, *arg01, arg02, arg03, arg04);
@@ -655,7 +655,7 @@ PPCODE:
       arg62 = (int)SvIV(ST(3));
       arg63 = (int)SvIV(ST(4));
       arg64 = (int)SvIV(ST(5));
-      arg65 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(6)));
+      arg65 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(6)));
     (void)THIS->paint(arg60, arg61, arg62, arg63, arg64, arg65, arg66, arg67);
     XSRETURN(0);
     }
@@ -678,7 +678,7 @@ PPCODE:
       arg52 = (int)SvIV(ST(3));
       arg53 = (int)SvIV(ST(4));
       arg54 = (int)SvIV(ST(5));
-      arg55 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(6)));
+      arg55 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(6)));
       arg56 = (QIcon::Mode)SvIV(ST(7));
     (void)THIS->paint(arg50, arg51, arg52, arg53, arg54, arg55, arg56, arg57);
     XSRETURN(0);
@@ -702,7 +702,7 @@ PPCODE:
       arg42 = (int)SvIV(ST(3));
       arg43 = (int)SvIV(ST(4));
       arg44 = (int)SvIV(ST(5));
-      arg45 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(6)));
+      arg45 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(6)));
       arg46 = (QIcon::Mode)SvIV(ST(7));
       arg47 = (QIcon::State)SvIV(ST(8));
     (void)THIS->paint(arg40, arg41, arg42, arg43, arg44, arg45, arg46, arg47);

@@ -254,13 +254,13 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Core::QModelIndex") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<QItemSelectionModel::SelectionFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<QItemSelectionModel::SelectionFlag>((QItemSelectionModel::SelectionFlag)SvIV(ST(2)));
     (void)THIS->select(*arg00, arg01);
     XSRETURN(0);
     }
         else if (sv_isa(ST(1), "Qt::Gui::QItemSelection") && SvIOK(ST(2))) {
       arg10 = reinterpret_cast<QItemSelection *>(SvIV((SV*)SvRV(ST(1))));
-      arg11 = QFlags<QItemSelectionModel::SelectionFlag>((int)SvIV(ST(2)));
+      arg11 = QFlags<QItemSelectionModel::SelectionFlag>((QItemSelectionModel::SelectionFlag)SvIV(ST(2)));
     (void)THIS->select(*arg10, arg11);
     XSRETURN(0);
     }
@@ -295,7 +295,7 @@ QFlags<QItemSelectionModel::SelectionFlag> arg01;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QModelIndex") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<QItemSelectionModel::SelectionFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<QItemSelectionModel::SelectionFlag>((QItemSelectionModel::SelectionFlag)SvIV(ST(2)));
     (void)THIS->setCurrentIndex(*arg00, arg01);
     XSRETURN(0);
     }

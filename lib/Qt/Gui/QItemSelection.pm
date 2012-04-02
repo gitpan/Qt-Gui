@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_03';
+our $VERSION = '0.01_04';
 
 
 # FIXME: operator overload
@@ -35,6 +35,60 @@ Qt::Gui::QItemSelection
 
 =item  static void split(const QItemSelectionRange & range, const QItemSelectionRange & other, QItemSelection * result)
 
+=item  void append(const QItemSelectionRange & t)
+
+=item  const QItemSelectionRange & at(int i)
+
+=item  void clear()
+
+=item  int count(const QItemSelectionRange & t)
+
+=item  void detach()
+
+=item  void detachShared()
+
+=item  int indexOf(const QItemSelectionRange & t, int from)
+
+=item  int indexOf(const QItemSelectionRange & t, int from = 0)
+
+=item  void insert(int i, const QItemSelectionRange & t)
+
+=item  bool isDetached()
+
+=item  bool isEmpty()
+
+=item  int lastIndexOf(const QItemSelectionRange & t, int from)
+
+=item  int lastIndexOf(const QItemSelectionRange & t, int from = -1)
+
+=item  void move(int from, int to)
+
+=item  const QItemSelectionRange & operator[](int i)
+
+=item  void prepend(const QItemSelectionRange & t)
+
+=item  int removeAll(const QItemSelectionRange & t)
+
+=item  void removeAt(int i)
+
+=item  bool removeOne(const QItemSelectionRange & t)
+
+=item  void replace(int i, const QItemSelectionRange & t)
+
+=item  void reserve(int size)
+
+=item  void setSharable(bool shrable)
+
+=item  int size()
+
+=item  void swap(int i, int j)
+
+=item  QItemSelectionRange takeAt(int i)
+
+=item  QItemSelectionRange takeFirst()
+
+=item  QItemSelectionRange takeLast()
+
 
 =back
 
@@ -55,7 +109,7 @@ Dongxu Ma E<lt>dongxu@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 - 2011 by Dongxu Ma
+Copyright (C) 2011 - 2012 by Dongxu Ma
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

@@ -164,7 +164,7 @@ PPCODE:
       
     QFlags<Qt::Orientation> ret = THIS->expandingDirections();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

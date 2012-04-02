@@ -785,7 +785,7 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg20 is not of type Qt::Gui::QTreeWidgetItem");
       arg21 = (int)SvIV(ST(2));
-      arg22 = QFlags<QItemSelectionModel::SelectionFlag>((int)SvIV(ST(3)));
+      arg22 = QFlags<QItemSelectionModel::SelectionFlag>((QItemSelectionModel::SelectionFlag)SvIV(ST(3)));
     (void)THIS->setCurrentItem(arg20, arg21, arg22);
     XSRETURN(0);
     }

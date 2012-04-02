@@ -239,7 +239,7 @@ PPCODE:
       
     QFlags<QPainter::RenderHint> ret = THIS->renderHints();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -252,7 +252,7 @@ PPCODE:
       
     QFlags<QPaintEngine::DirtyFlag> ret = THIS->state();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

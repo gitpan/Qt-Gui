@@ -75,7 +75,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-      arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(2)));
     ret = new QWidget(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWidget", (void *)ret);
@@ -619,7 +619,7 @@ PPCODE:
       {
         if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg00 = (Qt::GestureType)SvIV(ST(1));
-      arg01 = QFlags<Qt::GestureFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::GestureFlag>((Qt::GestureFlag)SvIV(ST(2)));
     (void)THIS->grabGesture(arg00, arg01);
     XSRETURN(0);
     }
@@ -844,7 +844,7 @@ PPCODE:
       
     QFlags<Qt::InputMethodHint> ret = THIS->inputMethodHints();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -1514,7 +1514,7 @@ PREINIT:
 QFlags<Qt::WindowType> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::WindowType>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(1)));
     (void)THIS->overrideWindowFlags(arg00);
     XSRETURN(0);
     }
@@ -1526,7 +1526,7 @@ PREINIT:
 QFlags<Qt::WindowState> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::WindowState>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::WindowState>((Qt::WindowState)SvIV(ST(1)));
     (void)THIS->overrideWindowState(arg00);
     XSRETURN(0);
     }
@@ -1833,7 +1833,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPaintDevice");
       arg01 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
       arg02 = reinterpret_cast<QRegion *>(SvIV((SV*)SvRV(ST(3))));
-      arg03 = QFlags<QWidget::RenderFlag>((int)SvIV(ST(4)));
+      arg03 = QFlags<QWidget::RenderFlag>((QWidget::RenderFlag)SvIV(ST(4)));
     (void)THIS->render(arg00, *arg01, *arg02, arg03);
     XSRETURN(0);
     }
@@ -1848,7 +1848,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg40 is not of type Qt::Gui::QPainter");
       arg41 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
       arg42 = reinterpret_cast<QRegion *>(SvIV((SV*)SvRV(ST(3))));
-      arg43 = QFlags<QWidget::RenderFlag>((int)SvIV(ST(4)));
+      arg43 = QFlags<QWidget::RenderFlag>((QWidget::RenderFlag)SvIV(ST(4)));
     (void)THIS->render(arg40, *arg41, *arg42, arg43);
     XSRETURN(0);
     }
@@ -2503,7 +2503,7 @@ PREINIT:
 QFlags<Qt::InputMethodHint> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::InputMethodHint>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::InputMethodHint>((Qt::InputMethodHint)SvIV(ST(1)));
     (void)THIS->setInputMethodHints(arg00);
     XSRETURN(0);
     }
@@ -2768,7 +2768,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
-      arg11 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
+      arg11 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(2)));
     (void)THIS->setParent(arg10, arg11);
     XSRETURN(0);
     }
@@ -3073,7 +3073,7 @@ PREINIT:
 QFlags<Qt::WindowType> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::WindowType>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(1)));
     (void)THIS->setWindowFlags(arg00);
     XSRETURN(0);
     }
@@ -3157,7 +3157,7 @@ PREINIT:
 QFlags<Qt::WindowState> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::WindowState>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::WindowState>((Qt::WindowState)SvIV(ST(1)));
     (void)THIS->setWindowState(arg00);
     XSRETURN(0);
     }
@@ -3613,7 +3613,7 @@ PPCODE:
       
     QFlags<Qt::WindowType> ret = THIS->windowFlags();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -3691,7 +3691,7 @@ PPCODE:
       
     QFlags<Qt::WindowState> ret = THIS->windowState();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

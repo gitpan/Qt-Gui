@@ -438,7 +438,7 @@ PREINIT:
 QFlags<Qt::TextInteractionFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::TextInteractionFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::TextInteractionFlag>((Qt::TextInteractionFlag)SvIV(ST(1)));
     (void)THIS->setTextInteractionFlags(arg00);
     XSRETURN(0);
     }
@@ -503,7 +503,7 @@ PPCODE:
       
     QFlags<Qt::TextInteractionFlag> ret = THIS->textInteractionFlags();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

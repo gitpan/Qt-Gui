@@ -75,7 +75,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-      arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(2)));
     ret = new QInputDialog(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QInputDialog", (void *)ret);
@@ -433,7 +433,7 @@ PPCODE:
         bool tmp = SvTRUE(ST(8));
         arg07 = &tmp;
     }
-      arg08 = QFlags<Qt::WindowType>((int)SvIV(ST(9)));
+      arg08 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(9)));
     double ret = THIS->getDouble(arg00, *arg01, *arg02, arg03, arg04, arg05, arg06, arg07, arg08);
     ST(0) = sv_newmortal();
     sv_setnv(ST(0), (double)ret);
@@ -694,7 +694,7 @@ PPCODE:
         bool tmp = SvTRUE(ST(8));
         arg07 = &tmp;
     }
-      arg08 = QFlags<Qt::WindowType>((int)SvIV(ST(9)));
+      arg08 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(9)));
     int ret = THIS->getInt(arg00, *arg01, *arg02, arg03, arg04, arg05, arg06, arg07, arg08);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -955,7 +955,7 @@ PPCODE:
         bool tmp = SvTRUE(ST(8));
         arg07 = &tmp;
     }
-      arg08 = QFlags<Qt::WindowType>((int)SvIV(ST(9)));
+      arg08 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(9)));
     int ret = THIS->getInteger(arg00, *arg01, *arg02, arg03, arg04, arg05, arg06, arg07, arg08);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -1141,7 +1141,7 @@ PPCODE:
         bool tmp = SvTRUE(ST(7));
         arg06 = &tmp;
     }
-      arg07 = QFlags<Qt::WindowType>((int)SvIV(ST(8)));
+      arg07 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(8)));
     QString ret = THIS->getItem(arg00, *arg01, *arg02, *arg03, arg04, arg05, arg06, arg07);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
@@ -1319,7 +1319,7 @@ PPCODE:
         bool tmp = SvTRUE(ST(6));
         arg05 = &tmp;
     }
-      arg06 = QFlags<Qt::WindowType>((int)SvIV(ST(7)));
+      arg06 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(7)));
     QString ret = THIS->getText(arg00, *arg01, *arg02, arg03, *arg04, arg05, arg06);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
@@ -1481,7 +1481,7 @@ PPCODE:
       
     QFlags<QInputDialog::InputDialogOption> ret = THIS->options();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -1727,7 +1727,7 @@ PREINIT:
 QFlags<QInputDialog::InputDialogOption> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QInputDialog::InputDialogOption>((int)SvIV(ST(1)));
+      arg00 = QFlags<QInputDialog::InputDialogOption>((QInputDialog::InputDialogOption)SvIV(ST(1)));
     (void)THIS->setOptions(arg00);
     XSRETURN(0);
     }

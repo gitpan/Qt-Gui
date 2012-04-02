@@ -175,7 +175,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QGraphicsLayoutItem");
     QFlags<Qt::AlignmentFlag> ret = THIS->alignment(arg00);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -385,7 +385,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QGraphicsLayoutItem");
-      arg01 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(2)));
     (void)THIS->setAlignment(arg00, arg01);
     XSRETURN(0);
     }

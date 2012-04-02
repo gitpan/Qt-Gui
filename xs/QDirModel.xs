@@ -309,7 +309,7 @@ PPCODE:
       arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
     QFlags<Qt::ItemFlag> ret = THIS->flags(*arg00);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -897,7 +897,7 @@ PPCODE:
       
     QFlags<Qt::DropAction> ret = THIS->supportedDropActions();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

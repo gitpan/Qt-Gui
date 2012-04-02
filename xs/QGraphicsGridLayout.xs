@@ -133,7 +133,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QGraphicsLayoutItem");
       arg01 = (int)SvIV(ST(2));
       arg02 = (int)SvIV(ST(3));
-      arg03 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(4)));
+      arg03 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(4)));
     (void)THIS->addItem(arg00, arg01, arg02, arg03);
     XSRETURN(0);
     }
@@ -178,7 +178,7 @@ PPCODE:
       arg22 = (int)SvIV(ST(3));
       arg23 = (int)SvIV(ST(4));
       arg24 = (int)SvIV(ST(5));
-      arg25 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(6)));
+      arg25 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(6)));
     (void)THIS->addItem(arg20, arg21, arg22, arg23, arg24, arg25);
     XSRETURN(0);
     }
@@ -208,7 +208,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QGraphicsLayoutItem");
     QFlags<Qt::AlignmentFlag> ret = THIS->alignment(arg00);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -222,7 +222,7 @@ PPCODE:
       arg00 = (int)SvIV(ST(1));
     QFlags<Qt::AlignmentFlag> ret = THIS->columnAlignment(arg00);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -410,7 +410,7 @@ PPCODE:
       arg00 = (int)SvIV(ST(1));
     QFlags<Qt::AlignmentFlag> ret = THIS->rowAlignment(arg00);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -513,7 +513,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QGraphicsLayoutItem");
-      arg01 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(2)));
     (void)THIS->setAlignment(arg00, arg01);
     XSRETURN(0);
     }
@@ -527,7 +527,7 @@ QFlags<Qt::AlignmentFlag> arg01;
 PPCODE:
     if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg00 = (int)SvIV(ST(1));
-      arg01 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(2)));
     (void)THIS->setColumnAlignment(arg00, arg01);
     XSRETURN(0);
     }
@@ -649,7 +649,7 @@ QFlags<Qt::AlignmentFlag> arg01;
 PPCODE:
     if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg00 = (int)SvIV(ST(1));
-      arg01 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(2)));
     (void)THIS->setRowAlignment(arg00, arg01);
     XSRETURN(0);
     }

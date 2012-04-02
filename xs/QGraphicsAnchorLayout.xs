@@ -163,7 +163,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QGraphicsLayoutItem");
-      arg02 = QFlags<Qt::Orientation>((int)SvIV(ST(3)));
+      arg02 = QFlags<Qt::Orientation>((Qt::Orientation)SvIV(ST(3)));
     (void)THIS->addAnchors(arg00, arg01, arg02);
     XSRETURN(0);
     }

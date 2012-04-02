@@ -202,7 +202,7 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Gui::QImage") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QImage *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(2)));
     QBitmap ret = THIS->fromImage(*arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QBitmap", (void *)new QBitmap(ret));

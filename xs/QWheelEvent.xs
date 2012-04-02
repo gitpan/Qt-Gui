@@ -55,8 +55,8 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QPoint") && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4))) {
       arg10 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
       arg11 = (int)SvIV(ST(2));
-      arg12 = QFlags<Qt::MouseButton>((int)SvIV(ST(3)));
-      arg13 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(4)));
+      arg12 = QFlags<Qt::MouseButton>((Qt::MouseButton)SvIV(ST(3)));
+      arg13 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(4)));
     ret = new QWheelEvent(*arg10, arg11, arg12, arg13, arg14);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWheelEvent", (void *)ret);
@@ -71,8 +71,8 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QPoint") && SvIOK(ST(2)) && SvIOK(ST(3)) && SvIOK(ST(4)) && SvIOK(ST(5))) {
       arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (int)SvIV(ST(2));
-      arg02 = QFlags<Qt::MouseButton>((int)SvIV(ST(3)));
-      arg03 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(4)));
+      arg02 = QFlags<Qt::MouseButton>((Qt::MouseButton)SvIV(ST(3)));
+      arg03 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(4)));
       arg04 = (Qt::Orientation)SvIV(ST(5));
     ret = new QWheelEvent(*arg00, arg01, arg02, arg03, arg04);
     ST(0) = sv_newmortal();
@@ -83,8 +83,8 @@ PPCODE:
       arg30 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
       arg31 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
       arg32 = (int)SvIV(ST(3));
-      arg33 = QFlags<Qt::MouseButton>((int)SvIV(ST(4)));
-      arg34 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(5)));
+      arg33 = QFlags<Qt::MouseButton>((Qt::MouseButton)SvIV(ST(4)));
+      arg34 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(5)));
     ret = new QWheelEvent(*arg30, *arg31, arg32, arg33, arg34, arg35);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWheelEvent", (void *)ret);
@@ -100,8 +100,8 @@ PPCODE:
       arg20 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
       arg21 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
       arg22 = (int)SvIV(ST(3));
-      arg23 = QFlags<Qt::MouseButton>((int)SvIV(ST(4)));
-      arg24 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(5)));
+      arg23 = QFlags<Qt::MouseButton>((Qt::MouseButton)SvIV(ST(4)));
+      arg24 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(5)));
       arg25 = (Qt::Orientation)SvIV(ST(6));
     ret = new QWheelEvent(*arg20, *arg21, arg22, arg23, arg24, arg25);
     ST(0) = sv_newmortal();
@@ -133,7 +133,7 @@ PPCODE:
       
     QFlags<Qt::MouseButton> ret = THIS->buttons();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

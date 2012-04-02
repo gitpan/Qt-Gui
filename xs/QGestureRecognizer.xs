@@ -92,7 +92,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg02 is not of type Qt::Core::QEvent");
     QFlags<QGestureRecognizer::ResultFlag> ret = THIS->recognize(arg00, arg01, arg02);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

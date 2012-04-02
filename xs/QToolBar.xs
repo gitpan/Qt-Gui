@@ -307,7 +307,7 @@ PPCODE:
       
     QFlags<Qt::ToolBarArea> ret = THIS->allowedAreas();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -459,7 +459,7 @@ PREINIT:
 QFlags<Qt::ToolBarArea> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::ToolBarArea>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::ToolBarArea>((Qt::ToolBarArea)SvIV(ST(1)));
     (void)THIS->setAllowedAreas(arg00);
     XSRETURN(0);
     }

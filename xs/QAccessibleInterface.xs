@@ -360,7 +360,7 @@ PPCODE:
       arg02 = (int)SvIV(ST(3));
     QFlags<QAccessible::RelationFlag> ret = THIS->relationTo(arg00, arg01, arg02);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -404,7 +404,7 @@ PPCODE:
       arg00 = (int)SvIV(ST(1));
     QFlags<QAccessible::StateFlag> ret = THIS->state(arg00);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

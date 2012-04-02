@@ -71,7 +71,7 @@ PPCODE:
       arg20 = (QContextMenuEvent::Reason)SvIV(ST(1));
       arg21 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
       arg22 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(3))));
-      arg23 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(4)));
+      arg23 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(4)));
     ret = new QContextMenuEvent(arg20, *arg21, *arg22, arg23);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QContextMenuEvent", (void *)ret);

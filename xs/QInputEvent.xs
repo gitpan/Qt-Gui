@@ -47,7 +47,7 @@ PPCODE:
       {
         if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg00 = (QInputEvent::Type)SvIV(ST(1));
-      arg01 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(2)));
     ret = new QInputEvent(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QInputEvent", (void *)ret);
@@ -78,7 +78,7 @@ PPCODE:
       
     QFlags<Qt::KeyboardModifier> ret = THIS->modifiers();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -89,7 +89,7 @@ PREINIT:
 QFlags<Qt::KeyboardModifier> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(1)));
     (void)THIS->setModifiers(arg00);
     XSRETURN(0);
     }

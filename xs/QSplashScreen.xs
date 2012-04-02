@@ -89,7 +89,7 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Gui::QPixmap") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(2)));
     ret = new QSplashScreen(*arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QSplashScreen", (void *)ret);
@@ -126,7 +126,7 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg30 is not of type Qt::Gui::QWidget");
       arg31 = reinterpret_cast<QPixmap *>(SvIV((SV*)SvRV(ST(2))));
-      arg32 = QFlags<Qt::WindowType>((int)SvIV(ST(3)));
+      arg32 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(3)));
     ret = new QSplashScreen(arg30, *arg31, arg32);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QSplashScreen", (void *)ret);

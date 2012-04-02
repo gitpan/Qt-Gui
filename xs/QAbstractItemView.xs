@@ -159,7 +159,7 @@ PPCODE:
       
     QFlags<QAbstractItemView::EditTrigger> ret = THIS->editTriggers();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -536,7 +536,7 @@ PREINIT:
 QFlags<QAbstractItemView::EditTrigger> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QAbstractItemView::EditTrigger>((int)SvIV(ST(1)));
+      arg00 = QFlags<QAbstractItemView::EditTrigger>((QAbstractItemView::EditTrigger)SvIV(ST(1)));
     (void)THIS->setEditTriggers(arg00);
     XSRETURN(0);
     }

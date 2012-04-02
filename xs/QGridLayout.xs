@@ -181,7 +181,7 @@ PPCODE:
       arg02 = (int)SvIV(ST(3));
       arg03 = (int)SvIV(ST(4));
       arg04 = (int)SvIV(ST(5));
-      arg05 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(6)));
+      arg05 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(6)));
     (void)THIS->addItem(arg00, arg01, arg02, arg03, arg04, arg05);
     XSRETURN(0);
     }
@@ -256,7 +256,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QLayout");
       arg01 = (int)SvIV(ST(2));
       arg02 = (int)SvIV(ST(3));
-      arg03 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(4)));
+      arg03 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(4)));
     (void)THIS->addLayout(arg00, arg01, arg02, arg03);
     XSRETURN(0);
     }
@@ -301,7 +301,7 @@ PPCODE:
       arg22 = (int)SvIV(ST(3));
       arg23 = (int)SvIV(ST(4));
       arg24 = (int)SvIV(ST(5));
-      arg25 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(6)));
+      arg25 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(6)));
     (void)THIS->addLayout(arg20, arg21, arg22, arg23, arg24, arg25);
     XSRETURN(0);
     }
@@ -396,7 +396,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
       arg11 = (int)SvIV(ST(2));
       arg12 = (int)SvIV(ST(3));
-      arg13 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(4)));
+      arg13 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(4)));
     (void)THIS->addWidget(arg10, arg11, arg12, arg13);
     XSRETURN(0);
     }
@@ -441,7 +441,7 @@ PPCODE:
       arg32 = (int)SvIV(ST(3));
       arg33 = (int)SvIV(ST(4));
       arg34 = (int)SvIV(ST(5));
-      arg35 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(6)));
+      arg35 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(6)));
     (void)THIS->addWidget(arg30, arg31, arg32, arg33, arg34, arg35);
     XSRETURN(0);
     }
@@ -533,7 +533,7 @@ PPCODE:
       
     QFlags<Qt::Orientation> ret = THIS->expandingDirections();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

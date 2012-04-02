@@ -86,7 +86,7 @@ PPCODE:
       {
         if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg00 = (Qt::GestureType)SvIV(ST(1));
-      arg01 = QFlags<Qt::GestureFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::GestureFlag>((Qt::GestureFlag)SvIV(ST(2)));
     (void)THIS->grabGesture(arg00, arg01);
     XSRETURN(0);
     }

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_03';
+our $VERSION = '0.01_04';
 use base qw/Qt::Gui::QGraphicsLayoutItem/;
 #our @ISA = qw/Qt::Gui::QGraphicsLayoutItem/;
 
@@ -37,6 +37,8 @@ Qt::Gui::QGraphicsLayout
 
 =item  void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom)
 
+=item  static bool instantInvalidatePropagation()
+
 =item  void invalidate()
 
 =item  bool isActivated()
@@ -46,6 +48,8 @@ Qt::Gui::QGraphicsLayout
 =item  void removeAt(int index)
 
 =item  void setContentsMargins(qreal left, qreal top, qreal right, qreal bottom)
+
+=item  static void setInstantInvalidatePropagation(bool enable)
 
 =item  void updateGeometry()
 
@@ -71,7 +75,7 @@ Dongxu Ma E<lt>dongxu@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 - 2011 by Dongxu Ma
+Copyright (C) 2011 - 2012 by Dongxu Ma
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

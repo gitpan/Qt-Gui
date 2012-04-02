@@ -39,7 +39,7 @@ PPCODE:
       case 2:
       {
         if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPaintEngine::PaintEngineFeature>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPaintEngine::PaintEngineFeature>((QPaintEngine::PaintEngineFeature)SvIV(ST(1)));
     Perl_croak(aTHX_ "Trying to create abstract class object");
     }
 	else
@@ -86,7 +86,7 @@ PREINIT:
 QFlags<QPaintEngine::DirtyFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPaintEngine::DirtyFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPaintEngine::DirtyFlag>((QPaintEngine::DirtyFlag)SvIV(ST(1)));
     (void)THIS->clearDirty(arg00);
     XSRETURN(0);
     }
@@ -168,7 +168,7 @@ PPCODE:
       arg00 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = reinterpret_cast<QImage *>(SvIV((SV*)SvRV(ST(2))));
       arg02 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(3))));
-      arg03 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(4)));
+      arg03 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(4)));
     (void)THIS->drawImage(*arg00, *arg01, *arg02, arg03);
     XSRETURN(0);
     }
@@ -485,7 +485,7 @@ PREINIT:
 QFlags<QPaintEngine::PaintEngineFeature> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPaintEngine::PaintEngineFeature>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPaintEngine::PaintEngineFeature>((QPaintEngine::PaintEngineFeature)SvIV(ST(1)));
     bool ret = THIS->hasFeature(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -563,7 +563,7 @@ PREINIT:
 QFlags<QPaintEngine::DirtyFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPaintEngine::DirtyFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPaintEngine::DirtyFlag>((QPaintEngine::DirtyFlag)SvIV(ST(1)));
     (void)THIS->setDirty(arg00);
     XSRETURN(0);
     }
@@ -655,7 +655,7 @@ PREINIT:
 QFlags<QPaintEngine::DirtyFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPaintEngine::DirtyFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPaintEngine::DirtyFlag>((QPaintEngine::DirtyFlag)SvIV(ST(1)));
     bool ret = THIS->testDirty(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);

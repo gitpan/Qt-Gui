@@ -43,8 +43,8 @@ PPCODE:
       arg00 = (QMouseEvent::Type)SvIV(ST(1));
       arg01 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
       arg02 = (Qt::MouseButton)SvIV(ST(3));
-      arg03 = QFlags<Qt::MouseButton>((int)SvIV(ST(4)));
-      arg04 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(5)));
+      arg03 = QFlags<Qt::MouseButton>((Qt::MouseButton)SvIV(ST(4)));
+      arg04 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(5)));
     ret = new QMouseEvent(arg00, *arg01, arg02, arg03, arg04);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QMouseEvent", (void *)ret);
@@ -61,8 +61,8 @@ PPCODE:
       arg11 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
       arg12 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(3))));
       arg13 = (Qt::MouseButton)SvIV(ST(4));
-      arg14 = QFlags<Qt::MouseButton>((int)SvIV(ST(5)));
-      arg15 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(6)));
+      arg14 = QFlags<Qt::MouseButton>((Qt::MouseButton)SvIV(ST(5)));
+      arg15 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(6)));
     ret = new QMouseEvent(arg10, *arg11, *arg12, arg13, arg14, arg15);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QMouseEvent", (void *)ret);
@@ -106,7 +106,7 @@ PPCODE:
       
     QFlags<Qt::MouseButton> ret = THIS->buttons();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -126,8 +126,8 @@ PPCODE:
       arg01 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(2))));
       arg02 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(3))));
       arg03 = (Qt::MouseButton)SvIV(ST(4));
-      arg04 = QFlags<Qt::MouseButton>((int)SvIV(ST(5)));
-      arg05 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(6)));
+      arg04 = QFlags<Qt::MouseButton>((Qt::MouseButton)SvIV(ST(5)));
+      arg05 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(6)));
     QMouseEvent * ret = THIS->createExtendedMouseEvent(arg00, *arg01, *arg02, arg03, arg04, arg05);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QMouseEvent", (void *)ret);

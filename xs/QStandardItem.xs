@@ -301,7 +301,7 @@ PPCODE:
       
     QFlags<Qt::ItemFlag> ret = THIS->flags();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -812,7 +812,7 @@ PREINIT:
 QFlags<Qt::ItemFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::ItemFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::ItemFlag>((Qt::ItemFlag)SvIV(ST(1)));
     (void)THIS->setFlags(arg00);
     XSRETURN(0);
     }
@@ -920,7 +920,7 @@ PREINIT:
 QFlags<Qt::AlignmentFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(1)));
     (void)THIS->setTextAlignment(arg00);
     XSRETURN(0);
     }
@@ -1091,7 +1091,7 @@ PPCODE:
       
     QFlags<Qt::AlignmentFlag> ret = THIS->textAlignment();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

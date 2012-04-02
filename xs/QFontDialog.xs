@@ -267,7 +267,7 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg52 is not of type Qt::Gui::QWidget");
       arg53 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(4))));
-      arg54 = QFlags<QFontDialog::FontDialogOption>((int)SvIV(ST(5)));
+      arg54 = QFlags<QFontDialog::FontDialogOption>((QFontDialog::FontDialogOption)SvIV(ST(5)));
     QFont ret = THIS->getFont(arg50, *arg51, arg52, *arg53, arg54);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QFont", (void *)new QFont(ret));
@@ -312,7 +312,7 @@ PPCODE:
       
     QFlags<QFontDialog::FontDialogOption> ret = THIS->options();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -387,7 +387,7 @@ PREINIT:
 QFlags<QFontDialog::FontDialogOption> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QFontDialog::FontDialogOption>((int)SvIV(ST(1)));
+      arg00 = QFlags<QFontDialog::FontDialogOption>((QFontDialog::FontDialogOption)SvIV(ST(1)));
     (void)THIS->setOptions(arg00);
     XSRETURN(0);
     }

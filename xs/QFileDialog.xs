@@ -103,7 +103,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-      arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(2)));
     ret = new QFileDialog(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QFileDialog", (void *)ret);
@@ -398,7 +398,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
       arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg03 = QFlags<QFileDialog::Option>((int)SvIV(ST(4)));
+      arg03 = QFlags<QFileDialog::Option>((QFileDialog::Option)SvIV(ST(4)));
     QString ret = THIS->getExistingDirectory(arg00, *arg01, *arg02, arg03);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
@@ -626,7 +626,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg04 is not of type Qt::Core::QString");
-      arg05 = QFlags<QFileDialog::Option>((int)SvIV(ST(6)));
+      arg05 = QFlags<QFileDialog::Option>((QFileDialog::Option)SvIV(ST(6)));
     QString ret = THIS->getOpenFileName(arg00, *arg01, *arg02, *arg03, arg04, arg05);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
@@ -854,7 +854,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg04 is not of type Qt::Core::QString");
-      arg05 = QFlags<QFileDialog::Option>((int)SvIV(ST(6)));
+      arg05 = QFlags<QFileDialog::Option>((QFileDialog::Option)SvIV(ST(6)));
     QStringList ret = THIS->getOpenFileNames(arg00, *arg01, *arg02, *arg03, arg04, arg05);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QStringList", (void *)new QStringList(ret));
@@ -1082,7 +1082,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg04 is not of type Qt::Core::QString");
-      arg05 = QFlags<QFileDialog::Option>((int)SvIV(ST(6)));
+      arg05 = QFlags<QFileDialog::Option>((QFileDialog::Option)SvIV(ST(6)));
     QString ret = THIS->getSaveFileName(arg00, *arg01, *arg02, *arg03, arg04, arg05);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
@@ -1219,7 +1219,7 @@ PPCODE:
       
     QFlags<QFileDialog::Option> ret = THIS->options();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -1617,7 +1617,7 @@ PREINIT:
 QFlags<QFileDialog::Option> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QFileDialog::Option>((int)SvIV(ST(1)));
+      arg00 = QFlags<QFileDialog::Option>((QFileDialog::Option)SvIV(ST(1)));
     (void)THIS->setOptions(arg00);
     XSRETURN(0);
     }

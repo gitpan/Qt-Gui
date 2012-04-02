@@ -854,7 +854,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-      arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(2)));
     QGraphicsProxyWidget * ret = THIS->addWidget(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QGraphicsProxyWidget", (void *)ret);
@@ -1088,7 +1088,7 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Core::QRectF") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<QGraphicsScene::SceneLayer>((int)SvIV(ST(2)));
+      arg01 = QFlags<QGraphicsScene::SceneLayer>((QGraphicsScene::SceneLayer)SvIV(ST(2)));
     (void)THIS->invalidate(*arg00, arg01);
     XSRETURN(0);
     }
@@ -1117,7 +1117,7 @@ PPCODE:
       arg31 = (double)SvNV(ST(2));
       arg32 = (double)SvNV(ST(3));
       arg33 = (double)SvNV(ST(4));
-      arg34 = QFlags<QGraphicsScene::SceneLayer>((int)SvIV(ST(5)));
+      arg34 = QFlags<QGraphicsScene::SceneLayer>((QGraphicsScene::SceneLayer)SvIV(ST(5)));
     (void)THIS->invalidate(arg30, arg31, arg32, arg33, arg34);
     XSRETURN(0);
     }

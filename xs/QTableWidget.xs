@@ -615,7 +615,7 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
       arg10 = (int)SvIV(ST(1));
       arg11 = (int)SvIV(ST(2));
-      arg12 = QFlags<QItemSelectionModel::SelectionFlag>((int)SvIV(ST(3)));
+      arg12 = QFlags<QItemSelectionModel::SelectionFlag>((QItemSelectionModel::SelectionFlag)SvIV(ST(3)));
     (void)THIS->setCurrentCell(arg10, arg11, arg12);
     XSRETURN(0);
     }
@@ -667,7 +667,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QTableWidgetItem");
-      arg11 = QFlags<QItemSelectionModel::SelectionFlag>((int)SvIV(ST(2)));
+      arg11 = QFlags<QItemSelectionModel::SelectionFlag>((QItemSelectionModel::SelectionFlag)SvIV(ST(2)));
     (void)THIS->setCurrentItem(arg10, arg11);
     XSRETURN(0);
     }

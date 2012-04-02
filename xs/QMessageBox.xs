@@ -135,7 +135,7 @@ PPCODE:
       arg40 = (QMessageBox::Icon)SvIV(ST(1));
       arg41 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg42 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg43 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg43 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
     ret = new QMessageBox(arg40, *arg41, *arg42, arg43, arg44, arg45);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
@@ -151,7 +151,7 @@ PPCODE:
       arg30 = (QMessageBox::Icon)SvIV(ST(1));
       arg31 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg32 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg33 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg33 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
       if (sv_derived_from(ST(5), "Qt::Gui::QWidget")) {
         arg34 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(5))));
     }
@@ -175,7 +175,7 @@ PPCODE:
       arg20 = (QMessageBox::Icon)SvIV(ST(1));
       arg21 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg22 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg23 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg23 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
       if (sv_derived_from(ST(5), "Qt::Gui::QWidget")) {
         arg24 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(5))));
     }
@@ -184,7 +184,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg24 is not of type Qt::Gui::QWidget");
-      arg25 = QFlags<Qt::WindowType>((int)SvIV(ST(6)));
+      arg25 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(6)));
     ret = new QMessageBox(arg20, *arg21, *arg22, arg23, arg24, arg25);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
@@ -249,7 +249,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg66 is not of type Qt::Gui::QWidget");
-      arg67 = QFlags<Qt::WindowType>((int)SvIV(ST(8)));
+      arg67 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(8)));
     ret = new QMessageBox(*arg60, *arg61, arg62, arg63, arg64, arg65, arg66, arg67);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QMessageBox", (void *)ret);
@@ -594,7 +594,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
       arg11 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg12 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg13 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg13 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
     QMessageBox::StandardButton ret = THIS->critical(arg10, *arg11, *arg12, arg13, arg14);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -634,7 +634,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
       arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg03 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg03 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
       arg04 = (QMessageBox::StandardButton)SvIV(ST(5));
     QMessageBox::StandardButton ret = THIS->critical(arg00, *arg01, *arg02, arg03, arg04);
     ST(0) = sv_newmortal();
@@ -1005,7 +1005,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
       arg11 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg12 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg13 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg13 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
     QMessageBox::StandardButton ret = THIS->information(arg10, *arg11, *arg12, arg13, arg14);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -1079,7 +1079,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
       arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg03 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg03 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
       arg04 = (QMessageBox::StandardButton)SvIV(ST(5));
     QMessageBox::StandardButton ret = THIS->information(arg00, *arg01, *arg02, arg03, arg04);
     ST(0) = sv_newmortal();
@@ -1413,7 +1413,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
       arg11 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg12 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg13 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg13 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
     QMessageBox::StandardButton ret = THIS->question(arg10, *arg11, *arg12, arg13, arg14);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -1470,7 +1470,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
       arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg03 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg03 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
       arg04 = (QMessageBox::StandardButton)SvIV(ST(5));
     QMessageBox::StandardButton ret = THIS->question(arg00, *arg01, *arg02, arg03, arg04);
     ST(0) = sv_newmortal();
@@ -1799,7 +1799,7 @@ PREINIT:
 QFlags<QMessageBox::StandardButton> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(1)));
+      arg00 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(1)));
     (void)THIS->setStandardButtons(arg00);
     XSRETURN(0);
     }
@@ -1895,7 +1895,7 @@ PPCODE:
       
     QFlags<QMessageBox::StandardButton> ret = THIS->standardButtons();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -2065,7 +2065,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
       arg11 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg12 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg13 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg13 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
     QMessageBox::StandardButton ret = THIS->warning(arg10, *arg11, *arg12, arg13, arg14);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -2105,7 +2105,7 @@ PPCODE:
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
       arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg03 = QFlags<QMessageBox::StandardButton>((int)SvIV(ST(4)));
+      arg03 = QFlags<QMessageBox::StandardButton>((QMessageBox::StandardButton)SvIV(ST(4)));
       arg04 = (QMessageBox::StandardButton)SvIV(ST(5));
     QMessageBox::StandardButton ret = THIS->warning(arg00, *arg01, *arg02, arg03, arg04);
     ST(0) = sv_newmortal();

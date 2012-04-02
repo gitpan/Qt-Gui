@@ -134,7 +134,7 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QString") && SvPOK(ST(2)) && SvIOK(ST(3))) {
       arg60 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg61 = (const char *)SvPV_nolen(ST(2));
-      arg62 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(3)));
+      arg62 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(3)));
     ret = new QPixmap(*arg60, arg61, arg62);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)ret);
@@ -210,7 +210,7 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Gui::QImage") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QImage *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(2)));
     bool ret = THIS->convertFromImage(*arg00, arg01);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -524,7 +524,7 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Gui::QImage") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QImage *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(2)));
     QPixmap ret = THIS->fromImage(*arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)new QPixmap(ret));
@@ -581,7 +581,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QImageReader");
-      arg01 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(2)));
     QPixmap ret = THIS->fromImageReader(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)new QPixmap(ret));
@@ -1062,7 +1062,7 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QString") && SvPOK(ST(2)) && SvIOK(ST(3))) {
       arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (const char *)SvPV_nolen(ST(2));
-      arg02 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(3)));
+      arg02 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(3)));
     bool ret = THIS->load(*arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -1152,7 +1152,7 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QByteArray") && SvPOK(ST(2)) && SvIOK(ST(3))) {
       arg00 = reinterpret_cast<QByteArray *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (const char *)SvPV_nolen(ST(2));
-      arg02 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(3)));
+      arg02 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(3)));
     bool ret = THIS->loadFromData(*arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -1183,7 +1183,7 @@ PPCODE:
     }
       arg31 = (uint)SvUV(ST(2));
       arg32 = (const char *)SvPV_nolen(ST(3));
-      arg33 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(4)));
+      arg33 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(4)));
     bool ret = THIS->loadFromData(arg30, arg31, arg32, arg33);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);

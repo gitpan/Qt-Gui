@@ -250,7 +250,7 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg31 is not of type Qt::Gui::QWidget");
       arg32 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-      arg33 = QFlags<QColorDialog::ColorDialogOption>((int)SvIV(ST(4)));
+      arg33 = QFlags<QColorDialog::ColorDialogOption>((QColorDialog::ColorDialogOption)SvIV(ST(4)));
     QColor ret = THIS->getColor(*arg30, arg31, *arg32, arg33);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QColor", (void *)new QColor(ret));
@@ -387,7 +387,7 @@ PPCODE:
       
     QFlags<QColorDialog::ColorDialogOption> ret = THIS->options();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -476,7 +476,7 @@ PREINIT:
 QFlags<QColorDialog::ColorDialogOption> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QColorDialog::ColorDialogOption>((int)SvIV(ST(1)));
+      arg00 = QFlags<QColorDialog::ColorDialogOption>((QColorDialog::ColorDialogOption)SvIV(ST(1)));
     (void)THIS->setOptions(arg00);
     XSRETURN(0);
     }

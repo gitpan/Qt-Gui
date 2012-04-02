@@ -573,7 +573,7 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2)) && SvIOK(ST(3))) {
       arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (int)SvIV(ST(2));
-      arg02 = QFlags<QTextDocument::FindFlag>((int)SvIV(ST(3)));
+      arg02 = QFlags<QTextDocument::FindFlag>((QTextDocument::FindFlag)SvIV(ST(3)));
     QTextCursor ret = THIS->find(*arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextCursor", (void *)new QTextCursor(ret));
@@ -582,7 +582,7 @@ PPCODE:
         else if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Gui::QTextCursor") && SvIOK(ST(3))) {
       arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg31 = reinterpret_cast<QTextCursor *>(SvIV((SV*)SvRV(ST(2))));
-      arg32 = QFlags<QTextDocument::FindFlag>((int)SvIV(ST(3)));
+      arg32 = QFlags<QTextDocument::FindFlag>((QTextDocument::FindFlag)SvIV(ST(3)));
     QTextCursor ret = THIS->find(*arg30, *arg31, arg32);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextCursor", (void *)new QTextCursor(ret));
@@ -591,7 +591,7 @@ PPCODE:
         else if (sv_isa(ST(1), "Qt::Core::QRegExp") && SvIOK(ST(2)) && SvIOK(ST(3))) {
       arg50 = reinterpret_cast<QRegExp *>(SvIV((SV*)SvRV(ST(1))));
       arg51 = (int)SvIV(ST(2));
-      arg52 = QFlags<QTextDocument::FindFlag>((int)SvIV(ST(3)));
+      arg52 = QFlags<QTextDocument::FindFlag>((QTextDocument::FindFlag)SvIV(ST(3)));
     QTextCursor ret = THIS->find(*arg50, arg51, arg52);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextCursor", (void *)new QTextCursor(ret));
@@ -600,7 +600,7 @@ PPCODE:
         else if (sv_isa(ST(1), "Qt::Core::QRegExp") && sv_isa(ST(2), "Qt::Gui::QTextCursor") && SvIOK(ST(3))) {
       arg80 = reinterpret_cast<QRegExp *>(SvIV((SV*)SvRV(ST(1))));
       arg81 = reinterpret_cast<QTextCursor *>(SvIV((SV*)SvRV(ST(2))));
-      arg82 = QFlags<QTextDocument::FindFlag>((int)SvIV(ST(3)));
+      arg82 = QFlags<QTextDocument::FindFlag>((QTextDocument::FindFlag)SvIV(ST(3)));
     QTextCursor ret = THIS->find(*arg80, *arg81, arg82);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextCursor", (void *)new QTextCursor(ret));

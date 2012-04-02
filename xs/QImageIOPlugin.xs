@@ -84,7 +84,7 @@ PPCODE:
       arg01 = reinterpret_cast<QByteArray *>(SvIV((SV*)SvRV(ST(2))));
     QFlags<QImageIOPlugin::Capability> ret = THIS->capabilities(arg00, *arg01);
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

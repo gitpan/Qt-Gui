@@ -186,7 +186,7 @@ PPCODE:
       
     QFlags<Qt::Orientation> ret = THIS->expandingDirections();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -443,7 +443,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-      arg01 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(2)));
     bool ret = THIS->setAlignment(arg00, arg01);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -458,7 +458,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QLayout");
-      arg11 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(2)));
+      arg11 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(2)));
     bool ret = THIS->setAlignment(arg10, arg11);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);

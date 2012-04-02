@@ -84,7 +84,7 @@ PPCODE:
       
     QFlags<Qt::MouseButton> ret = THIS->buttons();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -123,7 +123,7 @@ PPCODE:
       
     QFlags<Qt::KeyboardModifier> ret = THIS->modifiers();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -149,7 +149,7 @@ PPCODE:
       
     QFlags<Qt::DropAction> ret = THIS->possibleActions();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -199,7 +199,7 @@ PREINIT:
 QFlags<Qt::MouseButton> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::MouseButton>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::MouseButton>((Qt::MouseButton)SvIV(ST(1)));
     (void)THIS->setButtons(arg00);
     XSRETURN(0);
     }
@@ -242,7 +242,7 @@ PREINIT:
 QFlags<Qt::KeyboardModifier> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(1)));
     (void)THIS->setModifiers(arg00);
     XSRETURN(0);
     }
@@ -266,7 +266,7 @@ PREINIT:
 QFlags<Qt::DropAction> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::DropAction>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::DropAction>((Qt::DropAction)SvIV(ST(1)));
     (void)THIS->setPossibleActions(arg00);
     XSRETURN(0);
     }

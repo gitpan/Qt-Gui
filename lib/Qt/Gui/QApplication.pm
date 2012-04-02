@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_03';
+our $VERSION = '0.01_04';
 
 
 # FIXME: operator overload
@@ -25,31 +25,31 @@ Qt::Gui::QApplication
 
 =item   QApplication(int & argc, char ** argv, int arg2)
 
-=item   QApplication(int & argc, char ** argv, int arg2 = 0x040703)
+=item   QApplication(int & argc, char ** argv, int arg2 = 0x040704)
 
 =item   QApplication(int & argc, char ** argv, bool GUIenabled, int arg3)
 
-=item   QApplication(int & argc, char ** argv, bool GUIenabled, int arg3 = 0x040703)
+=item   QApplication(int & argc, char ** argv, bool GUIenabled, int arg3 = 0x040704)
 
 =item   QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3)
 
-=item   QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3 = 0x040703)
+=item   QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3 = 0x040704)
 
 =item   QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3)
 
-=item   QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3 = 0x040703)
+=item   QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3 = 0x040704)
 
-=item   QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap = 0, int arg3 = 0x040703)
+=item   QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap = 0, int arg3 = 0x040704)
 
-=item   QApplication(_XDisplay * dpy, unsigned long visual = 0, unsigned long cmap = 0, int arg3 = 0x040703)
+=item   QApplication(_XDisplay * dpy, unsigned long visual = 0, unsigned long cmap = 0, int arg3 = 0x040704)
 
 =item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5)
 
-=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5 = 0x040703)
+=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5 = 0x040704)
 
-=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap = 0, int arg5 = 0x040703)
+=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap = 0, int arg5 = 0x040704)
 
-=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual = 0, unsigned long cmap = 0, int arg5 = 0x040703)
+=item   QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual = 0, unsigned long cmap = 0, int arg5 = 0x040704)
 
 =item   ~QApplication()
 
@@ -253,7 +253,7 @@ Dongxu Ma E<lt>dongxu@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 - 2011 by Dongxu Ma
+Copyright (C) 2011 - 2012 by Dongxu Ma
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

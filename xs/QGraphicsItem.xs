@@ -143,7 +143,7 @@ PPCODE:
       
     QFlags<Qt::MouseButton> ret = THIS->acceptedMouseButtons();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -611,7 +611,7 @@ PPCODE:
       
     QFlags<QGraphicsItem::GraphicsItemFlag> ret = THIS->flags();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -761,7 +761,7 @@ PPCODE:
       
     QFlags<Qt::InputMethodHint> ret = THIS->inputMethodHints();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -2551,7 +2551,7 @@ PREINIT:
 QFlags<Qt::MouseButton> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::MouseButton>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::MouseButton>((Qt::MouseButton)SvIV(ST(1)));
     (void)THIS->setAcceptedMouseButtons(arg00);
     XSRETURN(0);
     }
@@ -2728,7 +2728,7 @@ PREINIT:
 QFlags<QGraphicsItem::GraphicsItemFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QGraphicsItem::GraphicsItemFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QGraphicsItem::GraphicsItemFlag>((QGraphicsItem::GraphicsItemFlag)SvIV(ST(1)));
     (void)THIS->setFlags(arg00);
     XSRETURN(0);
     }
@@ -2843,7 +2843,7 @@ PREINIT:
 QFlags<Qt::InputMethodHint> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::InputMethodHint>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::InputMethodHint>((Qt::InputMethodHint)SvIV(ST(1)));
     (void)THIS->setInputMethodHints(arg00);
     XSRETURN(0);
     }
@@ -3626,6 +3626,15 @@ ItemStopsClickFocusPropagation()
 PPCODE:
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)QGraphicsItem::ItemStopsClickFocusPropagation);
+    XSRETURN(1);
+
+
+# GraphicsItemFlag::ItemStopsFocusHandling
+void
+ItemStopsFocusHandling()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QGraphicsItem::ItemStopsFocusHandling);
     XSRETURN(1);
 
 

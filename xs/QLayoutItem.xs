@@ -39,7 +39,7 @@ PPCODE:
       case 2:
       {
         if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(1)));
     Perl_croak(aTHX_ "Trying to create abstract class object");
     }
 	else
@@ -67,7 +67,7 @@ PPCODE:
       
     QFlags<Qt::AlignmentFlag> ret = THIS->alignment();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -80,7 +80,7 @@ PPCODE:
       
     QFlags<QSizePolicy::ControlType> ret = THIS->controlTypes();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -93,7 +93,7 @@ PPCODE:
       
     QFlags<Qt::Orientation> ret = THIS->expandingDirections();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -221,7 +221,7 @@ PREINIT:
 QFlags<Qt::AlignmentFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(1)));
     (void)THIS->setAlignment(arg00);
     XSRETURN(0);
     }

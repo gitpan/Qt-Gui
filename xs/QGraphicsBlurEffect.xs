@@ -80,7 +80,7 @@ PPCODE:
       
     QFlags<QGraphicsBlurEffect::BlurHint> ret = THIS->blurHints();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -118,7 +118,7 @@ PREINIT:
 QFlags<QGraphicsBlurEffect::BlurHint> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QGraphicsBlurEffect::BlurHint>((int)SvIV(ST(1)));
+      arg00 = QFlags<QGraphicsBlurEffect::BlurHint>((QGraphicsBlurEffect::BlurHint)SvIV(ST(1)));
     (void)THIS->setBlurHints(arg00);
     XSRETURN(0);
     }

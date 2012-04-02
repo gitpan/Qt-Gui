@@ -119,6 +119,19 @@ PPCODE:
     XSRETURN(0);
     }
 
+## static bool instantInvalidatePropagation()
+void
+QGraphicsLayout::instantInvalidatePropagation(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    bool ret = THIS->instantInvalidatePropagation();
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+
 ## void invalidate()
 void
 QGraphicsLayout::invalidate(...)
@@ -184,6 +197,18 @@ PPCODE:
       arg02 = (double)SvNV(ST(3));
       arg03 = (double)SvNV(ST(4));
     (void)THIS->setContentsMargins(arg00, arg01, arg02, arg03);
+    XSRETURN(0);
+    }
+
+## static void setInstantInvalidatePropagation(bool enable)
+void
+QGraphicsLayout::setInstantInvalidatePropagation(...)
+PREINIT:
+bool arg00;
+PPCODE:
+    if (1) {
+      arg00 = (bool)SvTRUE(ST(1));
+    (void)THIS->setInstantInvalidatePropagation(arg00);
     XSRETURN(0);
     }
 

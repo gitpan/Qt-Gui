@@ -51,7 +51,7 @@ PPCODE:
       arg09 = (double)SvNV(ST(10));
       arg0a = (double)SvNV(ST(11));
       arg0b = (int)SvIV(ST(12));
-      arg0c = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(13)));
+      arg0c = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(13)));
       arg0d = (qint64)SvIV(ST(14));
     ret = new QTabletEvent(arg00, *arg01, *arg02, *arg03, arg04, arg05, arg06, arg07, arg08, arg09, arg0a, arg0b, arg0c, arg0d);
     ST(0) = sv_newmortal();

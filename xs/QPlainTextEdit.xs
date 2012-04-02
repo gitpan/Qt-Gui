@@ -372,7 +372,7 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<QTextDocument::FindFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<QTextDocument::FindFlag>((QTextDocument::FindFlag)SvIV(ST(2)));
     bool ret = THIS->find(*arg00, arg01);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -754,7 +754,7 @@ PREINIT:
 QFlags<Qt::TextInteractionFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::TextInteractionFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::TextInteractionFlag>((Qt::TextInteractionFlag)SvIV(ST(1)));
     (void)THIS->setTextInteractionFlags(arg00);
     XSRETURN(0);
     }
@@ -831,7 +831,7 @@ PPCODE:
       
     QFlags<Qt::TextInteractionFlag> ret = THIS->textInteractionFlags();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

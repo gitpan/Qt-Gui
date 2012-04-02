@@ -565,7 +565,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QListWidgetItem");
-      arg11 = QFlags<QItemSelectionModel::SelectionFlag>((int)SvIV(ST(2)));
+      arg11 = QFlags<QItemSelectionModel::SelectionFlag>((QItemSelectionModel::SelectionFlag)SvIV(ST(2)));
     (void)THIS->setCurrentItem(arg10, arg11);
     XSRETURN(0);
     }
@@ -603,7 +603,7 @@ PPCODE:
       {
         if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg10 = (int)SvIV(ST(1));
-      arg11 = QFlags<QItemSelectionModel::SelectionFlag>((int)SvIV(ST(2)));
+      arg11 = QFlags<QItemSelectionModel::SelectionFlag>((QItemSelectionModel::SelectionFlag)SvIV(ST(2)));
     (void)THIS->setCurrentRow(arg10, arg11);
     XSRETURN(0);
     }

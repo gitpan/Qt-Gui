@@ -93,7 +93,7 @@ PPCODE:
       
     QFlags<QFontComboBox::FontFilter> ret = THIS->fontFilters();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -116,7 +116,7 @@ PREINIT:
 QFlags<QFontComboBox::FontFilter> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QFontComboBox::FontFilter>((int)SvIV(ST(1)));
+      arg00 = QFlags<QFontComboBox::FontFilter>((QFontComboBox::FontFilter)SvIV(ST(1)));
     (void)THIS->setFontFilters(arg00);
     XSRETURN(0);
     }

@@ -160,7 +160,7 @@ PPCODE:
       
     QFlags<QTextFormat::PageBreakFlag> ret = THIS->pageBreakPolicy();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -311,7 +311,7 @@ PREINIT:
 QFlags<QTextFormat::PageBreakFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QTextFormat::PageBreakFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QTextFormat::PageBreakFlag>((QTextFormat::PageBreakFlag)SvIV(ST(1)));
     (void)THIS->setPageBreakPolicy(arg00);
     XSRETURN(0);
     }

@@ -334,7 +334,7 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QVariant") && SvIOK(ST(2)) && SvIOK(ST(3))) {
       arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (int)SvIV(ST(2));
-      arg02 = QFlags<Qt::MatchFlag>((int)SvIV(ST(3)));
+      arg02 = QFlags<Qt::MatchFlag>((Qt::MatchFlag)SvIV(ST(3)));
     int ret = THIS->findData(*arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -377,7 +377,7 @@ PPCODE:
       {
         if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2))) {
       arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-      arg01 = QFlags<Qt::MatchFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::MatchFlag>((Qt::MatchFlag)SvIV(ST(2)));
     int ret = THIS->findText(*arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);

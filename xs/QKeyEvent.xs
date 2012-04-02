@@ -58,7 +58,7 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
       arg30 = (QKeyEvent::Type)SvIV(ST(1));
       arg31 = (int)SvIV(ST(2));
-      arg32 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg32 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(3)));
     ret = new QKeyEvent(arg30, arg31, arg32, *arg33, arg34, arg35);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QKeyEvent", (void *)ret);
@@ -73,7 +73,7 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Core::QString")) {
       arg20 = (QKeyEvent::Type)SvIV(ST(1));
       arg21 = (int)SvIV(ST(2));
-      arg22 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg22 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(3)));
       arg23 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(4))));
     ret = new QKeyEvent(arg20, arg21, arg22, *arg23, arg24, arg25);
     ST(0) = sv_newmortal();
@@ -89,7 +89,7 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Core::QString") && 1) {
       arg10 = (QKeyEvent::Type)SvIV(ST(1));
       arg11 = (int)SvIV(ST(2));
-      arg12 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg12 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(3)));
       arg13 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(4))));
       arg14 = (bool)SvTRUE(ST(5));
     ret = new QKeyEvent(arg10, arg11, arg12, *arg13, arg14, arg15);
@@ -106,7 +106,7 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Core::QString") && 1 && (SvIOK(ST(6)) || SvUOK(ST(6)))) {
       arg00 = (QKeyEvent::Type)SvIV(ST(1));
       arg01 = (int)SvIV(ST(2));
-      arg02 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg02 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(3)));
       arg03 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(4))));
       arg04 = (bool)SvTRUE(ST(5));
       arg05 = (ushort)SvUV(ST(6));
@@ -195,7 +195,7 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5))) && (SvIOK(ST(6)) || SvUOK(ST(6)))) {
       arg30 = (QKeyEvent::Type)SvIV(ST(1));
       arg31 = (int)SvIV(ST(2));
-      arg32 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg32 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(3)));
       arg33 = (quint32)SvUV(ST(4));
       arg34 = (quint32)SvUV(ST(5));
       arg35 = (quint32)SvUV(ST(6));
@@ -213,7 +213,7 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5))) && (SvIOK(ST(6)) || SvUOK(ST(6))) && sv_isa(ST(7), "Qt::Core::QString")) {
       arg20 = (QKeyEvent::Type)SvIV(ST(1));
       arg21 = (int)SvIV(ST(2));
-      arg22 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg22 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(3)));
       arg23 = (quint32)SvUV(ST(4));
       arg24 = (quint32)SvUV(ST(5));
       arg25 = (quint32)SvUV(ST(6));
@@ -232,7 +232,7 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5))) && (SvIOK(ST(6)) || SvUOK(ST(6))) && sv_isa(ST(7), "Qt::Core::QString") && 1) {
       arg10 = (QKeyEvent::Type)SvIV(ST(1));
       arg11 = (int)SvIV(ST(2));
-      arg12 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg12 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(3)));
       arg13 = (quint32)SvUV(ST(4));
       arg14 = (quint32)SvUV(ST(5));
       arg15 = (quint32)SvUV(ST(6));
@@ -252,7 +252,7 @@ PPCODE:
         if (SvIOK(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3)) && (SvIOK(ST(4)) || SvUOK(ST(4))) && (SvIOK(ST(5)) || SvUOK(ST(5))) && (SvIOK(ST(6)) || SvUOK(ST(6))) && sv_isa(ST(7), "Qt::Core::QString") && 1 && (SvIOK(ST(9)) || SvUOK(ST(9)))) {
       arg00 = (QKeyEvent::Type)SvIV(ST(1));
       arg01 = (int)SvIV(ST(2));
-      arg02 = QFlags<Qt::KeyboardModifier>((int)SvIV(ST(3)));
+      arg02 = QFlags<Qt::KeyboardModifier>((Qt::KeyboardModifier)SvIV(ST(3)));
       arg03 = (quint32)SvUV(ST(4));
       arg04 = (quint32)SvUV(ST(5));
       arg05 = (quint32)SvUV(ST(6));
@@ -335,7 +335,7 @@ PPCODE:
       
     QFlags<Qt::KeyboardModifier> ret = THIS->modifiers();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

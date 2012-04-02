@@ -88,7 +88,7 @@ PPCODE:
       
     QFlags<QPinchGesture::ChangeFlag> ret = THIS->changeFlags();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -176,7 +176,7 @@ PREINIT:
 QFlags<QPinchGesture::ChangeFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPinchGesture::ChangeFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPinchGesture::ChangeFlag>((QPinchGesture::ChangeFlag)SvIV(ST(1)));
     (void)THIS->setChangeFlags(arg00);
     XSRETURN(0);
     }
@@ -260,7 +260,7 @@ PREINIT:
 QFlags<QPinchGesture::ChangeFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPinchGesture::ChangeFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPinchGesture::ChangeFlag>((QPinchGesture::ChangeFlag)SvIV(ST(1)));
     (void)THIS->setTotalChangeFlags(arg00);
     XSRETURN(0);
     }
@@ -311,7 +311,7 @@ PPCODE:
       
     QFlags<QPinchGesture::ChangeFlag> ret = THIS->totalChangeFlags();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

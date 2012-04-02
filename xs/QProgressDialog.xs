@@ -96,7 +96,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-      arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(2)));
     ret = new QProgressDialog(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QProgressDialog", (void *)ret);
@@ -161,7 +161,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg34 is not of type Qt::Gui::QWidget");
-      arg35 = QFlags<Qt::WindowType>((int)SvIV(ST(6)));
+      arg35 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(6)));
     ret = new QProgressDialog(*arg30, *arg31, arg32, arg33, arg34, arg35);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QProgressDialog", (void *)ret);

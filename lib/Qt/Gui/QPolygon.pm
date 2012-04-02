@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_03';
+our $VERSION = '0.01_04';
 
 
 # FIXME: operator overload
@@ -73,6 +73,60 @@ Qt::Gui::QPolygon
 
 =item  QPolygon united(const QPolygon & r)
 
+=item  void append(const QPoint & t)
+
+=item  const QPoint & at(int i)
+
+=item  int capacity()
+
+=item  void clear()
+
+=item  const QPoint * constData()
+
+=item  bool contains(const QPoint & t)
+
+=item  int count(const QPoint & t)
+
+=item  const QPoint * data()
+
+=item  void detach()
+
+=item  int indexOf(const QPoint & t, int from)
+
+=item  int indexOf(const QPoint & t, int from = 0)
+
+=item  void insert(int i, const QPoint & t)
+
+=item  void insert(int i, int n, const QPoint & t)
+
+=item  bool isDetached()
+
+=item  bool isEmpty()
+
+=item  int lastIndexOf(const QPoint & t, int from)
+
+=item  int lastIndexOf(const QPoint & t, int from = -1)
+
+=item  const QPoint & operator[](int i)
+
+=item  void prepend(const QPoint & t)
+
+=item  void remove(int i)
+
+=item  void remove(int i, int n)
+
+=item  void replace(int i, const QPoint & t)
+
+=item  void reserve(int size)
+
+=item  void resize(int size)
+
+=item  void setSharable(bool shrable)
+
+=item  int size()
+
+=item  void squeeze()
+
 
 =back
 
@@ -93,7 +147,7 @@ Dongxu Ma E<lt>dongxu@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 - 2011 by Dongxu Ma
+Copyright (C) 2011 - 2012 by Dongxu Ma
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

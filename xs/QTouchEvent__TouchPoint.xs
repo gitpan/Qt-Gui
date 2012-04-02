@@ -480,7 +480,7 @@ PREINIT:
 QFlags<Qt::TouchPointState> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::TouchPointState>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::TouchPointState>((Qt::TouchPointState)SvIV(ST(1)));
     (void)THIS->setState(arg00);
     XSRETURN(0);
     }

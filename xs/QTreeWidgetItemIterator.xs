@@ -90,7 +90,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QTreeWidget");
-      arg11 = QFlags<QTreeWidgetItemIterator::IteratorFlag>((int)SvIV(ST(2)));
+      arg11 = QFlags<QTreeWidgetItemIterator::IteratorFlag>((QTreeWidgetItemIterator::IteratorFlag)SvIV(ST(2)));
     ret = new QTreeWidgetItemIterator(arg10, arg11);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTreeWidgetItemIterator", (void *)ret);
@@ -105,7 +105,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg30 is not of type Qt::Gui::QTreeWidgetItem");
-      arg31 = QFlags<QTreeWidgetItemIterator::IteratorFlag>((int)SvIV(ST(2)));
+      arg31 = QFlags<QTreeWidgetItemIterator::IteratorFlag>((QTreeWidgetItemIterator::IteratorFlag)SvIV(ST(2)));
     ret = new QTreeWidgetItemIterator(arg30, arg31);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTreeWidgetItemIterator", (void *)ret);

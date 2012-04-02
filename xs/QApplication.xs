@@ -19,19 +19,19 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QApplication(int & argc, char ** argv, int arg2)
-##  QApplication(int & argc, char ** argv, int arg2 = 0x040703)
+##  QApplication(int & argc, char ** argv, int arg2 = 0x040704)
 ##  QApplication(int & argc, char ** argv, bool GUIenabled, int arg3)
-##  QApplication(int & argc, char ** argv, bool GUIenabled, int arg3 = 0x040703)
+##  QApplication(int & argc, char ** argv, bool GUIenabled, int arg3 = 0x040704)
 ##  QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3)
-##  QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3 = 0x040703)
+##  QApplication(int & argc, char ** argv, QApplication::Type arg2, int arg3 = 0x040704)
 ##  QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3)
-##  QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3 = 0x040703)
-##  QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap = 0, int arg3 = 0x040703)
-##  QApplication(_XDisplay * dpy, unsigned long visual = 0, unsigned long cmap = 0, int arg3 = 0x040703)
+##  QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap, int arg3 = 0x040704)
+##  QApplication(_XDisplay * dpy, unsigned long visual, unsigned long cmap = 0, int arg3 = 0x040704)
+##  QApplication(_XDisplay * dpy, unsigned long visual = 0, unsigned long cmap = 0, int arg3 = 0x040704)
 ##  QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5)
-##  QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5 = 0x040703)
-##  QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap = 0, int arg5 = 0x040703)
-##  QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual = 0, unsigned long cmap = 0, int arg5 = 0x040703)
+##  QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap, int arg5 = 0x040704)
+##  QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual, unsigned long cmap = 0, int arg5 = 0x040704)
+##  QApplication(_XDisplay * dpy, int & argc, char ** argv, unsigned long visual = 0, unsigned long cmap = 0, int arg5 = 0x040704)
   void
 QApplication::new(...)
 PREINIT:
@@ -41,7 +41,7 @@ char ** arg01;
 int arg02;
 int arg10;
 char ** arg11;
-int arg12 = 0x040703;
+int arg12 = 0x040704;
 int arg20;
 char ** arg21;
 bool arg22;
@@ -49,7 +49,7 @@ int arg23;
 int arg30;
 char ** arg31;
 bool arg32;
-int arg33 = 0x040703;
+int arg33 = 0x040704;
 int arg40;
 char ** arg41;
 QApplication::Type arg42;
@@ -57,7 +57,7 @@ int arg43;
 int arg50;
 char ** arg51;
 QApplication::Type arg52;
-int arg53 = 0x040703;
+int arg53 = 0x040704;
 _XDisplay * arg60;
 unsigned long arg61;
 unsigned long arg62;
@@ -65,15 +65,15 @@ int arg63;
 _XDisplay * arg70;
 unsigned long arg71;
 unsigned long arg72;
-int arg73 = 0x040703;
+int arg73 = 0x040704;
 _XDisplay * arg80;
 unsigned long arg81;
 unsigned long arg82 = 0;
-int arg83 = 0x040703;
+int arg83 = 0x040704;
 _XDisplay * arg90;
 unsigned long arg91 = 0;
 unsigned long arg92 = 0;
-int arg93 = 0x040703;
+int arg93 = 0x040704;
 _XDisplay * arga0;
 int arga1;
 char ** arga2;
@@ -85,29 +85,29 @@ int argb1;
 char ** argb2;
 unsigned long argb3;
 unsigned long argb4;
-int argb5 = 0x040703;
+int argb5 = 0x040704;
 _XDisplay * argc0;
 int argc1;
 char ** argc2;
 unsigned long argc3;
 unsigned long argc4 = 0;
-int argc5 = 0x040703;
+int argc5 = 0x040704;
 _XDisplay * argd0;
 int argd1;
 char ** argd2;
 unsigned long argd3 = 0;
 unsigned long argd4 = 0;
-int argd5 = 0x040703;
+int argd5 = 0x040704;
 PPCODE:
     switch(items) {
       case 1:
       {
-	static char *argv[] = { "PerlQt" };
+        static char *argv[] = { "PerlQt" };
 	static int argc = 1;
-        ret = new QApplication(argc, argv);
-        ST(0) = sv_newmortal();
-        sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
-        XSRETURN(1);
+	ret = new QApplication(argc, argv);
+	ST(0) = sv_newmortal();
+	sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
+	XSRETURN(1);
 	break;
       }
       case 2:
@@ -841,7 +841,7 @@ PPCODE:
       
     QFlags<Qt::KeyboardModifier> ret = THIS->keyboardModifiers();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -867,7 +867,7 @@ PPCODE:
       
     QFlags<Qt::MouseButton> ret = THIS->mouseButtons();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

@@ -87,7 +87,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-      arg01 = QFlags<Qt::AlignmentFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::AlignmentFlag>((Qt::AlignmentFlag)SvIV(ST(2)));
     (void)THIS->addScrollBarWidget(arg00, arg01);
     XSRETURN(0);
     }

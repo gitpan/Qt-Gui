@@ -428,7 +428,7 @@ PPCODE:
       {
         if (SvIOK(ST(1)) && SvIOK(ST(2))) {
       arg00 = (QImage::Format)SvIV(ST(1));
-      arg01 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(2)));
     QImage ret = THIS->convertToFormat(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)new QImage(ret));
@@ -526,7 +526,7 @@ PPCODE:
       case 2:
       {
         if (SvIOK(ST(1))) {
-      arg00 = QFlags<Qt::ImageConversionFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(1)));
     QImage ret = THIS->createAlphaMask(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)new QImage(ret));

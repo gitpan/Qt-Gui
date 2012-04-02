@@ -75,7 +75,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
-      arg01 = QFlags<Qt::WindowType>((int)SvIV(ST(2)));
+      arg01 = QFlags<Qt::WindowType>((Qt::WindowType)SvIV(ST(2)));
     ret = new QWizard(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QWizard", (void *)ret);
@@ -244,7 +244,7 @@ PPCODE:
       
     QFlags<QWizard::WizardOption> ret = THIS->options();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -410,7 +410,7 @@ PREINIT:
 QFlags<QWizard::WizardOption> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QWizard::WizardOption>((int)SvIV(ST(1)));
+      arg00 = QFlags<QWizard::WizardOption>((QWizard::WizardOption)SvIV(ST(1)));
     (void)THIS->setOptions(arg00);
     XSRETURN(0);
     }

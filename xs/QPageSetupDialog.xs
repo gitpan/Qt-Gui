@@ -135,7 +135,7 @@ PPCODE:
       
     QFlags<QPageSetupDialog::PageSetupDialogOption> ret = THIS->enabledOptions();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -196,7 +196,7 @@ PPCODE:
       
     QFlags<QPageSetupDialog::PageSetupDialogOption> ret = THIS->options();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 
@@ -207,7 +207,7 @@ PREINIT:
 QFlags<QPageSetupDialog::PageSetupDialogOption> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPageSetupDialog::PageSetupDialogOption>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPageSetupDialog::PageSetupDialogOption>((QPageSetupDialog::PageSetupDialogOption)SvIV(ST(1)));
     (void)THIS->setEnabledOptions(arg00);
     XSRETURN(0);
     }
@@ -258,7 +258,7 @@ PREINIT:
 QFlags<QPageSetupDialog::PageSetupDialogOption> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QPageSetupDialog::PageSetupDialogOption>((int)SvIV(ST(1)));
+      arg00 = QFlags<QPageSetupDialog::PageSetupDialogOption>((QPageSetupDialog::PageSetupDialogOption)SvIV(ST(1)));
     (void)THIS->setOptions(arg00);
     XSRETURN(0);
     }
