@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QWidget/;
 #our @ISA = qw/Qt::Gui::QWidget/;
 
@@ -50,6 +50,8 @@ Qt::Gui::QDialogButtonBox
 =item  QPushButton * button(QDialogButtonBox::StandardButton which)
 
 =item  QDialogButtonBox::ButtonRole buttonRole(QAbstractButton * button)
+
+=item  QList<QAbstractButton *> buttons()
 
 =item  bool centerButtons()
 

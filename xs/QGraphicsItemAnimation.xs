@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -151,6 +151,19 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QList<QPair<qreal,QPointF> > posList()
+void
+QGraphicsItemAnimation::posList(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QPair<qreal,QPointF> > ret = THIS->posList();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T035", (void *)new QList<QPair<qreal,QPointF> >(ret));
+    XSRETURN(1);
+    }
+
 ## void reset()
 void
 QGraphicsItemAnimation::reset(...)
@@ -173,6 +186,32 @@ PPCODE:
     qreal ret = THIS->rotationAt(arg00);
     ST(0) = sv_newmortal();
     sv_setnv(ST(0), (double)ret);
+    XSRETURN(1);
+    }
+
+## QList<QPair<qreal,qreal> > rotationList()
+void
+QGraphicsItemAnimation::rotationList(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QPair<qreal,qreal> > ret = THIS->rotationList();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T037", (void *)new QList<QPair<qreal,qreal> >(ret));
+    XSRETURN(1);
+    }
+
+## QList<QPair<qreal,QPointF> > scaleList()
+void
+QGraphicsItemAnimation::scaleList(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QPair<qreal,QPointF> > ret = THIS->scaleList();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T035", (void *)new QList<QPair<qreal,QPointF> >(ret));
     XSRETURN(1);
     }
 
@@ -302,6 +341,19 @@ PPCODE:
     XSRETURN(0);
     }
 
+## QList<QPair<qreal,QPointF> > shearList()
+void
+QGraphicsItemAnimation::shearList(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QPair<qreal,QPointF> > ret = THIS->shearList();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T035", (void *)new QList<QPair<qreal,QPointF> >(ret));
+    XSRETURN(1);
+    }
+
 ## QTimeLine * timeLine()
 void
 QGraphicsItemAnimation::timeLine(...)
@@ -312,6 +364,19 @@ PPCODE:
     QTimeLine * ret = THIS->timeLine();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QTimeLine", (void *)ret);
+    XSRETURN(1);
+    }
+
+## QList<QPair<qreal,QPointF> > translationList()
+void
+QGraphicsItemAnimation::translationList(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QPair<qreal,QPointF> > ret = THIS->translationList();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T035", (void *)new QList<QPair<qreal,QPointF> >(ret));
     XSRETURN(1);
     }
 

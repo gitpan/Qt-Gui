@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -222,6 +222,18 @@ PPCODE:
     XSRETURN(0);
     }
 
+## void setTabPositions(const QList<QTextOption::Tab> & tabs)
+void
+QTextBlockFormat::setTabPositions(...)
+PREINIT:
+QList<QTextOption::Tab> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T023")) {
+      arg00 = reinterpret_cast<QList<QTextOption::Tab> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setTabPositions(*arg00);
+    XSRETURN(0);
+    }
+
 ## void setTextIndent(qreal aindent)
 void
 QTextBlockFormat::setTextIndent(...)
@@ -244,6 +256,19 @@ PPCODE:
       arg00 = (double)SvNV(ST(1));
     (void)THIS->setTopMargin(arg00);
     XSRETURN(0);
+    }
+
+## QList<QTextOption::Tab> tabPositions()
+void
+QTextBlockFormat::tabPositions(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QTextOption::Tab> ret = THIS->tabPositions();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T023", (void *)new QList<QTextOption::Tab>(ret));
+    XSRETURN(1);
     }
 
 ## qreal textIndent()

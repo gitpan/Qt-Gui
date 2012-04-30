@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -57,9 +57,17 @@ Qt::Gui::QFontDatabase
 
 =item  bool italic(const QString & family, const QString & style)
 
+=item  QList<int> pointSizes(const QString & family, const QString & style)
+
+=item  QList<int> pointSizes(const QString & family, const QString & style = QString())
+
 =item  static bool removeAllApplicationFonts()
 
 =item  static bool removeApplicationFont(int id)
+
+=item  QList<int> smoothSizes(const QString & family, const QString & style)
+
+=item  static QList<int> standardSizes()
 
 =item  QString styleString(const QFont & font)
 
@@ -74,6 +82,10 @@ Qt::Gui::QFontDatabase
 =item  static QString writingSystemName(QFontDatabase::WritingSystem writingSystem)
 
 =item  static QString writingSystemSample(QFontDatabase::WritingSystem writingSystem)
+
+=item  QList<QFontDatabase::WritingSystem> writingSystems()
+
+=item  QList<QFontDatabase::WritingSystem> writingSystems(const QString & family)
 
 
 =back

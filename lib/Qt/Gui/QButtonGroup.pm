@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -34,6 +34,8 @@ Qt::Gui::QButtonGroup
 =item  void addButton(QAbstractButton * arg0, int id)
 
 =item  QAbstractButton * button(int id)
+
+=item  QList<QAbstractButton *> buttons()
 
 =item  QAbstractButton * checkedButton()
 

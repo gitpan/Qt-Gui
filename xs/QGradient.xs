@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -158,6 +158,18 @@ PPCODE:
     XSRETURN(0);
     }
 
+## void setStops(const QVector<QPair<qreal,QColor> > & stops)
+void
+QGradient::setStops(...)
+PREINIT:
+QVector<QPair<qreal,QColor> > * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T045")) {
+      arg00 = reinterpret_cast<QVector<QPair<qreal,QColor> > *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setStops(*arg00);
+    XSRETURN(0);
+    }
+
 ## QGradient::Spread spread()
 void
 QGradient::spread(...)
@@ -168,6 +180,19 @@ PPCODE:
     QGradient::Spread ret = THIS->spread();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+
+## QVector<QPair<qreal,QColor> > stops()
+void
+QGradient::stops(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QVector<QPair<qreal,QColor> > ret = THIS->stops();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T045", (void *)new QVector<QPair<qreal,QColor> >(ret));
     XSRETURN(1);
     }
 

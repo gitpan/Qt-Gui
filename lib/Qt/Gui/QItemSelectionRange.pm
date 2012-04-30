@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -40,6 +40,8 @@ Qt::Gui::QItemSelectionRange
 =item  bool contains(int row, int column, const QModelIndex & parentIndex)
 
 =item  int height()
+
+=item  QList<QModelIndex> indexes()
 
 =item  QItemSelectionRange intersect(const QItemSelectionRange & other)
 

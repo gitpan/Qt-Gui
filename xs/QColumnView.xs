@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -70,6 +70,19 @@ QColumnView::DESTROY()
 CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
+
+## QList<int> columnWidths()
+void
+QColumnView::columnWidths(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<int> ret = THIS->columnWidths();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T005", (void *)new QList<int>(ret));
+    XSRETURN(1);
+    }
 
 ## QModelIndex indexAt(const QPoint & point)
 void
@@ -158,6 +171,18 @@ PPCODE:
     if (1) {
       
     (void)THIS->selectAll();
+    XSRETURN(0);
+    }
+
+## void setColumnWidths(const QList<int> & list)
+void
+QColumnView::setColumnWidths(...)
+PREINIT:
+QList<int> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T005")) {
+      arg00 = reinterpret_cast<QList<int> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setColumnWidths(*arg00);
     XSRETURN(0);
     }
 

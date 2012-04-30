@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -403,6 +403,9 @@ PPCODE:
 ## QAction * exec()
 ## QAction * exec(const QPoint & pos, QAction * at)
 ## QAction * exec(const QPoint & pos, QAction * at = 0)
+## static QAction * exec(QList<QAction *> actions, const QPoint & pos, QAction * at)
+## static QAction * exec(QList<QAction *> actions, const QPoint & pos, QAction * at = 0)
+## static QAction * exec(QList<QAction *> actions, const QPoint & pos, QAction * at, QWidget * parent)
 void
 QMenu::exec(...)
 PREINIT:
@@ -410,6 +413,16 @@ QPoint * arg10;
 QAction * arg11;
 QPoint * arg20;
 QAction * arg21 = 0;
+QList<QAction *> arg30;
+QPoint * arg31;
+QAction * arg32;
+QList<QAction *> arg40;
+QPoint * arg41;
+QAction * arg42 = 0;
+QList<QAction *> arg50;
+QPoint * arg51;
+QAction * arg52;
+QWidget * arg53;
 PPCODE:
     switch(items) {
       case 1:
@@ -449,6 +462,66 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg11 is not of type Qt::Gui::QAction");
     QAction * ret = THIS->exec(*arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isobject(ST(1)) && sv_isa(ST(2), "Qt::Core::QPoint")) {
+      arg40 = *reinterpret_cast<QList<QAction *> *>(SvIV((SV*)SvRV(ST(1))));
+      arg41 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
+    QAction * ret = THIS->exec(arg40, *arg41, arg42);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 4:
+      {
+        if (sv_isobject(ST(1)) && sv_isa(ST(2), "Qt::Core::QPoint") && (sv_derived_from(ST(3), "Qt::Gui::QAction") || ST(3) == &PL_sv_undef)) {
+      arg30 = *reinterpret_cast<QList<QAction *> *>(SvIV((SV*)SvRV(ST(1))));
+      arg31 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
+      if (sv_derived_from(ST(3), "Qt::Gui::QAction")) {
+        arg32 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(3))));
+    }
+    else if (ST(3) == &PL_sv_undef) {
+        arg32 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg32 is not of type Qt::Gui::QAction");
+    QAction * ret = THIS->exec(arg30, *arg31, arg32);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 5:
+      {
+        if (sv_isobject(ST(1)) && sv_isa(ST(2), "Qt::Core::QPoint") && (sv_derived_from(ST(3), "Qt::Gui::QAction") || ST(3) == &PL_sv_undef) && (sv_derived_from(ST(4), "Qt::Gui::QWidget") || ST(4) == &PL_sv_undef)) {
+      arg50 = *reinterpret_cast<QList<QAction *> *>(SvIV((SV*)SvRV(ST(1))));
+      arg51 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
+      if (sv_derived_from(ST(3), "Qt::Gui::QAction")) {
+        arg52 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(3))));
+    }
+    else if (ST(3) == &PL_sv_undef) {
+        arg52 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg52 is not of type Qt::Gui::QAction");
+      if (sv_derived_from(ST(4), "Qt::Gui::QWidget")) {
+        arg53 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(4))));
+    }
+    else if (ST(4) == &PL_sv_undef) {
+        arg53 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg53 is not of type Qt::Gui::QWidget");
+    QAction * ret = THIS->exec(arg50, *arg51, arg52, arg53);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QAction", (void *)ret);
     XSRETURN(1);

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QAbstractScrollArea/;
 #our @ISA = qw/Qt::Gui::QAbstractScrollArea/;
 
@@ -71,6 +71,8 @@ Qt::Gui::QPlainTextEdit
 
 =item  void ensureCursorVisible()
 
+=item  QList<QTextEdit::ExtraSelection> extraSelections()
+
 =item  bool find(const QString & exp, QFlags<QTextDocument::FindFlag> options)
 
 =item  bool find(const QString & exp, QFlags<QTextDocument::FindFlag> options = 0)
@@ -112,6 +114,8 @@ Qt::Gui::QPlainTextEdit
 =item  void setDocument(QTextDocument * document)
 
 =item  void setDocumentTitle(const QString & title)
+
+=item  void setExtraSelections(const QList<QTextEdit::ExtraSelection> & selections)
 
 =item  void setLineWrapMode(QPlainTextEdit::LineWrapMode mode)
 

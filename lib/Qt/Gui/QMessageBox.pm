@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QDialog/;
 #our @ISA = qw/Qt::Gui::QDialog/;
 
@@ -62,6 +62,8 @@ Qt::Gui::QMessageBox
 =item  QMessageBox::ButtonRole buttonRole(QAbstractButton * button)
 
 =item  QString buttonText(int button)
+
+=item  QList<QAbstractButton *> buttons()
 
 =item  QAbstractButton * clickedButton()
 

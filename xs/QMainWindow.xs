@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -887,6 +887,27 @@ PPCODE:
     QTabWidget::TabShape ret = THIS->tabShape();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+
+## QList<QDockWidget *> tabifiedDockWidgets(QDockWidget * dockwidget)
+void
+QMainWindow::tabifiedDockWidgets(...)
+PREINIT:
+QDockWidget * arg00;
+PPCODE:
+    if ((sv_derived_from(ST(1), "Qt::Gui::QDockWidget") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QDockWidget")) {
+        arg00 = reinterpret_cast<QDockWidget *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QDockWidget");
+    QList<QDockWidget *> ret = THIS->tabifiedDockWidgets(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T042", (void *)new QList<QDockWidget *>(ret));
     XSRETURN(1);
     }
 

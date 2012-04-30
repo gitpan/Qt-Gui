@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -344,6 +344,19 @@ PPCODE:
     XSRETURN(0);
     }
 
+## QList<QTextEdit::ExtraSelection> extraSelections()
+void
+QPlainTextEdit::extraSelections(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QTextEdit::ExtraSelection> ret = THIS->extraSelections();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T018", (void *)new QList<QTextEdit::ExtraSelection>(ret));
+    XSRETURN(1);
+    }
+
 ## bool find(const QString & exp, QFlags<QTextDocument::FindFlag> options)
 ## bool find(const QString & exp, QFlags<QTextDocument::FindFlag> options = 0)
 void
@@ -648,6 +661,18 @@ PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QString")) {
       arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setDocumentTitle(*arg00);
+    XSRETURN(0);
+    }
+
+## void setExtraSelections(const QList<QTextEdit::ExtraSelection> & selections)
+void
+QPlainTextEdit::setExtraSelections(...)
+PREINIT:
+QList<QTextEdit::ExtraSelection> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T018")) {
+      arg00 = reinterpret_cast<QList<QTextEdit::ExtraSelection> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setExtraSelections(*arg00);
     XSRETURN(0);
     }
 

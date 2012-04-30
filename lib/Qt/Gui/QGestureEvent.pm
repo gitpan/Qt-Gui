@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -23,13 +23,21 @@ Qt::Gui::QGestureEvent
 
 =over
 
+=item   QGestureEvent(const QList<QGesture *> & gestures)
+
 =item   ~QGestureEvent()
 
 =item  void accept(QGesture * arg0)
 
 =item  void accept(Qt::GestureType arg0)
 
+=item  QList<QGesture *> activeGestures()
+
+=item  QList<QGesture *> canceledGestures()
+
 =item  QGesture * gesture(Qt::GestureType type)
+
+=item  QList<QGesture *> gestures()
 
 =item  void ignore(QGesture * arg0)
 

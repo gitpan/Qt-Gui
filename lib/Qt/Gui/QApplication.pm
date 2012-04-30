@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -64,6 +64,8 @@ Qt::Gui::QApplication
 =item  static void alert(QWidget * widget, int duration)
 
 =item  static void alert(QWidget * widget, int duration = 0)
+
+=item  static QList<QWidget *> allWidgets()
 
 =item  bool autoSipEnabled()
 
@@ -204,6 +206,8 @@ Qt::Gui::QApplication
 =item  static QWidget * topLevelAt(const QPoint & p)
 
 =item  static QWidget * topLevelAt(int x, int y)
+
+=item  static QList<QWidget *> topLevelWidgets()
 
 =item  static QApplication::Type type()
 

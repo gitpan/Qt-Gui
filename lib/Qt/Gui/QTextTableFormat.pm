@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QTextFrameFormat/;
 #our @ISA = qw/Qt::Gui::QTextFrameFormat/;
 
@@ -35,6 +35,8 @@ Qt::Gui::QTextTableFormat
 
 =item  void clearColumnWidthConstraints()
 
+=item  QVector<QTextLength> columnWidthConstraints()
+
 =item  int columns()
 
 =item  int headerRowCount()
@@ -46,6 +48,8 @@ Qt::Gui::QTextTableFormat
 =item  void setCellPadding(qreal padding)
 
 =item  void setCellSpacing(qreal spacing)
+
+=item  void setColumnWidthConstraints(const QVector<QTextLength> & constraints)
 
 =item  void setColumns(int columns)
 

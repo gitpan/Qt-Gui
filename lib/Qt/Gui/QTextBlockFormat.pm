@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QTextFormat/;
 #our @ISA = qw/Qt::Gui::QTextFormat/;
 
@@ -57,9 +57,13 @@ Qt::Gui::QTextBlockFormat
 
 =item  void setRightMargin(qreal margin)
 
+=item  void setTabPositions(const QList<QTextOption::Tab> & tabs)
+
 =item  void setTextIndent(qreal aindent)
 
 =item  void setTopMargin(qreal margin)
+
+=item  QList<QTextOption::Tab> tabPositions()
 
 =item  qreal textIndent()
 

@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -347,6 +347,20 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QVector<QTextLength> lengthVectorProperty(int propertyId)
+void
+QTextFormat::lengthVectorProperty(...)
+PREINIT:
+int arg00;
+PPCODE:
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
+    QVector<QTextLength> ret = THIS->lengthVectorProperty(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T016", (void *)new QVector<QTextLength>(ret));
+    XSRETURN(1);
+    }
+
 ## void merge(const QTextFormat & other)
 void
 QTextFormat::merge(...)
@@ -454,6 +468,19 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QMap<int,QVariant> properties()
+void
+QTextFormat::properties(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QMap<int,QVariant> ret = THIS->properties();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T013", (void *)new QMap<int,QVariant>(ret));
+    XSRETURN(1);
+    }
+
 ## QVariant property(int propertyId)
 void
 QTextFormat::property(...)
@@ -542,17 +569,37 @@ PPCODE:
     }
 
 ## void setProperty(int propertyId, const QVariant & value)
+## void setProperty(int propertyId, const QVector<QTextLength> & lengths)
 void
 QTextFormat::setProperty(...)
 PREINIT:
 int arg00;
 QVariant * arg01;
+int arg10;
+QVector<QTextLength> * arg11;
 PPCODE:
-    if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QVariant")) {
+    switch(items) {
+      case 3:
+      {
+        if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QVariant")) {
       arg00 = (int)SvIV(ST(1));
       arg01 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(2))));
     (void)THIS->setProperty(arg00, *arg01);
     XSRETURN(0);
+    }
+        else if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T016")) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = reinterpret_cast<QVector<QTextLength> *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->setProperty(arg10, *arg11);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## QString stringProperty(int propertyId)

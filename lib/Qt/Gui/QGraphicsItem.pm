@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -51,6 +51,10 @@ Qt::Gui::QGraphicsItem
 
 =item  QGraphicsItem::CacheMode cacheMode()
 
+=item  QList<QGraphicsItem *> childItems()
+
+=item  QList<QGraphicsItem *> children()
+
 =item  QRectF childrenBoundingRect()
 
 =item  void clearFocus()
@@ -64,6 +68,10 @@ Qt::Gui::QGraphicsItem
 =item  bool collidesWithPath(const QPainterPath & path, Qt::ItemSelectionMode mode)
 
 =item  bool collidesWithPath(const QPainterPath & path, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+
+=item  QList<QGraphicsItem *> collidingItems(Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> collidingItems(Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
 
 =item  QGraphicsItem * commonAncestorItem(const QGraphicsItem * other)
 
@@ -383,6 +391,8 @@ Qt::Gui::QGraphicsItem
 
 =item  void setTransformOriginPoint(qreal ax, qreal ay)
 
+=item  void setTransformations(const QList<QGraphicsTransform *> & transformations)
+
 =item  void setVisible(bool visible)
 
 =item  void setX(qreal x)
@@ -412,6 +422,8 @@ Qt::Gui::QGraphicsItem
 =item  QTransform transform()
 
 =item  QPointF transformOriginPoint()
+
+=item  QList<QGraphicsTransform *> transformations()
 
 =item  void translate(qreal dx, qreal dy)
 

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QDialog/;
 #our @ISA = qw/Qt::Gui::QDialog/;
 
@@ -57,6 +57,8 @@ Qt::Gui::QWizard
 
 =item  QWizardPage * page(int id)
 
+=item  QList<int> pageIds()
+
 =item  QPixmap pixmap(QWizard::WizardPixmap which)
 
 =item  void removePage(int id)
@@ -64,6 +66,8 @@ Qt::Gui::QWizard
 =item  void restart()
 
 =item  void setButton(QWizard::WizardButton which, QAbstractButton * button)
+
+=item  void setButtonLayout(const QList<QWizard::WizardButton> & layout)
 
 =item  void setButtonText(QWizard::WizardButton which, const QString & text)
 
@@ -106,6 +110,8 @@ Qt::Gui::QWizard
 =item  Qt::TextFormat titleFormat()
 
 =item  bool validateCurrentPage()
+
+=item  QList<int> visitedPages()
 
 =item  QWizard::WizardStyle wizardStyle()
 

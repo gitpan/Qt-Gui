@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -421,6 +421,44 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
     XSRETURN(1);
+    }
+
+## QList<QMdiSubWindow *> subWindowList(QMdiArea::WindowOrder order)
+## QList<QMdiSubWindow *> subWindowList(QMdiArea::WindowOrder order = QMdiArea::CreationOrder)
+void
+QMdiArea::subWindowList(...)
+PREINIT:
+QMdiArea::WindowOrder arg00;
+QMdiArea::WindowOrder arg10 = QMdiArea::CreationOrder;
+PPCODE:
+    switch(items) {
+      case 1:
+      {
+        if (1) {
+      
+    QList<QMdiSubWindow *> ret = THIS->subWindowList(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T031", (void *)new QList<QMdiSubWindow *>(ret));
+    XSRETURN(1);
+    }
+        break;
+      }
+      case 2:
+      {
+        if (SvIOK(ST(1))) {
+      arg00 = (QMdiArea::WindowOrder)SvIV(ST(1));
+    QList<QMdiSubWindow *> ret = THIS->subWindowList(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T031", (void *)new QList<QMdiSubWindow *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## QTabWidget::TabPosition tabPosition()

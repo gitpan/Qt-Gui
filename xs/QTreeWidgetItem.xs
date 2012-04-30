@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -379,6 +379,18 @@ PPCODE:
     XSRETURN(0);
     }
 
+## void addChildren(const QList<QTreeWidgetItem *> & children)
+void
+QTreeWidgetItem::addChildren(...)
+PREINIT:
+QList<QTreeWidgetItem *> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T020")) {
+      arg00 = reinterpret_cast<QList<QTreeWidgetItem *> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->addChildren(*arg00);
+    XSRETURN(0);
+    }
+
 ## QBrush background(int column)
 void
 QTreeWidgetItem::background(...)
@@ -597,6 +609,20 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QTreeWidgetItem");
     (void)THIS->insertChild(arg00, arg01);
+    XSRETURN(0);
+    }
+
+## void insertChildren(int index, const QList<QTreeWidgetItem *> & children)
+void
+QTreeWidgetItem::insertChildren(...)
+PREINIT:
+int arg00;
+QList<QTreeWidgetItem *> * arg01;
+PPCODE:
+    if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T020")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = reinterpret_cast<QList<QTreeWidgetItem *> *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->insertChildren(arg00, *arg01);
     XSRETURN(0);
     }
 
@@ -1072,6 +1098,19 @@ PPCODE:
     QTreeWidgetItem * ret = THIS->takeChild(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTreeWidgetItem", (void *)ret);
+    XSRETURN(1);
+    }
+
+## QList<QTreeWidgetItem *> takeChildren()
+void
+QTreeWidgetItem::takeChildren(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QTreeWidgetItem *> ret = THIS->takeChildren();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T020", (void *)new QList<QTreeWidgetItem *>(ret));
     XSRETURN(1);
     }
 

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -54,6 +54,8 @@ Qt::Gui::QUndoGroup
 =item  void removeStack(QUndoStack * stack)
 
 =item  void setActiveStack(QUndoStack * stack)
+
+=item  QList<QUndoStack *> stacks()
 
 =item  void undo()
 

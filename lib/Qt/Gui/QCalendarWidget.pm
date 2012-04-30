@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QWidget/;
 #our @ISA = qw/Qt::Gui::QWidget/;
 
@@ -32,6 +32,8 @@ Qt::Gui::QCalendarWidget
 =item   ~QCalendarWidget()
 
 =item  int dateEditAcceptDelay()
+
+=item  QMap<QDate,QTextCharFormat> dateTextFormat()
 
 =item  QTextCharFormat dateTextFormat(const QDate & date)
 

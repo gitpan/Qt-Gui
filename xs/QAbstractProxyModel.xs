@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -137,6 +137,20 @@ PPCODE:
     QVariant ret = THIS->headerData(arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
+    XSRETURN(1);
+    }
+
+## QMap<int,QVariant> itemData(const QModelIndex & index)
+void
+QAbstractProxyModel::itemData(...)
+PREINIT:
+QModelIndex * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+    QMap<int,QVariant> ret = THIS->itemData(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T013", (void *)new QMap<int,QVariant>(ret));
     XSRETURN(1);
     }
 

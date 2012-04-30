@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -373,6 +373,19 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QVector<unsigned int> colorTable()
+void
+QImage::colorTable(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QVector<unsigned int> ret = THIS->colorTable();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T040", (void *)new QVector<unsigned int>(ret));
+    XSRETURN(1);
+    }
+
 ## const uchar * constBits()
 void
 QImage::constBits(...)
@@ -402,6 +415,8 @@ PPCODE:
 
 ## QImage convertToFormat(QImage::Format f, QFlags<Qt::ImageConversionFlag> flags)
 ## QImage convertToFormat(QImage::Format f, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
+## QImage convertToFormat(QImage::Format f, const QVector<unsigned int> & colorTable, QFlags<Qt::ImageConversionFlag> flags)
+## QImage convertToFormat(QImage::Format f, const QVector<unsigned int> & colorTable, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 void
 QImage::convertToFormat(...)
 PREINIT:
@@ -409,6 +424,12 @@ QImage::Format arg00;
 QFlags<Qt::ImageConversionFlag> arg01;
 QImage::Format arg10;
 QFlags<Qt::ImageConversionFlag> arg11 = Qt::AutoColor;
+QImage::Format arg20;
+QVector<unsigned int> * arg21;
+QFlags<Qt::ImageConversionFlag> arg22;
+QImage::Format arg30;
+QVector<unsigned int> * arg31;
+QFlags<Qt::ImageConversionFlag> arg32 = Qt::AutoColor;
 PPCODE:
     switch(items) {
       case 2:
@@ -430,6 +451,29 @@ PPCODE:
       arg00 = (QImage::Format)SvIV(ST(1));
       arg01 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(2)));
     QImage ret = THIS->convertToFormat(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)new QImage(ret));
+    XSRETURN(1);
+    }
+        else if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T040")) {
+      arg30 = (QImage::Format)SvIV(ST(1));
+      arg31 = reinterpret_cast<QVector<unsigned int> *>(SvIV((SV*)SvRV(ST(2))));
+    QImage ret = THIS->convertToFormat(arg30, *arg31, arg32);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)new QImage(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 4:
+      {
+        if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T040") && SvIOK(ST(3))) {
+      arg20 = (QImage::Format)SvIV(ST(1));
+      arg21 = reinterpret_cast<QVector<unsigned int> *>(SvIV((SV*)SvRV(ST(2))));
+      arg22 = QFlags<Qt::ImageConversionFlag>((Qt::ImageConversionFlag)SvIV(ST(3)));
+    QImage ret = THIS->convertToFormat(arg20, *arg21, arg22);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QImage", (void *)new QImage(ret));
     XSRETURN(1);
@@ -1964,6 +2008,19 @@ PPCODE:
     QStringList ret = THIS->textLanguages();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QStringList", (void *)new QStringList(ret));
+    XSRETURN(1);
+    }
+
+## QList<QImageTextKeyLang> textList()
+void
+QImage::textList(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QImageTextKeyLang> ret = THIS->textList();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T041", (void *)new QList<QImageTextKeyLang>(ret));
     XSRETURN(1);
     }
 

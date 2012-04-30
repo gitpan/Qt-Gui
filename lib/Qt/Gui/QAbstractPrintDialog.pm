@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QDialog/;
 #our @ISA = qw/Qt::Gui::QDialog/;
 
@@ -54,6 +54,8 @@ Qt::Gui::QAbstractPrintDialog
 =item  void setFromTo(int fromPage, int toPage)
 
 =item  void setMinMax(int min, int max)
+
+=item  void setOptionTabs(const QList<QWidget *> & tabs)
 
 =item  void setPrintRange(QAbstractPrintDialog::PrintRange range)
 

@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -338,6 +338,29 @@ PPCODE:
     XSRETURN(1);
     }
 
+## int selectedColumns(int maxColumns, QList<int> * columns)
+void
+QAccessibleTableInterface::selectedColumns(...)
+PREINIT:
+int arg00;
+QList<int> * arg01;
+PPCODE:
+    if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::Template::T005") || ST(2) == &PL_sv_undef)) {
+      arg00 = (int)SvIV(ST(1));
+      if (sv_derived_from(ST(2), "Qt::Gui::Template::T005")) {
+        arg01 = reinterpret_cast<QList<int> *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg01 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::Template::T005");
+    int ret = THIS->selectedColumns(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+
 ## int selectedRowCount()
 void
 QAccessibleTableInterface::selectedRowCount(...)
@@ -346,6 +369,29 @@ PPCODE:
     if (1) {
       
     int ret = THIS->selectedRowCount();
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+
+## int selectedRows(int maxRows, QList<int> * rows)
+void
+QAccessibleTableInterface::selectedRows(...)
+PREINIT:
+int arg00;
+QList<int> * arg01;
+PPCODE:
+    if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::Template::T005") || ST(2) == &PL_sv_undef)) {
+      arg00 = (int)SvIV(ST(1));
+      if (sv_derived_from(ST(2), "Qt::Gui::Template::T005")) {
+        arg01 = reinterpret_cast<QList<int> *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg01 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::Template::T005");
+    int ret = THIS->selectedRows(arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);

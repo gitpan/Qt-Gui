@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QTableView/;
 #our @ISA = qw/Qt::Gui::QTableView/;
 
@@ -55,6 +55,8 @@ Qt::Gui::QTableWidget
 
 =item  void editItem(QTableWidgetItem * item)
 
+=item  QList<QTableWidgetItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags)
+
 =item  QTableWidgetItem * horizontalHeaderItem(int column)
 
 =item  void insertColumn(int column)
@@ -88,6 +90,10 @@ Qt::Gui::QTableWidget
 =item  void scrollToItem(const QTableWidgetItem * item, QAbstractItemView::ScrollHint hint)
 
 =item  void scrollToItem(const QTableWidgetItem * item, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+
+=item  QList<QTableWidgetItem *> selectedItems()
+
+=item  QList<QTableWidgetSelectionRange> selectedRanges()
 
 =item  void setCellWidget(int row, int column, QWidget * widget)
 

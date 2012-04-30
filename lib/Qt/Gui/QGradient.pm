@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -43,7 +43,11 @@ Qt::Gui::QGradient
 
 =item  void setSpread(QGradient::Spread spread)
 
+=item  void setStops(const QVector<QPair<qreal,QColor> > & stops)
+
 =item  QGradient::Spread spread()
+
+=item  QVector<QPair<qreal,QColor> > stops()
 
 =item  QGradient::Type type()
 

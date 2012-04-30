@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QFrame/;
 #our @ISA = qw/Qt::Gui::QFrame/;
 
@@ -77,9 +77,13 @@ Qt::Gui::QSplitter
 
 =item  void setOrientation(Qt::Orientation arg0)
 
+=item  void setSizes(const QList<int> & list)
+
 =item  void setStretchFactor(int index, int stretch)
 
 =item  QSize sizeHint()
+
+=item  QList<int> sizes()
 
 =item  QWidget * widget(int index)
 

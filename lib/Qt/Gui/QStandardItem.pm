@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -39,7 +39,13 @@ Qt::Gui::QStandardItem
 
 =item  QString accessibleText()
 
+=item  void appendColumn(const QList<QStandardItem *> & items)
+
+=item  void appendRow(const QList<QStandardItem *> & items)
+
 =item  void appendRow(QStandardItem * item)
+
+=item  void appendRows(const QList<QStandardItem *> & items)
 
 =item  QBrush background()
 
@@ -71,9 +77,15 @@ Qt::Gui::QStandardItem
 
 =item  QModelIndex index()
 
+=item  void insertColumn(int column, const QList<QStandardItem *> & items)
+
 =item  void insertColumns(int column, int count)
 
+=item  void insertRow(int row, const QList<QStandardItem *> & items)
+
 =item  void insertRow(int row, QStandardItem * item)
+
+=item  void insertRows(int row, const QList<QStandardItem *> & items)
 
 =item  void insertRows(int row, int count)
 
@@ -168,6 +180,10 @@ Qt::Gui::QStandardItem
 =item  QStandardItem * takeChild(int row, int column)
 
 =item  QStandardItem * takeChild(int row, int column = 0)
+
+=item  QList<QStandardItem *> takeColumn(int column)
+
+=item  QList<QStandardItem *> takeRow(int row)
 
 =item  QString text()
 

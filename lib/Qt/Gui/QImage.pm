@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QPaintDevice/;
 #our @ISA = qw/Qt::Gui::QPaintDevice/;
 
@@ -73,6 +73,8 @@ Qt::Gui::QImage
 
 =item  int colorCount()
 
+=item  QVector<unsigned int> colorTable()
+
 =item  const uchar * constBits()
 
 =item  const uchar * constScanLine(int arg0)
@@ -80,6 +82,10 @@ Qt::Gui::QImage
 =item  QImage convertToFormat(QImage::Format f, QFlags<Qt::ImageConversionFlag> flags)
 
 =item  QImage convertToFormat(QImage::Format f, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
+
+=item  QImage convertToFormat(QImage::Format f, const QVector<unsigned int> & colorTable, QFlags<Qt::ImageConversionFlag> flags)
+
+=item  QImage convertToFormat(QImage::Format f, const QVector<unsigned int> & colorTable, QFlags<Qt::ImageConversionFlag> flags = Qt::AutoColor)
 
 =item  QImage copy(const QRect & rect)
 
@@ -260,6 +266,8 @@ Qt::Gui::QImage
 =item  QStringList textKeys()
 
 =item  QStringList textLanguages()
+
+=item  QList<QImageTextKeyLang> textList()
 
 =item  QImage transformed(const QMatrix & matrix, Qt::TransformationMode mode)
 

@@ -18,7 +18,7 @@ EOF
 # the contents of the Makefile that is written.
 WriteMakefile(
     NAME         => 'Qt::Gui',
-    VERSION      => '0.01_04',
+    VERSION      => '0.01_05',
     LICENSE      => 'perl',
     PREREQ_PM    => {},
     ABSTRACT     => 'Qt Gui binding',

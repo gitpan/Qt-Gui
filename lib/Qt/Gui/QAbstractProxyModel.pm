@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Core::QAbstractItemModel/;
 #our @ISA = qw/Qt::Core::QAbstractItemModel/;
 
@@ -38,6 +38,8 @@ Qt::Gui::QAbstractProxyModel
 =item  QFlags<Qt::ItemFlag> flags(const QModelIndex & index)
 
 =item  QVariant headerData(int section, Qt::Orientation orientation, int role)
+
+=item  QMap<int,QVariant> itemData(const QModelIndex & index)
 
 =item  QModelIndex mapFromSource(const QModelIndex & sourceIndex)
 

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -35,6 +35,8 @@ Qt::Gui::QTextLayout
 
 =item   ~QTextLayout()
 
+=item  QList<QTextLayout::FormatRange> additionalFormats()
+
 =item  void beginLayout()
 
 =item  QRectF boundingRect()
@@ -46,6 +48,12 @@ Qt::Gui::QTextLayout
 =item  void clearLayout()
 
 =item  QTextLine createLine()
+
+=item  void draw(QPainter * p, const QPointF & pos, const QVector<QTextLayout::FormatRange> & selections, const QRectF & clip)
+
+=item  void draw(QPainter * p, const QPointF & pos, const QVector<QTextLayout::FormatRange> & selections, const QRectF & clip = QRectF())
+
+=item  void draw(QPainter * p, const QPointF & pos, const QVector<QTextLayout::FormatRange> & selections = QVector<QTextLayout::FormatRange>(), const QRectF & clip = QRectF())
 
 =item  void drawCursor(QPainter * p, const QPointF & pos, int cursorPosition)
 
@@ -82,6 +90,8 @@ Qt::Gui::QTextLayout
 =item  int previousCursorPosition(int oldPos, QTextLayout::CursorMode mode)
 
 =item  int previousCursorPosition(int oldPos, QTextLayout::CursorMode mode = QTextLayout::SkipCharacters)
+
+=item  void setAdditionalFormats(const QList<QTextLayout::FormatRange> & overrides)
 
 =item  void setCacheEnabled(bool enable)
 

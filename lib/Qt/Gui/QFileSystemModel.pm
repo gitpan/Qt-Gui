@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Core::QAbstractItemModel/;
 #our @ISA = qw/Qt::Core::QAbstractItemModel/;
 
@@ -80,6 +80,8 @@ Qt::Gui::QFileSystemModel
 =item  bool isReadOnly()
 
 =item  QDateTime lastModified(const QModelIndex & index)
+
+=item  QMimeData * mimeData(const QList<QModelIndex> & indexes)
 
 =item  QStringList mimeTypes()
 

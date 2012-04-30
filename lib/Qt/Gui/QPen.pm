@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -49,6 +49,8 @@ Qt::Gui::QPen
 
 =item  qreal dashOffset()
 
+=item  QVector<qreal> dashPattern()
+
 =item  QPenPrivate * & data_ptr()
 
 =item  bool isCosmetic()
@@ -78,6 +80,8 @@ Qt::Gui::QPen
 =item  void setCosmetic(bool cosmetic)
 
 =item  void setDashOffset(qreal doffset)
+
+=item  void setDashPattern(const QVector<qreal> & pattern)
 
 =item  void setJoinStyle(Qt::PenJoinStyle pcs)
 

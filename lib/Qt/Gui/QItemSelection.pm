@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -29,6 +29,8 @@ Qt::Gui::QItemSelection
 
 =item  bool contains(const QModelIndex & index)
 
+=item  QList<QModelIndex> indexes()
+
 =item  void merge(const QItemSelection & other, QFlags<QItemSelectionModel::SelectionFlag> command)
 
 =item  void select(const QModelIndex & topLeft, const QModelIndex & bottomRight)
@@ -37,7 +39,7 @@ Qt::Gui::QItemSelection
 
 =item  void append(const QItemSelectionRange & t)
 
-=item  const QItemSelectionRange & at(int i)
+=item  void append(const QList<QItemSelectionRange> & t)
 
 =item  void clear()
 
@@ -57,13 +59,19 @@ Qt::Gui::QItemSelection
 
 =item  bool isEmpty()
 
+=item  bool isSharedWith(const QList<QItemSelectionRange> & other)
+
 =item  int lastIndexOf(const QItemSelectionRange & t, int from)
 
 =item  int lastIndexOf(const QItemSelectionRange & t, int from = -1)
 
 =item  void move(int from, int to)
 
-=item  const QItemSelectionRange & operator[](int i)
+=item  bool operator!=(const QList<QItemSelectionRange> & l)
+
+=item  bool operator==(const QList<QItemSelectionRange> & l)
+
+=item  QItemSelectionRange & operator[](int i)
 
 =item  void prepend(const QItemSelectionRange & t)
 

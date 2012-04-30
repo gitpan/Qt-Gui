@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QWidget/;
 #our @ISA = qw/Qt::Gui::QWidget/;
 
@@ -70,6 +70,12 @@ Qt::Gui::QMenu
 =item  QAction * exec(const QPoint & pos, QAction * at)
 
 =item  QAction * exec(const QPoint & pos, QAction * at = 0)
+
+=item  static QAction * exec(QList<QAction *> actions, const QPoint & pos, QAction * at)
+
+=item  static QAction * exec(QList<QAction *> actions, const QPoint & pos, QAction * at = 0)
+
+=item  static QAction * exec(QList<QAction *> actions, const QPoint & pos, QAction * at, QWidget * parent)
 
 =item  void hideTearOffMenu()
 

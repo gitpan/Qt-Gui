@@ -223,6 +223,57 @@ typedef bool (*T_FPOINTER_QINTERNALCALLBACK_QNAMESPACE)(void **);
 typedef void (*T_FPOINTER_ROOTOBJECTHANDLER_QACCESSIBLE)(QObject*);
 typedef void (*T_FPOINTER_UPDATEHANDLER_QACCESSIBLE)(QObject*,int who,QAccessible::Event reason);
 typedef QAccessibleInterface * (*T_FPOINTER_INTERFACEFACTORY_QACCESSIBLE)(const QString &key,QObject*);
+typedef QList<QStandardItem *> T000;
+typedef QList<QByteArray> T001;
+typedef QList<QAbstractButton *> T002;
+typedef QList<QModelIndex> T003;
+typedef QList<QWidget *> T004;
+typedef QList<int> T005;
+typedef QVector<QPointF> T006;
+typedef QList<QWizard::WizardButton> T007;
+typedef QVector<QRect> T008;
+typedef QList<QGraphicsItem *> T009;
+typedef QList<QGraphicsTransform *> T010;
+typedef QVector<qreal> T011;
+typedef QList<QAction *> T012;
+typedef QMap<int,QVariant> T013;
+typedef QList<QTextLayout::FormatRange> T014;
+typedef QVector<QTextLayout::FormatRange> T015;
+typedef QVector<QTextLength> T016;
+typedef QMap<QDate,QTextCharFormat> T017;
+typedef QList<QTextEdit::ExtraSelection> T018;
+typedef QVector<QPoint> T019;
+typedef QList<QTreeWidgetItem *> T020;
+typedef QList<QFontDatabase::WritingSystem> T021;
+typedef QList<QItemSelectionRange> T022;
+typedef QList<QTextOption::Tab> T023;
+typedef QList<QTableWidgetSelectionRange> T024;
+typedef QList<QTableWidgetItem *> T025;
+typedef QList<QListWidgetItem *> T026;
+typedef QList<QUndoStack *> T027;
+typedef QList<QUrl> T028;
+typedef QList<QKeySequence> T029;
+typedef QList<QRectF> T030;
+typedef QList<QMdiSubWindow *> T031;
+typedef QList<QPrinter::PageSize> T032;
+typedef QList<QPrinterInfo> T033;
+typedef QPair<qreal,QPointF> T034;
+typedef QList<QPair<qreal,QPointF> > T035;
+typedef QPair<qreal,qreal> T036;
+typedef QList<QPair<qreal,qreal> > T037;
+typedef QList<QGraphicsWidget *> T038;
+typedef QList<QGraphicsView *> T039;
+typedef QVector<unsigned int> T040;
+typedef QList<QImageTextKeyLang> T041;
+typedef QList<QDockWidget *> T042;
+typedef QList<QTextFrame *> T043;
+typedef QPair<qreal,QColor> T044;
+typedef QVector<QPair<qreal,QColor> > T045;
+typedef QHash<int,QByteArray> T046;
+typedef QVector<QTextFormat> T047;
+typedef QList<QGesture *> T048;
+typedef QList<QSize> T049;
+typedef QVector<QColor> T050;
 
 MODULE = Qt		PACKAGE = Qt
 PROTOTYPES: DISABLE
@@ -608,3 +659,54 @@ INCLUDE:		xs/QWindowStateChangeEvent.xs
 INCLUDE:		xs/QWizard.xs
 INCLUDE:		xs/QWizardPage.xs
 INCLUDE:		xs/QWorkspace.xs
+INCLUDE:		xs/T000.xs
+INCLUDE:		xs/T001.xs
+INCLUDE:		xs/T002.xs
+INCLUDE:		xs/T003.xs
+INCLUDE:		xs/T004.xs
+INCLUDE:		xs/T005.xs
+INCLUDE:		xs/T006.xs
+INCLUDE:		xs/T007.xs
+INCLUDE:		xs/T008.xs
+INCLUDE:		xs/T009.xs
+INCLUDE:		xs/T010.xs
+INCLUDE:		xs/T011.xs
+INCLUDE:		xs/T012.xs
+INCLUDE:		xs/T013.xs
+INCLUDE:		xs/T014.xs
+INCLUDE:		xs/T015.xs
+INCLUDE:		xs/T016.xs
+INCLUDE:		xs/T017.xs
+INCLUDE:		xs/T018.xs
+INCLUDE:		xs/T019.xs
+INCLUDE:		xs/T020.xs
+INCLUDE:		xs/T021.xs
+INCLUDE:		xs/T022.xs
+INCLUDE:		xs/T023.xs
+INCLUDE:		xs/T024.xs
+INCLUDE:		xs/T025.xs
+INCLUDE:		xs/T026.xs
+INCLUDE:		xs/T027.xs
+INCLUDE:		xs/T028.xs
+INCLUDE:		xs/T029.xs
+INCLUDE:		xs/T030.xs
+INCLUDE:		xs/T031.xs
+INCLUDE:		xs/T032.xs
+INCLUDE:		xs/T033.xs
+INCLUDE:		xs/T034.xs
+INCLUDE:		xs/T035.xs
+INCLUDE:		xs/T036.xs
+INCLUDE:		xs/T037.xs
+INCLUDE:		xs/T038.xs
+INCLUDE:		xs/T039.xs
+INCLUDE:		xs/T040.xs
+INCLUDE:		xs/T041.xs
+INCLUDE:		xs/T042.xs
+INCLUDE:		xs/T043.xs
+INCLUDE:		xs/T044.xs
+INCLUDE:		xs/T045.xs
+INCLUDE:		xs/T046.xs
+INCLUDE:		xs/T047.xs
+INCLUDE:		xs/T048.xs
+INCLUDE:		xs/T049.xs
+INCLUDE:		xs/T050.xs

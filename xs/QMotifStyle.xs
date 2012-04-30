@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -108,7 +108,7 @@ PPCODE:
       }
       case 5:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOptionComplex") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QPainter") || ST(3) == &PL_sv_undef) && (sv_derived_from(ST(4), "Qt::Gui::QWidget") || ST(4) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOptionComplex") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QPainter") || ST(3) == &PL_sv_undef) && sv_isobject(ST(4))) {
       arg00 = (QStyle::ComplexControl)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOptionComplex")) {
         arg01 = reinterpret_cast<QStyleOptionComplex *>(SvIV((SV*)SvRV(ST(2))));
@@ -126,14 +126,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg02 is not of type Qt::Gui::QPainter");
-      if (sv_derived_from(ST(4), "Qt::Gui::QWidget")) {
-        arg03 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(4))));
-    }
-    else if (ST(4) == &PL_sv_undef) {
-        arg03 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg03 is not of type Qt::Gui::QWidget");
+      arg03 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(4))));
     (void)THIS->drawComplexControl(arg00, arg01, arg02, arg03);
     XSRETURN(0);
     }
@@ -190,7 +183,7 @@ PPCODE:
       }
       case 5:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QPainter") || ST(3) == &PL_sv_undef) && (sv_derived_from(ST(4), "Qt::Gui::QWidget") || ST(4) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QPainter") || ST(3) == &PL_sv_undef) && sv_isobject(ST(4))) {
       arg00 = (QStyle::ControlElement)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOption")) {
         arg01 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(2))));
@@ -208,14 +201,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg02 is not of type Qt::Gui::QPainter");
-      if (sv_derived_from(ST(4), "Qt::Gui::QWidget")) {
-        arg03 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(4))));
-    }
-    else if (ST(4) == &PL_sv_undef) {
-        arg03 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg03 is not of type Qt::Gui::QWidget");
+      arg03 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(4))));
     (void)THIS->drawControl(arg00, arg01, arg02, arg03);
     XSRETURN(0);
     }
@@ -272,7 +258,7 @@ PPCODE:
       }
       case 5:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QPainter") || ST(3) == &PL_sv_undef) && (sv_derived_from(ST(4), "Qt::Gui::QWidget") || ST(4) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QPainter") || ST(3) == &PL_sv_undef) && sv_isobject(ST(4))) {
       arg00 = (QStyle::PrimitiveElement)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOption")) {
         arg01 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(2))));
@@ -290,14 +276,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg02 is not of type Qt::Gui::QPainter");
-      if (sv_derived_from(ST(4), "Qt::Gui::QWidget")) {
-        arg03 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(4))));
-    }
-    else if (ST(4) == &PL_sv_undef) {
-        arg03 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg03 is not of type Qt::Gui::QWidget");
+      arg03 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(4))));
     (void)THIS->drawPrimitive(arg00, arg01, arg02, arg03);
     XSRETURN(0);
     }
@@ -384,7 +363,7 @@ PPCODE:
       }
       case 4:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && sv_isobject(ST(3))) {
       arg00 = (QStyle::PixelMetric)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOption")) {
         arg01 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(2))));
@@ -394,14 +373,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStyleOption");
-      if (sv_derived_from(ST(3), "Qt::Gui::QWidget")) {
-        arg02 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else if (ST(3) == &PL_sv_undef) {
-        arg02 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Gui::QWidget");
+      arg02 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(3))));
     int ret = THIS->pixelMetric(arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -518,7 +490,7 @@ PPCODE:
       }
       case 5:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && sv_isa(ST(3), "Qt::Core::QSize") && (sv_derived_from(ST(4), "Qt::Gui::QWidget") || ST(4) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && sv_isa(ST(3), "Qt::Core::QSize") && sv_isobject(ST(4))) {
       arg00 = (QStyle::ContentsType)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOption")) {
         arg01 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(2))));
@@ -529,14 +501,7 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStyleOption");
       arg02 = reinterpret_cast<QSize *>(SvIV((SV*)SvRV(ST(3))));
-      if (sv_derived_from(ST(4), "Qt::Gui::QWidget")) {
-        arg03 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(4))));
-    }
-    else if (ST(4) == &PL_sv_undef) {
-        arg03 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg03 is not of type Qt::Gui::QWidget");
+      arg03 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(4))));
     QSize ret = THIS->sizeFromContents(arg00, arg01, *arg02, arg03);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
@@ -600,7 +565,7 @@ PPCODE:
       }
       case 4:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && sv_isobject(ST(3))) {
       arg00 = (QStyle::StandardPixmap)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOption")) {
         arg01 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(2))));
@@ -610,14 +575,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStyleOption");
-      if (sv_derived_from(ST(3), "Qt::Gui::QWidget")) {
-        arg02 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else if (ST(3) == &PL_sv_undef) {
-        arg02 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Gui::QWidget");
+      arg02 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(3))));
     QPixmap ret = THIS->standardPixmap(arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPixmap", (void *)new QPixmap(ret));
@@ -693,7 +651,7 @@ PPCODE:
       }
       case 4:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && sv_isobject(ST(3))) {
       arg10 = (QStyle::StyleHint)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOption")) {
         arg11 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(2))));
@@ -703,14 +661,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg11 is not of type Qt::Gui::QStyleOption");
-      if (sv_derived_from(ST(3), "Qt::Gui::QWidget")) {
-        arg12 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else if (ST(3) == &PL_sv_undef) {
-        arg12 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg12 is not of type Qt::Gui::QWidget");
+      arg12 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(3))));
     int ret = THIS->styleHint(arg10, arg11, arg12, arg13);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -722,7 +673,7 @@ PPCODE:
       }
       case 5:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef) && (sv_derived_from(ST(4), "Qt::Gui::QStyleHintReturn") || ST(4) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && sv_isobject(ST(3)) && (sv_derived_from(ST(4), "Qt::Gui::QStyleHintReturn") || ST(4) == &PL_sv_undef)) {
       arg00 = (QStyle::StyleHint)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOption")) {
         arg01 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(2))));
@@ -732,14 +683,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStyleOption");
-      if (sv_derived_from(ST(3), "Qt::Gui::QWidget")) {
-        arg02 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else if (ST(3) == &PL_sv_undef) {
-        arg02 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Gui::QWidget");
+      arg02 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(3))));
       if (sv_derived_from(ST(4), "Qt::Gui::QStyleHintReturn")) {
         arg03 = reinterpret_cast<QStyleHintReturn *>(SvIV((SV*)SvRV(ST(4))));
     }
@@ -801,7 +745,7 @@ PPCODE:
       }
       case 5:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOptionComplex") || ST(2) == &PL_sv_undef) && SvIOK(ST(3)) && (sv_derived_from(ST(4), "Qt::Gui::QWidget") || ST(4) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOptionComplex") || ST(2) == &PL_sv_undef) && SvIOK(ST(3)) && sv_isobject(ST(4))) {
       arg00 = (QStyle::ComplexControl)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOptionComplex")) {
         arg01 = reinterpret_cast<QStyleOptionComplex *>(SvIV((SV*)SvRV(ST(2))));
@@ -812,14 +756,7 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStyleOptionComplex");
       arg02 = (QStyle::SubControl)SvIV(ST(3));
-      if (sv_derived_from(ST(4), "Qt::Gui::QWidget")) {
-        arg03 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(4))));
-    }
-    else if (ST(4) == &PL_sv_undef) {
-        arg03 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg03 is not of type Qt::Gui::QWidget");
+      arg03 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(4))));
     QRect ret = THIS->subControlRect(arg00, arg01, arg02, arg03);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QRect", (void *)new QRect(ret));
@@ -870,7 +807,7 @@ PPCODE:
       }
       case 4:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && (sv_derived_from(ST(3), "Qt::Gui::QWidget") || ST(3) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStyleOption") || ST(2) == &PL_sv_undef) && sv_isobject(ST(3))) {
       arg00 = (QStyle::SubElement)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStyleOption")) {
         arg01 = reinterpret_cast<QStyleOption *>(SvIV((SV*)SvRV(ST(2))));
@@ -880,14 +817,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStyleOption");
-      if (sv_derived_from(ST(3), "Qt::Gui::QWidget")) {
-        arg02 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else if (ST(3) == &PL_sv_undef) {
-        arg02 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Gui::QWidget");
+      arg02 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(3))));
     QRect ret = THIS->subElementRect(arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QRect", (void *)new QRect(ret));

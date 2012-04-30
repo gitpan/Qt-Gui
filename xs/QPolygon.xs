@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -21,6 +21,7 @@ PROTOTYPES: DISABLE
 ##  QPolygon()
 ##  QPolygon(int size)
 ##  QPolygon(const QPolygon & a)
+##  QPolygon(const QVector<QPoint> & v)
 ##  QPolygon(const QRect & r, bool closed)
 ##  QPolygon(const QRect & r, bool closed = false)
 ##  QPolygon(int nPoints, const int * points)
@@ -30,12 +31,13 @@ PREINIT:
 QPolygon *ret;
 int arg10;
 QPolygon * arg20;
-QRect * arg30;
-bool arg31;
+QVector<QPoint> * arg30;
 QRect * arg40;
-bool arg41 = false;
-int arg50;
-const int * arg51;
+bool arg41;
+QRect * arg50;
+bool arg51 = false;
+int arg60;
+const int * arg61;
 PPCODE:
     switch(items) {
       case 1:
@@ -65,9 +67,16 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::Gui::QPolygon", (void *)ret);
     XSRETURN(1);
     }
+        else if (sv_isa(ST(1), "Qt::Gui::Template::T019")) {
+      arg30 = reinterpret_cast<QVector<QPoint> *>(SvIV((SV*)SvRV(ST(1))));
+    ret = new QPolygon(*arg30);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QPolygon", (void *)ret);
+    XSRETURN(1);
+    }
         else if (sv_isa(ST(1), "Qt::Core::QRect")) {
-      arg40 = reinterpret_cast<QRect *>(SvIV((SV*)SvRV(ST(1))));
-    ret = new QPolygon(*arg40, arg41);
+      arg50 = reinterpret_cast<QRect *>(SvIV((SV*)SvRV(ST(1))));
+    ret = new QPolygon(*arg50, arg51);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPolygon", (void *)ret);
     XSRETURN(1);
@@ -79,20 +88,20 @@ PPCODE:
       case 3:
       {
         if (sv_isa(ST(1), "Qt::Core::QRect") && 1) {
-      arg30 = reinterpret_cast<QRect *>(SvIV((SV*)SvRV(ST(1))));
-      arg31 = (bool)SvTRUE(ST(2));
-    ret = new QPolygon(*arg30, arg31);
+      arg40 = reinterpret_cast<QRect *>(SvIV((SV*)SvRV(ST(1))));
+      arg41 = (bool)SvTRUE(ST(2));
+    ret = new QPolygon(*arg40, arg41);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPolygon", (void *)ret);
     XSRETURN(1);
     }
         else if (SvIOK(ST(1)) && SvIOK(ST(2))) {
-      arg50 = (int)SvIV(ST(1));
+      arg60 = (int)SvIV(ST(1));
       {
         int tmp = static_cast<int>(SvIV(ST(2)));
-        arg51 = &tmp;
+        arg61 = &tmp;
     }
-    ret = new QPolygon(arg50, arg51);
+    ret = new QPolygon(arg60, arg61);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPolygon", (void *)ret);
     XSRETURN(1);
@@ -447,7 +456,7 @@ PPCODE:
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -478,20 +487,6 @@ PPCODE:
       arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->append(*arg00);
     XSRETURN(0);
-    }
-
-## const QPoint & at(int i)
-void
-QPolygon::at(...)
-PREINIT:
-int arg00;
-PPCODE:
-    if (SvIOK(ST(1))) {
-      arg00 = (int)SvIV(ST(1));
-    const QPoint * ret = &THIS->at(arg00);
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Core::QPoint", (void *)ret);
-    XSRETURN(1);
     }
 
 ## int capacity()
@@ -581,6 +576,49 @@ PPCODE:
       
     (void)THIS->detach();
     XSRETURN(0);
+    }
+
+## QVector<QPoint> & fill(const QPoint & t, int size)
+## QVector<QPoint> & fill(const QPoint & t, int size = -1)
+void
+QPolygon::fill(...)
+PREINIT:
+QPoint * arg00;
+int arg01;
+QPoint * arg10;
+int arg11 = -1;
+PPCODE:
+    switch(items) {
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QPoint")) {
+      arg10 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
+    QVector<QPoint> * ret = &THIS->fill(*arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T019", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 3:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QPoint") && SvIOK(ST(2))) {
+      arg00 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = (int)SvIV(ST(2));
+    QVector<QPoint> * ret = &THIS->fill(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T019", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## int indexOf(const QPoint & t, int from)
@@ -694,6 +732,20 @@ PPCODE:
     XSRETURN(1);
     }
 
+## bool isSharedWith(const QVector<QPoint> & other)
+void
+QPolygon::isSharedWith(...)
+PREINIT:
+QVector<QPoint> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T019")) {
+      arg00 = reinterpret_cast<QVector<QPoint> *>(SvIV((SV*)SvRV(ST(1))));
+    bool ret = THIS->isSharedWith(*arg00);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+
 ## int lastIndexOf(const QPoint & t, int from)
 ## int lastIndexOf(const QPoint & t, int from = -1)
 void
@@ -735,6 +787,48 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## bool operator!=(const QVector<QPoint> & v)
+void
+QPolygon::operator_not_equal(...)
+PREINIT:
+QVector<QPoint> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T019")) {
+      arg00 = reinterpret_cast<QVector<QPoint> *>(SvIV((SV*)SvRV(ST(1))));
+    bool ret = THIS->operator!=(*arg00);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+
+## QVector<QPoint> & operator=(const QVector<QPoint> & v)
+void
+QPolygon::operator_assign(...)
+PREINIT:
+QVector<QPoint> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T019")) {
+      arg00 = reinterpret_cast<QVector<QPoint> *>(SvIV((SV*)SvRV(ST(1))));
+    QVector<QPoint> * ret = &THIS->operator=(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T019", (void *)ret);
+    XSRETURN(1);
+    }
+
+## bool operator==(const QVector<QPoint> & v)
+void
+QPolygon::operator_equal_to(...)
+PREINIT:
+QVector<QPoint> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T019")) {
+      arg00 = reinterpret_cast<QVector<QPoint> *>(SvIV((SV*)SvRV(ST(1))));
+    bool ret = THIS->operator==(*arg00);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
     }
 
 ## const QPoint & operator[](int i)

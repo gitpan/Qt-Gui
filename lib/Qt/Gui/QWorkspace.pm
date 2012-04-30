@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QWidget/;
 #our @ISA = qw/Qt::Gui::QWidget/;
 
@@ -62,6 +62,10 @@ Qt::Gui::QWorkspace
 =item  QSize sizeHint()
 
 =item  void tile()
+
+=item  QList<QWidget *> windowList(QWorkspace::WindowOrder order)
+
+=item  QList<QWidget *> windowList(QWorkspace::WindowOrder order = QWorkspace::CreationOrder)
 
 
 =back

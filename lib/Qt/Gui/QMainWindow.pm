@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QWidget/;
 #our @ISA = qw/Qt::Gui::QWidget/;
 
@@ -126,6 +126,8 @@ Qt::Gui::QMainWindow
 =item  QTabWidget::TabPosition tabPosition(Qt::DockWidgetArea area)
 
 =item  QTabWidget::TabShape tabShape()
+
+=item  QList<QDockWidget *> tabifiedDockWidgets(QDockWidget * dockwidget)
 
 =item  void tabifyDockWidget(QDockWidget * first, QDockWidget * second)
 

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -36,6 +36,8 @@ Qt::Gui::QTextDocument
 =item  void addResource(int type, const QUrl & name, const QVariant & resource)
 
 =item  void adjustSize()
+
+=item  QVector<QTextFormat> allFormats()
 
 =item  void appendUndoItem(QAbstractUndoItem * arg0)
 

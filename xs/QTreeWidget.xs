@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -90,6 +90,18 @@ PPCODE:
     XSRETURN(0);
     }
 
+## void addTopLevelItems(const QList<QTreeWidgetItem *> & items)
+void
+QTreeWidget::addTopLevelItems(...)
+PREINIT:
+QList<QTreeWidgetItem *> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T020")) {
+      arg00 = reinterpret_cast<QList<QTreeWidgetItem *> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->addTopLevelItems(*arg00);
+    XSRETURN(0);
+    }
+
 ## void clear()
 void
 QTreeWidget::clear(...)
@@ -160,15 +172,8 @@ QTreeWidget::collapseItem(...)
 PREINIT:
 const QTreeWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->collapseItem(arg00);
     XSRETURN(0);
     }
@@ -271,17 +276,57 @@ QTreeWidget::expandItem(...)
 PREINIT:
 const QTreeWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->expandItem(arg00);
     XSRETURN(0);
+    }
+
+## QList<QTreeWidgetItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags, int column)
+## QList<QTreeWidgetItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags, int column = 0)
+void
+QTreeWidget::findItems(...)
+PREINIT:
+QString * arg00;
+QFlags<Qt::MatchFlag> arg01;
+int arg02;
+QString * arg10;
+QFlags<Qt::MatchFlag> arg11;
+int arg12 = 0;
+PPCODE:
+    switch(items) {
+      case 3:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2))) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg11 = QFlags<Qt::MatchFlag>((Qt::MatchFlag)SvIV(ST(2)));
+    QList<QTreeWidgetItem *> ret = THIS->findItems(*arg10, arg11, arg12);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T020", (void *)new QList<QTreeWidgetItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 4:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = QFlags<Qt::MatchFlag>((Qt::MatchFlag)SvIV(ST(2)));
+      arg02 = (int)SvIV(ST(3));
+    QList<QTreeWidgetItem *> ret = THIS->findItems(*arg00, arg01, arg02);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T020", (void *)new QList<QTreeWidgetItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## QTreeWidgetItem * headerItem()
@@ -366,6 +411,20 @@ PPCODE:
     XSRETURN(0);
     }
 
+## void insertTopLevelItems(int index, const QList<QTreeWidgetItem *> & items)
+void
+QTreeWidget::insertTopLevelItems(...)
+PREINIT:
+int arg00;
+QList<QTreeWidgetItem *> * arg01;
+PPCODE:
+    if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T020")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = reinterpret_cast<QList<QTreeWidgetItem *> *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->insertTopLevelItems(arg00, *arg01);
+    XSRETURN(0);
+    }
+
 ## QTreeWidgetItem * invisibleRootItem()
 void
 QTreeWidget::invisibleRootItem(...)
@@ -385,15 +444,8 @@ QTreeWidget::isFirstItemColumnSpanned(...)
 PREINIT:
 const QTreeWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->isFirstItemColumnSpanned(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -406,15 +458,8 @@ QTreeWidget::isItemExpanded(...)
 PREINIT:
 const QTreeWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->isItemExpanded(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -427,15 +472,8 @@ QTreeWidget::isItemHidden(...)
 PREINIT:
 const QTreeWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->isItemHidden(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -448,15 +486,8 @@ QTreeWidget::isItemSelected(...)
 PREINIT:
 const QTreeWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->isItemSelected(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -482,15 +513,8 @@ QTreeWidget::itemAbove(...)
 PREINIT:
 const QTreeWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     QTreeWidgetItem * ret = THIS->itemAbove(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTreeWidgetItem", (void *)ret);
@@ -545,15 +569,8 @@ QTreeWidget::itemBelow(...)
 PREINIT:
 const QTreeWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     QTreeWidgetItem * ret = THIS->itemBelow(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTreeWidgetItem", (void *)ret);
@@ -670,15 +687,8 @@ PPCODE:
     switch(items) {
       case 2:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg10 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg10 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QTreeWidgetItem");
+        if (sv_isobject(ST(1))) {
+      arg10 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->scrollToItem(arg10, arg11);
     XSRETURN(0);
     }
@@ -688,15 +698,8 @@ PPCODE:
       }
       case 3:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef) && SvIOK(ST(2))) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+        if (sv_isobject(ST(1)) && SvIOK(ST(2))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (QAbstractItemView::ScrollHint)SvIV(ST(2));
     (void)THIS->scrollToItem(arg00, arg01);
     XSRETURN(0);
@@ -708,6 +711,19 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## QList<QTreeWidgetItem *> selectedItems()
+void
+QTreeWidget::selectedItems(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QTreeWidgetItem *> ret = THIS->selectedItems();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T020", (void *)new QList<QTreeWidgetItem *>(ret));
+    XSRETURN(1);
     }
 
 ## void setColumnCount(int columns)
@@ -805,15 +821,8 @@ PREINIT:
 const QTreeWidgetItem * arg00;
 bool arg01;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef) && 1) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1)) && 1) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (bool)SvTRUE(ST(2));
     (void)THIS->setFirstItemColumnSpanned(arg00, arg01);
     XSRETURN(0);
@@ -869,15 +878,8 @@ PREINIT:
 const QTreeWidgetItem * arg00;
 bool arg01;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef) && 1) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1)) && 1) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (bool)SvTRUE(ST(2));
     (void)THIS->setItemExpanded(arg00, arg01);
     XSRETURN(0);
@@ -890,15 +892,8 @@ PREINIT:
 const QTreeWidgetItem * arg00;
 bool arg01;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef) && 1) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1)) && 1) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (bool)SvTRUE(ST(2));
     (void)THIS->setItemHidden(arg00, arg01);
     XSRETURN(0);
@@ -911,15 +906,8 @@ PREINIT:
 const QTreeWidgetItem * arg00;
 bool arg01;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef) && 1) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1)) && 1) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (bool)SvTRUE(ST(2));
     (void)THIS->setItemSelected(arg00, arg01);
     XSRETURN(0);
@@ -1060,15 +1048,8 @@ QTreeWidget::visualItemRect(...)
 PREINIT:
 const QTreeWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTreeWidgetItem")) {
-        arg00 = reinterpret_cast<QTreeWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTreeWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTreeWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     QRect ret = THIS->visualItemRect(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QRect", (void *)new QRect(ret));

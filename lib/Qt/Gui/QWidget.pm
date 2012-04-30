@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QPaintDevice/;
 #our @ISA = qw/Qt::Gui::QPaintDevice/;
 
@@ -39,9 +39,13 @@ Qt::Gui::QWidget
 
 =item  QString accessibleName()
 
+=item  QList<QAction *> actions()
+
 =item  void activateWindow()
 
 =item  void addAction(QAction * action)
+
+=item  void addActions(QList<QAction *> actions)
 
 =item  void adjustSize()
 
@@ -142,6 +146,8 @@ Qt::Gui::QWidget
 =item  QVariant inputMethodQuery(Qt::InputMethodQuery arg0)
 
 =item  void insertAction(QAction * before, QAction * action)
+
+=item  void insertActions(QAction * before, QList<QAction *> actions)
 
 =item  unsigned long internalWinId()
 

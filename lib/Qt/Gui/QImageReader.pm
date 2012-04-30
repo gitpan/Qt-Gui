@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -106,6 +106,8 @@ Qt::Gui::QImageReader
 =item  void setScaledSize(const QSize & size)
 
 =item  QSize size()
+
+=item  static QList<QByteArray> supportedImageFormats()
 
 =item  bool supportsAnimation()
 

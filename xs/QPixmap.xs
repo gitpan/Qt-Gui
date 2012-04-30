@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -454,15 +454,8 @@ PPCODE:
       }
       case 3:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Core::QPoint")) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg20 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg20 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg20 is not of type Qt::Gui::QWidget");
+        if (sv_isobject(ST(1)) && sv_isa(ST(2), "Qt::Core::QPoint")) {
+      arg20 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(1))));
       arg21 = reinterpret_cast<QPoint *>(SvIV((SV*)SvRV(ST(2))));
     (void)THIS->fill(arg20, *arg21);
     XSRETURN(0);
@@ -473,15 +466,8 @@ PPCODE:
       }
       case 4:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef) && SvIOK(ST(2)) && SvIOK(ST(3))) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg30 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg30 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg30 is not of type Qt::Gui::QWidget");
+        if (sv_isobject(ST(1)) && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg30 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(1))));
       arg31 = (int)SvIV(ST(2));
       arg32 = (int)SvIV(ST(3));
     (void)THIS->fill(arg30, arg31, arg32);

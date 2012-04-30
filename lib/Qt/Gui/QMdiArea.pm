@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QAbstractScrollArea/;
 #our @ISA = qw/Qt::Gui::QAbstractScrollArea/;
 
@@ -78,6 +78,10 @@ Qt::Gui::QMdiArea
 =item  void setViewMode(QMdiArea::ViewMode mode)
 
 =item  QSize sizeHint()
+
+=item  QList<QMdiSubWindow *> subWindowList(QMdiArea::WindowOrder order)
+
+=item  QList<QMdiSubWindow *> subWindowList(QMdiArea::WindowOrder order = QMdiArea::CreationOrder)
 
 =item  QTabWidget::TabPosition tabPosition()
 

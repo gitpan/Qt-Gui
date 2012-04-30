@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -73,6 +73,8 @@ Qt::Gui::QTextFormat
 
 =item  QTextLength lengthProperty(int propertyId)
 
+=item  QVector<QTextLength> lengthVectorProperty(int propertyId)
+
 =item  void merge(const QTextFormat & other)
 
 =item  int objectIndex()
@@ -89,6 +91,8 @@ Qt::Gui::QTextFormat
 
 =item  QPen penProperty(int propertyId)
 
+=item  QMap<int,QVariant> properties()
+
 =item  QVariant property(int propertyId)
 
 =item  int propertyCount()
@@ -104,6 +108,8 @@ Qt::Gui::QTextFormat
 =item  void setObjectType(int type)
 
 =item  void setProperty(int propertyId, const QVariant & value)
+
+=item  void setProperty(int propertyId, const QVector<QTextLength> & lengths)
 
 =item  QString stringProperty(int propertyId)
 

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -26,6 +26,8 @@ Qt::Gui::QActionGroup
 =item   QActionGroup(QObject * parent)
 
 =item   ~QActionGroup()
+
+=item  QList<QAction *> actions()
 
 =item  QAction * addAction(QAction * a)
 

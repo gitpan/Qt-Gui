@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -227,6 +227,22 @@ PPCODE:
     XSRETURN(0);
     }
 
+## QList<QListWidgetItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags)
+void
+QListWidget::findItems(...)
+PREINIT:
+QString * arg00;
+QFlags<Qt::MatchFlag> arg01;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2))) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = QFlags<Qt::MatchFlag>((Qt::MatchFlag)SvIV(ST(2)));
+    QList<QListWidgetItem *> ret = THIS->findItems(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T026", (void *)new QList<QListWidgetItem *>(ret));
+    XSRETURN(1);
+    }
+
 ## void insertItem(int row, QListWidgetItem * item)
 ## void insertItem(int row, const QString & label)
 void
@@ -288,15 +304,8 @@ QListWidget::isItemHidden(...)
 PREINIT:
 const QListWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem")) {
-        arg00 = reinterpret_cast<QListWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QListWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QListWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->isItemHidden(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -309,15 +318,8 @@ QListWidget::isItemSelected(...)
 PREINIT:
 const QListWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem")) {
-        arg00 = reinterpret_cast<QListWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QListWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QListWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->isItemSelected(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -458,15 +460,8 @@ QListWidget::row(...)
 PREINIT:
 const QListWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem")) {
-        arg00 = reinterpret_cast<QListWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QListWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QListWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     int ret = THIS->row(arg00);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -486,15 +481,8 @@ PPCODE:
     switch(items) {
       case 2:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem")) {
-        arg10 = reinterpret_cast<QListWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg10 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QListWidgetItem");
+        if (sv_isobject(ST(1))) {
+      arg10 = *reinterpret_cast<QListWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->scrollToItem(arg10, arg11);
     XSRETURN(0);
     }
@@ -504,15 +492,8 @@ PPCODE:
       }
       case 3:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem") || ST(1) == &PL_sv_undef) && SvIOK(ST(2))) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem")) {
-        arg00 = reinterpret_cast<QListWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QListWidgetItem");
+        if (sv_isobject(ST(1)) && SvIOK(ST(2))) {
+      arg00 = *reinterpret_cast<QListWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (QAbstractItemView::ScrollHint)SvIV(ST(2));
     (void)THIS->scrollToItem(arg00, arg01);
     XSRETURN(0);
@@ -524,6 +505,19 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## QList<QListWidgetItem *> selectedItems()
+void
+QListWidget::selectedItems(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QListWidgetItem *> ret = THIS->selectedItems();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T026", (void *)new QList<QListWidgetItem *>(ret));
+    XSRETURN(1);
     }
 
 ## void setCurrentItem(QListWidgetItem * item)
@@ -623,15 +617,8 @@ PREINIT:
 const QListWidgetItem * arg00;
 bool arg01;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem") || ST(1) == &PL_sv_undef) && 1) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem")) {
-        arg00 = reinterpret_cast<QListWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QListWidgetItem");
+    if (sv_isobject(ST(1)) && 1) {
+      arg00 = *reinterpret_cast<QListWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (bool)SvTRUE(ST(2));
     (void)THIS->setItemHidden(arg00, arg01);
     XSRETURN(0);
@@ -644,15 +631,8 @@ PREINIT:
 const QListWidgetItem * arg00;
 bool arg01;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem") || ST(1) == &PL_sv_undef) && 1) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem")) {
-        arg00 = reinterpret_cast<QListWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QListWidgetItem");
+    if (sv_isobject(ST(1)) && 1) {
+      arg00 = *reinterpret_cast<QListWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (bool)SvTRUE(ST(2));
     (void)THIS->setItemSelected(arg00, arg01);
     XSRETURN(0);
@@ -752,15 +732,8 @@ QListWidget::visualItemRect(...)
 PREINIT:
 const QListWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QListWidgetItem")) {
-        arg00 = reinterpret_cast<QListWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QListWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QListWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     QRect ret = THIS->visualItemRect(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QRect", (void *)new QRect(ret));

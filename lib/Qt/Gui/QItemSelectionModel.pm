@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -54,6 +54,16 @@ Qt::Gui::QItemSelectionModel
 =item  void select(const QModelIndex & index, QFlags<QItemSelectionModel::SelectionFlag> command)
 
 =item  void select(const QItemSelection & selection, QFlags<QItemSelectionModel::SelectionFlag> command)
+
+=item  QList<QModelIndex> selectedColumns(int row)
+
+=item  QList<QModelIndex> selectedColumns(int row = 0)
+
+=item  QList<QModelIndex> selectedIndexes()
+
+=item  QList<QModelIndex> selectedRows(int column)
+
+=item  QList<QModelIndex> selectedRows(int column = 0)
 
 =item  const QItemSelection selection()
 

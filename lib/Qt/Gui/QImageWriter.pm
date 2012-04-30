@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -68,6 +68,8 @@ Qt::Gui::QImageWriter
 =item  void setQuality(int quality)
 
 =item  void setText(const QString & key, const QString & text)
+
+=item  static QList<QByteArray> supportedImageFormats()
 
 =item  bool supportsOption(QImageIOHandler::ImageOption option)
 

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QAbstractItemView/;
 #our @ISA = qw/Qt::Gui::QAbstractItemView/;
 
@@ -31,6 +31,8 @@ Qt::Gui::QColumnView
 
 =item   ~QColumnView()
 
+=item  QList<int> columnWidths()
+
 =item  QModelIndex indexAt(const QPoint & point)
 
 =item  QWidget * previewWidget()
@@ -42,6 +44,8 @@ Qt::Gui::QColumnView
 =item  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
 
 =item  void selectAll()
+
+=item  void setColumnWidths(const QList<int> & list)
 
 =item  void setModel(QAbstractItemModel * model)
 

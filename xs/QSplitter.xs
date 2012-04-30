@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -416,6 +416,18 @@ PPCODE:
     XSRETURN(0);
     }
 
+## void setSizes(const QList<int> & list)
+void
+QSplitter::setSizes(...)
+PREINIT:
+QList<int> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T005")) {
+      arg00 = reinterpret_cast<QList<int> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setSizes(*arg00);
+    XSRETURN(0);
+    }
+
 ## void setStretchFactor(int index, int stretch)
 void
 QSplitter::setStretchFactor(...)
@@ -440,6 +452,19 @@ PPCODE:
     QSize ret = THIS->sizeHint();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QSize", (void *)new QSize(ret));
+    XSRETURN(1);
+    }
+
+## QList<int> sizes()
+void
+QSplitter::sizes(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<int> ret = THIS->sizes();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T005", (void *)new QList<int>(ret));
     XSRETURN(1);
     }
 

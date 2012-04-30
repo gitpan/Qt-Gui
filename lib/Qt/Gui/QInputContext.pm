@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -28,6 +28,8 @@ Qt::Gui::QInputContext
 =item   QInputContext(QObject * parent = 0)
 
 =item   ~QInputContext()
+
+=item  QList<QAction *> actions()
 
 =item  bool filterEvent(const QEvent * event)
 

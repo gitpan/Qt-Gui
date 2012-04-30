@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -306,6 +306,63 @@ PPCODE:
       arg02 = (QIcon::State)SvIV(ST(3));
     (void)THIS->addPixmap(*arg00, arg01, arg02);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
+
+## QList<QSize> availableSizes(QIcon::Mode mode, QIcon::State state)
+## QList<QSize> availableSizes(QIcon::Mode mode, QIcon::State state = QIcon::Off)
+## QList<QSize> availableSizes(QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+void
+QIcon::availableSizes(...)
+PREINIT:
+QIcon::Mode arg00;
+QIcon::State arg01;
+QIcon::Mode arg10;
+QIcon::State arg11 = QIcon::Off;
+QIcon::Mode arg20 = QIcon::Normal;
+QIcon::State arg21 = QIcon::Off;
+PPCODE:
+    switch(items) {
+      case 1:
+      {
+        if (1) {
+      
+    QList<QSize> ret = THIS->availableSizes(arg20, arg21);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T049", (void *)new QList<QSize>(ret));
+    XSRETURN(1);
+    }
+        break;
+      }
+      case 2:
+      {
+        if (SvIOK(ST(1))) {
+      arg10 = (QIcon::Mode)SvIV(ST(1));
+    QList<QSize> ret = THIS->availableSizes(arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T049", (void *)new QList<QSize>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 3:
+      {
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg00 = (QIcon::Mode)SvIV(ST(1));
+      arg01 = (QIcon::State)SvIV(ST(2));
+    QList<QSize> ret = THIS->availableSizes(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T049", (void *)new QList<QSize>(ret));
+    XSRETURN(1);
     }
 	else
             Perl_croak(aTHX_ "wrong number/type of arguments passed in");

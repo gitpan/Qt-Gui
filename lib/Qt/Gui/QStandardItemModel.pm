@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Core::QAbstractItemModel/;
 #our @ISA = qw/Qt::Core::QAbstractItemModel/;
 
@@ -35,6 +35,10 @@ Qt::Gui::QStandardItemModel
 
 =item   ~QStandardItemModel()
 
+=item  void appendColumn(const QList<QStandardItem *> & items)
+
+=item  void appendRow(const QList<QStandardItem *> & items)
+
 =item  void appendRow(QStandardItem * item)
 
 =item  void clear()
@@ -48,6 +52,12 @@ Qt::Gui::QStandardItemModel
 =item  QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
 
 =item  bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
+
+=item  QList<QStandardItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags, int column)
+
+=item  QList<QStandardItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags, int column = 0)
+
+=item  QList<QStandardItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags = Qt::MatchExactly, int column = 0)
 
 =item  QFlags<Qt::ItemFlag> flags(const QModelIndex & index)
 
@@ -67,6 +77,8 @@ Qt::Gui::QStandardItemModel
 
 =item  QModelIndex indexFromItem(const QStandardItem * item)
 
+=item  void insertColumn(int column, const QList<QStandardItem *> & items)
+
 =item  bool insertColumn(int column, const QModelIndex & parent)
 
 =item  bool insertColumn(int column, const QModelIndex & parent = QModelIndex())
@@ -74,6 +86,8 @@ Qt::Gui::QStandardItemModel
 =item  bool insertColumns(int column, int count, const QModelIndex & parent)
 
 =item  bool insertColumns(int column, int count, const QModelIndex & parent = QModelIndex())
+
+=item  void insertRow(int row, const QList<QStandardItem *> & items)
 
 =item  void insertRow(int row, QStandardItem * item)
 
@@ -91,9 +105,13 @@ Qt::Gui::QStandardItemModel
 
 =item  QStandardItem * item(int row, int column = 0)
 
+=item  QMap<int,QVariant> itemData(const QModelIndex & index)
+
 =item  QStandardItem * itemFromIndex(const QModelIndex & index)
 
 =item  const QStandardItem * itemPrototype()
+
+=item  QMimeData * mimeData(const QList<QModelIndex> & indexes)
 
 =item  QStringList mimeTypes()
 
@@ -129,6 +147,8 @@ Qt::Gui::QStandardItemModel
 
 =item  void setItem(int row, int column, QStandardItem * item)
 
+=item  bool setItemData(const QModelIndex & index, const QMap<int,QVariant> & roles)
+
 =item  void setItemPrototype(const QStandardItem * item)
 
 =item  void setRowCount(int rows)
@@ -147,11 +167,15 @@ Qt::Gui::QStandardItemModel
 
 =item  QFlags<Qt::DropAction> supportedDropActions()
 
+=item  QList<QStandardItem *> takeColumn(int column)
+
 =item  QStandardItem * takeHorizontalHeaderItem(int column)
 
 =item  QStandardItem * takeItem(int row, int column)
 
 =item  QStandardItem * takeItem(int row, int column = 0)
+
+=item  QList<QStandardItem *> takeRow(int row)
 
 =item  QStandardItem * takeVerticalHeaderItem(int row)
 

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QFrame/;
 #our @ISA = qw/Qt::Gui::QFrame/;
 
@@ -42,6 +42,8 @@ Qt::Gui::QAbstractScrollArea
 =item  QSize maximumViewportSize()
 
 =item  QSize minimumSizeHint()
+
+=item  QList<QWidget *> scrollBarWidgets(QFlags<Qt::AlignmentFlag> alignment)
 
 =item  void setCornerWidget(QWidget * widget)
 

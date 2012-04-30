@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -28,6 +28,8 @@ Qt::Gui::QPolygon
 =item   QPolygon(int size)
 
 =item   QPolygon(const QPolygon & a)
+
+=item   QPolygon(const QVector<QPoint> & v)
 
 =item   QPolygon(const QRect & r, bool closed)
 
@@ -75,8 +77,6 @@ Qt::Gui::QPolygon
 
 =item  void append(const QPoint & t)
 
-=item  const QPoint & at(int i)
-
 =item  int capacity()
 
 =item  void clear()
@@ -91,6 +91,10 @@ Qt::Gui::QPolygon
 
 =item  void detach()
 
+=item  QVector<QPoint> & fill(const QPoint & t, int size)
+
+=item  QVector<QPoint> & fill(const QPoint & t, int size = -1)
+
 =item  int indexOf(const QPoint & t, int from)
 
 =item  int indexOf(const QPoint & t, int from = 0)
@@ -103,9 +107,17 @@ Qt::Gui::QPolygon
 
 =item  bool isEmpty()
 
+=item  bool isSharedWith(const QVector<QPoint> & other)
+
 =item  int lastIndexOf(const QPoint & t, int from)
 
 =item  int lastIndexOf(const QPoint & t, int from = -1)
+
+=item  bool operator!=(const QVector<QPoint> & v)
+
+=item  QVector<QPoint> & operator=(const QVector<QPoint> & v)
+
+=item  bool operator==(const QVector<QPoint> & v)
 
 =item  const QPoint & operator[](int i)
 

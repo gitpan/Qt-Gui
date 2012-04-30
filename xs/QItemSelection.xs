@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -74,6 +74,19 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QList<QModelIndex> indexes()
+void
+QItemSelection::indexes(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QModelIndex> ret = THIS->indexes();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T003", (void *)new QList<QModelIndex>(ret));
+    XSRETURN(1);
+    }
+
 ## void merge(const QItemSelection & other, QFlags<QItemSelectionModel::SelectionFlag> command)
 void
 QItemSelection::merge(...)
@@ -127,7 +140,7 @@ PPCODE:
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -149,29 +162,33 @@ PROTOTYPES: DISABLE
 
 
 ## void append(const QItemSelectionRange & t)
+## void append(const QList<QItemSelectionRange> & t)
 void
 QItemSelection::append(...)
 PREINIT:
 QItemSelectionRange * arg00;
+QList<QItemSelectionRange> * arg10;
 PPCODE:
-    if (sv_isa(ST(1), "Qt::Gui::QItemSelectionRange")) {
+    switch(items) {
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::Gui::QItemSelectionRange")) {
       arg00 = reinterpret_cast<QItemSelectionRange *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->append(*arg00);
     XSRETURN(0);
     }
-
-## const QItemSelectionRange & at(int i)
-void
-QItemSelection::at(...)
-PREINIT:
-int arg00;
-PPCODE:
-    if (SvIOK(ST(1))) {
-      arg00 = (int)SvIV(ST(1));
-    const QItemSelectionRange * ret = &THIS->at(arg00);
-    ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Gui::QItemSelectionRange", (void *)ret);
-    XSRETURN(1);
+        else if (sv_isa(ST(1), "Qt::Gui::Template::T022")) {
+      arg10 = reinterpret_cast<QList<QItemSelectionRange> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->append(*arg10);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## void clear()
@@ -304,6 +321,20 @@ PPCODE:
     XSRETURN(1);
     }
 
+## bool isSharedWith(const QList<QItemSelectionRange> & other)
+void
+QItemSelection::isSharedWith(...)
+PREINIT:
+QList<QItemSelectionRange> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T022")) {
+      arg00 = reinterpret_cast<QList<QItemSelectionRange> *>(SvIV((SV*)SvRV(ST(1))));
+    bool ret = THIS->isSharedWith(*arg00);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+
 ## int lastIndexOf(const QItemSelectionRange & t, int from)
 ## int lastIndexOf(const QItemSelectionRange & t, int from = -1)
 void
@@ -361,7 +392,35 @@ PPCODE:
     XSRETURN(0);
     }
 
-## const QItemSelectionRange & operator[](int i)
+## bool operator!=(const QList<QItemSelectionRange> & l)
+void
+QItemSelection::operator_not_equal(...)
+PREINIT:
+QList<QItemSelectionRange> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T022")) {
+      arg00 = reinterpret_cast<QList<QItemSelectionRange> *>(SvIV((SV*)SvRV(ST(1))));
+    bool ret = THIS->operator!=(*arg00);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+
+## bool operator==(const QList<QItemSelectionRange> & l)
+void
+QItemSelection::operator_equal_to(...)
+PREINIT:
+QList<QItemSelectionRange> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T022")) {
+      arg00 = reinterpret_cast<QList<QItemSelectionRange> *>(SvIV((SV*)SvRV(ST(1))));
+    bool ret = THIS->operator==(*arg00);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+
+## QItemSelectionRange & operator[](int i)
 void
 QItemSelection::operator_array(...)
 PREINIT:
@@ -369,7 +428,7 @@ int arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
       arg00 = (int)SvIV(ST(1));
-    const QItemSelectionRange * ret = &THIS->operator[](arg00);
+    QItemSelectionRange * ret = &THIS->operator[](arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QItemSelectionRange", (void *)ret);
     XSRETURN(1);

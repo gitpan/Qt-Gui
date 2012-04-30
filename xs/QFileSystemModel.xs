@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -503,6 +503,20 @@ PPCODE:
     QDateTime ret = THIS->lastModified(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QDateTime", (void *)new QDateTime(ret));
+    XSRETURN(1);
+    }
+
+## QMimeData * mimeData(const QList<QModelIndex> & indexes)
+void
+QFileSystemModel::mimeData(...)
+PREINIT:
+QList<QModelIndex> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T003")) {
+      arg00 = reinterpret_cast<QList<QModelIndex> *>(SvIV((SV*)SvRV(ST(1))));
+    QMimeData * ret = THIS->mimeData(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Core::QMimeData", (void *)ret);
     XSRETURN(1);
     }
 

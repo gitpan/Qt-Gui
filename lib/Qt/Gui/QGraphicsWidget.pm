@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QGraphicsObject Qt::Gui::QGraphicsLayoutItem/;
 #our @ISA = qw/Qt::Gui::QGraphicsObject Qt::Gui::QGraphicsLayoutItem/;
 
@@ -33,7 +33,11 @@ Qt::Gui::QGraphicsWidget
 
 =item   ~QGraphicsWidget()
 
+=item  QList<QAction *> actions()
+
 =item  void addAction(QAction * action)
+
+=item  void addActions(QList<QAction *> actions)
 
 =item  void adjustSize()
 
@@ -58,6 +62,8 @@ Qt::Gui::QGraphicsWidget
 =item  int grabShortcut(const QKeySequence & sequence, Qt::ShortcutContext context = Qt::WindowShortcut)
 
 =item  void insertAction(QAction * before, QAction * action)
+
+=item  void insertActions(QAction * before, QList<QAction *> actions)
 
 =item  bool isActiveWindow()
 

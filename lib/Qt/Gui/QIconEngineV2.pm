@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QIconEngine/;
 #our @ISA = qw/Qt::Gui::QIconEngine/;
 
@@ -24,6 +24,12 @@ Qt::Gui::QIconEngineV2
 =head1 PUBLIC METHODS
 
 =over
+
+=item  QList<QSize> availableSizes(QIcon::Mode mode, QIcon::State state)
+
+=item  QList<QSize> availableSizes(QIcon::Mode mode, QIcon::State state = QIcon::Off)
+
+=item  QList<QSize> availableSizes(QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
 =item  QIconEngineV2 * clone()
 

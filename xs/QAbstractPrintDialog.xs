@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -238,6 +238,18 @@ PPCODE:
       arg00 = (int)SvIV(ST(1));
       arg01 = (int)SvIV(ST(2));
     (void)THIS->setMinMax(arg00, arg01);
+    XSRETURN(0);
+    }
+
+## void setOptionTabs(const QList<QWidget *> & tabs)
+void
+QAbstractPrintDialog::setOptionTabs(...)
+PREINIT:
+QList<QWidget *> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T004")) {
+      arg00 = reinterpret_cast<QList<QWidget *> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setOptionTabs(*arg00);
     XSRETURN(0);
     }
 

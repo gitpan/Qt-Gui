@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -939,6 +939,63 @@ PPCODE:
     XSRETURN(0);
     }
 
+## QList<QGraphicsItem *> collidingItems(const QGraphicsItem * item, Qt::ItemSelectionMode mode)
+## QList<QGraphicsItem *> collidingItems(const QGraphicsItem * item, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+void
+QGraphicsScene::collidingItems(...)
+PREINIT:
+const QGraphicsItem * arg00;
+Qt::ItemSelectionMode arg01;
+const QGraphicsItem * arg10;
+Qt::ItemSelectionMode arg11 = Qt::IntersectsItemShape;
+PPCODE:
+    switch(items) {
+      case 2:
+      {
+        if (sv_isobject(ST(1))) {
+      arg10 = *reinterpret_cast<QGraphicsItem * *>(SvIV((SV*)SvRV(ST(1))));
+    QList<QGraphicsItem *> ret = THIS->collidingItems(arg10, arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 3:
+      {
+        if (sv_isobject(ST(1)) && SvIOK(ST(2))) {
+      arg00 = *reinterpret_cast<QGraphicsItem * *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = (Qt::ItemSelectionMode)SvIV(ST(2));
+    QList<QGraphicsItem *> ret = THIS->collidingItems(arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
+
+## QGraphicsItemGroup * createItemGroup(const QList<QGraphicsItem *> & items)
+void
+QGraphicsScene::createItemGroup(...)
+PREINIT:
+QList<QGraphicsItem *> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T009")) {
+      arg00 = reinterpret_cast<QList<QGraphicsItem *> *>(SvIV((SV*)SvRV(ST(1))));
+    QGraphicsItemGroup * ret = THIS->createItemGroup(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QGraphicsItemGroup", (void *)ret);
+    XSRETURN(1);
+    }
+
 ## void destroyItemGroup(QGraphicsItemGroup * group)
 void
 QGraphicsScene::destroyItemGroup(...)
@@ -1241,6 +1298,346 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QList<QGraphicsItem *> items()
+## QList<QGraphicsItem *> items(Qt::SortOrder order)
+## QList<QGraphicsItem *> items(const QPointF & pos)
+## QList<QGraphicsItem *> items(const QRectF & rect, Qt::ItemSelectionMode mode)
+## QList<QGraphicsItem *> items(const QRectF & rect, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+## QList<QGraphicsItem *> items(const QPolygonF & polygon, Qt::ItemSelectionMode mode)
+## QList<QGraphicsItem *> items(const QPolygonF & polygon, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+## QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode)
+## QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+## QList<QGraphicsItem *> items(const QPointF & pos, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+## QList<QGraphicsItem *> items(const QPointF & pos, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+## QList<QGraphicsItem *> items(const QRectF & rect, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+## QList<QGraphicsItem *> items(const QRectF & rect, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+## QList<QGraphicsItem *> items(const QPolygonF & polygon, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+## QList<QGraphicsItem *> items(const QPolygonF & polygon, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+## QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+## QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+## QList<QGraphicsItem *> items(qreal x, qreal y, qreal w, qreal h, Qt::ItemSelectionMode mode)
+## QList<QGraphicsItem *> items(qreal x, qreal y, qreal w, qreal h, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+## QList<QGraphicsItem *> items(qreal x, qreal y, qreal w, qreal h, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+## QList<QGraphicsItem *> items(qreal x, qreal y, qreal w, qreal h, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+void
+QGraphicsScene::items(...)
+PREINIT:
+Qt::SortOrder arg10;
+QPointF * arg20;
+QRectF * arg30;
+Qt::ItemSelectionMode arg31;
+QRectF * arg40;
+Qt::ItemSelectionMode arg41 = Qt::IntersectsItemShape;
+QPolygonF * arg50;
+Qt::ItemSelectionMode arg51;
+QPolygonF * arg60;
+Qt::ItemSelectionMode arg61 = Qt::IntersectsItemShape;
+QPainterPath * arg70;
+Qt::ItemSelectionMode arg71;
+QPainterPath * arg80;
+Qt::ItemSelectionMode arg81 = Qt::IntersectsItemShape;
+QPointF * arg90;
+Qt::ItemSelectionMode arg91;
+Qt::SortOrder arg92;
+QTransform * arg93;
+QPointF * arga0;
+Qt::ItemSelectionMode arga1;
+Qt::SortOrder arga2;
+const QTransform & arga3_ = QTransform();
+QTransform * arga3 = const_cast<QTransform *>(&arga3_);
+QRectF * argb0;
+Qt::ItemSelectionMode argb1;
+Qt::SortOrder argb2;
+QTransform * argb3;
+QRectF * argc0;
+Qt::ItemSelectionMode argc1;
+Qt::SortOrder argc2;
+const QTransform & argc3_ = QTransform();
+QTransform * argc3 = const_cast<QTransform *>(&argc3_);
+QPolygonF * argd0;
+Qt::ItemSelectionMode argd1;
+Qt::SortOrder argd2;
+QTransform * argd3;
+QPolygonF * arge0;
+Qt::ItemSelectionMode arge1;
+Qt::SortOrder arge2;
+const QTransform & arge3_ = QTransform();
+QTransform * arge3 = const_cast<QTransform *>(&arge3_);
+QPainterPath * argf0;
+Qt::ItemSelectionMode argf1;
+Qt::SortOrder argf2;
+QTransform * argf3;
+QPainterPath * arg100;
+Qt::ItemSelectionMode arg101;
+Qt::SortOrder arg102;
+const QTransform & arg103_ = QTransform();
+QTransform * arg103 = const_cast<QTransform *>(&arg103_);
+qreal arg110;
+qreal arg111;
+qreal arg112;
+qreal arg113;
+Qt::ItemSelectionMode arg114;
+qreal arg120;
+qreal arg121;
+qreal arg122;
+qreal arg123;
+Qt::ItemSelectionMode arg124 = Qt::IntersectsItemShape;
+qreal arg130;
+qreal arg131;
+qreal arg132;
+qreal arg133;
+Qt::ItemSelectionMode arg134;
+Qt::SortOrder arg135;
+QTransform * arg136;
+qreal arg140;
+qreal arg141;
+qreal arg142;
+qreal arg143;
+Qt::ItemSelectionMode arg144;
+Qt::SortOrder arg145;
+const QTransform & arg146_ = QTransform();
+QTransform * arg146 = const_cast<QTransform *>(&arg146_);
+PPCODE:
+    switch(items) {
+      case 1:
+      {
+        if (1) {
+      
+    QList<QGraphicsItem *> ret = THIS->items();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        break;
+      }
+      case 2:
+      {
+        if (SvIOK(ST(1))) {
+      arg10 = (Qt::SortOrder)SvIV(ST(1));
+    QList<QGraphicsItem *> ret = THIS->items(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QPointF")) {
+      arg20 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
+    QList<QGraphicsItem *> ret = THIS->items(*arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QRectF")) {
+      arg40 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(1))));
+    QList<QGraphicsItem *> ret = THIS->items(*arg40, arg41);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QPolygonF")) {
+      arg60 = reinterpret_cast<QPolygonF *>(SvIV((SV*)SvRV(ST(1))));
+    QList<QGraphicsItem *> ret = THIS->items(*arg60, arg61);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QPainterPath")) {
+      arg80 = reinterpret_cast<QPainterPath *>(SvIV((SV*)SvRV(ST(1))));
+    QList<QGraphicsItem *> ret = THIS->items(*arg80, arg81);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 3:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QRectF") && SvIOK(ST(2))) {
+      arg30 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(1))));
+      arg31 = (Qt::ItemSelectionMode)SvIV(ST(2));
+    QList<QGraphicsItem *> ret = THIS->items(*arg30, arg31);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QPolygonF") && SvIOK(ST(2))) {
+      arg50 = reinterpret_cast<QPolygonF *>(SvIV((SV*)SvRV(ST(1))));
+      arg51 = (Qt::ItemSelectionMode)SvIV(ST(2));
+    QList<QGraphicsItem *> ret = THIS->items(*arg50, arg51);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QPainterPath") && SvIOK(ST(2))) {
+      arg70 = reinterpret_cast<QPainterPath *>(SvIV((SV*)SvRV(ST(1))));
+      arg71 = (Qt::ItemSelectionMode)SvIV(ST(2));
+    QList<QGraphicsItem *> ret = THIS->items(*arg70, arg71);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 4:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QPointF") && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arga0 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
+      arga1 = (Qt::ItemSelectionMode)SvIV(ST(2));
+      arga2 = (Qt::SortOrder)SvIV(ST(3));
+    QList<QGraphicsItem *> ret = THIS->items(*arga0, arga1, arga2, *arga3);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QRectF") && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      argc0 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(1))));
+      argc1 = (Qt::ItemSelectionMode)SvIV(ST(2));
+      argc2 = (Qt::SortOrder)SvIV(ST(3));
+    QList<QGraphicsItem *> ret = THIS->items(*argc0, argc1, argc2, *argc3);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QPolygonF") && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arge0 = reinterpret_cast<QPolygonF *>(SvIV((SV*)SvRV(ST(1))));
+      arge1 = (Qt::ItemSelectionMode)SvIV(ST(2));
+      arge2 = (Qt::SortOrder)SvIV(ST(3));
+    QList<QGraphicsItem *> ret = THIS->items(*arge0, arge1, arge2, *arge3);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QPainterPath") && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg100 = reinterpret_cast<QPainterPath *>(SvIV((SV*)SvRV(ST(1))));
+      arg101 = (Qt::ItemSelectionMode)SvIV(ST(2));
+      arg102 = (Qt::SortOrder)SvIV(ST(3));
+    QList<QGraphicsItem *> ret = THIS->items(*arg100, arg101, arg102, *arg103);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 5:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QPointF") && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Gui::QTransform")) {
+      arg90 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(1))));
+      arg91 = (Qt::ItemSelectionMode)SvIV(ST(2));
+      arg92 = (Qt::SortOrder)SvIV(ST(3));
+      arg93 = reinterpret_cast<QTransform *>(SvIV((SV*)SvRV(ST(4))));
+    QList<QGraphicsItem *> ret = THIS->items(*arg90, arg91, arg92, *arg93);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QRectF") && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Gui::QTransform")) {
+      argb0 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(1))));
+      argb1 = (Qt::ItemSelectionMode)SvIV(ST(2));
+      argb2 = (Qt::SortOrder)SvIV(ST(3));
+      argb3 = reinterpret_cast<QTransform *>(SvIV((SV*)SvRV(ST(4))));
+    QList<QGraphicsItem *> ret = THIS->items(*argb0, argb1, argb2, *argb3);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QPolygonF") && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Gui::QTransform")) {
+      argd0 = reinterpret_cast<QPolygonF *>(SvIV((SV*)SvRV(ST(1))));
+      argd1 = (Qt::ItemSelectionMode)SvIV(ST(2));
+      argd2 = (Qt::SortOrder)SvIV(ST(3));
+      argd3 = reinterpret_cast<QTransform *>(SvIV((SV*)SvRV(ST(4))));
+    QList<QGraphicsItem *> ret = THIS->items(*argd0, argd1, argd2, *argd3);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::QPainterPath") && SvIOK(ST(2)) && SvIOK(ST(3)) && sv_isa(ST(4), "Qt::Gui::QTransform")) {
+      argf0 = reinterpret_cast<QPainterPath *>(SvIV((SV*)SvRV(ST(1))));
+      argf1 = (Qt::ItemSelectionMode)SvIV(ST(2));
+      argf2 = (Qt::SortOrder)SvIV(ST(3));
+      argf3 = reinterpret_cast<QTransform *>(SvIV((SV*)SvRV(ST(4))));
+    QList<QGraphicsItem *> ret = THIS->items(*argf0, argf1, argf2, *argf3);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+        else if (SvNOK(ST(1)) && SvNOK(ST(2)) && SvNOK(ST(3)) && SvNOK(ST(4))) {
+      arg120 = (double)SvNV(ST(1));
+      arg121 = (double)SvNV(ST(2));
+      arg122 = (double)SvNV(ST(3));
+      arg123 = (double)SvNV(ST(4));
+    QList<QGraphicsItem *> ret = THIS->items(arg120, arg121, arg122, arg123, arg124);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 6:
+      {
+        if (SvNOK(ST(1)) && SvNOK(ST(2)) && SvNOK(ST(3)) && SvNOK(ST(4)) && SvIOK(ST(5))) {
+      arg110 = (double)SvNV(ST(1));
+      arg111 = (double)SvNV(ST(2));
+      arg112 = (double)SvNV(ST(3));
+      arg113 = (double)SvNV(ST(4));
+      arg114 = (Qt::ItemSelectionMode)SvIV(ST(5));
+    QList<QGraphicsItem *> ret = THIS->items(arg110, arg111, arg112, arg113, arg114);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 7:
+      {
+        if (SvNOK(ST(1)) && SvNOK(ST(2)) && SvNOK(ST(3)) && SvNOK(ST(4)) && SvIOK(ST(5)) && SvIOK(ST(6))) {
+      arg140 = (double)SvNV(ST(1));
+      arg141 = (double)SvNV(ST(2));
+      arg142 = (double)SvNV(ST(3));
+      arg143 = (double)SvNV(ST(4));
+      arg144 = (Qt::ItemSelectionMode)SvIV(ST(5));
+      arg145 = (Qt::SortOrder)SvIV(ST(6));
+    QList<QGraphicsItem *> ret = THIS->items(arg140, arg141, arg142, arg143, arg144, arg145, *arg146);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 8:
+      {
+        if (SvNOK(ST(1)) && SvNOK(ST(2)) && SvNOK(ST(3)) && SvNOK(ST(4)) && SvIOK(ST(5)) && SvIOK(ST(6)) && sv_isa(ST(7), "Qt::Gui::QTransform")) {
+      arg130 = (double)SvNV(ST(1));
+      arg131 = (double)SvNV(ST(2));
+      arg132 = (double)SvNV(ST(3));
+      arg133 = (double)SvNV(ST(4));
+      arg134 = (Qt::ItemSelectionMode)SvIV(ST(5));
+      arg135 = (Qt::SortOrder)SvIV(ST(6));
+      arg136 = reinterpret_cast<QTransform *>(SvIV((SV*)SvRV(ST(7))));
+    QList<QGraphicsItem *> ret = THIS->items(arg130, arg131, arg132, arg133, arg134, arg135, *arg136);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
+
 ## QRectF itemsBoundingRect()
 void
 QGraphicsScene::itemsBoundingRect(...)
@@ -1420,6 +1817,19 @@ PPCODE:
     QRectF ret = THIS->sceneRect();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QRectF", (void *)new QRectF(ret));
+    XSRETURN(1);
+    }
+
+## QList<QGraphicsItem *> selectedItems()
+void
+QGraphicsScene::selectedItems(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QGraphicsItem *> ret = THIS->selectedItems();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T009", (void *)new QList<QGraphicsItem *>(ret));
     XSRETURN(1);
     }
 
@@ -1890,6 +2300,19 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## QList<QGraphicsView *> views()
+void
+QGraphicsScene::views(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QGraphicsView *> ret = THIS->views();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T039", (void *)new QList<QGraphicsView *>(ret));
+    XSRETURN(1);
     }
 
 ## qreal width()

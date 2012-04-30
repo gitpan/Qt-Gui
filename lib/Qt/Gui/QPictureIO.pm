@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -41,7 +41,11 @@ Qt::Gui::QPictureIO
 
 =item  float gamma()
 
+=item  static QList<QByteArray> inputFormats()
+
 =item  QIODevice * ioDevice()
+
+=item  static QList<QByteArray> outputFormats()
 
 =item  const char * parameters()
 

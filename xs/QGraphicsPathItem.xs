@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -200,15 +200,8 @@ QGraphicsPathItem::isObscuredBy(...)
 PREINIT:
 const QGraphicsItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QGraphicsItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QGraphicsItem")) {
-        arg00 = reinterpret_cast<QGraphicsItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QGraphicsItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QGraphicsItem * *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->isObscuredBy(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);

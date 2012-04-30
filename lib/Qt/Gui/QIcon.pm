@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -56,6 +56,12 @@ Qt::Gui::QIcon
 =item  void addPixmap(const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state = QIcon::Off)
 
 =item  void addPixmap(const QPixmap & pixmap, QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
+
+=item  QList<QSize> availableSizes(QIcon::Mode mode, QIcon::State state)
+
+=item  QList<QSize> availableSizes(QIcon::Mode mode, QIcon::State state = QIcon::Off)
+
+=item  QList<QSize> availableSizes(QIcon::Mode mode = QIcon::Normal, QIcon::State state = QIcon::Off)
 
 =item  qint64 cacheKey()
 

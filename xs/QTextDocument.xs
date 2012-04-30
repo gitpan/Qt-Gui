@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -130,6 +130,19 @@ PPCODE:
       
     (void)THIS->adjustSize();
     XSRETURN(0);
+    }
+
+## QVector<QTextFormat> allFormats()
+void
+QTextDocument::allFormats(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QVector<QTextFormat> ret = THIS->allFormats();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T047", (void *)new QVector<QTextFormat>(ret));
+    XSRETURN(1);
     }
 
 ## void appendUndoItem(QAbstractUndoItem * arg0)

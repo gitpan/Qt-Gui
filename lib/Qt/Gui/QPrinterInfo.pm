@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -31,6 +31,8 @@ Qt::Gui::QPrinterInfo
 
 =item   ~QPrinterInfo()
 
+=item  static QList<QPrinterInfo> availablePrinters()
+
 =item  static QPrinterInfo defaultPrinter()
 
 =item  bool isDefault()
@@ -40,6 +42,8 @@ Qt::Gui::QPrinterInfo
 =item  QPrinterInfo & operator=(const QPrinterInfo & src)
 
 =item  QString printerName()
+
+=item  QList<QPrinter::PageSize> supportedPaperSizes()
 
 
 =back

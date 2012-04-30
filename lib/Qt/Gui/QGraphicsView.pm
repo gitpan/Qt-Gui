@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QAbstractScrollArea/;
 #our @ISA = qw/Qt::Gui::QAbstractScrollArea/;
 
@@ -96,6 +96,28 @@ Qt::Gui::QGraphicsView
 =item  QGraphicsItem * itemAt(const QPoint & pos)
 
 =item  QGraphicsItem * itemAt(int x, int y)
+
+=item  QList<QGraphicsItem *> items()
+
+=item  QList<QGraphicsItem *> items(const QPoint & pos)
+
+=item  QList<QGraphicsItem *> items(int x, int y)
+
+=item  QList<QGraphicsItem *> items(const QRect & rect, Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> items(const QRect & rect, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+
+=item  QList<QGraphicsItem *> items(const QPolygon & polygon, Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> items(const QPolygon & polygon, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+
+=item  QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+
+=item  QList<QGraphicsItem *> items(int x, int y, int w, int h, Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> items(int x, int y, int w, int h, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
 
 =item  QPoint mapFromScene(const QPointF & point)
 
@@ -208,6 +230,8 @@ Qt::Gui::QGraphicsView
 =item  QGraphicsView::ViewportAnchor transformationAnchor()
 
 =item  void translate(qreal dx, qreal dy)
+
+=item  void updateScene(const QList<QRectF> & rects)
 
 =item  void updateSceneRect(const QRectF & rect)
 

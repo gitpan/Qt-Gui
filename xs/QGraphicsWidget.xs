@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -97,6 +97,19 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
+## QList<QAction *> actions()
+void
+QGraphicsWidget::actions(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QAction *> ret = THIS->actions();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T012", (void *)new QList<QAction *>(ret));
+    XSRETURN(1);
+    }
+
 ## void addAction(QAction * action)
 void
 QGraphicsWidget::addAction(...)
@@ -113,6 +126,18 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAction");
     (void)THIS->addAction(arg00);
+    XSRETURN(0);
+    }
+
+## void addActions(QList<QAction *> actions)
+void
+QGraphicsWidget::addActions(...)
+PREINIT:
+QList<QAction *> arg00;
+PPCODE:
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QList<QAction *> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->addActions(arg00);
     XSRETURN(0);
     }
 
@@ -333,6 +358,27 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QAction");
     (void)THIS->insertAction(arg00, arg01);
+    XSRETURN(0);
+    }
+
+## void insertActions(QAction * before, QList<QAction *> actions)
+void
+QGraphicsWidget::insertActions(...)
+PREINIT:
+QAction * arg00;
+QList<QAction *> arg01;
+PPCODE:
+    if ((sv_derived_from(ST(1), "Qt::Gui::QAction") || ST(1) == &PL_sv_undef) && sv_isobject(ST(2))) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QAction")) {
+        arg00 = reinterpret_cast<QAction *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QAction");
+      arg01 = *reinterpret_cast<QList<QAction *> *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->insertActions(arg00, arg01);
     XSRETURN(0);
     }
 

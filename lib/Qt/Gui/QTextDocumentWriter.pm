@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -48,6 +48,8 @@ Qt::Gui::QTextDocumentWriter
 =item  void setFileName(const QString & fileName)
 
 =item  void setFormat(const QByteArray & format)
+
+=item  static QList<QByteArray> supportedDocumentFormats()
 
 =item  bool write(const QTextDocument * document)
 

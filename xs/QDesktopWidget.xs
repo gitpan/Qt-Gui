@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -72,15 +72,8 @@ PPCODE:
     sv_setref_pv(ST(0), "", (void *)new const QRect(ret));
     XSRETURN(1);
     }
-        else if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg20 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg20 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg20 is not of type Qt::Gui::QWidget");
+        else if (sv_isobject(ST(1))) {
+      arg20 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(1))));
     const QRect ret = THIS->availableGeometry(arg20);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "", (void *)new const QRect(ret));
@@ -225,15 +218,8 @@ PPCODE:
     sv_setref_pv(ST(0), "", (void *)new const QRect(ret));
     XSRETURN(1);
     }
-        else if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg20 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg20 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg20 is not of type Qt::Gui::QWidget");
+        else if (sv_isobject(ST(1))) {
+      arg20 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(1))));
     const QRect ret = THIS->screenGeometry(arg20);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "", (void *)new const QRect(ret));
@@ -279,15 +265,8 @@ PPCODE:
       }
       case 2:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg00 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QWidget");
+        if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(1))));
     int ret = THIS->screenNumber(arg00);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);

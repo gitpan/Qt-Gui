@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -35,6 +35,8 @@ Qt::Gui::QPainterPathStroker
 
 =item  qreal dashOffset()
 
+=item  QVector<qreal> dashPattern()
+
 =item  Qt::PenJoinStyle joinStyle()
 
 =item  qreal miterLimit()
@@ -46,6 +48,8 @@ Qt::Gui::QPainterPathStroker
 =item  void setDashOffset(qreal offset)
 
 =item  void setDashPattern(Qt::PenStyle arg0)
+
+=item  void setDashPattern(const QVector<qreal> & dashPattern)
 
 =item  void setJoinStyle(Qt::PenJoinStyle style)
 

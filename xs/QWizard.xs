@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -262,6 +262,19 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QList<int> pageIds()
+void
+QWizard::pageIds(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<int> ret = THIS->pageIds();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T005", (void *)new QList<int>(ret));
+    XSRETURN(1);
+    }
+
 ## QPixmap pixmap(QWizard::WizardPixmap which)
 void
 QWizard::pixmap(...)
@@ -317,6 +330,18 @@ PPCODE:
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QAbstractButton");
     (void)THIS->setButton(arg00, arg01);
+    XSRETURN(0);
+    }
+
+## void setButtonLayout(const QList<QWizard::WizardButton> & layout)
+void
+QWizard::setButtonLayout(...)
+PREINIT:
+QList<QWizard::WizardButton> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T007")) {
+      arg00 = reinterpret_cast<QList<QWizard::WizardButton> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setButtonLayout(*arg00);
     XSRETURN(0);
     }
 
@@ -618,6 +643,19 @@ PPCODE:
     bool ret = THIS->validateCurrentPage();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+
+## QList<int> visitedPages()
+void
+QWizard::visitedPages(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<int> ret = THIS->visitedPages();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T005", (void *)new QList<int>(ret));
     XSRETURN(1);
     }
 

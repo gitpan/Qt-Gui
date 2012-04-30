@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QPaintDevice/;
 #our @ISA = qw/Qt::Gui::QPaintDevice/;
 
@@ -43,6 +43,8 @@ Qt::Gui::QPicture
 
 =item  static QStringList inputFormatList()
 
+=item  static QList<QByteArray> inputFormats()
+
 =item  bool isDetached()
 
 =item  bool isNull()
@@ -58,6 +60,8 @@ Qt::Gui::QPicture
 =item  QPicture & operator=(const QPicture & p)
 
 =item  static QStringList outputFormatList()
+
+=item  static QList<QByteArray> outputFormats()
 
 =item  QPaintEngine * paintEngine()
 

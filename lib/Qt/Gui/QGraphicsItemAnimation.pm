@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -41,9 +41,15 @@ Qt::Gui::QGraphicsItemAnimation
 
 =item  QPointF posAt(qreal step)
 
+=item  QList<QPair<qreal,QPointF> > posList()
+
 =item  void reset()
 
 =item  qreal rotationAt(qreal step)
+
+=item  QList<QPair<qreal,qreal> > rotationList()
+
+=item  QList<QPair<qreal,QPointF> > scaleList()
 
 =item  void setItem(QGraphicsItem * item)
 
@@ -61,7 +67,11 @@ Qt::Gui::QGraphicsItemAnimation
 
 =item  void setTranslationAt(qreal step, qreal dx, qreal dy)
 
+=item  QList<QPair<qreal,QPointF> > shearList()
+
 =item  QTimeLine * timeLine()
+
+=item  QList<QPair<qreal,QPointF> > translationList()
 
 =item  qreal verticalScaleAt(qreal step)
 

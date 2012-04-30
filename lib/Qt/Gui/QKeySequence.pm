@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -54,6 +54,8 @@ Qt::Gui::QKeySequence
 =item  bool isDetached()
 
 =item  bool isEmpty()
+
+=item  static QList<QKeySequence> keyBindings(QKeySequence::StandardKey key)
 
 =item  QKeySequence::SequenceMatch matches(const QKeySequence & seq)
 

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -113,6 +113,12 @@ Qt::Gui::QGraphicsScene
 
 =item  void clearSelection()
 
+=item  QList<QGraphicsItem *> collidingItems(const QGraphicsItem * item, Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> collidingItems(const QGraphicsItem * item, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+
+=item  QGraphicsItemGroup * createItemGroup(const QList<QGraphicsItem *> & items)
+
 =item  void destroyItemGroup(QGraphicsItemGroup * group)
 
 =item  QGraphicsItem * focusItem()
@@ -151,6 +157,48 @@ Qt::Gui::QGraphicsScene
 
 =item  QGraphicsScene::ItemIndexMethod itemIndexMethod()
 
+=item  QList<QGraphicsItem *> items()
+
+=item  QList<QGraphicsItem *> items(Qt::SortOrder order)
+
+=item  QList<QGraphicsItem *> items(const QPointF & pos)
+
+=item  QList<QGraphicsItem *> items(const QRectF & rect, Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> items(const QRectF & rect, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+
+=item  QList<QGraphicsItem *> items(const QPolygonF & polygon, Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> items(const QPolygonF & polygon, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+
+=item  QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+
+=item  QList<QGraphicsItem *> items(const QPointF & pos, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+
+=item  QList<QGraphicsItem *> items(const QPointF & pos, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+
+=item  QList<QGraphicsItem *> items(const QRectF & rect, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+
+=item  QList<QGraphicsItem *> items(const QRectF & rect, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+
+=item  QList<QGraphicsItem *> items(const QPolygonF & polygon, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+
+=item  QList<QGraphicsItem *> items(const QPolygonF & polygon, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+
+=item  QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+
+=item  QList<QGraphicsItem *> items(const QPainterPath & path, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+
+=item  QList<QGraphicsItem *> items(qreal x, qreal y, qreal w, qreal h, Qt::ItemSelectionMode mode)
+
+=item  QList<QGraphicsItem *> items(qreal x, qreal y, qreal w, qreal h, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape)
+
+=item  QList<QGraphicsItem *> items(qreal x, qreal y, qreal w, qreal h, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform)
+
+=item  QList<QGraphicsItem *> items(qreal x, qreal y, qreal w, qreal h, Qt::ItemSelectionMode mode, Qt::SortOrder order, const QTransform & deviceTransform = QTransform())
+
 =item  QRectF itemsBoundingRect()
 
 =item  QGraphicsItem * mouseGrabberItem()
@@ -168,6 +216,8 @@ Qt::Gui::QGraphicsScene
 =item  void render(QPainter * painter, const QRectF & target = QRectF(), const QRectF & source = QRectF(), Qt::AspectRatioMode aspectRatioMode = Qt::KeepAspectRatio)
 
 =item  QRectF sceneRect()
+
+=item  QList<QGraphicsItem *> selectedItems()
 
 =item  QPainterPath selectionArea()
 
@@ -224,6 +274,8 @@ Qt::Gui::QGraphicsScene
 =item  void update(const QRectF & rect = QRectF())
 
 =item  void update(qreal x, qreal y, qreal w, qreal h)
+
+=item  QList<QGraphicsView *> views()
 
 =item  qreal width()
 

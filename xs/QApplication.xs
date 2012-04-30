@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -100,16 +100,6 @@ unsigned long argd4 = 0;
 int argd5 = 0x040704;
 PPCODE:
     switch(items) {
-      case 1:
-      {
-        static char *argv[] = { "PerlQt" };
-	static int argc = 1;
-	ret = new QApplication(argc, argv);
-	ST(0) = sv_newmortal();
-	sv_setref_pv(ST(0), "Qt::Gui::QApplication", (void *)ret);
-	XSRETURN(1);
-	break;
-      }
       case 2:
       {
         if ((sv_derived_from(ST(1), "") || ST(1) == &PL_sv_undef)) {
@@ -498,6 +488,19 @@ PPCODE:
         break;
     }
 
+## static QList<QWidget *> allWidgets()
+void
+QApplication::allWidgets(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QWidget *> ret = THIS->allWidgets();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T004", (void *)new QList<QWidget *>(ret));
+    XSRETURN(1);
+    }
+
 ## bool autoSipEnabled()
 void
 QApplication::autoSipEnabled(...)
@@ -671,15 +674,8 @@ PPCODE:
       }
       case 2:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg10 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        if (sv_isobject(ST(1))) {
+      arg10 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(1))));
     QFont ret = THIS->font(arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QFont", (void *)new QFont(ret));
@@ -937,15 +933,8 @@ PPCODE:
       }
       case 2:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QWidget") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QWidget")) {
-        arg10 = reinterpret_cast<QWidget *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg10 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QWidget");
+        if (sv_isobject(ST(1))) {
+      arg10 = *reinterpret_cast<QWidget * *>(SvIV((SV*)SvRV(ST(1))));
     QPalette ret = THIS->palette(arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QPalette", (void *)new QPalette(ret));
@@ -1506,6 +1495,19 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## static QList<QWidget *> topLevelWidgets()
+void
+QApplication::topLevelWidgets(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QWidget *> ret = THIS->topLevelWidgets();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T004", (void *)new QList<QWidget *>(ret));
+    XSRETURN(1);
     }
 
 ## static QApplication::Type type()

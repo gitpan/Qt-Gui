@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -340,6 +340,50 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QList<int> pointSizes(const QString & family, const QString & style)
+## QList<int> pointSizes(const QString & family, const QString & style = QString())
+void
+QFontDatabase::pointSizes(...)
+PREINIT:
+QString * arg00;
+QString * arg01;
+QString * arg10;
+const QString & arg11_ = QString();
+QString * arg11 = const_cast<QString *>(&arg11_);
+PPCODE:
+    switch(items) {
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+    QList<int> ret = THIS->pointSizes(*arg10, *arg11);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T005", (void *)new QList<int>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 3:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+    QList<int> ret = THIS->pointSizes(*arg00, *arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T005", (void *)new QList<int>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
+
 ## static bool removeAllApplicationFonts()
 void
 QFontDatabase::removeAllApplicationFonts(...)
@@ -364,6 +408,35 @@ PPCODE:
     bool ret = THIS->removeApplicationFont(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+
+## QList<int> smoothSizes(const QString & family, const QString & style)
+void
+QFontDatabase::smoothSizes(...)
+PREINIT:
+QString * arg00;
+QString * arg01;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+    QList<int> ret = THIS->smoothSizes(*arg00, *arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T005", (void *)new QList<int>(ret));
+    XSRETURN(1);
+    }
+
+## static QList<int> standardSizes()
+void
+QFontDatabase::standardSizes(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<int> ret = THIS->standardSizes();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T005", (void *)new QList<int>(ret));
     XSRETURN(1);
     }
 
@@ -470,6 +543,43 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
+
+## QList<QFontDatabase::WritingSystem> writingSystems()
+## QList<QFontDatabase::WritingSystem> writingSystems(const QString & family)
+void
+QFontDatabase::writingSystems(...)
+PREINIT:
+QString * arg10;
+PPCODE:
+    switch(items) {
+      case 1:
+      {
+        if (1) {
+      
+    QList<QFontDatabase::WritingSystem> ret = THIS->writingSystems();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T021", (void *)new QList<QFontDatabase::WritingSystem>(ret));
+    XSRETURN(1);
+    }
+        break;
+      }
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+    QList<QFontDatabase::WritingSystem> ret = THIS->writingSystems(*arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T021", (void *)new QList<QFontDatabase::WritingSystem>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -34,6 +34,10 @@ Qt::Gui::QAction
 =item  QActionGroup * actionGroup()
 
 =item  void activate(QAction::ActionEvent event)
+
+=item  QList<QGraphicsWidget *> associatedGraphicsWidgets()
+
+=item  QList<QWidget *> associatedWidgets()
 
 =item  bool autoRepeat()
 
@@ -101,6 +105,8 @@ Qt::Gui::QAction
 
 =item  void setShortcutContext(Qt::ShortcutContext context)
 
+=item  void setShortcuts(const QList<QKeySequence> & shortcuts)
+
 =item  void setShortcuts(QKeySequence::StandardKey arg0)
 
 =item  void setSoftKeyRole(QAction::SoftKeyRole softKeyRole)
@@ -118,6 +124,8 @@ Qt::Gui::QAction
 =item  QKeySequence shortcut()
 
 =item  Qt::ShortcutContext shortcutContext()
+
+=item  QList<QKeySequence> shortcuts()
 
 =item  bool showStatusText(QWidget * widget)
 

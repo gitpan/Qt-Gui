@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -18,7 +18,20 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-
+##  QGestureEvent(const QList<QGesture *> & gestures)
+  void
+QGestureEvent::new(...)
+PREINIT:
+QGestureEvent *ret;
+QList<QGesture *> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T048")) {
+      arg00 = reinterpret_cast<QList<QGesture *> *>(SvIV((SV*)SvRV(ST(1))));
+    ret = new QGestureEvent(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::QGestureEvent", (void *)ret);
+    XSRETURN(1);
+    }
 
 ##  ~QGestureEvent()
 void
@@ -64,6 +77,32 @@ PPCODE:
         break;
     }
 
+## QList<QGesture *> activeGestures()
+void
+QGestureEvent::activeGestures(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QGesture *> ret = THIS->activeGestures();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T048", (void *)new QList<QGesture *>(ret));
+    XSRETURN(1);
+    }
+
+## QList<QGesture *> canceledGestures()
+void
+QGestureEvent::canceledGestures(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QGesture *> ret = THIS->canceledGestures();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T048", (void *)new QList<QGesture *>(ret));
+    XSRETURN(1);
+    }
+
 ## QGesture * gesture(Qt::GestureType type)
 void
 QGestureEvent::gesture(...)
@@ -75,6 +114,19 @@ PPCODE:
     QGesture * ret = THIS->gesture(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QGesture", (void *)ret);
+    XSRETURN(1);
+    }
+
+## QList<QGesture *> gestures()
+void
+QGestureEvent::gestures(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QGesture *> ret = THIS->gestures();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T048", (void *)new QList<QGesture *>(ret));
     XSRETURN(1);
     }
 

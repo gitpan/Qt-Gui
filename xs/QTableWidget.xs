@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -178,15 +178,8 @@ QTableWidget::column(...)
 PREINIT:
 const QTableWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem")) {
-        arg00 = reinterpret_cast<QTableWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTableWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTableWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     int ret = THIS->column(arg00);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -264,6 +257,22 @@ PPCODE:
     XSRETURN(0);
     }
 
+## QList<QTableWidgetItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags)
+void
+QTableWidget::findItems(...)
+PREINIT:
+QString * arg00;
+QFlags<Qt::MatchFlag> arg01;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2))) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = QFlags<Qt::MatchFlag>((Qt::MatchFlag)SvIV(ST(2)));
+    QList<QTableWidgetItem *> ret = THIS->findItems(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T025", (void *)new QList<QTableWidgetItem *>(ret));
+    XSRETURN(1);
+    }
+
 ## QTableWidgetItem * horizontalHeaderItem(int column)
 void
 QTableWidget::horizontalHeaderItem(...)
@@ -308,15 +317,8 @@ QTableWidget::isItemSelected(...)
 PREINIT:
 const QTableWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem")) {
-        arg00 = reinterpret_cast<QTableWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTableWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTableWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->isItemSelected(arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
@@ -403,7 +405,7 @@ PPCODE:
       
     const QTableWidgetItem * ret = THIS->itemPrototype();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Gui::QTableWidgetItem", (void *)ret);
+    sv_setref_pv(ST(0), "", (void *)new const QTableWidgetItem *(ret));
     XSRETURN(1);
     }
 
@@ -470,15 +472,8 @@ QTableWidget::row(...)
 PREINIT:
 const QTableWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem")) {
-        arg00 = reinterpret_cast<QTableWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTableWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTableWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     int ret = THIS->row(arg00);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
@@ -511,15 +506,8 @@ PPCODE:
     switch(items) {
       case 2:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem")) {
-        arg10 = reinterpret_cast<QTableWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg10 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QTableWidgetItem");
+        if (sv_isobject(ST(1))) {
+      arg10 = *reinterpret_cast<QTableWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->scrollToItem(arg10, arg11);
     XSRETURN(0);
     }
@@ -529,15 +517,8 @@ PPCODE:
       }
       case 3:
       {
-        if ((sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem") || ST(1) == &PL_sv_undef) && SvIOK(ST(2))) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem")) {
-        arg00 = reinterpret_cast<QTableWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTableWidgetItem");
+        if (sv_isobject(ST(1)) && SvIOK(ST(2))) {
+      arg00 = *reinterpret_cast<QTableWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (QAbstractItemView::ScrollHint)SvIV(ST(2));
     (void)THIS->scrollToItem(arg00, arg01);
     XSRETURN(0);
@@ -549,6 +530,32 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## QList<QTableWidgetItem *> selectedItems()
+void
+QTableWidget::selectedItems(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QTableWidgetItem *> ret = THIS->selectedItems();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T025", (void *)new QList<QTableWidgetItem *>(ret));
+    XSRETURN(1);
+    }
+
+## QList<QTableWidgetSelectionRange> selectedRanges()
+void
+QTableWidget::selectedRanges(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QTableWidgetSelectionRange> ret = THIS->selectedRanges();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T024", (void *)new QList<QTableWidgetSelectionRange>(ret));
+    XSRETURN(1);
     }
 
 ## void setCellWidget(int row, int column, QWidget * widget)
@@ -742,15 +749,8 @@ QTableWidget::setItemPrototype(...)
 PREINIT:
 const QTableWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem")) {
-        arg00 = reinterpret_cast<QTableWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTableWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTableWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setItemPrototype(arg00);
     XSRETURN(0);
     }
@@ -762,15 +762,8 @@ PREINIT:
 const QTableWidgetItem * arg00;
 bool arg01;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem") || ST(1) == &PL_sv_undef) && 1) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem")) {
-        arg00 = reinterpret_cast<QTableWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTableWidgetItem");
+    if (sv_isobject(ST(1)) && 1) {
+      arg00 = *reinterpret_cast<QTableWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
       arg01 = (bool)SvTRUE(ST(2));
     (void)THIS->setItemSelected(arg00, arg01);
     XSRETURN(0);
@@ -964,15 +957,8 @@ QTableWidget::visualItemRect(...)
 PREINIT:
 const QTableWidgetItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QTableWidgetItem")) {
-        arg00 = reinterpret_cast<QTableWidgetItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QTableWidgetItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QTableWidgetItem * *>(SvIV((SV*)SvRV(ST(1))));
     QRect ret = THIS->visualItemRect(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QRect", (void *)new QRect(ret));

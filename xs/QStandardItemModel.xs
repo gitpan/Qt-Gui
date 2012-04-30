@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -115,23 +115,53 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
+## void appendColumn(const QList<QStandardItem *> & items)
+void
+QStandardItemModel::appendColumn(...)
+PREINIT:
+QList<QStandardItem *> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T000")) {
+      arg00 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->appendColumn(*arg00);
+    XSRETURN(0);
+    }
+
+## void appendRow(const QList<QStandardItem *> & items)
 ## void appendRow(QStandardItem * item)
 void
 QStandardItemModel::appendRow(...)
 PREINIT:
-QStandardItem * arg00;
+QList<QStandardItem *> * arg00;
+QStandardItem * arg10;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QStandardItem") || ST(1) == &PL_sv_undef)) {
+    switch(items) {
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::Gui::Template::T000")) {
+      arg00 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->appendRow(*arg00);
+    XSRETURN(0);
+    }
+        else if ((sv_derived_from(ST(1), "Qt::Gui::QStandardItem") || ST(1) == &PL_sv_undef)) {
       if (sv_derived_from(ST(1), "Qt::Gui::QStandardItem")) {
-        arg00 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(1))));
+        arg10 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(1))));
     }
     else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
+        arg10 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QStandardItem");
-    (void)THIS->appendRow(arg00);
+        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QStandardItem");
+    (void)THIS->appendRow(arg10);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## void clear()
@@ -254,6 +284,70 @@ PPCODE:
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+
+## QList<QStandardItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags, int column)
+## QList<QStandardItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags, int column = 0)
+## QList<QStandardItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags = Qt::MatchExactly, int column = 0)
+void
+QStandardItemModel::findItems(...)
+PREINIT:
+QString * arg00;
+QFlags<Qt::MatchFlag> arg01;
+int arg02;
+QString * arg10;
+QFlags<Qt::MatchFlag> arg11;
+int arg12 = 0;
+QString * arg20;
+QFlags<Qt::MatchFlag> arg21 = Qt::MatchExactly;
+int arg22 = 0;
+PPCODE:
+    switch(items) {
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg20 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+    QList<QStandardItem *> ret = THIS->findItems(*arg20, arg21, arg22);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T000", (void *)new QList<QStandardItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 3:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2))) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg11 = QFlags<Qt::MatchFlag>((Qt::MatchFlag)SvIV(ST(2)));
+    QList<QStandardItem *> ret = THIS->findItems(*arg10, arg11, arg12);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T000", (void *)new QList<QStandardItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 4:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2)) && SvIOK(ST(3))) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = QFlags<Qt::MatchFlag>((Qt::MatchFlag)SvIV(ST(2)));
+      arg02 = (int)SvIV(ST(3));
+    QList<QStandardItem *> ret = THIS->findItems(*arg00, arg01, arg02);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T000", (void *)new QList<QStandardItem *>(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## QFlags<Qt::ItemFlag> flags(const QModelIndex & index)
@@ -424,38 +518,34 @@ QStandardItemModel::indexFromItem(...)
 PREINIT:
 const QStandardItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QStandardItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QStandardItem")) {
-        arg00 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QStandardItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QStandardItem * *>(SvIV((SV*)SvRV(ST(1))));
     QModelIndex ret = THIS->indexFromItem(arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QModelIndex", (void *)new QModelIndex(ret));
     XSRETURN(1);
     }
 
+## void insertColumn(int column, const QList<QStandardItem *> & items)
 ## bool insertColumn(int column, const QModelIndex & parent)
 ## bool insertColumn(int column, const QModelIndex & parent = QModelIndex())
 void
 QStandardItemModel::insertColumn(...)
 PREINIT:
 int arg00;
-QModelIndex * arg01;
+QList<QStandardItem *> * arg01;
 int arg10;
-const QModelIndex & arg11_ = QModelIndex();
-QModelIndex * arg11 = const_cast<QModelIndex *>(&arg11_);
+QModelIndex * arg11;
+int arg20;
+const QModelIndex & arg21_ = QModelIndex();
+QModelIndex * arg21 = const_cast<QModelIndex *>(&arg21_);
 PPCODE:
     switch(items) {
       case 2:
       {
         if (SvIOK(ST(1))) {
-      arg10 = (int)SvIV(ST(1));
-    bool ret = THIS->insertColumn(arg10, *arg11);
+      arg20 = (int)SvIV(ST(1));
+    bool ret = THIS->insertColumn(arg20, *arg21);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
@@ -466,10 +556,16 @@ PPCODE:
       }
       case 3:
       {
-        if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QModelIndex")) {
+        if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T000")) {
       arg00 = (int)SvIV(ST(1));
-      arg01 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(2))));
-    bool ret = THIS->insertColumn(arg00, *arg01);
+      arg01 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->insertColumn(arg00, *arg01);
+    XSRETURN(0);
+    }
+        else if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QModelIndex")) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(2))));
+    bool ret = THIS->insertColumn(arg10, *arg11);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
@@ -531,6 +627,7 @@ PPCODE:
         break;
     }
 
+## void insertRow(int row, const QList<QStandardItem *> & items)
 ## void insertRow(int row, QStandardItem * item)
 ## bool insertRow(int row, const QModelIndex & parent)
 ## bool insertRow(int row, const QModelIndex & parent = QModelIndex())
@@ -538,19 +635,21 @@ void
 QStandardItemModel::insertRow(...)
 PREINIT:
 int arg00;
-QStandardItem * arg01;
+QList<QStandardItem *> * arg01;
 int arg10;
-QModelIndex * arg11;
+QStandardItem * arg11;
 int arg20;
-const QModelIndex & arg21_ = QModelIndex();
-QModelIndex * arg21 = const_cast<QModelIndex *>(&arg21_);
+QModelIndex * arg21;
+int arg30;
+const QModelIndex & arg31_ = QModelIndex();
+QModelIndex * arg31 = const_cast<QModelIndex *>(&arg31_);
 PPCODE:
     switch(items) {
       case 2:
       {
         if (SvIOK(ST(1))) {
-      arg20 = (int)SvIV(ST(1));
-    bool ret = THIS->insertRow(arg20, *arg21);
+      arg30 = (int)SvIV(ST(1));
+    bool ret = THIS->insertRow(arg30, *arg31);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
@@ -561,23 +660,29 @@ PPCODE:
       }
       case 3:
       {
-        if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStandardItem") || ST(2) == &PL_sv_undef)) {
+        if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T000")) {
       arg00 = (int)SvIV(ST(1));
+      arg01 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->insertRow(arg00, *arg01);
+    XSRETURN(0);
+    }
+        else if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStandardItem") || ST(2) == &PL_sv_undef)) {
+      arg10 = (int)SvIV(ST(1));
       if (sv_derived_from(ST(2), "Qt::Gui::QStandardItem")) {
-        arg01 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(2))));
+        arg11 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(2))));
     }
     else if (ST(2) == &PL_sv_undef) {
-        arg01 = 0;
+        arg11 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStandardItem");
-    (void)THIS->insertRow(arg00, arg01);
+        Perl_croak(aTHX_ "arg11 is not of type Qt::Gui::QStandardItem");
+    (void)THIS->insertRow(arg10, arg11);
     XSRETURN(0);
     }
         else if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QModelIndex")) {
-      arg10 = (int)SvIV(ST(1));
-      arg11 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(2))));
-    bool ret = THIS->insertRow(arg10, *arg11);
+      arg20 = (int)SvIV(ST(1));
+      arg21 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(2))));
+    bool ret = THIS->insertRow(arg20, *arg21);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
@@ -695,6 +800,20 @@ PPCODE:
         break;
     }
 
+## QMap<int,QVariant> itemData(const QModelIndex & index)
+void
+QStandardItemModel::itemData(...)
+PREINIT:
+QModelIndex * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Core::QModelIndex")) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+    QMap<int,QVariant> ret = THIS->itemData(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T013", (void *)new QMap<int,QVariant>(ret));
+    XSRETURN(1);
+    }
+
 ## QStandardItem * itemFromIndex(const QModelIndex & index)
 void
 QStandardItemModel::itemFromIndex(...)
@@ -718,7 +837,21 @@ PPCODE:
       
     const QStandardItem * ret = THIS->itemPrototype();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::Gui::QStandardItem", (void *)ret);
+    sv_setref_pv(ST(0), "", (void *)new const QStandardItem *(ret));
+    XSRETURN(1);
+    }
+
+## QMimeData * mimeData(const QList<QModelIndex> & indexes)
+void
+QStandardItemModel::mimeData(...)
+PREINIT:
+QList<QModelIndex> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T003")) {
+      arg00 = reinterpret_cast<QList<QModelIndex> *>(SvIV((SV*)SvRV(ST(1))));
+    QMimeData * ret = THIS->mimeData(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Core::QMimeData", (void *)ret);
     XSRETURN(1);
     }
 
@@ -1083,21 +1216,30 @@ PPCODE:
         break;
     }
 
+## bool setItemData(const QModelIndex & index, const QMap<int,QVariant> & roles)
+void
+QStandardItemModel::setItemData(...)
+PREINIT:
+QModelIndex * arg00;
+QMap<int,QVariant> * arg01;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Core::QModelIndex") && sv_isa(ST(2), "Qt::Gui::Template::T013")) {
+      arg00 = reinterpret_cast<QModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QMap<int,QVariant> *>(SvIV((SV*)SvRV(ST(2))));
+    bool ret = THIS->setItemData(*arg00, *arg01);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+
 ## void setItemPrototype(const QStandardItem * item)
 void
 QStandardItemModel::setItemPrototype(...)
 PREINIT:
 const QStandardItem * arg00;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QStandardItem") || ST(1) == &PL_sv_undef)) {
-      if (sv_derived_from(ST(1), "Qt::Gui::QStandardItem")) {
-        arg00 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QStandardItem");
+    if (sv_isobject(ST(1))) {
+      arg00 = *reinterpret_cast<QStandardItem * *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->setItemPrototype(arg00);
     XSRETURN(0);
     }
@@ -1224,6 +1366,20 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QList<QStandardItem *> takeColumn(int column)
+void
+QStandardItemModel::takeColumn(...)
+PREINIT:
+int arg00;
+PPCODE:
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
+    QList<QStandardItem *> ret = THIS->takeColumn(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T000", (void *)new QList<QStandardItem *>(ret));
+    XSRETURN(1);
+    }
+
 ## QStandardItem * takeHorizontalHeaderItem(int column)
 void
 QStandardItemModel::takeHorizontalHeaderItem(...)
@@ -1279,6 +1435,20 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## QList<QStandardItem *> takeRow(int row)
+void
+QStandardItemModel::takeRow(...)
+PREINIT:
+int arg00;
+PPCODE:
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
+    QList<QStandardItem *> ret = THIS->takeRow(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T000", (void *)new QList<QStandardItem *>(ret));
+    XSRETURN(1);
     }
 
 ## QStandardItem * takeVerticalHeaderItem(int row)

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QDialog/;
 #our @ISA = qw/Qt::Gui::QDialog/;
 
@@ -187,9 +187,13 @@ Qt::Gui::QFileDialog
 
 =item  void setResolveSymlinks(bool enabled)
 
+=item  void setSidebarUrls(const QList<QUrl> & urls)
+
 =item  void setViewMode(QFileDialog::ViewMode mode)
 
 =item  void setVisible(bool visible)
+
+=item  QList<QUrl> sidebarUrls()
 
 =item  bool testOption(QFileDialog::Option option)
 

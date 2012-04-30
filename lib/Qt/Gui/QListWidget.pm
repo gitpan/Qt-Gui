@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QListView/;
 #our @ISA = qw/Qt::Gui::QListView/;
 
@@ -51,6 +51,8 @@ Qt::Gui::QListWidget
 
 =item  void editItem(QListWidgetItem * item)
 
+=item  QList<QListWidgetItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags)
+
 =item  void insertItem(int row, QListWidgetItem * item)
 
 =item  void insertItem(int row, const QString & label)
@@ -80,6 +82,8 @@ Qt::Gui::QListWidget
 =item  void scrollToItem(const QListWidgetItem * item, QAbstractItemView::ScrollHint hint)
 
 =item  void scrollToItem(const QListWidgetItem * item, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+
+=item  QList<QListWidgetItem *> selectedItems()
 
 =item  void setCurrentItem(QListWidgetItem * item)
 

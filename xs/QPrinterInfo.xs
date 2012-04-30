@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -72,6 +72,19 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
+## static QList<QPrinterInfo> availablePrinters()
+void
+QPrinterInfo::availablePrinters(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QPrinterInfo> ret = THIS->availablePrinters();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T033", (void *)new QList<QPrinterInfo>(ret));
+    XSRETURN(1);
+    }
+
 ## static QPrinterInfo defaultPrinter()
 void
 QPrinterInfo::defaultPrinter(...)
@@ -135,5 +148,18 @@ PPCODE:
     QString ret = THIS->printerName();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
+    XSRETURN(1);
+    }
+
+## QList<QPrinter::PageSize> supportedPaperSizes()
+void
+QPrinterInfo::supportedPaperSizes(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QPrinter::PageSize> ret = THIS->supportedPaperSizes();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T032", (void *)new QList<QPrinter::PageSize>(ret));
     XSRETURN(1);
     }

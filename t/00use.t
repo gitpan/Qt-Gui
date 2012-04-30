@@ -5,7 +5,7 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 383;
+use Test::More tests => 384;
 BEGIN {
 use_ok('Qt::Gui');
 use_ok('Qt::Gui');
@@ -57,6 +57,7 @@ use_ok('Qt::Gui::QIconEngineV2');
 use_ok('Qt::Gui::QImageIOHandlerFactoryInterface');
 use_ok('Qt::Gui::QProgressBar');
 use_ok('Qt::Gui::QStackedLayout');
+use_ok('Qt::Gui::Template');
 use_ok('Qt::Gui::QFileDialog');
 use_ok('Qt::Gui::QImageIOPlugin');
 use_ok('Qt::Gui::QFontMetrics');

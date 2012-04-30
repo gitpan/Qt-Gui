@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QTextObject/;
 #our @ISA = qw/Qt::Gui::QTextObject/;
 
@@ -28,6 +28,8 @@ Qt::Gui::QTextFrame
 =item   QTextFrame(QTextDocument * doc)
 
 =item   ~QTextFrame()
+
+=item  QList<QTextFrame *> childFrames()
 
 =item  QTextCursor firstCursorPosition()
 

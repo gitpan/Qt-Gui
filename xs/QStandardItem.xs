@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -127,22 +127,64 @@ PPCODE:
     XSRETURN(1);
     }
 
+## void appendColumn(const QList<QStandardItem *> & items)
+void
+QStandardItem::appendColumn(...)
+PREINIT:
+QList<QStandardItem *> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T000")) {
+      arg00 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->appendColumn(*arg00);
+    XSRETURN(0);
+    }
+
+## void appendRow(const QList<QStandardItem *> & items)
 ## void appendRow(QStandardItem * item)
 void
 QStandardItem::appendRow(...)
 PREINIT:
-QStandardItem * arg00;
+QList<QStandardItem *> * arg00;
+QStandardItem * arg10;
 PPCODE:
-    if ((sv_derived_from(ST(1), "Qt::Gui::QStandardItem") || ST(1) == &PL_sv_undef)) {
+    switch(items) {
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::Gui::Template::T000")) {
+      arg00 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->appendRow(*arg00);
+    XSRETURN(0);
+    }
+        else if ((sv_derived_from(ST(1), "Qt::Gui::QStandardItem") || ST(1) == &PL_sv_undef)) {
       if (sv_derived_from(ST(1), "Qt::Gui::QStandardItem")) {
-        arg00 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(1))));
+        arg10 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(1))));
     }
     else if (ST(1) == &PL_sv_undef) {
-        arg00 = 0;
+        arg10 = 0;
     }
     else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QStandardItem");
-    (void)THIS->appendRow(arg00);
+        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QStandardItem");
+    (void)THIS->appendRow(arg10);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
+
+## void appendRows(const QList<QStandardItem *> & items)
+void
+QStandardItem::appendRows(...)
+PREINIT:
+QList<QStandardItem *> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T000")) {
+      arg00 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->appendRows(*arg00);
     XSRETURN(0);
     }
 
@@ -370,6 +412,20 @@ PPCODE:
     XSRETURN(1);
     }
 
+## void insertColumn(int column, const QList<QStandardItem *> & items)
+void
+QStandardItem::insertColumn(...)
+PREINIT:
+int arg00;
+QList<QStandardItem *> * arg01;
+PPCODE:
+    if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T000")) {
+      arg00 = (int)SvIV(ST(1));
+      arg01 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->insertColumn(arg00, *arg01);
+    XSRETURN(0);
+    }
+
 ## void insertColumns(int column, int count)
 void
 QStandardItem::insertColumns(...)
@@ -384,39 +440,79 @@ PPCODE:
     XSRETURN(0);
     }
 
+## void insertRow(int row, const QList<QStandardItem *> & items)
 ## void insertRow(int row, QStandardItem * item)
 void
 QStandardItem::insertRow(...)
 PREINIT:
 int arg00;
-QStandardItem * arg01;
+QList<QStandardItem *> * arg01;
+int arg10;
+QStandardItem * arg11;
 PPCODE:
-    if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStandardItem") || ST(2) == &PL_sv_undef)) {
+    switch(items) {
+      case 3:
+      {
+        if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T000")) {
       arg00 = (int)SvIV(ST(1));
-      if (sv_derived_from(ST(2), "Qt::Gui::QStandardItem")) {
-        arg01 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else if (ST(2) == &PL_sv_undef) {
-        arg01 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Gui::QStandardItem");
-    (void)THIS->insertRow(arg00, arg01);
+      arg01 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->insertRow(arg00, *arg01);
     XSRETURN(0);
     }
+        else if (SvIOK(ST(1)) && (sv_derived_from(ST(2), "Qt::Gui::QStandardItem") || ST(2) == &PL_sv_undef)) {
+      arg10 = (int)SvIV(ST(1));
+      if (sv_derived_from(ST(2), "Qt::Gui::QStandardItem")) {
+        arg11 = reinterpret_cast<QStandardItem *>(SvIV((SV*)SvRV(ST(2))));
+    }
+    else if (ST(2) == &PL_sv_undef) {
+        arg11 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg11 is not of type Qt::Gui::QStandardItem");
+    (void)THIS->insertRow(arg10, arg11);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
 
+## void insertRows(int row, const QList<QStandardItem *> & items)
 ## void insertRows(int row, int count)
 void
 QStandardItem::insertRows(...)
 PREINIT:
 int arg00;
-int arg01;
+QList<QStandardItem *> * arg01;
+int arg10;
+int arg11;
 PPCODE:
-    if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+    switch(items) {
+      case 3:
+      {
+        if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Gui::Template::T000")) {
       arg00 = (int)SvIV(ST(1));
-      arg01 = (int)SvIV(ST(2));
-    (void)THIS->insertRows(arg00, arg01);
+      arg01 = reinterpret_cast<QList<QStandardItem *> *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->insertRows(arg00, *arg01);
     XSRETURN(0);
+    }
+        else if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
+    (void)THIS->insertRows(arg10, arg11);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## bool isCheckable()
@@ -1067,6 +1163,34 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## QList<QStandardItem *> takeColumn(int column)
+void
+QStandardItem::takeColumn(...)
+PREINIT:
+int arg00;
+PPCODE:
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
+    QList<QStandardItem *> ret = THIS->takeColumn(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T000", (void *)new QList<QStandardItem *>(ret));
+    XSRETURN(1);
+    }
+
+## QList<QStandardItem *> takeRow(int row)
+void
+QStandardItem::takeRow(...)
+PREINIT:
+int arg00;
+PPCODE:
+    if (SvIOK(ST(1))) {
+      arg00 = (int)SvIV(ST(1));
+    QList<QStandardItem *> ret = THIS->takeRow(arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T000", (void *)new QList<QStandardItem *>(ret));
+    XSRETURN(1);
     }
 
 ## QString text()

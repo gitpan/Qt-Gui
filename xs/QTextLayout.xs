@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -116,6 +116,19 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
+## QList<QTextLayout::FormatRange> additionalFormats()
+void
+QTextLayout::additionalFormats(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QTextLayout::FormatRange> ret = THIS->additionalFormats();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T014", (void *)new QList<QTextLayout::FormatRange>(ret));
+    XSRETURN(1);
+    }
+
 ## void beginLayout()
 void
 QTextLayout::beginLayout(...)
@@ -186,6 +199,94 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Gui::QTextLine", (void *)new QTextLine(ret));
     XSRETURN(1);
+    }
+
+## void draw(QPainter * p, const QPointF & pos, const QVector<QTextLayout::FormatRange> & selections, const QRectF & clip)
+## void draw(QPainter * p, const QPointF & pos, const QVector<QTextLayout::FormatRange> & selections, const QRectF & clip = QRectF())
+## void draw(QPainter * p, const QPointF & pos, const QVector<QTextLayout::FormatRange> & selections = QVector<QTextLayout::FormatRange>(), const QRectF & clip = QRectF())
+void
+QTextLayout::draw(...)
+PREINIT:
+QPainter * arg00;
+QPointF * arg01;
+QVector<QTextLayout::FormatRange> * arg02;
+QRectF * arg03;
+QPainter * arg10;
+QPointF * arg11;
+QVector<QTextLayout::FormatRange> * arg12;
+const QRectF & arg13_ = QRectF();
+QRectF * arg13 = const_cast<QRectF *>(&arg13_);
+QPainter * arg20;
+QPointF * arg21;
+const QVector<QTextLayout::FormatRange> & arg22_ = QVector<QTextLayout::FormatRange>();
+QVector<QTextLayout::FormatRange> * arg22 = const_cast<QVector<QTextLayout::FormatRange> *>(&arg22_);
+const QRectF & arg23_ = QRectF();
+QRectF * arg23 = const_cast<QRectF *>(&arg23_);
+PPCODE:
+    switch(items) {
+      case 3:
+      {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QPainter") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Core::QPointF")) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QPainter")) {
+        arg20 = reinterpret_cast<QPainter *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg20 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg20 is not of type Qt::Gui::QPainter");
+      arg21 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(2))));
+    (void)THIS->draw(arg20, *arg21, *arg22, *arg23);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 4:
+      {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QPainter") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Core::QPointF") && sv_isa(ST(3), "Qt::Gui::Template::T015")) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QPainter")) {
+        arg10 = reinterpret_cast<QPainter *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg10 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg10 is not of type Qt::Gui::QPainter");
+      arg11 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(2))));
+      arg12 = reinterpret_cast<QVector<QTextLayout::FormatRange> *>(SvIV((SV*)SvRV(ST(3))));
+    (void)THIS->draw(arg10, *arg11, *arg12, *arg13);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 5:
+      {
+        if ((sv_derived_from(ST(1), "Qt::Gui::QPainter") || ST(1) == &PL_sv_undef) && sv_isa(ST(2), "Qt::Core::QPointF") && sv_isa(ST(3), "Qt::Gui::Template::T015") && sv_isa(ST(4), "Qt::Core::QRectF")) {
+      if (sv_derived_from(ST(1), "Qt::Gui::QPainter")) {
+        arg00 = reinterpret_cast<QPainter *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg00 is not of type Qt::Gui::QPainter");
+      arg01 = reinterpret_cast<QPointF *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = reinterpret_cast<QVector<QTextLayout::FormatRange> *>(SvIV((SV*)SvRV(ST(3))));
+      arg03 = reinterpret_cast<QRectF *>(SvIV((SV*)SvRV(ST(4))));
+    (void)THIS->draw(arg00, *arg01, *arg02, *arg03);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## void drawCursor(QPainter * p, const QPointF & pos, int cursorPosition)
@@ -489,6 +590,18 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## void setAdditionalFormats(const QList<QTextLayout::FormatRange> & overrides)
+void
+QTextLayout::setAdditionalFormats(...)
+PREINIT:
+QList<QTextLayout::FormatRange> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T014")) {
+      arg00 = reinterpret_cast<QList<QTextLayout::FormatRange> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setAdditionalFormats(*arg00);
+    XSRETURN(0);
     }
 
 ## void setCacheEnabled(bool enable)

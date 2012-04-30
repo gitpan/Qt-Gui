@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -92,6 +92,19 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QVector<qreal> dashPattern()
+void
+QPainterPathStroker::dashPattern(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QVector<qreal> ret = THIS->dashPattern();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T011", (void *)new QVector<qreal>(ret));
+    XSRETURN(1);
+    }
+
 ## Qt::PenJoinStyle joinStyle()
 void
 QPainterPathStroker::joinStyle(...)
@@ -155,15 +168,33 @@ PPCODE:
     }
 
 ## void setDashPattern(Qt::PenStyle arg0)
+## void setDashPattern(const QVector<qreal> & dashPattern)
 void
 QPainterPathStroker::setDashPattern(...)
 PREINIT:
 Qt::PenStyle arg00;
+QVector<qreal> * arg10;
 PPCODE:
-    if (SvIOK(ST(1))) {
+    switch(items) {
+      case 2:
+      {
+        if (SvIOK(ST(1))) {
       arg00 = (Qt::PenStyle)SvIV(ST(1));
     (void)THIS->setDashPattern(arg00);
     XSRETURN(0);
+    }
+        else if (sv_isa(ST(1), "Qt::Gui::Template::T011")) {
+      arg10 = reinterpret_cast<QVector<qreal> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setDashPattern(*arg10);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## void setJoinStyle(Qt::PenJoinStyle style)

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QTreeView/;
 #our @ISA = qw/Qt::Gui::QTreeView/;
 
@@ -33,6 +33,8 @@ Qt::Gui::QTreeWidget
 
 =item  void addTopLevelItem(QTreeWidgetItem * item)
 
+=item  void addTopLevelItems(const QList<QTreeWidgetItem *> & items)
+
 =item  void clear()
 
 =item  void closePersistentEditor(QTreeWidgetItem * item, int column)
@@ -53,6 +55,10 @@ Qt::Gui::QTreeWidget
 
 =item  void expandItem(const QTreeWidgetItem * item)
 
+=item  QList<QTreeWidgetItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags, int column)
+
+=item  QList<QTreeWidgetItem *> findItems(const QString & text, QFlags<Qt::MatchFlag> flags, int column = 0)
+
 =item  QTreeWidgetItem * headerItem()
 
 =item  int indexOfTopLevelItem(QTreeWidgetItem * item)
@@ -60,6 +66,8 @@ Qt::Gui::QTreeWidget
 =item  int indexOfTopLevelItem(QTreeWidgetItem * item)
 
 =item  void insertTopLevelItem(int index, QTreeWidgetItem * item)
+
+=item  void insertTopLevelItems(int index, const QList<QTreeWidgetItem *> & items)
 
 =item  QTreeWidgetItem * invisibleRootItem()
 
@@ -92,6 +100,8 @@ Qt::Gui::QTreeWidget
 =item  void scrollToItem(const QTreeWidgetItem * item, QAbstractItemView::ScrollHint hint)
 
 =item  void scrollToItem(const QTreeWidgetItem * item, QAbstractItemView::ScrollHint hint = QAbstractItemView::EnsureVisible)
+
+=item  QList<QTreeWidgetItem *> selectedItems()
 
 =item  void setColumnCount(int columns)
 

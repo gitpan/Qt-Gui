@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -61,6 +61,8 @@ Qt::Gui::QTreeWidgetItem
 
 =item  void addChild(QTreeWidgetItem * child)
 
+=item  void addChildren(const QList<QTreeWidgetItem *> & children)
+
 =item  QBrush background(int column)
 
 =item  QColor backgroundColor(int column)
@@ -90,6 +92,8 @@ Qt::Gui::QTreeWidgetItem
 =item  int indexOfChild(QTreeWidgetItem * child)
 
 =item  void insertChild(int index, QTreeWidgetItem * child)
+
+=item  void insertChildren(int index, const QList<QTreeWidgetItem *> & children)
 
 =item  bool isDisabled()
 
@@ -160,6 +164,8 @@ Qt::Gui::QTreeWidgetItem
 =item  QString statusTip(int column)
 
 =item  QTreeWidgetItem * takeChild(int index)
+
+=item  QList<QTreeWidgetItem *> takeChildren()
 
 =item  QString text(int column)
 

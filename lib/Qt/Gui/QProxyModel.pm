@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Core::QAbstractItemModel/;
 #our @ISA = qw/Qt::Core::QAbstractItemModel/;
 
@@ -64,6 +64,14 @@ Qt::Gui::QProxyModel
 =item  bool insertRows(int row, int count, const QModelIndex & parent)
 
 =item  bool insertRows(int row, int count, const QModelIndex & parent = QModelIndex())
+
+=item  QList<QModelIndex> match(const QModelIndex & start, int role, const QVariant & value, int hits, QFlags<Qt::MatchFlag> flags)
+
+=item  QList<QModelIndex> match(const QModelIndex & start, int role, const QVariant & value, int hits, QFlags<Qt::MatchFlag> flags = Qt::MatchFlags(Qt::MatchStartsWith|Qt::MatchWrap))
+
+=item  QList<QModelIndex> match(const QModelIndex & start, int role, const QVariant & value, int hits = 1, QFlags<Qt::MatchFlag> flags = Qt::MatchFlags(Qt::MatchStartsWith|Qt::MatchWrap))
+
+=item  QMimeData * mimeData(const QList<QModelIndex> & indexes)
 
 =item  QStringList mimeTypes()
 

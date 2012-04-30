@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -1665,6 +1665,18 @@ PPCODE:
     XSRETURN(0);
     }
 
+## void setSidebarUrls(const QList<QUrl> & urls)
+void
+QFileDialog::setSidebarUrls(...)
+PREINIT:
+QList<QUrl> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Gui::Template::T028")) {
+      arg00 = reinterpret_cast<QList<QUrl> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setSidebarUrls(*arg00);
+    XSRETURN(0);
+    }
+
 ## void setViewMode(QFileDialog::ViewMode mode)
 void
 QFileDialog::setViewMode(...)
@@ -1687,6 +1699,19 @@ PPCODE:
       arg00 = (bool)SvTRUE(ST(1));
     (void)THIS->setVisible(arg00);
     XSRETURN(0);
+    }
+
+## QList<QUrl> sidebarUrls()
+void
+QFileDialog::sidebarUrls(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QUrl> ret = THIS->sidebarUrls();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T028", (void *)new QList<QUrl>(ret));
+    XSRETURN(1);
     }
 
 ## bool testOption(QFileDialog::Option option)

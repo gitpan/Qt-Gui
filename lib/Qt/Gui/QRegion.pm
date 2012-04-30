@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 
 
 # FIXME: operator overload
@@ -106,6 +106,8 @@ Qt::Gui::QRegion
 =item  QRegion & operator|=(const QRegion & r)
 
 =item  int rectCount()
+
+=item  QVector<QRect> rects()
 
 =item  void setRects(const QRect * rect, int num)
 

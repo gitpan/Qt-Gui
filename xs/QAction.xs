@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -131,6 +131,32 @@ PPCODE:
       arg00 = (QAction::ActionEvent)SvIV(ST(1));
     (void)THIS->activate(arg00);
     XSRETURN(0);
+    }
+
+## QList<QGraphicsWidget *> associatedGraphicsWidgets()
+void
+QAction::associatedGraphicsWidgets(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QGraphicsWidget *> ret = THIS->associatedGraphicsWidgets();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T038", (void *)new QList<QGraphicsWidget *>(ret));
+    XSRETURN(1);
+    }
+
+## QList<QWidget *> associatedWidgets()
+void
+QAction::associatedWidgets(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QWidget *> ret = THIS->associatedWidgets();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T004", (void *)new QList<QWidget *>(ret));
+    XSRETURN(1);
     }
 
 ## bool autoRepeat()
@@ -557,16 +583,34 @@ PPCODE:
     XSRETURN(0);
     }
 
+## void setShortcuts(const QList<QKeySequence> & shortcuts)
 ## void setShortcuts(QKeySequence::StandardKey arg0)
 void
 QAction::setShortcuts(...)
 PREINIT:
-QKeySequence::StandardKey arg00;
+QList<QKeySequence> * arg00;
+QKeySequence::StandardKey arg10;
 PPCODE:
-    if (SvIOK(ST(1))) {
-      arg00 = (QKeySequence::StandardKey)SvIV(ST(1));
-    (void)THIS->setShortcuts(arg00);
+    switch(items) {
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::Gui::Template::T029")) {
+      arg00 = reinterpret_cast<QList<QKeySequence> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setShortcuts(*arg00);
     XSRETURN(0);
+    }
+        else if (SvIOK(ST(1))) {
+      arg10 = (QKeySequence::StandardKey)SvIV(ST(1));
+    (void)THIS->setShortcuts(arg10);
+    XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## void setSoftKeyRole(QAction::SoftKeyRole softKeyRole)
@@ -664,6 +708,19 @@ PPCODE:
     Qt::ShortcutContext ret = THIS->shortcutContext();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+
+## QList<QKeySequence> shortcuts()
+void
+QAction::shortcuts(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QKeySequence> ret = THIS->shortcuts();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Gui::Template::T029", (void *)new QList<QKeySequence>(ret));
     XSRETURN(1);
     }
 

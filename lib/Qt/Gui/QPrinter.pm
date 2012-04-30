@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.01_05';
 use base qw/Qt::Gui::QPaintDevice/;
 #our @ISA = qw/Qt::Gui::QPaintDevice/;
 
@@ -158,6 +158,8 @@ Qt::Gui::QPrinter
 =item  void setPrinterSelectionOption(const QString & arg0)
 
 =item  void setResolution(int arg0)
+
+=item  QList<int> supportedResolutions()
 
 =item  bool supportsMultipleCopies()
 
